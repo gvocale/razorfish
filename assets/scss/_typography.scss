@@ -1,0 +1,205 @@
+// $garamond: Garamond, serif;
+$sans: Gotham,
+sans-serif;
+$serif: Miller,
+serif;
+$display: Miller Display,
+serif;
+// Miller
+@font-face {
+    font-family: Miller Display;
+    src: url(../fonts/Miller/Miller-DisplayRoman.otf);
+    font-style: regular;
+}
+
+@font-face {
+    font-family: Miller Display;
+    src: url(../fonts/Miller/Miller-DisplayItalic.otf);
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Miller;
+    src: url(../fonts/Miller/Miller-TextRoman.otf);
+    font-weight: normal;
+    font-style: regular;
+}
+
+@font-face {
+    font-family: Miller;
+    src: url(../fonts/Miller/Miller-TextBold.otf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Miller;
+    src: url(../fonts/Miller/Miller-TextItalic.otf);
+    font-style: regular;
+}
+
+
+/* Gotham */
+
+@font-face {
+    font-family: Gotham;
+    src: url(../fonts/gotham/Gotham-Bold.otf);
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: Gotham;
+    src: url(../fonts/gotham/Gotham-Book.otf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Gotham;
+    src: url(../fonts/gotham/Gotham-Light.otf);
+    font-weight: 200;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: $primary1;
+    border-bottom: 0.04em solid $primary1;
+    font-style: italic;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    cursor: hand;
+}
+
+a:hover,
+a:focus {
+    color: $primary3;
+}
+
+body {
+    font-family: $serif;
+    font-size: 1rem;
+    color: $color-dark;
+}
+
+p {
+    font-family: $sans;
+    font-size: $typeSize4;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+}
+
+b,
+i {
+    font-style: normal;
+    font-weight: 400;
+}
+
+h1 {
+    font-family: $display;
+    color: $black1;
+    font-size: $typeSize6;
+    font-weight: bold;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+}
+
+a h1 {
+    font-color: $primary1;
+    font-style: italic;
+    text-decoration: underlined;
+}
+
+h2 {
+    font-family: $display;
+    color: $primary1;
+    font-size: $typeSize6;
+    letter-spacing: 0rem;
+    line-height: 1;
+    text-align: center;
+}
+
+h3 {
+    color: $primary2;
+    font-family: $display;
+    font-size: $typeSize4;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+h5 {
+    font-family: $sans;
+    font-size: $typeSize2;
+    color: $gray3;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    font-style: italic;
+}
+
+h5 + p {
+    margin-top: 0.5rem;
+}
+
+.eyebrow {
+    font-family: $display;
+    font-style: italic;
+    color: $black2;
+    font-size: $typeSize6;
+    letter-spacing: 0rem;
+    line-height: 1;
+}
+
+.eyebrow + h1 {
+    margin-top: 1rem;
+}
+
+// Small 34em - 544px
+@media screen and (min-width: $xs) {}
+
+// Medium 48em - 768px
+@media screen and (min-width: $md) {}
+
+// Large 62em - 992px
+@media screen and (min-width: $lg) {}
+
+// X-Large 75em - 1200px
+@media screen and (min-width: $xl) {
+    h1 {
+        font-size: $typeSize9;
+    }
+    h2 {
+        font-size: $typeSize8;
+    }
+    h3 {
+        font-size: $typeSize6;
+    }
+    h5 {
+        font-size: $typeSize3;
+    }
+    h5 + p {
+        margin-top: 1rem;
+    }
+    .eyebrow {
+        font-size: $typeSize8;
+    }
+    p {
+        font-size: $typeSize5;
+    }
+}
+
+// XX-Large 100em - 1600px
+@media screen and (min-width: $xxl) {}

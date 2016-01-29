@@ -1,0 +1,54 @@
+section.intro-spotify.transparent {
+    min-height: 100vh;
+    width: 100%;
+}
+
+section.intro-spotify {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    filter: grayscale(100%);
+    width: 100%;
+}
+section.intro-spotify-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    h1 + p {
+        margin-top: 1rem;
+    }
+}
+
+
+
+
+section.intro-spotify.img {
+    clip-path: circle(15px at 20px 20px);
+}
+
+section.clipping {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    clip-path: circle(15px at 20px 20px);
+    -webkit-clip-path: circle(15px at 20px 20px);
+    -webkit-clip-path: inset(100px 50px);
+    -webkit-clip-path: circle(50px at 0 100px);
+    -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background: red;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
