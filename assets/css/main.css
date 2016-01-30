@@ -5508,6 +5508,10 @@ h5 + p {
   .container-fluid .row {
     width: 100%; }
 
+body {
+  width: 100%;
+  min-height: 100vh; }
+
 nav.container-fluid {
   position: fixed;
   top: 0;
@@ -5587,100 +5591,66 @@ nav.container-fluid {
         -ms-flex-pack: justify;
             justify-content: space-between; }
 
-section.intro-text {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 80vh;
-  background: #FFFFFF;
-  position: fixed;
-  z-index: -10;
-  top: 0; }
-  section.intro-text h1 + p {
-    margin-top: 1rem; }
+h1 + p {
+  margin-top: 1rem; }
 
-section.intro-spotify.transparent {
-  min-height: 100vh;
-  width: 100%; }
+section.text1 h1,
+section.text1 p,
+section.text2 h1,
+section.text2 p,
+section.text3 h1,
+section.text3 p {
+  opacity: 0; }
 
-section.intro-spotify {
+section.text1.visible h1,
+section.text1.visible p,
+section.text2.visible h1,
+section.text2.visible p,
+section.text3.visible h1,
+section.text3.visible p {
+  opacity: 1; }
+
+section.client1,
+section.client2,
+section.client3 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  min-height: 100vh;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-  width: 100%; }
+  width: 100%;
+  min-height: 100vh;
+  position: absolute; }
+  section.client1 h1,
+  section.client1 p,
+  section.client2 h1,
+  section.client2 p,
+  section.client3 h1,
+  section.client3 p {
+    opacity: 0; }
 
-section.intro-spotify-text {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 80vh;
+section.client1.fadein h1,
+section.client1.fadein p,
+section.client2.fadein h1,
+section.client2.fadein p,
+section.client3.fadein h1,
+section.client3.fadein p {
+  opacity: 1; }
+
+section.text1,
+section.text2,
+section.text3,
+section.client1 .text,
+section.client2 .text,
+section.client3 .text {
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
   position: fixed;
-  z-index: 50;
-  top: 0; }
-  section.intro-spotify-text h1 + p {
-    margin-top: 1rem; }
-
-section.intro-spotify.img {
-  -webkit-clip-path: circle(15px at 20px 20px);
-          clip-path: circle(15px at 20px 20px); }
-
-section.clipping {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
@@ -5689,13 +5659,13 @@ section.clipping {
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
-          flex-direction: column;
-  clip-path: circle(15px at 20px 20px);
-  -webkit-clip-path: circle(15px at 20px 20px);
-  -webkit-clip-path: inset(100px 50px);
-  -webkit-clip-path: circle(50px at 0 100px);
-  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  background: red;
-  width: 100vw;
-  height: 100vh;
-  position: relative; }
+          flex-direction: column; }
+
+section.client1 {
+  top: 80vh; }
+
+section.client2 {
+  top: calc(80vh + 100vh + 80vh); }
+
+section.client3 {
+  top: calc(80vh + 100vh + 80vh + 100vh + 80vh); }

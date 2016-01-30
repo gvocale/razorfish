@@ -9,6 +9,10 @@
             <?php echo $page->title()->html() ?>
     </title>
     <?php echo css('assets/css/main.css') ?>
+        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="<?php echo kirby()->urls()->assets() ?>/js/dump.js"></script>
+        <script src="<?php echo kirby()->urls()->assets() ?>/js/jquery-visible.js"></script>
 </head>
 
 <body>
@@ -18,7 +22,7 @@
                 <div id="logo" class="logo">
                     <img src="<?php echo kirby()->urls()->assets() ?>/images/razorfish-logo.svg" alt="" class="razorfish-logo">
                     <p class="global">Global</p>
-
+                    <p class="test"></p>
                 </div>
                 <img src="<?php echo kirby()->urls()->assets() ?>/images/hamburger-icon.svg" alt="" class="hamburger-icon">
             </div>

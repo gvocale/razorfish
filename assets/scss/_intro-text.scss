@@ -1,14 +1,75 @@
-section.intro-text {
+h1 + p {
+    margin-top: 1rem;
+}
+
+section.text1,
+section.text2,
+section.text3 {
+    h1,
+    p {
+        opacity: 0;
+    }
+}
+
+
+section.text1.visible,
+section.text2.visible,
+section.text3.visible {
+    h1,
+    p {
+        opacity: 1;
+    }
+}
+
+
+section.client1,
+section.client2,
+section.client3 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    h1,
+    p {
+        opacity: 0;
+    }
+}
+
+section.client1.fadein,
+section.client2.fadein,
+section.client3.fadein {
+    h1,
+    p {
+        opacity: 1;
+    }
+}
+
+section.text1,
+section.text2,
+section.text3,
+section.client1 .text,
+section.client2 .text,
+section.client3 .text {
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    position: fixed;
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 80vh;
-    background: $white1;
-    position: fixed;
-    z-index: -10;
-    top: 0;
-    h1 + p {
-        margin-top: 1rem;
-    }
+}
+
+section.client1 {
+    top: 80vh;
+}
+
+section.client2 {
+    top: calc(80vh + 100vh + 80vh);
+}
+
+section.client3 {
+    top: calc(80vh + 100vh + 80vh + 100vh + 80vh);
 }
