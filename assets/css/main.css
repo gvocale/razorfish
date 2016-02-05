@@ -5594,78 +5594,134 @@ nav.container-fluid {
 h1 + p {
   margin-top: 1rem; }
 
-section.text1 h1,
-section.text1 p,
-section.text2 h1,
-section.text2 p,
-section.text3 h1,
-section.text3 p {
-  opacity: 0; }
+.client1:before {
+  z-index: 0; }
 
-section.text1.visible h1,
-section.text1.visible p,
-section.text2.visible h1,
-section.text2.visible p,
-section.text3.visible h1,
-section.text3.visible p {
-  opacity: 1; }
+.quote1 {
+  z-index: 10; }
 
-section.client1,
-section.client2,
-section.client3 {
+.client1 {
+  z-index: 20; }
+
+.client1,
+.client2,
+.client3 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-  width: 100%;
   min-height: 100vh;
-  position: absolute; }
-  section.client1 h1,
-  section.client1 p,
-  section.client2 h1,
-  section.client2 p,
-  section.client3 h1,
-  section.client3 p {
-    opacity: 0; }
-
-section.client1.fadein h1,
-section.client1.fadein p,
-section.client2.fadein h1,
-section.client2.fadein p,
-section.client3.fadein h1,
-section.client3.fadein p {
-  opacity: 1; }
-
-section.text1,
-section.text2,
-section.text3,
-section.client1 .text,
-section.client2 .text,
-section.client3 .text {
   width: 100%;
-  min-height: 100vh;
-  top: 0;
-  position: fixed;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .client1 .text-container,
+  .client2 .text-container,
+  .client3 .text-container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    top: 0;
+    left: 0;
+    margin-left: 10%; }
+    .client1 .text-container h1,
+    .client1 .text-container p,
+    .client2 .text-container h1,
+    .client2 .text-container p,
+    .client3 .text-container h1,
+    .client3 .text-container p {
+      width: 60%; }
 
-section.client1 {
-  top: 80vh; }
+.client1:before,
+.client2:before,
+.client3:before {
+  content: "";
+  display: block;
+  background: white;
+  width: 100%;
+  height: 80vh;
+  position: absolute;
+  top: 0;
+  left: 0; }
 
-section.client2 {
-  top: calc(80vh + 100vh + 80vh); }
+.quote1,
+.quote2,
+.quote3 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh; }
+  .quote1 .text-container,
+  .quote2 .text-container,
+  .quote3 .text-container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    top: 0;
+    left: 0;
+    margin-left: 10%; }
+    .quote1 .text-container h1,
+    .quote1 .text-container p,
+    .quote2 .text-container h1,
+    .quote2 .text-container p,
+    .quote3 .text-container h1,
+    .quote3 .text-container p {
+      width: 60%; }
 
-section.client3 {
-  top: calc(80vh + 100vh + 80vh + 100vh + 80vh); }
+.client1 h1,
+.client1 p,
+.client2 h1,
+.client2 p,
+.client3 h1,
+.client3 p,
+.quote1.in-view h1,
+.quote1.in-view p,
+.quote2.in-view h1,
+.quote2.in-view p,
+.quote3.in-view h1,
+.quote3.in-view p {
+  opacity: 1; }

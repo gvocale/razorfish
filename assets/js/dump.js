@@ -1,34 +1,24 @@
 $(document).ready(function() {
 
-    $(window).scroll(function(d, h) {
+    function isScrolledIntoView(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
 
-        if ($(window).scrollTop() >= $('.client1').offset().top) {
-            $('.client1').addClass("fadein", true);
-            $('.text1').removeClass("visible", true);
-            $('.text2').addClass("visible", true);
-        }
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
 
-        if ($(window).scrollTop() >= ($('.client1').offset().top) + $('.client1').height()) {
-            $('.client1').removeClass("fadein", true);
-        }
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
 
-        if ($(window).scrollTop() >= $('.client2').offset().top) {
-            $('.client2').addClass("fadein", true);
-				$('.text2').removeClass("visible", true);
-            $('.text3').addClass("visible", true);
-        }
-
-        if ($(window).scrollTop() >= ($('.client2').offset().top) + $('.client2').height()) {
-            $('.client2').removeClass("fadein", true);
-        }
-
-        if ($(window).scrollTop() >= $('.client3').offset().top) {
-            $('.client3').addClass("fadein", true);
-        }
-
-        if ($(window).scrollTop() >= ($('.client3').offset().top) + $('.client3').height()) {
-            $('.client3').removeClass("fadein", true);
-        }                
-
+    $(window).on("load scroll resize",function() {
+        $('section').each(function() {
+            if (isScrolledIntoView(this) === true) {
+                $(this).addClass('in-view');
+            }
+            if (isScrolledIntoView(this) === false) {
+                $(this).removeClass('in-view');
+            }
+        });
     });
+
 });
