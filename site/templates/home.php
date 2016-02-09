@@ -1,11 +1,13 @@
-<?php 
 
-snippet('header');
 
-foreach($pages->visible() as $section) {
-  snippet($section->uid(), array('section' => $section));
-}
+<?php snippet('header');?>
 
-snippet('footer');
+<?php snippet('featured-quote');?>
 
-?>
+<?php snippet('featured-client');?>
+
+<?php snippet('grid');?>
+
+<?php snippet('locations');?>
+
+<?php snippet('footer');?>

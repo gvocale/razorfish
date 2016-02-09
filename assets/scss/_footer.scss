@@ -1,0 +1,86 @@
+footer {
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-legal {
+    color: $gray3;
+    font-size: $typeSize3;
+    text-align: center;
+    font-family: $sans;
+    letter-spacing: 0.02em;
+    margin: 4rem 0;
+}
+
+span.footer-legal-copyright {
+    margin: 0 0.5em;
+}
+
+a.footer-legal-link {
+    color: $primary1;
+    text-decoration: none;
+    font-style: normal;
+    padding-bottom: 0.1em;
+    margin: 0 0.5em;
+}
+
+a.footer-legal-link:hover {
+    border-bottom: 0.1em solid $primary1;
+}
+
+.footer-razorfish-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-share-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-divider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+hr.footer-divider {
+    width: 3rem;
+    height: 0.3rem;
+    background-color: $primary1;
+    margin: 2.5rem 0;
+}
+
+ul.footer-share-icons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-share-twitter,
+.footer-share-facebook,
+.footer-share-linkedin {
+    margin: 0 1%;
+    height: 1.2rem;
+    width: auto;
+    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    cursor: hand;
+    display: inline-block;
+}
+
+img.footer-share-twitter:hover,
+img.footer-share-facebook:hover,
+img.footer-share-linkedin:hover {
+    transform: scale(1.1);
+}
