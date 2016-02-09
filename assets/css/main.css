@@ -5763,12 +5763,21 @@ img.footer-share-linkedin:hover {
   padding: 0; }
 
 ul.grid {
-  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
-  -webkit-column-gap: 0;
-     -moz-column-gap: 0;
-          column-gap: 0; }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: 100vw;
+  height: 200vw;
+  padding: 0; }
 
 li.grid-tile {
   width: 50vw;
@@ -5810,6 +5819,10 @@ li.grid-tile:hover {
 
 .grid-tile:nth-of-type(2) {
   height: 50vw; }
+  .grid-tile:nth-of-type(2) .grid-text-container {
+    -webkit-transform: translateY(-150%);
+        -ms-transform: translateY(-150%);
+            transform: translateY(-150%); }
 
 .grid-tile:nth-of-type(3) {
   height: 25vw; }
@@ -5822,12 +5835,20 @@ li.grid-tile:hover {
 
 .grid-tile:nth-of-type(6) {
   height: 50vw; }
+  .grid-tile:nth-of-type(6) .grid-text-container {
+    -webkit-transform: translateY(-150%);
+        -ms-transform: translateY(-150%);
+            transform: translateY(-150%); }
 
 .grid-tile:nth-of-type(7) {
   height: 25vw; }
 
 .grid-tile:nth-of-type(8) {
   height: 50vw; }
+  .grid-tile:nth-of-type(8) .grid-text-container {
+    -webkit-transform: translateY(-150%);
+        -ms-transform: translateY(-150%);
+            transform: translateY(-150%); }
 
 .grid-tile:nth-of-type(9) {
   height: 25vw; }
@@ -5837,23 +5858,41 @@ li.grid-tile:hover {
 
 .grid-eyebrow {
   color: #a9c000;
-  font-size: 0.8077em; }
+  font-size: 1em; }
 
-h3.grid-headline {
+.grid-headline {
   color: #FFFFFF;
   font-weight: bold;
-  font-size: 2.1154em; }
+  font-size: 2.6154em;
+  line-height: 1.4; }
+
+.grid-headline.invert {
+  color: #404040; }
+
+.grid-text-container {
+  width: 60%;
+  text-align: center; }
 
 .grid-text-container-inverted h3.grid-headline {
   color: #404040; }
 
+.grid-text-container.bottom {
+  -webkit-transform: translateY(150%);
+      -ms-transform: translateY(150%);
+          transform: translateY(150%); }
+
+.grid-eyebrow + .grid-headline {
+  margin-top: 0.3em; }
+
 @media screen and (min-width: 100em) {
   .container-fluid.grid {
-    padding: 10%;
     background: #F0F0F0; }
 
   ul.grid {
-    box-shadow: 0 2em 2em 0em rgba(0, 0, 0, 0.05); }
+    box-shadow: 0 2em 2em 0em rgba(0, 0, 0, 0.05);
+    width: 80vw;
+    height: 140vw;
+    margin: 10vw; }
 
   li.grid-tile {
     width: 40vw; }

@@ -4,8 +4,14 @@
  }
  
  ul.grid {
-     column-count: 2;
-     column-gap: 0;
+     // column-count: 2;
+     // column-gap: 0;
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     width: 100vw;
+     height: 200vw;
+     padding: 0;
  }
  
  li.grid-tile {
@@ -34,8 +40,12 @@
      text-align: center;
  }
  
+ // Large
  .grid-tile:nth-of-type(2) {
      height: 50vw;
+     .grid-text-container {
+         transform: translateY(-150%);
+     }
  }
  
  .grid-tile:nth-of-type(3) {
@@ -46,20 +56,29 @@
      height: 25vw;
  }
  
+ // Large
  .grid-tile:nth-of-type(5) {
      height: 50vw;
  }
  
+ // Large
  .grid-tile:nth-of-type(6) {
      height: 50vw;
+     .grid-text-container {
+         transform: translateY(-150%);
+     }
  }
  
  .grid-tile:nth-of-type(7) {
      height: 25vw;
  }
  
+ // Large
  .grid-tile:nth-of-type(8) {
      height: 50vw;
+     .grid-text-container {
+         transform: translateY(-150%);
+     }
  }
  
  .grid-tile:nth-of-type(9) {
@@ -72,19 +91,37 @@
  
  .grid-eyebrow {
      color: $primary1;
-     font-size: $typeSize3;
+     font-size: $typeSize4;
  }
  
- h3.grid-headline {
+ .grid-headline {
      color: $white1;
      font-weight: bold;
-     font-size: $typeSize7;
+     font-size: $typeSize8;
+     line-height: 1.4;
+ }
+ 
+ .grid-headline.invert {
+    color: $black1;
+ }
+
+ .grid-text-container {
+     width: 60%;
+     text-align: center;
  }
  
  .grid-text-container-inverted {
      h3.grid-headline {
          color: $black1;
      }
+ }
+ 
+ .grid-text-container.bottom {
+     transform: translateY(150%);
+ }
+ 
+ .grid-eyebrow + .grid-headline {
+     margin-top: 0.3em;
  }
  
  // Small 34em - 544px
@@ -102,24 +139,23 @@
  // XX-Large 100em - 1600px
  @media screen and (min-width: $xxl) {
      .container-fluid.grid {
-         padding: 10%;
          // width: 80%;
          background: $gray1;
-
      }
      ul.grid {
-     	box-shadow: 0 2em 2em 0em rgba(0, 0, 0, 0.05)
+         box-shadow: 0 2em 2em 0em rgba(0, 0, 0, 0.05);
+         width: 80vw;
+         height: 140vw;
+         margin: 10vw;
      }
-      li.grid-tile {
-      	width: 40vw;
-      }
+     li.grid-tile {
+         width: 40vw;
+     }
      .grid-tile:nth-of-type(1) {
-     	
          height: 20vw;
          text-align: center;
      }
      .grid-tile:nth-of-type(2) {
-     		
          height: 40vw;
      }
      .grid-tile:nth-of-type(3) {

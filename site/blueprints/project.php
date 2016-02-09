@@ -16,12 +16,22 @@ fields:
   description:
     label: Description
     type:  textarea
+  tile-art-direction:
+    label: Tile Art Direction
+    type: radio
+    options:
+      color: Solid Color Background
+      photo-text-top: Full Bleed Photo - Text Top
+      photo-text-bottom: Full Bleed Photo - Text bottom
+      split: Split Photo
+    columns: 1
+    width: 1/3
   bgcolor:
     label: Background Color
-    type:  color
+    type:  text
     default: 095af0
   invert:
-    label: Invert Headline / Eyebrow color
-    type:  checkbox
-    text: Yes.
-    help: Invert the color of Headline and Eyebrow in case the background of the tile is bright.
+    label: Text color
+    type: checkbox
+    text: Invert text color
+    help: Invert the color of Headline and Eyebrow in case the background of the tile is bright.    
