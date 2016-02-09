@@ -2,31 +2,22 @@
 <section class="container-fluid grid">
     <ul class="grid">
         <?php foreach ($projects as $project): ?>
-            <?php if ($background_image = $project->images()->filterBy('filename', '*=', 'background')->sortBy('sort', 'asc')->first()): ?>
-                <li class="grid-tile" style="background-image: url(<?php echo $background_image->url() ?>)">
-            <?php else: ?>
-                <li class="grid-tile" style="background-color: #<?php echo $project->bgcolor() ?>">
-            <?php endif ?>
-            <?php if($project->tile_art_direction() == 'color'): ?>
-                <div class="grid-text-container color">
-            <?php elseif($project->tile_art_direction() == 'photo-text-top'): ?>
+            <li class="grid-tile <?php echo $project->color() ?> <?php echo $project->style() ?>">
                 <div class="grid-text-container">
-            <?php elseif($project->tile_art_direction() == 'photo-text-bottom'): ?>
-                <div class="grid-text-container bottom">
-            <?php else: ?>
-                <div class="grid-text-container split">
-            <?php endif ?>
-            <?php if ($project->invert() == '1'): ?>  
-                <p class="grid-eyebrow invert">
-                    <?php echo $project->eyebrow() ?>
-                </p>
-                <h3 class="grid-headline invert"><?php echo $project->headline() ?></h1>
+                    <p class="grid-eyebrow">
+                        <?php echo $project->eyebrow() ?>
+                    </p>
+                    <h3 class="grid-headline">
+                        <?php echo $project->headline() ?>
+                    </h3>
+                </div>
+                <?php if ($background_image = $project->images()->filterBy('filename', '*=', 'background')->sortBy('sort', 'asc')->first()): ?>
+                    <div class="grid-tile-background" style="background-image: url(<?php echo $background_image->url() ?>)">
+                    </div>
                 <?php else: ?>
-                <p class="grid-eyebrow">
-                    <?php echo $project->eyebrow() ?>
-                </p>
-                <h3 class="grid-headline"><?php echo $project->headline() ?></h1>
-            <?php endif ?>
+                    <div class="grid-tile-background">
+                    </div>
+                <?php endif ?>
             </li>
         <?php endforeach ?>
     </ul>

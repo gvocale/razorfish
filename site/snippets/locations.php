@@ -4,9 +4,7 @@
         <p class="locations-eyebrow">
                 Locations
             </p>
-            <h1>24 Offices.
-                5 Continents.
-                <a href="locations-link">Get in touch.</a></h1>
+            <h2><span class="locations-line-break">24 Offices. 5 Continents.</span> <a href="locations-link">Get in touch.</a></h2>
             </div>
         </div>
     </div>

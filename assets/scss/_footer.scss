@@ -13,7 +13,7 @@ footer {
     text-align: center;
     font-family: $sans;
     letter-spacing: 0.02em;
-    margin: 4rem 0;
+    margin-top: 2rem;
 }
 
 span.footer-legal-copyright {
@@ -21,15 +21,12 @@ span.footer-legal-copyright {
 }
 
 a.footer-legal-link {
-    color: $primary1;
     text-decoration: none;
-    font-style: normal;
-    padding-bottom: 0.1em;
     margin: 0 0.5em;
 }
 
-a.footer-legal-link:hover {
-    border-bottom: 0.1em solid $primary1;
+a.footer-legal-link:before {
+    border-bottom-width: 0.1em;
 }
 
 .footer-razorfish-logo {
@@ -39,10 +36,10 @@ a.footer-legal-link:hover {
 }
 
 .footer-share-icons {
+    width: 20rem;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: baseline;
+    justify-content: space-around;
 }
 
 .footer-divider {
@@ -59,28 +56,41 @@ hr.footer-divider {
     margin: 2.5rem 0;
 }
 
-ul.footer-share-icons {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
 .footer-share-twitter,
 .footer-share-facebook,
 .footer-share-linkedin {
-    margin: 0 1%;
-    height: 1.2rem;
-    width: auto;
+    height: 3rem;
+    width: 3rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    cursor: pointer;
-    cursor: hand;
-    display: inline-block;
+    transform: scale(0.9);
+    background-origin: content-box;
+    padding: 0.8rem;
 }
 
-img.footer-share-twitter:hover,
-img.footer-share-facebook:hover,
-img.footer-share-linkedin:hover {
-    transform: scale(1.1);
+.footer-share-twitter:hover,
+.footer-share-facebook:hover,
+.footer-share-linkedin:hover {
+    transform: scale(1.1, 1.1)
 }
+
+// Small 34em - 544px
+@media screen and (min-width: $xs) {}
+
+// Medium 48em - 768px
+@media screen and (min-width: $md) {}
+
+// Large 62em - 992px
+@media screen and (min-width: $lg) {}
+
+// X-Large 75em - 1200px
+@media screen and (min-width: $xl) {
+    .footer-legal {
+        margin-top: 4rem;
+    }
+}
+
+// XX-Large 100em - 1600px
+@media screen and (min-width: $xxl) {}

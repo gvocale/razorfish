@@ -16,8 +16,8 @@ fields:
   description:
     label: Description
     type:  textarea
-  tile-art-direction:
-    label: Tile Art Direction
+  style:
+    label: Tile Style 
     type: radio
     options:
       color: Solid Color Background
@@ -26,12 +26,14 @@ fields:
       split: Split Photo
     columns: 1
     width: 1/3
-  bgcolor:
-    label: Background Color
-    type:  text
-    default: 095af0
-  invert:
-    label: Text color
-    type: checkbox
-    text: Invert text color
-    help: Invert the color of Headline and Eyebrow in case the background of the tile is bright.    
+  color:
+    label: Color Combination
+    type: radio
+    help: Select tile's color combination.
+    options:
+      color1: Green - Black - White
+      color2: Green - White - Black
+      color3: White - Black - Green
+      color4: Black - White - Red
+    columns: 1
+    width: 1/3

@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>
         <?php echo $site->title()->html() ?> |
-            <?php echo $page->title()->html() ?>
+        <?php echo $page->title()->html() ?>
     </title>
     <?php echo css('assets/css/main.css') ?>
-        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script src="<?php echo kirby()->urls()->assets() ?>/js/dump.js"></script>
-        <script src="<?php echo kirby()->urls()->assets() ?>/js/jquery-visible.js"></script>
+    <link rel="shortcut icon" href="<?php echo $site->url() ?>/assets/images/razorfish-favicon.png">
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="<?php echo kirby()->urls()->assets() ?>/js/dump.js"></script>
+    <script src="<?php echo kirby()->urls()->assets() ?>/js/jquery-visible.js"></script>
 </head>
 
 <body>
-<?php snippet('nav');?>
+    <?php snippet('nav');?>

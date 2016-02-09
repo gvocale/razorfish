@@ -1,4 +1,4 @@
-nav.container-fluid {
+.navigation {
     position: fixed;
     top: 0;
     z-index: 100;
@@ -19,6 +19,7 @@ nav.container-fluid {
         font-weight: 200;
         display: inline-block;
         margin-left: 1rem;
+        display: none;
     }
     .global:after {
         content: ">";
@@ -29,16 +30,88 @@ nav.container-fluid {
     .razorfish-logo {
         display: inline-block;
     }
-    .col-xs-12 {
+    .logo {
         display: flex;
         align-items: baseline;
         flex-direction: row;
         justify-content: space-between;
     }
-    .logo {
-                display: flex;
-        align-items: baseline;
-        flex-direction: row;
-        justify-content: space-between;
+}
+
+.navigation-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hamburger-container {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.hamburger {
+    width: 2.5rem;
+    height: 0.25rem;
+    background-color: $black1;
+    position: relative;
+    transform: scale(0.8);
+    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hamburger:before,
+.hamburger:after {
+    content: "";
+    width: 100%;
+    height: 0.25rem;
+    background-color: $black1;
+    position: absolute;
+    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hamburger:before {
+    top: -0.75rem;
+}
+
+.hamburger:after {
+    top: 0.75rem;
+}
+
+.hamburger-container:hover {
+    .hamburger:before {
+        top: -1rem;
+    }
+    .hamburger:after {
+        top: 1rem;
+    }
+}
+
+// Small 34em - 544px
+@media screen and (min-width: $xs) {}
+
+// Medium 48em - 768px
+@media screen and (min-width: $md) {}
+
+// Large 62em - 992px
+@media screen and (min-width: $lg) {
+    .navigation {
+        .global {
+            display: inline;
+        }
+    }
+}
+
+// X-Large 75em - 1200px
+@media screen and (min-width: $xl) {}
+
+// XX-Large 100em - 1600px
+@media screen and (min-width: $xxl) {
+    .hamburger {
+        transform: scale(1);
     }
 }
