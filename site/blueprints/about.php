@@ -1,6 +1,6 @@
 <?php if(!defined('KIRBY')) exit ?>
 
-title: About
+title: Page
 pages: true
 files: true
 fields:
@@ -8,5 +8,5 @@ fields:
     label: Title
     type:  text
   text:
-    label: Text
+    label: text
     type:  textarea
