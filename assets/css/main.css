@@ -5926,7 +5926,8 @@ hr.footer-divider {
       -ms-transform: translateX(100%);
           transform: translateX(100%); }
 
-.grid-tile.reveal .grid-tile-content {
+.grid-tile:nth-of-type(even).reveal .grid-tile-content,
+.grid-tile:nth-of-type(odd).reveal .grid-tile-content {
   -webkit-transform: translateX(0%);
       -ms-transform: translateX(0%);
           transform: translateX(0%);
