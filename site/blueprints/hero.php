@@ -19,3 +19,14 @@ fields:
       quote: Quote
     columns: 1
     width: 1/3
+  color:
+    label: Color Combination
+    type: radio
+    help: Select tile's color combination.
+    options:
+      color1: Black h1 - Black p - White background
+      color2: White h1 - White p - Black background
+      color3: Black h1 - Black p - Green background
+      color4: White h1 - White p - Red background
+    columns: 1
+    width: 1/3    
