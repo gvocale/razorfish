@@ -1,0 +1,46 @@
+.locations {
+    width: 100%;
+    min-height: 50vw;
+    background-blend-mode: soft-light;
+    background-image: url('../images/background-locations.jpg'), linear-gradient(90deg, $green3, $green2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $white1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.locations-eyebrow {
+    color: $green1;
+}
+
+.locations-line-break {
+    display: block;
+}
+
+a.locations-link {
+    color: $white1;
+}
+
+// Small 34em - 544px
+@media screen and (min-width: $xs) {}
+
+// Medium 48em - 768px
+@media screen and (min-width: $md) {}
+
+// Large 62em - 992px
+@media screen and (min-width: $lg) {
+    .locations {
+        width: 100%;
+        min-height: 60vh;
+    }
+}
+
+// X-Large 75em - 1200px
+@media screen and (min-width: $xl) {}
+
+// XX-Large 100em - 1600px
+@media screen and (min-width: $xxl) {}
