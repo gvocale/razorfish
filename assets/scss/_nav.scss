@@ -9,6 +9,8 @@
     flex-direction: column;
     width: 100%;
     padding: 0 2%;
+    transform: translateY(0);
+    transition: transform 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     .row {
         width: 100%;
     }
@@ -36,6 +38,10 @@
         flex-direction: row;
         justify-content: space-between;
     }
+}
+
+.navigation.hiding {
+    transform: translateY(-100%);
 }
 
 .navigation-container {

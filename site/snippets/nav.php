@@ -11,3 +11,4 @@
         </div>
     </div>
 </nav>
+<script src="<?php echo kirby()->urls()->assets() ?>/js/show-hide-header.js"></script>

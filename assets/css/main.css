@@ -5583,7 +5583,12 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  padding: 0 2%; }
+  padding: 0 2%;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: -webkit-transform 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          transition: transform 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   .navigation .row {
     width: 100%; }
   .navigation .global {
@@ -5621,6 +5626,11 @@ body {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between; }
+
+.navigation.hiding {
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%); }
 
 .navigation-container {
   display: -webkit-box;
