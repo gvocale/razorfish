@@ -5846,11 +5846,11 @@ hr.footer-divider {
 @media screen and (min-width: 75em) {
   .footer-legal {
     margin-top: 4rem; } }
-.container-fluid.grid {
+.container-fluid.grid-container {
   margin: 0;
   padding: 0; }
 
-ul.grid {
+.grid {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5865,10 +5865,19 @@ ul.grid {
           flex-wrap: wrap;
   width: 100vw;
   height: 700vw;
-  padding: 0; }
+  padding: 0;
+  background-color: #404040; }
 
-li.grid-tile {
+.grid-tile {
   width: 100vw;
+  cursor: pointer;
+  cursor: hand;
+  position: relative;
+  overflow: hidden; }
+
+.grid-tile-content {
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5889,15 +5898,38 @@ li.grid-tile {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  cursor: pointer;
-  cursor: hand;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 0; }
 
-.grid-text-container {
-  width: 90%;
-  margin-left: 10%;
-  margin-right: 10%;
+.grid-tile:nth-of-type(1) .grid-tile-content,
+.grid-tile:nth-of-type(2) .grid-tile-content,
+.grid-tile:nth-of-type(3) .grid-tile-content,
+.grid-tile:nth-of-type(4) .grid-tile-content,
+.grid-tile:nth-of-type(5) .grid-tile-content {
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%); }
+
+.grid-tile:nth-of-type(6) .grid-tile-content,
+.grid-tile:nth-of-type(7) .grid-tile-content,
+.grid-tile:nth-of-type(8) .grid-tile-content,
+.grid-tile:nth-of-type(9) .grid-tile-content,
+.grid-tile:nth-of-type(10) .grid-tile-content {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%); }
+
+.grid-tile.reveal .grid-tile-content {
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: all 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          transition: all 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+.grid-tile-text-container {
+  width: 100%;
+  padding: 0 10%;
   z-index: 10;
   display: -webkit-box;
   display: -webkit-flex;
@@ -5918,7 +5950,8 @@ li.grid-tile {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  text-align: center; }
 
 .grid-tile-background {
   background-size: cover;
@@ -5937,6 +5970,20 @@ li.grid-tile:hover .grid-tile-background {
   -webkit-transform: scale(1.01);
       -ms-transform: scale(1.01);
           transform: scale(1.01); }
+
+.grid-eyebrow,
+.grid-headline {
+  opacity: 0; }
+
+.grid-eyebrow.reveal {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          transition: opacity 0.3s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+.grid-headline.reveal {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          transition: opacity 0.3s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 
 .color1 .grid-eyebrow {
   color: #a9c000; }
@@ -5966,12 +6013,12 @@ li.grid-tile:hover .grid-tile-background {
 .color4 .grid-tile-background {
   background-color: #ff595b; }
 
-.photo-text-top .grid-text-container {
+.photo-text-top .grid-tile-text-container {
   height: 50vw;
   top: 0;
   position: absolute; }
 
-.photo-text-bottom .grid-text-container {
+.photo-text-bottom .grid-tile-text-container {
   height: 50vw;
   bottom: 0;
   position: absolute; }
@@ -5983,7 +6030,7 @@ li.grid-tile:hover .grid-tile-background {
     position: absolute;
     top: 0;
     left: 0; }
-  .split .grid-text-container {
+  .split .grid-tile-text-container {
     margin-left: 50%;
     padding: 5%;
     width: 50%;
@@ -6010,7 +6057,7 @@ li.grid-tile:hover .grid-tile-background {
         -ms-flex-pack: center;
             justify-content: center;
     position: relative; }
-  .split .grid-text-container:before {
+  .split .grid-tile-text-container:before {
     right: 100%;
     top: 50%;
     border: solid transparent;
@@ -6027,7 +6074,7 @@ li.grid-tile:hover .grid-tile-background {
   .split .grid-headline {
     font-size: 1em; }
 
-.split:hover .grid-text-container:before {
+.split:hover .grid-tile-text-container:before {
   border-width: 1.5rem;
   margin-top: -1.5rem; }
 
@@ -6065,10 +6112,6 @@ li.grid-tile:hover .grid-tile-background {
 .grid-eyebrow {
   color: #a9c000;
   font-size: 0.8077em; }
-
-.grid-text-container {
-  width: 80%;
-  text-align: center; }
 
 .grid-eyebrow + .grid-headline {
   margin-top: 0.3em; }
@@ -6111,18 +6154,18 @@ li.grid-tile:hover .grid-tile-background {
   .grid-tile:nth-of-type(10) {
     height: 25vw; }
 
-  .split .grid-text-container:before {
+  .split .grid-tile-text-container:before {
     border-width: 2rem;
     margin-top: -2rem; }
 
-  .split:hover .grid-text-container:before {
+  .split:hover .grid-tile-text-container:before {
     border-width: 2.5rem;
     margin-top: -2.5rem; }
 
-  .photo-text-top .grid-text-container {
+  .photo-text-top .grid-tile-text-container {
     height: 25vw; }
 
-  .photo-text-bottom .grid-text-container {
+  .photo-text-bottom .grid-tile-text-container {
     height: 25vw; } }
 @media screen and (min-width: 62em) {
   .split .grid-headline {
@@ -6318,3 +6361,220 @@ a.locations-link {
   .locations {
     width: 100%;
     min-height: 60vh; } }
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4; }
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical; }
+
+body, html, main {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; }
+
+.feed-grid-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden; }
+
+.feed-item-frame {
+  position: relative;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  float: left; }
+
+.feed-item-frame:before {
+  content: "";
+  display: block;
+  padding-top: 50%;
+  height: 0; }
+
+.feed-item-frame:nth-child(6n+1):before,
+.feed-item-frame:nth-child(6n):before {
+  padding-top: 100%; }
+
+.feed-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #4c4c4c;
+  opacity: 0;
+  color: white; }
+
+.feed-item.red {
+  background-color: #ff595b; }
+
+.feed-item.white {
+  background-color: #cdcdcd;
+  color: #404040; }
+
+.feed-item-frame:nth-child(6n+1) .feed-item, .feed-item-frame:nth-child(6n+4) .feed-item, .feed-item-frame:nth-child(6n+5) .feed-item {
+  -webkit-transform: translate(-100%, 100%);
+  -ms-transform: translate(-100%, 100%);
+      transform: translate(-100%, 100%); }
+
+.feed-item-frame:nth-child(6n+2) .feed-item, .feed-item-frame:nth-child(6n+3) .feed-item, .feed-item-frame:nth-child(6n+6) .feed-item {
+  -webkit-transform: translate(100%, 100%);
+  -ms-transform: translate(100%, 100%);
+      transform: translate(100%, 100%); }
+
+.feed-item-frame.reveal .feed-item {
+  opacity: 1;
+  -webkit-transform: translate(0%, 0%);
+  -ms-transform: translate(0%, 0%);
+      transform: translate(0%, 0%);
+  -webkit-transition: all 1000ms cubic-bezier(0.23, 1, 0.32, 1);
+          transition: all 1000ms cubic-bezier(0.23, 1, 0.32, 1); }
+
+.feed-item-frame:nth-child(6n+4) {
+  clear: both; }
+
+.feed-item-frame:nth-child(3n+2):nth-child(odd) {
+  margin-right: 50%; }
+
+.feed-item-frame:nth-child(6n):nth-child(even) {
+  margin-top: -50%;
+  float: right; }
+
+.feed-item-content {
+  opacity: 0;
+  -webkit-transition: all 500ms;
+          transition: all 500ms;
+  -webkit-transition-delay: 500ms;
+          transition-delay: 500ms;
+  text-align: center; }
+
+.feed-item-content h3 {
+  font-family: 'Crimson Text', serif;
+  font-size: 40px; }
+
+.feed-item img {
+  opacity: 0;
+  -webkit-transition: all 500ms;
+          transition: all 500ms; }
+
+.feed-item-content.reveal, .feed-item img.reveal {
+  opacity: 1; }
+
+.feed-item-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  -webkit-transition: all 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          transition: all 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+.feed-item-content {
+  width: 100%;
+  height: 100%;
+  padding: 0 10%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.feed-item-frame:nth-child(10) {
+  display: none; }
+
+.feed-item-frame:nth-child(1) .feed-item-content,
+.feed-item-frame:nth-child(6) .feed-item-content,
+.feed-item-frame:nth-child(7) .feed-item-content {
+  height: 50%;
+  padding: 0 10%; }
+
+.feed-item-frame:nth-child(2) .feed-item-content {
+  height: 100%; }
+
+.feed-item-frame:nth-child(3) .feed-item-content,
+.feed-item-frame:nth-child(5) .feed-item-content,
+.feed-item-frame:nth-child(9) .feed-item-content {
+  width: 50%;
+  margin-right: 50%;
+  padding: 0 10%;
+  height: 100%; }
+.feed-item-frame:nth-child(3) .feed-item-background,
+.feed-item-frame:nth-child(5) .feed-item-background,
+.feed-item-frame:nth-child(9) .feed-item-background {
+  width: 50%;
+  margin-left: 50%; }
+
+.feed-item-content {
+  z-index: 10;
+  position: absolute; }

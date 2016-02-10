@@ -1,9 +1,9 @@
-.container-fluid.grid {
+.container-fluid.grid-container {
     margin: 0;
     padding: 0;
 }
 
-ul.grid {
+.grid {
     // column-count: 2;
     // column-gap: 0;
     display: flex;
@@ -12,31 +12,80 @@ ul.grid {
     width: 100vw;
     height: 700vw;
     padding: 0;
+    background-color: $black1;
 }
 
-li.grid-tile {
+.grid-tile {
     width: 100vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     cursor: hand;
     position: relative;
     overflow: hidden;
 }
 
-.grid-text-container {
-    width: 90%;
-    margin-left: 10%;
-    margin-right: 10%;
+.grid-tile-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+// .grid-tile-content:before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 0%;
+//     height: 100%;
+//     background-color: $black1;
+//     opacity: 0.05;
+//     z-index: 5;
+// }
+
+// .grid-tile:hover .grid-tile-content:before {
+//     width: 100%;
+//     transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+// }
+
+.grid-tile:nth-of-type(1) .grid-tile-content,
+.grid-tile:nth-of-type(2) .grid-tile-content,
+.grid-tile:nth-of-type(3) .grid-tile-content,
+.grid-tile:nth-of-type(4) .grid-tile-content,
+.grid-tile:nth-of-type(5) .grid-tile-content {
+    transform: translateX(-100%);
+}
+
+.grid-tile:nth-of-type(6) .grid-tile-content,
+.grid-tile:nth-of-type(7) .grid-tile-content,
+.grid-tile:nth-of-type(8) .grid-tile-content,
+.grid-tile:nth-of-type(9) .grid-tile-content,
+.grid-tile:nth-of-type(10) .grid-tile-content {
+    transform: translateX(100%);
+}
+
+.grid-tile.reveal {
+    .grid-tile-content {
+        transform: translateX(0%);
+        transition: all 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+}
+
+.grid-tile-text-container {
+    width: 100%;
+    padding: 0 10%;
     z-index: 10;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .grid-tile-background {
@@ -57,6 +106,24 @@ li.grid-tile:hover {
         transform: scale(1.01);
     }
 }
+
+.grid-eyebrow,
+.grid-headline
+{
+    opacity: 0;
+}
+
+
+.grid-eyebrow.reveal {
+    opacity: 1;
+    transition: opacity 0.3s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.grid-headline.reveal {
+    opacity: 1;
+    transition: opacity 0.3s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
 
 .color1 {
     .grid-eyebrow {
@@ -107,7 +174,7 @@ li.grid-tile:hover {
 }
 
 .photo-text-top {
-    .grid-text-container {
+    .grid-tile-text-container {
         height: 50vw;
         top: 0;
         position: absolute;
@@ -115,7 +182,7 @@ li.grid-tile:hover {
 }
 
 .photo-text-bottom {
-    .grid-text-container {
+    .grid-tile-text-container {
         height: 50vw;
         bottom: 0;
         position: absolute;
@@ -131,7 +198,7 @@ li.grid-tile:hover {
         top: 0;
         left: 0;
     }
-    .grid-text-container {
+    .grid-tile-text-container {
         margin-left: 50%;
         padding: 5%;
         width: 50%;
@@ -144,7 +211,7 @@ li.grid-tile:hover {
         justify-content: center;
         position: relative;
     }
-    .grid-text-container:before {
+    .grid-tile-text-container:before {
         right: 100%;
         top: 50%;
         border: solid transparent;
@@ -164,7 +231,7 @@ li.grid-tile:hover {
 }
 
 .split:hover {
-    .grid-text-container:before {
+    .grid-tile-text-container:before {
         border-width: 1.5rem;
         margin-top: -1.5rem;
     }
@@ -216,11 +283,6 @@ li.grid-tile:hover {
     font-size: $typeSize3;
 }
 
-.grid-text-container {
-    width: 80%;
-    text-align: center;
-}
-
 .grid-eyebrow + .grid-headline {
     margin-top: 0.3em;
 }
@@ -269,24 +331,24 @@ li.grid-tile:hover {
         height: 25vw;
     }
     .split {
-        .grid-text-container:before {
+        .grid-tile-text-container:before {
             border-width: 2rem;
             margin-top: -2rem;
         }
     }
     .split:hover {
-        .grid-text-container:before {
+        .grid-tile-text-container:before {
             border-width: 2.5rem;
             margin-top: -2.5rem;
         }
     }
     .photo-text-top {
-        .grid-text-container {
+        .grid-tile-text-container {
             height: 25vw;
         }
     }
     .photo-text-bottom {
-        .grid-text-container {
+        .grid-tile-text-container {
             height: 25vw;
         }
     }

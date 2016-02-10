@@ -1,0 +1,228 @@
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+
+body,html, main {
+    width: 100%;
+    // height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.feed-grid-container {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.feed-item-frame {
+	position: relative;
+	width: 50%; 
+	margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.feed-item-frame:before{
+	content: "";
+	display: block;
+	padding-top: 50%;
+	height: 0;
+}
+
+.feed-item-frame:nth-child(6n+1):before,
+.feed-item-frame:nth-child(6n):before {
+	padding-top: 100%;
+}
+
+.feed-item {
+	position:  absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: #4c4c4c;
+	opacity: 0;
+	color: white;
+}
+
+.feed-item.red {
+	background-color: #ff595b;
+}
+
+.feed-item.white {
+	background-color: #cdcdcd;
+	color: #404040;
+}
+
+
+.feed-item-frame:nth-child(6n+1) .feed-item, .feed-item-frame:nth-child(6n+4) .feed-item, .feed-item-frame:nth-child(6n+5) .feed-item {
+	-webkit-transform: translate(-100%, 100%);
+	transform: translate(-100%, 100%);
+}
+
+.feed-item-frame:nth-child(6n+2) .feed-item, .feed-item-frame:nth-child(6n+3) .feed-item, .feed-item-frame:nth-child(6n+6) .feed-item {
+	-webkit-transform: translate(100%, 100%);
+	transform: translate(100%, 100%);
+}
+
+
+.feed-item-frame.reveal .feed-item {
+	opacity: 1;
+	-webkit-transform: translate(0%,0%);
+	transform: translate(0%,0%);
+	transition: all 1000ms cubic-bezier(.23,1,.32,1);
+}
+
+.feed-item-frame:nth-child(even) .feed-item {
+	 
+}
+
+.feed-item-frame:nth-child(6n+1) .feed-item,
+.feed-item-frame:nth-child(6n) .feed-item {
+    
+}
+
+.feed-item-frame:nth-child(6n+4) {
+	clear: both;
+}
+
+.feed-item-frame:nth-child(3n+2):nth-child(odd) {
+	margin-right: 50%;
+}
+
+.feed-item-frame:nth-child(6n):nth-child(even) {
+	margin-top: -50%;
+	float: right;
+}
+
+.feed-item-content {
+	// padding: 15%;
+	opacity: 0;
+	transition: all 500ms;
+	transition-delay: 500ms;
+	text-align: center;
+}
+
+.feed-item-content h3 {
+	font-family: 'Crimson Text', serif;
+	font-size: 40px;
+}
+
+.feed-item img {
+	opacity: 0;
+	transition: all 500ms;
+}
+
+.feed-item-content.reveal, .feed-item img.reveal {
+	opacity: 1;
+}
+
+.feed-item-frame:nth-child(6n+1) .feed-item.bottom .feed-item-content,
+.feed-item-frame:nth-child(6n) .feed-item.bottom .feed-item-content {
+	// position: absolute;
+	// bottom: 0;
+	// width: 70%;
+}
+
+.feed-item-frame:nth-child(6n+1) .feed-item h3,
+.feed-item-frame:nth-child(6n) .feed-item h3 {
+	// position: relative;
+	// z-index: 2;
+	// font-size: 56px;
+}
+
+.feed-item-frame:nth-child(6n+1) .feed-item img,
+.feed-item-frame:nth-child(6n) .feed-item img {
+    // width: 100%;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // z-index: 1;
+}
+
+.feed-item-frame:nth-child(6n+3) .feed-item .feed-item-content, .feed-item-frame:nth-child(6n+5) .feed-item .feed-item-content {
+	// background-color: white;
+	// width: 50%;
+	// height: 100%;
+	// padding: 0;
+	// color: #404040;
+}
+
+.feed-item-frame:nth-child(6n+3) .feed-item .feed-item-content, .feed-item-frame:nth-child(6n+3) .feed-item img, .feed-item-frame:nth-child(6n+5) .feed-item .feed-item-content, .feed-item-frame:nth-child(6n+5) .feed-item img {
+	 // width: 50%;
+	 // float: right;
+}
