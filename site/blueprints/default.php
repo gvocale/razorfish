@@ -8,5 +8,5 @@ fields:
     label: Title
     type:  text
   text:
-    label: Text
+    label: text
     type:  textarea
