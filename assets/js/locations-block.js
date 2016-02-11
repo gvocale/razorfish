@@ -1,7 +1,7 @@
 (function() {
 
     /* DOM elements */
-    var feedItems = document.querySelectorAll('.feed-item-frame');
+    var feedItems = document.querySelectorAll('.locations');
 
     /* variables */
     var feedItemsLen = feedItems.length
@@ -14,9 +14,9 @@
     function onScrollEventHandler(e) {
         for (i = 0; i < feedItemsLen; i++) {
             if (isScrolledIntoView(feedItems[i]) && !feedItems[i].classList.contains('reveal')) {
-                feedItems[i].querySelector('.feed-item').addEventListener(transitionEndEvent, function(e) {
-                    this.querySelector('.feed-item-content').classList.add('reveal');
-                    this.querySelector('img').classList.add('reveal');
+                feedItems[i].querySelector('.locations-content').addEventListener(transitionEndEvent, function(e) {
+                    this.querySelector('.locations-eyebrow').classList.add('reveal');
+                    this.querySelector('.locations-headline').classList.add('reveal');
                 });
                 feedItems[i].classList.add('reveal');
             }

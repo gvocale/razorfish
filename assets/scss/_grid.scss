@@ -12,7 +12,7 @@
     width: 100vw;
     height: 700vw;
     padding: 0;
-    background-color: $black1;
+    // background-color: $black1;
 }
 
 .grid-tile {
@@ -20,7 +20,7 @@
     cursor: pointer;
     cursor: hand;
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .grid-tile-content {
@@ -52,17 +52,17 @@
 //     transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 // }
 .grid-tile:nth-of-type(even) .grid-tile-content {
-    transform: translateX(-100%);
+    transform: translateY(100%);
 }
 
 .grid-tile:nth-of-type(odd) .grid-tile-content{
-    transform: translateX(100%);
+    transform: translateY(100%);
 }
 
 .grid-tile:nth-of-type(even).reveal,
 .grid-tile:nth-of-type(odd).reveal {
     .grid-tile-content {
-        transform: translateX(0%);
+        transform: translateY(0%);
         transition: all 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 }
@@ -105,12 +105,12 @@ li.grid-tile:hover {
 
 .grid-eyebrow.reveal {
     opacity: 1;
-    transition: opacity 0.3s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.2s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .grid-headline.reveal {
     opacity: 1;
-    transition: opacity 0.3s 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: opacity 0.2s 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .color1 {
@@ -285,14 +285,14 @@ li.grid-tile:hover {
     .grid-tile:nth-of-type(3) .grid-tile-content,
     .grid-tile:nth-of-type(4) .grid-tile-content,
     .grid-tile:nth-of-type(5) .grid-tile-content {
-        transform: translateX(-100%);
+        transform: translateY(100%);
     }
     .grid-tile:nth-of-type(6) .grid-tile-content,
     .grid-tile:nth-of-type(7) .grid-tile-content,
     .grid-tile:nth-of-type(8) .grid-tile-content,
     .grid-tile:nth-of-type(9) .grid-tile-content,
     .grid-tile:nth-of-type(10) .grid-tile-content {
-        transform: translateX(100%);
+        transform: translateY(100%);
     }
     ul.grid {
         height: 175vw;
