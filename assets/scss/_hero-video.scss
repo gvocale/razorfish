@@ -42,19 +42,40 @@
 .hero-video-play-button {
     width: 6rem;
     height: 6rem;
-    background-image: url('../images/play-icon.svg');
+    // background-image: url('../images/play-icon.svg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
     cursor: hand;
-    transition: all 0.1s 0.05s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    
+    transition: all 0.2s 0.1s ease-out;
+    border: solid $white1;
+    border-radius: 50%;
+    position: relative;
+}
+
+.hero-video-play-button:after {
+    content: "";
+    border-top: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    border-left: 1.5rem solid $white1;
+    position: absolute;
+    left: 54%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: all 0.2s 0.1s ease-out;
 }
 
 .hero-video-play-button:hover {
     transform: scale(1.1);
-    
+    transition: all 0.05s 0s ease-out;
+}
+
+.hero-video-play-button:hover:after {
+        border-top: calc(1rem * 1.2) solid transparent;
+    border-bottom: calc(1rem * 1.2) solid transparent;
+    border-left: calc(1.5rem * 1.2) solid $white1;
+    transition: all 0.05s 0s ease-out;
 }
 
 .hero-video-play-button + .hero-video-text-container {

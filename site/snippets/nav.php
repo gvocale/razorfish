@@ -15,9 +15,9 @@
 <section class="navigation">
 
     <div class="navigation-container">
-        <div id="logo" class="logo">
-            <img src="<?php echo kirby()->urls()->assets() ?>/images/razorfish-logo.svg" alt="" class="razorfish-logo">
-            <p class="global">Global</p>
+        <div class="navigation-logo-container">
+            <img class="razorfish-logo" src="<?php echo kirby()->urls()->assets() ?>/images/razorfish-logo.svg" alt="" >
+            <span class="navigation-global">Global</span>
         </div>
         <label for="navigation-checkbox" class="hamburger-container">
             <div class="hamburger"></div>
