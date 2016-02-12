@@ -1,0 +1,54 @@
+$medium-breakpoint: 768;
+$large-breakpoint: 1024;
+$x-large-breakpoint: 1400;
+
+$small-body-padding: 6.5625%;
+$large-body-padding: 3.90625%;
+
+@mixin hide-text {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin zindex($increment) {
+  z-index: $x-large-breakpoint + 1 + $increment;
+}
+
+/*
+ * use rem with px as fallback
+ * usage: @include x-rem(font-size, 14px)
+ * usage: @include x-rem(marign, 0 12px 2 1.2)
+ * usage: @include x-rem(padding, 1.5 24px)
+ *
+ */
+@mixin calc-rem($property, $values) {
+  $base-font-size: 16px; //
+  $px-values: ();
+  $rem-values: ();
+
+  @each $value in $values {
+    @if $value == 0 or $value == 0px {
+      $px-values: join($px-values, 0);
+      $rem-values: join($rem-values, 0);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
+      $new-rem-value: $value / $base-font-size;
+      $px-values: join($px-values, round($value));
+      $rem-values: join($rem-values, #{$new-rem-value}rem);
+    } @else {
+      $px-values: join($px-values, round($value * $base-font-size));
+      $rem-values: join($rem-values, #{$value}rem);
+    }
+  }
+
+  #{$property}: $px-values;
+  #{$property}: $rem-values;
+}
