@@ -1,6 +1,6 @@
 <?php if(!defined('KIRBY')) exit ?>
 
-title: Page
+title: About
 pages: true
 files: true
   fields:
@@ -13,18 +13,22 @@ files: true
     office:
       label: Office
       type: text
+    discipline-name:
+      label: Discipline
+      type: text
+fields:
   title:
     label: Title
     type:  text
-  headline:
-    label: Headline
-    type:  text
-  text:
-    label: text
+  page-title:
+    label: Page Title
     type:  textarea
   video-text:
     label: Video Text
     type:  textarea
   leadership-text:
     label: Leadership Text
+    type:  textarea
+  disciplines-text:
+    label: Discipline Text
     type:  textarea

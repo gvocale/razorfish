@@ -6,4 +6,10 @@
 
 <?php snippet('leadership') ?>
 
+<?php snippet('disciplines') ?>
+
+<?php snippet('locations') ?>
+
+<?php snippet('related-grid') ?>
+
 <?php snippet('footer') ?>

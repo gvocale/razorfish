@@ -127,7 +127,28 @@ a.footer-legal-link:before {
 .footer-share-twitter:hover,
 .footer-share-facebook:hover,
 .footer-share-linkedin:hover {
-    transform: scale(1.1, 1.1);
+    // transform: scale(1.1, 1.1);
+    animation-name: footer-share-icon-bounce;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+@keyframes footer-share-icon-bounce {
+    0% {
+        transform: translateY(0);
+        
+    }
+    50% {
+        transform: translateY(-0.35em);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .footer-share-icons {
