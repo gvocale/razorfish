@@ -1,12 +1,12 @@
 (function() {
-   
+	
 	/* DOM elements */
 	var heroHeaders = document.querySelectorAll('.hero-header');
-   
+	
 	/* variables */
-   	var headersLen = heroHeaders.length;
-   
-   window.addEventListener('scroll', function() {
+	var headersLen = heroHeaders.length;
+	
+	window.addEventListener('scroll', function() {
 		assessHeaderVisibility();
 	});
 	

@@ -66,6 +66,7 @@ h5,
 p {
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 a {
@@ -150,9 +151,15 @@ h2 a {
 }
 
 h3 {
-    color: $primary2;
     font-family: $display;
     font-size: $typeSize5;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+h4 {
+    font-family: $display;
+    font-size: $typeSize4;
     font-weight: bold;
     line-height: 1.5;
 }
@@ -239,6 +246,10 @@ h5 + p {
         font-size: $typeSize7;
         line-height: 1.4;
     }
+    h4 {
+        font-size: $typeSize6;
+        line-height: 1.4;
+    }
 }
 
 // XX-Large 100em - 1600px
@@ -249,10 +260,15 @@ h5 + p {
     }
     h2 {
         font-size: $typeSize10;
-        line-height: 1.3;
+        line-height: 1.2;
     }
     h3 {
         font-size: $typeSize9;
         line-height: 1.3;
+    }
+    h4 {
+        font-size: $typeSize7;
+        line-height: 1.3;
+        letter-spacing: 0.02em;
     }
 }

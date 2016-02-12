@@ -1,0 +1,204 @@
+.leadership-title {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 25vw;
+    background-color: $black1;
+    position: relative;
+    color: $white1;
+    padding: 0 30%;
+    text-align: center;
+    h2 + p {
+        margin-top: 3rem;
+    }
+    p:before {
+        content: "";
+        display: inline-block;
+        width: 3rem;
+        height: 0.3rem;
+        background-color: $primary1;
+        margin: auto;
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.leadership-grid {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    aling-content: stretch;
+    background-color: $white3;
+}
+
+.leadership-tile-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.leadership-tile-text {
+    height: 50%;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $white1;
+    opacity: 0;
+    z-index: 10;
+    transition: opacity 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.leader-name,
+.leader-role,
+.leader-office {
+    transform: translateY(20%);
+    transition: all 0.1s 0.1s ease-in-out;
+    opacity: 0;
+}
+
+.leader-role {
+    font-size: $typeSize5;
+}
+
+.leader-office {
+    font-size: $typeSize4;
+}
+
+.leader-role + .leader-office {
+    margin-top: 0.5rem;
+}
+
+.leader-divider-mask {
+    display: inline-block;
+    width: 2rem;
+    height: 0.13rem;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.leader-divider {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    background-color: $primary1;
+    transition: all 0.1s 0.2s ease-in-out;
+}
+
+.leadership-tile:hover {
+    .leader-name,
+    .leader-role,
+    .leader-office {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    .leader-divider {
+        width: 100%;
+    }
+}
+
+.leadership-tile {
+    // width: 33.33333vw;
+    // height: calc(33.33333vw / 3 * 4);
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+    cursor: hand;
+    // overflow: hidden;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 20vw;
+}
+
+.leadership-tile:before {
+    content: "";
+    display: block;
+    padding-top: 133%;
+}
+
+.leadership-tile:nth-of-type(odd) {
+    .leadership-tile-background {
+        background-color: $white1;
+        background-blend-mode: multiply;
+    }
+}
+
+.leadership-tile:nth-of-type(even) {
+    .leadership-tile-background {
+        background-color: $white3;
+        background-blend-mode: multiply;
+    }
+}
+
+.leadership-tile:nth-of-type(odd):hover {
+    .leadership-tile-background {
+        background-color: $gray3;
+        background-blend-mode: multiply;
+        transition: scale(1.03);
+    }
+}
+
+.leadership-tile:nth-of-type(even):hover {
+    .leadership-tile-background {
+        background-color: $gray3;
+        background-blend-mode: multiply;
+        transition: scale(1.03);
+    }
+}
+
+.leadership-tile:hover {
+    .leadership-tile-text {
+        opacity: 1;
+    }
+    // .leader-name:after {
+    //     width: 3rem;
+    //     transform: translateX (0);
+    // }
+}
+
+// Small 34em - 544px
+@media screen and (min-width: $xs) {}
+
+// Medium 48em - 768px
+@media screen and (min-width: $md) {}
+
+// Large 62em - 992px
+@media screen and (min-width: $lg) {
+    .leadership-tile {
+        // width: 25vw;
+        // height: calc(25vw / 3 * 4);
+    }
+}
+
+// X-Large 75em - 1200px
+@media screen and (min-width: $xl) {}
+
+// XX-Large 100em - 1600px
+@media screen and (min-width: $xxl) {}

@@ -1,4 +1,6 @@
 .navigation {
+    width: 100%;
+    padding: 0 5%;
     position: fixed;
     top: 0;
     z-index: 100;
@@ -7,37 +9,75 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
-    padding: 0 2%;
     transform: translateY(0);
     transition: transform 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    .row {
-        width: 100%;
-    }
-    .global {
-        font-family: $sans;
-        font-size: $typeSize4;
-        color: $primary1;
-        font-weight: 200;
-        display: inline-block;
-        margin-left: 1rem;
-        display: none;
-    }
-    .global:after {
-        content: ">";
-        transform: rotate(90deg) scale(0.6, 1.2);
-        margin-left: 0.3em;
-        position: absolute;
-    }
-    .razorfish-logo {
-        display: inline-block;
-    }
-    .logo {
-        display: flex;
-        align-items: baseline;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+}
+
+.navigation-logo-container {
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+}
+
+.razorfish-logo {
+    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    height: 1.3rem;
+}
+
+.navigation-global {
+    font-family: $sans;
+    font-size: $typeSize4;
+    color: $primary1;
+    font-weight: 200;
+    display: inline-block;
+    margin-left: 0.6rem;
+    display: none;
+}
+
+.navigation-global:after {
+    content: ">";
+    transform: rotate(90deg) scale(0.6, 1.2);
+    margin-left: 0.3em;
+    position: absolute;
+}
+
+input#navigation-checkbox,
+input#navigation-checkbox:checked {
+    display: none;
+}
+
+#navigation-overlay-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    background-color: $primary1;
+    color: $black1;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    transform: translateY(-100vh);
+}
+
+input#navigation-checkbox:checked ~ #navigation-overlay-container {
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(0vh);
+}
+
+input#navigation-checkbox:checked ~ main {
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(100vh);
+}
+
+.navigation-overlay-link-container {
+    margin-top: 1rem;
+}
+
+a.navigation-overlay-link,
+a.navigation-overlay-link:hover {
+    color: $black1;
+    font-size: $typeSize7;
 }
 
 .navigation.hiding {
@@ -45,10 +85,12 @@
 }
 
 .navigation-container {
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+    color: $black1;
 }
 
 .hamburger-container {
@@ -66,7 +108,7 @@
     height: 0.25rem;
     background-color: $black1;
     position: relative;
-    transform: scale(0.8);
+    transform: scale(0.7);
     transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -101,19 +143,24 @@
 @media screen and (min-width: $xs) {}
 
 // Medium 48em - 768px
-@media screen and (min-width: $md) {}
-
-// Large 62em - 992px
-@media screen and (min-width: $lg) {
+@media screen and (min-width: $md) {
     .navigation {
-        .global {
-            display: inline;
-        }
+        padding: 0 2%;
+    }
+    .navigation-global {
+        display: inline;
     }
 }
 
+// Large 62em - 992px
+@media screen and (min-width: $lg) {}
+
 // X-Large 75em - 1200px
-@media screen and (min-width: $xl) {}
+@media screen and (min-width: $xl) {
+    .razorfish-logo {
+        height: 1.4rem;
+    }
+}
 
 // XX-Large 100em - 1600px
 @media screen and (min-width: $xxl) {
