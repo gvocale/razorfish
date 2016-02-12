@@ -24,7 +24,9 @@
         </div>
     </div>
 </footer>
-<script src="<?php echo kirby()->urls()->assets() ?>/js/footer-block.js"></script>
-</body>
+<!-- <script src="<?php echo kirby()->urls()->assets() ?>/js/footer-block.js"></script> -->
 
+
+
+</body>
 </html>

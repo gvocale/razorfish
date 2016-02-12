@@ -13,6 +13,6 @@
 </article>
 </main>
 <script src="<?php echo kirby()->urls()->assets() ?>/js/hero-text-mask.js"></script>
-<script src="<?php echo kirby()->urls()->assets() ?>/js/hero-reveal.js"></script>
+<!-- <script src="<?php echo kirby()->urls()->assets() ?>/js/hero-reveal.js"></script> -->
 
 

@@ -1,11 +1,9 @@
 <?php snippet('header') ?>
 
-<?php snippet('hero-about');?>
+<?php snippet('page-title') ?>
 
-<h1><?php echo $page->title()->html() ?></h1>
+<?php snippet('hero-video') ?>
 
-<?php snippet('related-links');?>
-
-<?php snippet('locations');?>
+<?php snippet('leadership') ?>
 
 <?php snippet('footer') ?>

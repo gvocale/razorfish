@@ -24,4 +24,4 @@
         <?php endforeach ?>
     </ul>
 </section>
-<script src="<?php echo kirby()->urls()->assets() ?>/js/grid-blocks.js"></script>
+<!-- <script src="<?php echo kirby()->urls()->assets() ?>/js/grid-blocks.js"></script> -->

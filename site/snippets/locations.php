@@ -10,4 +10,4 @@
 		</div>
 	</div>
 </section>
-<script src="<?php echo kirby()->urls()->assets() ?>/js/locations-block.js"></script>
+<!-- <script src="<?php echo kirby()->urls()->assets() ?>/js/locations-block.js"></script> -->
