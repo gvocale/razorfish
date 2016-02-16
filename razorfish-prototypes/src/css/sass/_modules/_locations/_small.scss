@@ -55,18 +55,23 @@
     transition: all 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.locations-headline {
-    font-family: $display;
-    font-size: $fontSize6;
-    // font-weight: bold;
-    // line-height: 1.4;
-    // letter-spacing: 0.01em;
-}
-
 .locations-eyebrow {
     color: $primary;
-        font-family: $sans;
+    font-family: $sans;
     font-size: $fontSize4;
+}
+
+.locations-headline {
+    font-family: $display;
+    font-size: $fontSize5;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    text-align: left;
+}
+
+.locations-eyebrow + .locations-headline {
+    margin-top: 0.25em;
 }
 
 .locations-line-break {
@@ -75,9 +80,12 @@
 
 .locations-link {
     color: $primary;
+    font-style: italic;
     text-decoration: none;
     position: relative;
     display: inline-block;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
 }
 
 .locations-link:before {
@@ -86,9 +94,9 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 0%;
     transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border-bottom-width: 0.05em;
+    border-bottom-width: 0.04em;
     border-bottom-style: solid;
 }
 

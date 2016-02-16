@@ -1,0 +1,145 @@
+.disciplines-title {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 25vw;
+    background-color: $black;
+    position: relative;
+    color: $white;
+    padding: 0 30%;
+    text-align: center;
+}
+
+.disciplines-headline {
+    font-family: $display;
+    font-size: $fontSize5;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    text-align: left;
+}
+
+.disciplines-subheadline {
+    font-family: $sans;
+    font-size: $fontSize4;
+}
+
+.disciplines-headline + .leadership-subheadline {
+    margin-top: 0.25em;
+}
+
+
+.disciplines-title-small-divider {
+    width: 3rem;
+    height: 0.3rem;
+    background-color: $primary;
+    margin: 1.75rem 0 2.5rem 0;
+    border: none;
+}
+
+.disciplines {
+    background-color: $black;
+    padding-bottom: 10%;
+}
+
+
+.disciplines-grid {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    aling-content: stretch;
+    background-color: $whiteDarker;
+    width: 80%;
+    margin: 0 10% 0% 10%;
+}
+
+.disciplines-tile {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 33.333333%;
+}
+
+.disciplines-tile:before {
+    content: "";
+    display: block;
+    padding-top: 33.333333%;
+}
+
+.disciplines-tile:nth-of-type(odd) {
+    background-color: $white;
+}
+
+.disciplines-tile:nth-of-type(even) {
+    background-color: $whiteDarker;
+}
+
+.disciplines-tile-icon {
+    width: 3rem;
+    height: 3rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.disciplines-tile:nth-of-type(odd):hover,
+.disciplines-tile:nth-of-type(even):hover {
+    .disciplines-tile-icon {
+        animation-name: discipline-icon-bounce;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0.05s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        animation-play-state: running;
+    }
+}
+
+
+@keyframes discipline-icon-bounce {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-0.5em);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    60% {
+        transform: translateY(-0.25em);
+    }
+    80% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.discipline-name {
+    font-family: $sans;
+    font-weight: normal;
+    font-size: $fontSize5;
+    text-align: center;
+}
+
+.disciplines-tile-icon + .discipline-name {
+    margin-top: 2rem;
+}

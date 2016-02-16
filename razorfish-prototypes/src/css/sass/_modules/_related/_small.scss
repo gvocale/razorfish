@@ -1,0 +1,194 @@
+.related-grid {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.related-tile {
+    float: left;
+}
+
+.related-tile:nth-of-type(1) {
+    width: 50vw;
+    height: 50vw;
+}
+
+// Solid
+.related-tile:nth-of-type(2) {
+    width: 50vw;
+    height: 25vw;
+}
+
+.related-tile:nth-of-type(3) {
+    width: 50vw;
+    height: 25vw;
+}
+
+.related-tile-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.related-tile-text-container {
+    width: 100%;
+    padding: 0 10%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.related-tile-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transition: all 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.related-tile-eyebrow {
+    font-family: $sans;
+    font-size: $fontSize4;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+}
+
+.related-tile-headline {
+    font-family: $display;
+    font-size: $fontSize5;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+}
+
+.related-tile-eyebrow + .related-tile-headline {
+    margin-top: 0.25em;
+}
+
+.picture-text-top {
+    .related-tile-text-container {
+        height: 50vw;
+        top: 0;
+        position: absolute;
+    }
+}
+
+.picture-text-bottom {
+    .related-tile-text-container {
+        height: 50vw;
+        bottom: 0;
+        position: absolute;
+    }
+}
+
+
+// Split Tiles
+.split {
+    background-position: 50% center;
+    .related-tile-background {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .related-tile-text-container {
+        margin-left: 50%;
+        padding: 5%;
+        width: 50%;
+        background-color: $white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .related-tile-text-container:before {
+        right: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-right-color: $white;
+        border-width: 1rem;
+        margin-top: -1rem;
+        transition: all 0.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .related-headline {
+        font-size: $fontSize4;
+    }
+}
+
+.split:hover {
+    .grid-tile-text-container:before {
+        border-width: 1.5rem;
+        margin-top: -1.5rem;
+    }
+}
+.color-combination-1 {
+    .related-tile-eyebrow {
+        color: $primary;
+    }
+    .related-tile-headline {
+        color: $black;
+    }
+    .related-tile-background {
+        background-color: $white;
+    }
+}
+
+.color-combination-2 {
+    .related-tile-eyebrow {
+        color: $primary;
+    }
+    .related-tile-headline {
+        color: $white;
+    }
+    .related-tile-background {
+        background-color: $blackLighter;
+    }
+}
+
+.color-combination-3 {
+    .related-tile-eyebrow {
+        color: $white;
+    }
+    .related-tile-headline {
+        color: $black;
+    }
+    .related-tile-background {
+        background-color: $primary;
+    }
+}
+
+.color-combination-4 {
+    .related-tile-eyebrow {
+        color: $black;
+    }
+    .related-tile-headline {
+        color: $white;
+    }
+    .related-tile-background {
+        background-color: $secondary;
+    }
+}

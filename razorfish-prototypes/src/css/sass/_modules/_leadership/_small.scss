@@ -1,0 +1,211 @@
+.leadership-title {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 25vw;
+    background-color: $black;
+    position: relative;
+    color: $white;
+    padding: 0 30%;
+    text-align: center;
+}
+
+.leadership-headline {
+    font-family: $display;
+    font-size: $fontSize5;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    text-align: left;
+}
+
+.leadership-subheadline {
+    font-family: $sans;
+    font-size: $fontSize4;
+}
+
+.leadership-headline + .leadership-subheadline {
+    margin-top: 0.25em;
+}
+
+.leadership-grid {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    aling-content: stretch;
+    background-color: $whiteDarker;
+}
+
+.leadership-tile-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 4s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.leadership-tile-text {
+    height: 50%;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $white;
+    opacity: 0;
+    z-index: 10;
+    transition: opacity 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.leader-name {
+    font-family: $display;
+    font-size: $fontSize4;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.leader-role {
+    font-family: $sans;
+    font-size: $fontSize3;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+}
+
+.leader-office {
+    font-family: $sans;
+    font-size: $fontSize2;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: $gray;
+}
+
+.leader-name,
+.leader-role,
+.leader-office {
+    transform: translateY(20%);
+    transition: all 0.1s 0.1s ease-in-out;
+    opacity: 0;
+}
+
+.leader-role {
+    font-size: $fontSize5;
+}
+
+.leader-office {
+    font-size: $fontSize4;
+}
+
+.leader-role + .leader-office {
+    margin-top: 0.5rem;
+}
+
+.leader-tile-divider-mask {
+    display: inline-block;
+    width: 2rem;
+    height: 0.13rem;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.leader-tile-divider {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    background-color: $primary;
+    transition: all 0.1s 0.2s ease-in-out;
+}
+
+.leadership-tile {
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+    cursor: hand;
+    overflow: hidden;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 25%;
+}
+
+.leadership-tile:before {
+    content: "";
+    display: block;
+    padding-top: 133%;
+}
+
+.leadership-tile:hover {
+    .leader-name,
+    .leader-role,
+    .leader-office {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    .leader-tile-divider {
+        width: 100%;
+    }
+}
+
+.leadership-tile:nth-of-type(odd) {
+    .leadership-tile-background {
+        background-color: $white;
+        background-blend-mode: multiply;
+    }
+}
+
+.leadership-tile:nth-of-type(even) {
+    .leadership-tile-background {
+        background-color: $whiteDarker;
+        background-blend-mode: multiply;
+    }
+}
+
+.leadership-tile:nth-of-type(odd):hover {
+    .leadership-tile-background {
+        background-color: $grayDarker;
+        background-blend-mode: multiply;
+        transform: scale(1.1);
+    }
+}
+
+.leadership-tile:nth-of-type(even):hover {
+    .leadership-tile-background {
+        background-color: $grayDarker;
+        background-blend-mode: multiply;
+        transform: scale(1.1);
+    }
+}
+
+.leadership-tile:hover {
+    .leadership-tile-text {
+        opacity: 1;
+    }
+}
+
+.leadership-title-small-divider {
+    width: 3rem;
+    height: 0.3rem;
+    background-color: $primary;
+    margin: 1.75rem 0 2.5rem 0;
+    border: none;
+}

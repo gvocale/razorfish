@@ -53,10 +53,26 @@ span.footer-legal-copyright {
 a.footer-legal-link {
     text-decoration: none;
     margin: 0 0.5em;
+    position: relative;
+    display: inline-block;
+    color: $primary;
+    line-height: 1.5;
 }
 
 a.footer-legal-link:before {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border-bottom-width: 0.1em;
+    border-bottom-style: solid;
+}
+
+a.footer-legal-link:hover:before {
+    width: 100%;
 }
 
 .footer-razorfish-logo {
@@ -73,18 +89,12 @@ a.footer-legal-link:before {
     overflow: hidden;
 }
 
-.footer-divider {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-divider {
+.footer-small-divider {
     width: 3rem;
     height: 0.3rem;
     background-color: $primary;
     margin: 2.5rem 0;
+    border: none;
 }
 
 .footer.reveal {
@@ -118,7 +128,26 @@ a.footer-legal-link:before {
     transform: scale(0.9);
     background-origin: content-box;
     padding: 0.8rem;
-    // transform: translateY(100%);
+}
+
+.footer-share-icon {
+    position: relative;
+}
+
+.footer-share-icon:before {
+    display: block;
+    content: "";
+    position: absolute;
+    height: 0.1em;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    background-color: $primary;
+    transition: width 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.footer-share-icon:hover:before {
+    width: 100%;
 }
 
 .footer.reveal {
@@ -144,9 +173,10 @@ a.footer-legal-link:before {
     animation-timing-function: ease-in-out;
     animation-delay: 0s;
     animation-iteration-count: 1;
-    animation-direction: normal;
+    animation-direction: alternate;
     animation-fill-mode: forwards;
     animation-play-state: running;
+
 }
 
 @keyframes footer-share-icon-bounce {
