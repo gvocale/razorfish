@@ -70,51 +70,56 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * usage: @include x-rem(padding, 1.5 24px)
  *
  */
+/* Colors */
 /* Font Face Declarations Go Here */
 /* Miller */
 @font-face {
   font-family: 'Miller Display';
-  src: url(dist/fonts/miller/Miller-DisplayRoman.otf);
-  font-style: regular;
+  src: url(dist/fonts/miller/MillerDisplayRoman.woff);
+  font-style: normal;
 }
 @font-face {
   font-family: 'Miller Display';
-  src: url(dist/fonts/miller/Miller-DisplayItalic.otf);
+  src: url(dist/fonts/miller/MillerDisplayItalic.woff);
   font-style: italic;
 }
 @font-face {
-  font-family: 'Miller';
-  src: url(dist/fonts/miller/Miller-TextRoman.otf);
-  font-weight: normal;
-  font-style: regular;
+  font-family: 'Miller Display';
+  src: url(dist/fonts/miller/MillerDisplayBold.woff);
+  font-style: bold;
 }
 @font-face {
   font-family: 'Miller';
-  src: url(dist/fonts/miller/Miller-TextBold.otf);
+  src: url(dist/fonts/miller/MillerTextRoman.woff);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Miller';
+  src: url(dist/fonts/miller/MillerTextBold.woff);
   font-weight: bold;
 }
 @font-face {
   font-family: 'Miller';
-  src: url(dist/fonts/miller/Miller-TextItalic.otf);
-  font-style: regular;
+  src: url(dist/fonts/miller/MillerTextItalic.woff);
+  font-style: italic;
 }
 /* Gotham */
 @font-face {
   font-family: 'Gotham';
-  src: url(../fonts/gotham/Gotham-Bold.otf);
-  font-weight: 800;
+  src: url(../fonts/gotham/Gotham-Bold.woff);
+  font-weight: bold;
 }
 @font-face {
   font-family: 'Gotham';
-  src: url(../fonts/gotham/Gotham-Book.otf);
-  font-weight: 400;
+  src: url(../fonts/gotham/Gotham-Medium.woff);
 }
 @font-face {
   font-family: 'Gotham';
-  src: url(../fonts/gotham/Gotham-Light.otf);
-  font-weight: 200;
+  src: url(../fonts/gotham/Gotham-Light.woff);
+  font-weight: lighter;
 }
-/* line 70, ../../src/css/sass/_modules/_typography.scss */
+/* line 90, ../../src/css/sass/_modules/_typography.scss */
 html {
   font-size: 16px;
 }
@@ -141,6 +146,715 @@ html, body {
 /*
  * Global UX Elements
 */
+/* line 1, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-grid {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 175vw;
+}
+
+/* line 9, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile {
+  float: left;
+}
+
+/* line 13, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile:nth-of-type(1) {
+  width: 50vw;
+  height: 25vw;
+}
+
+/* line 18, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile:nth-of-type(2) {
+  width: 50vw;
+  height: 50vw;
+}
+
+/* line 23, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile:nth-of-type(3) {
+  width: 50vw;
+  height: 50vw;
+  transform: translateY(-50%);
+}
+
+/* line 30, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile:nth-of-type(4) {
+  width: 50vw;
+  height: 25vw;
+}
+
+/* line 36, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile:nth-of-type(5) {
+  width: 50vw;
+  height: 25vw;
+  transform: translateX(-100%);
+}
+
+/* line 42, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile:nth-of-type(6) {
+  width: 50vw;
+  height: 50vw;
+  transform: translateY(-50%) translateX(100%);
+}
+
+/* line 49, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile:nth-of-type(7) {
+  width: 50vw;
+  height: 25vw;
+  transform: translateX(-100%);
+}
+
+/* line 55, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile:nth-of-type(8) {
+  width: 50vw;
+  height: 50vw;
+  transform: translateX(-100%);
+}
+
+/* line 62, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile:nth-of-type(9) {
+  width: 50vw;
+  height: 25vw;
+  transform: translateY(-200%) translateX(100%);
+}
+
+/* line 69, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile:nth-of-type(10) {
+  width: 50vw;
+  height: 25vw;
+  transform: translateY(-100%);
+}
+
+/* line 75, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 87, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile-text-container {
+  width: 100%;
+  padding: 0 10%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* line 99, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: all 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* line 112, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile-eyebrow {
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+}
+
+/* line 119, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile-headline {
+  font-family: "Miller Display", Times, Georgia, serif;
+  font-size: 1.3077em;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+}
+
+/* line 127, ../../src/css/sass/_modules/_feed/_small.scss */
+.feed-tile-eyebrow + .feed-tile-headline {
+  margin-top: 0.25em;
+}
+
+/* line 132, ../../src/css/sass/_modules/_feed/_small.scss */
+.picture-text-top .feed-tile-text-container {
+  height: 50vw;
+  top: 0;
+  position: absolute;
+}
+
+/* line 140, ../../src/css/sass/_modules/_feed/_small.scss */
+.picture-text-bottom .feed-tile-text-container {
+  height: 50vw;
+  bottom: 0;
+  position: absolute;
+}
+
+/* line 149, ../../src/css/sass/_modules/_feed/_small.scss */
+.split {
+  background-position: 50% center;
+}
+/* line 151, ../../src/css/sass/_modules/_feed/_small.scss */
+.split .feed-tile-background {
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 157, ../../src/css/sass/_modules/_feed/_small.scss */
+.split .feed-tile-text-container {
+  margin-left: 50%;
+  padding: 5%;
+  width: 50%;
+  background-color: #F7F7F7;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+/* line 170, ../../src/css/sass/_modules/_feed/_small.scss */
+.split .feed-tile-text-container:before {
+  right: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-right-color: #F7F7F7;
+  border-width: 1rem;
+  margin-top: -1rem;
+  transition: all 0.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 184, ../../src/css/sass/_modules/_feed/_small.scss */
+.split .feed-headline {
+  font-size: 1em;
+}
+
+/* line 190, ../../src/css/sass/_modules/_feed/_small.scss */
+.split:hover .grid-tile-text-container:before {
+  border-width: 1.5rem;
+  margin-top: -1.5rem;
+}
+
+/* line 196, ../../src/css/sass/_modules/_feed/_small.scss */
+.color-combination-1 .feed-tile-eyebrow {
+  color: #a9c000;
+}
+/* line 199, ../../src/css/sass/_modules/_feed/_small.scss */
+.color-combination-1 .feed-tile-headline {
+  color: #333333;
+}
+/* line 202, ../../src/css/sass/_modules/_feed/_small.scss */
+.color-combination-1 .feed-tile-background {
+  background-color: #F7F7F7;
+}
+
+/* line 208, ../../src/css/sass/_modules/_feed/_small.scss */
+.color-combination-2 .feed-tile-eyebrow {
+  color: #a9c000;
+}
+/* line 211, ../../src/css/sass/_modules/_feed/_small.scss */
+.color-combination-2 .feed-tile-headline {
+  color: #F7F7F7;
+}
+/* line 214, ../../src/css/sass/_modules/_feed/_small.scss */
+.color-combination-2 .feed-tile-background {
+  background-color: #404040;
+}
+
+/* line 220, ../../src/css/sass/_modules/_feed/_small.scss */
+.color-combination-3 .feed-tile-eyebrow {
+  color: #F7F7F7;
+}
+/* line 223, ../../src/css/sass/_modules/_feed/_small.scss */
+.color-combination-3 .feed-tile-headline {
+  color: #333333;
+}
+/* line 226, ../../src/css/sass/_modules/_feed/_small.scss */
+.color-combination-3 .feed-tile-background {
+  background-color: #a9c000;
+}
+
+/* line 232, ../../src/css/sass/_modules/_feed/_small.scss */
+.color-combination-4 .feed-tile-eyebrow {
+  color: #333333;
+}
+/* line 235, ../../src/css/sass/_modules/_feed/_small.scss */
+.color-combination-4 .feed-tile-headline {
+  color: #F7F7F7;
+}
+/* line 238, ../../src/css/sass/_modules/_feed/_small.scss */
+.color-combination-4 .feed-tile-background {
+  background-color: #ff595b;
+}
+
+/* line 1, ../../src/css/sass/_modules/_locations/_small.scss */
+.locations {
+  width: 100vw;
+  height: 50vw;
+  cursor: pointer;
+  cursor: hand;
+  position: relative;
+}
+
+/* line 9, ../../src/css/sass/_modules/_locations/_small.scss */
+.locations-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* line 24, ../../src/css/sass/_modules/_locations/_small.scss */
+.locations.reveal .locations-content {
+  transform: translateY(0%);
+  transition: all 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* line 30, ../../src/css/sass/_modules/_locations/_small.scss */
+.locations-text-container {
+  width: 100%;
+  padding: 0 10%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  justify-content: center;
+  color: #F7F7F7;
+  text-align: left;
+}
+
+/* line 43, ../../src/css/sass/_modules/_locations/_small.scss */
+.locations-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+  background-image: url("./../images/locations-background.jpg"), linear-gradient(90deg, #42585c, #242926);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: all 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* line 58, ../../src/css/sass/_modules/_locations/_small.scss */
+.locations-headline {
+  font-family: "Miller Display", Times, Georgia, serif;
+  font-size: 1.6154em;
+}
+
+/* line 66, ../../src/css/sass/_modules/_locations/_small.scss */
+.locations-eyebrow {
+  color: #a9c000;
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+}
+
+/* line 72, ../../src/css/sass/_modules/_locations/_small.scss */
+.locations-line-break {
+  display: block;
+}
+
+/* line 76, ../../src/css/sass/_modules/_locations/_small.scss */
+.locations-link {
+  color: #a9c000;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+/* line 83, ../../src/css/sass/_modules/_locations/_small.scss */
+.locations-link:before {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-bottom-width: 0.05em;
+  border-bottom-style: solid;
+}
+
+/* line 95, ../../src/css/sass/_modules/_locations/_small.scss */
+.locations-link:hover:before {
+  width: 100%;
+}
+
+/* line 101, ../../src/css/sass/_modules/_locations/_small.scss */
+.locations.reveal .grid-tile-content {
+  transform: translateY(0%);
+  transition: all 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* line 1, ../../src/css/sass/_modules/_navigation/_small.scss */
+.navigation {
+  width: 100%;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: translateY(0);
+  transition: transform 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* line 16, ../../src/css/sass/_modules/_navigation/_small.scss */
+.navigation-container {
+  padding: 0 5%;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #333333;
+}
+
+/* line 27, ../../src/css/sass/_modules/_navigation/_small.scss */
+.navigation-logo-container {
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+}
+
+/* line 33, ../../src/css/sass/_modules/_navigation/_small.scss */
+.razorfish-logo {
+  transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  height: 1.3rem;
+}
+
+/* line 38, ../../src/css/sass/_modules/_navigation/_small.scss */
+.navigation-global {
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  color: #a9c000;
+  font-weight: 200;
+  display: inline-block;
+  margin-left: 0.6rem;
+  display: none;
+}
+
+/* line 48, ../../src/css/sass/_modules/_navigation/_small.scss */
+.navigation-global:after {
+  content: ">";
+  transform: rotate(90deg) scale(0.6, 1.2);
+  margin-left: 0.3em;
+  position: absolute;
+}
+
+/* line 55, ../../src/css/sass/_modules/_navigation/_small.scss */
+input#navigation-checkbox,
+input#navigation-checkbox:checked {
+  display: none;
+}
+
+/* line 60, ../../src/css/sass/_modules/_navigation/_small.scss */
+#navigation-overlay-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  background-color: #a9c000;
+  color: #333333;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  transform: translateY(-100vh);
+}
+
+/* line 74, ../../src/css/sass/_modules/_navigation/_small.scss */
+input#navigation-checkbox:checked ~ #navigation-overlay-container {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(0vh);
+}
+
+/* line 79, ../../src/css/sass/_modules/_navigation/_small.scss */
+input#navigation-checkbox:checked ~ main {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(100vh);
+}
+
+/* line 84, ../../src/css/sass/_modules/_navigation/_small.scss */
+.navigation-overlay-link-container {
+  margin-top: 1rem;
+}
+
+/* line 88, ../../src/css/sass/_modules/_navigation/_small.scss */
+a.navigation-overlay-link,
+a.navigation-overlay-link:hover {
+  color: #333333;
+  font-size: 2.1154em;
+}
+
+/* line 94, ../../src/css/sass/_modules/_navigation/_small.scss */
+.navigation.hiding {
+  transform: translateY(-100%);
+}
+
+/* line 98, ../../src/css/sass/_modules/_navigation/_small.scss */
+.hamburger-container {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* line 108, ../../src/css/sass/_modules/_navigation/_small.scss */
+.hamburger {
+  width: 2.5rem;
+  height: 0.25rem;
+  background-color: #333333;
+  position: relative;
+  transform: scale(0.7);
+  transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* line 117, ../../src/css/sass/_modules/_navigation/_small.scss */
+.hamburger:before,
+.hamburger:after {
+  content: "";
+  width: 100%;
+  height: 0.25rem;
+  background-color: #333333;
+  position: absolute;
+  transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* line 127, ../../src/css/sass/_modules/_navigation/_small.scss */
+.hamburger:before {
+  top: -0.75rem;
+}
+
+/* line 131, ../../src/css/sass/_modules/_navigation/_small.scss */
+.hamburger:after {
+  top: 0.75rem;
+}
+
+/* line 136, ../../src/css/sass/_modules/_navigation/_small.scss */
+.hamburger-container:hover .hamburger:before {
+  top: -1rem;
+}
+/* line 139, ../../src/css/sass/_modules/_navigation/_small.scss */
+.hamburger-container:hover .hamburger:after {
+  top: 1rem;
+}
+
+/* line 1, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer {
+  width: 100vw;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 8, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+}
+
+/* line 22, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer.reveal .footer-content {
+  transform: translateY(0%);
+  transition: all 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* line 28, ../../src/css/sass/_modules/_footer/_small.scss */
+.locations-text-container {
+  width: 100%;
+  padding: 0 10%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  justify-content: center;
+  text-align: center;
+}
+
+/* line 40, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-legal {
+  color: #D6D6D6;
+  font-size: 0.8077em;
+  text-align: center;
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.02em;
+  margin-top: 2rem;
+}
+
+/* line 49, ../../src/css/sass/_modules/_footer/_small.scss */
+span.footer-legal-copyright {
+  margin: 0 0.5em;
+}
+
+/* line 53, ../../src/css/sass/_modules/_footer/_small.scss */
+a.footer-legal-link {
+  text-decoration: none;
+  margin: 0 0.5em;
+}
+
+/* line 58, ../../src/css/sass/_modules/_footer/_small.scss */
+a.footer-legal-link:before {
+  border-bottom-width: 0.1em;
+}
+
+/* line 62, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-razorfish-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 68, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-share-icons {
+  width: 20rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+/* line 76, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-divider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 83, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-divider {
+  width: 3rem;
+  height: 0.3rem;
+  background-color: #a9c000;
+  margin: 2.5rem 0;
+}
+
+/* line 91, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer.reveal .footer-divider {
+  width: 3rem;
+  transition: all 0.2s 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* line 97, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-share-twitter {
+  background-image: url(./../images/share-twitter.svg);
+}
+
+/* line 101, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-share-facebook {
+  background-image: url(./../images/share-facebook.svg);
+}
+
+/* line 105, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-share-linkedin {
+  background-image: url(./../images/share-linkedin.svg);
+}
+
+/* line 109, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-share-twitter,
+.footer-share-facebook,
+.footer-share-linkedin {
+  height: 3rem;
+  width: 3rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: scale(0.9);
+  background-origin: content-box;
+  padding: 0.8rem;
+}
+
+/* line 125, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer.reveal .footer-share-twitter {
+  transform: translateY(0%);
+  transition: all 0.2s 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 129, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer.reveal .footer-share-facebook {
+  transform: translateY(0%);
+  transition: all 0.2s 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 133, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer.reveal .footer-share-linkedin {
+  transform: translateY(0%);
+  transition: all 0.2s 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* line 139, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-share-twitter:hover,
+.footer-share-facebook:hover,
+.footer-share-linkedin:hover {
+  animation-name: footer-share-icon-bounce;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes footer-share-icon-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.35em);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* line 165, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-share-icons a:before {
+  border-bottom-width: 0.1em;
+}
+
 /*
  * Medium Breakpoints
  */
@@ -157,6 +871,61 @@ html, body {
   /*
    * Global UX Elements
   */
+}
+@media screen and (min-width: 768px) {
+  /* line 2, ../../src/css/sass/_modules/_feed/_medium.scss */
+  .feed-tile-headline {
+    font-size: 1.6154em;
+    line-height: 1.4;
+  }
+
+  /* line 7, ../../src/css/sass/_modules/_feed/_medium.scss */
+  .split .feed-tile-headline {
+    font-size: 1.3077em;
+  }
+
+  /* line 12, ../../src/css/sass/_modules/_feed/_medium.scss */
+  .picture-text-top .feed-tile-text-container {
+    height: 25vw;
+    top: 0;
+    position: absolute;
+  }
+
+  /* line 19, ../../src/css/sass/_modules/_feed/_medium.scss */
+  .picture-text-bottom .feed-tile-text-container {
+    height: 25vw;
+    bottom: 0;
+    position: absolute;
+  }
+
+  /* line 26, ../../src/css/sass/_modules/_feed/_medium.scss */
+  .split .feed-tile-text-container:before {
+    border-width: 2rem;
+    margin-top: -2rem;
+  }
+
+  /* line 32, ../../src/css/sass/_modules/_feed/_medium.scss */
+  .split:hover .feed-tile-text-container:before {
+    border-width: 2.5rem;
+    margin-top: -2.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 2, ../../src/css/sass/_modules/_locations/_medium.scss */
+  .locations-headline {
+    font-size: 2.1154em;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 2, ../../src/css/sass/_modules/_navigation/_medium.scss */
+  .navigation-contaner {
+    padding: 0 2%;
+  }
+
+  /* line 5, ../../src/css/sass/_modules/_navigation/_medium.scss */
+  .navigation-global {
+    display: inline;
+  }
 }
 /*
  * Large Breakpoints
@@ -175,6 +944,51 @@ html, body {
    * Global UX Elements
   */
 }
+@media screen and (min-width: 1024px) {
+  /* line 2, ../../src/css/sass/_modules/_feed/_large.scss */
+  .feed-tile-eyebrow {
+    font-size: 1.3077em;
+  }
+
+  /* line 5, ../../src/css/sass/_modules/_feed/_large.scss */
+  .feed-tile-headline {
+    font-size: 2.1154em;
+    line-height: 1.4;
+  }
+
+  /* line 10, ../../src/css/sass/_modules/_feed/_large.scss */
+  .split .feed-tile-headline {
+    font-size: 1.6154em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  /* line 2, ../../src/css/sass/_modules/_locations/_large.scss */
+  .locations {
+    width: 100%;
+    min-height: 60vh;
+  }
+
+  /* line 6, ../../src/css/sass/_modules/_locations/_large.scss */
+  .locations-headline {
+    font-size: 2.6154em;
+  }
+
+  /* line 9, ../../src/css/sass/_modules/_locations/_large.scss */
+  .locations-eyebrow {
+    font-size: 1.3077em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  /* line 2, ../../src/css/sass/_modules/_navigation/_large.scss */
+  .razorfish-logo {
+    height: 1.4rem;
+  }
+
+  /* line 5, ../../src/css/sass/_modules/_navigation/_large.scss */
+  .hamburger {
+    transform: scale(1);
+  }
+}
 /*
  * X-Large Breakpoints
  */
@@ -191,4 +1005,33 @@ html, body {
   /*
    * Global UX Elements
   */
+}
+@media screen and (min-width: 1400px) {
+  /* line 2, ../../src/css/sass/_modules/_feed/_xlarge.scss */
+  .feed-tile-eyebrow {
+    font-size: 1.3077em;
+  }
+
+  /* line 5, ../../src/css/sass/_modules/_feed/_xlarge.scss */
+  .feed-tile-headline {
+    font-size: 3.4231em;
+    line-height: 1.4;
+  }
+
+  /* line 10, ../../src/css/sass/_modules/_feed/_xlarge.scss */
+  .split .feed-tile-headline {
+    font-size: 2.1154em;
+  }
+}
+@media screen and (min-width: 1400px) {
+  /* line 2, ../../src/css/sass/_modules/_locations/_xlarge.scss */
+  .locations-headline {
+    font-size: 5.5385em;
+  }
+}
+@media screen and (min-width: 1400px) {
+  /* line 2, ../../src/css/sass/_modules/_footer/_xlarge.scss */
+  .footer-legal {
+    margin-top: 4rem;
+  }
 }

@@ -5,33 +5,40 @@
 
  @font-face {
     font-family: 'Miller Display';
-    src: url(dist/fonts/miller/Miller-DisplayRoman.otf);
-    font-style: regular;
+    src: url(dist/fonts/miller/MillerDisplayRoman.woff);
+    font-style: normal;
 }
 
 @font-face {
     font-family: 'Miller Display';
-    src: url(dist/fonts/miller/Miller-DisplayItalic.otf);
+    src: url(dist/fonts/miller/MillerDisplayItalic.woff);
     font-style: italic;
 }
 
 @font-face {
+    font-family: 'Miller Display';
+    src: url(dist/fonts/miller/MillerDisplayBold.woff);
+    font-style: bold;
+}
+
+
+@font-face {
     font-family: 'Miller';
-    src: url(dist/fonts/miller/Miller-TextRoman.otf);
+    src: url(dist/fonts/miller/MillerTextRoman.woff);
     font-weight: normal;
-    font-style: regular;
+    font-style: normal;
 }
 
 @font-face {
     font-family: 'Miller';
-    src: url(dist/fonts/miller/Miller-TextBold.otf);
+    src: url(dist/fonts/miller/MillerTextBold.woff);
     font-weight: bold;
 }
 
 @font-face {
     font-family: 'Miller';
-    src: url(dist/fonts/miller/Miller-TextItalic.otf);
-    font-style: regular;
+    src: url(dist/fonts/miller/MillerTextItalic.woff);
+    font-style: italic;
 }
 
 
@@ -39,33 +46,46 @@
 
 @font-face {
     font-family: 'Gotham';
-    src: url(../fonts/gotham/Gotham-Bold.otf);
-    font-weight: 800;
+    src: url(../fonts/gotham/Gotham-Bold.woff);
+    font-weight: bold;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url(../fonts/gotham/Gotham-Book.otf);
-    font-weight: 400;
+    src: url(../fonts/gotham/Gotham-Medium.woff);
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url(../fonts/gotham/Gotham-Light.otf);
-    font-weight: 200;
+    src: url(../fonts/gotham/Gotham-Light.woff);
+    font-weight: lighter;
 }
 
 
 
-$miller: ''Miller', Helvetica, Arial, sans-serif;
-$miller-display: ''Miller Display', Helvetica, Arial, sans-serif;
-$gotham: 'Gotham', Helvetica, Arial, sans-serif;
-
+$serif: 'Miller', Times, Georgia, serif;
+$display: 'Miller Display', Times, Georgia, serif;
+$sans: 'Gotham', Helvetica, Arial, sans-serif;
 
 $default-letter-spacing: 0.16em;
 $default-line-height: 1;
 $headline-line-height: 1.1;
 $body-copy-line-height: 1.5;
+
+// Font scale "Le Corbusier" taken from http://lamb.cc/typograph/
+$fontSize1: 0.5em;
+$fontSize2: 0.6154em;
+$fontSize3: 0.8077em;
+$fontSize4: 1em;
+$fontSize5: 1.3077em;
+$fontSize6: 1.6154em;
+$fontSize7: 2.1154em;
+$fontSize8: 2.6154em;
+$fontSize9: 3.4231em;
+$fontSize10: 4.2308em;
+$fontSize11: 5.5385em;
+$fontSize12: 6.8462em;
+
 
 html { 
     font-size: 16px;

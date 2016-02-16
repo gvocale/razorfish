@@ -1,0 +1,241 @@
+.feed-grid {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 175vw;
+}
+
+.feed-tile {
+    float: left;
+}
+
+.feed-tile:nth-of-type(1) {
+    width: 50vw;
+    height: 25vw;
+}
+
+.feed-tile:nth-of-type(2) {
+    width: 50vw;
+    height: 50vw;
+}
+
+.feed-tile:nth-of-type(3) {
+    width: 50vw;
+    height: 50vw;
+    transform: translateY(-50%);
+}
+
+// Split
+.feed-tile:nth-of-type(4) {
+    width: 50vw;
+    height: 25vw;
+}
+
+// Solid
+.feed-tile:nth-of-type(5) {
+    width: 50vw;
+    height: 25vw;
+    transform: translateX(-100%);
+}
+
+.feed-tile:nth-of-type(6) {
+    width: 50vw;
+    height: 50vw;
+    transform: translateY(-50%) translateX(100%);
+}
+
+// Split
+.feed-tile:nth-of-type(7) {
+    width: 50vw;
+    height: 25vw;
+    transform: translateX(-100%);
+}
+
+.feed-tile:nth-of-type(8) {
+    width: 50vw;
+    height: 50vw;
+    transform: translateX(-100%);
+}
+
+// Split
+.feed-tile:nth-of-type(9) {
+    width: 50vw;
+    height: 25vw;
+    transform: translateY(-200%) translateX(100%);
+}
+
+// Solid
+.feed-tile:nth-of-type(10) {
+    width: 50vw;
+    height: 25vw;
+    transform: translateY(-100%);
+}
+
+.feed-tile-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.feed-tile-text-container {
+    width: 100%;
+    padding: 0 10%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.feed-tile-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transition: all 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.feed-tile-eyebrow {
+    font-family: $sans;
+    font-size: $fontSize4;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+}
+
+.feed-tile-headline {
+    font-family: $display;
+    font-size: $fontSize5;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+}
+
+.feed-tile-eyebrow + .feed-tile-headline {
+    margin-top: 0.25em;
+}
+
+.picture-text-top {
+    .feed-tile-text-container {
+        height: 50vw;
+        top: 0;
+        position: absolute;
+    }
+}
+
+.picture-text-bottom {
+    .feed-tile-text-container {
+        height: 50vw;
+        bottom: 0;
+        position: absolute;
+    }
+}
+
+
+// Split Tiles
+.split {
+    background-position: 50% center;
+    .feed-tile-background {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .feed-tile-text-container {
+        margin-left: 50%;
+        padding: 5%;
+        width: 50%;
+        background-color: $white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .feed-tile-text-container:before {
+        right: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-right-color: $white;
+        border-width: 1rem;
+        margin-top: -1rem;
+        transition: all 0.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .feed-headline {
+        font-size: $fontSize4;
+    }
+}
+
+.split:hover {
+    .grid-tile-text-container:before {
+        border-width: 1.5rem;
+        margin-top: -1.5rem;
+    }
+}
+.color-combination-1 {
+    .feed-tile-eyebrow {
+        color: $primary;
+    }
+    .feed-tile-headline {
+        color: $black;
+    }
+    .feed-tile-background {
+        background-color: $white;
+    }
+}
+
+.color-combination-2 {
+    .feed-tile-eyebrow {
+        color: $primary;
+    }
+    .feed-tile-headline {
+        color: $white;
+    }
+    .feed-tile-background {
+        background-color: $blackLighter;
+    }
+}
+
+.color-combination-3 {
+    .feed-tile-eyebrow {
+        color: $white;
+    }
+    .feed-tile-headline {
+        color: $black;
+    }
+    .feed-tile-background {
+        background-color: $primary;
+    }
+}
+
+.color-combination-4 {
+    .feed-tile-eyebrow {
+        color: $black;
+    }
+    .feed-tile-headline {
+        color: $white;
+    }
+    .feed-tile-background {
+        background-color: $secondary;
+    }
+}
