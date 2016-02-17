@@ -5,6 +5,7 @@
     }
     .hero-video-headline {
         font-size: $fontSize7;
+        line-height: 1.25;
     }
     .hero-video-text-container {
         padding: 0 20%;
@@ -12,21 +13,8 @@
     .hero-video-subheadline {
         font-size: $fontSize4;
     }
-    .hero-video-play-button {
-        width: 6rem;
-        height: 6rem;
-    }
-    .hero-video-play-button:after {
-        border-top: 1rem solid transparent;
-        border-bottom: 1rem solid transparent;
-        border-left: 1.5rem solid $white;
-    }
-    .hero-video-play-button:hover:after {
-        border-top: calc(1rem * 1.2) solid transparent;
-        border-bottom: calc(1rem * 1.2) solid transparent;
-        border-left: calc(1.5rem * 1.2) solid $white;
-    }
-    .hero-video-play-button + .hero-video-text-container {
-        margin-top: 2rem;
-    }
+    .video-play-button + .hero-video-text-container {
+    margin-top: 2rem;
+}
+
 }

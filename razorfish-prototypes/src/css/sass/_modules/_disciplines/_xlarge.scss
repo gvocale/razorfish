@@ -1,5 +1,31 @@
+// $x-large-breakpoint: 1200;
 @media screen and (min-width: '#{$x-large-breakpoint}px') {
+    .disciplines-title {
+        padding: 5% 30%;
+    }
     .disciplines-headline {
         font-size: $fontSize9;
+    }
+    .disciplines-tile {
+        width: calc(80vw / 4);
+        height: calc(80vw / 4);
+    }
+    .discipline-name {
+        font-size: $fontSize5;
+    }
+    .disciplines-tile-icon + .discipline-name {
+        margin-top: 4rem;
+    }
+    .disciplines-tile:nth-of-type(1),
+    .disciplines-tile:nth-of-type(3),
+    .disciplines-tile:nth-of-type(6),
+    .disciplines-tile:nth-of-type(8) {
+        background-color: $white;
+    }
+    .disciplines-tile:nth-of-type(2),
+    .disciplines-tile:nth-of-type(4),
+    .disciplines-tile:nth-of-type(5),
+    .disciplines-tile:nth-of-type(7) {
+        background-color: $whiteDarker;
     }
 }

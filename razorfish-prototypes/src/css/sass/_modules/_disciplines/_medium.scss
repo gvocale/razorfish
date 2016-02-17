@@ -1,5 +1,29 @@
+// $medium-breakpoint: 768;
 @media screen and (min-width: '#{$medium-breakpoint}px') {
+    .disciplines-title {
+        min-height: 25vw;
+        padding: 10% 20%;
+    }
     .disciplines-headline {
         font-size: $fontSize7;
+    }
+    .disciplines-subheadline {
+        font-size: $fontSize5;
+    }
+    .disciplines-divider {
+        margin: 2rem;
+    }
+    .disciplines-tile {
+        width: calc(80vw / 3);
+        height: calc(80vw / 3);
+    }
+    .disciplines-tile:nth-of-type(odd) {
+        background-color: $white;
+    }
+    .disciplines-tile:nth-of-type(even) {
+        background-color: $whiteDarker;
+    }
+    .discipline-name {
+        font-size: $fontSize4;
     }
 }

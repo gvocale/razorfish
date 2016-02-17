@@ -1,0 +1,18 @@
+// $x-large-breakpoint: 1200;
+@media screen and (min-width: '#{$x-large-breakpoint}px') {
+    .video-play-button {
+        width: 6rem;
+        height: 6rem;
+    }
+    .video-play-button:after {
+        // Equilateral Tringle
+        border-top: calc(6rem / 6) solid transparent;
+        border-bottom: calc(6rem / 6) solid transparent;
+        border-left: calc(6rem / 6 * 2 * 0.8660259) solid $white;
+        //
+    }
+    .video-play-button:hover:after {
+        transform: scale(0.9) translateX(-55%) translateY(-50%);
+        transition: all 0.05s 0s ease-out;
+    }
+}
