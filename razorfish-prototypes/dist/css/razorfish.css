@@ -130,55 +130,12 @@ html {
  * Small Breakpoints
  */
 /* line 1, ../../src/css/sass/_modules/_disciplines/_small.scss */
-.disciplines-title {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  min-height: 50vw;
-  background-color: #333333;
-  position: relative;
-  color: #FFFFFF;
-  padding: 10% 10%;
-  text-align: center;
-}
-
-/* line 16, ../../src/css/sass/_modules/_disciplines/_small.scss */
-.disciplines-headline {
-  font-family: "Miller Display", Times, Georgia, serif;
-  font-size: 1.3077em;
-  font-weight: bold;
-  line-height: 1.2;
-  letter-spacing: -0.015em;
-  text-align: left;
-}
-
-/* line 25, ../../src/css/sass/_modules/_disciplines/_small.scss */
-.disciplines-subheadline {
-  font-family: "Gotham", Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-}
-
-/* line 31, ../../src/css/sass/_modules/_disciplines/_small.scss */
-.disciplines-headline + .leadership-subheadline {
-  margin-top: 0.25em;
-}
-
-/* line 35, ../../src/css/sass/_modules/_disciplines/_small.scss */
-.disciplines-divider {
-  margin: 1rem;
-}
-
-/* line 39, ../../src/css/sass/_modules/_disciplines/_small.scss */
 .disciplines {
   background-color: #333333;
   padding-bottom: 10%;
 }
 
-/* line 44, ../../src/css/sass/_modules/_disciplines/_small.scss */
+/* line 6, ../../src/css/sass/_modules/_disciplines/_small.scss */
 .disciplines-grid {
   position: relative;
   display: flex;
@@ -191,7 +148,7 @@ html {
   margin: auto;
 }
 
-/* line 56, ../../src/css/sass/_modules/_disciplines/_small.scss */
+/* line 18, ../../src/css/sass/_modules/_disciplines/_small.scss */
 .disciplines-tile {
   display: flex;
   flex-direction: column;
@@ -203,14 +160,14 @@ html {
   height: 40vw;
 }
 
-/* line 67, ../../src/css/sass/_modules/_disciplines/_small.scss */
+/* line 29, ../../src/css/sass/_modules/_disciplines/_small.scss */
 .disciplines-tile:before {
   content: "";
   display: block;
   padding-top: 33.333333%;
 }
 
-/* line 73, ../../src/css/sass/_modules/_disciplines/_small.scss */
+/* line 35, ../../src/css/sass/_modules/_disciplines/_small.scss */
 .disciplines-tile:nth-of-type(1),
 .disciplines-tile:nth-of-type(4),
 .disciplines-tile:nth-of-type(5),
@@ -218,7 +175,7 @@ html {
   background-color: #FFFFFF;
 }
 
-/* line 80, ../../src/css/sass/_modules/_disciplines/_small.scss */
+/* line 42, ../../src/css/sass/_modules/_disciplines/_small.scss */
 .disciplines-tile:nth-of-type(2),
 .disciplines-tile:nth-of-type(3),
 .disciplines-tile:nth-of-type(6),
@@ -226,7 +183,7 @@ html {
   background-color: #f6f6f6;
 }
 
-/* line 88, ../../src/css/sass/_modules/_disciplines/_small.scss */
+/* line 49, ../../src/css/sass/_modules/_disciplines/_small.scss */
 .disciplines-tile-icon {
   width: 20%;
   height: 20%;
@@ -235,7 +192,7 @@ html {
   background-repeat: no-repeat;
 }
 
-/* line 96, ../../src/css/sass/_modules/_disciplines/_small.scss */
+/* line 57, ../../src/css/sass/_modules/_disciplines/_small.scss */
 .discipline-name {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -244,12 +201,12 @@ html {
   line-height: 1.5;
 }
 
-/* line 104, ../../src/css/sass/_modules/_disciplines/_small.scss */
+/* line 65, ../../src/css/sass/_modules/_disciplines/_small.scss */
 .disciplines-tile-icon + .discipline-name {
   margin-top: 1.5rem;
 }
 
-/* line 111, ../../src/css/sass/_modules/_disciplines/_small.scss */
+/* line 71, ../../src/css/sass/_modules/_disciplines/_small.scss */
 .disciplines-tile:nth-of-type(odd):hover .disciplines-tile-icon,
 .disciplines-tile:nth-of-type(even):hover .disciplines-tile-icon {
   animation-name: discipline-icon-bounce;
@@ -845,49 +802,6 @@ html, body {
 }
 
 /* line 1, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-title {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  min-height: 50vw;
-  background-color: #333333;
-  position: relative;
-  color: #FFFFFF;
-  padding: 10% 10%;
-  text-align: center;
-}
-
-/* line 16, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-headline {
-  font-family: "Miller Display", Times, Georgia, serif;
-  font-size: 1.3077em;
-  font-weight: bold;
-  line-height: 1.2;
-  letter-spacing: -0.015em;
-  text-align: left;
-}
-
-/* line 25, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-subheadline {
-  font-family: "Gotham", Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-}
-
-/* line 31, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-headline + .leadership-subheadline {
-  margin-top: 0.25em;
-}
-
-/* line 34, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-divider {
-  margin: 1rem 0;
-}
-
-/* line 38, ../../src/css/sass/_modules/_leadership/_small.scss */
 .leadership-grid {
   position: relative;
   display: flex;
@@ -899,8 +813,21 @@ html, body {
   background-color: #f6f6f6;
 }
 
-/* line 49, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-tile-background {
+/* line 12, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+  cursor: hand;
+  overflow: hidden;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 50%;
+}
+
+/* line 24, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile-background {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -913,8 +840,8 @@ html, body {
   transition: transform 4s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* line 62, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-tile-text {
+/* line 37, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile-text {
   height: 50%;
   bottom: 0;
   position: absolute;
@@ -926,12 +853,12 @@ html, body {
   justify-content: center;
   text-align: center;
   color: #FFFFFF;
-  opacity: 0;
+  opacity: 1;
   z-index: 10;
   transition: opacity 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* line 79, ../../src/css/sass/_modules/_leadership/_small.scss */
+/* line 54, ../../src/css/sass/_modules/_leadership/_small.scss */
 .leader-name {
   font-family: "Miller Display", Times, Georgia, serif;
   font-size: 1em;
@@ -939,48 +866,38 @@ html, body {
   line-height: 1.5;
 }
 
-/* line 86, ../../src/css/sass/_modules/_leadership/_small.scss */
+/* line 61, ../../src/css/sass/_modules/_leadership/_small.scss */
 .leader-role {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
-  font-size: 0.8077em;
+  font-size: 1.3077em;
   line-height: 1.5;
   letter-spacing: -0.01em;
 }
 
-/* line 93, ../../src/css/sass/_modules/_leadership/_small.scss */
+/* line 68, ../../src/css/sass/_modules/_leadership/_small.scss */
 .leader-office {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
-  font-size: 0.6154em;
+  font-size: 1em;
   line-height: 1.5;
   letter-spacing: -0.01em;
   color: #D6D6D6;
 }
 
-/* line 101, ../../src/css/sass/_modules/_leadership/_small.scss */
+/* line 76, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-role + .leader-office {
+  margin-top: 0.5rem;
+}
+
+/* line 80, ../../src/css/sass/_modules/_leadership/_small.scss */
 .leader-name,
 .leader-role,
 .leader-office {
   transform: translateY(20%);
   transition: all 0.1s 0.1s ease-in-out;
-  opacity: 0;
+  opacity: 1;
 }
 
-/* line 109, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leader-role {
-  font-size: 1.3077em;
-}
-
-/* line 113, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leader-office {
-  font-size: 1em;
-}
-
-/* line 117, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leader-role + .leader-office {
-  margin-top: 0.5rem;
-}
-
-/* line 121, ../../src/css/sass/_modules/_leadership/_small.scss */
+/* line 88, ../../src/css/sass/_modules/_leadership/_small.scss */
 .leader-tile-divider-mask {
   display: inline-block;
   width: 2rem;
@@ -995,7 +912,7 @@ html, body {
   justify-content: center;
 }
 
-/* line 135, ../../src/css/sass/_modules/_leadership/_small.scss */
+/* line 102, ../../src/css/sass/_modules/_leadership/_small.scss */
 .leader-tile-divider {
   display: inline-block;
   width: 0;
@@ -1004,67 +921,54 @@ html, body {
   transition: all 0.1s 0.2s ease-in-out;
 }
 
-/* line 143, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-tile {
-  display: inline-block;
-  margin: 0;
-  position: relative;
-  cursor: pointer;
-  cursor: hand;
-  overflow: hidden;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 50%;
+/* line 110, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile-divider {
+  width: 100%;
 }
 
-/* line 155, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-tile:before {
+/* line 114, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile:before {
   content: "";
   display: block;
   padding-top: 133%;
 }
 
-/* line 162, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-tile:hover .leader-name,
-.leadership-tile:hover .leader-role,
-.leadership-tile:hover .leader-office {
-  transform: translateY(0%);
-  opacity: 1;
-}
-/* line 168, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-tile:hover .leader-tile-divider {
-  width: 100%;
-}
-
-/* line 174, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-tile:nth-of-type(odd) .leadership-tile-background {
+/* line 121, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile:nth-of-type(odd) .leader-tile-background {
   background-color: #FFFFFF;
+  background-image: linear-gradient(#ffffff, #808080);
   background-blend-mode: multiply;
 }
 
-/* line 181, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-tile:nth-of-type(even) .leadership-tile-background {
+/* line 129, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile:nth-of-type(even) .leader-tile-background {
   background-color: #f6f6f6;
   background-blend-mode: multiply;
 }
 
-/* line 188, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-tile:nth-of-type(odd):hover .leadership-tile-background {
+/* line 135, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile-text:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top-to-bottom, #f6f6f6, #808080);
+}
+
+/* line 146, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile:nth-of-type(odd):hover .leader-tile-background {
   background-color: #808080;
   background-blend-mode: multiply;
   transform: scale(1.1);
 }
 
-/* line 196, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-tile:nth-of-type(even):hover .leadership-tile-background {
+/* line 154, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile:nth-of-type(even):hover .leader-tile-background {
   background-color: #808080;
   background-blend-mode: multiply;
   transform: scale(1.1);
-}
-
-/* line 204, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leadership-tile:hover .leadership-tile-text {
-  opacity: 1;
 }
 
 /* line 1, ../../src/css/sass/_modules/_locations/_small.scss */
@@ -1404,6 +1308,49 @@ a.navigation-overlay-link:hover {
   transform: translate(0, 0);
 }
 
+/* line 2, ../../src/css/sass/_modules/_section-title/_small.scss */
+.section-title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 50vw;
+  background-color: #333333;
+  position: relative;
+  color: #FFFFFF;
+  padding: 10% 10%;
+  text-align: center;
+}
+
+/* line 17, ../../src/css/sass/_modules/_section-title/_small.scss */
+.section-headline {
+  font-family: "Miller Display", Times, Georgia, serif;
+  font-size: 1.3077em;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  text-align: left;
+}
+
+/* line 26, ../../src/css/sass/_modules/_section-title/_small.scss */
+.section-subheadline {
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* line 32, ../../src/css/sass/_modules/_section-title/_small.scss */
+.section-headline + .section-subheadline {
+  margin-top: 0.25em;
+}
+
+/* line 36, ../../src/css/sass/_modules/_section-title/_small.scss */
+.section-divider {
+  margin: 1rem 0;
+}
+
 /* line 1, ../../src/css/sass/_modules/_ui/_small.scss */
 .video-play-button {
   width: 4rem;
@@ -1446,43 +1393,22 @@ a.navigation-overlay-link:hover {
  */
 @media screen and (min-width: 768px) {
   /* line 3, ../../src/css/sass/_modules/_disciplines/_medium.scss */
-  .disciplines-title {
-    min-height: 25vw;
-    padding: 10% 20%;
-  }
-
-  /* line 7, ../../src/css/sass/_modules/_disciplines/_medium.scss */
-  .disciplines-headline {
-    font-size: 2.1154em;
-  }
-
-  /* line 10, ../../src/css/sass/_modules/_disciplines/_medium.scss */
-  .disciplines-subheadline {
-    font-size: 1.3077em;
-  }
-
-  /* line 13, ../../src/css/sass/_modules/_disciplines/_medium.scss */
-  .disciplines-divider {
-    margin: 2rem;
-  }
-
-  /* line 16, ../../src/css/sass/_modules/_disciplines/_medium.scss */
   .disciplines-tile {
     width: calc(80vw / 3);
     height: calc(80vw / 3);
   }
 
-  /* line 20, ../../src/css/sass/_modules/_disciplines/_medium.scss */
+  /* line 7, ../../src/css/sass/_modules/_disciplines/_medium.scss */
   .disciplines-tile:nth-of-type(odd) {
     background-color: #FFFFFF;
   }
 
-  /* line 23, ../../src/css/sass/_modules/_disciplines/_medium.scss */
+  /* line 10, ../../src/css/sass/_modules/_disciplines/_medium.scss */
   .disciplines-tile:nth-of-type(even) {
     background-color: #f6f6f6;
   }
 
-  /* line 26, ../../src/css/sass/_modules/_disciplines/_medium.scss */
+  /* line 13, ../../src/css/sass/_modules/_disciplines/_medium.scss */
   .discipline-name {
     font-size: 1em;
   }
@@ -1654,29 +1580,44 @@ a.navigation-overlay-link:hover {
 }
 @media screen and (min-width: 768px) {
   /* line 3, ../../src/css/sass/_modules/_leadership/_medium.scss */
-  .leadership-title {
-    min-height: 25vw;
-    padding: 10% 20%;
-  }
-
-  /* line 7, ../../src/css/sass/_modules/_leadership/_medium.scss */
-  .leadership-headline {
-    font-size: 2.1154em;
-  }
-
-  /* line 10, ../../src/css/sass/_modules/_leadership/_medium.scss */
-  .leadership-subheadline {
-    font-size: 1.3077em;
-  }
-
-  /* line 13, ../../src/css/sass/_modules/_leadership/_medium.scss */
-  .leadership-tile {
+  .leader-tile {
     flex-basis: 25%;
   }
 
-  /* line 16, ../../src/css/sass/_modules/_leadership/_medium.scss */
-  .leadership-divider {
+  /* line 6, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-divider {
     margin: 2rem 0;
+  }
+
+  /* line 9, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-name,
+  .leader-role,
+  .leader-office {
+    transform: translateY(20%);
+    transition: all 0.1s 0.1s ease-in-out;
+    opacity: 0;
+  }
+
+  /* line 17, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-tile:hover .leader-name,
+  .leader-tile:hover .leader-role,
+  .leader-tile:hover .leader-office {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  /* line 23, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-tile:hover .leader-tile-divider {
+    width: 100%;
+  }
+
+  /* line 27, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-tile-text {
+    opacity: 0;
+  }
+
+  /* line 31, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-tile:hover .leader-tile-text {
+    opacity: 1;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1726,6 +1667,23 @@ a.navigation-overlay-link:hover {
   }
 }
 @media screen and (min-width: 768px) {
+  /* line 3, ../../src/css/sass/_modules/_section-title/_medium.scss */
+  .section-title {
+    min-height: 25vw;
+    padding: 10% 20%;
+  }
+
+  /* line 7, ../../src/css/sass/_modules/_section-title/_medium.scss */
+  .section-headline {
+    font-size: 2.1154em;
+  }
+
+  /* line 10, ../../src/css/sass/_modules/_section-title/_medium.scss */
+  .section-subheadline {
+    font-size: 1.3077em;
+  }
+}
+@media screen and (min-width: 768px) {
   /* line 3, ../../src/css/sass/_modules/_ui/_medium.scss */
   .divider-small {
     width: 3rem;
@@ -1735,23 +1693,6 @@ a.navigation-overlay-link:hover {
 /*
  * Large Breakpoints
  */
-@media screen and (min-width: 992px) {
-  /* line 3, ../../src/css/sass/_modules/_disciplines/_large.scss */
-  .disciplines-title {
-    padding: 10% 30%;
-  }
-
-  /* line 6, ../../src/css/sass/_modules/_disciplines/_large.scss */
-  .disciplines-headline {
-    font-size: 2.6154em;
-  }
-
-  /* line 9, ../../src/css/sass/_modules/_disciplines/_large.scss */
-  .disciplines-subheadline {
-    font-family: "Gotham", Helvetica, Arial, sans-serif;
-    font-size: 1.3077em;
-  }
-}
 @media screen and (min-width: 992px) {
   /* line 3, ../../src/css/sass/_modules/_feed/_large.scss */
   .feed-tile-eyebrow {
@@ -1796,16 +1737,6 @@ a.navigation-overlay-link:hover {
 }
 @media screen and (min-width: 992px) {
   /* line 3, ../../src/css/sass/_modules/_leadership/_large.scss */
-  .leadership-title {
-    padding: 10% 30%;
-  }
-
-  /* line 6, ../../src/css/sass/_modules/_leadership/_large.scss */
-  .leadership-headline {
-    font-size: 2.6154em;
-  }
-
-  /* line 9, ../../src/css/sass/_modules/_leadership/_large.scss */
   .leader-name {
     font-size: 1.3077em;
   }
@@ -1844,37 +1775,38 @@ a.navigation-overlay-link:hover {
     font-size: 3.4231em;
   }
 }
+@media screen and (min-width: 992px) {
+  /* line 3, ../../src/css/sass/_modules/_section-title/_large.scss */
+  .section-title {
+    padding: 10% 30%;
+  }
+
+  /* line 6, ../../src/css/sass/_modules/_section-title/_large.scss */
+  .section-headline {
+    font-size: 2.6154em;
+  }
+}
 /*
  * X-Large Breakpoints
  */
 @media screen and (min-width: 1200px) {
   /* line 3, ../../src/css/sass/_modules/_disciplines/_xlarge.scss */
-  .disciplines-title {
-    padding: 5% 30%;
-  }
-
-  /* line 6, ../../src/css/sass/_modules/_disciplines/_xlarge.scss */
-  .disciplines-headline {
-    font-size: 3.4231em;
-  }
-
-  /* line 9, ../../src/css/sass/_modules/_disciplines/_xlarge.scss */
   .disciplines-tile {
     width: calc(80vw / 4);
     height: calc(80vw / 4);
   }
 
-  /* line 13, ../../src/css/sass/_modules/_disciplines/_xlarge.scss */
+  /* line 7, ../../src/css/sass/_modules/_disciplines/_xlarge.scss */
   .discipline-name {
     font-size: 1.3077em;
   }
 
-  /* line 16, ../../src/css/sass/_modules/_disciplines/_xlarge.scss */
+  /* line 10, ../../src/css/sass/_modules/_disciplines/_xlarge.scss */
   .disciplines-tile-icon + .discipline-name {
     margin-top: 4rem;
   }
 
-  /* line 19, ../../src/css/sass/_modules/_disciplines/_xlarge.scss */
+  /* line 13, ../../src/css/sass/_modules/_disciplines/_xlarge.scss */
   .disciplines-tile:nth-of-type(1),
   .disciplines-tile:nth-of-type(3),
   .disciplines-tile:nth-of-type(6),
@@ -1882,7 +1814,7 @@ a.navigation-overlay-link:hover {
     background-color: #FFFFFF;
   }
 
-  /* line 25, ../../src/css/sass/_modules/_disciplines/_xlarge.scss */
+  /* line 19, ../../src/css/sass/_modules/_disciplines/_xlarge.scss */
   .disciplines-tile:nth-of-type(2),
   .disciplines-tile:nth-of-type(4),
   .disciplines-tile:nth-of-type(5),
@@ -1936,26 +1868,16 @@ a.navigation-overlay-link:hover {
 }
 @media screen and (min-width: 1200px) {
   /* line 3, ../../src/css/sass/_modules/_leadership/_xlarge.scss */
-  .leadership-title {
-    padding: 5% 30%;
-  }
-
-  /* line 6, ../../src/css/sass/_modules/_leadership/_xlarge.scss */
-  .leadership-headline {
-    font-size: 3.4231em;
-  }
-
-  /* line 9, ../../src/css/sass/_modules/_leadership/_xlarge.scss */
   .leader-name {
     font-size: 1.6154em;
   }
 
-  /* line 12, ../../src/css/sass/_modules/_leadership/_xlarge.scss */
+  /* line 6, ../../src/css/sass/_modules/_leadership/_xlarge.scss */
   .leader-role {
     font-size: 1em;
   }
 
-  /* line 15, ../../src/css/sass/_modules/_leadership/_xlarge.scss */
+  /* line 9, ../../src/css/sass/_modules/_leadership/_xlarge.scss */
   .leader-office {
     font-size: 0.8077em;
   }
@@ -1970,6 +1892,17 @@ a.navigation-overlay-link:hover {
   /* line 3, ../../src/css/sass/_modules/_page-title/_xlarge.scss */
   .page-title-headline {
     font-size: 4.2308em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 3, ../../src/css/sass/_modules/_section-title/_xlarge.scss */
+  .section-title {
+    padding: 5% 30%;
+  }
+
+  /* line 6, ../../src/css/sass/_modules/_section-title/_xlarge.scss */
+  .section-headline {
+    font-size: 3.4231em;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1995,12 +1928,6 @@ a.navigation-overlay-link:hover {
 /*
  * XX-Large Breakpoints
  */
-@media screen and (min-width: 1600px) {
-  /* line 3, ../../src/css/sass/_modules/_disciplines/_xxlarge.scss */
-  .disciplines-headline {
-    font-size: 4.2308em;
-  }
-}
 @media screen and (min-width: 1600px) {
   /* line 3, ../../src/css/sass/_modules/_feed/_xxlarge.scss */
   .feed-tile-text-container {
@@ -2036,21 +1963,16 @@ a.navigation-overlay-link:hover {
 }
 @media screen and (min-width: 1600px) {
   /* line 3, ../../src/css/sass/_modules/_leadership/_xxlarge.scss */
-  .leadership-headline {
-    font-size: 4.2308em;
-  }
-
-  /* line 6, ../../src/css/sass/_modules/_leadership/_xxlarge.scss */
   .leader-name {
     font-size: 2.1154em;
   }
 
-  /* line 9, ../../src/css/sass/_modules/_leadership/_xxlarge.scss */
+  /* line 6, ../../src/css/sass/_modules/_leadership/_xxlarge.scss */
   .leader-role {
     font-size: 1.3077em;
   }
 
-  /* line 12, ../../src/css/sass/_modules/_leadership/_xxlarge.scss */
+  /* line 9, ../../src/css/sass/_modules/_leadership/_xxlarge.scss */
   .leader-office {
     font-size: 1em;
   }
@@ -2070,5 +1992,11 @@ a.navigation-overlay-link:hover {
   /* line 3, ../../src/css/sass/_modules/_page-title/_xxlarge.scss */
   .page-title-headline {
     font-size: 5.5385em;
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* line 3, ../../src/css/sass/_modules/_section-title/_xxlarge.scss */
+  .section-headline {
+    font-size: 4.2308em;
   }
 }

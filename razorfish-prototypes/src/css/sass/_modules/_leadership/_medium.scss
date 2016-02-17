@@ -1,19 +1,36 @@
  // $medium-breakpoint: 768;
  @media screen and (min-width: '#{$medium-breakpoint}px') {
-     .leadership-title {
-         min-height: 25vw;
-         padding: 10% 20%;
-     }
-     .leadership-headline {
-         font-size: $fontSize7;
-     }
-     .leadership-subheadline {
-         font-size: $fontSize5;
-     }
-     .leadership-tile {
+     .leader-tile {
          flex-basis: 25%;
      }
-     .leadership-divider {
+     .leader-divider {
          margin: 2rem 0;
      }
+     .leader-name,
+     .leader-role,
+     .leader-office {
+         transform: translateY(20%);
+         transition: all 0.1s 0.1s ease-in-out;
+         opacity: 0;
+     }
+     .leader-tile:hover {
+         .leader-name,
+         .leader-role,
+         .leader-office {
+             transform: translateY(0%);
+             opacity: 1;
+         }
+         .leader-tile-divider {
+             width: 100%;
+         }
+     }
+     .leader-tile-text {
+         opacity: 0;
+     }
+     .leader-tile:hover {
+         .leader-tile-text {
+             opacity: 1;
+         }
+     }
+
  }
