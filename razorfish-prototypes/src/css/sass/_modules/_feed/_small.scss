@@ -1,9 +1,8 @@
 .feed-grid {
-    width: 100%;
+    width: 100vw;
     padding: 0;
     margin: 0;
     overflow: hidden;
-    height: 175vw;
 }
 
 .feed-tile {
@@ -11,65 +10,60 @@
 }
 
 .feed-tile:nth-of-type(1) {
-    width: 50vw;
-    height: 25vw;
+    width: 100vw;
+    height: 50vw;
 }
 
 .feed-tile:nth-of-type(2) {
-    width: 50vw;
-    height: 50vw;
+    width: 100vw;
+    height: 100vw;
 }
 
 .feed-tile:nth-of-type(3) {
-    width: 50vw;
-    height: 50vw;
-    transform: translateY(-50%);
+    width: 100vw;
+    height: 100vw;
+    transform: translateY(50%);
 }
 
 // Split
 .feed-tile:nth-of-type(4) {
-    width: 50vw;
-    height: 25vw;
+    width: 100vw;
+    height: 50vw;
+    transform: translateY(-200%);
 }
 
 // Solid
 .feed-tile:nth-of-type(5) {
-    width: 50vw;
-    height: 25vw;
-    transform: translateX(-100%);
+    width: 100vw;
+    height: 50vw;
 }
 
 .feed-tile:nth-of-type(6) {
-    width: 50vw;
-    height: 50vw;
-    transform: translateY(-50%) translateX(100%);
+    width: 100vw;
+    height: 100vw;
 }
 
 // Split
 .feed-tile:nth-of-type(7) {
-    width: 50vw;
-    height: 25vw;
-    transform: translateX(-100%);
+    width: 100vw;
+    height: 50vw;
 }
 
 .feed-tile:nth-of-type(8) {
-    width: 50vw;
-    height: 50vw;
-    transform: translateX(-100%);
+    width: 100vw;
+    height: 100vw;
 }
 
 // Split
 .feed-tile:nth-of-type(9) {
-    width: 50vw;
-    height: 25vw;
-    transform: translateY(-200%) translateX(100%);
+    width: 100vw;
+    height: 50vw;
 }
 
 // Solid
 .feed-tile:nth-of-type(10) {
-    width: 50vw;
-    height: 25vw;
-    transform: translateY(-100%);
+    width: 100vw;
+    height: 50vw;
 }
 
 .feed-tile-content {
@@ -111,7 +105,7 @@
 
 .feed-tile-eyebrow {
     font-family: $sans;
-    font-size: $fontSize4;
+    font-size: $fontSize3;
     line-height: 1.5;
     letter-spacing: -0.015em;
 }
@@ -143,7 +137,6 @@
         position: absolute;
     }
 }
-
 
 // Split Tiles
 .split {
@@ -181,7 +174,7 @@
         margin-top: -1rem;
         transition: all 0.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .feed-headline {
+    .feed-tile-headline {
         font-size: $fontSize4;
     }
 }
@@ -192,6 +185,7 @@
         margin-top: -1.5rem;
     }
 }
+
 .color-combination-1 {
     .feed-tile-eyebrow {
         color: $primary;
