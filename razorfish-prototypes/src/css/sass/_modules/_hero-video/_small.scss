@@ -1,7 +1,7 @@
 .hero-video {
     position: relative;
     width: 100vw;
-    height: 50vw;
+    height: 100vw;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -11,7 +11,7 @@
 
 .hero-video-text-container {
     width: 100%;
-    padding: 0 30%;
+    padding: 0 10%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -19,6 +19,7 @@
     justify-content: center;
     color: $white;
     text-align: center;
+
 }
 
 .hero-video-headline {
@@ -31,7 +32,7 @@
 
 .hero-video-subheadline {
     font-family: $sans;
-    font-size: $fontSize4;
+    font-size: $fontSize3;
     line-height: 1.5;
     letter-spacing: -0.01em;
 }
@@ -56,8 +57,8 @@
 }
 
 .hero-video-play-button {
-    width: 6rem;
-    height: 6rem;
+    width: 3rem;
+    height: 3rem;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -71,9 +72,9 @@
 
 .hero-video-play-button:after {
     content: "";
-    border-top: 1rem solid transparent;
-    border-bottom: 1rem solid transparent;
-    border-left: 1.5rem solid $white;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    border-left: 0.75rem solid $white;
     position: absolute;
     left: 54%;
     top: 50%;
@@ -87,12 +88,12 @@
 }
 
 .hero-video-play-button:hover:after {
-    border-top: calc(1rem * 1.2) solid transparent;
-    border-bottom: calc(1rem * 1.2) solid transparent;
-    border-left: calc(1.5rem * 1.2) solid $white;
+    border-top: calc(0.5rem * 1.2) solid transparent;
+    border-bottom: calc(0.5rem * 1.2) solid transparent;
+    border-left: calc(0.75rem * 1.2) solid $white;
     transition: all 0.05s 0s ease-out;
 }
 
 .hero-video-play-button + .hero-video-text-container {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
