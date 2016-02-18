@@ -69,7 +69,7 @@
 .disciplines-tile:nth-of-type(odd):hover,
 .disciplines-tile:nth-of-type(even):hover {
     .disciplines-tile-icon {
-        animation-name: discipline-icon-bounce;
+        animation-name: bounce;
         animation-duration: 0.5s;
         animation-timing-function: ease-in-out;
         animation-delay: 0.05s;
@@ -77,29 +77,5 @@
         animation-direction: normal;
         animation-fill-mode: none;
         animation-play-state: running;
-    }
-}
-
-@keyframes discipline-icon-bounce {
-    0% {
-        transform: translateY(0);
-    }
-    20% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-0.5em);
-    }
-    50% {
-        transform: translateY(0);
-    }
-    60% {
-        transform: translateY(-0.25em);
-    }
-    80% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(0);
     }
 }

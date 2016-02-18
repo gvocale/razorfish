@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
 
-<body>
+<body id="animate-container">
     <section class="navigation">
         <input type="checkbox" id="navigation-checkbox">
         <label for="navigation-checkbox" id="navigation-overlay-container">
@@ -28,6 +28,9 @@
                     </li>
                     <li class="navigation-overlay-link-container">
                         <a class="navigation-overlay-link" href="about-us.html">About</a>
+                    </li>
+                                        <li class="navigation-overlay-link-container">
+                        <a class="navigation-overlay-link" href="article.html">Article</a>
                     </li>
                 </ul>
             </nav>
@@ -54,7 +57,7 @@
                     </div>
                 </div>
             </li>
-            <li class="feed-tile picture-text-top color-combination-2">
+            <li class=" picture-text-top color-combination-2">
                 <div class="feed-tile-content">
                     <div class="feed-tile-text-container">
                         <p class="feed-tile-eyebrow">Mercedes</p>
@@ -169,15 +172,15 @@
             <div class="footer-share-icons">
                 <ul class="footer-share-icons">
                     <a href="" class="footer-share-icon">
-                        <li class="footer-share-twitter">
+                        <li class="footer-share-twitter animate">
                         </li>
                     </a>
                     <a href="" class="footer-share-icon">
-                        <li class="footer-share-facebook">
+                        <li class="footer-share-facebook animate">
                         </li>
                     </a>
                     <a href="" class="footer-share-icon">
-                        <li class="footer-share-linkedin">
+                        <li class="footer-share-linkedin animate">
                         </li>
                     </a>
                 </ul>
@@ -187,7 +190,12 @@
             </div>
         </div>
     </footer>
-<script src="js/min/razorfish.min.js"></script>
+    <script src="js/min/razorfish.min.js"></script>
+    <script src="js/cbpScroller.js"></script>
+    <script src="js/classie.js"></script>
+    <script>
+    new cbpScroller(document.getElementById('animate-container'));
+    </script>
 </body>
 
 </html>

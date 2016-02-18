@@ -1,0 +1,68 @@
+.article-hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-hero-text-container {
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    justify-content: center;
+    color: $white;
+    text-align: center;
+}
+
+.article-hero-eyebrow {
+    color: $primary;
+    font-family: $sans;
+    font-size: $fontSize3;
+    width: 100%;
+}
+
+.article-hero-headline {
+    font-family: $display;
+    font-size: $fontSize7;
+    font-weight: bold;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+}
+
+.article-hero-eyebrow + .article-hero-headline {
+    margin-top: 0.5em;
+}
+
+.article-hero-scroll-down-container {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: 1s ease-in-out 0.5s infinite bounce;
+}
+
+.article-hero-scroll-down-container:hover {
+    animation-play-state: paused;
+}
+
+.article-hero-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+    background-image: url('./../images/article-hero-background.jpg'), linear-gradient(90deg, $tertiary, $tertiaryDarker);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    transition: all 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
