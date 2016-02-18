@@ -1,7 +1,13 @@
 // $medium-breakpoint: 768;
 @media screen and (min-width: '#{$medium-breakpoint}px') {
-    .divider-small {
-        width: 3rem;
-        height: 0.3rem;
+    .divider-md {
+        width: calc(2em * 1.5);
+        height: calc(0.2rem * 1.5);
+    }
+    .divider-sm {
+        width: calc(1rem * 1.5);
+        height: calc(0.1rem * 1.5);
+        background-color: $primary;
+        border: none;
     }
 }

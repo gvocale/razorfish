@@ -1,12 +1,21 @@
 // $x-large-breakpoint: 1200;
 @media screen and (min-width: '#{$x-large-breakpoint}px') {
     .leader-name {
-        font-size: $fontSize6;
+        font-size: $fontSize7;
     }
     .leader-role {
         font-size: $fontSize4;
     }
     .leader-office {
         font-size: $fontSize3;
+    }
+    .leader-divider-container {
+        width: 0%;
+        margin: 1.5em 0;
+    }
+    .leader-tile:hover {
+        .leader-divider-container {
+            width: calc(1rem * 2);
+        }
     }
 }

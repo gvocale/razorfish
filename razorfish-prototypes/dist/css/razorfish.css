@@ -126,12 +126,20 @@ html {
   font-size: 16px;
 }
 
+/* line 97, ../../src/css/sass/_modules/_typography.scss */
+h1, h2, h3, h4, h5, h6, p {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+}
+
 /*
  * Small Breakpoints
  */
 /* line 1, ../../src/css/sass/_modules/_disciplines/_small.scss */
 .disciplines {
-  background-color: #333333;
+  background-color: #404040;
   padding-bottom: 10%;
 }
 
@@ -243,9 +251,17 @@ html {
   }
 }
 /* line 1, ../../src/css/sass/_modules/_divider/_small.scss */
-.divider-small {
+.divider-md {
   width: 2rem;
   height: 0.2rem;
+  background-color: #a9c000;
+  border: none;
+}
+
+/* line 8, ../../src/css/sass/_modules/_divider/_small.scss */
+.divider-sm {
+  width: 1rem;
+  height: 0.1rem;
   background-color: #a9c000;
   border: none;
 }
@@ -448,7 +464,7 @@ html {
 }
 /* line 183, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-1 .feed-tile-headline {
-  color: #333333;
+  color: #404040;
 }
 /* line 186, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-1 .feed-tile-background {
@@ -474,7 +490,7 @@ html {
 }
 /* line 207, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-3 .feed-tile-headline {
-  color: #333333;
+  color: #404040;
 }
 /* line 210, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-3 .feed-tile-background {
@@ -483,7 +499,7 @@ html {
 
 /* line 216, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-4 .feed-tile-eyebrow {
-  color: #333333;
+  color: #404040;
 }
 /* line 219, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-4 .feed-tile-headline {
@@ -811,9 +827,10 @@ html, body {
   justify-content: flex-start;
   aling-content: stretch;
   background-color: #f6f6f6;
+  width: 100vw;
 }
 
-/* line 12, ../../src/css/sass/_modules/_leadership/_small.scss */
+/* line 13, ../../src/css/sass/_modules/_leadership/_small.scss */
 .leader-tile {
   display: inline-block;
   margin: 0;
@@ -821,12 +838,10 @@ html, body {
   cursor: pointer;
   cursor: hand;
   overflow: hidden;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 50%;
+  width: 50vw;
 }
 
-/* line 24, ../../src/css/sass/_modules/_leadership/_small.scss */
+/* line 23, ../../src/css/sass/_modules/_leadership/_small.scss */
 .leader-tile-background {
   background-size: cover;
   background-position: center;
@@ -840,17 +855,18 @@ html, body {
   transition: transform 4s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* line 37, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leader-tile-text {
+/* line 36, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile-text-container {
   height: 50%;
   bottom: 0;
   position: absolute;
+  padding: 5% 5% 10% 5%;
   width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   text-align: center;
   color: #FFFFFF;
   opacity: 1;
@@ -869,7 +885,7 @@ html, body {
 /* line 61, ../../src/css/sass/_modules/_leadership/_small.scss */
 .leader-role {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
-  font-size: 1.3077em;
+  font-size: 0.6154em;
   line-height: 1.5;
   letter-spacing: -0.01em;
 }
@@ -877,18 +893,13 @@ html, body {
 /* line 68, ../../src/css/sass/_modules/_leadership/_small.scss */
 .leader-office {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
-  font-size: 1em;
+  font-size: 0.6154em;
   line-height: 1.5;
   letter-spacing: -0.01em;
   color: #D6D6D6;
 }
 
 /* line 76, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leader-role + .leader-office {
-  margin-top: 0.5rem;
-}
-
-/* line 80, ../../src/css/sass/_modules/_leadership/_small.scss */
 .leader-name,
 .leader-role,
 .leader-office {
@@ -897,11 +908,13 @@ html, body {
   opacity: 1;
 }
 
+/* line 84, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-role + .leader-office {
+  margin-top: 0.25em;
+}
+
 /* line 88, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leader-tile-divider-mask {
-  display: inline-block;
-  width: 2rem;
-  height: 0.13rem;
+.leader-divider-container {
   overflow: hidden;
   margin: auto;
   margin-top: 1rem;
@@ -910,65 +923,49 @@ html, body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-}
-
-/* line 102, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leader-tile-divider {
-  display: inline-block;
-  width: 0;
-  height: 100%;
-  background-color: #a9c000;
   transition: all 0.1s 0.2s ease-in-out;
+  margin: 0.5rem 0;
 }
 
-/* line 110, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leader-tile-divider {
-  width: 100%;
-}
-
-/* line 114, ../../src/css/sass/_modules/_leadership/_small.scss */
+/* line 101, ../../src/css/sass/_modules/_leadership/_small.scss */
 .leader-tile:before {
   content: "";
   display: block;
   padding-top: 133%;
 }
 
-/* line 121, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leader-tile:nth-of-type(odd) .leader-tile-background {
+/* line 112, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile:nth-of-type(1) .leader-tile-background,
+.leader-tile:nth-of-type(4) .leader-tile-background,
+.leader-tile:nth-of-type(5) .leader-tile-background,
+.leader-tile:nth-of-type(8) .leader-tile-background,
+.leader-tile:nth-of-type(9) .leader-tile-background {
   background-color: #FFFFFF;
   background-image: linear-gradient(#ffffff, #808080);
   background-blend-mode: multiply;
 }
 
-/* line 129, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leader-tile:nth-of-type(even) .leader-tile-background {
+/* line 124, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile:nth-of-type(2) .leader-tile-background,
+.leader-tile:nth-of-type(3) .leader-tile-background,
+.leader-tile:nth-of-type(6) .leader-tile-background,
+.leader-tile:nth-of-type(7) .leader-tile-background,
+.leader-tile:nth-of-type(10) .leader-tile-background {
   background-color: #f6f6f6;
   background-blend-mode: multiply;
 }
 
-/* line 135, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leader-tile-text:before {
+/* line 130, ../../src/css/sass/_modules/_leadership/_small.scss */
+.leader-tile-text-container:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to top-to-bottom, #f6f6f6, #808080);
-}
-
-/* line 146, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leader-tile:nth-of-type(odd):hover .leader-tile-background {
-  background-color: #808080;
-  background-blend-mode: multiply;
-  transform: scale(1.1);
-}
-
-/* line 154, ../../src/css/sass/_modules/_leadership/_small.scss */
-.leader-tile:nth-of-type(even):hover .leader-tile-background {
-  background-color: #808080;
-  background-blend-mode: multiply;
-  transform: scale(1.1);
+  z-index: -10;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), #000000);
+  opacity: 0.75;
 }
 
 /* line 1, ../../src/css/sass/_modules/_locations/_small.scss */
@@ -1116,7 +1113,7 @@ html, body {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  color: #333333;
+  color: #404040;
 }
 
 /* line 27, ../../src/css/sass/_modules/_navigation/_small.scss */
@@ -1165,7 +1162,7 @@ input#navigation-checkbox:checked {
   flex-direction: column;
   position: absolute;
   background-color: #a9c000;
-  color: #333333;
+  color: #404040;
   width: 100vw;
   height: 100vh;
   z-index: 10000;
@@ -1192,7 +1189,7 @@ input#navigation-checkbox:checked ~ main {
 /* line 88, ../../src/css/sass/_modules/_navigation/_small.scss */
 a.navigation-overlay-link,
 a.navigation-overlay-link:hover {
-  color: #333333;
+  color: #404040;
   font-size: 2.1154em;
 }
 
@@ -1216,7 +1213,7 @@ a.navigation-overlay-link:hover {
 .hamburger {
   width: 2.5rem;
   height: 0.25rem;
-  background-color: #333333;
+  background-color: #404040;
   position: relative;
   transform: scale(0.7);
   transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1228,7 +1225,7 @@ a.navigation-overlay-link:hover {
   content: "";
   width: 100%;
   height: 0.25rem;
-  background-color: #333333;
+  background-color: #404040;
   position: absolute;
   transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -1317,7 +1314,7 @@ a.navigation-overlay-link:hover {
   justify-content: center;
   width: 100vw;
   min-height: 50vw;
-  background-color: #333333;
+  background-color: #404040;
   position: relative;
   color: #FFFFFF;
   padding: 10% 10%;
@@ -1415,9 +1412,17 @@ a.navigation-overlay-link:hover {
 }
 @media screen and (min-width: 768px) {
   /* line 3, ../../src/css/sass/_modules/_divider/_medium.scss */
-  .divider-small {
-    width: 3rem;
-    height: 0.3rem;
+  .divider-md {
+    width: calc(2em * 1.5);
+    height: calc(0.2rem * 1.5);
+  }
+
+  /* line 7, ../../src/css/sass/_modules/_divider/_medium.scss */
+  .divider-sm {
+    width: calc(1rem * 1.5);
+    height: calc(0.1rem * 1.5);
+    background-color: #a9c000;
+    border: none;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1581,15 +1586,21 @@ a.navigation-overlay-link:hover {
 @media screen and (min-width: 768px) {
   /* line 3, ../../src/css/sass/_modules/_leadership/_medium.scss */
   .leader-tile {
-    flex-basis: 25%;
+    width: 25vw;
   }
 
   /* line 6, ../../src/css/sass/_modules/_leadership/_medium.scss */
-  .leader-divider {
-    margin: 2rem 0;
+  .leader-divider-container {
+    width: 0%;
+    margin: 1em 0;
   }
 
-  /* line 9, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  /* line 10, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-name {
+    line-height: 1.2;
+  }
+
+  /* line 13, ../../src/css/sass/_modules/_leadership/_medium.scss */
   .leader-name,
   .leader-role,
   .leader-office {
@@ -1598,26 +1609,64 @@ a.navigation-overlay-link:hover {
     opacity: 0;
   }
 
-  /* line 17, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  /* line 20, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-role {
+    font-size: 0.8077em;
+  }
+
+  /* line 24, ../../src/css/sass/_modules/_leadership/_medium.scss */
   .leader-tile:hover .leader-name,
   .leader-tile:hover .leader-role,
   .leader-tile:hover .leader-office {
     transform: translateY(0%);
     opacity: 1;
   }
-  /* line 23, ../../src/css/sass/_modules/_leadership/_medium.scss */
-  .leader-tile:hover .leader-tile-divider {
-    width: 100%;
+  /* line 30, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-tile:hover .leader-divider-container {
+    width: calc(1rem * 1.5);
   }
 
-  /* line 27, ../../src/css/sass/_modules/_leadership/_medium.scss */
-  .leader-tile-text {
-    opacity: 0;
+  /* line 34, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-role + .leader-office {
+    margin-top: 0.5em;
   }
 
-  /* line 31, ../../src/css/sass/_modules/_leadership/_medium.scss */
-  .leader-tile:hover .leader-tile-text {
-    opacity: 1;
+  /* line 42, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-tile:nth-of-type(1) .leader-tile-background,
+  .leader-tile:nth-of-type(3) .leader-tile-background,
+  .leader-tile:nth-of-type(6) .leader-tile-background,
+  .leader-tile:nth-of-type(8) .leader-tile-background,
+  .leader-tile:nth-of-type(9) .leader-tile-background {
+    background-color: #FFFFFF;
+    background-image: linear-gradient(#ffffff, #808080);
+    background-blend-mode: multiply;
+  }
+
+  /* line 53, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-tile:nth-of-type(2) .leader-tile-background,
+  .leader-tile:nth-of-type(4) .leader-tile-background,
+  .leader-tile:nth-of-type(5) .leader-tile-background,
+  .leader-tile:nth-of-type(7) .leader-tile-background,
+  .leader-tile:nth-of-type(10) .leader-tile-background {
+    background-color: #f6f6f6;
+    background-blend-mode: multiply;
+  }
+
+  /* line 59, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-tile:hover .leader-tile-background {
+    background-color: #808080;
+    background-blend-mode: multiply;
+    transform: scale(1.1);
+  }
+
+  /* line 65, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-tile-text-container:before {
+    display: none;
+  }
+
+  /* line 68, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-tile-text-container {
+    justify-content: center;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1823,6 +1872,21 @@ a.navigation-overlay-link:hover {
   }
 }
 @media screen and (min-width: 1200px) {
+  /* line 3, ../../src/css/sass/_modules/_divider/_xlarge.scss */
+  .divider-md {
+    width: calc(2em * 2);
+    height: calc(0.2rem * 2);
+  }
+
+  /* line 7, ../../src/css/sass/_modules/_divider/_xlarge.scss */
+  .divider-sm {
+    width: calc(1rem * 2);
+    height: calc(0.1rem * 2);
+    background-color: #a9c000;
+    border: none;
+  }
+}
+@media screen and (min-width: 1200px) {
   /* line 3, ../../src/css/sass/_modules/_feed/_xlarge.scss */
   .feed-tile-headline {
     font-size: 2.6154em;
@@ -1869,7 +1933,7 @@ a.navigation-overlay-link:hover {
 @media screen and (min-width: 1200px) {
   /* line 3, ../../src/css/sass/_modules/_leadership/_xlarge.scss */
   .leader-name {
-    font-size: 1.6154em;
+    font-size: 2.1154em;
   }
 
   /* line 6, ../../src/css/sass/_modules/_leadership/_xlarge.scss */
@@ -1880,6 +1944,17 @@ a.navigation-overlay-link:hover {
   /* line 9, ../../src/css/sass/_modules/_leadership/_xlarge.scss */
   .leader-office {
     font-size: 0.8077em;
+  }
+
+  /* line 12, ../../src/css/sass/_modules/_leadership/_xlarge.scss */
+  .leader-divider-container {
+    width: 0%;
+    margin: 1.5em 0;
+  }
+
+  /* line 17, ../../src/css/sass/_modules/_leadership/_xlarge.scss */
+  .leader-tile:hover .leader-divider-container {
+    width: calc(1rem * 2);
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1964,7 +2039,7 @@ a.navigation-overlay-link:hover {
 @media screen and (min-width: 1600px) {
   /* line 3, ../../src/css/sass/_modules/_leadership/_xxlarge.scss */
   .leader-name {
-    font-size: 2.1154em;
+    font-size: 2.6154em;
   }
 
   /* line 6, ../../src/css/sass/_modules/_leadership/_xxlarge.scss */
