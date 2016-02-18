@@ -655,18 +655,48 @@ a.footer-legal-link:hover:after {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform: scale(0.9);
   background-origin: content-box;
   padding: 0.8rem;
 }
 
-/* line 137, ../../src/css/sass/_modules/_footer/_small.scss */
+/* line 135, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-share-twitter.not-in-viewport,
+.footer-share-facebook.not-in-viewport,
+.footer-share-linkedin.not-in-viewport {
+  transform: translateY(100%);
+  transition-duration: 0.2s;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+}
+
+/* line 144, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-share-twitter.not-in-viewport {
+  transition-delay: 0.2s;
+}
+
+/* line 148, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-share-facebook.not-in-viewport {
+  transition-delay: 0.3s;
+}
+
+/* line 152, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-share-linkedin.not-in-viewport {
+  transition-delay: 0.4s;
+}
+
+/* line 156, ../../src/css/sass/_modules/_footer/_small.scss */
+.footer-share-twitter.not-in-viewport.in-viewport,
+.footer-share-facebook.not-in-viewport.in-viewport,
+.footer-share-linkedin.not-in-viewport.in-viewport {
+  transform: translateY(0%);
+}
+
+/* line 162, ../../src/css/sass/_modules/_footer/_small.scss */
 .footer-share-icon {
   position: relative;
 }
 
-/* line 141, ../../src/css/sass/_modules/_footer/_small.scss */
+/* line 166, ../../src/css/sass/_modules/_footer/_small.scss */
 .footer-share-icon:before {
   display: block;
   content: "";
@@ -679,28 +709,12 @@ a.footer-legal-link:hover:after {
   transition: width 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* line 153, ../../src/css/sass/_modules/_footer/_small.scss */
+/* line 178, ../../src/css/sass/_modules/_footer/_small.scss */
 .footer-share-icon:hover:before {
   width: 100%;
 }
 
-/* line 158, ../../src/css/sass/_modules/_footer/_small.scss */
-.footer.reveal .footer-share-twitter {
-  transform: translateY(0%);
-  transition: all 0.2s 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-/* line 162, ../../src/css/sass/_modules/_footer/_small.scss */
-.footer.reveal .footer-share-facebook {
-  transform: translateY(0%);
-  transition: all 0.2s 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-/* line 166, ../../src/css/sass/_modules/_footer/_small.scss */
-.footer.reveal .footer-share-linkedin {
-  transform: translateY(0%);
-  transition: all 0.2s 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* line 172, ../../src/css/sass/_modules/_footer/_small.scss */
+/* line 183, ../../src/css/sass/_modules/_footer/_small.scss */
 .footer-share-twitter:hover,
 .footer-share-facebook:hover,
 .footer-share-linkedin:hover {
@@ -725,7 +739,7 @@ a.footer-legal-link:hover:after {
     transform: translateY(0);
   }
 }
-/* line 198, ../../src/css/sass/_modules/_footer/_small.scss */
+/* line 209, ../../src/css/sass/_modules/_footer/_small.scss */
 .footer-share-icons a:before {
   border-bottom-width: 0.1em;
 }
