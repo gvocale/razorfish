@@ -20,22 +20,6 @@
      .leader-role {
          font-size: $fontSize3;
      }
-     .leader-tile:hover {
-         .leader-name,
-         .leader-role,
-         .leader-office {
-             transform: translateY(0%);
-             opacity: 1;
-         }
-         .leader-divider-container {
-             width: calc(1rem * 1.5);
-         }
-         .leader-tile-background {
-             background-color: $grayDarker;
-             background-blend-mode: multiply;
-             transform: scale(1.1);
-         }
-     }
      .leader-role + .leader-office {
          margin-top: 0.5em;
      }
@@ -58,6 +42,22 @@
          .leader-tile-background {
              background-color: $whiteDarker;
              background-blend-mode: multiply;
+         }
+     }
+     .leader-tile:hover {
+         .leader-name,
+         .leader-role,
+         .leader-office {
+             transform: translateY(0%);
+             opacity: 1;
+         }
+         .leader-divider-container {
+             width: calc(1rem * 1.5);
+         }
+         .leader-tile-background {
+             background-color: $grayDarker;
+             background-blend-mode: multiply;
+             transform: scale(1.1);
          }
      }
      .leader-tile-text-container:before {

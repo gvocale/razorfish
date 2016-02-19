@@ -112,7 +112,7 @@ module.exports = function(grunt) {
         browserSync: {
             bsFiles: {
                 src: [
-                    'dist/css/*.css',
+                    'dist/css/razorfish.css',
                     'dist/*.html'
                 ]
             },

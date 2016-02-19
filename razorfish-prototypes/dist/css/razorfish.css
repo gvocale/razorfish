@@ -2234,32 +2234,12 @@ a.navigation-overlay-link:hover {
     font-size: 0.8077em;
   }
 
-  /* line 24, ../../src/css/sass/_modules/_leadership/_medium.scss */
-  .leader-tile:hover .leader-name,
-  .leader-tile:hover .leader-role,
-  .leader-tile:hover .leader-office {
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
-    opacity: 1;
-  }
-  /* line 30, ../../src/css/sass/_modules/_leadership/_medium.scss */
-  .leader-tile:hover .leader-divider-container {
-    width: calc(1rem * 1.5);
-  }
-  /* line 33, ../../src/css/sass/_modules/_leadership/_medium.scss */
-  .leader-tile:hover .leader-tile-background {
-    background-color: #808080;
-    background-blend-mode: multiply;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-
-  /* line 39, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  /* line 23, ../../src/css/sass/_modules/_leadership/_medium.scss */
   .leader-role + .leader-office {
     margin-top: 0.5em;
   }
 
-  /* line 47, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  /* line 31, ../../src/css/sass/_modules/_leadership/_medium.scss */
   .leader-tile:nth-of-type(1) .leader-tile-background,
   .leader-tile:nth-of-type(3) .leader-tile-background,
   .leader-tile:nth-of-type(6) .leader-tile-background,
@@ -2270,7 +2250,7 @@ a.navigation-overlay-link:hover {
     background-blend-mode: multiply;
   }
 
-  /* line 58, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  /* line 42, ../../src/css/sass/_modules/_leadership/_medium.scss */
   .leader-tile:nth-of-type(2) .leader-tile-background,
   .leader-tile:nth-of-type(4) .leader-tile-background,
   .leader-tile:nth-of-type(5) .leader-tile-background,
@@ -2278,6 +2258,26 @@ a.navigation-overlay-link:hover {
   .leader-tile:nth-of-type(10) .leader-tile-background {
     background-color: #f6f6f6;
     background-blend-mode: multiply;
+  }
+
+  /* line 48, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-tile:hover .leader-name,
+  .leader-tile:hover .leader-role,
+  .leader-tile:hover .leader-office {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+  /* line 54, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-tile:hover .leader-divider-container {
+    width: calc(1rem * 1.5);
+  }
+  /* line 57, ../../src/css/sass/_modules/_leadership/_medium.scss */
+  .leader-tile:hover .leader-tile-background {
+    background-color: #808080;
+    background-blend-mode: multiply;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 
   /* line 63, ../../src/css/sass/_modules/_leadership/_medium.scss */
@@ -2537,12 +2537,16 @@ a.navigation-overlay-link:hover {
 
   /* line 19, ../../src/css/sass/_modules/_article/_xlarge.scss */
   .article-long-copy {
-    font-size: 1.3077em;
     line-height: 2;
     -webkit-column-gap: 6em;
        -moz-column-gap: 6em;
             column-gap: 6em;
     padding: 0 5%;
+  }
+
+  /* line 24, ../../src/css/sass/_modules/_article/_xlarge.scss */
+  .article-author + .article-long-copy {
+    margin-top: 8rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -2761,7 +2765,7 @@ a.navigation-overlay-link:hover {
 @media screen and (min-width: 1600px) {
   /* line 3, ../../src/css/sass/_modules/_hero-video/_xxlarge.scss */
   .hero-video {
-    height: 35vw;
+    height: 40vw;
   }
 
   /* line 6, ../../src/css/sass/_modules/_hero-video/_xxlarge.scss */
