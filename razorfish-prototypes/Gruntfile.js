@@ -77,6 +77,10 @@ module.exports = function(grunt) {
                     force: true
                 }
             },
+            autoprefixer: {
+                files: ['dist/css/razorfish.css'],
+                tasks: ['autoprefixer:dev'],
+            },
             browserify: {
                 files: ['src/js/modules/**/*.js'],
                 tasks: ['browserify:dev'],
@@ -87,6 +91,23 @@ module.exports = function(grunt) {
             },
         },
 
+        postcss: {
+            options: {
+                map: true, // inline sourcemaps
+
+                processors: [
+                    require('pixrem')(), // add fallbacks for rem units
+                    require('autoprefixer')({
+                        browsers: 'last 2 versions'
+                    }), // add vendor prefixes
+                    require('cssnano')() // minify the result
+                ]
+            },
+            dist: {
+                src: 'src/css/sass/razorfish.scss',
+                dest: 'dist/css/razorfish.css'
+            }
+        },
 
         browserSync: {
             bsFiles: {
@@ -100,12 +121,27 @@ module.exports = function(grunt) {
                 server: {
                     baseDir: "dist",
                     index: 'home.html'
-                }
+                },
+                browser: "google chrome"
             }
 
         },
 
-
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 versions']
+            },
+            dev: {
+                files: {
+                    'dist/css/razorfish.css': 'dist/css/razorfish.css'
+                }
+            },
+            prod: {
+                files: {
+                    'dist/css/razorfish.css': 'dist/css/razorfish.css'
+                }
+            },
+        },
 
     });
 
@@ -117,10 +153,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-browser-sync');
+    grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-autoprefixer');
 
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('giovanni', ['browserSync','watch']);
+    grunt.registerTask('giovanni', ['browserSync', 'watch']);
     grunt.registerTask('build', ['compass:' + target, 'browserify:' + target, 'uglify:' + target]);
 
 };

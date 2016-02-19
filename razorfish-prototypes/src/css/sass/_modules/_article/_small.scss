@@ -1,0 +1,85 @@
+.article-content {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 4rem 10%;
+}
+
+
+.article-share-icons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .share-icon-container {
+        background-color: $grayLighter;
+        margin: 0 0.05rem;
+    }
+}
+
+
+.article-share-icons-container + .article-text-container {
+    margin-top: 3rem;
+}
+
+.article-divider {
+    margin: 2rem 0;
+}
+
+
+.article-text-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    color: $black;
+}
+
+.article-h2 {
+    font-family: $display;
+    font-size: $fontSize6;
+    color: $black;
+    font-weight: bold;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+
+.article-author-name {
+    font-family: $sans;
+    font-weight: bold;
+    font-size: $fontSize3;
+    color: $black;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.article-author-title {
+    font-family: $sans;
+    font-size: $fontSize3;
+    color: $black;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.article-author-name + .article-author-title {
+    margin-left: 0.5em;
+}
+
+.article-author + .article-long-copy {
+    margin-top: 4rem;
+}
+
+.article-long-copy {
+    font-family: $sans;
+    font-size: $fontSize4;
+    line-height: 1.8;
+}
+

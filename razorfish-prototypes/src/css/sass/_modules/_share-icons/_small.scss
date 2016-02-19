@@ -1,0 +1,74 @@
+.share-icon-container {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 0.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.share-icon-container:before {
+    display: block;
+    content: "";
+    position: absolute;
+    height: 0.1em;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    background-color: $primary;
+    transition: width 0.1s ease-in-out 0.1s;
+}
+
+.share-icon-container:hover {
+    .share-icon {
+        animation-name: bounce;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0.05s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        animation-play-state: running;
+    }
+}
+
+.share-icon-container:hover:before {
+    width: 100%;
+}
+
+.linkedin-icon,
+.facebook-icon,
+.twitter-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.share-icon-container.not-in-viewport {
+    .share-icon {
+        transform: translateY(100%);
+        transition-duration: 0.2s;
+        transition-property: transform;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0;
+    }
+}
+
+.share-icon-container.in-viewport {
+    .share-icon:nth-of-type(1) {
+        transition-delay: 0.2s;
+        transform: translateY(0%);
+    }
+    .share-icon:nth-of-type(2) {
+        transition-delay: 0.3s;
+        transform: translateY(0%);
+    }
+    .share-icon:nth-of-type(3) {
+        transition-delay: 0.4s;
+        transform: translateY(0%);
+    }
+}

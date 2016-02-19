@@ -96,121 +96,15 @@ a.footer-legal-link:hover:after {
     justify-content: center;
 }
 
-.footer-share-icons {
-    width: 20rem;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-around;
-    overflow: hidden;
-}
-
 .footer-divider {
     margin: 2rem 0;
 }
 
-.footer-share-twitter {
-    background-image: url(./../images/share-twitter.svg)
-}
-
-.footer-share-facebook {
-    background-image: url(./../images/share-facebook.svg)
-}
-
-.footer-share-linkedin {
-    background-image: url(./../images/share-linkedin.svg)
-}
-
-.footer-share-twitter,
-.footer-share-facebook,
-.footer-share-linkedin {
-    height: 3rem;
-    width: 3rem;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-origin: content-box;
-    padding: 0.8rem;
-}
-
-.footer-share-twitter.not-in-viewport,
-.footer-share-facebook.not-in-viewport,
-.footer-share-linkedin.not-in-viewport {
-    transform: translateY(100%);
-    transition-duration: 0.2s;
-    transition-property: transform;
-    transition-timing-function: ease-in-out;
-}
-
-.footer-share-twitter.not-in-viewport.in-viewport {
-    transition-delay: 0.2s;
-}
-
-.footer-share-facebook.not-in-viewport.in-viewport {
-    transition-delay: 0.3s;
-}
-
-.footer-share-linkedin.not-in-viewport.in-viewport {
-    transition-delay: 0.4s;
-}
-
-.footer-share-twitter.not-in-viewport {
-    transition-delay: 0;
-}
-
-.footer-share-twitter.not-in-viewport.in-viewport,
-.footer-share-facebook.not-in-viewport.in-viewport,
-.footer-share-linkedin.not-in-viewport.in-viewport {
-    transform: translateY(0%);
-}
-
-.footer-share-icon {
-    position: relative;
-}
-
-.footer-share-icon:before {
-    display: block;
-    content: "";
-    position: absolute;
-    height: 0.1em;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    background-color: $primary;
-    transition: width 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.footer-share-icon:hover:before {
-    width: 100%;
-}
-
-
-.footer-share-twitter:hover,
-.footer-share-facebook:hover,
-.footer-share-linkedin:hover {
-    animation-name: footer-share-icon-bounce;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: alternate;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-}
-
-@keyframes footer-share-icon-bounce {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-0.35em);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.footer-share-icons {
-    a:before {
-        border-bottom-width: 0.1em;
+.footer-share-icons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .share-icon-container {
+        margin: 0 1rem;
     }
 }
