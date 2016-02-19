@@ -1,10 +1,16 @@
 // $large-breakpoint: 992;
 @media screen and (min-width: '#{$large-breakpoint}px') {
-    .article-h2 {
-        font-size: $fontSize9;
+    .article-share-icons-container + .article-headline-container,
+    .article-headline-container + .article-body-container,
+    .article-headline-container + .article-large-body-container {
+        margin-top: 5%;
     }
-    .article-long-copy {
-        column-count: 2;
-        column-gap: 4em;
+    .article-body-container {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .article-large-body-container {
+        padding-left: 15%;
+        padding-right: 15%;
     }
 }

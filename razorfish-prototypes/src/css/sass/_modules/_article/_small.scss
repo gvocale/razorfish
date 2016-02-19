@@ -1,15 +1,7 @@
 .article-content {
-    position: relative;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 4rem 10%;
+    @extend .content-centered;
+    @extend .section-padding;
 }
-
 
 .article-share-icons-container {
     display: flex;
@@ -21,65 +13,158 @@
     }
 }
 
-
-.article-share-icons-container + .article-text-container {
-    margin-top: 3rem;
-}
-
 .article-divider {
-    margin: 2rem 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
+.article-headline-container {
+    @extend .headline-container;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
 
-.article-text-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    color: $black;
+.article-body-container {
+    @extend .body-container;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.article-large-body-container {
+    @extend .body-container;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .article-h2 {
-    font-family: $display;
-    font-size: $fontSize6;
-    color: $black;
-    font-weight: bold;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-    text-align: center;
+    @extend .h2;
 }
 
+.article-h3 {
+    @extend .h3;
+}
+
+.article-h3-quote {
+    @extend .h3;
+    color: $white;
+    letter-spacing: 0.01em;
+}
+
+.article-h4 {
+    @extend .h4;
+}
 
 .article-author-name {
-    font-family: $sans;
+    @extend .body;
     font-weight: bold;
-    font-size: $fontSize3;
-    color: $black;
     text-transform: uppercase;
     display: inline-block;
+    width: auto;
 }
 
 .article-author-title {
-    font-family: $sans;
-    font-size: $fontSize3;
-    color: $black;
+    @extend .body;
     text-transform: uppercase;
     display: inline-block;
+    width: auto;
+}
+
+.article-body {
+    @extend .body;
+}
+
+.article-h2.inverted,
+.article-h3.inverted,
+.article-author-name.inverted,
+.article-author-title.inverted,
+.article-body.inverted {
+    color: $white;
+}
+
+.article-pull-quote {
+    @extend .pull-quote;
+}
+
+.article-background {
+    @extend .background-cover;
+}
+
+.article-quote {
+    @extend .content-centered;
+    @extend .section-padding;
+    background-color: $tertiaryDarker;
+}
+
+.article-quote-eyebrow {
+    @extend .eyebrow;
+}
+
+.article-h3-quote {
+    @extend .h3;
+    font-style: italic;
+    color: $white;
+}
+
+.article-foot-note-container {
+    width: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-top: solid 0.01rem $gray;
+}
+
+.article-foot-note {
+    @extend .foot-note;
+}
+
+.article-video-container {
+    @extend .video-container;
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+.article-pull-quote {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.article-horizontal-rule {
+    @extend .horizontal-rule;
+    margin-top: 6em;
+    margin-bottom: 2em;
 }
 
 .article-author-name + .article-author-title {
     margin-left: 0.5em;
 }
 
-.article-author + .article-long-copy {
+.article-author + .article-long-copy-two-column {
     margin-top: 4rem;
 }
 
-.article-long-copy {
-    font-family: $sans;
-    font-size: $fontSize4;
-    line-height: 1.8;
+.article-share-icons-container + .article-headline-container,
+.article-headline-container + .article-body-container,
+.article-headline-container + .article-large-body-container {
+    margin-top: 10%;
 }
 
+.article-quote-eyebrow + .article-h3-quote {
+    margin-top: 0.5em;
+}
+
+.article-h3 + .article-body {
+    margin-top: 2em;
+}
+
+.article-h4 + .article-body {
+    margin-top: 1.5em;
+}
+
+.article-body + .article-body {
+    margin-top: 1.5em;
+}
+
+.article-body + .article-h3,
+.article-body + .article-h4 {
+    margin-top: 3em;
+}

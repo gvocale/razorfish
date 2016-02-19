@@ -1,18 +1,12 @@
 // $medium-breakpoint: 768;
 @media screen and (min-width: '#{$medium-breakpoint}px') {
-    .article-content {
-        padding: 6rem 10%;
-    }
-    .article-share-icons-container + .article-text-container {
-        margin-top: 4rem;
-    }
-    .article-hero-text-container {
-        padding: 0 15%;
-    }
-    .article-h2 {
-        font-size: $fontSize7;
+    .article-share-icons-container + .article-headline-container,
+    .article-headline-container + .article-body-container,
+    .article-headline-container + .article-large-body-container {
+        margin-top: 8%;
     }
     .article-divider {
-        margin: 3rem 0;
+        margin-top: 2em;
+        margin-bottom: 2rem;
     }
 }

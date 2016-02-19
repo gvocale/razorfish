@@ -1,14 +1,23 @@
 // $xx-large-breakpoint: 1600;
 @media screen and (min-width: '#{$xx-large-breakpoint}px') {
-    .article-hero-eyebrow {
-        font-size: $fontSize7;
+    .article-foot-note-container {
+        margin-left: 25%;
+        margin-right: 25%;
+        padding-top: 15%;
+        padding-bottom: 15%;
+        border-top: solid 0.01rem $gray;
     }
-    .article-h2 {
-        font-size: $fontSize11;
+    .article-headline-container {
+        padding-left: 15%;
+        padding-right: 15%;
     }
-    .article-long-copy {
-        font-size: $fontSize5;
-        line-height: 2;
-        -webkit-column-gap: 8em;
+    .article-body-container {
+        padding-left: 30%;
+        padding-right: 30%;
+    }
+    .article-share-icons-container + .article-headline-container,
+    .article-headline-container + .article-body-container,
+    .article-headline-container + .article-large-body-container {
+        margin-top: 4%;
     }
 }

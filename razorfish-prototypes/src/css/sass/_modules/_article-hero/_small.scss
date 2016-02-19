@@ -1,40 +1,20 @@
 .article-hero {
-    position: relative;
-    width: 100vw;
+    @extend .content-centered;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
 }
 
-.article-hero-text-container {
-    width: 100%;
-    padding: 0 10%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: baseline;
-    justify-content: center;
-    color: $white;
+.article-hero-headline-container {
+    @extend .headline-container;
     text-align: center;
 }
 
 .article-hero-eyebrow {
-    color: $primary;
-    font-family: $sans;
-    font-size: $fontSize3;
-    width: 100%;
+    @extend .eyebrow;
 }
 
-.article-hero-headline {
-    font-family: $display;
-    font-size: $fontSize7;
-    font-weight: bold;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
+.article-hero-h1 {
+    @extend .h1;
+    color: $white;
 }
 
 .article-hero-eyebrow + .article-hero-headline {
@@ -54,16 +34,8 @@
 }
 
 .article-hero-background {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    @extend .background-cover;
     background-blend-mode: soft-light;
     background-image: url('./../images/article-hero-background.jpg'), linear-gradient(90deg, $tertiary, $tertiaryDarker);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
     animation: 20s ease-out 0.5s forwards zoom;
 }

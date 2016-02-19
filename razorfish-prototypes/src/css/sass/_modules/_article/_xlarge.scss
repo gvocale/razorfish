@@ -1,27 +1,13 @@
  // $x-large-breakpoint: 1200;
  @media screen and (min-width: '#{$x-large-breakpoint}px') {
-     .article-h2 {
-         font-size: $fontSize10;
-         line-height: 1;
+     .article-large-body-container {
+         .article-body {
+             column-count: 2;
+             column-gap: 5vw;
+         }
      }
-     .article-content {
-         padding: 8rem 10%;
-     }
-     .article-share-icons-container + .article-text-container {
-         margin-top: 6rem;
-     }
-     .article-author-name {
-         font-size: $fontSize5;
-     }
-     .article-author-title {
-         font-size: $fontSize5;
-     }
-     .article-long-copy {
-         line-height: 2;
-         column-gap: 6em;
-         padding: 0 5%;
-     }
-     .article-author + .article-long-copy {
-         margin-top: 8rem;
+     .article-body-container {
+         padding-left: 20%;
+         padding-right: 20%;
      }
  }
