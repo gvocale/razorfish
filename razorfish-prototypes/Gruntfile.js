@@ -69,17 +69,14 @@ module.exports = function(grunt) {
         },
 
         watch: {
+
             compass: {
                 files: ['src/css/sass/**/*.scss'],
-                tasks: ['compass:dev'],
+                tasks: ['compass:dev', 'autoprefixer:dev'],
                 options: {
                     livereload: false,
                     force: true
                 }
-            },
-            autoprefixer: {
-                files: ['dist/css/razorfish.css'],
-                tasks: ['autoprefixer:dev'],
             },
             browserify: {
                 files: ['src/js/modules/**/*.js'],
@@ -88,25 +85,8 @@ module.exports = function(grunt) {
             uglify: {
                 files: ['src/js/razorfish.js'],
                 tasks: ['uglify:dev']
-            },
-        },
-
-        postcss: {
-            options: {
-                map: true, // inline sourcemaps
-
-                processors: [
-                    require('pixrem')(), // add fallbacks for rem units
-                    require('autoprefixer')({
-                        browsers: 'last 2 versions'
-                    }), // add vendor prefixes
-                    require('cssnano')() // minify the result
-                ]
-            },
-            dist: {
-                src: 'src/css/sass/razorfish.scss',
-                dest: 'dist/css/razorfish.css'
             }
+
         },
 
         browserSync: {
@@ -120,9 +100,10 @@ module.exports = function(grunt) {
                 watchTask: true,
                 server: {
                     baseDir: "dist",
-                    index: 'home.html'
+                    index: 'index.html'
                 },
-                browser: "google chrome"
+                browser: "google chrome",
+                notify: false
             }
 
         },
@@ -132,14 +113,12 @@ module.exports = function(grunt) {
                 browsers: ['last 2 versions']
             },
             dev: {
-                files: {
-                    'dist/css/razorfish.css': 'dist/css/razorfish.css'
-                }
+                src: 'dist/css/razorfish.css',
+                dest: 'dist/css/razorfish.css'
             },
             prod: {
-                files: {
-                    'dist/css/razorfish.css': 'dist/css/razorfish.css'
-                }
+                src: 'dist/css/razorfish.css',
+                dest: 'dist/css/razorfish.css'
             },
         },
 
@@ -153,7 +132,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-browser-sync');
-    grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-autoprefixer');
 
 
