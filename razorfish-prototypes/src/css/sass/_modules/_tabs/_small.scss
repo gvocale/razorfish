@@ -1,0 +1,31 @@
+.tabs-container {
+    width: 60%;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 0.05em solid;
+}
+
+.tab {
+    @extend .h5;
+    opacity: 0.5;
+    cursor: pointer;
+    cursor: hand;
+    padding-bottom: $scale02;
+    font-weight: lighter;
+}
+
+.tab:active {
+    font-weight: normal;
+    border-bottom: 0.1em solid;
+}
+
+.tab:hover {
+    opacity: 1;
+    border-bottom: 0.05em solid $primary;
+}

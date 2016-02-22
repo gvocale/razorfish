@@ -41,22 +41,14 @@
 }
 
 .locations-background {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    @extend .background-cover;
     background-blend-mode: soft-light;
     background-image: url('./../images/locations-background.jpg'), linear-gradient(90deg, $tertiary, $tertiaryDarker);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
     transition: all 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .locations-eyebrow {
-    @extend .eyebrow-large;
+    @extend .h5;
     color: $primary;
 }
 

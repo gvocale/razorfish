@@ -1,0 +1,52 @@
+.contact-form {
+    @extend .section-padding;
+    @extend .content-centered;
+    position: relative;
+    color: $white;
+}
+
+
+.contact-form-tabs-container {
+    z-index: 3;
+    width: 60%;
+}
+
+
+.contact-form-title {
+    text-align: center;
+    z-index: 3;
+}
+
+.contact-form-headline {
+    @extend .h3;
+}
+
+.contact-form-subheadline {
+    @extend .subheadline;
+}
+
+.contact-form-background {
+    @extend .background-cover;
+    background-image: url('./../images/contact-form-background.jpg');
+    z-index: 0;
+}
+
+.contact-form-background:before {
+    @extend .background-cover;
+    content: "";
+    background-color: $white;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.contact-form-background:after {
+    @extend .background-cover;
+    content: "";
+    background-color: $tertiary;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+.contact-form-tabs-container +  .contact-form-title {
+    margin-top: 5%;
+}
