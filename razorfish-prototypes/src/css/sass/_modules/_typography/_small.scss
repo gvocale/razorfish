@@ -1,6 +1,116 @@
+/* Font Face Declarations Go Here */
+
+
+/* Miller */
+
+@font-face {
+    font-family: 'Miller Display';
+    src: url(../fonts/miller/MillerDisplayRoman.woff);
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Miller Display';
+    src: url(../fonts/miller/MillerDisplayItalic.woff);
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Miller Display';
+    src: url(../fonts/miller/MillerDisplayBold.woff);
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Miller';
+    src: url(../fonts/miller/MillerTextRoman.woff);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Miller';
+    src: url(../fonts/miller/MillerTextBold.woff);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Miller';
+    src: url(../fonts/miller/MillerTextItalic.woff);
+    font-style: italic;
+}
+
+
+/* Gotham */
+
+@font-face {
+    font-family: 'Gotham';
+    src: url(../fonts/gotham/Gotham-Book.woff);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url(../fonts/gotham/Gotham-Bold.woff);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url(../fonts/gotham/Gotham-Light.woff);
+    font-weight: 200;
+}
+
+$serif: 'Miller',
+Times,
+Georgia,
+serif;
+$display: 'Miller Display',
+Times,
+Georgia,
+serif;
+$sans: 'Gotham',
+Helvetica,
+Arial,
+sans-serif;
+$default-letter-spacing: 0.16em;
+$default-line-height: 1;
+$headline-line-height: 1.1;
+$body-copy-line-height: 1.5;
+// Type scale "Le Corbusier" taken from http:/lamb.cc/typograph/
+$scale01: 0.5em;
+$scale02: 0.6154em;
+$scale03: 0.8077em;
+$scale04: 1em;
+$scale05: 1.3077em;
+$scale06: 1.6154em;
+$scale07: 2.1154em;
+$scale08: 2.6154em;
+$scale09: 3.4231em;
+$scale10: 4.2308em;
+$scale11: 5.5385em;
+$scale12: 6.8462em;
+html {
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+}
+
+
 .h1 {
     font-family: $display;
-    font-size: $fontSize8;
+    font-size: $scale08;
     color: $black;
     line-height: 1.25;
     letter-spacing: -0.01em;
@@ -9,7 +119,7 @@
 
 .h2 {
     font-family: $display;
-    font-size: $fontSize7;
+    font-size: $scale07;
     color: $black;
     line-height: 1.25;
     letter-spacing: -0.01em;
@@ -18,7 +128,7 @@
 
 .h3 {
     font-family: $display;
-    font-size: $fontSize6;
+    font-size: $scale06;
     color: $black;
     line-height: 1.5;
     letter-spacing: -0.01em;
@@ -27,7 +137,7 @@
 
 .h4 {
     font-family: $sans;
-    font-size: $fontSize5;
+    font-size: $scale05;
     font-weight: bold;
     color: $black;
     line-height: 1.5;
@@ -37,7 +147,7 @@
 
 .eyebrow {
     font-family: $sans;
-    font-size: $fontSize4;
+    font-size: $scale04;
     color: $primary;
     line-height: 1.5;
     letter-spacing: -0.01em;
@@ -46,7 +156,7 @@
 
 .subheadline {
     font-family: $sans;
-    font-size: $fontSize4;
+    font-size: $scale04;
     color: $black;
     line-height: 1.5;
     letter-spacing: -0.01em;
@@ -55,7 +165,7 @@
 
 .body {
     font-family: $sans;
-    font-size: $fontSize4;
+    font-size: $scale04;
     color: $black;
     line-height: 2;
     letter-spacing: -0.01em;
@@ -64,7 +174,7 @@
 
 .foot-note {
     font-family: $serif;
-    font-size: $fontSize4;
+    font-size: $scale04;
     color: $grayDarker;
     font-style: italic;
     line-height: 2;
@@ -78,7 +188,7 @@
     padding-left: 1em;
     font-size: $display;
     font-style: italic;
-    font-size: $fontSize6;
+    font-size: $scale06;
     color: $blackLighter;
     line-height: 1.5;
     letter-spacing: -0.01em;
