@@ -74,7 +74,6 @@ $scale09: 3.4231em;
 $scale10: 4.2308em;
 $scale11: 5.5385em;
 $scale12: 6.8462em;
-
 $serif: 'Miller',
 Times,
 Georgia,
@@ -91,7 +90,6 @@ $default-letter-spacing: 0.16em;
 $default-line-height: $scale04;
 $headline-line-height: $scale05;
 $body-copy-line-height: $scale06;
-
 html {
     font-size: 16px;
 }
@@ -109,11 +107,9 @@ p {
     -webkit-margin-end: 0;
 }
 
-
 .h1 {
     font-family: $display;
-    font-size: $scale08;
-    color: $black;
+    font-size: $scale07;
     line-height: $scale05;
     letter-spacing: -0.01em;
     width: 100%;
@@ -121,8 +117,7 @@ p {
 
 .h2 {
     font-family: $display;
-    font-size: $scale07;
-    color: $black;
+    font-size: $scale06;
     line-height: $scale05;
     letter-spacing: -0.01em;
     width: 100%;
@@ -130,16 +125,15 @@ p {
 
 .h3 {
     font-family: $display;
-    font-size: $scale06;
-    color: $black;
-    line-height: $scale06;
+    font-size: $scale05;
+    line-height: $scale05;
     letter-spacing: -0.01em;
     width: 100%;
 }
 
 .h4 {
     font-family: $sans;
-    font-size: $scale05;
+    font-size: $scale04;
     font-weight: bold;
     color: $black;
     line-height: $scale06;
@@ -147,9 +141,34 @@ p {
     width: 100%;
 }
 
-.eyebrow {
+.feed-h3 {
+    font-family: $display;
+    font-size: $scale05;
+    line-height: $scale05;
+    letter-spacing: -0.01em;
+    width: 100%;
+}
+
+.feed-h4 {
+    font-family: $display;
+    font-size: $scale04;
+    line-height: $scale06;
+    letter-spacing: -0.01em;
+    width: 100%;
+}
+
+.eyebrow-large {
     font-family: $sans;
     font-size: $scale04;
+    color: $primary;
+    line-height: $scale06;
+    letter-spacing: -0.01em;
+    width: 100%;
+}
+
+.eyebrow-small {
+    font-family: $sans;
+    font-size: $scale03;
     color: $primary;
     line-height: $scale06;
     letter-spacing: -0.01em;
@@ -159,7 +178,6 @@ p {
 .subheadline {
     font-family: $sans;
     font-size: $scale04;
-    color: $black;
     line-height: $scale06;
     letter-spacing: -0.01em;
     width: 100%;
@@ -201,7 +219,10 @@ p {
 .h2::selection,
 .h3::selection,
 .h4::selection,
-.eyebrow::selection,
+.feed-h3::selection,
+.feed-h4::selection,
+.eyebrow-small::selection,
+.eyebrow-large::selection,
 .subheadline::selection,
 .body::selection,
 .pull-quote::selection {

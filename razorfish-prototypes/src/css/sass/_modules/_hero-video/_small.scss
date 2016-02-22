@@ -22,22 +22,15 @@
 }
 
 .hero-video-headline {
-    font-family: $display;
-    font-size: $scale05;
-    font-weight: bold;
-    line-height: $scale06;
-    letter-spacing: -0.01em;
+    @extend .h2;
 }
 
 .hero-video-subheadline {
-    font-family: $sans;
-    font-size: $scale03;
-    line-height: $scale06;
-    letter-spacing: -0.01em;
+    @extend .subheadline;
 }
 
 .hero-video-headline + .hero-video-subheadline {
-    margin-top: 0.5em;
+    margin-top: 2em;
 }
 
 .hero-video-background {

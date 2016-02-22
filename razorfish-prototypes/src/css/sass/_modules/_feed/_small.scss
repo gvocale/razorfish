@@ -94,17 +94,11 @@
 }
 
 .feed-tile-eyebrow {
-    font-family: $sans;
-    font-size: $scale03;
-    line-height: $scale06;
-    letter-spacing: -0.015em;
+    @extend .eyebrow-small;
 }
 
 .feed-tile-headline {
-    font-family: $display;
-    font-size: $scale05;
-    line-height: $scale06;
-    letter-spacing: -0.015em;
+    @extend .feed-h3;
 }
 
 .feed-tile-eyebrow + .feed-tile-headline {
@@ -164,7 +158,7 @@
         transition: all 0.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     .feed-tile-headline {
-        font-size: $scale04;
+        @extend .feed-h4;
     }
 }
 

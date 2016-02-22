@@ -1,4 +1,3 @@
-
 .section-title {
     display: flex;
     flex-direction: column;
@@ -15,18 +14,11 @@
 }
 
 .section-headline {
-    font-family: $display;
-    font-size: $scale05;
-    font-weight: bold;
-    line-height: $scale05;
-    letter-spacing: -0.015em;
-    text-align: left;
+    @extend .h2;
 }
 
 .section-subheadline {
-    font-family: $sans;
-    font-size: $scale04;
-    line-height: $scale06;
+    @extend .subheadline;
 }
 
 .section-headline + .section-subheadline {

@@ -136,12 +136,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   src: url(../fonts/gotham/Gotham-Light.woff);
   font-weight: 200;
 }
-/* line 95, ../../src/css/sass/_modules/_typography/_small.scss */
+/* line 93, ../../src/css/sass/_modules/_typography/_small.scss */
 html {
   font-size: 16px;
 }
 
-/* line 99, ../../src/css/sass/_modules/_typography/_small.scss */
+/* line 97, ../../src/css/sass/_modules/_typography/_small.scss */
 h1,
 h2,
 h3,
@@ -155,40 +155,37 @@ p {
   -webkit-margin-end: 0;
 }
 
-/* line 113, ../../src/css/sass/_modules/_typography/_small.scss */
-.h1, .article-hero-h1 {
-  font-family: "Miller Display", Times, Georgia, serif;
-  font-size: 2.6154em;
-  color: #404040;
-  line-height: 1.3077em;
-  letter-spacing: -0.01em;
-  width: 100%;
-}
-
-/* line 122, ../../src/css/sass/_modules/_typography/_small.scss */
-.h2, .article-h2 {
+/* line 110, ../../src/css/sass/_modules/_typography/_small.scss */
+.h1, .article-hero-h1, .page-title-headline {
   font-family: "Miller Display", Times, Georgia, serif;
   font-size: 2.1154em;
-  color: #404040;
   line-height: 1.3077em;
   letter-spacing: -0.01em;
   width: 100%;
 }
 
-/* line 131, ../../src/css/sass/_modules/_typography/_small.scss */
-.h3, .article-h3, .article-h3-quote {
+/* line 118, ../../src/css/sass/_modules/_typography/_small.scss */
+.h2, .article-h2, .hero-video-headline, .locations-headline, .section-headline {
   font-family: "Miller Display", Times, Georgia, serif;
   font-size: 1.6154em;
-  color: #404040;
-  line-height: 1.6154em;
+  line-height: 1.3077em;
   letter-spacing: -0.01em;
   width: 100%;
 }
 
-/* line 140, ../../src/css/sass/_modules/_typography/_small.scss */
+/* line 126, ../../src/css/sass/_modules/_typography/_small.scss */
+.h3, .article-h3, .article-h3-quote {
+  font-family: "Miller Display", Times, Georgia, serif;
+  font-size: 1.3077em;
+  line-height: 1.3077em;
+  letter-spacing: -0.01em;
+  width: 100%;
+}
+
+/* line 134, ../../src/css/sass/_modules/_typography/_small.scss */
 .h4, .article-h4 {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
-  font-size: 1.3077em;
+  font-size: 1em;
   font-weight: bold;
   color: #404040;
   line-height: 1.6154em;
@@ -196,8 +193,26 @@ p {
   width: 100%;
 }
 
-/* line 150, ../../src/css/sass/_modules/_typography/_small.scss */
-.eyebrow, .article-quote-eyebrow, .article-hero-eyebrow {
+/* line 144, ../../src/css/sass/_modules/_typography/_small.scss */
+.feed-h3, .feed-tile-headline {
+  font-family: "Miller Display", Times, Georgia, serif;
+  font-size: 1.3077em;
+  line-height: 1.3077em;
+  letter-spacing: -0.01em;
+  width: 100%;
+}
+
+/* line 152, ../../src/css/sass/_modules/_typography/_small.scss */
+.feed-h4, .split .feed-tile-headline {
+  font-family: "Miller Display", Times, Georgia, serif;
+  font-size: 1em;
+  line-height: 1.6154em;
+  letter-spacing: -0.01em;
+  width: 100%;
+}
+
+/* line 160, ../../src/css/sass/_modules/_typography/_small.scss */
+.eyebrow-large, .article-quote-eyebrow, .article-hero-eyebrow, .locations-eyebrow {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   font-size: 1em;
   color: #a9c000;
@@ -206,17 +221,26 @@ p {
   width: 100%;
 }
 
-/* line 159, ../../src/css/sass/_modules/_typography/_small.scss */
-.subheadline {
+/* line 169, ../../src/css/sass/_modules/_typography/_small.scss */
+.eyebrow-small, .feed-tile-eyebrow {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  color: #404040;
+  font-size: 0.8077em;
+  color: #a9c000;
   line-height: 1.6154em;
   letter-spacing: -0.01em;
   width: 100%;
 }
 
-/* line 168, ../../src/css/sass/_modules/_typography/_small.scss */
+/* line 178, ../../src/css/sass/_modules/_typography/_small.scss */
+.subheadline, .hero-video-subheadline, .section-subheadline {
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.6154em;
+  letter-spacing: -0.01em;
+  width: 100%;
+}
+
+/* line 186, ../../src/css/sass/_modules/_typography/_small.scss */
 .body, .article-author-name, .article-author-title, .article-body {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   font-size: 1em;
@@ -226,7 +250,7 @@ p {
   width: 100%;
 }
 
-/* line 177, ../../src/css/sass/_modules/_typography/_small.scss */
+/* line 195, ../../src/css/sass/_modules/_typography/_small.scss */
 .foot-note, .article-foot-note {
   font-family: "Miller", Times, Georgia, serif;
   font-size: 1em;
@@ -237,7 +261,7 @@ p {
   width: 100%;
 }
 
-/* line 187, ../../src/css/sass/_modules/_typography/_small.scss */
+/* line 205, ../../src/css/sass/_modules/_typography/_small.scss */
 .pull-quote, .article-pull-quote {
   border-left: solid 0.2rem #a9c000;
   width: 100%;
@@ -251,19 +275,31 @@ p {
   width: 100%;
 }
 
-/* line 200, ../../src/css/sass/_modules/_typography/_small.scss */
-.h1::-moz-selection, .article-hero-h1::-moz-selection,
+/* line 218, ../../src/css/sass/_modules/_typography/_small.scss */
+.h1::-moz-selection, .article-hero-h1::-moz-selection, .page-title-headline::-moz-selection,
 .h2::-moz-selection,
 .article-h2::-moz-selection,
+.hero-video-headline::-moz-selection,
+.locations-headline::-moz-selection,
+.section-headline::-moz-selection,
 .h3::-moz-selection,
 .article-h3::-moz-selection,
 .article-h3-quote::-moz-selection,
 .h4::-moz-selection,
 .article-h4::-moz-selection,
-.eyebrow::-moz-selection,
+.feed-h3::-moz-selection,
+.feed-tile-headline::-moz-selection,
+.feed-h4::-moz-selection,
+.split .feed-tile-headline::-moz-selection,
+.eyebrow-small::-moz-selection,
+.feed-tile-eyebrow::-moz-selection,
+.eyebrow-large::-moz-selection,
 .article-quote-eyebrow::-moz-selection,
 .article-hero-eyebrow::-moz-selection,
+.locations-eyebrow::-moz-selection,
 .subheadline::-moz-selection,
+.hero-video-subheadline::-moz-selection,
+.section-subheadline::-moz-selection,
 .body::-moz-selection,
 .article-author-name::-moz-selection,
 .article-author-title::-moz-selection,
@@ -272,18 +308,30 @@ p {
 .article-pull-quote::-moz-selection {
   background-color: #eceeee;
 }
-.h1::selection, .article-hero-h1::selection,
+.h1::selection, .article-hero-h1::selection, .page-title-headline::selection,
 .h2::selection,
 .article-h2::selection,
+.hero-video-headline::selection,
+.locations-headline::selection,
+.section-headline::selection,
 .h3::selection,
 .article-h3::selection,
 .article-h3-quote::selection,
 .h4::selection,
 .article-h4::selection,
-.eyebrow::selection,
+.feed-h3::selection,
+.feed-tile-headline::selection,
+.feed-h4::selection,
+.split .feed-tile-headline::selection,
+.eyebrow-small::selection,
+.feed-tile-eyebrow::selection,
+.eyebrow-large::selection,
 .article-quote-eyebrow::selection,
 .article-hero-eyebrow::selection,
+.locations-eyebrow::selection,
 .subheadline::selection,
+.hero-video-subheadline::selection,
+.section-subheadline::selection,
 .body::selection,
 .article-author-name::selection,
 .article-author-title::selection,
@@ -295,12 +343,12 @@ p {
 
 @media screen and (min-width: 768px) {
   /* line 3, ../../src/css/sass/_modules/_typography/_medium.scss */
-  .h1, .article-hero-h1 {
+  .h1, .article-hero-h1, .page-title-headline {
     font-size: 3.4231em;
   }
 
   /* line 6, ../../src/css/sass/_modules/_typography/_medium.scss */
-  .h2, .article-h2 {
+  .h2, .article-h2, .hero-video-headline, .locations-headline, .section-headline {
     font-size: 2.6154em;
   }
 
@@ -315,38 +363,53 @@ p {
   }
 
   /* line 15, ../../src/css/sass/_modules/_typography/_medium.scss */
-  .eyebrow, .article-quote-eyebrow, .article-hero-eyebrow {
-    font-size: 1.3077em;
+  .feed-h3, .feed-tile-headline {
+    font-size: 2.1154em;
   }
 
   /* line 18, ../../src/css/sass/_modules/_typography/_medium.scss */
-  .subheadline {
+  .feed-h4, .split .feed-tile-headline {
     font-size: 1.3077em;
   }
 
   /* line 21, ../../src/css/sass/_modules/_typography/_medium.scss */
+  .eyebrow-large, .article-quote-eyebrow, .article-hero-eyebrow, .locations-eyebrow {
+    font-size: 1.3077em;
+  }
+
+  /* line 24, ../../src/css/sass/_modules/_typography/_medium.scss */
+  .eyebrow-small, .feed-tile-eyebrow {
+    font-size: 1em;
+  }
+
+  /* line 27, ../../src/css/sass/_modules/_typography/_medium.scss */
+  .subheadline, .hero-video-subheadline, .section-subheadline {
+    font-size: 1.3077em;
+  }
+
+  /* line 30, ../../src/css/sass/_modules/_typography/_medium.scss */
   .body, .article-author-name, .article-author-title, .article-body {
     font-size: 1.6154em;
   }
 
-  /* line 24, ../../src/css/sass/_modules/_typography/_medium.scss */
+  /* line 33, ../../src/css/sass/_modules/_typography/_medium.scss */
   .foot-note, .article-foot-note {
     font-size: 1.6154em;
   }
 
-  /* line 27, ../../src/css/sass/_modules/_typography/_medium.scss */
+  /* line 36, ../../src/css/sass/_modules/_typography/_medium.scss */
   .pull-quote, .article-pull-quote {
     border-left: solid calc(0.2rem * 1.5) #a9c000;
   }
 }
 @media screen and (min-width: 992px) {
   /* line 3, ../../src/css/sass/_modules/_typography/_large.scss */
-  .h1, .article-hero-h1 {
+  .h1, .article-hero-h1, .page-title-headline {
     font-size: 4.2308em;
   }
 
   /* line 6, ../../src/css/sass/_modules/_typography/_large.scss */
-  .h2, .article-h2 {
+  .h2, .article-h2, .hero-video-headline, .locations-headline, .section-headline {
     font-size: 3.4231em;
   }
 
@@ -361,59 +424,90 @@ p {
   }
 
   /* line 15, ../../src/css/sass/_modules/_typography/_large.scss */
-  .eyebrow, .article-quote-eyebrow, .article-hero-eyebrow {
-    font-size: 1.6154em;
+  .feed-h3, .feed-tile-headline {
+    font-size: 2.1154em;
   }
 
   /* line 18, ../../src/css/sass/_modules/_typography/_large.scss */
+  .feed-h4, .split .feed-tile-headline {
+    font-size: 1.6154em;
+    line-height: 1.3077em;
+  }
+
+  /* line 22, ../../src/css/sass/_modules/_typography/_large.scss */
+  .eyebrow-large, .article-quote-eyebrow, .article-hero-eyebrow, .locations-eyebrow {
+    font-size: 1.6154em;
+  }
+
+  /* line 25, ../../src/css/sass/_modules/_typography/_large.scss */
+  .eyebrow-small, .feed-tile-eyebrow {
+    font-size: 1.3077em;
+  }
+
+  /* line 28, ../../src/css/sass/_modules/_typography/_large.scss */
   .pull-quote, .article-pull-quote {
     font-size: 2.1154em;
   }
 }
 @media screen and (min-width: 1200px) {
   /* line 3, ../../src/css/sass/_modules/_typography/_xlarge.scss */
-  .h1, .article-hero-h1 {
+  .h1, .article-hero-h1, .page-title-headline {
     font-size: 5.5385em;
   }
 
   /* line 6, ../../src/css/sass/_modules/_typography/_xlarge.scss */
-  .h2, .article-h2 {
+  .h2, .article-h2, .hero-video-headline, .locations-headline, .section-headline {
     font-size: 4.2308em;
   }
 
-  /* line 9, ../../src/css/sass/_modules/_typography/_xlarge.scss */
+  /* line 10, ../../src/css/sass/_modules/_typography/_xlarge.scss */
   .h3, .article-h3, .article-h3-quote {
     font-size: 3.4231em;
   }
 
-  /* line 12, ../../src/css/sass/_modules/_typography/_xlarge.scss */
+  /* line 13, ../../src/css/sass/_modules/_typography/_xlarge.scss */
   .h4, .article-h4 {
     font-size: 2.1154em;
   }
 
-  /* line 15, ../../src/css/sass/_modules/_typography/_xlarge.scss */
-  .eyebrow, .article-quote-eyebrow, .article-hero-eyebrow {
+  /* line 16, ../../src/css/sass/_modules/_typography/_xlarge.scss */
+  .feed-h3, .feed-tile-headline {
+    font-size: 2.6154em;
+  }
+
+  /* line 19, ../../src/css/sass/_modules/_typography/_xlarge.scss */
+  .feed-h4, .split .feed-tile-headline {
     font-size: 1.6154em;
   }
 
-  /* line 18, ../../src/css/sass/_modules/_typography/_xlarge.scss */
+  /* line 22, ../../src/css/sass/_modules/_typography/_xlarge.scss */
+  .eyebrow-large, .article-quote-eyebrow, .article-hero-eyebrow, .locations-eyebrow {
+    font-size: 1.6154em;
+  }
+
+  /* line 25, ../../src/css/sass/_modules/_typography/_xlarge.scss */
+  .eyebrow-small, .feed-tile-eyebrow {
+    font-size: 1.3077em;
+  }
+
+  /* line 28, ../../src/css/sass/_modules/_typography/_xlarge.scss */
   .body, .article-author-name, .article-author-title, .article-body {
     font-size: 1.3077em;
   }
 
-  /* line 21, ../../src/css/sass/_modules/_typography/_xlarge.scss */
+  /* line 31, ../../src/css/sass/_modules/_typography/_xlarge.scss */
   .foot-note, .article-foot-note {
     font-size: 1.3077em;
   }
 }
 @media screen and (min-width: 1600px) {
   /* line 3, ../../src/css/sass/_modules/_typography/_xxlarge.scss */
-  .h1, .article-hero-h1 {
+  .h1, .article-hero-h1, .page-title-headline {
     font-size: 6.8462em;
   }
 
   /* line 6, ../../src/css/sass/_modules/_typography/_xxlarge.scss */
-  .h2, .article-h2 {
+  .h2, .article-h2, .hero-video-headline, .locations-headline, .section-headline {
     font-size: 5.5385em;
   }
 
@@ -423,13 +517,28 @@ p {
   }
 
   /* line 12, ../../src/css/sass/_modules/_typography/_xxlarge.scss */
+  .feed-h3, .feed-tile-headline {
+    font-size: 3.4231em;
+  }
+
+  /* line 15, ../../src/css/sass/_modules/_typography/_xxlarge.scss */
+  .feed-h4, .split .feed-tile-headline {
+    font-size: 2.1154em;
+  }
+
+  /* line 18, ../../src/css/sass/_modules/_typography/_xxlarge.scss */
   .pull-quote, .article-pull-quote {
     font-size: 2.6154em;
   }
 
-  /* line 15, ../../src/css/sass/_modules/_typography/_xxlarge.scss */
-  .eyebrow, .article-quote-eyebrow, .article-hero-eyebrow {
+  /* line 21, ../../src/css/sass/_modules/_typography/_xxlarge.scss */
+  .eyebrow-large, .article-quote-eyebrow, .article-hero-eyebrow, .locations-eyebrow {
     font-size: 2.1154em;
+  }
+
+  /* line 24, ../../src/css/sass/_modules/_typography/_xxlarge.scss */
+  .eyebrow-small, .feed-tile-eyebrow {
+    font-size: 1.6154em;
   }
 }
 /* line 1, ../../src/css/sass/_modules/_layout/_small.scss */
@@ -1081,53 +1190,37 @@ p {
   transition: all 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* line 96, ../../src/css/sass/_modules/_feed/_small.scss */
-.feed-tile-eyebrow {
-  font-family: "Gotham", Helvetica, Arial, sans-serif;
-  font-size: 0.8077em;
-  line-height: 1.6154em;
-  letter-spacing: -0.015em;
-}
-
-/* line 103, ../../src/css/sass/_modules/_feed/_small.scss */
-.feed-tile-headline {
-  font-family: "Miller Display", Times, Georgia, serif;
-  font-size: 1.3077em;
-  line-height: 1.6154em;
-  letter-spacing: -0.015em;
-}
-
-/* line 110, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 104, ../../src/css/sass/_modules/_feed/_small.scss */
 .feed-tile-eyebrow + .feed-tile-headline {
   margin-top: 0.25em;
 }
 
-/* line 115, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 109, ../../src/css/sass/_modules/_feed/_small.scss */
 .picture-text-top .feed-tile-text-container {
   height: 50vw;
   top: 0;
   position: absolute;
 }
 
-/* line 123, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 117, ../../src/css/sass/_modules/_feed/_small.scss */
 .picture-text-bottom .feed-tile-text-container {
   height: 50vw;
   bottom: 0;
   position: absolute;
 }
 
-/* line 131, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 125, ../../src/css/sass/_modules/_feed/_small.scss */
 .split {
   background-position: 50% center;
 }
-/* line 133, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 127, ../../src/css/sass/_modules/_feed/_small.scss */
 .split .feed-tile-background {
   width: 50%;
   position: absolute;
   top: 0;
   left: 0;
 }
-/* line 139, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 133, ../../src/css/sass/_modules/_feed/_small.scss */
 .split .feed-tile-text-container {
   margin-left: 50%;
   padding: 5%;
@@ -1151,7 +1244,7 @@ p {
           justify-content: center;
   position: relative;
 }
-/* line 152, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 146, ../../src/css/sass/_modules/_feed/_small.scss */
 .split .feed-tile-text-container:before {
   right: 100%;
   top: 50%;
@@ -1166,65 +1259,61 @@ p {
   margin-top: -1rem;
   transition: all 0.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-/* line 166, ../../src/css/sass/_modules/_feed/_small.scss */
-.split .feed-tile-headline {
-  font-size: 1em;
-}
 
-/* line 172, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 166, ../../src/css/sass/_modules/_feed/_small.scss */
 .split:hover .grid-tile-text-container:before {
   border-width: 1.5rem;
   margin-top: -1.5rem;
 }
 
-/* line 179, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 173, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-1 .feed-tile-eyebrow {
   color: #a9c000;
 }
-/* line 182, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 176, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-1 .feed-tile-headline {
   color: #404040;
 }
-/* line 185, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 179, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-1 .feed-tile-background {
   background-color: #FFFFFF;
 }
 
-/* line 191, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 185, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-2 .feed-tile-eyebrow {
   color: #a9c000;
 }
-/* line 194, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 188, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-2 .feed-tile-headline {
   color: #FFFFFF;
 }
-/* line 197, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 191, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-2 .feed-tile-background {
   background-color: #4e4e4e;
 }
 
-/* line 203, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 197, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-3 .feed-tile-eyebrow {
   color: #FFFFFF;
 }
-/* line 206, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 200, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-3 .feed-tile-headline {
   color: #404040;
 }
-/* line 209, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 203, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-3 .feed-tile-background {
   background-color: #a9c000;
 }
 
-/* line 215, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 209, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-4 .feed-tile-eyebrow {
   color: #404040;
 }
-/* line 218, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 212, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-4 .feed-tile-headline {
   color: #FFFFFF;
 }
-/* line 221, ../../src/css/sass/_modules/_feed/_small.scss */
+/* line 215, ../../src/css/sass/_modules/_feed/_small.scss */
 .color-combination-4 .feed-tile-background {
   background-color: #ff595b;
 }
@@ -1449,29 +1538,12 @@ html, body {
   text-align: center;
 }
 
-/* line 24, ../../src/css/sass/_modules/_hero-video/_small.scss */
-.hero-video-headline {
-  font-family: "Miller Display", Times, Georgia, serif;
-  font-size: 1.3077em;
-  font-weight: bold;
-  line-height: 1.6154em;
-  letter-spacing: -0.01em;
-}
-
 /* line 32, ../../src/css/sass/_modules/_hero-video/_small.scss */
-.hero-video-subheadline {
-  font-family: "Gotham", Helvetica, Arial, sans-serif;
-  font-size: 0.8077em;
-  line-height: 1.6154em;
-  letter-spacing: -0.01em;
-}
-
-/* line 39, ../../src/css/sass/_modules/_hero-video/_small.scss */
 .hero-video-headline + .hero-video-subheadline {
-  margin-top: 0.5em;
+  margin-top: 2em;
 }
 
-/* line 43, ../../src/css/sass/_modules/_hero-video/_small.scss */
+/* line 36, ../../src/css/sass/_modules/_hero-video/_small.scss */
 .hero-video-background {
   background-size: cover;
   background-position: center;
@@ -1487,7 +1559,7 @@ html, body {
   transition: all 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* line 58, ../../src/css/sass/_modules/_hero-video/_small.scss */
+/* line 51, ../../src/css/sass/_modules/_hero-video/_small.scss */
 .video-play-button + .hero-video-text-container {
   margin-top: 1.5rem;
 }
@@ -1756,31 +1828,24 @@ html, body {
 /* line 58, ../../src/css/sass/_modules/_locations/_small.scss */
 .locations-eyebrow {
   color: #a9c000;
-  font-family: "Gotham", Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  line-height: 1.3077em;
 }
 
-/* line 65, ../../src/css/sass/_modules/_locations/_small.scss */
+/* line 63, ../../src/css/sass/_modules/_locations/_small.scss */
 .locations-headline {
-  font-family: "Miller Display", Times, Georgia, serif;
-  font-size: 1.3077em;
-  line-height: 1.6154em;
-  letter-spacing: -0.015em;
-  text-align: left;
+  color: #FFFFFF;
 }
 
-/* line 73, ../../src/css/sass/_modules/_locations/_small.scss */
+/* line 68, ../../src/css/sass/_modules/_locations/_small.scss */
 .locations-eyebrow + .locations-headline {
   margin-top: 0.25em;
 }
 
-/* line 77, ../../src/css/sass/_modules/_locations/_small.scss */
+/* line 72, ../../src/css/sass/_modules/_locations/_small.scss */
 .locations-line-break {
   display: block;
 }
 
-/* line 81, ../../src/css/sass/_modules/_locations/_small.scss */
+/* line 76, ../../src/css/sass/_modules/_locations/_small.scss */
 .locations-link {
   color: #a9c000;
   font-style: italic;
@@ -1791,7 +1856,7 @@ html, body {
   letter-spacing: -0.015em;
 }
 
-/* line 91, ../../src/css/sass/_modules/_locations/_small.scss */
+/* line 86, ../../src/css/sass/_modules/_locations/_small.scss */
 .locations-link:before {
   display: block;
   content: "";
@@ -1804,12 +1869,12 @@ html, body {
   border-bottom-style: solid;
 }
 
-/* line 103, ../../src/css/sass/_modules/_locations/_small.scss */
+/* line 98, ../../src/css/sass/_modules/_locations/_small.scss */
 .locations-link:hover:before {
   width: 100%;
 }
 
-/* line 109, ../../src/css/sass/_modules/_locations/_small.scss */
+/* line 104, ../../src/css/sass/_modules/_locations/_small.scss */
 .locations.reveal .grid-tile-content {
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
@@ -2051,16 +2116,6 @@ a.navigation-overlay-link:hover {
   text-align: left;
 }
 
-/* line 20, ../../src/css/sass/_modules/_page-title/_small.scss */
-.page-title-headline {
-  font-family: "Miller Display", Times, Georgia, serif;
-  font-size: 2.1154em;
-  color: #404040;
-  font-weight: bold;
-  line-height: 1.6154em;
-  letter-spacing: -0.01em;
-}
-
 /* line 1, ../../src/css/sass/_modules/_related/_small.scss */
 .related-grid {
   width: 100vw;
@@ -2090,7 +2145,7 @@ a.navigation-overlay-link:hover {
           transform: translate(0, 0);
 }
 
-/* line 2, ../../src/css/sass/_modules/_section-title/_small.scss */
+/* line 1, ../../src/css/sass/_modules/_section-title/_small.scss */
 .section-title {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2116,29 +2171,12 @@ a.navigation-overlay-link:hover {
   text-align: center;
 }
 
-/* line 17, ../../src/css/sass/_modules/_section-title/_small.scss */
-.section-headline {
-  font-family: "Miller Display", Times, Georgia, serif;
-  font-size: 1.3077em;
-  font-weight: bold;
-  line-height: 1.3077em;
-  letter-spacing: -0.015em;
-  text-align: left;
-}
-
-/* line 26, ../../src/css/sass/_modules/_section-title/_small.scss */
-.section-subheadline {
-  font-family: "Gotham", Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  line-height: 1.6154em;
-}
-
-/* line 32, ../../src/css/sass/_modules/_section-title/_small.scss */
+/* line 24, ../../src/css/sass/_modules/_section-title/_small.scss */
 .section-headline + .section-subheadline {
   margin-top: 0.25em;
 }
 
-/* line 36, ../../src/css/sass/_modules/_section-title/_small.scss */
+/* line 28, ../../src/css/sass/_modules/_section-title/_small.scss */
 .section-divider {
   margin: 1rem 0;
 }
@@ -2433,107 +2471,96 @@ a.navigation-overlay-link:hover {
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 3, ../../src/css/sass/_modules/_feed/_medium.scss */
-  .feed-tile-headline {
-    font-size: 1.6154em;
-    line-height: 1.6154em;
-  }
-
-  /* line 8, ../../src/css/sass/_modules/_feed/_medium.scss */
-  .split .feed-tile-headline {
-    font-size: 1.3077em;
-  }
-
-  /* line 13, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 5, ../../src/css/sass/_modules/_feed/_medium.scss */
   .picture-text-top .feed-tile-text-container {
     height: 25vw;
     top: 0;
     position: absolute;
   }
 
-  /* line 20, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 12, ../../src/css/sass/_modules/_feed/_medium.scss */
   .picture-text-bottom .feed-tile-text-container {
     height: 25vw;
     bottom: 0;
     position: absolute;
   }
 
-  /* line 27, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 19, ../../src/css/sass/_modules/_feed/_medium.scss */
   .split .feed-tile-text-container:before {
     border-width: 2rem;
     margin-top: -2rem;
   }
 
-  /* line 33, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 25, ../../src/css/sass/_modules/_feed/_medium.scss */
   .split:hover .feed-tile-text-container:before {
     border-width: 2.5rem;
     margin-top: -2.5rem;
   }
 
-  /* line 38, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 30, ../../src/css/sass/_modules/_feed/_medium.scss */
   .feed-grid {
     height: 175vw;
   }
-  /* line 40, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 32, ../../src/css/sass/_modules/_feed/_medium.scss */
   .feed-grid .feed-tile:nth-of-type(1) {
     width: 50vw;
     height: 25vw;
   }
-  /* line 44, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 36, ../../src/css/sass/_modules/_feed/_medium.scss */
   .feed-grid .feed-tile:nth-of-type(2) {
     width: 50vw;
     height: 50vw;
   }
-  /* line 48, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 40, ../../src/css/sass/_modules/_feed/_medium.scss */
   .feed-grid .feed-tile:nth-of-type(3) {
     width: 50vw;
     height: 50vw;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
   }
-  /* line 54, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 46, ../../src/css/sass/_modules/_feed/_medium.scss */
   .feed-grid .feed-tile:nth-of-type(4) {
     width: 50vw;
     height: 25vw;
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
-  /* line 60, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 52, ../../src/css/sass/_modules/_feed/_medium.scss */
   .feed-grid .feed-tile:nth-of-type(5) {
     width: 50vw;
     height: 25vw;
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-  /* line 65, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 57, ../../src/css/sass/_modules/_feed/_medium.scss */
   .feed-grid .feed-tile:nth-of-type(6) {
     width: 50vw;
     height: 50vw;
     -webkit-transform: translateY(-50%) translateX(100%);
             transform: translateY(-50%) translateX(100%);
   }
-  /* line 71, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 63, ../../src/css/sass/_modules/_feed/_medium.scss */
   .feed-grid .feed-tile:nth-of-type(7) {
     width: 50vw;
     height: 25vw;
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-  /* line 76, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 68, ../../src/css/sass/_modules/_feed/_medium.scss */
   .feed-grid .feed-tile:nth-of-type(8) {
     width: 50vw;
     height: 50vw;
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-  /* line 82, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 74, ../../src/css/sass/_modules/_feed/_medium.scss */
   .feed-grid .feed-tile:nth-of-type(9) {
     width: 50vw;
     height: 25vw;
     -webkit-transform: translateY(-200%) translateX(100%);
             transform: translateY(-200%) translateX(100%);
   }
-  /* line 88, ../../src/css/sass/_modules/_feed/_medium.scss */
+  /* line 80, ../../src/css/sass/_modules/_feed/_medium.scss */
   .feed-grid .feed-tile:nth-of-type(10) {
     width: 50vw;
     height: 25vw;
@@ -2578,22 +2605,11 @@ a.navigation-overlay-link:hover {
   }
 
   /* line 6, ../../src/css/sass/_modules/_hero-video/_medium.scss */
-  .hero-video-headline {
-    font-size: 2.1154em;
-    line-height: 1.3077em;
-  }
-
-  /* line 10, ../../src/css/sass/_modules/_hero-video/_medium.scss */
   .hero-video-text-container {
     padding: 0 20%;
   }
 
-  /* line 13, ../../src/css/sass/_modules/_hero-video/_medium.scss */
-  .hero-video-subheadline {
-    font-size: 1em;
-  }
-
-  /* line 16, ../../src/css/sass/_modules/_hero-video/_medium.scss */
+  /* line 9, ../../src/css/sass/_modules/_hero-video/_medium.scss */
   .video-play-button + .hero-video-text-container {
     margin-top: 2rem;
   }
@@ -2689,13 +2705,6 @@ a.navigation-overlay-link:hover {
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 2, ../../src/css/sass/_modules/_locations/_medium.scss */
-  .locations-headline {
-    font-size: 2.6154em;
-    line-height: 1.3077em;
-  }
-}
-@media screen and (min-width: 768px) {
   /* line 2, ../../src/css/sass/_modules/_navigation/_medium.scss */
   .navigation-contaner {
     padding: 0 2%;
@@ -2710,11 +2719,6 @@ a.navigation-overlay-link:hover {
   /* line 3, ../../src/css/sass/_modules/_page-title/_medium.scss */
   .page-title {
     height: 35vw;
-  }
-
-  /* line 6, ../../src/css/sass/_modules/_page-title/_medium.scss */
-  .page-title-headline {
-    font-size: 2.6154em;
   }
 }
 @media screen and (min-width: 768px) {
@@ -2739,16 +2743,6 @@ a.navigation-overlay-link:hover {
   .section-title {
     min-height: 25vw;
     padding: 10% 20%;
-  }
-
-  /* line 7, ../../src/css/sass/_modules/_section-title/_medium.scss */
-  .section-headline {
-    font-size: 2.1154em;
-  }
-
-  /* line 10, ../../src/css/sass/_modules/_section-title/_medium.scss */
-  .section-subheadline {
-    font-size: 1.3077em;
   }
 }
 @media screen and (min-width: 768px) {
@@ -2801,23 +2795,6 @@ a.navigation-overlay-link:hover {
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 3, ../../src/css/sass/_modules/_feed/_large.scss */
-  .feed-tile-eyebrow {
-    font-size: 1em;
-  }
-
-  /* line 6, ../../src/css/sass/_modules/_feed/_large.scss */
-  .feed-tile-headline {
-    font-size: 2.1154em;
-    line-height: 1.6154em;
-  }
-
-  /* line 11, ../../src/css/sass/_modules/_feed/_large.scss */
-  .split .feed-tile-headline {
-    font-size: 1.6154em;
-  }
-}
-@media screen and (min-width: 992px) {
   /* line 2, ../../src/css/sass/_modules/_global/_large.scss */
   body {
     z-index: 992;
@@ -2832,17 +2809,6 @@ a.navigation-overlay-link:hover {
   */
 }
 @media screen and (min-width: 992px) {
-  /* line 3, ../../src/css/sass/_modules/_hero-video/_large.scss */
-  .hero-video-headline {
-    font-size: 2.6154em;
-  }
-
-  /* line 6, ../../src/css/sass/_modules/_hero-video/_large.scss */
-  .hero-video-subheadline {
-    font-size: 1.3077em;
-  }
-}
-@media screen and (min-width: 992px) {
   /* line 3, ../../src/css/sass/_modules/_leadership/_large.scss */
   .leader-name {
     font-size: 1.6154em;
@@ -2853,16 +2819,6 @@ a.navigation-overlay-link:hover {
   .locations {
     width: 100%;
     min-height: 60vh;
-  }
-
-  /* line 6, ../../src/css/sass/_modules/_locations/_large.scss */
-  .locations-headline {
-    font-size: 3.4231em;
-  }
-
-  /* line 9, ../../src/css/sass/_modules/_locations/_large.scss */
-  .locations-eyebrow {
-    font-size: 1.3077em;
   }
 }
 @media screen and (min-width: 992px) {
@@ -2878,20 +2834,9 @@ a.navigation-overlay-link:hover {
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 3, ../../src/css/sass/_modules/_page-title/_large.scss */
-  .page-title-headline {
-    font-size: 3.4231em;
-  }
-}
-@media screen and (min-width: 992px) {
   /* line 3, ../../src/css/sass/_modules/_section-title/_large.scss */
   .section-title {
     padding: 10% 30%;
-  }
-
-  /* line 6, ../../src/css/sass/_modules/_section-title/_large.scss */
-  .section-headline {
-    font-size: 2.6154em;
   }
 }
 /*
@@ -2948,18 +2893,6 @@ a.navigation-overlay-link:hover {
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 3, ../../src/css/sass/_modules/_feed/_xlarge.scss */
-  .feed-tile-headline {
-    font-size: 2.6154em;
-    line-height: 1.6154em;
-  }
-
-  /* line 8, ../../src/css/sass/_modules/_feed/_xlarge.scss */
-  .split .feed-tile-headline {
-    font-size: 2.1154em;
-  }
-}
-@media screen and (min-width: 1200px) {
   /* line 3, ../../src/css/sass/_modules/_footer/_xlarge.scss */
   .footer-legal {
     margin-top: 4rem;
@@ -2982,11 +2915,6 @@ a.navigation-overlay-link:hover {
 }
 @media screen and (min-width: 1200px) {
   /* line 3, ../../src/css/sass/_modules/_hero-video/_xlarge.scss */
-  .hero-video-headline {
-    font-size: 3.4231em;
-  }
-
-  /* line 6, ../../src/css/sass/_modules/_hero-video/_xlarge.scss */
   .hero-video-text-container {
     padding: 0 30%;
   }
@@ -3019,26 +2947,9 @@ a.navigation-overlay-link:hover {
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 2, ../../src/css/sass/_modules/_locations/_xlarge.scss */
-  .locations-headline {
-    font-size: 4.2308em;
-  }
-}
-@media screen and (min-width: 1200px) {
-  /* line 3, ../../src/css/sass/_modules/_page-title/_xlarge.scss */
-  .page-title-headline {
-    font-size: 4.2308em;
-  }
-}
-@media screen and (min-width: 1200px) {
   /* line 3, ../../src/css/sass/_modules/_section-title/_xlarge.scss */
   .section-title {
     padding: 5% 30%;
-  }
-
-  /* line 6, ../../src/css/sass/_modules/_section-title/_xlarge.scss */
-  .section-headline {
-    font-size: 3.4231em;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -3099,32 +3010,11 @@ a.navigation-overlay-link:hover {
   .feed-tile-text-container {
     padding: 0 15%;
   }
-
-  /* line 6, ../../src/css/sass/_modules/_feed/_xxlarge.scss */
-  .feed-tile-eyebrow {
-    font-size: 1.3077em;
-  }
-
-  /* line 9, ../../src/css/sass/_modules/_feed/_xxlarge.scss */
-  .feed-tile-headline {
-    font-size: 3.4231em;
-    line-height: 1.6154em;
-  }
-
-  /* line 14, ../../src/css/sass/_modules/_feed/_xxlarge.scss */
-  .split .feed-tile-headline {
-    font-size: 2.6154em;
-  }
 }
 @media screen and (min-width: 1600px) {
   /* line 3, ../../src/css/sass/_modules/_hero-video/_xxlarge.scss */
   .hero-video {
     height: 40vw;
-  }
-
-  /* line 6, ../../src/css/sass/_modules/_hero-video/_xxlarge.scss */
-  .hero-video-headline {
-    font-size: 4.2308em;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -3147,22 +3037,5 @@ a.navigation-overlay-link:hover {
   /* line 2, ../../src/css/sass/_modules/_locations/_xxlarge.scss */
   .locations {
     height: 35vw;
-  }
-
-  /* line 5, ../../src/css/sass/_modules/_locations/_xxlarge.scss */
-  .locations-headline {
-    font-size: 5.5385em;
-  }
-}
-@media screen and (min-width: 1600px) {
-  /* line 3, ../../src/css/sass/_modules/_page-title/_xxlarge.scss */
-  .page-title-headline {
-    font-size: 5.5385em;
-  }
-}
-@media screen and (min-width: 1600px) {
-  /* line 3, ../../src/css/sass/_modules/_section-title/_xxlarge.scss */
-  .section-headline {
-    font-size: 4.2308em;
   }
 }
