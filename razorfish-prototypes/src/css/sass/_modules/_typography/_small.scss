@@ -74,9 +74,9 @@ Helvetica,
 Arial,
 sans-serif;
 $default-letter-spacing: 0.16em;
-$default-line-height: 1;
-$headline-line-height: 1.1;
-$body-copy-line-height: 1.5;
+$default-line-height: $scale04;
+$headline-line-height: $scale05;
+$body-copy-line-height: $scale06;
 // Type scale "Le Corbusier" taken from http:/lamb.cc/typograph/
 $scale01: 0.5em;
 $scale02: 0.6154em;
@@ -112,7 +112,7 @@ p {
     font-family: $display;
     font-size: $scale08;
     color: $black;
-    line-height: 1.25;
+    line-height: $scale05;
     letter-spacing: -0.01em;
     width: 100%;
 }
@@ -121,7 +121,7 @@ p {
     font-family: $display;
     font-size: $scale07;
     color: $black;
-    line-height: 1.25;
+    line-height: $scale05;
     letter-spacing: -0.01em;
     width: 100%;
 }
@@ -130,7 +130,7 @@ p {
     font-family: $display;
     font-size: $scale06;
     color: $black;
-    line-height: 1.5;
+    line-height: $scale06;
     letter-spacing: -0.01em;
     width: 100%;
 }
@@ -140,7 +140,7 @@ p {
     font-size: $scale05;
     font-weight: bold;
     color: $black;
-    line-height: 1.5;
+    line-height: $scale06;
     letter-spacing: -0.02em;
     width: 100%;
 }
@@ -149,7 +149,7 @@ p {
     font-family: $sans;
     font-size: $scale04;
     color: $primary;
-    line-height: 1.5;
+    line-height: $scale06;
     letter-spacing: -0.01em;
     width: 100%;
 }
@@ -158,7 +158,7 @@ p {
     font-family: $sans;
     font-size: $scale04;
     color: $black;
-    line-height: 1.5;
+    line-height: $scale06;
     letter-spacing: -0.01em;
     width: 100%;
 }
@@ -167,7 +167,7 @@ p {
     font-family: $sans;
     font-size: $scale04;
     color: $black;
-    line-height: 2;
+    line-height: $scale07;
     letter-spacing: -0.01em;
     width: 100%;
 }
@@ -177,7 +177,7 @@ p {
     font-size: $scale04;
     color: $grayDarker;
     font-style: italic;
-    line-height: 2;
+    line-height: $scale07;
     letter-spacing: -0.01em;
     width: 100%;
 }
@@ -190,7 +190,7 @@ p {
     font-style: italic;
     font-size: $scale06;
     color: $blackLighter;
-    line-height: 1.5;
+    line-height: $scale06;
     letter-spacing: -0.01em;
     width: 100%;
 }
