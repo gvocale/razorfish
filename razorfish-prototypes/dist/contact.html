@@ -54,12 +54,12 @@
         </div>
     </section>
     <section class="contact-form">
-        <nav class="contact-form-tabs-container">
-            <ul class="contact-form-tabs">
-                <li class="contact-form-tab-active">Become a client</li>
-                <li class="contact-form-tab">Recruiting Inquires</li>
-                <li class="contact-form-tab">Media Relations</li>
-                <li class="contact-form-tab">Publishing</li>
+        <nav class="contact-form-tabs">
+            <ul class="contact-form-tabs-container">
+                <li><a class="contact-form-tab" href="">Become a client</a></li>
+                <li><a class="contact-form-tab" href="">Recruiting Inquires</a></li>
+                <li><a class="contact-form-tab" href="">Media Relations</a></li>
+                <li><a class="contact-form-tab" href="">Publishing</a></li>
             </ul>
         </nav>
         <div class="contact-form-title">
@@ -69,24 +69,92 @@
             </div>
             <p class="contact-form-subheadline">Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor sit amet.</p>
         </div>
-        <form action="">
-            <input type="text">
-            <label for="">Name</label>
-            <input type="text">
-            <label for="">Company</label>
-            <input type="text">
-            <label for="">Email</label>
-            <input type="text">
-            <label for="">Country</label>
-            <input type="text">
-            <label for="">Comments</label>
-            <input type="text">
-            <label for="">Attachments</label>
-            <button name="button">Submit</button>
+        <form class="contact-form-fields" action="">
+            <div class="contact-form-field">
+                <input class="contact-form-field-input" placeholder="Name" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                <label class="contact-form-field-label" for="">Name</label>
+                <div class="contact-form-field-border"></div>
+            </div>
+            <div class="contact-form-field">
+                <input class="contact-form-field-input" placeholder="Company" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                <label class="contact-form-field-label" for="">Company</label>
+                <div class="contact-form-field-border"></div>
+            </div>
+            <div class="contact-form-field">
+                <input class="contact-form-field-input" placeholder="Email" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                <label class="contact-form-field-label" for="">Email</label>
+                <div class="contact-form-field-border"></div>
+            </div>
+            <div class="contact-form-field">
+                <input class="contact-form-field-input" placeholder="Country" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                <label class="contact-form-field-label" for="">Country</label>
+                <div class="contact-form-field-border"></div>
+            </div>
+            <div class="contact-form-field">
+                <input class="contact-form-field-input" placeholder="Comments" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                <label class="contact-form-field-label" for="">Comments</label>
+                <div class="contact-form-field-border"></div>
+            </div>
+            <div class="contact-form-field attachment">
+                <span class="contact-form-field-input">Attachment</span>
+                <span class="contact-form-field-note">Optional</span>
+                <label for="file">Browse</label>
+                <input class="contact-form-attachment-button" name="file" type="file" multiple>
+                <div class="contact-form-field-border"></div>
+            </div>
+            <button class="contact-form-submit" name="button">Submit</button>
         </form>
-        <div class="contact-form-background">
-        </div>
+        <div class="contact-form-background"></div>
     </section>
+    <article class="find-an-office">
+        <div class="section-title">
+            <h2 class="section-headline">Find an office</h2>
+            <div class="section-divider">
+                <hr class="divider-md">
+            </div>
+            <p class="section-subheadline">Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor sit amet.</p>
+        </div>
+        <nav class="find-an-office-tabs">
+            <ul class="find-an-office-tabs-container">
+                <li><a class="find-an-office-tab" href="">North America</a></li>
+                <li><a class="find-an-office-tab" href="">Europe</a></li>
+                <li><a class="find-an-office-tab" href="">Asia</a></li>
+                <li><a class="find-an-office-tab" href="">Australia</a></li>
+            </ul>
+        </nav>
+        <section class="find-an-office__office">
+            <div class="find-an-office__office-details">
+                <h2 class="find-an-office__office-name">Razorfish Atlanta</h2>
+                <div class="section-divider">
+                    <hr class="divider-md">
+                </div>
+                <div class="find-an-office__contacts">
+                    <p class="find-an-office__office-address">1230 Peachtree Street NE
+                        <br>Suite 2200
+                        <br>Atlanta, GA 30309</p>
+                    <p class="find-an-office__office-telephone">+1 678 538 6000</p>
+                </div>
+                <div class="find-an-office__leaders">
+                    <div class="find-an-office__leader">
+                        <p class="find-an-office__leader-name">Patrick Frend</p>
+                        <p class="find-an-office__leader-role">President</p>
+                    </div>
+                    <div class="find-an-office__leader">
+                        <p class="find-an-office__leader-name">Ray Samuels</p>
+                        <p class="find-an-office__leader-role">Managing Director</p>
+                    </div>
+                    <div class="find-an-office__leader">
+                        <p class="find-an-office__leader-name">Stephanie Gilbert</p>
+                        <p class="find-an-office__leader-role">Business Development</p>
+                    </div>
+                </div>
+                <div class="find-an-office__career-openings">
+                    <span class="find-an-office__openings-number">14</span><span>Open Career Openings</span>
+                </div>
+            </div>
+            <div class="find-an-office__office-photo"></div>
+        </section>
+    </article>
     <section class="related">
         <ul class="related-grid">
             <li class="feed-tile picture-text-top color-combination-3">

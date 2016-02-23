@@ -1,0 +1,122 @@
+.find-an-office {
+    @extend .content-centered;
+    position: relative;
+    background-color: $grayLighter;
+    .section-title {
+        background-color: transparent;
+        color: $black;
+    }
+}
+
+.find-an-office-section-title {
+    @extend .section-title;
+}
+
+.find-an-office-tabs {
+    @extend .tabs;
+    width: 50%;
+    z-index: 3;
+}
+
+.find-an-office-tabs-container {
+    @extend .tabs-container;
+}
+
+.find-an-office-tab {
+    @extend .tab;
+}
+
+.find-an-office__office {
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.find-an-offce__office:nth-of-type(odd) {
+    .find-an-office__office-photo {
+        order: 1;
+    }
+    .find-an-office__office-details {
+        order: 2;
+    }
+}
+
+.find-an-offce__office:nth-of-type(even) {
+    .find-an-office__office-photo {
+        order: 2;
+    }
+    .find-an-office__office-details {
+        order: 1;
+    }
+}
+
+.find-an-office__office-details {
+    width: 40vw;
+    height: 40vw;
+    @extend .content-centered;
+    background-color: $white;
+}
+
+.find-an-office__office-name {
+    @extend .h4;
+}
+
+.find-an-office__office-address {
+    @extend .body;
+    line-height: $scale06;
+    text-align: center;
+}
+
+.find-an-office__office-telephone {
+    @extend .body;
+    margin-top: 1em;
+    font-weight: 700;
+    line-height: $scale06;
+    text-align: center;
+}
+
+.find-an-office__leaders {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.find-an-office__leader {
+    width: 30%;
+}
+
+.find-an-office__contacts + .find-an-office__leaders {
+    margin-top: 4em;
+}
+
+.find-an-office__leader-name {
+    @extend .body;
+}
+
+.find-an-office__leader-role {
+    @extend .body-smaller;
+    text-transform: uppercase;
+    color: $gray;
+    margin-top: -0.25em;
+}
+
+.find-an-office__career-openings {
+    @extend .body-smaller;
+    text-transform: uppercase;
+    color: $grayDarker;
+    font-weight: 700;
+}
+
+.find-an-office__office-photo {
+    width: 40vw;
+    height: 40vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('./../images/office-razorfish-atlanta.jpg');
+}

@@ -44,7 +44,6 @@
     @extend .background-cover;
     background-blend-mode: soft-light;
     background-image: url('./../images/locations-background.jpg'), linear-gradient(90deg, $tertiary, $tertiaryDarker);
-    transition: all 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .locations-eyebrow {
@@ -66,30 +65,9 @@
 }
 
 .locations-link {
-    color: $primary;
-    font-style: italic;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    line-height: $scale05;
-    letter-spacing: -0.015em;
+    @extend .link;
 }
 
-.locations-link:before {
-    display: block;
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border-bottom-width: 0.04em;
-    border-bottom-style: solid;
-}
-
-.locations-link:hover:before {
-    width: 100%;
-}
 
 .locations.reveal {
     .location-mask {}

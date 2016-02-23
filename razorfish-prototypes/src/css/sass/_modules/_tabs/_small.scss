@@ -1,31 +1,73 @@
-.tabs-container {
+.tabs {
     width: 60%;
 }
 
-.tabs {
+.tabs-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: baseline;
     justify-content: space-between;
-    border-bottom: 0.05em solid;
+    position: relative;
+    height: 3rem;
+    margin: 0;
+    padding: 0;
 }
 
-.tab {
-    @extend .h5;
+.tabs-container:before {
+    display: block;
+    content: "";
+    position: absolute;
+    height: 0.05em;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.5;
+    background-color: $black;
+}
+
+.tab,
+a.tab {
+    font-family: $sans;
+    font-size: $scale05;
+    line-height: $scale03;
+    font-weight: lighter;
+    letter-spacing: 0.05em;
     opacity: 0.5;
     cursor: pointer;
     cursor: hand;
-    padding-bottom: $scale02;
     font-weight: lighter;
-}
-
-.tab:active {
-    font-weight: normal;
-    border-bottom: 0.1em solid;
+    text-transform: uppercase;
+    position: relative;
+    text-decoration: none;
+    height: 3rem;
+    margin: 0;
+    padding: 0;
 }
 
 .tab:hover {
     opacity: 1;
-    border-bottom: 0.05em solid $primary;
+}
+
+.tab:active:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.tab:before {
+    display: block;
+    content: "";
+    position: absolute;
+    height: 0.05em;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    background-color: $primary;
+    transition: width 0.1s ease-in-out 0.1s;
+}
+
+.tab:hover:before {
+    width: 100%;
 }
