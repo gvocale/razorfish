@@ -88,22 +88,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 17, ../../src/css/sass/_modules/_icons.scss */
-.icon-form-invalid, .contact-form-field__input:invalid ~ .contact-form-field__icon {
+.icon-form-invalid, .form-field__input:invalid ~ .form-field__icon, .contact__form-field__input:invalid ~ .form-field__icon, .form-field__input:invalid ~ .contact__form-field__icon, .contact__form-field__input:invalid ~ .contact__form-field__icon {
   background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?>\a  <svg width='16px' height='16px' version='1.1' xmlns='http://www.w3.org/2000/svg'> <g id='form-invalid'> <path d='M0,8 C0,12.4 3.6,16 8,16 C12.4,16 16,12.4 16,8 C16,3.6 12.4,0 8,0 C3.6,0 0,3.6 0,8 L0,8 Z' fill='#E6393C'></path> <path d='M9,10 L7,10 L7,3 L9,3 L9,10 L9,10 Z M9,13 L7,13 L7,11 L9,11 L9,13 L9,13 Z' fill='#FFFFFF'></path> </g> </svg> ");
 }
 
 /* line 22, ../../src/css/sass/_modules/_icons.scss */
-.icon-form-valid, .contact-form-field__input:valid ~ .contact-form-field__icon {
+.icon-form-valid, .form-field__input:valid ~ .form-field__icon, .contact__form-field__input:valid ~ .form-field__icon, .form-field__input:valid ~ .contact__form-field__icon, .contact__form-field__input:valid ~ .contact__form-field__icon {
   background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?>\a  <svg width='16px' height='16px' version='1.1' xmlns='http://www.w3.org/2000/svg'> <g id='form-valid'> <path fill='#a9c000' d='M0,8 C0,12.4 3.6,16 8,16 C12.4,16 16,12.4 16,8 C16,3.6 12.4,0 8,0 C3.6,0 0,3.6 0,8 L0,8 Z' ></path> <path id='Path' fill='#FFFFFF' d='M12.1923882,4.82842712 L13.6066017,6.24264069 L8.65685425,11.1923882 L7.24264069,9.77817459 L12.1923882,4.82842712 Z M3,8.36396103 L4.41421356,6.94974747 L8.65685425,11.1923882 L7.24264069,12.6066017 L3,8.36396103 Z'></path> </g></svg> ");
 }
 
 /* line 27, ../../src/css/sass/_modules/_icons.scss */
-.icon-form-required, .contact-form-field__input[value=""] ~ .contact-form-field__icon {
+.icon-form-required, .form-field__input[value=""] ~ .form-field__icon, [value=""].contact__form-field__input ~ .form-field__icon, .form-field__input[value=""] ~ .contact__form-field__icon, [value=""].contact__form-field__input ~ .contact__form-field__icon {
   background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?>\a  <svg width='14px' height='15px' version='1.1' xmlns='http://www.w3.org/2000/svg'> <path id='form-required' fill='#FFFFFF' d='M13.991,4.616 L12.991,2.884 L7.996,5.768 L7.996,0 L5.996,0 L5.996,5.768 L1,2.883 L0,4.616 L4.996,7.5 L0,10.384 L1,12.116 L5.996,9.232 L5.996,15 L7.996,15 L7.996,9.232 L12.991,12.116 L13.991,10.384 L8.996,7.5 L13.991,4.616 Z'></path> </svg> ");
 }
 
 /* line 32, ../../src/css/sass/_modules/_icons.scss */
-.icon-arrow-white, .contact-form-field__select ~ .contact-form-field__icon, .contact-form-browse-file-button:after {
+.icon-arrow-white, .form-field__select ~ .form-field__icon, .contact__form-field__select ~ .form-field__icon, .form-field__select ~ .contact__form-field__icon, .contact__form-field__select ~ .contact__form-field__icon, .form-field__file-browse-button:after, .contact__form-field__file-browse-button:after {
   background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?>\a  <svg width='22px' height='14px' version='1.1' xmlns='http://www.w3.org/2000/svg'> <path id='arrow' fill='#FFFFFF' d='M18.7132034,0.106601718 L21.2132034,2.60660172 L10.6066017,13.2132034 L0,2.60660172 L2.5,0.106601718 L10.6066017,8.21320344 L18.7132034,0.106601718 L18.7132034,0.106601718 Z'></path> </svg> ");
 }
 
@@ -202,7 +202,7 @@ p {
 }
 
 /* line 141, ../../src/css/sass/_modules/_typography/_small.scss */
-.h3, .article-h3, .article-h3-quote, .contact-form-headline, .feed-tile-headline, .section-headline {
+.h3, .article-h3, .article-h3-quote, .contact__form__headline, .feed-tile-headline, .section-headline {
   font-family: "Miller Display", Times, Georgia, serif;
   font-size: 1.3077em;
   line-height: 1.3077em;
@@ -211,7 +211,7 @@ p {
 }
 
 /* line 149, ../../src/css/sass/_modules/_typography/_small.scss */
-.h4, .article-h4, .contact-form-submit, .split .feed-tile-headline, .find-an-office__office-name {
+.h4, .form__submit, .contact-form__submit, .article-h4, .split .feed-tile-headline, .find-an-office__office-name {
   font-family: "Miller Display", Times, Georgia, serif;
   font-size: 1em;
   line-height: 1.6154em;
@@ -228,7 +228,7 @@ p {
 }
 
 /* line 164, ../../src/css/sass/_modules/_typography/_small.scss */
-.h6, .contact-form-field__input, .contact-form-field__select, .contact-form-field__attachment, .contact-form-subheadline, .feed-tile-eyebrow, .section-subheadline {
+.h6, .form-field__input, .contact__form-field__input, .form-field__select, .contact__form-field__select, .form-field__file-attachment, .contact__form-field__file-attachment, .contact__form__subheadline, .feed-tile-eyebrow, .section-subheadline {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   font-size: 0.8077em;
   line-height: 1.6154em;
@@ -254,7 +254,7 @@ p {
 }
 
 /* line 189, ../../src/css/sass/_modules/_typography/_small.scss */
-.body-smaller, .article-foot-note, .contact-form-field__optional, .contact-form-browse-file-button, .find-an-office__leader-role, .find-an-office__career-openings {
+.body-smaller, .form-field__file-optional, .contact__form-field__optional, .form-field__file-browse-button, .contact__form-field__file-browse-button, .article-foot-note, .find-an-office__leader-role, .find-an-office__career-openings {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   font-size: 1em;
   line-height: 2.1154em;
@@ -275,7 +275,7 @@ p {
 }
 
 /* line 208, ../../src/css/sass/_modules/_typography/_small.scss */
-.link, .contact-form-submit, .locations-link {
+.link, .form__submit, .contact-form__submit, .locations-link {
   color: #a9c000;
   font-style: italic;
   text-decoration: none;
@@ -288,7 +288,7 @@ p {
 }
 
 /* line 220, ../../src/css/sass/_modules/_typography/_small.scss */
-.link:before, .contact-form-submit:before, .locations-link:before {
+.link:before, .form__submit:before, .contact-form__submit:before, .locations-link:before {
   display: block;
   content: "";
   position: absolute;
@@ -301,7 +301,7 @@ p {
 }
 
 /* line 232, ../../src/css/sass/_modules/_typography/_small.scss */
-.link:hover:before, .contact-form-submit:hover:before, .locations-link:hover:before {
+.link:hover:before, .form__submit:hover:before, .contact-form__submit:hover:before, .locations-link:hover:before {
   width: 100%;
 }
 
@@ -314,23 +314,25 @@ p {
 .h3::-moz-selection,
 .article-h3::-moz-selection,
 .article-h3-quote::-moz-selection,
-.contact-form-headline::-moz-selection,
+.contact__form__headline::-moz-selection,
 .feed-tile-headline::-moz-selection,
 .section-headline::-moz-selection,
 .h4::-moz-selection,
+.form__submit::-moz-selection,
+.contact-form__submit::-moz-selection,
 .article-h4::-moz-selection,
-.contact-form-submit::-moz-selection,
 .split .feed-tile-headline::-moz-selection,
 .find-an-office__office-name::-moz-selection,
 .h3::-moz-selection,
 .article-h3::-moz-selection,
 .article-h3-quote::-moz-selection,
-.contact-form-headline::-moz-selection,
+.contact__form__headline::-moz-selection,
 .feed-tile-headline::-moz-selection,
 .section-headline::-moz-selection,
 .h4::-moz-selection,
+.form__submit::-moz-selection,
+.contact-form__submit::-moz-selection,
 .article-h4::-moz-selection,
-.contact-form-submit::-moz-selection,
 .split .feed-tile-headline::-moz-selection,
 .find-an-office__office-name::-moz-selection,
 .h5::-moz-selection,
@@ -339,10 +341,13 @@ p {
 .hero-video-subheadline::-moz-selection,
 .locations-eyebrow::-moz-selection,
 .h6::-moz-selection,
-.contact-form-field__input::-moz-selection,
-.contact-form-field__select::-moz-selection,
-.contact-form-field__attachment::-moz-selection,
-.contact-form-subheadline::-moz-selection,
+.form-field__input::-moz-selection,
+.contact__form-field__input::-moz-selection,
+.form-field__select::-moz-selection,
+.contact__form-field__select::-moz-selection,
+.form-field__file-attachment::-moz-selection,
+.contact__form-field__file-attachment::-moz-selection,
+.contact__form__subheadline::-moz-selection,
 .feed-tile-eyebrow::-moz-selection,
 .section-subheadline::-moz-selection,
 .body::-moz-selection,
@@ -364,23 +369,25 @@ p {
 .h3::selection,
 .article-h3::selection,
 .article-h3-quote::selection,
-.contact-form-headline::selection,
+.contact__form__headline::selection,
 .feed-tile-headline::selection,
 .section-headline::selection,
 .h4::selection,
+.form__submit::selection,
+.contact-form__submit::selection,
 .article-h4::selection,
-.contact-form-submit::selection,
 .split .feed-tile-headline::selection,
 .find-an-office__office-name::selection,
 .h3::selection,
 .article-h3::selection,
 .article-h3-quote::selection,
-.contact-form-headline::selection,
+.contact__form__headline::selection,
 .feed-tile-headline::selection,
 .section-headline::selection,
 .h4::selection,
+.form__submit::selection,
+.contact-form__submit::selection,
 .article-h4::selection,
-.contact-form-submit::selection,
 .split .feed-tile-headline::selection,
 .find-an-office__office-name::selection,
 .h5::selection,
@@ -389,10 +396,13 @@ p {
 .hero-video-subheadline::selection,
 .locations-eyebrow::selection,
 .h6::selection,
-.contact-form-field__input::selection,
-.contact-form-field__select::selection,
-.contact-form-field__attachment::selection,
-.contact-form-subheadline::selection,
+.form-field__input::selection,
+.contact__form-field__input::selection,
+.form-field__select::selection,
+.contact__form-field__select::selection,
+.form-field__file-attachment::selection,
+.contact__form-field__file-attachment::selection,
+.contact__form__subheadline::selection,
 .feed-tile-eyebrow::selection,
 .section-subheadline::selection,
 .body::selection,
@@ -419,22 +429,22 @@ p {
   }
 
   /* line 9, ../../src/css/sass/_modules/_typography/_medium.scss */
-  .h3, .article-h3, .article-h3-quote, .contact-form-headline, .feed-tile-headline, .section-headline {
+  .h3, .article-h3, .article-h3-quote, .contact__form__headline, .feed-tile-headline, .section-headline {
     font-size: 2.1154em;
   }
 
   /* line 12, ../../src/css/sass/_modules/_typography/_medium.scss */
-  .h4, .article-h4, .contact-form-submit, .split .feed-tile-headline, .find-an-office__office-name {
+  .h4, .form__submit, .contact-form__submit, .article-h4, .split .feed-tile-headline, .find-an-office__office-name {
     font-size: 1.3077em;
   }
 
   /* line 15, ../../src/css/sass/_modules/_typography/_medium.scss */
-  .h3, .article-h3, .article-h3-quote, .contact-form-headline, .feed-tile-headline, .section-headline {
+  .h3, .article-h3, .article-h3-quote, .contact__form__headline, .feed-tile-headline, .section-headline {
     font-size: 2.1154em;
   }
 
   /* line 18, ../../src/css/sass/_modules/_typography/_medium.scss */
-  .h4, .article-h4, .contact-form-submit, .split .feed-tile-headline, .find-an-office__office-name {
+  .h4, .form__submit, .contact-form__submit, .article-h4, .split .feed-tile-headline, .find-an-office__office-name {
     font-size: 1.3077em;
   }
 
@@ -444,12 +454,12 @@ p {
   }
 
   /* line 24, ../../src/css/sass/_modules/_typography/_medium.scss */
-  .h6, .contact-form-field__input, .contact-form-field__select, .contact-form-field__attachment, .contact-form-subheadline, .feed-tile-eyebrow, .section-subheadline {
+  .h6, .form-field__input, .contact__form-field__input, .form-field__select, .contact__form-field__select, .form-field__file-attachment, .contact__form-field__file-attachment, .contact__form__subheadline, .feed-tile-eyebrow, .section-subheadline {
     font-size: 1em;
   }
 
   /* line 27, ../../src/css/sass/_modules/_typography/_medium.scss */
-  .tab, .contact-form-tab, .find-an-office-tab {
+  .tab, .contact__form__tab, .find-an-office-tab {
     font-size: 1.3077em;
   }
 
@@ -480,22 +490,22 @@ p {
   }
 
   /* line 9, ../../src/css/sass/_modules/_typography/_large.scss */
-  .h3, .article-h3, .article-h3-quote, .contact-form-headline, .feed-tile-headline, .section-headline {
+  .h3, .article-h3, .article-h3-quote, .contact__form__headline, .feed-tile-headline, .section-headline {
     font-size: 2.6154em;
   }
 
   /* line 12, ../../src/css/sass/_modules/_typography/_large.scss */
-  .h4, .article-h4, .contact-form-submit, .split .feed-tile-headline, .find-an-office__office-name {
+  .h4, .form__submit, .contact-form__submit, .article-h4, .split .feed-tile-headline, .find-an-office__office-name {
     font-size: 2.1154em;
   }
 
   /* line 15, ../../src/css/sass/_modules/_typography/_large.scss */
-  .h3, .article-h3, .article-h3-quote, .contact-form-headline, .feed-tile-headline, .section-headline {
+  .h3, .article-h3, .article-h3-quote, .contact__form__headline, .feed-tile-headline, .section-headline {
     font-size: 2.1154em;
   }
 
   /* line 18, ../../src/css/sass/_modules/_typography/_large.scss */
-  .h4, .article-h4, .contact-form-submit, .split .feed-tile-headline, .find-an-office__office-name {
+  .h4, .form__submit, .contact-form__submit, .article-h4, .split .feed-tile-headline, .find-an-office__office-name {
     font-size: 1.6154em;
     line-height: 1.3077em;
   }
@@ -506,7 +516,7 @@ p {
   }
 
   /* line 25, ../../src/css/sass/_modules/_typography/_large.scss */
-  .h6, .contact-form-field__input, .contact-form-field__select, .contact-form-field__attachment, .contact-form-subheadline, .feed-tile-eyebrow, .section-subheadline {
+  .h6, .form-field__input, .contact__form-field__input, .form-field__select, .contact__form-field__select, .form-field__file-attachment, .contact__form-field__file-attachment, .contact__form__subheadline, .feed-tile-eyebrow, .section-subheadline {
     font-size: 1.3077em;
   }
 
@@ -527,22 +537,22 @@ p {
   }
 
   /* line 10, ../../src/css/sass/_modules/_typography/_xlarge.scss */
-  .h3, .article-h3, .article-h3-quote, .contact-form-headline, .feed-tile-headline, .section-headline {
+  .h3, .article-h3, .article-h3-quote, .contact__form__headline, .feed-tile-headline, .section-headline {
     font-size: 3.4231em;
   }
 
   /* line 13, ../../src/css/sass/_modules/_typography/_xlarge.scss */
-  .h4, .article-h4, .contact-form-submit, .split .feed-tile-headline, .find-an-office__office-name {
+  .h4, .form__submit, .contact-form__submit, .article-h4, .split .feed-tile-headline, .find-an-office__office-name {
     font-size: 2.1154em;
   }
 
   /* line 16, ../../src/css/sass/_modules/_typography/_xlarge.scss */
-  .h3, .article-h3, .article-h3-quote, .contact-form-headline, .feed-tile-headline, .section-headline {
+  .h3, .article-h3, .article-h3-quote, .contact__form__headline, .feed-tile-headline, .section-headline {
     font-size: 2.6154em;
   }
 
   /* line 19, ../../src/css/sass/_modules/_typography/_xlarge.scss */
-  .h4, .article-h4, .contact-form-submit, .split .feed-tile-headline, .find-an-office__office-name {
+  .h4, .form__submit, .contact-form__submit, .article-h4, .split .feed-tile-headline, .find-an-office__office-name {
     font-size: 1.6154em;
   }
 
@@ -552,7 +562,7 @@ p {
   }
 
   /* line 25, ../../src/css/sass/_modules/_typography/_xlarge.scss */
-  .h6, .contact-form-field__input, .contact-form-field__select, .contact-form-field__attachment, .contact-form-subheadline, .feed-tile-eyebrow, .section-subheadline {
+  .h6, .form-field__input, .contact__form-field__input, .form-field__select, .contact__form-field__select, .form-field__file-attachment, .contact__form-field__file-attachment, .contact__form__subheadline, .feed-tile-eyebrow, .section-subheadline {
     font-size: 1.3077em;
   }
 
@@ -578,12 +588,12 @@ p {
   }
 
   /* line 9, ../../src/css/sass/_modules/_typography/_xxlarge.scss */
-  .h3, .article-h3, .article-h3-quote, .contact-form-headline, .feed-tile-headline, .section-headline {
+  .h3, .article-h3, .article-h3-quote, .contact__form__headline, .feed-tile-headline, .section-headline {
     font-size: 4.2308em;
   }
 
   /* line 12, ../../src/css/sass/_modules/_typography/_xxlarge.scss */
-  .h4, .article-h4, .contact-form-submit, .split .feed-tile-headline, .find-an-office__office-name {
+  .h4, .form__submit, .contact-form__submit, .article-h4, .split .feed-tile-headline, .find-an-office__office-name {
     font-size: 2.6154em;
   }
 
@@ -593,7 +603,7 @@ p {
   }
 
   /* line 18, ../../src/css/sass/_modules/_typography/_xxlarge.scss */
-  .h6, .contact-form-field__input, .contact-form-field__select, .contact-form-field__attachment, .contact-form-subheadline, .feed-tile-eyebrow, .section-subheadline {
+  .h6, .form-field__input, .contact__form-field__input, .form-field__select, .contact__form-field__select, .form-field__file-attachment, .contact__form-field__file-attachment, .contact__form__subheadline, .feed-tile-eyebrow, .section-subheadline {
     font-size: 1.6154em;
   }
 
@@ -649,7 +659,7 @@ p {
 }
 
 /* line 25, ../../src/css/sass/_modules/_layout/_small.scss */
-.content-centered, .article-content, .article-quote, .article-hero, .contact-form, .find-an-office, .find-an-office__office-details, .page-title-container, .section-title, .find-an-office-section-title {
+.content-centered, .article-content, .article-quote, .article-hero, .contact__form, .find-an-office, .find-an-office__office-details, .page-title-container, .section-title, .find-an-office-section-title {
   position: relative;
   width: 100vw;
   display: -webkit-flex;
@@ -671,7 +681,7 @@ p {
 }
 
 /* line 36, ../../src/css/sass/_modules/_layout/_small.scss */
-.background-cover, .article-background, .article-hero-background, .contact-form-background, .contact-form-background:before, .contact-form-background:after, .locations-background, .video-background {
+.background-cover, .article-background, .article-hero-background, .contact__form__background, .contact__form__background:before, .contact__form__background:after, .locations-background, .video-background {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -684,7 +694,7 @@ p {
 }
 
 /* line 48, ../../src/css/sass/_modules/_layout/_small.scss */
-.section-padding, .article-content, .article-quote, .contact-form {
+.section-padding, .article-content, .article-quote, .contact__form {
   padding-top: 20%;
   padding-bottom: 25%;
 }
@@ -707,25 +717,25 @@ p {
 
 @media screen and (min-width: 992px) {
   /* line 3, ../../src/css/sass/_modules/_layout/_large.scss */
-  .section-padding, .article-content, .article-quote, .contact-form {
+  .section-padding, .article-content, .article-quote, .contact__form {
     padding-top: 10%;
     padding-bottom: 15%;
   }
 }
 @media screen and (min-width: 1200px) {
   /* line 3, ../../src/css/sass/_modules/_layout/_xlarge.scss */
-  .section-padding, .article-content, .article-quote, .contact-form {
+  .section-padding, .article-content, .article-quote, .contact__form {
     padding-top: 8%;
     padding-bottom: 12%;
   }
 }
 /* line 1, ../../src/css/sass/_modules/_tabs/_small.scss */
-.tabs, .contact-form-tabs, .find-an-office-tabs {
+.tabs, .contact__form__tabs, .find-an-office-tabs {
   width: 60%;
 }
 
 /* line 5, ../../src/css/sass/_modules/_tabs/_small.scss */
-.tabs-container, .contact-form-tabs-container, .find-an-office-tabs-container {
+.tabs-container, .contact__form__tabs-container, .find-an-office-tabs-container {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -748,7 +758,7 @@ p {
 }
 
 /* line 17, ../../src/css/sass/_modules/_tabs/_small.scss */
-.tabs-container:before, .contact-form-tabs-container:before, .find-an-office-tabs-container:before {
+.tabs-container:before, .contact__form__tabs-container:before, .find-an-office-tabs-container:before {
   display: block;
   content: "";
   position: absolute;
@@ -761,9 +771,9 @@ p {
 }
 
 /* line 29, ../../src/css/sass/_modules/_tabs/_small.scss */
-.tab, .contact-form-tab, .find-an-office-tab,
+.tab, .contact__form__tab, .find-an-office-tab,
 a.tab,
-a.contact-form-tab,
+a.contact__form__tab,
 a.find-an-office-tab {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   font-size: 1.3077em;
@@ -783,12 +793,12 @@ a.find-an-office-tab {
 }
 
 /* line 48, ../../src/css/sass/_modules/_tabs/_small.scss */
-.tab:hover, .contact-form-tab:hover, .find-an-office-tab:hover {
+.tab:hover, .contact__form__tab:hover, .find-an-office-tab:hover {
   opacity: 1;
 }
 
 /* line 52, ../../src/css/sass/_modules/_tabs/_small.scss */
-.tab:active:before, .contact-form-tab:active:before, .find-an-office-tab:active:before {
+.tab:active:before, .contact__form__tab:active:before, .find-an-office-tab:active:before {
   content: "";
   position: absolute;
   height: 100%;
@@ -796,7 +806,7 @@ a.find-an-office-tab {
 }
 
 /* line 59, ../../src/css/sass/_modules/_tabs/_small.scss */
-.tab:before, .contact-form-tab:before, .find-an-office-tab:before {
+.tab:before, .contact__form__tab:before, .find-an-office-tab:before {
   display: block;
   content: "";
   position: absolute;
@@ -809,8 +819,274 @@ a.find-an-office-tab {
 }
 
 /* line 71, ../../src/css/sass/_modules/_tabs/_small.scss */
-.tab:hover:before, .contact-form-tab:hover:before, .find-an-office-tab:hover:before {
+.tab:hover:before, .contact__form__tab:hover:before, .find-an-office-tab:hover:before {
   width: 100%;
+}
+
+/* line 1, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field, .contact__form-field {
+  position: relative;
+  height: 6em;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-bottom: 0.5em;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* line 10, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__border, .contact__form-field__border {
+  display: block;
+  position: absolute;
+  height: 0.05em;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  opacity: 0.3;
+}
+
+/* line 21, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__label, .contact__form-field__label {
+  position: absolute;
+  left: 0;
+  top: 20%;
+  font-size: 1em;
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.05em;
+  opacity: 0.3;
+  font-weight: lighter;
+  transition: all 0.1s 0.2s ease-out;
+}
+
+/* line 33, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__icon, .contact__form-field__icon {
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  bottom: 23%;
+  right: 0;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+}
+
+/* line 47, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__input, .contact__form-field__input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-weight: lighter;
+  color: #FFFFFF;
+  position: relative;
+  padding-right: 1em;
+}
+
+/* line 58, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__input::-webkit-input-placeholder, .contact__form-field__input::-webkit-input-placeholder {
+  color: #FFFFFF;
+  opacity: 0;
+  transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.form-field__input::-moz-placeholder, .contact__form-field__input::-moz-placeholder {
+  color: #FFFFFF;
+  opacity: 0;
+  transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.form-field__input:-ms-input-placeholder, .contact__form-field__input:-ms-input-placeholder {
+  color: #FFFFFF;
+  opacity: 0;
+  transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.form-field__input::placeholder, .contact__form-field__input::placeholder {
+  color: #FFFFFF;
+  opacity: 0;
+  transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* line 64, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__input:focus, .contact__form-field__input:focus {
+  outline: none;
+}
+
+/* line 74, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__input[value=""] ~ .form-field__label, [value=""].contact__form-field__input ~ .form-field__label, .form-field__input[value=""] ~ .contact__form-field__label, [value=""].contact__form-field__input ~ .contact__form-field__label {
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* line 80, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__input[value=""]::-webkit-input-placeholder, [value=""].contact__form-field__input::-webkit-input-placeholder {
+  opacity: 0.3;
+}
+.form-field__input[value=""]::-moz-placeholder, [value=""].contact__form-field__input::-moz-placeholder {
+  opacity: 0.3;
+}
+.form-field__input[value=""]:-ms-input-placeholder, [value=""].contact__form-field__input:-ms-input-placeholder {
+  opacity: 0.3;
+}
+.form-field__input[value=""]::placeholder, [value=""].contact__form-field__input::placeholder {
+  opacity: 0.3;
+}
+
+/* line 84, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__input[value=""] ~ .form-field__icon, [value=""].contact__form-field__input ~ .form-field__icon, .form-field__input[value=""] ~ .contact__form-field__icon, [value=""].contact__form-field__input ~ .contact__form-field__icon {
+  background-size: 80%;
+  opacity: 0.3;
+}
+
+/* line 95, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__input:valid ~ .form-field__border, .contact__form-field__input:valid ~ .form-field__border, .form-field__input:valid ~ .contact__form-field__border, .contact__form-field__input:valid ~ .contact__form-field__border {
+  opacity: 1;
+}
+
+/* line 100, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__input:focus ~ .form-field__border, .contact__form-field__input:focus ~ .form-field__border, .form-field__input:focus ~ .contact__form-field__border, .contact__form-field__input:focus ~ .contact__form-field__border {
+  opacity: 1;
+}
+
+/* line 105, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__select, .contact__form-field__select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: none;
+  -webkit-appearance: none;
+  font-weight: lighter;
+  color: #FFFFFF;
+  position: relative;
+  opacity: 0.3;
+}
+
+/* line 118, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__select ~ .form-field__icon, .contact__form-field__select ~ .form-field__icon, .form-field__select ~ .contact__form-field__icon, .contact__form-field__select ~ .contact__form-field__icon {
+  display: inline-block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  opacity: 0.3;
+}
+
+/* line 129, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__select ~ .form-field__label, .contact__form-field__select ~ .form-field__label, .form-field__select ~ .contact__form-field__label, .contact__form-field__select ~ .contact__form-field__label {
+  opacity: 0;
+}
+
+/* line 134, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__select:focus, .contact__form-field__select:focus {
+  outline: none;
+  opacity: 1;
+}
+
+/* line 139, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__select:focus ~ .form-field__icon, .contact__form-field__select:focus ~ .form-field__icon, .form-field__select:focus ~ .contact__form-field__icon, .contact__form-field__select:focus ~ .contact__form-field__icon {
+  opacity: 1;
+}
+
+/* line 143, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__select:focus ~ .form-field__border, .contact__form-field__select:focus ~ .form-field__border, .form-field__select:focus ~ .contact__form-field__border, .contact__form-field__select:focus ~ .contact__form-field__border {
+  opacity: 1;
+}
+
+/* line 148, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__file-attachment, .contact__form-field__file-attachment {
+  font-weight: lighter;
+  color: #FFFFFF;
+}
+
+/* line 154, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__file-optional, .contact__form-field__optional {
+  font-weight: lighter;
+  color: #FFFFFF;
+  margin-left: 0.5em;
+}
+
+/* line 161, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__file-attachment-button {
+  visibility: hidden;
+  position: absolute;
+}
+
+/* line 166, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__file-browse-button, .contact__form-field__file-browse-button {
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+  cursor: hand;
+  opacity: 0.3;
+}
+
+/* line 175, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__file-browse-button:after, .contact__form-field__file-browse-button:after {
+  content: "";
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-left: 0.2em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+}
+
+/* line 192, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__file-input, .contact__form-field__file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+/* line 201, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__file-input:focus ~ .form-field__file-browse-button, .contact__form-field__file-input:focus ~ .form-field__file-browse-button, .form-field__file-input:focus ~ .contact__form-field__file-browse-button, .contact__form-field__file-input:focus ~ .contact__form-field__file-browse-button {
+  opacity: 1;
+}
+
+/* line 205, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__file-input:focus ~ .form-field__border, .contact__form-field__file-input:focus ~ .form-field__border, .form-field__file-input:focus ~ .contact__form-field__border, .contact__form-field__file-input:focus ~ .contact__form-field__border {
+  opacity: 1;
+}
+
+/* line 209, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__file-attachment-container {
+  opacity: 0.3;
+}
+
+/* line 213, ../../src/css/sass/_modules/_form/_small.scss */
+.form-field__file-input:focus ~ .form-field__file-attachment-container, .contact__form-field__file-input:focus ~ .form-field__file-attachment-container {
+  opacity: 1;
+}
+
+/* line 218, ../../src/css/sass/_modules/_form/_small.scss */
+.form__submit, .contact-form__submit {
+  border: none;
+  background-color: transparent;
+  display: inline-block;
+  color: #FFFFFF;
+  margin-top: 2em;
+}
+
+/* line 228, ../../src/css/sass/_modules/_form/_small.scss */
+.form__submit:focus, .contact-form__submit:focus {
+  outline: none;
 }
 
 @-webkit-keyframes bounce {
@@ -1101,19 +1377,19 @@ a.find-an-office-tab {
           animation: 20s ease-out 0.5s forwards zoom;
 }
 
-/* line 4, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form {
+/* line 1, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form {
   position: relative;
   color: #FFFFFF;
 }
 
-/* line 11, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-tabs {
+/* line 8, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form__tabs {
   z-index: 3;
 }
 
-/* line 24, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-fields {
+/* line 21, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-fields {
   width: 60%;
   z-index: 3;
   display: -webkit-flex;
@@ -1133,330 +1409,133 @@ a.find-an-office-tab {
           justify-content: center;
 }
 
-/* line 34, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field {
+/* line 31, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field {
   width: 45%;
-  position: relative;
-  height: 6em;
   margin-top: 2em;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  padding-bottom: 0.5em;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-/* line 45, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field:nth-of-type(1),
-.contact-form-field:nth-of-type(2) {
+/* line 37, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field:nth-of-type(1),
+.contact__form-field:nth-of-type(2) {
   margin-top: 0;
 }
 
-/* line 50, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field:nth-of-type(odd) {
+/* line 42, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field:nth-of-type(odd) {
   margin-right: 10%;
 }
 
-/* line 54, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__border {
-  display: block;
-  position: absolute;
-  height: 0.05em;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #FFFFFF;
-  opacity: 0.3;
+/* line 62, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field__input:invalid ~ .contact__form-field__border {
+  opacity: 1;
 }
 
-/* line 66, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__input {
-  width: 100%;
-  background: transparent;
-  border: none;
-  font-weight: lighter;
-  color: #FFFFFF;
-  position: relative;
-  padding-right: 1em;
-}
-
-/* line 77, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__input::-webkit-input-placeholder {
-  color: #FFFFFF;
-  opacity: 0;
-  transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.contact-form-field__input::-moz-placeholder {
-  color: #FFFFFF;
-  opacity: 0;
-  transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.contact-form-field__input:-ms-input-placeholder {
-  color: #FFFFFF;
-  opacity: 0;
-  transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.contact-form-field__input::placeholder {
-  color: #FFFFFF;
-  opacity: 0;
-  transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* line 83, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__input:focus {
-  outline: none;
-}
-
-/* line 93, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__input[value=""] ~ .contact-form-field__label {
+/* line 67, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field__input[value=""] ~ .contact__form-field__label {
   opacity: 0;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
   transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* line 99, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__input[value=""]::-webkit-input-placeholder {
-  opacity: 0.3;
-}
-.contact-form-field__input[value=""]::-moz-placeholder {
-  opacity: 0.3;
-}
-.contact-form-field__input[value=""]:-ms-input-placeholder {
-  opacity: 0.3;
-}
-.contact-form-field__input[value=""]::placeholder {
-  opacity: 0.3;
-}
-
-/* line 103, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__input[value=""] ~ .contact-form-field__icon {
+/* line 73, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field__input[value=""] ~ .contact__form-field__icon {
   background-size: 80%;
   opacity: 0.3;
 }
 
-/* line 114, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__input:valid ~ .contact-form-field__border {
-  opacity: 1;
-}
-
-/* line 119, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__input:focus ~ .contact-form-field__border {
-  opacity: 1;
-}
-
-/* line 123, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__label {
-  position: absolute;
-  left: 0;
-  top: 20%;
-  font-size: 1em;
-  font-family: "Gotham", Helvetica, Arial, sans-serif;
-  letter-spacing: 0.05em;
+/* line 79, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field__input[value=""] ~ .contact__form-field__border {
   opacity: 0.3;
-  font-weight: lighter;
-  transition: all 0.1s 0.2s ease-out;
 }
 
-/* line 135, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__icon {
-  width: 1em;
-  height: 1em;
-  position: absolute;
-  bottom: 23%;
-  right: 0;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  background-origin: content-box;
+/* line 88, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field__input:valid ~ .contact__form-field__border {
+  opacity: 1;
 }
 
-/* line 148, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__select:focus {
-  outline: none;
+/* line 93, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field__input:focus ~ .contact__form-field__border {
+  opacity: 1;
+}
+
+/* line 109, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field__select ~ .contact__form-field__icon {
+  opacity: 0.3;
+}
+
+/* line 114, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field__select:focus ~ .contact__form-field__icon {
+  opacity: 1;
+}
+
+/* line 126, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field__select ~ .contact__form-field__label {
+  opacity: 0;
+}
+
+/* line 130, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field__select:focus ~ .contact__form-field__border {
+  opacity: 1;
+}
+
+/* line 146, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field__file:focus ~ .contact__form-field__file-browse-button {
+  opacity: 1;
+}
+
+/* line 150, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field__file:focus ~ .contact__form-field__border {
   opacity: 1;
 }
 
 /* line 154, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__select {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-radius: none;
-  -webkit-appearance: none;
-  font-weight: lighter;
-  color: #FFFFFF;
-  position: relative;
+.contact__form-field__file-attachment-container {
   opacity: 0.3;
 }
 
-/* line 167, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__select ~ .contact-form-field__icon {
-  display: inline-block;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  background-origin: content-box;
-  opacity: 0.3;
-}
-
-/* line 178, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__select:focus ~ .contact-form-field__icon {
+/* line 158, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form-field__file-input:focus ~ .contact__form-field__file-attachment-container {
   opacity: 1;
 }
 
-/* line 182, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__attachment {
-  font-weight: lighter;
-  color: #FFFFFF;
-}
-
-/* line 188, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__optional {
-  font-weight: lighter;
-  color: #FFFFFF;
-  margin-left: 0.5em;
-}
-
-/* line 195, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__select ~ .contact-form-field__label {
-  opacity: 0;
-}
-
-/* line 199, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__select:focus ~ .contact-form-field__border {
-  opacity: 1;
-}
-
-/* line 203, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__note {
-  right: 0;
-  font-size: 1em;
-  font-family: "Gotham", Helvetica, Arial, sans-serif;
-  margin-left: 1em;
-  opacity: 0.3;
-}
-
-/* line 211, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-submit {
-  border: none;
-  background-color: transparent;
-  display: inline-block;
-  color: #FFFFFF;
-  margin-top: 2em;
-}
-
-/* line 221, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-attachment-button {
-  visibility: hidden;
-  position: absolute;
-}
-
-/* line 226, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-submit:focus {
-  outline: none;
-}
-
-/* line 230, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-title {
+/* line 166, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form__title {
   text-align: center;
   z-index: 3;
 }
 
-/* line 243, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-background {
+/* line 179, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form__background {
   background-image: url("./../images/contact-form-background.jpg");
   z-index: 0;
 }
 
-/* line 249, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-background:before {
+/* line 185, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form__background:before {
   content: "";
   background-color: #FFFFFF;
   opacity: 0.5;
   z-index: 1;
 }
 
-/* line 257, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-background:after {
+/* line 193, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form__background:after {
   content: "";
   background-color: #42585c;
   opacity: 0.9;
   z-index: 2;
 }
 
-/* line 265, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-tabs + .contact-form-title {
+/* line 201, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form__tabs + .contact__form__title {
   margin-top: 5%;
 }
 
-/* line 269, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-title + .contact-form-fields {
+/* line 205, ../../src/css/sass/_modules/_contact-form/_small.scss */
+.contact__form__title + .contact__form-fields {
   margin-top: 5%;
-}
-
-/* line 273, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-browse-file-button {
-  text-transform: uppercase;
-  color: #FFFFFF;
-  cursor: pointer;
-  cursor: hand;
-  opacity: 0.3;
-}
-
-/* line 282, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-browse-file-button:after {
-  content: "";
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  display: inline-block;
-  width: 0.7em;
-  height: 0.7em;
-  margin-left: 0.2em;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-clip: content-box;
-  background-origin: content-box;
-}
-
-/* line 299, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__file {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-
-/* line 308, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__file:focus ~ .contact-form-browse-file-button {
-  opacity: 1;
-}
-
-/* line 312, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__file:focus ~ .contact-form-field__border {
-  opacity: 1;
-}
-
-/* line 316, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__attachment-container {
-  opacity: 0.3;
-}
-
-/* line 320, ../../src/css/sass/_modules/_contact-form/_small.scss */
-.contact-form-field__file:focus ~ .contact-form-field__attachment-container {
-  opacity: 1;
 }
 
 /* line 1, ../../src/css/sass/_modules/_disciplines/_small.scss */

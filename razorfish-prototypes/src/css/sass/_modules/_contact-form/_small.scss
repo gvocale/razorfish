@@ -1,27 +1,24 @@
-// Transparency 
-$opaque: 0.3;
-$visible: 1;
-.contact-form {
+.contact__form {
     @extend .section-padding;
     @extend .content-centered;
     position: relative;
     color: $white;
 }
 
-.contact-form-tabs {
+.contact__form__tabs {
     z-index: 3;
     @extend .tabs;
 }
 
-.contact-form-tabs-container {
+.contact__form__tabs-container {
     @extend .tabs-container;
 }
 
-.contact-form-tab {
+.contact__form__tab {
     @extend .tab;
 }
 
-.contact-form-fields {
+.contact__form-fields {
     width: 60%;
     z-index: 3;
     display: flex;
@@ -31,222 +28,161 @@ $visible: 1;
     justify-content: center;
 }
 
-.contact-form-field {
+.contact__form-field {
+    @extend .form-field;
     width: 45%;
-    position: relative;
-    height: 6em;
     margin-top: 2em;
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 0.5em;
-    justify-content: space-between;
 }
 
-.contact-form-field:nth-of-type(1),
-.contact-form-field:nth-of-type(2) {
+.contact__form-field:nth-of-type(1),
+.contact__form-field:nth-of-type(2) {
     margin-top: 0;
 }
 
-.contact-form-field:nth-of-type(odd) {
+.contact__form-field:nth-of-type(odd) {
     margin-right: 10%;
 }
 
-.contact-form-field__border {
-    display: block;
-    position: absolute;
-    height: 0.05em;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: $white;
-    opacity: $opaque;
+.contact__form-field__border {
+    @extend .form-field__border;
 }
 
 // Input
-.contact-form-field__input {
-    width: 100%;
-    background: transparent;
-    border: none;
-    @extend .h6;
-    font-weight: lighter;
-    color: $white;
-    position: relative;
-    padding-right: 1em;
+.contact__form-field__input {
+    @extend .form-field__input;
 }
 
-.contact-form-field__input::placeholder {
-    color: $white;
-    opacity: 0;
-    transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
 
-.contact-form-field__input:focus {
-    outline: none;
-}
 
 // Invalid Input
-.contact-form-field__input:invalid ~ .contact-form-field__icon {
+.contact__form-field__input:invalid ~ .contact__form-field__icon {
     @extend .icon-form-invalid;
 }
 
+.contact__form-field__input:invalid ~ .contact__form-field__border {
+    opacity: $visible;
+}
+
 // Empty Input
-.contact-form-field__input[value=""] ~ .contact-form-field__label {
+.contact__form-field__input[value=""] ~ .contact__form-field__label {
     opacity: 0;
     transform: translateY(50%);
     transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.contact-form-field__input[value=""]::placeholder {
-    opacity: $opaque;
-}
-
-.contact-form-field__input[value=""] ~ .contact-form-field__icon {
+.contact__form-field__input[value=""] ~ .contact__form-field__icon {
     @extend .icon-form-required;
     background-size: 80%;
     opacity: $opaque;
 }
 
+.contact__form-field__input[value=""] ~ .contact__form-field__border {
+    opacity: $opaque;
+}
+
 // Valid Input
-.contact-form-field__input:valid ~ .contact-form-field__icon {
+.contact__form-field__input:valid ~ .contact__form-field__icon {
     @extend .icon-form-valid;
 }
 
-.contact-form-field__input:valid ~ .contact-form-field__border {
+.contact__form-field__input:valid ~ .contact__form-field__border {
     opacity: $visible;
 }
 
 // Focus Input
-.contact-form-field__input:focus ~ .contact-form-field__border {
+.contact__form-field__input:focus ~ .contact__form-field__border {
     opacity: $visible;
 }
 
-.contact-form-field__label {
-    position: absolute;
-    left: 0;
-    top: 20%;
-    font-size: $scale04;
-    font-family: $sans;
-    letter-spacing: 0.05em;
-    opacity: $opaque;
-    font-weight: lighter;
-    transition: all 0.1s 0.2s ease-out;
+.contact__form-field__label {
+    @extend .form-field__label;
 }
 
-.contact-form-field__icon {
-    width: 1em;
-    height: 1em;
-    position: absolute;
-    bottom: 23%;
-    right: 0;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-clip: content-box;
-    background-origin: content-box;
+.contact__form-field__icon {
+    @extend .form-field__icon;
 }
 
-.contact-form-field__select:focus {
-    outline: none;
-    opacity: $visible;
+.contact__form-field__select {
+    @extend .form-field__select;
 }
 
-// First Empty Input
-.contact-form-field__select {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-radius: none;
-    -webkit-appearance: none;
-    @extend .h6;
-    font-weight: lighter;
-    color: $white;
-    position: relative;
-    opacity: $opaque;
-}
-
-.contact-form-field__select ~ .contact-form-field__icon {
+.contact__form-field__select ~ .contact__form-field__icon {
     @extend .icon-arrow-white;
-    display: inline-block;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-clip: content-box;
-    background-origin: content-box;
     opacity: $opaque;
 }
 
-.contact-form-field__select:focus ~ .contact-form-field__icon {
+.contact__form-field__select:focus ~ .contact__form-field__icon {
     opacity: $visible;
 }
 
-.contact-form-field__attachment {
-    @extend .h6;
-    font-weight: lighter;
-    color: $white;
+.contact__form-field__file-attachment {
+    @extend .form-field__file-attachment;
 }
 
-.contact-form-field__optional {
-    @extend .body-smaller;
-    font-weight: lighter;
-    color: $white;
-    margin-left: 0.5em;
+.contact__form-field__optional {
+    @extend .form-field__file-optional;
 }
 
-.contact-form-field__select ~ .contact-form-field__label {
+.contact__form-field__select ~ .contact__form-field__label {
     opacity: 0;
 }
 
-.contact-form-field__select:focus ~ .contact-form-field__border {
+.contact__form-field__select:focus ~ .contact__form-field__border {
     opacity: $visible;
 }
 
-.contact-form-field__note {
-    right: 0;
-    font-size: $scale04;
-    font-family: $sans;
-    margin-left: 1em;
+.contact__form-field__file-input {
+    @extend .form-field__file-input;
+}
+
+.contact__form-field__file-browse-button {
+    @extend .form-field__file-browse-button;
+}
+
+.contact__form-field__file-input {
+    @extend .form-field__file-input;
+}
+
+.contact__form-field__file:focus ~ .contact__form-field__file-browse-button {
+    opacity: $visible;
+}
+
+.contact__form-field__file:focus ~ .contact__form-field__border {
+    opacity: $visible;
+}
+
+.contact__form-field__file-attachment-container {
     opacity: $opaque;
 }
 
-.contact-form-submit {
-    @extend .h4;
-    @extend .link;
-    border: none;
-    background-color: transparent;
-    display: inline-block;
-    color: $white;
-    margin-top: 2em;
+.contact__form-field__file-input:focus ~ .contact__form-field__file-attachment-container {
+    opacity: $visible;
 }
 
-.contact-form-attachment-button {
-    visibility: hidden;
-    position: absolute;
+.contact-form__submit {
+    @extend .form__submit;
 }
 
-.contact-form-submit:focus {
-    outline: none;
-}
-
-.contact-form-title {
+.contact__form__title {
     text-align: center;
     z-index: 3;
 }
 
-.contact-form-headline {
+.contact__form__headline {
     @extend .h3;
 }
 
-.contact-form-subheadline {
+.contact__form__subheadline {
     @extend .h6;
 }
 
-.contact-form-background {
+.contact__form__background {
     @extend .background-cover;
     background-image: url('./../images/contact-form-background.jpg');
     z-index: 0;
 }
 
-.contact-form-background:before {
+.contact__form__background:before {
     @extend .background-cover;
     content: "";
     background-color: $white;
@@ -254,7 +190,7 @@ $visible: 1;
     z-index: 1;
 }
 
-.contact-form-background:after {
+.contact__form__background:after {
     @extend .background-cover;
     content: "";
     background-color: $tertiary;
@@ -262,61 +198,10 @@ $visible: 1;
     z-index: 2;
 }
 
-.contact-form-tabs + .contact-form-title {
+.contact__form__tabs + .contact__form__title {
     margin-top: 5%;
 }
 
-.contact-form-title + .contact-form-fields {
+.contact__form__title + .contact__form-fields {
     margin-top: 5%;
-}
-
-.contact-form-browse-file-button {
-    @extend .body-smaller;
-    text-transform: uppercase;
-    color: $white;
-    cursor: pointer;
-    cursor: hand;
-    opacity: $opaque;
-}
-
-.contact-form-browse-file-button:after {
-    content: "";
-    @extend .icon-arrow-white;
-    transform: rotate(-90deg);
-    display: inline-block;
-    width: 0.7em;
-    height: 0.7em;
-    margin-left: 0.2em;
-    text-transform: uppercase;
-    color: $white;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-clip: content-box;
-    background-origin: content-box;
-}
-
-.contact-form-field__file {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-}
-
-.contact-form-field__file:focus ~ .contact-form-browse-file-button {
-    opacity: $visible;
-}
-
-.contact-form-field__file:focus ~ .contact-form-field__border {
-    opacity: $visible;
-}
-
-.contact-form-field__attachment-container {
-    opacity: $opaque;
-}
-
-.contact-form-field__file:focus ~ .contact-form-field__attachment-container {
-    opacity: $visible;
 }
