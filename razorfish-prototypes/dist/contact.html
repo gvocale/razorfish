@@ -71,36 +71,48 @@
         </div>
         <form class="contact-form-fields" action="">
             <div class="contact-form-field">
-                <input class="contact-form-field-input" placeholder="Name" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                <label class="contact-form-field-label" for="">Name</label>
-                <div class="contact-form-field-border"></div>
+                <input class="contact-form-field__input" pattern="[A-Za-z]{3,}" placeholder="Name" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                <label class="contact-form-field__label" for="">Name</label>
+                <div class="contact-form-field__icon"></div>
+                <div class="contact-form-field__border"></div>
             </div>
             <div class="contact-form-field">
-                <input class="contact-form-field-input" placeholder="Company" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                <label class="contact-form-field-label" for="">Company</label>
-                <div class="contact-form-field-border"></div>
+                <input class="contact-form-field__input" pattern="[A-Za-z]{3,}" placeholder="Company" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                <label class="contact-form-field__label" for="">Company</label>
+                <div class="contact-form-field__icon"></div>
+                <div class="contact-form-field__border"></div>
             </div>
             <div class="contact-form-field">
-                <input class="contact-form-field-input" placeholder="Email" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                <label class="contact-form-field-label" for="">Email</label>
-                <div class="contact-form-field-border"></div>
+                <input class="contact-form-field__input" placeholder="Email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                <label class="contact-form-field__label" for="">Email</label>
+                <div class="contact-form-field__icon"></div>
+                <div class="contact-form-field__border"></div>
             </div>
             <div class="contact-form-field">
-                <input class="contact-form-field-input" placeholder="Country" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                <label class="contact-form-field-label" for="">Country</label>
-                <div class="contact-form-field-border"></div>
+                <select class="contact-form-field__select">
+                    <option value="" disabled selected>Country</option>>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="UK">UK</option>
+                </select>
+                <label class="contact-form-field__label" for="">Country</label>
+                <div class="contact-form-field__icon"></div>
+                <div class="contact-form-field__border"></div>
             </div>
             <div class="contact-form-field">
-                <input class="contact-form-field-input" placeholder="Comments" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                <label class="contact-form-field-label" for="">Comments</label>
-                <div class="contact-form-field-border"></div>
+                <input class="contact-form-field__input" placeholder="Comments" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                <label class="contact-form-field__label" for="">Comments</label>
+                <div class="contact-form-field__icon"></div>
+                <div class="contact-form-field__border"></div>
             </div>
-            <div class="contact-form-field attachment">
-                <span class="contact-form-field-input">Attachment</span>
-                <span class="contact-form-field-note">Optional</span>
-                <label for="file">Browse</label>
-                <input class="contact-form-attachment-button" name="file" type="file" multiple>
-                <div class="contact-form-field-border"></div>
+            <div class="contact-form-field">
+                <input type="file" name="contact-form-field__file" id="contact-form-field__file" class="contact-form-field__file" />
+                <p class="contact-form-field__attachment-container">
+                    <span class="contact-form-field__attachment">Attachment</span>
+                    <span class="contact-form-field__optional">(Optional)</span>
+                </p>
+                <label for="contact-form-field__file" class="contact-form-browse-file-button">Browse</label>
+                <div class="contact-form-field__border"></div>
             </div>
             <button class="contact-form-submit" name="button">Submit</button>
         </form>
@@ -209,15 +221,15 @@
             </div>
             <ul class="footer-share-icons-container">
                 <a href="" class="share-icon-container">
-                    <li class="linkedin-icon share-icon animate">
+                    <li class="icon-linkedin share-icon animate">
                     </li>
                 </a>
                 <a href="" class="share-icon-container">
-                    <li class="twitter-icon share-icon animate">
+                    <li class="icon-twitter share-icon animate">
                     </li>
                 </a>
                 <a href="" class="share-icon-container">
-                    <li class="facebook-icon share-icon animate">
+                    <li class="icon-facebook share-icon animate">
                     </li>
                 </a>
             </ul>

@@ -1,3 +1,6 @@
+// Transparency 
+$opaque: 0.3;
+$visible: 1;
 .contact-form {
     @extend .section-padding;
     @extend .content-centered;
@@ -34,7 +37,9 @@
     height: 6em;
     margin-top: 2em;
     display: flex;
-    align-items: baseline;
+    align-items: flex-end;
+    padding-bottom: 0.5em;
+    justify-content: space-between;
 }
 
 .contact-form-field:nth-of-type(1),
@@ -46,7 +51,7 @@
     margin-right: 10%;
 }
 
-.contact-form-field-border {
+.contact-form-field__border {
     display: block;
     position: absolute;
     height: 0.05em;
@@ -54,82 +59,153 @@
     left: 0;
     width: 100%;
     background-color: $white;
+    opacity: $opaque;
 }
 
-::-webkit-input-placeholder {
-    /* Chrome */
-    color: $white;
-    opacity: 0.2;
-}
-
-:-ms-input-placeholder {
-    /* IE 10+ */
-    color: $white;
-    opacity: 0.2;
-}
-
-::-moz-placeholder {
-    /* Firefox 19+ */
-    color: $white;
-    opacity: 0.2;
-}
-
-:-moz-placeholder {
-    /* Firefox 4 - 18 */
-    color: $white;
-    opacity: 0.2;
-}
-
-.contact-form-field-input {
-    padding-top: 1.5em;
-    height: 100%;
+// Input
+.contact-form-field__input {
     width: 100%;
     background: transparent;
     border: none;
     @extend .h6;
     font-weight: lighter;
     color: $white;
+    position: relative;
+    padding-right: 1em;
 }
 
-.contact-form-field.attachment {
-    .contact-form-field-input {
-        opacity: 0.2;    
-    }
-    .contact-form-field-border {
-        opacity: 0.2;
-    }
+.contact-form-field__input::placeholder {
+    color: $white;
+    opacity: 0;
+    transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-input.contact-form-field-input:focus {
+.contact-form-field__input:focus {
     outline: none;
 }
 
-input.contact-form-field-input[value=""] ~ .contact-form-field-label {
+// Invalid Input
+.contact-form-field__input:invalid ~ .contact-form-field__icon {
+    @extend .icon-form-invalid;
+}
+
+// Empty Input
+.contact-form-field__input[value=""] ~ .contact-form-field__label {
     opacity: 0;
+    transform: translateY(50%);
+    transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-input.contact-form-field-input[value=""] ~ .contact-form-field-border {
-    opacity: 0.3;
+.contact-form-field__input[value=""]::placeholder {
+    opacity: $opaque;
 }
 
-.contact-form-field-label {
+.contact-form-field__input[value=""] ~ .contact-form-field__icon {
+    @extend .icon-form-required;
+    background-size: 80%;
+    opacity: $opaque;
+}
+
+// Valid Input
+.contact-form-field__input:valid ~ .contact-form-field__icon {
+    @extend .icon-form-valid;
+}
+
+.contact-form-field__input:valid ~ .contact-form-field__border {
+    opacity: $visible;
+}
+
+// Focus Input
+.contact-form-field__input:focus ~ .contact-form-field__border {
+    opacity: $visible;
+}
+
+.contact-form-field__label {
     position: absolute;
     left: 0;
     top: 20%;
     font-size: $scale04;
     font-family: $sans;
     letter-spacing: 0.05em;
-    opacity: 0.5;
+    opacity: $opaque;
     font-weight: lighter;
-    transition: all 0.1s 0.05s ease-out;
+    transition: all 0.1s 0.2s ease-out;
 }
 
-.contact-form-field-note {
+.contact-form-field__icon {
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    bottom: 23%;
+    right: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-origin: content-box;
+}
+
+.contact-form-field__select:focus {
+    outline: none;
+    opacity: $visible;
+}
+
+// First Empty Input
+.contact-form-field__select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-radius: none;
+    -webkit-appearance: none;
+    @extend .h6;
+    font-weight: lighter;
+    color: $white;
+    position: relative;
+    opacity: $opaque;
+}
+
+.contact-form-field__select ~ .contact-form-field__icon {
+    @extend .icon-arrow-white;
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-origin: content-box;
+    opacity: $opaque;
+}
+
+.contact-form-field__select:focus ~ .contact-form-field__icon {
+    opacity: $visible;
+}
+
+.contact-form-field__attachment {
+    @extend .h6;
+    font-weight: lighter;
+    color: $white;
+}
+
+.contact-form-field__optional {
+    @extend .body-smaller;
+    font-weight: lighter;
+    color: $white;
+    margin-left: 0.5em;
+}
+
+.contact-form-field__select ~ .contact-form-field__label {
+    opacity: 0;
+}
+
+.contact-form-field__select:focus ~ .contact-form-field__border {
+    opacity: $visible;
+}
+
+.contact-form-field__note {
     right: 0;
     font-size: $scale04;
     font-family: $sans;
     margin-left: 1em;
-    opacity: 0.3;
+    opacity: $opaque;
 }
 
 .contact-form-submit {
@@ -192,4 +268,55 @@ input.contact-form-field-input[value=""] ~ .contact-form-field-border {
 
 .contact-form-title + .contact-form-fields {
     margin-top: 5%;
+}
+
+.contact-form-browse-file-button {
+    @extend .body-smaller;
+    text-transform: uppercase;
+    color: $white;
+    cursor: pointer;
+    cursor: hand;
+    opacity: $opaque;
+}
+
+.contact-form-browse-file-button:after {
+    content: "";
+    @extend .icon-arrow-white;
+    transform: rotate(-90deg);
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    margin-left: 0.2em;
+    text-transform: uppercase;
+    color: $white;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-origin: content-box;
+}
+
+.contact-form-field__file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.contact-form-field__file:focus ~ .contact-form-browse-file-button {
+    opacity: $visible;
+}
+
+.contact-form-field__file:focus ~ .contact-form-field__border {
+    opacity: $visible;
+}
+
+.contact-form-field__attachment-container {
+    opacity: $opaque;
+}
+
+.contact-form-field__file:focus ~ .contact-form-field__attachment-container {
+    opacity: $visible;
 }
