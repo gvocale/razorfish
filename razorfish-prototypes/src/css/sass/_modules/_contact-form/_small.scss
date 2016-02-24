@@ -1,188 +1,48 @@
-.contact__form {
+.contact-form {
     @extend .section-padding;
     @extend .content-centered;
     position: relative;
     color: $white;
 }
 
-.contact__form__tabs {
+.contact-form-tabs {
     z-index: 3;
     @extend .tabs;
 }
 
-.contact__form__tabs-container {
+.contact-form-tabs-container {
     @extend .tabs-container;
 }
 
-.contact__form__tab {
+.contact-form-tab {
     @extend .tab;
 }
 
-.contact__form-fields {
-    width: 60%;
+.contact-form-container {
+    @extend .form-container;
     z-index: 3;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
 }
 
-.contact__form-field {
-    @extend .form-field;
-    width: 45%;
-    margin-top: 2em;
-}
-
-.contact__form-field:nth-of-type(1),
-.contact__form-field:nth-of-type(2) {
-    margin-top: 0;
-}
-
-.contact__form-field:nth-of-type(odd) {
-    margin-right: 10%;
-}
-
-.contact__form-field__border {
-    @extend .form-field__border;
-}
-
-// Input
-.contact__form-field__input {
-    @extend .form-field__input;
-}
-
-
-
-// Invalid Input
-.contact__form-field__input:invalid ~ .contact__form-field__icon {
-    @extend .icon-form-invalid;
-}
-
-.contact__form-field__input:invalid ~ .contact__form-field__border {
-    opacity: $visible;
-}
-
-// Empty Input
-.contact__form-field__input[value=""] ~ .contact__form-field__label {
-    opacity: 0;
-    transform: translateY(50%);
-    transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.contact__form-field__input[value=""] ~ .contact__form-field__icon {
-    @extend .icon-form-required;
-    background-size: 80%;
-    opacity: $opaque;
-}
-
-.contact__form-field__input[value=""] ~ .contact__form-field__border {
-    opacity: $opaque;
-}
-
-// Valid Input
-.contact__form-field__input:valid ~ .contact__form-field__icon {
-    @extend .icon-form-valid;
-}
-
-.contact__form-field__input:valid ~ .contact__form-field__border {
-    opacity: $visible;
-}
-
-// Focus Input
-.contact__form-field__input:focus ~ .contact__form-field__border {
-    opacity: $visible;
-}
-
-.contact__form-field__label {
-    @extend .form-field__label;
-}
-
-.contact__form-field__icon {
-    @extend .form-field__icon;
-}
-
-.contact__form-field__select {
-    @extend .form-field__select;
-}
-
-.contact__form-field__select ~ .contact__form-field__icon {
-    @extend .icon-arrow-white;
-    opacity: $opaque;
-}
-
-.contact__form-field__select:focus ~ .contact__form-field__icon {
-    opacity: $visible;
-}
-
-.contact__form-field__file-attachment {
-    @extend .form-field__file-attachment;
-}
-
-.contact__form-field__optional {
-    @extend .form-field__file-optional;
-}
-
-.contact__form-field__select ~ .contact__form-field__label {
-    opacity: 0;
-}
-
-.contact__form-field__select:focus ~ .contact__form-field__border {
-    opacity: $visible;
-}
-
-.contact__form-field__file-input {
-    @extend .form-field__file-input;
-}
-
-.contact__form-field__file-browse-button {
-    @extend .form-field__file-browse-button;
-}
-
-.contact__form-field__file-input {
-    @extend .form-field__file-input;
-}
-
-.contact__form-field__file:focus ~ .contact__form-field__file-browse-button {
-    opacity: $visible;
-}
-
-.contact__form-field__file:focus ~ .contact__form-field__border {
-    opacity: $visible;
-}
-
-.contact__form-field__file-attachment-container {
-    opacity: $opaque;
-}
-
-.contact__form-field__file-input:focus ~ .contact__form-field__file-attachment-container {
-    opacity: $visible;
-}
-
-.contact-form__submit {
-    @extend .form__submit;
-}
-
-.contact__form__title {
+.contact-form-title {
     text-align: center;
     z-index: 3;
 }
 
-.contact__form__headline {
+.contact-form-headline {
     @extend .h3;
 }
 
-.contact__form__subheadline {
+.contact-form-subheadline {
     @extend .h6;
 }
 
-.contact__form__background {
+.contact-form-background {
     @extend .background-cover;
     background-image: url('./../images/contact-form-background.jpg');
     z-index: 0;
 }
 
-.contact__form__background:before {
+.contact-form-background:before {
     @extend .background-cover;
     content: "";
     background-color: $white;
@@ -190,7 +50,7 @@
     z-index: 1;
 }
 
-.contact__form__background:after {
+.contact-form-background:after {
     @extend .background-cover;
     content: "";
     background-color: $tertiary;
@@ -198,10 +58,10 @@
     z-index: 2;
 }
 
-.contact__form__tabs + .contact__form__title {
+.contact-form-tabs + .contact-form-title {
     margin-top: 5%;
 }
 
-.contact__form__title + .contact__form-fields {
+.contact-form-title + .contact-form-container {
     margin-top: 5%;
 }

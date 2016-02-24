@@ -11,6 +11,9 @@
         background-color: $grayLighter;
         margin: 0 0.05rem;
     }
+    .share-icon-container:before {
+        height: 0.2em;
+    }
 }
 
 .article-divider {
@@ -53,6 +56,7 @@
 
 .article-h4 {
     @extend .h4;
+    width: 100%;
 }
 
 .article-author-name {
@@ -98,6 +102,7 @@
 
 .article-quote-eyebrow {
     @extend .h5;
+    color: $primary;
 }
 
 .article-h3-quote {
@@ -106,17 +111,14 @@
     color: $white;
 }
 
-.article-foot-note-container {
-    width: 100%;
-    margin-left: 10%;
-    margin-right: 10%;
-    border-top: solid 0.01rem $gray;
-}
-
 .article-foot-note {
-    @extend .body-smaller;
+    @extend .body;
+    font-family: $serif;
     font-style: italic;
     color: $grayDarker;
+    text-align: left;
+    width: 100%;
+    margin-top: 2em;
 }
 
 .article-video-container {
@@ -132,8 +134,6 @@
 
 .article-horizontal-rule {
     @extend .horizontal-rule;
-    margin-top: 6em;
-    margin-bottom: 2em;
 }
 
 .article-author-name + .article-author-title {
@@ -169,4 +169,8 @@
 .article-body + .article-h3,
 .article-body + .article-h4 {
     margin-top: 3em;
+}
+
+.article-body + .article-horizontal-rule {
+    margin-top: 4em;
 }

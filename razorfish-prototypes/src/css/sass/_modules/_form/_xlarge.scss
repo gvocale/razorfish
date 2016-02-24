@@ -1,3 +1,16 @@
-@media screen and (min-width: '#{$x-large-breakpoint}px') { 
-
+// $x-large-breakpoint: 1200;
+@media screen and (min-width: '#{$x-large-breakpoint}px') {
+    .form-container {
+        width: 60%;
+    }
+    .input-border,
+    .input-label,
+    .input-text[value=""]::placeholder,
+    .input-text[value=""] ~ .input-icon,
+    .input-select,
+    .input-select ~ .input-icon,
+    .input-file-button,
+    .input-file-label {
+        opacity: $opaque;
+    }
 }

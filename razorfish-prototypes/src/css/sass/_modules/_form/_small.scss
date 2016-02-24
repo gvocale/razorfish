@@ -1,40 +1,83 @@
-.form-field {
-    position: relative;
-    height: 6em;
+.form-container {
+    width: 80%;
     display: flex;
-    align-items: flex-end;
-    padding-bottom: 0.5em;
-    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
-.form-field__border {
+.form-field {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 3em;
+    height: 100%;
+    padding-bottom: 0.5em;
+}
+
+.input-text,
+.input-select,
+.input-file-label {
+    width: 100%;
+    background: transparent;
+    border: none;
+    @extend .body-larger;
+    line-height: $scale06;
+    font-weight: lighter;
+    color: $white;
+    position: relative;
+    padding-right: 1em;
+    padding-left: 0;
+}
+
+.input-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.input-file-note {
+    font-size: $scale02;
+    margin-left: 0.5em;
+}
+
+.input-border {
     display: block;
     position: absolute;
-    height: 0.05em;
+    height: 0.1rem;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: $white;
-    opacity: $opaque;
+    opacity: $opaqueDarker;
 }
 
-.form-field__label {
+.input-label {
     position: absolute;
     left: 0;
-    top: 20%;
-    font-size: $scale04;
+    top: 0;
+    @extend .body-smaller;
+    line-height: $scale06;
     font-family: $sans;
     letter-spacing: 0.05em;
-    opacity: $opaque;
+    opacity: $opaqueDarker;
     font-weight: lighter;
     transition: all 0.1s 0.2s ease-out;
+    transform: translateY(-100%);
 }
 
-.form-field__icon {
+.input-icon {
     width: 1em;
     height: 1em;
     position: absolute;
-    bottom: 23%;
+    top: 40%;
+    transform: translateY(-40%);
     right: 0;
     background-size: contain;
     background-position: center;
@@ -43,79 +86,42 @@
     background-origin: content-box;
 }
 
-// ------------ Input Text ------------
-.form-field__input {
-    width: 100%;
-    background: transparent;
-    border: none;
-    @extend .h6;
-    font-weight: lighter;
-    color: $white;
-    position: relative;
-    padding-right: 1em;
-}
-
-.form-field__input::placeholder {
+.input-text::placeholder {
     color: $white;
     opacity: 0;
     transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.form-field__input:focus {
-    outline: none;
-}
-
-// Input Text Invalid
-.form-field__input:invalid ~ .form-field__icon {
-    @extend .icon-form-invalid;
-}
-
-// Input Text Empty
-.form-field__input[value=""] ~ .form-field__label {
+.input-text[value=""] ~ .input-label {
     opacity: 0;
     transform: translateY(50%);
     transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.form-field__input[value=""]::placeholder {
-    opacity: $opaque;
+.input-text[value=""]::placeholder {
+    opacity: $opaqueDarker;
 }
 
-.form-field__input[value=""] ~ .form-field__icon {
+.input-text[value=""] ~ .input-icon {
     @extend .icon-form-required;
     background-size: 80%;
-    opacity: $opaque;
+    opacity: $opaqueDarker;
 }
 
-// Input Text Valid 
-.form-field__input:valid ~ .form-field__icon {
+.input-text:valid ~ .input-icon {
     @extend .icon-form-valid;
 }
 
-.form-field__input:valid ~ .form-field__border {
-    opacity: $visible;
+.input-text:invalid ~ .input-icon {
+    @extend .icon-form-invalid;
 }
 
-// Input Text Focus 
-.form-field__input:focus ~ .form-field__border {
-    opacity: $visible;
-}
-
-// ------------ Select ------------
-.form-field__select {
-    width: 100%;
-    background: transparent;
-    border: none;
+.input-select {
     border-radius: none;
     -webkit-appearance: none;
-    @extend .h6;
-    font-weight: lighter;
-    color: $white;
-    position: relative;
-    opacity: $opaque;
 }
 
-.form-field__select ~ .form-field__icon {
+.input-select ~ .input-icon {
     @extend .icon-arrow-white;
     display: inline-block;
     background-size: contain;
@@ -123,32 +129,16 @@
     background-repeat: no-repeat;
     background-clip: content-box;
     background-origin: content-box;
-    opacity: $opaque;
+    opacity: $opaqueDarker;
 }
 
-.form-field__select ~ .form-field__label {
-    opacity: 0;
+.input-file-label {
+    opacity: $opaqueDarker;
+    width: auto;
 }
 
-// Select Focus
-.form-field__select:focus {
-    outline: none;
-    opacity: $visible;
-}
-
-.form-field__select:focus ~ .form-field__icon {
-    opacity: $visible;
-}
-
-.form-field__select:focus ~ .form-field__border {
-    opacity: $visible;
-}
-
-// ------------ Input File ------------
 .form-field__file-attachment {
-    @extend .h6;
     font-weight: lighter;
-    color: $white;
 }
 
 .form-field__file-optional {
@@ -163,16 +153,16 @@
     position: absolute;
 }
 
-.form-field__file-browse-button {
+.input-file-button {
     @extend .body-smaller;
     text-transform: uppercase;
     color: $white;
     cursor: pointer;
     cursor: hand;
-    opacity: $opaque;
+    opacity: $opaqueDarker;
 }
 
-.form-field__file-browse-button:after {
+.input-file-button:after {
     content: "";
     @extend .icon-arrow-white;
     transform: rotate(-90deg);
@@ -189,33 +179,7 @@
     background-origin: content-box;
 }
 
-.form-field__file-input {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
-}
-
-.form-field__file-input:focus ~ .form-field__file-browse-button {
-    opacity: $visible;
-}
-
-.form-field__file-input:focus ~ .form-field__border {
-    opacity: $visible;
-}
-
-.form-field__file-attachment-container {
-    opacity: $opaque;
-}
-
-.form-field__file-input:focus ~ .form-field__file-attachment-container {
-    opacity: $visible;
-}
-
-// ------------ Submit Button ------------
-.form__submit {
+.input-submit {
     @extend .h4;
     @extend .link;
     border: none;
@@ -225,6 +189,55 @@
     margin-top: 2em;
 }
 
-.form__submit:focus {
+.input-submit:focus,
+.input-text:focus,
+.input-select:focus {
     outline: none;
+}
+
+.input-text:invalid ~ .input-icon {
+    @extend .icon-form-invalid;
+}
+
+.input-text[value=""] ~ .input-label {
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.input-select ~ .input-label {
+    opacity: 0;
+}
+
+.input-text[value=""] ~ .input-icon {
+    @extend .icon-form-required;
+    background-size: 80%;
+    opacity: $opaque;
+}
+
+.input-text:valid ~ .input-icon {
+    @extend .icon-form-valid;
+}
+
+.input-select ~ .input-icon {
+    @extend .icon-arrow-white;
+    opacity: $opaque;
+}
+
+.input-file:focus ~ .input-border,
+.input-file:focus ~ .input-file-button,
+.input-file:focus ~ .input-file-label,
+.input-select:focus ~ .input-border,
+.input-select:focus ~ .input-icon,
+.input-select:focus,
+.input-text:focus ~ .input-border,
+.input-text[value=""]:focus ~ .input-border,
+.input-text:invalid ~ .input-border,
+.input-text:valid ~ .input-border {
+    opacity: $visible;
+}
+
+.input-file-label,
+.input-text[value=""] ~ .input-border {
+    opacity: $opaque;
 }
