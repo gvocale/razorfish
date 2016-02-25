@@ -1,5 +1,31 @@
+.form {
+    width: 60vw;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 10;
+    flex-wrap: wrap;
+}
+
+
+.form-wrapper {
+    position: relative;
+    width: 60vw;
+    height: 300px;
+    overflow: hidden;
+}
+
+.form-content {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.3s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 .form-container {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -39,7 +65,7 @@
     opacity: 0;
     overflow: hidden;
     position: absolute;
-    z-index: -1;
+    z-index: -10;
 }
 
 .input-file-note {
@@ -50,7 +76,7 @@
 .input-border {
     display: block;
     position: absolute;
-    height: 0.1rem;
+    height: 1px;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -103,7 +129,7 @@
 }
 
 .input-text[value=""] ~ .input-icon {
-    @extend .icon-form-required;
+    background-image: none;
     background-size: 80%;
     opacity: $opaqueDarker;
 }
@@ -135,22 +161,6 @@
 .input-file-label {
     opacity: $opaqueDarker;
     width: auto;
-}
-
-.form-field__file-attachment {
-    font-weight: lighter;
-}
-
-.form-field__file-optional {
-    @extend .body-smaller;
-    font-weight: lighter;
-    color: $white;
-    margin-left: 0.5em;
-}
-
-.form-field__file-attachment-button {
-    visibility: hidden;
-    position: absolute;
 }
 
 .input-file-button {
@@ -186,7 +196,8 @@
     background-color: transparent;
     display: inline-block;
     color: $white;
-    margin-top: 2em;
+    margin: auto;
+    margin-top: 4rem;
 }
 
 .input-submit:focus,

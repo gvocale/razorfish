@@ -54,65 +54,217 @@
         </div>
     </section>
     <section class="contact-form">
-        <nav class="contact-form-tabs">
-            <ul class="contact-form-tabs-container">
-                <li><a class="contact-form-tab" href="">Become a client</a></li>
-                <li><a class="contact-form-tab" href="">Recruiting Inquires</a></li>
-                <li><a class="contact-form-tab" href="">Media Relations</a></li>
-                <li><a class="contact-form-tab" href="">Publishing</a></li>
-            </ul>
-        </nav>
-        <div class="contact-form-title">
-            <h2 class="contact-form-headline">Email us</h2>
-            <div class="section-divider">
-                <hr class="divider-md">
+        <form class="form">
+            <div class="tab-border"></div>
+            <input class="tab-input" id="tab-1-input" type="radio" name="radio-set" checked="checked" />
+            <label class="tab-label" for="tab-1-input">Become a client</label>
+            <input class="tab-input" id="tab-2-input" type="radio" name="radio-set" />
+            <label class="tab-label" for="tab-2-input">Recruiting Inquires</label>
+            <input class="tab-input" id="tab-3-input" type="radio" name="radio-set" />
+            <label class="tab-label" for="tab-3-input">Media Relations</label>
+            <input class="tab-input" id="tab-4-input" type="radio" name="radio-set" />
+            <label class="tab-label" for="tab-4-input">Publishing</label>
+            <div class="contact-form-title">
+                <h2 class="contact-form-headline">Email us</h2>
+                <div class="section-divider">
+                    <hr class="divider-md">
+                </div>
+                <p class="contact-form-subheadline">Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor sit amet.</p>
             </div>
-            <p class="contact-form-subheadline">Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor sit amet.</p>
-        </div>
-        <form class="contact-form-container" action="">
-            <div class="form-field">
-                <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Name" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                <label class="input-label" for="">Name</label>
-                <div class="input-icon"></div>
-                <div class="input-border"></div>
-            </div>
-            <div class="form-field">
-                <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Company" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                <label class="input-label" for="">Company</label>
-                <div class="input-icon"></div>
-                <div class="input-border"></div>
-            </div>
-            <div class="form-field">
-                <input class="input-text" placeholder="Email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                <label class="input-label" for="">Email</label>
-                <div class="input-icon"></div>
-                <div class="input-border"></div>
-            </div>
-            <div class="form-field">
-                <select class="input-select">
-                    <option value="" disabled selected>Country</option>>
-                    <option value="USA">USA</option>
-                    <option value="Canada">Canada</option>
-                    <option value="UK">UK</option>
-                </select>
-                <label class="input-label" for="">Country</label>
-                <div class="input-icon"></div>
-                <div class="input-border"></div>
-            </div>
-            <div class="form-field">
-                <input class="input-text" placeholder="Comments" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                <label class="input-label" for="">Comments</label>
-                <div class="input-icon"></div>
-                <div class="input-border"></div>
-            </div>
-            <div class="form-field">
-                <input type="file" name="input-file" class="input-file" />
-                <p class="input-file-label">
-                    <span class="">Attachment</span>
-                    <span class="input-file-note">(Optional)</span>
-                </p>
-                <label for="input-file" class="input-file-button">Browse</label>
-                <div class="input-border"></div>
+            <div class="form-wrapper">
+                <section class="form-content">
+                    <div class="form-container" action="">
+                        <div class="form-field">
+                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Name" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                            <label class="input-label" for="">Name</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Company" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Company</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input class="input-text" placeholder="Email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Email</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <select class="input-select">
+                                <option value="" disabled selected>Country</option>>
+                                <option value="USA">USA</option>
+                                <option value="Canada">Canada</option>
+                                <option value="UK">UK</option>
+                            </select>
+                            <label class="input-label" for="">Country</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input class="input-text" placeholder="Comments" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Comments</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input type="file" name="input-file" class="input-file" />
+                            <p class="input-file-label">
+                                <span class="">Attachment</span>
+                                <span class="input-file-note">(Optional)</span>
+                            </p>
+                            <label for="input-file" class="input-file-button">Browse</label>
+                            <div class="input-border"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="form-content">
+                    <div class="form-container" action="">
+                        <div class="form-field">
+                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Name" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                            <label class="input-label" for="">Name</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Company" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Company</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input class="input-text" placeholder="Email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Email</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <select class="input-select">
+                                <option value="" disabled selected>Country</option>>
+                                <option value="USA">USA</option>
+                                <option value="Canada">Canada</option>
+                                <option value="UK">UK</option>
+                            </select>
+                            <label class="input-label" for="">Country</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input class="input-text" placeholder="Comments" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Comments</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input type="file" name="input-file" class="input-file" />
+                            <p class="input-file-label">
+                                <span class="">Attachment</span>
+                                <span class="input-file-note">(Optional)</span>
+                            </p>
+                            <label for="input-file" class="input-file-button">Browse</label>
+                            <div class="input-border"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="form-content">
+                    <div class="form-container" action="">
+                        <div class="form-field">
+                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Name" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                            <label class="input-label" for="">Name</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Company" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Company</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input class="input-text" placeholder="Email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Email</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <select class="input-select">
+                                <option value="" disabled selected>Country</option>>
+                                <option value="USA">USA</option>
+                                <option value="Canada">Canada</option>
+                                <option value="UK">UK</option>
+                            </select>
+                            <label class="input-label" for="">Country</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input class="input-text" placeholder="Comments" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Comments</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input type="file" name="input-file" class="input-file" />
+                            <p class="input-file-label">
+                                <span class="">Attachment</span>
+                                <span class="input-file-note">(Optional)</span>
+                            </p>
+                            <label for="input-file" class="input-file-button">Browse</label>
+                            <div class="input-border"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="form-content">
+                    <div class="form-container" action="">
+                        <div class="form-field">
+                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Name" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                            <label class="input-label" for="">Name</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Company" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Company</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input class="input-text" placeholder="Email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Email</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <select class="input-select">
+                                <option value="" disabled selected>Country</option>>
+                                <option value="USA">USA</option>
+                                <option value="Canada">Canada</option>
+                                <option value="UK">UK</option>
+                            </select>
+                            <label class="input-label" for="">Country</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input class="input-text" placeholder="Comments" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Comments</label>
+                            <div class="input-icon"></div>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="form-field">
+                            <input type="file" name="input-file" class="input-file" />
+                            <p class="input-file-label">
+                                <span class="">Attachment</span>
+                                <span class="input-file-note">(Optional)</span>
+                            </p>
+                            <label for="input-file" class="input-file-button">Browse</label>
+                            <div class="input-border"></div>
+                        </div>
+                        <button class="input-submit">Submit</button>
+                    </div>
+                </section>
             </div>
             <button class="input-submit">Submit</button>
         </form>
