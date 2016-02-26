@@ -1,7 +1,23 @@
+.find-an-office__tab-container {
+    @extend .tab-container;
+    width: 60vw;
+    .tab-border:after {
+        background-color: $gray;
+        opacity: $visible;
+    }
+    .tab-label:after {
+        background-color: $primary;
+    }
+    .tab-label {
+        opacity: $visible;
+    }
+}
+
 .find-an-office {
     @extend .content-centered;
     position: relative;
     background-color: $grayLighter;
+    padding-bottom: 10%;
     .section-title {
         background-color: transparent;
         color: $black;
@@ -12,30 +28,106 @@
     @extend .section-title;
 }
 
-.find-an-office-tabs {
-
-    width: 50%;
-    z-index: 3;
-}
-
-.find-an-office-tabs-container {
-
-}
-
-.find-an-office-tab {
-
-}
-
-.find-an-office__office {
+.office-container {
     width: 80vw;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    height: calc(40vw * 3);
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.office-continent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.4s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.north-america {
+    .office-continent:nth-of-type(1) {
+        transform: translateX(0%);
+        z-index: 20;
+    }
+    .office-continent:nth-of-type(2) {
+        transform: translateX(100%);
+        z-index: 10;
+    }
+    .office-continent:nth-of-type(3) {
+        transform: translateX(100%);
+        z-index: 10;
+    }
+    .office-continent:nth-of-type(4) {
+        transform: translateX(100%);
+        z-index: 10;
+    }
+}
+
+.europe {
+    .office-continent:nth-of-type(1) {
+        transform: translateX(-100%);
+        z-index: 10;
+    }
+    .office-continent:nth-of-type(2) {
+        transform: translateX(0%);
+        z-index: 20;
+    }
+    .office-continent:nth-of-type(3) {
+        transform: translateX(100%);
+        z-index: 10;
+    }
+    .office-continent:nth-of-type(4) {
+        transform: translateX(100%);
+        z-index: 10;
+    }
+}
+
+.asia {
+    .office-continent:nth-of-type(1) {
+        transform: translateX(-100%);
+        z-index: 10;
+    }
+    .office-continent:nth-of-type(2) {
+        transform: translateX(-100%);
+        z-index: 10;
+    }
+    .office-continent:nth-of-type(3) {
+        transform: translateX(0%);
+        z-index: 20;
+    }
+    .office-continent:nth-of-type(4) {
+        transform: translateX(100%);
+        z-index: 10;
+    }
+}
+
+.australia {
+    .office-continent:nth-of-type(1) {
+        transform: translateX(-100%);
+        z-index: 10;
+    }
+    .office-continent:nth-of-type(2) {
+        transform: translateX(-100%);
+        z-index: 10;
+    }
+    .office-continent:nth-of-type(3) {
+        transform: translateX(-100%);
+        z-index: 10;
+    }
+    .office-continent:nth-of-type(4) {
+        transform: translateX(0%);
+        z-index: 20;
+    }
+}
+
+.office-tile {
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: row;
 }
 
-.find-an-offce__office:nth-of-type(odd) {
+.office-tile:nth-of-type(odd) {
     .find-an-office__office-photo {
         order: 1;
     }
@@ -44,7 +136,7 @@
     }
 }
 
-.find-an-offce__office:nth-of-type(even) {
+.office-tile:nth-of-type(even) {
     .find-an-office__office-photo {
         order: 2;
     }
@@ -114,7 +206,6 @@
 
 .find-an-office__openings-number {
     color: $primary;
-    
 }
 
 .find-an-office__office-photo {
@@ -124,4 +215,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-image: url('./../images/office-razorfish-atlanta.jpg');
+}
+
+.find-an-office__tab-container + .office-container {
+    margin-top: 5%;
 }

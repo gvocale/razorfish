@@ -24,27 +24,24 @@
     font-weight: 700;
 }
 
-@font-face {
-    font-family: 'Miller';
-    src: url(../fonts/miller/MillerTextRoman.woff);
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Miller';
-    src: url(../fonts/miller/MillerTextBold.woff);
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Miller';
-    src: url(../fonts/miller/MillerTextItalic.woff);
-    font-weight: 400;
-    font-style: italic;
-}
-
+// @font-face {
+//     font-family: 'Miller';
+//     src: url(../fonts/miller/MillerTextRoman.woff);
+//     font-weight: 400;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'Miller';
+//     src: url(../fonts/miller/MillerTextBold.woff);
+//     font-weight: 700;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'Miller';
+//     src: url(../fonts/miller/MillerTextItalic.woff);
+//     font-weight: 400;
+//     font-style: italic;
+// }
 
 /* Gotham */
 
@@ -76,7 +73,6 @@
 }
 
 // Type scale "Le Corbusier" taken from http:/lamb.cc/typograph/
-
 $scale01: 0.5em;
 $scale02: 0.6154em;
 $scale03: 0.8077em;
@@ -90,25 +86,25 @@ $scale10: 4.2308em;
 $scale11: 5.5385em;
 $scale12: 6.8462em;
 
-$lineheight01: 1.50;
-$lineheight02: 1.45;
-$lineheight03: 1.40;
-$lineheight04: 1.35;
-$lineheight05: 1.30;
-$lineheight06: 1.25;
-$lineheight07: 1.20;
-$lineheight08: 1.15;
-$lineheight09: 1.10;
-$lineheight10: 1.05;
-$lineheight11: 1.00;
-$lineheight12: 0.95;
+// Line height scale
+$line01: 1.1;
+$line02: 1.2;
+$line03: 1.3;
+$line04: 1.4;
+$line05: 1.5;
+$line06: 1.6;
+$line07: 1.7;
+$line08: 1.8;
 
-$line-gotham: 1;
-$line-miller: 1;
+// Adjustment of line height for Sans and Serif
+$lineSans: 1;
+$lineSerif: 1;
 
-$headline: 1.1;
-$bodycopy: 1.5;
+// Adjustment of line height for headline and body copy
+$headline: 1;
+$bodycopy: 1;
 
+// Font Stack
 $serif: 'Miller',
 Times,
 Georgia,
@@ -121,8 +117,11 @@ $sans: 'Gotham',
 Helvetica,
 Arial,
 sans-serif;
-$default-letter-spacing: 0.16em;
-$default-line-height: 1;
+
+// Letter spacing for Sans and Serif
+$spacingSans: -0.01em;
+$spacingSerif: 0.01em;
+
 html {
     font-size: 16px;
 }
@@ -143,31 +142,27 @@ p {
 .h1 {
     font-family: $display;
     font-size: $scale08;
-    line-height: calc(#{$headline} * #{$line-miller} * #{$lineheight08});
-    letter-spacing: -0.01em;
+    letter-spacing: $spacingSerif;
     font-weight: 700;
 }
 
 .h2 {
     font-family: $display;
     font-size: $scale07;
-    line-height: calc(#{$headline} * #{$line-miller} * #{$lineheight07});
-    letter-spacing: -0.01em;
+    letter-spacing: $spacingSerif;
     font-weight: 700;
 }
 
 .h3 {
     font-family: $display;
     font-size: $scale06;
-    line-height: calc(#{$headline} * #{$line-miller} * #{$lineheight06});
-    letter-spacing: -0.01em;
+    letter-spacing: $spacingSerif;
     font-weight: 700;
 }
 
 .h4 {
     font-family: $display;
     font-size: $scale05;
-    line-height: calc(#{$headline} * #{$line-miller} * #{$lineheight05});
     letter-spacing: -0.01em;
     font-weight: 700;
 }
@@ -179,49 +174,41 @@ p {
     font-family: $display;
     font-style: italic;
     font-size: $scale05;
-    line-height: calc(#{$bodycopy} * #{$line-miller} * #{$lineheight05});
     color: $blackLighter;
-    letter-spacing: -0.01em;
+    letter-spacing: $spacingSerif;
 }
 
-
-
-.body-larger {
+.subheadline {
     font-family: $sans;
     font-size: $scale05;
+    line-height: calc(#{$lineSans} * #{$line04});
+    letter-spacing: $spacingSans;
     color: $black;
-    line-height: calc(#{$bodycopy} * #{$line-gotham} * #{$lineheight05});
-    letter-spacing: -0.01em;
 }
 
 .h5 {
     font-family: $sans;
     font-size: $scale04;
-    line-height: calc(#{$headline} * #{$line-gotham} * #{$lineheight04});
-    letter-spacing: -0.01em;
+    letter-spacing: $spacingSans;
 }
-
 
 .h6 {
     font-family: $sans;
     font-size: $scale04;
-    line-height: calc(#{$headline} * #{$line-gotham} * #{$lineheight04});
-    letter-spacing: -0.01em;
+    letter-spacing: $spacingSans;
 }
 
 .body {
     font-family: $sans;
     font-size: $scale04;
     color: $black;
-    line-height: calc(#{$bodycopy} * #{$line-gotham} * #{$lineheight04});
-    letter-spacing: -0.01em;
+    letter-spacing: $spacingSans;
 }
 
 .body-smaller {
     font-family: $sans;
     font-size: $scale03;
-    line-height: calc(#{$bodycopy} * #{$line-gotham} * #{$lineheight03});
-    letter-spacing: -0.01em;
+    letter-spacing: $spacingSans;
 }
 
 .link {

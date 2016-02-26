@@ -1,5 +1,5 @@
 .form {
-    width: 60vw;
+    width: 80vw;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -8,11 +8,10 @@
     flex-wrap: wrap;
 }
 
-
 .form-wrapper {
     position: relative;
-    width: 60vw;
-    height: 300px;
+    width: 100%;
+    height: 600px;
     overflow: hidden;
 }
 
@@ -39,27 +38,30 @@
     align-items: baseline;
     justify-content: space-between;
     width: 100%;
-    margin-top: 3em;
     height: 100%;
+    padding-top: 2em;
     padding-bottom: 0.5em;
+    flex-wrap: wrap;
 }
+
+
 
 .input-text,
 .input-select,
 .input-file-label {
     width: 100%;
-    background: transparent;
     border: none;
-    @extend .body-larger;
+    @extend .subheadline;
     line-height: $scale06;
     font-weight: lighter;
     color: $white;
     position: relative;
-    padding-right: 1em;
+    padding-right: 0;
     padding-left: 0;
 }
 
 .input-file {
+    order: 3;
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
@@ -85,9 +87,8 @@
 }
 
 .input-label {
-    position: absolute;
-    left: 0;
-    top: 0;
+    order: 1;
+    width: 100%;
     @extend .body-smaller;
     line-height: $scale06;
     font-family: $sans;
@@ -95,21 +96,36 @@
     opacity: $opaqueDarker;
     font-weight: lighter;
     transition: all 0.1s 0.2s ease-out;
-    transform: translateY(-100%);
+    transform: translateY(0);
 }
 
-.input-icon {
-    width: 1em;
-    height: 1em;
-    position: absolute;
-    top: 40%;
-    transform: translateY(-40%);
-    right: 0;
+.input-select {
+    @extend .icon-arrow-white;
+    border-radius: none;
+    -webkit-appearance: none;
     background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
     background-clip: content-box;
     background-origin: content-box;
+    background-size: 0.7em 0.7em;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    opacity: $opaqueDarker;
+    background-color: transparent;
+    order: 2;
+}
+
+.input-text {
+    order: 2;
+    width: 100%;
+    background-size: contain;
+    background-clip: content-box;
+    background-origin: content-box;
+    background-size: 0.7em 0.7em;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-color: transparent;
 }
 
 .input-text::placeholder {
@@ -118,58 +134,37 @@
     transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.input-text[value=""] ~ .input-label {
-    opacity: 0;
-    transform: translateY(50%);
-    transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
 .input-text[value=""]::placeholder {
     opacity: $opaqueDarker;
 }
 
-.input-text[value=""] ~ .input-icon {
+.input-text[value=""] {
     background-image: none;
-    background-size: 80%;
     opacity: $opaqueDarker;
 }
 
-.input-text:valid ~ .input-icon {
+.input-text:valid {
     @extend .icon-form-valid;
 }
 
-.input-text:invalid ~ .input-icon {
+.input-text:invalid {
     @extend .icon-form-invalid;
 }
 
-.input-select {
-    border-radius: none;
-    -webkit-appearance: none;
-}
-
-.input-select ~ .input-icon {
-    @extend .icon-arrow-white;
-    display: inline-block;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-clip: content-box;
-    background-origin: content-box;
-    opacity: $opaqueDarker;
-}
-
 .input-file-label {
+    order: 2;
+    width: 100%;
     opacity: $opaqueDarker;
-    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .input-file-button {
-    @extend .body-smaller;
+    font-size: $scale02;
     text-transform: uppercase;
-    color: $white;
     cursor: pointer;
     cursor: hand;
-    opacity: $opaqueDarker;
 }
 
 .input-file-button:after {
@@ -180,8 +175,6 @@
     width: 0.7em;
     height: 0.7em;
     margin-left: 0.2em;
-    text-transform: uppercase;
-    color: $white;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -210,14 +203,28 @@
     @extend .icon-form-invalid;
 }
 
-.input-text[value=""] ~ .input-label {
+.input-text[value=""] ~ .input-label,
+.input-file ~ .input-label,
+.input-select ~ .input-label {
     opacity: 0;
-    transform: translateY(-50%);
+    transform: translateY(50%);
     transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .input-select ~ .input-label {
     opacity: 0;
+}
+.input-select.selected {
+    opacity: $visible;
+}
+
+.input-select.selected ~ .input-label {
+    opacity: $opaque;
+    transform: translateY(0%);
+}
+
+.input-select.selected ~ .input-border {
+    opacity: $visible;
 }
 
 .input-text[value=""] ~ .input-icon {
@@ -228,11 +235,6 @@
 
 .input-text:valid ~ .input-icon {
     @extend .icon-form-valid;
-}
-
-.input-select ~ .input-icon {
-    @extend .icon-arrow-white;
-    opacity: $opaque;
 }
 
 .input-file:focus ~ .input-border,
