@@ -2,6 +2,10 @@
     background-color: $white;
 }
 
+.article-content {
+    position: relative;
+}
+
 .article-photo-divider {
     width: 100vw;
     height: 80vh;
@@ -30,30 +34,40 @@
 }
 
 .article-headline-container {
-    @extend .headline-container;
-    .divider-md {
-        margin-top: 0;
-    }
+    @include headline-container;
+
+}
+
+.article-headline-container.center {
+    align-items: center;
+}
+
+.article-headline-container.invert {
+    color: $white;
 }
 
 .article-h2 {
     @extend .h2;
     line-height: $title - 0.1;
+    margin-bottom: 0.5em;
 }
 
 .article-h3 {
     @extend .h3-sans;
+    margin-bottom: 0.5em;
 }
 
 .article-h3-quote {
     @extend .h3;
     color: $white;
     letter-spacing: 0.01em;
+    margin-bottom: 0.5em;
 }
 
 .article-h4 {
     @extend .h4;
     width: 100%;
+    margin-bottom: 0.5em;
 }
 
 .article-author {
@@ -71,6 +85,21 @@
 
 .article-body {
     @extend .body;
+    z-index: 10;
+    p {
+        margin-top: 1em;
+    }
+    p:first-child {
+        margin-top: 0;
+    }
+}
+
+.article-body.invert {
+    color: $white;
+}
+
+.article-body.two-columns {
+    columns: 1;
 }
 
 .article-pull-quote {
@@ -80,7 +109,11 @@
 }
 
 .article-background {
-    @extend .background-cover;
+    @include background-cover;
+}
+
+.article-background.gradient:before {
+    @include background-gradient;
 }
 
 .article-quote {
@@ -102,8 +135,8 @@
     color: $white;
 }
 
-.article-video-container {
-    @extend .video-container;
+.article-video {
+    @include video;
     margin-top: 4em;
     margin-bottom: 4em;
 }

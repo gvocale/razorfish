@@ -48,21 +48,11 @@
 }
 
 .article-hero-background {
-    @extend .background-cover;
-    background-blend-mode: soft-light;
+    @include background-cover;
     background-image: url('./../images/article-hero-abstract-background.jpg');
     animation: 20s ease-out 0.5s forwards zoom;
-    z-index: 1;
 }
 
-.article-hero-background:before {
-    content: "";
-    background-image: linear-gradient(90deg, $tertiary, $tertiaryDarker);
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: darken;
-    opacity: 0.9;
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.article-hero-background.gradient:before {
+    @include background-gradient;
 }

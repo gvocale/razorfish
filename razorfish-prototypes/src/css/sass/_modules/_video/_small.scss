@@ -8,9 +8,24 @@
     justify-content: center;
 }
 
+@mixin video {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.ratio-16-9 {
+    width: 100%;
+}
+
 .ratio-16-9:before {
     content: "";
     padding-top: calc(100% / 16 * 9);
+    display: block;
 }
 
 .video-background {
@@ -28,4 +43,5 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
