@@ -18,6 +18,7 @@
 
 .article-share-icons-container {
     margin-top: $spacing01;
+    margin-bottom: $spacing05;
     display: flex;
     justify-content: flex-start;
     .share-icon-container {
@@ -35,7 +36,6 @@
 
 .article-headline-container {
     @include headline-container;
-
 }
 
 .article-headline-container.center {
@@ -61,7 +61,7 @@
     @extend .h3;
     color: $white;
     letter-spacing: 0.01em;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 .article-h4 {
@@ -73,10 +73,6 @@
 .article-author {
     margin-top: $spacing01;
     @extend .eyebrow-small;
-}
-
-.article-author-name {
-    font-weight: bold;
 }
 
 .article-author-title {
@@ -102,10 +98,22 @@
     columns: 1;
 }
 
+.article-subheadline {
+    @extend .body;
+    font-family: $serif;
+    font-style: italic;
+    opacity: 0.5;
+}
+
 .article-pull-quote {
     @extend .pull-quote;
+    color: $tertiaryDarker;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
+    .author {
+        margin-top: 1em;
+        color: $black;
+    }
 }
 
 .article-background {
@@ -149,7 +157,6 @@
     margin-top: 4rem;
 }
 
-
 .article-h3,
 .article-h4 {
     margin-top: $spacing07;
@@ -158,4 +165,72 @@
 
 .article-h3:first-child {
     margin-top: 0;
+}
+
+.article-footer-author {
+    background-color: $grayLighter;
+    .container-fluid {
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+}
+
+.article-footer-author-headline {
+    @extend .eyebrow-small;
+    letter-spacing: $spacing-sans;
+    font-weight: bold;
+    color: $primary;
+    margin-bottom: 1em;
+}
+
+.article-footer-author-name {
+    @extend .body;
+    font-weight: bold;
+    line-height: $title;
+    margin-bottom: 0.25em;
+}
+
+.article-footer-author-title {
+    @extend .body-smaller;
+    line-height: $title + 0.2;
+}
+
+.article-footer-author-contact {
+    @extend .body-smaller;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 1em;
+    color: $black;
+    opacity: 0.5;
+}
+
+a.article-footer-author-contact-link,
+.article-footer-author-contact-link {
+    @extend .link;
+    @extend .body-smaller;
+    color: $black;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a.article-footer-link,
+.article-footer-link {
+    @extend .link;
+    @extend .body-smaller;
+    color: $black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.article-footer-author-image {
+    @include background-image;
+}
+
+.article-cta {
+    @extend .body-smaller;
+    strong {
+        font-weight: 700;
+        text-transform: uppercase;
+    }
 }

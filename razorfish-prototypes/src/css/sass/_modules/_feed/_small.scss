@@ -94,7 +94,8 @@
 }
 
 .feed-tile-eyebrow {
-    @extend .h6;
+    @extend .body;
+    margin-bottom: 0;
 }
 
 .feed-tile-headline {
@@ -214,5 +215,11 @@
     }
     .feed-tile-background {
         background-color: $secondary;
+    }
+}
+
+.feed-tile.in-viewport {
+    .feed-tile-background {
+        animation: 20s ease-out 0.5s forwards zoom;
     }
 }

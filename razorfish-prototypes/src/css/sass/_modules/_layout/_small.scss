@@ -54,6 +54,36 @@
     z-index: 5;
 }
 
+
+@mixin background-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    z-index: 5;
+}
+
+.ratio-square {
+    width: 100%;
+    height: auto;
+}
+
+.ratio-square:before {
+    content: "";
+    padding-top: 100%;
+    display: block;
+}
+
+.ratio-16-9 {
+    width: 100%;
+}
+
+.ratio-16-9:before {
+    content: "";
+    padding-top: calc(100% / 16 * 9);
+    display: block;
+}
+
 @mixin background-gradient {
     content: "";
     background-image: linear-gradient(90deg, $tertiary, $tertiaryDarker);
@@ -73,4 +103,12 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+}
+
+.background-gray {
+    background-color: $grayLighter;
+}
+
+.background-black {
+    background-color: $blackLighter;
 }

@@ -1,3 +1,15 @@
+.share-icons {
+    display: flex;
+    flex-direction: row;
+}
+
+.share-icons.gray {
+    .share-icon-container {
+        background-color: $grayLighter;
+    }
+}
+
+
 .share-icon-container {
     width: 3.5rem;
     height: 3.5rem;
@@ -13,7 +25,7 @@
     display: block;
     content: "";
     position: absolute;
-    height: 0.1em;
+    height: 0.15rem;
     bottom: 0;
     left: 0;
     width: 0%;
@@ -40,7 +52,8 @@
 
 .icon-linkedin,
 .icon-facebook,
-.icon-twitter {
+.icon-twitter,
+.icon-mail {
     width: 1.2rem;
     height: 1.2rem;
     background-size: contain;

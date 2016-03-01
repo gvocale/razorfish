@@ -1,0 +1,70 @@
+.title-primary {
+    width: 100vw;
+    height: 60vh;
+    position: relative;
+    z-index: -50;
+    background-color: $white;
+}
+
+.title-primary-container {
+    width: 100vw;
+    height: 60vh;
+    @extend .content-centered;
+    position: fixed;
+    align-items: flex-start;
+    .container-fluid {
+        width: 100%;
+    }
+}
+
+.title-primary-headline {
+    @extend .h2;
+}
+
+.title-secondary {
+    position: relative;
+    color: $black;
+    text-align: center;
+}
+.title-secondary.white {
+    background-color: $white;
+}
+
+.title-secondary-headline {
+    @extend .h3;
+    color: $black;
+}
+
+.title-secondary-subheadline {
+    @extend .subheadline;
+    color: $black;
+}
+
+.title-secondary.black {
+    background-color: $black;
+    color: $white;
+    .title-secondary-headline {
+        color: $white;
+    }
+    .title-secondary-subheadline {
+        color: $white;
+    }
+}
+
+.title-secondary-headline + .title-secondary-subheadline {
+    margin-top: 0.25em;
+}
+
+.title-tertiary {
+    .container-fluid {
+        padding-bottom: 2.5%;
+    }
+}
+
+.title-tertiary.white {
+    background-color: $white;
+}
+
+.title-tertiary-headline {
+    @extend .h2;
+}

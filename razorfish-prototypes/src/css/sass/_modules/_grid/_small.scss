@@ -1,17 +1,52 @@
 .container-fluid {
-	padding: 10%;
-	display: flex;
+    padding: 10%;
+}
+
+.padding-05 {
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 .row {
-	display: flex;
+    display: flex;
 }
 
-// .container-fluid {
-//     width: 100% - $spacing05 - $spacing05;
-//     margin: $spacing05;
-//     height: 100%;
-// }
+.row.bottom {
+    align-items: flex-end;
+}
+
+.row.center {
+    align-items: center;
+}
+
+.flex-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.flex-row-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.flex-col-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hor-center {
+    display: flex;
+    justify-content: center;
+}
 
 // Spacing
 $spacing01: 4%;
@@ -96,5 +131,3 @@ $spacing07: 17%;
 //     padding-left: 1%;
 //     padding-right: 1%;
 // }
-
-

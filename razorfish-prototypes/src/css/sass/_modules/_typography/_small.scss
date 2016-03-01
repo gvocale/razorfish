@@ -73,18 +73,18 @@
 }
 
 // Type scale "Le Corbusier" taken from http:/lamb.cc/typograph/
-$scale01: 0.5em;
-$scale02: 0.6154em;
-$scale03: 0.8077em;
-$scale04: 1em;
-$scale05: 1.3077em;
-$scale06: 1.6154em;
-$scale07: 2.1154em;
-$scale08: 2.6154em;
-$scale09: 3.4231em;
-$scale10: 4.2308em;
-$scale11: 5.5385em;
-$scale12: 6.8462em;
+$scale01: 0.5rem;
+$scale02: 0.6154rem;
+$scale03: 0.8077rem;
+$scale04: 1rem;
+$scale05: 1.3077rem;
+$scale06: 1.6154rem;
+$scale07: 2.1154rem;
+$scale08: 2.6154rem;
+$scale09: 3.4231rem;
+$scale10: 4.2308rem;
+$scale11: 5.5385rem;
+$scale12: 6.8462rem;
 
 // Adjustment of line height for Sans and Serif
 $lineSans: 1;
@@ -113,8 +113,8 @@ sans-serif;
 $spacingSans: -0.01em;
 $spacingSerif: 0.01em;
 // Tracking
-$spacing-serif-tight: -0.08em;
-$spacing-serif: -0.015em;
+$spacing-serif-tight: -0.02em;
+$spacing-serif: -0.01em;
 $spacing-serif-large: 0.015em;
 $spacing-serif-mega: 0.1em;
 $spacing-sans-tight: -0.08em;
@@ -160,7 +160,7 @@ p {
     font-family: $display;
     font-size: $scale05;
     line-height: $title;
-    letter-spacing: $spacing-serif-tight;
+    letter-spacing: $spacing-serif;
     font-weight: 700;
 }
 
@@ -248,6 +248,33 @@ p {
     text-transform: uppercase;
 }
 
+
+.author {
+    font-family: $sans;
+    font-size: $scale03;
+    font-style: normal;
+    line-height: $title;
+    letter-spacing: $spacing-sans;
+    text-transform: uppercase;
+    strong {
+        font-weight: 700;
+        margin-right: 0.5em;
+    }
+}
+
+
+
+.body-larger {
+    font-family: $sans;
+    font-size: $scale05;
+    line-height: $prose;
+    letter-spacing: $spacing-sans;
+    margin-bottom: 1em;
+    strong {
+        font-weight: 700;
+    }
+}
+
 .body {
     font-family: $sans;
     font-size: $scale04;
@@ -257,6 +284,13 @@ p {
     strong {
         font-weight: 700;
     }
+}
+
+.body-smaller {
+    font-family: $sans;
+    font-size: $scale03;
+    letter-spacing: $spacingSans;
+    line-height: $prose;
 }
 
 
@@ -282,21 +316,17 @@ p {
     }
 }
 
-.body-smaller {
-    font-family: $sans;
-    font-size: $scale03;
-    letter-spacing: $spacingSans;
-}
+
 
 .link {
-    color: $primary;
-    font-style: italic;
+    line-height: $title + 0.2;
     text-decoration: none;
     position: relative;
     display: inline-block;
     letter-spacing: -0.015em;
     cursor: pointer;
     cursor: hand;
+    color: $primary;
 }
 
 .link:before {
@@ -307,7 +337,7 @@ p {
     left: 0;
     width: 0;
     transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border-bottom-width: 0.04em;
+    border-bottom-width: 0.15rem;
     border-bottom-style: solid;
 }
 
@@ -327,3 +357,4 @@ p {
 .pull-quote::selection {
     background-color: $grayLighter;
 }
+
