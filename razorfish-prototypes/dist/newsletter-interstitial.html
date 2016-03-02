@@ -103,13 +103,13 @@
                     <h3 class="newsletter-interstitial-headline">Stay current. Get our newsletter.</h3>
                     <form class="row form" action="">
                         <div class="col-xs-12 col-lg-6 form-field">
-                            <input class="input-text" type="text" name="email" placeholder="Enter your email" autocomplete="false" type="email">
-                            <label class="input-label" for="email">Your email</label>
+                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Enter your email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Your rmail</label>
                             <div class="input-border"></div>
                         </div>
                         <div class="col-xs-12 col-lg-6 form-field">
-                            <input class="input-text" type="text" name="name" placeholder="Your name (Optional)" autocomplete="false" type="email">
-                            <label class="input-label" for="name">Your name</label>
+                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Your name (optional)" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Your name</label>
                             <div class="input-border"></div>
                         </div>
                         <div class="col-xs-12">
@@ -126,15 +126,15 @@
                 <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2">
                     <div class="divider-md animate"></div>
                     <h3 class="newsletter-interstitial-headline">Stay current. Get our newsletter.</h3>
-                    <form class="row form" action="">
+                    <form class="row form white" action="">
                         <div class="col-xs-12 col-lg-6 form-field">
-                            <input class="input-text" type="text" name="email" placeholder="Enter your email" autocomplete="false" type="email">
-                            <label class="input-label" for="email">Your email</label>
+                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Enter your email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Your rmail</label>
                             <div class="input-border"></div>
                         </div>
                         <div class="col-xs-12 col-lg-6 form-field">
-                            <input class="input-text" type="text" name="name" placeholder="Your name (Optional)" autocomplete="false" type="email">
-                            <label class="input-label" for="name">Your name</label>
+                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Your name (optional)" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Your name</label>
                             <div class="input-border"></div>
                         </div>
                         <div class="col-xs-12">
@@ -148,7 +148,8 @@
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
-    <script src="js/show-hide-header.js"></script>    <script>
+    <script src="js/show-hide-header.js"></script>
+    <script>
     new cbpScroller(document.getElementById('animate-container'));
     </script>
 </body>
