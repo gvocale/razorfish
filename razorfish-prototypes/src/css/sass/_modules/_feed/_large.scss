@@ -1,2 +1,23 @@
 // $large-breakpoint: 992;
-@media screen and (min-width: '#{$large-breakpoint}px') {}
+@media screen and (min-width: '#{$large-breakpoint}px') {
+    .feed-grid.padding {
+        .feed-tile:nth-of-type(6) {
+            transform: translate(100%, -50%);
+        }
+        // Split
+        .feed-tile:nth-of-type(7) {
+            transform: translate(-100%, 0%);
+        }
+        .feed-tile:nth-of-type(8) {
+            transform: translate(-100%, 0%);
+        }
+        // Split
+        .feed-tile:nth-of-type(9) {
+            transform: translate(100%, -200%);
+        }
+        // Solid
+        .feed-tile:nth-of-type(10) {
+            transform: translate(0, -100%);
+        }
+    }
+}

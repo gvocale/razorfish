@@ -44,26 +44,50 @@
     flex-wrap: wrap;
 }
 
-
-
 .input-text,
 .input-select,
 .input-file-label {
     width: 100%;
     border: none;
-    @extend .subheadline;
-    line-height: $scale06;
+    font-family: $sans;
+    font-size: $scale06;
+    line-height: $title-sans;
+    letter-spacing: $spacing-sans;
     font-weight: lighter;
-    color: $white;
     position: relative;
     padding-right: 0;
     padding-left: 0;
 }
 
+.input-file-label {
+    order: 2;
+    opacity: $opaqueDarker;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.input-text::placeholder {
+    opacity: 0;
+    transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.input-label {
+    order: 1;
+    width: 100%;
+    font-family: $sans;
+    line-height: $solid-sans;
+    font-size: $scale04;
+    opacity: $opaqueDarker;
+    font-weight: lighter;
+    transition: all 0.1s 0.2s ease-out;
+    transform: translateY(0);
+}
+
 .input-file {
     order: 3;
-    width: 0.1px;
-    height: 0.1px;
+    width: 0px;
+    height: 0px;
     opacity: 0;
     overflow: hidden;
     position: absolute;
@@ -71,7 +95,7 @@
 }
 
 .input-file-note {
-    font-size: $scale02;
+    font-size: $scale03;
     margin-left: 0.5em;
 }
 
@@ -82,25 +106,12 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: $white;
+    background-color: $black;
     opacity: $opaqueDarker;
-}
-
-.input-label {
-    order: 1;
-    width: 100%;
-    @extend .body-smaller;
-    line-height: $scale06;
-    font-family: $sans;
-    letter-spacing: 0.05em;
-    opacity: $opaqueDarker;
-    font-weight: lighter;
-    transition: all 0.1s 0.2s ease-out;
-    transform: translateY(0);
 }
 
 .input-select {
-    @extend .icon-arrow-white;
+    @extend .icon-arrow-black;
     border-radius: none;
     -webkit-appearance: none;
     background-size: contain;
@@ -128,10 +139,21 @@
     background-color: transparent;
 }
 
-.input-text::placeholder {
-    color: $white;
-    opacity: 0;
-    transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.form.white {
+    .input-text,
+    .input-select,
+    .input-file-label {
+        color: $white;
+    }
+    .input-border {
+        background-color: $white;
+    }
+    .input-select {
+        @extend .icon-arrow-white;
+    }
+    .input-text::placeholder {
+        color: $white;
+    }
 }
 
 .input-text[value=""]::placeholder {
@@ -149,15 +171,6 @@
 
 .input-text:invalid {
     @extend .icon-form-invalid;
-}
-
-.input-file-label {
-    order: 2;
-    width: 100%;
-    opacity: $opaqueDarker;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
 }
 
 .input-file-button {
@@ -214,6 +227,7 @@
 .input-select ~ .input-label {
     opacity: 0;
 }
+
 .input-select.selected {
     opacity: $visible;
 }
@@ -253,4 +267,12 @@
 .input-file-label,
 .input-text[value=""] ~ .input-border {
     opacity: $opaque;
+}
+
+.form {
+    .tertiary {
+        margin: auto;
+        display: block;
+        margin-top: $spacing01;
+    }
 }

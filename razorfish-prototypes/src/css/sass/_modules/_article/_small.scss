@@ -16,17 +16,10 @@
     background-image: url('./../images/article-photo-audi.jpg');
 }
 
-.article-share-icons-container {
-    margin-top: $spacing01;
-    margin-bottom: $spacing05;
-    display: flex;
-    justify-content: flex-start;
-    .share-icon-container {
-        background-color: $grayLighter;
-        margin: 0 0.05rem;
-    }
-    .share-icon-container:before {
-        height: 0.2em;
+.article {
+    .share-icons {
+        margin-top: $spacing01;
+        margin-bottom: $spacing05;
     }
 }
 
@@ -35,11 +28,22 @@
 }
 
 .article-headline-container {
-    @include headline-container;
+    z-index: 10;
+    margin-bottom: $spacing04;
+    .divider-md {
+        margin-top: $spacing04;
+        margin-bottom: 0;
+    }
+    .divider-md + .article-h2 {
+        margin-top: $spacing04;
+    }
 }
 
 .article-headline-container.center {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .article-headline-container.invert {
@@ -47,32 +51,34 @@
 }
 
 .article-h2 {
-    @extend .h2;
-    line-height: $title - 0.1;
-    margin-bottom: 0.5em;
+    @extend .h2-serif;
 }
 
 .article-h3 {
     @extend .h3-sans;
-    margin-bottom: 0.5em;
 }
 
 .article-h3-quote {
-    @extend .h3;
+    @extend .h3-sans;
     color: $white;
     letter-spacing: 0.01em;
     margin-bottom: 1em;
 }
 
 .article-h4 {
-    @extend .h4;
+    @extend .h4-sans;
     width: 100%;
     margin-bottom: 0.5em;
 }
 
 .article-author {
     margin-top: $spacing01;
-    @extend .eyebrow-small;
+    @extend .body;
+    line-height: $title-sans + 0.1em;
+    text-transform: uppercase;
+    strong {
+        font-weight: 700;
+    }
 }
 
 .article-author-title {
@@ -186,13 +192,11 @@
 .article-footer-author-name {
     @extend .body;
     font-weight: bold;
-    line-height: $title;
     margin-bottom: 0.25em;
 }
 
 .article-footer-author-title {
     @extend .body-smaller;
-    line-height: $title + 0.2;
 }
 
 .article-footer-author-contact {

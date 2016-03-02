@@ -2,16 +2,21 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
     .container-fluid {
         padding-bottom: 25%;
         z-index: 10;
-        height: 100%;
-        flex-direction: row;
         position: relative;
         .row {
             position: relative;
-            height: 100%;
         }
+    }
+    .video-play-button {
+        margin: auto;
+        margin-bottom: $spacing01;
     }
 }
 
@@ -38,7 +43,8 @@
 }
 
 .hero-headline {
-    @extend .h1;
+    @extend .h1-serif;
+    line-height: $title-serif - 0.2;
     color: $white;
 }
 
@@ -50,7 +56,7 @@
 
 .hero-scroll-down-container {
     position: absolute;
-    bottom: 5%;
+    bottom: 15%;
     left: 50%;
     transform: translateX(-50%);
     animation: 1s ease-in-out 0.5s infinite bounce;

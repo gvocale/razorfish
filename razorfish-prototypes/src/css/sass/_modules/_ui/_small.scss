@@ -7,6 +7,7 @@
     border: solid $white;
     border-radius: 50%;
     position: relative;
+    z-index: 100;
 }
 
 .video-play-button:hover {
@@ -64,40 +65,60 @@
     color: $white;
 }
 
-button.secondary {
+button.secondary,
+select.secondary {
     background-color: transparent;
     min-width: 14rem;
-    border-radius: none;
+    border-radius: 0;
     border: none;
     box-sizing: border-box;
     color: $black;
     cursor: hand;
     cursor: pointer;
     font-family: $sans;
-    font-size: $scale04;
+    font-size: $scale03;
     font-weight: 700;
     letter-spacing: $spacing-sans;
-    line-height: $solid;
+    line-height: $solid-sans;
     outline: none;
     overflow: hidden;
-    padding: 1em 4em;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
     border: 0.15rem solid $gray;
     transition: all 0.2s ease-in 0s;
+    -webkit-appearance: none;
+    background-clip: border-box;
+    background-color: transparent;
+    background-origin: content-box;
+    background-position-x: calc(100% + 2em);
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: 1em auto;
 }
 
+button.secondary {
+    padding: 1em 4em;
+}
+
+select.secondary:hover,
 button.secondary:hover {
     border: 0.15rem solid $grayDarker;
     transition: all 0s ease-out 0s;
 }
 
+select.secondary:focus,
+button.secondary:focus {
+    outline: none;
+}
+
+select.secondary.white,
 button.secondary.white {
     color: $white;
     border: 0.15rem solid $grayDarker;
 }
 
+select.secondary.white:hover,
 button.secondary.white:hover {
     border: 0.15rem solid $white;
     transition: all 0s ease-out 0s;
@@ -105,51 +126,68 @@ button.secondary.white:hover {
 
 select.secondary {
     @extend .icon-arrow-black;
-    border: 0.15rem solid $gray;
-    min-width: 14rem;
-    padding: 1em 1em 1em 1.2em;
-    -webkit-appearance: none;
-    background-clip: content-box;
-    background-color: transparent;
-    background-origin: border-box;
-    background-origin: content-box;
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: 1em auto;
-    border-radius: 0;
-    color: $black;
-    font-family: $sans;
-    font-size: $scale04;
-    font-weight: 700;
-    letter-spacing: $spacing-sans;
-    line-height: $solid;
-    position: relative;
-    text-transform: uppercase;
-    cursor: hand;
-    cursor: pointer;
-    transition: all 0.2s ease-in 0s;
-}
-
-select.secondary:hover {
-    border: 0.15rem solid $grayDarker;
-    transition: all 0s ease-out 0s;
-}
-
-select.secondary:focus {
-    outline: none;
+    padding: 1em 3em 1em 1.2em;
 }
 
 select.secondary.white {
     @extend .icon-arrow-white;
-    border: 0.15rem solid $grayDarker;
+}
+
+select.secondary,
+button.secondary {
+    margin-left: 0.75em;
+}
+
+select.secondary:nth-of-type(1),
+button.secondary:nth-of-type(1) {
+    margin-left: 0;
+}
+
+button.tertiary {
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    box-sizing: border-box;
+    color: $black;
+    cursor: hand;
+    cursor: pointer;
+    font-family: $display;
+    font-size: $scale07;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: $spacing-serif-large;
+    line-height: $solid-serif;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.2s ease-in 0s;
+    -webkit-appearance: none;
+    background-clip: border-box;
+    background-color: transparent;
+    background-origin: content-box;
+    background-position-x: calc(100% + 2em);
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: 1em auto;
+}
+
+button.tertiary.white {
     color: $white;
 }
 
-select.secondary.white:hover {
-    border: 0.15rem solid $white;
-    transition: all 0s ease-out 0s;
+button.tertiary:before {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-bottom-width: 0.15rem;
+    border-bottom-style: solid;
 }
 
-select.secondary + select.secondary {
-    margin-left: 0.75em;
+button.tertiary:hover:before {
+    width: 100%;
 }
