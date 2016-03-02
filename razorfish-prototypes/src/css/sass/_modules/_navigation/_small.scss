@@ -13,6 +13,12 @@
     justify-content: space-between;
     position: fixed;
     z-index: 1000;
+    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.navigation-bar.hiding {
+    transform: translateY(-100%);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
 }
 
 .navigation-overlay {
@@ -119,6 +125,10 @@ a.navigation-overlay-link:hover {
     text-decoration: none;
     color: $black;
     position: relative;
+    span {
+        font-size: $scale04;
+        margin-left: 0.5em;
+    }
 }
 
 .navigation-pages {

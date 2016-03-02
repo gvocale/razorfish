@@ -1,7 +1,7 @@
 (function() {
    
 	/* DOM elements */
-	var globalHeader = document.querySelector('.navigation');
+	var globalHeader = document.querySelector('.navigation-bar');
    
 	/* variables */
 	var lastY = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;

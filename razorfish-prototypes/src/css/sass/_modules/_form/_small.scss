@@ -51,19 +51,53 @@ $visible: 1;
 .input-text,
 .input-select,
 .input-file-label {
-    width: 100%;
     border: none;
+    color: inherit;
     font-family: $sans;
     font-size: $scale06;
-    line-height: $title-sans;
+    font-weight: 200;
     letter-spacing: $spacing-sans;
-    color: inherit;
-    font-weight: lighter;
-    position: relative;
-    padding-right: 0;
-    padding-left: 0;
+    line-height: $title-sans;
     margin-bottom: 0.4em;
     margin-top: 0.2em;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    width: 100%;
+}
+
+.input-select {
+    @extend .icon-arrow-black;
+    -webkit-appearance: none;
+    background-clip: content-box;
+    background-color: transparent;
+    background-origin: border-box;
+    background-origin: content-box;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 0.7em 0.7em;
+    border-radius: none;
+    order: 2;
+}
+
+.input-label {
+    font-family: $sans;
+    font-size: $scale04;
+    font-weight: lighter;
+    line-height: $solid-sans;
+    order: 1;
+    transform: translateY(0);
+    transition: all 0.1s 0.2s ease-out;
+    width: 100%;
+}
+
+.input-file {
+    height: 0px;
+    order: 3;
+    overflow: hidden;
+    position: absolute;
+    width: 0px;
+    z-index: -10;
 }
 
 .input-file-label {
@@ -78,28 +112,8 @@ $visible: 1;
     transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.input-label {
-    order: 1;
-    width: 100%;
-    font-family: $sans;
-    line-height: $solid-sans;
-    font-size: $scale04;
-    font-weight: lighter;
-    transition: all 0.1s 0.2s ease-out;
-    transform: translateY(0);
-}
-
-.input-file {
-    order: 3;
-    width: 0px;
-    height: 0px;
-    overflow: hidden;
-    position: absolute;
-    z-index: -10;
-}
-
 .input-file-note {
-    font-size: $scale03;
+    font-size: $scale04;
     margin-left: 0.5em;
 }
 
@@ -109,21 +123,6 @@ $visible: 1;
     height: 1px;
     width: 100%;
     background-color: $black;
-}
-
-.input-select {
-    @extend .icon-arrow-black;
-    border-radius: none;
-    -webkit-appearance: none;
-    background-size: contain;
-    background-clip: content-box;
-    background-origin: content-box;
-    background-size: 0.7em 0.7em;
-    background-position: right;
-    background-repeat: no-repeat;
-    background-origin: border-box;
-    background-color: transparent;
-    order: 2;
 }
 
 .input-text {
@@ -148,7 +147,7 @@ $visible: 1;
 }
 
 .input-file-button {
-    font-size: $scale02;
+    font-size: $scale04;
     text-transform: uppercase;
     cursor: pointer;
     cursor: hand;
@@ -159,9 +158,9 @@ $visible: 1;
     @extend .icon-arrow-white;
     transform: rotate(-90deg);
     display: inline-block;
-    width: 0.7em;
-    height: 0.7em;
-    margin-left: 0.2em;
+    width: 0.6em;
+    height: 0.6em;
+    margin-left: 0.3em;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -241,12 +240,15 @@ $visible: 1;
     .input-file ~ .input-label,
     .input-file,
     .input-select ~ .input-label,
-    .input-select ~ .input-label,
     .input-text::placeholder,
-    .input-text[value=""] ~ .input-label {
+    .input-text[value=""] ~ .input-label,
+    .input-file ~ .input-label,
+    .input-select ~ .input-label {
         opacity: $transparent;
     }
-    .input-text[value=""] ~ .input-border {
+    .input-text[value=""] ~ .input-border,
+    .input-file-label ~ .input-border,
+    .input-select ~ .input-border {
         opacity: $opacity01;
     }
     .input-border,
@@ -269,16 +271,5 @@ $visible: 1;
     }
     .input-select {
         @extend .icon-arrow-white;
-    }
-    .input-border,
-    .input-file-label,
-    .input-label,
-    .input-select ~ .input-icon,
-    .input-select,
-    .input-select.selected ~ .input-label,
-    .input-text[value=""] ~ .input-icon,
-    .input-text[value=""],
-    .input-text[value=""]::placeholder {
-        opacity: $opacity03;
     }
 }

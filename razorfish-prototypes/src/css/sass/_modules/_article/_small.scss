@@ -37,6 +37,9 @@
     .divider-md + .article-h2 {
         margin-top: $spacing04;
     }
+    .divider-md:first-child {
+        margin-top: 0;
+    }
 }
 
 .article-headline-container.center {
@@ -236,5 +239,92 @@ a.article-footer-link,
     strong {
         font-weight: 700;
         text-transform: uppercase;
+    }
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10%;
+}
+
+.sticky:before,
+.sticky:after {
+    content: '';
+    display: table;
+}
+
+.article-left-rail {
+    .label {
+        font-family: $sans;
+        line-height: $title-sans;
+        font-size: $scale04;
+        opacity: 0.5;
+        letter-spacing: $spacing-sans-large;
+        text-transform: uppercase;
+    }
+    .author-name {
+        font-family: $sans;
+        line-height: $title-sans;
+        font-weight: 700;
+        font-size: $scale06;
+        text-transform: none;
+        letter-spacing: $spacing-sans;
+        margin-top: 0.25em;
+    }
+    .author-title {
+        font-family: $sans;
+        line-height: $title-sans;
+        font-weight: 400;
+        font-size: $scale05;
+        text-transform: none;
+        letter-spacing: $spacing-sans;
+    }
+    .author-link {
+        @extend .link;
+        font-family: $sans;
+        line-height: $title-sans;
+        font-weight: 700;
+        font-size: $scale05;
+        text-transform: none;
+        letter-spacing: $spacing-sans;
+    }
+    .info-container {
+        margin-top: $spacing03;
+    }
+    .share-icons {
+        margin-top: 0;
+    }
+}
+
+.article-body-container {
+    .article-eyebrow {
+        font-family: $sans;
+        line-height: $title-sans;
+        font-size: $scale04;
+        opacity: 0.5;
+        letter-spacing: $spacing-sans-large;
+        text-transform: uppercase;
+    }
+    .article-eyebrow + .article-h2 {
+        margin-top: 0.25em;
+    }
+    .article-h2 + .article-body {
+        margin-top: 2em;
+    }
+    .article-pull-quote + .article-h3 {
+        margin-top: 4em;
+    }
+    .article-h2 + .article-h3 {
+        margin-top: 2em;
+    }
+    .article-body + .article-h3 {
+        margin-top: 2em;
+    }
+    .article-h3 {
+        margin: 0;
+    }
+    .article-h3 + .article-body {
+        margin-top: 1.3em;
     }
 }
