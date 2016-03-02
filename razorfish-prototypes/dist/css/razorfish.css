@@ -2198,7 +2198,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* line 44, ../../src/css/sass/_modules/_icons.scss */
-.icon-arrow-white, .form.white .input-select, .input-file-button:after, select.secondary.white {
+.icon-arrow-white, .input-file-button:after, .form.white .input-select, select.secondary.white {
   background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?>\a  <svg width='22px' height='14px' version='1.1' xmlns='http://www.w3.org/2000/svg'> <path id='arrow' fill='#FFFFFF' d='M18.7132034,0.106601718 L21.2132034,2.60660172 L10.6066017,13.2132034 L0,2.60660172 L2.5,0.106601718 L10.6066017,8.21320344 L18.7132034,0.106601718 L18.7132034,0.106601718 Z'></path> </svg> ");
 }
 
@@ -3455,7 +3455,7 @@ a.navigation-overlay-link:hover {
     padding-bottom: 2em;
   }
 }
-/* line 1, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 6, ../../src/css/sass/_modules/_form/_small.scss */
 .form {
   position: relative;
   display: -webkit-flex;
@@ -3473,7 +3473,7 @@ a.navigation-overlay-link:hover {
           flex-wrap: wrap;
 }
 
-/* line 10, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 15, ../../src/css/sass/_modules/_form/_small.scss */
 .form-wrapper {
   position: relative;
   width: 100%;
@@ -3481,7 +3481,7 @@ a.navigation-overlay-link:hover {
   overflow: hidden;
 }
 
-/* line 17, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 22, ../../src/css/sass/_modules/_form/_small.scss */
 .form-content {
   position: absolute;
   width: 100%;
@@ -3490,7 +3490,7 @@ a.navigation-overlay-link:hover {
   transition: all 0.3s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* line 25, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 30, ../../src/css/sass/_modules/_form/_small.scss */
 .form-container {
   width: 100%;
   display: -webkit-flex;
@@ -3510,7 +3510,7 @@ a.navigation-overlay-link:hover {
           justify-content: center;
 }
 
-/* line 34, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 39, ../../src/css/sass/_modules/_form/_small.scss */
 .form-field {
   position: relative;
   display: -webkit-flex;
@@ -3531,7 +3531,7 @@ a.navigation-overlay-link:hover {
           flex-wrap: wrap;
 }
 
-/* line 46, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 51, ../../src/css/sass/_modules/_form/_small.scss */
 .input-text,
 .input-select,
 .input-file-label {
@@ -3541,6 +3541,7 @@ a.navigation-overlay-link:hover {
   font-size: 1.6154rem;
   line-height: 1.4;
   letter-spacing: -0.02em;
+  color: inherit;
   font-weight: lighter;
   position: relative;
   padding-right: 0;
@@ -3549,12 +3550,11 @@ a.navigation-overlay-link:hover {
   margin-top: 0.2em;
 }
 
-/* line 63, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 69, ../../src/css/sass/_modules/_form/_small.scss */
 .input-file-label {
   -webkit-order: 2;
       -ms-flex-order: 2;
           order: 2;
-  opacity: 0.7;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -3566,25 +3566,25 @@ a.navigation-overlay-link:hover {
           align-items: baseline;
 }
 
-/* line 71, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 76, ../../src/css/sass/_modules/_form/_small.scss */
 .input-text::-webkit-input-placeholder {
-  opacity: 0;
+  color: inherit;
   transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .input-text::-moz-placeholder {
-  opacity: 0;
+  color: inherit;
   transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .input-text:-ms-input-placeholder {
-  opacity: 0;
+  color: inherit;
   transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .input-text::placeholder {
-  opacity: 0;
+  color: inherit;
   transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* line 76, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 81, ../../src/css/sass/_modules/_form/_small.scss */
 .input-label {
   -webkit-order: 1;
       -ms-flex-order: 1;
@@ -3593,33 +3593,31 @@ a.navigation-overlay-link:hover {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   line-height: 1;
   font-size: 1rem;
-  opacity: 0.7;
   font-weight: lighter;
   transition: all 0.1s 0.2s ease-out;
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
 
-/* line 88, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 92, ../../src/css/sass/_modules/_form/_small.scss */
 .input-file {
   -webkit-order: 3;
       -ms-flex-order: 3;
           order: 3;
   width: 0px;
   height: 0px;
-  opacity: 0;
   overflow: hidden;
   position: absolute;
   z-index: -10;
 }
 
-/* line 98, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 101, ../../src/css/sass/_modules/_form/_small.scss */
 .input-file-note {
   font-size: 0.8077rem;
   margin-left: 0.5em;
 }
 
-/* line 103, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 106, ../../src/css/sass/_modules/_form/_small.scss */
 .input-border {
   -webkit-order: 4;
       -ms-flex-order: 4;
@@ -3628,10 +3626,9 @@ a.navigation-overlay-link:hover {
   height: 1px;
   width: 100%;
   background-color: #404040;
-  opacity: 0.7;
 }
 
-/* line 112, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 114, ../../src/css/sass/_modules/_form/_small.scss */
 .input-select {
   border-radius: none;
   -webkit-appearance: none;
@@ -3642,14 +3639,13 @@ a.navigation-overlay-link:hover {
   background-position: right;
   background-repeat: no-repeat;
   background-origin: border-box;
-  opacity: 0.7;
   background-color: transparent;
   -webkit-order: 2;
       -ms-flex-order: 2;
           order: 2;
 }
 
-/* line 128, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 129, ../../src/css/sass/_modules/_form/_small.scss */
 .input-text {
   -webkit-order: 2;
       -ms-flex-order: 2;
@@ -3665,51 +3661,7 @@ a.navigation-overlay-link:hover {
   background-color: transparent;
 }
 
-/* line 142, ../../src/css/sass/_modules/_form/_small.scss */
-.form.white .input-text,
-.form.white .input-select,
-.form.white .input-file-label {
-  color: #FFFFFF;
-}
-/* line 147, ../../src/css/sass/_modules/_form/_small.scss */
-.form.white .input-border {
-  background-color: #FFFFFF;
-}
-/* line 153, ../../src/css/sass/_modules/_form/_small.scss */
-.form.white .input-text::-webkit-input-placeholder {
-  color: #FFFFFF;
-}
-.form.white .input-text::-moz-placeholder {
-  color: #FFFFFF;
-}
-.form.white .input-text:-ms-input-placeholder {
-  color: #FFFFFF;
-}
-.form.white .input-text::placeholder {
-  color: #FFFFFF;
-}
-
-/* line 158, ../../src/css/sass/_modules/_form/_small.scss */
-.input-text[value=""]::-webkit-input-placeholder {
-  opacity: 0.7;
-}
-.input-text[value=""]::-moz-placeholder {
-  opacity: 0.7;
-}
-.input-text[value=""]:-ms-input-placeholder {
-  opacity: 0.7;
-}
-.input-text[value=""]::placeholder {
-  opacity: 0.7;
-}
-
-/* line 162, ../../src/css/sass/_modules/_form/_small.scss */
-.input-text[value=""] {
-  background-image: none;
-  opacity: 0.7;
-}
-
-/* line 175, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 150, ../../src/css/sass/_modules/_form/_small.scss */
 .input-file-button {
   font-size: 0.6154rem;
   text-transform: uppercase;
@@ -3717,7 +3669,7 @@ a.navigation-overlay-link:hover {
   cursor: hand;
 }
 
-/* line 182, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 157, ../../src/css/sass/_modules/_form/_small.scss */
 .input-file-button:after {
   content: "";
   -webkit-transform: rotate(-90deg);
@@ -3733,7 +3685,7 @@ a.navigation-overlay-link:hover {
   background-origin: content-box;
 }
 
-/* line 197, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 172, ../../src/css/sass/_modules/_form/_small.scss */
 .input-submit {
   border: none;
   background-color: transparent;
@@ -3743,14 +3695,14 @@ a.navigation-overlay-link:hover {
   margin-top: 4rem;
 }
 
-/* line 208, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 183, ../../src/css/sass/_modules/_form/_small.scss */
 .input-submit:focus,
 .input-text:focus,
 .input-select:focus {
   outline: none;
 }
 
-/* line 218, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 193, ../../src/css/sass/_modules/_form/_small.scss */
 .input-text[value=""] ~ .input-label,
 .input-file ~ .input-label,
 .input-select ~ .input-label {
@@ -3760,59 +3712,179 @@ a.navigation-overlay-link:hover {
   transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* line 226, ../../src/css/sass/_modules/_form/_small.scss */
-.input-select ~ .input-label {
-  opacity: 0;
-}
-
-/* line 230, ../../src/css/sass/_modules/_form/_small.scss */
-.input-select.selected {
-  opacity: 1;
-}
-
-/* line 234, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 201, ../../src/css/sass/_modules/_form/_small.scss */
 .input-select.selected ~ .input-label {
-  opacity: 0.3;
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
 }
 
-/* line 239, ../../src/css/sass/_modules/_form/_small.scss */
-.input-select.selected ~ .input-border {
-  opacity: 1;
-}
-
-/* line 243, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 205, ../../src/css/sass/_modules/_form/_small.scss */
 .input-text[value=""] ~ .input-icon {
   background-size: 80%;
-  opacity: 0.3;
 }
 
-/* line 253, ../../src/css/sass/_modules/_form/_small.scss */
-.input-file:focus ~ .input-border,
-.input-file:focus ~ .input-file-button,
-.input-file:focus ~ .input-file-label,
-.input-select:focus ~ .input-border,
-.input-select:focus ~ .input-icon,
-.input-select:focus,
-.input-text:focus ~ .input-border,
-.input-text[value=""]:focus ~ .input-border,
-.input-text:invalid ~ .input-border,
-.input-text:valid ~ .input-border {
-  opacity: 1;
+/* line 214, ../../src/css/sass/_modules/_form/_small.scss */
+.input-text[value=""] {
+  background-image: none;
 }
 
-/* line 266, ../../src/css/sass/_modules/_form/_small.scss */
-.input-file-label,
-.input-text[value=""] ~ .input-border {
-  opacity: 0.3;
-}
-
-/* line 272, ../../src/css/sass/_modules/_form/_small.scss */
+/* line 219, ../../src/css/sass/_modules/_form/_small.scss */
 .form .tertiary {
   margin: auto;
   display: block;
   margin-top: 4%;
+}
+
+/* line 227, ../../src/css/sass/_modules/_form/_small.scss */
+.form .input-file:focus ~ .input-border,
+.form .input-file:focus ~ .input-file-button,
+.form .input-file:focus ~ .input-file-label,
+.form .input-select.selected ~ .input-border,
+.form .input-select.selected,
+.form .input-select:focus ~ .input-border,
+.form .input-select:focus ~ .input-icon,
+.form .input-select:focus,
+.form .input-text:focus ~ .input-border,
+.form .input-text:invalid ~ .input-border,
+.form .input-text:valid ~ .input-border,
+.form .input-text[value=""]:focus ~ .input-border {
+  opacity: 1;
+}
+/* line 241, ../../src/css/sass/_modules/_form/_small.scss */
+.form .input-file ~ .input-label,
+.form .input-file,
+.form .input-select ~ .input-label,
+.form .input-select ~ .input-label,
+.form .input-text::-webkit-input-placeholder,
+.form .input-text[value=""] ~ .input-label {
+  opacity: 0;
+}
+.form .input-file ~ .input-label,
+.form .input-file,
+.form .input-select ~ .input-label,
+.form .input-select ~ .input-label,
+.form .input-text::-moz-placeholder,
+.form .input-text[value=""] ~ .input-label {
+  opacity: 0;
+}
+.form .input-file ~ .input-label,
+.form .input-file,
+.form .input-select ~ .input-label,
+.form .input-select ~ .input-label,
+.form .input-text:-ms-input-placeholder,
+.form .input-text[value=""] ~ .input-label {
+  opacity: 0;
+}
+.form .input-file ~ .input-label,
+.form .input-file,
+.form .input-select ~ .input-label,
+.form .input-select ~ .input-label,
+.form .input-text::placeholder,
+.form .input-text[value=""] ~ .input-label {
+  opacity: 0;
+}
+/* line 249, ../../src/css/sass/_modules/_form/_small.scss */
+.form .input-text[value=""] ~ .input-border {
+  opacity: 0.2;
+}
+/* line 252, ../../src/css/sass/_modules/_form/_small.scss */
+.form .input-border,
+.form .input-file-label,
+.form .input-label,
+.form .input-select ~ .input-icon,
+.form .input-select,
+.form .input-select.selected ~ .input-label,
+.form .input-text[value=""] ~ .input-icon,
+.form .input-text[value=""],
+.form .input-text[value=""]::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+.form .input-border,
+.form .input-file-label,
+.form .input-label,
+.form .input-select ~ .input-icon,
+.form .input-select,
+.form .input-select.selected ~ .input-label,
+.form .input-text[value=""] ~ .input-icon,
+.form .input-text[value=""],
+.form .input-text[value=""]::-moz-placeholder {
+  opacity: 0.5;
+}
+.form .input-border,
+.form .input-file-label,
+.form .input-label,
+.form .input-select ~ .input-icon,
+.form .input-select,
+.form .input-select.selected ~ .input-label,
+.form .input-text[value=""] ~ .input-icon,
+.form .input-text[value=""],
+.form .input-text[value=""]:-ms-input-placeholder {
+  opacity: 0.5;
+}
+.form .input-border,
+.form .input-file-label,
+.form .input-label,
+.form .input-select ~ .input-icon,
+.form .input-select,
+.form .input-select.selected ~ .input-label,
+.form .input-text[value=""] ~ .input-icon,
+.form .input-text[value=""],
+.form .input-text[value=""]::placeholder {
+  opacity: 0.5;
+}
+
+/* line 265, ../../src/css/sass/_modules/_form/_small.scss */
+.form.white {
+  color: #FFFFFF;
+}
+/* line 267, ../../src/css/sass/_modules/_form/_small.scss */
+.form.white .input-border {
+  background-color: #FFFFFF;
+}
+/* line 273, ../../src/css/sass/_modules/_form/_small.scss */
+.form.white .input-border,
+.form.white .input-file-label,
+.form.white .input-label,
+.form.white .input-select ~ .input-icon,
+.form.white .input-select,
+.form.white .input-select.selected ~ .input-label,
+.form.white .input-text[value=""] ~ .input-icon,
+.form.white .input-text[value=""],
+.form.white .input-text[value=""]::-webkit-input-placeholder {
+  opacity: 0.8;
+}
+.form.white .input-border,
+.form.white .input-file-label,
+.form.white .input-label,
+.form.white .input-select ~ .input-icon,
+.form.white .input-select,
+.form.white .input-select.selected ~ .input-label,
+.form.white .input-text[value=""] ~ .input-icon,
+.form.white .input-text[value=""],
+.form.white .input-text[value=""]::-moz-placeholder {
+  opacity: 0.8;
+}
+.form.white .input-border,
+.form.white .input-file-label,
+.form.white .input-label,
+.form.white .input-select ~ .input-icon,
+.form.white .input-select,
+.form.white .input-select.selected ~ .input-label,
+.form.white .input-text[value=""] ~ .input-icon,
+.form.white .input-text[value=""],
+.form.white .input-text[value=""]:-ms-input-placeholder {
+  opacity: 0.8;
+}
+.form.white .input-border,
+.form.white .input-file-label,
+.form.white .input-label,
+.form.white .input-select ~ .input-icon,
+.form.white .input-select,
+.form.white .input-select.selected ~ .input-label,
+.form.white .input-text[value=""] ~ .input-icon,
+.form.white .input-text[value=""],
+.form.white .input-text[value=""]::placeholder {
+  opacity: 0.8;
 }
 
 @media screen and (min-width: 768px) {
@@ -3845,7 +3917,7 @@ a.navigation-overlay-link:hover {
   .input-select,
   .input-select ~ .input-icon,
   .input-file-label {
-    opacity: 0.3;
+    opacity: 0.5;
   }
   .input-border,
   .input-label,
@@ -3854,7 +3926,7 @@ a.navigation-overlay-link:hover {
   .input-select,
   .input-select ~ .input-icon,
   .input-file-label {
-    opacity: 0.3;
+    opacity: 0.5;
   }
   .input-border,
   .input-label,
@@ -3863,7 +3935,7 @@ a.navigation-overlay-link:hover {
   .input-select,
   .input-select ~ .input-icon,
   .input-file-label {
-    opacity: 0.3;
+    opacity: 0.5;
   }
   .input-border,
   .input-label,
@@ -3872,7 +3944,45 @@ a.navigation-overlay-link:hover {
   .input-select,
   .input-select ~ .input-icon,
   .input-file-label {
-    opacity: 0.3;
+    opacity: 0.5;
+  }
+
+  /* line 13, ../../src/css/sass/_modules/_form/_xlarge.scss */
+  .form.white .input-border,
+  .form.white .input-label,
+  .form.white .input-text[value=""]::-webkit-input-placeholder,
+  .form.white .input-text[value=""] ~ .input-icon,
+  .form.white .input-select,
+  .form.white .input-select ~ .input-icon,
+  .form.white .input-file-label {
+    opacity: 0.2;
+  }
+  .form.white .input-border,
+  .form.white .input-label,
+  .form.white .input-text[value=""]::-moz-placeholder,
+  .form.white .input-text[value=""] ~ .input-icon,
+  .form.white .input-select,
+  .form.white .input-select ~ .input-icon,
+  .form.white .input-file-label {
+    opacity: 0.2;
+  }
+  .form.white .input-border,
+  .form.white .input-label,
+  .form.white .input-text[value=""]:-ms-input-placeholder,
+  .form.white .input-text[value=""] ~ .input-icon,
+  .form.white .input-select,
+  .form.white .input-select ~ .input-icon,
+  .form.white .input-file-label {
+    opacity: 0.2;
+  }
+  .form.white .input-border,
+  .form.white .input-label,
+  .form.white .input-text[value=""]::placeholder,
+  .form.white .input-text[value=""] ~ .input-icon,
+  .form.white .input-select,
+  .form.white .input-select ~ .input-icon,
+  .form.white .input-file-label {
+    opacity: 0.2;
   }
 }
 /* line 1, ../../src/css/sass/_modules/_video/_small.scss */
@@ -6717,40 +6827,50 @@ button.secondary:hover {
 select.secondary:focus,
 button.secondary:focus {
   outline: none;
+  border: 0.15rem solid #404040;
+  transition: all 0s ease-out 0s;
 }
 
-/* line 115, ../../src/css/sass/_modules/_ui/_small.scss */
+/* line 117, ../../src/css/sass/_modules/_ui/_small.scss */
 select.secondary.white,
 button.secondary.white {
   color: #FFFFFF;
   border: 0.15rem solid #808080;
 }
 
-/* line 121, ../../src/css/sass/_modules/_ui/_small.scss */
+/* line 123, ../../src/css/sass/_modules/_ui/_small.scss */
 select.secondary.white:hover,
 button.secondary.white:hover {
   border: 0.15rem solid #FFFFFF;
   transition: all 0s ease-out 0s;
 }
 
-/* line 127, ../../src/css/sass/_modules/_ui/_small.scss */
+/* line 129, ../../src/css/sass/_modules/_ui/_small.scss */
+select.secondary.white:focus,
+button.secondary.white:focus {
+  outline: none;
+  border: 0.15rem solid #FFFFFF;
+  transition: all 0s ease-out 0s;
+}
+
+/* line 136, ../../src/css/sass/_modules/_ui/_small.scss */
 select.secondary {
   padding: 1em 3em 1em 1.2em;
 }
 
-/* line 136, ../../src/css/sass/_modules/_ui/_small.scss */
+/* line 145, ../../src/css/sass/_modules/_ui/_small.scss */
 select.secondary,
 button.secondary {
   margin-left: 0.75em;
 }
 
-/* line 141, ../../src/css/sass/_modules/_ui/_small.scss */
+/* line 150, ../../src/css/sass/_modules/_ui/_small.scss */
 select.secondary:nth-of-type(1),
 button.secondary:nth-of-type(1) {
   margin-left: 0;
 }
 
-/* line 146, ../../src/css/sass/_modules/_ui/_small.scss */
+/* line 155, ../../src/css/sass/_modules/_ui/_small.scss */
 button.tertiary {
   background-color: transparent;
   border-radius: 0;
@@ -6780,12 +6900,12 @@ button.tertiary {
   background-size: 1em auto;
 }
 
-/* line 175, ../../src/css/sass/_modules/_ui/_small.scss */
+/* line 184, ../../src/css/sass/_modules/_ui/_small.scss */
 button.tertiary.white {
   color: #FFFFFF;
 }
 
-/* line 179, ../../src/css/sass/_modules/_ui/_small.scss */
+/* line 188, ../../src/css/sass/_modules/_ui/_small.scss */
 button.tertiary:before {
   display: block;
   content: "";
@@ -6798,7 +6918,7 @@ button.tertiary:before {
   border-bottom-style: solid;
 }
 
-/* line 191, ../../src/css/sass/_modules/_ui/_small.scss */
+/* line 200, ../../src/css/sass/_modules/_ui/_small.scss */
 button.tertiary:hover:before {
   width: 100%;
 }

@@ -110,6 +110,8 @@ button.secondary:hover {
 select.secondary:focus,
 button.secondary:focus {
     outline: none;
+    border: 0.15rem solid $black;
+    transition: all 0s ease-out 0s;
 }
 
 select.secondary.white,
@@ -120,6 +122,13 @@ button.secondary.white {
 
 select.secondary.white:hover,
 button.secondary.white:hover {
+    border: 0.15rem solid $white;
+    transition: all 0s ease-out 0s;
+}
+
+select.secondary.white:focus,
+button.secondary.white:focus {
+    outline: none;
     border: 0.15rem solid $white;
     transition: all 0s ease-out 0s;
 }

@@ -7,6 +7,17 @@
     .input-select,
     .input-select ~ .input-icon,
     .input-file-label {
-        opacity: $opaque;
+        opacity: $opacity02;
+    }
+    .form.white {
+        .input-border,
+        .input-label,
+        .input-text[value=""]::placeholder,
+        .input-text[value=""] ~ .input-icon,
+        .input-select,
+        .input-select ~ .input-icon,
+        .input-file-label {
+            opacity: $opacity01;
+        }
     }
 }

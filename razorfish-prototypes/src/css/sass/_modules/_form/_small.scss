@@ -1,3 +1,8 @@
+$transparent: 0;
+$opacity01: 0.2;
+$opacity02: 0.5;
+$opacity03: 0.8;
+$visible: 1;
 .form {
     position: relative;
     display: flex;
@@ -52,6 +57,7 @@
     font-size: $scale06;
     line-height: $title-sans;
     letter-spacing: $spacing-sans;
+    color: inherit;
     font-weight: lighter;
     position: relative;
     padding-right: 0;
@@ -62,14 +68,13 @@
 
 .input-file-label {
     order: 2;
-    opacity: $opaqueDarker;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
 }
 
 .input-text::placeholder {
-    opacity: 0;
+    color: inherit;
     transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -79,7 +84,6 @@
     font-family: $sans;
     line-height: $solid-sans;
     font-size: $scale04;
-    opacity: $opaqueDarker;
     font-weight: lighter;
     transition: all 0.1s 0.2s ease-out;
     transform: translateY(0);
@@ -89,7 +93,6 @@
     order: 3;
     width: 0px;
     height: 0px;
-    opacity: 0;
     overflow: hidden;
     position: absolute;
     z-index: -10;
@@ -106,7 +109,6 @@
     height: 1px;
     width: 100%;
     background-color: $black;
-    opacity: $opaqueDarker;
 }
 
 .input-select {
@@ -120,7 +122,6 @@
     background-position: right;
     background-repeat: no-repeat;
     background-origin: border-box;
-    opacity: $opaqueDarker;
     background-color: transparent;
     order: 2;
 }
@@ -136,32 +137,6 @@
     background-repeat: no-repeat;
     background-origin: border-box;
     background-color: transparent;
-}
-
-.form.white {
-    .input-text,
-    .input-select,
-    .input-file-label {
-        color: $white;
-    }
-    .input-border {
-        background-color: $white;
-    }
-    .input-select {
-        @extend .icon-arrow-white;
-    }
-    .input-text::placeholder {
-        color: $white;
-    }
-}
-
-.input-text[value=""]::placeholder {
-    opacity: $opaqueDarker;
-}
-
-.input-text[value=""] {
-    background-image: none;
-    opacity: $opaqueDarker;
 }
 
 .input-text:valid {
@@ -223,49 +198,21 @@
     transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.input-select ~ .input-label {
-    opacity: 0;
-}
-
-.input-select.selected {
-    opacity: $visible;
-}
-
 .input-select.selected ~ .input-label {
-    opacity: $opaque;
     transform: translateY(0%);
-}
-
-.input-select.selected ~ .input-border {
-    opacity: $visible;
 }
 
 .input-text[value=""] ~ .input-icon {
     @extend .icon-form-required;
     background-size: 80%;
-    opacity: $opaque;
 }
 
 .input-text:valid ~ .input-icon {
     @extend .icon-form-valid;
 }
 
-.input-file:focus ~ .input-border,
-.input-file:focus ~ .input-file-button,
-.input-file:focus ~ .input-file-label,
-.input-select:focus ~ .input-border,
-.input-select:focus ~ .input-icon,
-.input-select:focus,
-.input-text:focus ~ .input-border,
-.input-text[value=""]:focus ~ .input-border,
-.input-text:invalid ~ .input-border,
-.input-text:valid ~ .input-border {
-    opacity: $visible;
-}
-
-.input-file-label,
-.input-text[value=""] ~ .input-border {
-    opacity: $opaque;
+.input-text[value=""] {
+    background-image: none;
 }
 
 .form {
@@ -273,5 +220,65 @@
         margin: auto;
         display: block;
         margin-top: $spacing01;
+    }
+}
+
+.form {
+    .input-file:focus ~ .input-border,
+    .input-file:focus ~ .input-file-button,
+    .input-file:focus ~ .input-file-label,
+    .input-select.selected ~ .input-border,
+    .input-select.selected,
+    .input-select:focus ~ .input-border,
+    .input-select:focus ~ .input-icon,
+    .input-select:focus,
+    .input-text:focus ~ .input-border,
+    .input-text:invalid ~ .input-border,
+    .input-text:valid ~ .input-border,
+    .input-text[value=""]:focus ~ .input-border {
+        opacity: $visible;
+    }
+    .input-file ~ .input-label,
+    .input-file,
+    .input-select ~ .input-label,
+    .input-select ~ .input-label,
+    .input-text::placeholder,
+    .input-text[value=""] ~ .input-label {
+        opacity: $transparent;
+    }
+    .input-text[value=""] ~ .input-border {
+        opacity: $opacity01;
+    }
+    .input-border,
+    .input-file-label,
+    .input-label,
+    .input-select ~ .input-icon,
+    .input-select,
+    .input-select.selected ~ .input-label,
+    .input-text[value=""] ~ .input-icon,
+    .input-text[value=""],
+    .input-text[value=""]::placeholder {
+        opacity: $opacity02;
+    }
+}
+
+.form.white {
+    color: $white;
+    .input-border {
+        background-color: $white;
+    }
+    .input-select {
+        @extend .icon-arrow-white;
+    }
+    .input-border,
+    .input-file-label,
+    .input-label,
+    .input-select ~ .input-icon,
+    .input-select,
+    .input-select.selected ~ .input-label,
+    .input-text[value=""] ~ .input-icon,
+    .input-text[value=""],
+    .input-text[value=""]::placeholder {
+        opacity: $opacity03;
     }
 }
