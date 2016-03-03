@@ -40,15 +40,6 @@ span.footer-legal-copyright {
     line-height: $scale06;
 }
 
-a.footer-legal-link {
-    text-decoration: none;
-    margin: 0 0.5em;
-    position: relative;
-    display: inline-block;
-    color: $primary;
-    line-height: $scale06;
-}
-
 .footer-legal-dot:before {
     content: "·";
     color: $grayDarker;
@@ -109,6 +100,8 @@ a.footer-legal-link {
         margin-right: auto;
         margin-bottom: 1em;
         @media only screen and ($lg) {
+            margin-left: 0;
+            margin-right: 0;
             margin-bottom: 0;
         }
         @media only screen and ($xl) {
@@ -182,9 +175,6 @@ a.footer-legal-link {
         padding: 10% 10%;
         @media only screen and ($lg) {
             padding: 4% 5%;
-        }
-        @media only screen and ($xl) {
-            padding: 4% 10%;
         }
     }
 }

@@ -138,12 +138,6 @@ p {
     line-height: $title-serif;
     letter-spacing: $spacing-serif;
     font-weight: 700;
-    .link {
-        font-style: italic;
-        font-weight: 400;
-        color: $primary;
-        border-bottom-width: 0.3rem;
-    }
 }
 
 .h1-sans {
@@ -152,12 +146,6 @@ p {
     line-height: $title-sans;
     letter-spacing: $spacing-serif;
     font-weight: 700;
-    .link {
-        font-style: italic;
-        font-weight: 400;
-        color: $primary;
-        border-bottom-width: 0.3rem;
-    }
 }
 
 .h2-serif {
@@ -166,12 +154,6 @@ p {
     line-height: $title-serif;
     letter-spacing: $spacing-serif;
     font-weight: 700;
-    .link {
-        font-style: italic;
-        font-weight: 400;
-        color: $primary;
-        border-bottom-width: 0.3rem;
-    }
 }
 
 .h2-sans {
@@ -180,12 +162,6 @@ p {
     line-height: $title-sans;
     letter-spacing: $spacing-sans;
     font-weight: 700;
-    .link {
-        font-style: italic;
-        font-weight: 400;
-        color: $primary;
-        border-bottom-width: 0.3rem;
-    }
 }
 
 .h3-serif {
@@ -374,6 +350,9 @@ p {
     }
     &.primary {
         color: $primary;
+    }
+    &:focus {
+        outline: none;
     }
 }
 
