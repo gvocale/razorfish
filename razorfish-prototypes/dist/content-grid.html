@@ -57,15 +57,15 @@
                     <div class="col-xs-12">
                         <ul class="navigation-components">
                             <li class="navigation-overlay-link-container">
-                                <a class="navigation-overlay-link" href="article-body.html">Article Body</a>                                
+                                <a class="navigation-overlay-link" href="article-body.html">Article Body</a>
                             </li>
-                                                        <li class="navigation-overlay-link-container">
+                            <li class="navigation-overlay-link-container">
                                 <a class="navigation-overlay-link" href="article-body-centered.html">Article Body<span class="note">(Centered)</span></a>
                             </li>
                             <li class="navigation-overlay-link-container">
                                 <a class="navigation-overlay-link" href="content-grid.html">Content Grid</a>
                             </li>
-                                                        <li class="navigation-overlay-link-container">
+                            <li class="navigation-overlay-link-container">
                                 <a class="navigation-overlay-link" href="feed.html">Feed</a>
                             </li>
                             <li class="navigation-overlay-link-container">
@@ -101,41 +101,34 @@
             </div>
         </div>
     </nav>
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 footer-content">
-                    <div class="footer-razorfish-logo">
-                    </div>
-                    <div class="divider-md animate">
-                    </div>
-                    <ul class="footer-share-icons-container">
-                        <a href="" class="share-icon-container">
-                            <li class="icon-linkedin share-icon animate">
-                            </li>
-                        </a>
-                        <a href="" class="share-icon-container">
-                            <li class="icon-twitter share-icon animate">
-                            </li>
-                        </a>
-                        <a href="" class="share-icon-container">
-                            <li class="icon-facebook share-icon animate">
-                            </li>
-                        </a>
-                    </ul>
-                    <div class="footer-legal">
-                        <span class="footer-legal-copyright">© 2015 Razorfish All rights reserved</span><span class="footer-legal-dot"><a href="" class="footer-legal-link">Terms</a></span><span class="footer-legal-dot"><a href="" class="footer-legal-link">Privacy</a></span>
-                    </div>
-                </div>
-            </div>
+    <section class="content-grid">
+        <div class="content-grid--tile red">
+            <div class="content-grid--icon-twitter"></div>
+            <p class="">
+                <a class="link" href="#Razorfish"></a> Global execs weigh in on the most transformative marketing trends at <a class="link" href="">#CES2016</a> - read their insights here: <a class="link" href="">http://rfish.us/1ngnW2b</a></p>
+            <p class="body"><small>@Razorfish</small><small>January 4</small></p>
         </div>
-    </footer>
+        <div class="content-grid--tile black">
+            <div class="content-grid--icon-twitter"></div>
+            <p class="">
+                <a class="link" href="#Razorfish"></a> Global execs weigh in on the most transformative marketing trends at <a class="link" href="">#CES2016</a> - read their insights here: <a class="link" href="">http://rfish.us/1ngnW2b</a></p>
+            <p class="body"><small>@Razorfish</small><small>January 4</small></p>
+        </div>
+    </section>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/show-hide-header.js"></script>
     <script>
     new cbpScroller(document.getElementById('animate-container'));
+    </script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/stickyfill.js"></script>
+    <script>
+    $(function() {
+        $('.sticky').Stickyfill();
+    });
     </script>
 </body>
 

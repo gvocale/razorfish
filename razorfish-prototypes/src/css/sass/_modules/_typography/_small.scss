@@ -278,16 +278,6 @@ p {
     }
 }
 
-.body-larger {
-    font-family: $sans;
-    font-size: $scale05;
-    line-height: $prose-sans;
-    letter-spacing: $spacing-sans;
-    margin-bottom: 1em;
-    strong {
-        font-weight: 700;
-    }
-}
 
 .body {
     font-family: $sans;
@@ -297,6 +287,33 @@ p {
     margin-bottom: 1em;
     strong {
         font-weight: 700;
+    }
+    @media only screen and ($md) {
+        font-size: $scale05;
+    }
+    @media only screen and ($xxl) {
+        font-size: $scale06;
+    }
+}
+
+@mixin body {
+    font-family: $sans;
+    font-size: $scale04;
+    line-height: $prose-sans;
+    letter-spacing: $spacing-sans;
+    margin-bottom: 1em;
+    strong {
+        font-weight: 700;
+    }
+}
+
+.body.lead {
+    font-size: $scale05;
+    @media only screen and ($md) {
+        font-size: $scale06;
+    }
+    @media only screen and ($xxl) {
+        font-size: $scale07;
     }
 }
 
