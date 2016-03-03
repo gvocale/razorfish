@@ -62,22 +62,6 @@ a.footer-legal-link {
     display: none;
 }
 
-a.footer-legal-link:after {
-    display: block;
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border-bottom-width: 0.1em;
-    border-bottom-style: solid;
-}
-
-a.footer-legal-link:hover:after {
-    width: 100%;
-}
-
 .footer-razorfish-logo {
     @extend .logo-razorfish;
     width: 10rem;
@@ -101,37 +85,106 @@ a.footer-legal-link:hover:after {
     }
 }
 
-.share-icon.not-in-viewport {
-    transform: translateY(200%);
-    opacity: 0;
-    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-}
-
-.share-icon.not-in-viewport.in-viewport {
-    transform: translateY(0%);
-    opacity: 1;
-}
-
-.share-icon-container:nth-of-type(1) {
-    .share-icon.not-in-viewport.in-viewport {
-        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+.footer-v2 {
+    &--container-logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
     }
-}
-
-.share-icon-container:nth-of-type(2) {
-    .share-icon.not-in-viewport.in-viewport {
-        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
+    &--container-legal {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        @media only screen and ($lg) {
+            flex-direction: row;
+        }
     }
-}
-
-.share-icon-container:nth-of-type(3) {
-    .share-icon.not-in-viewport.in-viewport {
-        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
+    .logo-razorfish {
+        @include logo-razorfish;
+        height: 3em;
+        width: 8em;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1em;
+        @media only screen and ($lg) {
+            margin-bottom: 0;
+        }
+        @media only screen and ($xl) {
+            height: 4em;
+            width: 11em;
+        }
     }
-}
-
-.share-icon-container:nth-of-type(4) {
-    .share-icon.not-in-viewport.in-viewport {
-        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+    &--copyrights {
+        font-family: $sans;
+        font-size: $scale03;
+        letter-spacing: $spacing-sans-large;
+        line-height: $title-sans;
+        color: $grayDarker;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 1em;
+        text-align: center;
+        @media only screen and ($lg) {
+            text-align: right;
+            margin-bottom: 0;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale04;
+        }
+        .legal {
+            display: block;
+            margin-bottom: 1em;
+            @media only screen and ($lg) {
+                display: inline-block;
+                margin-bottom: 0;
+            }
+        }
+        .link {
+            margin-left: 2.2em;
+            &:first-of-type {
+                margin-left: 0;
+                &:after {
+                    display: none;
+                }
+            }
+            &:last-of-type {
+                margin-right: 0;
+            }
+            @media only screen and ($lg) {
+                margin-left: 2.2em;
+                &:first-of-type {
+                    margin-left: 2.2em;
+                    &:after {
+                        display: inline;
+                    }
+                }
+                &:last-of-type {
+                    margin-right: 2.2em;
+                }
+            }
+            &:after {
+                content: "·";
+                position: absolute;
+                display: inline-block;
+                margin-left: 1em;
+                margin-right: 1em;
+                left: -2.2em;
+                color: inherit;
+            }
+        }
+    }
+    .share-icon-group {
+        vertical-align: middle;
+    }
+    .container-fluid {
+        padding: 10% 10%;
+        @media only screen and ($lg) {
+            padding: 4% 5%;
+        }
+        @media only screen and ($xl) {
+            padding: 4% 10%;
+        }
     }
 }
