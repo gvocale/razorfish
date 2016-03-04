@@ -300,11 +300,6 @@ p {
 }
 
 .ul {
-    font-family: $sans;
-    font-size: $scale04;
-    line-height: $prose-sans;
-    letter-spacing: $spacing-sans;
-    margin-top: 1.5em;
     list-style-type: none;
     li:before {
         content: "";
@@ -317,7 +312,10 @@ p {
         display: inline-block;
     }
     li {
-        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+    li:last-of-type {
+        margin-bottom: 0;
     }
 }
 
@@ -348,7 +346,7 @@ p {
     &.muted {
         color: $grayDarker;
     }
-    &.primary {
+    &-primary {
         color: $primary;
     }
     &:focus {

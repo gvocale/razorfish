@@ -1,7 +1,7 @@
 (function() {
 
     /* DOM elements */
-    var feedItems = document.querySelectorAll('.feed-tile');
+    var feedItems = document.querySelectorAll('.feed--tile');
 
     /* variables */
     var feedItemsLen = feedItems.length
@@ -14,8 +14,8 @@
     function onScrollEventHandler(e) {
         for (i = 0; i < feedItemsLen; i++) {
             if (isScrolledIntoView(feedItems[i]) && !feedItems[i].classList.contains('reveal')) {
-                feedItems[i].querySelector('.feed-tile').addEventListener(transitionEndEvent, function(e) {
-                    this.querySelector('.feed-tile-content').classList.add('reveal');
+                feedItems[i].querySelector('.feed--tile').addEventListener(transitionEndEvent, function(e) {
+                    this.querySelector('.feed--tile--content').classList.add('reveal');
                     this.querySelector('img').classList.add('reveal');
                 });
                 feedItems[i].classList.add('reveal');

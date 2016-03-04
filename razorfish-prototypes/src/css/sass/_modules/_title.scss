@@ -1,0 +1,109 @@
+.title {
+    position: relative;
+    width: 100vw;
+    &--headline {
+        font-family: $display;
+        font-weight: 700;
+        line-height: $title-serif;
+        letter-spacing: $spacing-serif;
+        font-size: $scale06;
+        @media screen and ($lg) {
+            font-size: $scale07;
+        }
+        @media screen and ($xxl) {
+            font-size: $scale09;
+        }
+    }
+    &--subheadline {
+        font-family: $sans;
+        line-height: $prose-sans;
+        letter-spacing: $spacing-sans;
+        font-size: $scale04;
+        @media only screen and ($md) {
+            font-size: $scale05;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale06;
+        }
+    }
+    &.white {
+        background-color: $white;
+    }
+    &.white-darker {
+        background-color: $whiteDarker;
+    }
+    &.black {
+        background-color: $black;
+        color: $white;
+    }
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: 1em;
+        @media only screen and ($md) {
+            justify-content: flex-end;
+            margin-top: 0;
+        }
+    }
+    &--container {
+        width: 100vw;
+        align-items: flex-start;
+        transition: width 0.1s ease-in-out 0.1s;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        .container-fluid {
+            width: 100%;
+        }
+    }
+    &--primary {
+        height: 80vh;
+        .divider-md {
+            margin-top: 0;
+        }
+        .title--container {
+            height: 80vh;
+            position: fixed;
+            &.not-in-viewport {
+                opacity: 0;
+            }
+            &.not-in-viewport.in-viewport {
+                opacity: 1;
+            }
+        }
+        .title--headline {
+            font-size: $scale07;
+            @media screen and ($lg) {
+                font-size: $scale08;
+            }
+            @media screen and ($xxl) {
+                font-size: $scale10;
+            }
+        }
+    }
+    &--secondary {
+        text-align: center;
+        .divider-md {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .title--headline {
+            margin-bottom: 0.25em;
+        }
+    }
+    &--tertiary {
+        .divider-md {
+            margin-top: 0;
+        }
+        .container-fluid {
+            padding-bottom: $spacing03;
+            @media screen and ($xxl) {
+                padding-bottom: $spacing01;
+            }
+        }
+    }
+}

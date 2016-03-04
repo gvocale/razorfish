@@ -1,0 +1,411 @@
+.feed {
+    &--grid {
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        @media screen and ($md) {
+            height: 175vw;
+        }
+    }
+    &--tile {
+        float: left;
+        width: 100vw;
+        height: 50vw;
+        cursor: pointer;
+        cursor: hand;
+        @media screen and ($md) {
+            width: 50vw;
+            height: 25vw;
+        }
+        &:nth-of-type(2),
+        &:nth-of-type(3),
+        &:nth-of-type(6),
+        &:nth-of-type(8) {
+            height: 100vw;
+            @media screen and ($md) {
+                height: 50vw;
+            }
+        }
+        &:nth-of-type(3) {
+            transform: translateY(50%);
+            @media screen and ($md) {
+                transform: translateY(-50%);
+            }
+        }
+        &:nth-of-type(4) {
+            transform: translateY(-200%);
+            @media screen and ($md) {
+                transform: translateY(0);
+            }
+        }
+        &:nth-of-type(5) {
+            @media screen and ($md) {
+                transform: translateX(-100%);
+            }
+        }
+        &:nth-of-type(6) {
+            @media screen and ($md) {
+                transform: translateY(-50%) translateX(100%);
+            }
+        }
+        &:nth-of-type(7) {
+            @media screen and ($md) {
+                transform: translateX(-100%);
+            }
+        }
+        &:nth-of-type(8) {
+            @media screen and ($md) {
+                transform: translateX(-100%);
+            }
+        }
+        &:nth-of-type(9) {
+            @media screen and ($md) {
+                transform: translateY(-200%) translateX(100%);
+            }
+        }
+        &:nth-of-type(10) {
+            @media screen and ($md) {
+                transform: translateY(-100%);
+            }
+        }
+        &--eyebrow {
+            font-family: $sans;
+            line-height: $title-sans;
+            letter-spacing: $spacing-sans-large;
+            font-size: $scale03;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 0.5em;
+            @media screen and ($lg) {
+                font-size: $scale04;
+            }
+            @media screen and ($xxl) {
+                font-size: $scale05;
+            }
+        }
+        &--headline {
+            font-family: $display;
+            line-height: $title-serif;
+            letter-spacing: $spacing-serif;
+            font-size: $scale06;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            @media screen and ($xl) {
+                font-size: $scale07;
+            }
+            @media screen and ($xxl) {
+                font-size: $scale09;
+            }
+        }
+        &--subheadline {
+            font-family: $sans;
+            line-height: $prose-serif - 0.2;
+            letter-spacing: $spacing-serif;
+            font-size: $scale04;
+            font-weight: 400;
+            opacity: 0.5;
+            @media screen and ($xl) {
+                font-size: $scale04;
+            }
+            @media screen and ($xxl) {
+                font-size: $scale05;
+            }
+        }
+        &--content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        &--text-container {
+            width: 100%;
+            padding: 0 10%;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            @media screen and ($xxl) {
+                padding: 0 15%;
+            }
+        }
+        &--background {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            transition: all 10s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        &:hover {
+            .feed--tile--background {
+                transform: scale(1.05);
+                transition: all 1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+        }
+        &.split {
+            .feed--tile--headline {
+                font-size: $scale05;
+                @media screen and ($xl) {
+                    font-size: $scale06;
+                }
+                @media screen and ($xxl) {
+                    font-size: $scale08;
+                }
+            }
+        }
+    }
+}
+
+.text-top {
+    .feed--tile--text-container {
+        height: 50%;
+        align-self: flex-start;
+    }
+}
+
+.text-bottom {
+    .feed--tile--text-container {
+        height: 50%;
+        align-self: flex-end;
+    }
+}
+
+// Split Tiles
+.split {
+    background-position: 50% center;
+    .feed--tile--background {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .feed--tile--text-container {
+        margin-left: 50%;
+        padding: 5%;
+        width: 50%;
+        background-color: $white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .feed--tile--text-container:before {
+        right: 100%;
+        top: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-right-color: $white;
+        border-width: 1rem;
+        margin-top: -1rem;
+        transition: all 0.3s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        @media screen and ($md) {
+            border-width: 2rem;
+            margin-top: -2rem;
+        }
+    }
+}
+
+.split:hover {
+    .feed--tile--text-container:before {
+        border-width: 1.5rem;
+        margin-top: -1.5rem;
+        transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        @media screen and ($md) {
+            border-width: 2.5rem;
+            margin-top: -2.5rem;
+        }
+    }
+}
+
+.color-combination-1 {
+    .feed--tile--eyebrow {
+        color: $primary;
+    }
+    .feed--tile--headline {
+        color: $black;
+    }
+    .feed--tile--subheadline {
+        color: $black;
+    }
+    .feed--tile--background {
+        background-color: $white;
+    }
+}
+
+.color-combination-2 {
+    .feed--tile--eyebrow {
+        color: $primary;
+    }
+    .feed--tile--headline {
+        color: $white;
+    }
+    .feed--tile--subheadline {
+        color: $white;
+    }
+    .feed--tile--background {
+        background-color: $blackDarker;
+    }
+}
+
+.color-combination-3 {
+    .feed--tile--eyebrow {
+        color: $white;
+    }
+    .feed--tile--headline {
+        color: $black;
+    }
+    .feed--tile--subheadline {
+        color: $black;
+    }
+    .feed--tile--background {
+        background-color: $primary;
+    }
+}
+
+.color-combination-4 {
+    .feed--tile--eyebrow {
+        color: $black;
+    }
+    .feed--tile--headline {
+        color: $white;
+    }
+    .feed--tile--subheadline {
+        color: $white;
+    }
+    .feed--tile--background {
+        background-color: $secondary;
+    }
+}
+
+.color-combination-5 {
+    .feed--tile--eyebrow {
+        color: $black;
+    }
+    .feed--tile--headline {
+        color: $white;
+    }
+    .feed--tile--subheadline {
+        color: $white;
+    }
+    .feed--tile--background {
+        background-color: $tertiaryLighter;
+    }
+}
+
+// With Padding
+.feed--grid.padding {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+    @media screen and ($md) {
+        height: calc(90vw / 4 * 7);
+    }
+    @media screen and ($xl) {
+        width: 80vw;
+        height: calc(80vw / 4 * 7);
+    }
+    .feed--tile {
+        width: 90vw;
+        height: 45vw;
+        @media screen and ($md) {
+            width: 45vw;
+            height: 22.5vw;
+        }
+        @media screen and ($xl) {
+            width: 40vw;
+            height: 20vw;
+        }
+        &:nth-of-type(2),
+        &:nth-of-type(3),
+        &:nth-of-type(6),
+        &:nth-of-type(8) {
+            height: 90vw;
+            @media screen and ($md) {
+                height: 45vw;
+            }
+            @media screen and ($xl) {
+                height: 40vw;
+            }
+        }
+        &--headline {
+            font-size: $scale05;
+            @media screen and ($lg) {
+                font-size: $scale06;
+            }
+            @media screen and ($xl) {
+                font-size: $scale07;
+            }
+            @media screen and ($xxl) {
+                font-size: $scale09;
+            }
+        }
+        &--subheadline {
+            font-size: $scale04;
+            @media screen and ($xl) {
+                font-size: $scale04;
+            }
+            @media screen and ($xxl) {
+                font-size: $scale05;
+            }
+        }
+    }
+    .feed--tile.split {
+        .feed--tile--headline {
+            font-size: $scale04;
+            @media screen and ($lg) {
+                font-size: $scale05;
+            }
+            @media screen and ($xl) {
+                font-size: $scale06;
+            }
+            @media screen and ($xxl) {
+                font-size: $scale08;
+            }
+        }
+    }
+}
+
+.feed-sort {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: $spacing04;
+    @media screen and ($md) {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+    select {
+        width: 50%;
+        @media screen and ($md) {
+            width: auto;
+        }
+    }
+}

@@ -1,30 +1,94 @@
 .article {
     background-color: $white;
-}
-
-.article-content {
-    position: relative;
-}
-
-.article-photo-divider {
-    width: 100vw;
-    height: 80vh;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url('./../images/article-photo-audi.jpg');
-}
-
-.article {
-    .share-icons {
-        margin-top: $spacing01;
-        margin-bottom: $spacing05;
+    &--photo-divider {
+        width: 100vw;
+        height: 80vh;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &--body {
+        position: relative;
+    }
+    .share-icon-group {
+        margin-top: 0;
+        margin-bottom: 2em;
+    }
+    .h2-serif {
+        margin-bottom: 1em;
+    }
+    .h3-sans {
+        margin-bottom: 0.5em;
+    }
+    .body + .h3-sans {
+        margin-top: 2em;
+    }
+    .label {
+        font-family: $sans;
+        line-height: $title-sans;
+        font-size: $scale04;
+        opacity: 0.5;
+        letter-spacing: $spacing-sans-large;
+        text-transform: uppercase;
+        margin-bottom: 0.5em;
+    }
+    .pull-quote {
+        color: $tertiaryDarker;
+        margin-top: 1em;
+        margin-bottom: 1.5em;
+        .author {
+            margin-top: 1em;
+            color: $black;
+        }
+    }
+    .pull-quote + .h3-sans {
+        margin-top: 2em;
+    }
+    &--eyebrow {
+        font-family: $sans;
+        line-height: $title-sans;
+        opacity: 0.5;
+        letter-spacing: $spacing-sans-large;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+        font-size: $scale04;
+        @media screen and ($xxl) {
+            font-size: $scale05;
+        }
     }
 }
 
-.article-ul {
-    @extend .ul;
+.author-name {
+    font-family: $sans;
+    line-height: $title-sans;
+    font-weight: 700;
+    font-size: $scale06;
+    text-transform: none;
+    letter-spacing: $spacing-sans;
+    margin-top: 0.25em;
+}
+
+.author-title {
+    font-family: $sans;
+    line-height: $title-sans;
+    font-weight: 400;
+    font-size: $scale05;
+    text-transform: none;
+    letter-spacing: $spacing-sans;
+}
+
+.author-link {
+    font-family: $sans;
+    line-height: $title-sans;
+    font-weight: 700;
+    font-size: $scale05;
+    text-transform: none;
+    letter-spacing: $spacing-sans;
+}
+
+.info-container {
+    margin-top: $spacing03;
 }
 
 .article-headline-container {
@@ -53,15 +117,7 @@
     color: $white;
 }
 
-.article-h2 {
-    @extend .h2-serif;
-}
-
-.article-h3 {
-    @extend .h3-sans;
-}
-
-.article-h3-quote {
+.h3-quote {
     @extend .h3-sans;
     color: $white;
     letter-spacing: 0.01em;
@@ -114,31 +170,13 @@
     opacity: 0.5;
 }
 
-.article-pull-quote {
-    @extend .pull-quote;
-    color: $tertiaryDarker;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-    .author {
-        margin-top: 1em;
-        color: $black;
-    }
-}
 
-.article-background {
-    @include background-cover;
-}
-
-.article-background.gradient:before {
-    @include background-gradient;
-}
-
-.article-quote {
+.article--quote {
     background-color: $tertiaryDarker;
     text-align: center;
 }
 
-.article-quote-eyebrow {
+.article--quote-eyebrow {
     @extend .eyebrow-large;
     color: $primary;
     letter-spacing: $spacing-sans;
@@ -147,7 +185,7 @@
     margin-bottom: 1em;
 }
 
-.article-quote-headline {
+.article--quote-headline {
     @extend .quote-large;
     color: $white;
 }
@@ -166,13 +204,13 @@
     margin-top: 4rem;
 }
 
-.article-h3,
+.h3,
 .article-h4 {
     margin-top: $spacing07;
     margin-bottom: $spacing02;
 }
 
-.article-h3:first-child {
+.h3:first-child {
     margin-top: 0;
 }
 
@@ -252,79 +290,4 @@ a.article-footer-link,
 .sticky:after {
     content: '';
     display: table;
-}
-
-.article-left-rail {
-    .label {
-        font-family: $sans;
-        line-height: $title-sans;
-        font-size: $scale04;
-        opacity: 0.5;
-        letter-spacing: $spacing-sans-large;
-        text-transform: uppercase;
-    }
-    .author-name {
-        font-family: $sans;
-        line-height: $title-sans;
-        font-weight: 700;
-        font-size: $scale06;
-        text-transform: none;
-        letter-spacing: $spacing-sans;
-        margin-top: 0.25em;
-    }
-    .author-title {
-        font-family: $sans;
-        line-height: $title-sans;
-        font-weight: 400;
-        font-size: $scale05;
-        text-transform: none;
-        letter-spacing: $spacing-sans;
-    }
-    .author-link {
-        @extend .link;
-        font-family: $sans;
-        line-height: $title-sans;
-        font-weight: 700;
-        font-size: $scale05;
-        text-transform: none;
-        letter-spacing: $spacing-sans;
-    }
-    .info-container {
-        margin-top: $spacing03;
-    }
-    .share-icons {
-        margin-top: 0;
-    }
-}
-
-.article-body-container {
-    .article-eyebrow {
-        font-family: $sans;
-        line-height: $title-sans;
-        font-size: $scale04;
-        opacity: 0.5;
-        letter-spacing: $spacing-sans-large;
-        text-transform: uppercase;
-    }
-    .article-eyebrow + .article-h2 {
-        margin-top: 0.25em;
-    }
-    .article-h2 + .article-body {
-        margin-top: 2em;
-    }
-    .article-pull-quote + .article-h3 {
-        margin-top: 4em;
-    }
-    .article-h2 + .article-h3 {
-        margin-top: 2em;
-    }
-    .article-body + .article-h3 {
-        margin-top: 2em;
-    }
-    .article-h3 {
-        margin: 0;
-    }
-    .article-h3 + .article-body {
-        margin-top: 1.3em;
-    }
 }
