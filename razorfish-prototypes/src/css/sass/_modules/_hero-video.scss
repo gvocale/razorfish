@@ -1,0 +1,68 @@
+.hero-video {
+    position: relative;
+    width: 100vw;
+    height: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    @media screen and ($md) {
+        height: 50vw;
+    }
+    @media screen and ($xxl) {
+        height: 40vw;
+    }
+}
+
+.hero-video-text-container {
+    width: 100%;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    justify-content: center;
+    color: $white;
+    text-align: center;
+    @media screen and ($md) {
+        padding: 0 20%;
+    }
+    @media screen and ($xl) {
+        padding: 0 30%;
+    }
+}
+
+.hero-video-headline {
+    @extend .h2;
+}
+
+.hero-video-subheadline {
+    @extend .h5;
+}
+
+.hero-video-headline + .hero-video-subheadline {
+    margin-top: 2em;
+}
+
+.hero-video-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
+    background-image: url('./../images/locations-background.jpg'), linear-gradient(90deg, $tertiary, $tertiaryDarker);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    transition: all 0.3s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.video-play-button + .hero-video-text-container {
+    margin-top: 1.5rem;
+    @media screen and ($md) {
+        margin-top: 2rem;
+    }
+}

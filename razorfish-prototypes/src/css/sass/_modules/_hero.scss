@@ -1,0 +1,98 @@
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    .container-fluid {
+        padding-bottom: 25%;
+        z-index: 10;
+        position: relative;
+        @media screen and ($md) {
+            padding-bottom: 15%;
+        }
+        @media screen and ($xl) {
+            padding-bottom: 10%;
+        }
+        .row {
+            position: relative;
+        }
+    }
+}
+
+.video-play-button {
+    margin: auto;
+    margin-bottom: $spacing01;
+}
+
+.hero.red {
+    .hero-background {
+        background-color: $secondary;
+    }
+    .divider-md {
+        background-color: $black;
+    }
+}
+
+.hero-text-container {
+    text-align: left;
+    .divider-md {
+        margin-top: 0;
+    }
+}
+
+.hero-eyebrow {
+    @extend .eyebrow-small;
+    color: $white;
+    margin-bottom: 1em;
+}
+
+.hero-headline {
+    @extend .h1-serif;
+    line-height: $title-serif - 0.2;
+    color: $white;
+}
+
+.hero-subheadline {
+    @extend .subheadline;
+    color: $white;
+    margin-top: 1em;
+}
+
+.hero-scroll-down-container {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: 1s ease-in-out 0.5s infinite bounce;
+    z-index: 10;
+    @media screen and ($xl) {
+        bottom: 5%;
+    }
+}
+
+.hero-scroll-down-container:hover {
+    animation-play-state: paused;
+}
+
+.hero-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.hero-background.gradient:before {
+    @include background-gradient;
+}
+
+.hero-background.in-viewport {
+    animation: 20s ease-out 0.5s forwards zoom;
+}

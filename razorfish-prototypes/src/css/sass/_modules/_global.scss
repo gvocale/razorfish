@@ -1,2 +1,39 @@
 
 
+/*
+ * Base Site Styles
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    @media screen and ($md) {
+        z-index: $medium-breakpoint;
+    }
+    @media screen and ($lg) {
+        z-index: $large-breakpoint;
+    }
+    @media screen and ($xl) {
+        z-index: $x-large-breakpoint;
+    }
+}
+
+
+/*
+ * Base Module Styles
+*/
+
+.module {}
+
+
+/*
+ * Global UX Elements
+*/

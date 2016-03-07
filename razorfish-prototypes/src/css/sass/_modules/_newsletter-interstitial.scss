@@ -1,0 +1,32 @@
+.newsletter-interstitial {
+    background-color: $grayLighter;
+    .container-fluid {
+        padding-top: 20%;
+        padding-bottom: 20%;
+        @media screen and ($xl) {
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+    }
+    .form {
+        margin-top: 1em;
+    }
+    button.secondary {
+        margin-top: $spacing06;
+        @media screen and ($lg) {
+            margin-top: $spacing02;
+        }
+        @media screen and ($xl) {
+            margin-top: $spacing01;
+        }
+    }
+}
+
+.newsletter-interstitial-headline {
+    @extend .h3-serif;
+}
+
+.newsletter-interstitial.black {
+    color: $white;
+    background-color: $blackLighter;
+}

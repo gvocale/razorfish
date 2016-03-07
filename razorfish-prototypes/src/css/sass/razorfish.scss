@@ -1,117 +1,40 @@
 @import "_bootstrap/bootstrap-grid";
 @import "compass/reset";
-@import "_modules/settings";
 @import "_modules/animations-global";
-
-/*
- * Small Breakpoints
- */
-
-@import "_modules/_article/small";
-@import "_modules/_contact-form/small";
-@import "_modules/_contentblocks/small";
-@import "_modules/_disciplines/small";
-@import "_modules/_divider/small";
-
-@import "_modules/_find-an-office/small";
-@import "_modules/_footer/small";
-@import "_modules/_global/small";
-@import "_modules/_globalheader/small";
-@import "_modules/_hero-video/small";
-@import "_modules/_leadership/small";
-@import "_modules/_locations/small";
-@import "_modules/_navigation/small";
-@import "_modules/_related/small";
-@import "_modules/_ui/small";
-
-/*
- * Medium Breakpoints
- */
-
-@import "_modules/_article/medium";
-@import "_modules/_contact-form/medium";
-@import "_modules/_contentblocks/medium";
-@import "_modules/_disciplines/medium";
-@import "_modules/_divider/medium";
-
-@import "_modules/_find-an-office/medium";
-@import "_modules/_footer/medium";
-@import "_modules/_global/medium";
-@import "_modules/_globalheader/medium";
-@import "_modules/_hero-video/medium";
-@import "_modules/_leadership/medium";
-@import "_modules/_locations/medium";
-@import "_modules/_navigation/medium";
-@import "_modules/_related/medium";
-@import "_modules/_ui/medium";
-
-/*
- * Large Breakpoints
- */
-
-@import "_modules/_article/large";
-@import "_modules/_contact-form/large";
-@import "_modules/_contentblocks/large";
-@import "_modules/_disciplines/large";
-@import "_modules/_divider/large";
-
-@import "_modules/_find-an-office/large";
-@import "_modules/_footer/large";
-@import "_modules/_global/large";
-@import "_modules/_globalheader/large";
-@import "_modules/_hero-video/large";
-@import "_modules/_leadership/large";
-@import "_modules/_locations/large";
-@import "_modules/_navigation/large";
-@import "_modules/_related/large";
-@import "_modules/_ui/large";
-
-/*
- * X-Large Breakpoints
- */
-
-@import "_modules/_article/xlarge";
-@import "_modules/_contact-form/xlarge";
-@import "_modules/_contentblocks/xlarge";
-@import "_modules/_disciplines/xlarge";
-@import "_modules/_divider/xlarge";
-
-@import "_modules/_find-an-office/xlarge";
-@import "_modules/_footer/xlarge";
-@import "_modules/_global/xlarge";
-@import "_modules/_globalheader/xlarge";
-@import "_modules/_hero-video/xlarge";
-@import "_modules/_leadership/xlarge";
-@import "_modules/_locations/xlarge";
-@import "_modules/_navigation/xlarge";
-@import "_modules/_related/xlarge";
-@import "_modules/_ui/xlarge";
-
-/*
- * XX-Large Breakpoints
- */
-
-@import "_modules/_article/xxlarge";
-@import "_modules/_contact-form/xxlarge";
-@import "_modules/_contentblocks/xxlarge";
-@import "_modules/_disciplines/xxlarge";
-@import "_modules/_divider/xxlarge";
-
-@import "_modules/_find-an-office/xxlarge";
-@import "_modules/_footer/xxlarge";
-@import "_modules/_global/xxlarge";
-@import "_modules/_globalheader/xxlarge";
-@import "_modules/_hero-video/xxlarge";
-@import "_modules/_leadership/xxlarge";
-@import "_modules/_locations/xxlarge";
-@import "_modules/_navigation/xxlarge";
-@import "_modules/_related/xxlarge";
-@import "_modules/_ui/xxlarge";
-
-
+//*------------------------------------*\
+//   $SASS Settings
+//*------------------------------------*/
+// SASS Settings, Mixins, and Functions
+// No direct output
+@import "_modules/config"; // sets direction, lt-ie9, breakpoint sizes, max-breakpoint
+@import "_modules/dependencies"; // loads Compass mixins
+@import "_modules/color"; // sets various app-level colors
+@import "_modules/global"; // sets various app-level variables & mix-ins
+@import "_modules/icons"; // sets icon font
+@import "_modules/mixin";
+@import "_modules/typography";
+@import "_modules/grid";
+@import "_modules/layout";
+// All components
+@import "_modules/tabs";
+@import "_modules/article";
+@import "_modules/contact-form";
 @import "_modules/content-grid";
+@import "_modules/disciplines";
+@import "_modules/divider";
 @import "_modules/feed";
-@import "_modules/share-icons";
+@import "_modules/find-an-office";
+@import "_modules/footer";
+@import "_modules/form";
+@import "_modules/hero";
+@import "_modules/hero-video";
+@import "_modules/leadership";
+@import "_modules/locations";
 @import "_modules/most-recent";
+@import "_modules/navigation";
+@import "_modules/newsletter-interstitial";
 @import "_modules/news-feed";
+@import "_modules/related";
+@import "_modules/share-icons";
 @import "_modules/title";
+@import "_modules/ui";

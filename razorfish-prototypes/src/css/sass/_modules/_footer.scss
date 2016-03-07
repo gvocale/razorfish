@@ -1,0 +1,193 @@
+.footer {
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    background: $white;
+}
+
+.footer-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    // transform: translateY(50%);
+}
+
+.footer.reveal {
+    .footer-content {
+        transform: translateY(0%);
+        transition: all 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+}
+
+.footer-legal {
+    color: $grayDarker;
+    font-size: $scale03;
+    text-align: center;
+    font-family: $sans;
+    letter-spacing: 0.02em;
+    margin-top: 2rem;
+    @media screen and ($xl) {
+        margin-top: 4rem;
+        font-size: $scale04;
+    }
+}
+
+span.footer-legal-copyright {
+    margin: 0 0.5em 1em 0;
+    display: block;
+    line-height: $scale06;
+    @media screen and ($md) {
+        display: inline-block;
+    }
+}
+
+.footer-legal-dot:before {
+    content: "·";
+    color: $grayDarker;
+    margin-left: 1em;
+    margin-right: 1em;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-legal-dot:nth-of-type(2):before {
+    display: none;
+    @media screen and ($md) {
+        display: inline;
+    }
+}
+
+.footer-razorfish-logo {
+    @extend .logo-razorfish;
+    width: 10rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.footer-divider {
+    margin: 2rem 0;
+    @media screen and ($md) {
+        margin: 2.5rem 0;
+    }
+}
+
+.footer-share-icons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .share-icon-container {
+        margin: 0 1rem;
+    }
+}
+
+.footer-v2 {
+    &--container-logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &--container-legal {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        @media only screen and ($lg) {
+            flex-direction: row;
+        }
+    }
+    .logo-razorfish {
+        @include logo-razorfish;
+        height: 3em;
+        width: 8em;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1em;
+        @media only screen and ($lg) {
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+        @media only screen and ($xl) {
+            height: 4em;
+            width: 11em;
+        }
+    }
+    &--copyrights {
+        font-family: $sans;
+        font-size: $scale03;
+        letter-spacing: $spacing-sans-large;
+        line-height: $title-sans;
+        color: $grayDarker;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 1em;
+        text-align: center;
+        @media only screen and ($lg) {
+            text-align: right;
+            margin-bottom: 0;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale04;
+        }
+        .legal {
+            display: block;
+            margin-bottom: 1em;
+            @media only screen and ($lg) {
+                display: inline-block;
+                margin-bottom: 0;
+            }
+        }
+        .link {
+            margin-left: 2.2em;
+            &:first-of-type {
+                margin-left: 0;
+                &:after {
+                    display: none;
+                }
+            }
+            &:last-of-type {
+                margin-right: 0;
+            }
+            @media only screen and ($lg) {
+                margin-left: 2.2em;
+                &:first-of-type {
+                    margin-left: 2.2em;
+                    &:after {
+                        display: inline;
+                    }
+                }
+                &:last-of-type {
+                    margin-right: 2.2em;
+                }
+            }
+            &:after {
+                content: "·";
+                position: absolute;
+                display: inline-block;
+                margin-left: 1em;
+                margin-right: 1em;
+                left: -2.2em;
+                color: inherit;
+            }
+        }
+    }
+    .share-icon-group {
+        vertical-align: middle;
+    }
+    .container-fluid {
+        padding: 10% 10%;
+        @media only screen and ($lg) {
+            padding: 4% 5%;
+        }
+    }
+}
