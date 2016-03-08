@@ -40,9 +40,8 @@
             margin-right: auto;
         }
     }
-    .share-icon-group {
-        margin-top: 0;
-        margin-bottom: 2em;
+    .share--icon-group {
+        margin-bottom: 1em;
     }
     .h2-serif + .body {
         margin-top: 2em;
@@ -56,17 +55,8 @@
     .body + .h3-sans {
         margin-top: 3em;
     }
-    .article--eyebrow + .h2-serif {
+    .eyebrow + .h2-serif {
         margin-top: 0.5em;
-    }
-    .label {
-        font-family: $sans;
-        line-height: $title-sans;
-        font-size: $scale04;
-        opacity: 0.5;
-        letter-spacing: $spacing-sans-large;
-        text-transform: uppercase;
-        margin-bottom: 0.5em;
     }
     .pull-quote {
         color: $tertiaryDarker;
@@ -80,94 +70,100 @@
     .pull-quote + .h3-sans {
         margin-top: 2em;
     }
-    &--eyebrow {
-        font-family: $sans;
-        line-height: $title-sans;
-        opacity: 0.5;
-        letter-spacing: $spacing-sans-large;
-        text-transform: uppercase;
-        font-size: $scale04;
-        @media screen and ($xxl) {
-            font-size: $scale05;
+    &--quote {
+        background-color: $tertiaryDarker;
+        text-align: center;
+    }
+    &--quote-eyebrow {
+        @extend .eyebrow;
+        color: $primary;
+        letter-spacing: $spacing-sans;
+        margin: auto;
+        text-transform: none;
+        margin-bottom: 1em;
+    }
+    &--quote-headline {
+        @extend .quote-large;
+        color: $white;
+    }
+    &--left-rail {
+        margin-bottom: 3em;
+        @media screen and ($md) {
+            margin-bottom: 4em;
+        }
+        @media screen and ($xl) {
+            margin-bottom: 0;
         }
     }
-}
-
-.author-name {
-    font-family: $sans;
-    line-height: $title-sans;
-    font-weight: 700;
-    font-size: $scale06;
-    text-transform: none;
-    letter-spacing: $spacing-sans;
-    margin-top: 0.25em;
-}
-
-.author-title {
-    font-family: $sans;
-    line-height: $title-sans;
-    font-weight: 400;
-    font-size: $scale05;
-    text-transform: none;
-    letter-spacing: $spacing-sans;
-}
-
-.author-link {
-    font-family: $sans;
-    line-height: $title-sans;
-    font-weight: 700;
-    font-size: $scale05;
-    text-transform: none;
-    letter-spacing: $spacing-sans;
-}
-
-.info-container {
-    margin-top: $spacing03;
-}
-
-.article-author {
-    margin-top: $spacing01;
-    @extend .body;
-    line-height: $title-sans + 0.1em;
-    text-transform: uppercase;
-    strong {
-        font-weight: 700;
+    .video {
+        margin-top: 4em;
+        margin-bottom: 4em;
+    }
+    &--footer {
+        margin-top: 4em;
     }
 }
 
-.article-author-title {
-    margin-top: 0.5em;
-}
-
-.article--quote {
-    background-color: $tertiaryDarker;
-    text-align: center;
-}
-
-.article--quote-eyebrow {
-    @extend .eyebrow-large;
-    color: $primary;
-    letter-spacing: $spacing-sans;
-    margin: auto;
-    text-transform: none;
-    margin-bottom: 1em;
-}
-
-.article--quote-headline {
-    @extend .quote-large;
-    color: $white;
-}
-
-.article-video {
-    @include video;
-    margin-top: 4em;
-    margin-bottom: 4em;
+.author {
+    &--eyebrow {
+        font-family: $sans;
+        font-size: $scale03;
+        font-weight: 700;
+        font-style: normal;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans-mega;
+        text-transform: uppercase;
+        opacity: 0.3;
+        margin-bottom: 0.25em;
+    }
+    &--name {
+        font-family: $sans;
+        line-height: $title-sans;
+        font-weight: 700;
+        font-size: $scale05;
+        text-transform: none;
+        letter-spacing: $spacing-sans;
+        @media screen and ($xl) {
+            // font-size: $scale06;
+        }
+    }
+    &--title {
+        font-family: $sans;
+        line-height: $title-sans;
+        font-weight: 400;
+        font-size: $scale04;
+        text-transform: none;
+        letter-spacing: $spacing-sans;
+        @media screen and ($xl) {
+            // font-size: $scale05;
+        }
+    }
+    &--contact {
+        font-family: $sans;
+        line-height: $title-sans;
+        font-weight: 700;
+        font-size: $scale04;
+        text-transform: none;
+        letter-spacing: $spacing-sans;
+        @media screen and ($xl) {
+            // font-size: $scale05;
+        }
+    }
+    &--container {
+        margin-top: 1em;
+        @media screen and ($xl) {
+            margin-top: 2em;
+        }
+        &:first {
+            margin-top: 0;
+        }
+    }
 }
 
 .sticky {
     position: -webkit-sticky;
     position: sticky;
-    top: 10%;
+    top: 10vw;
 }
 
 .sticky:before,

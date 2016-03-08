@@ -6,6 +6,9 @@
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-end;
+    .eyebrow {
+        margin-bottom: 1em;
+    }
     .container-fluid {
         padding-bottom: 25%;
         z-index: 10;
@@ -20,19 +23,21 @@
             position: relative;
         }
     }
-}
-
-.video-play-button {
-    margin: auto;
-    margin-bottom: $spacing01;
-}
-
-.hero.red {
-    .hero-background {
-        background-color: $secondary;
+    .video-play-button {
+        margin: auto;
+        margin-bottom: $spacing01;
     }
-    .divider-md {
-        background-color: $black;
+    &-white {
+        color: $white;
+    }
+    &-red {
+        color: $white;
+        .hero-background {
+            background-color: $secondary;
+        }
+        .divider-md {
+            background-color: $black;
+        }
     }
 }
 
@@ -43,21 +48,13 @@
     }
 }
 
-.hero-eyebrow {
-    @extend .eyebrow-small;
-    color: $white;
-    margin-bottom: 1em;
-}
-
 .hero-headline {
     @extend .h1-serif;
     line-height: $title-serif - 0.2;
-    color: $white;
 }
 
 .hero-subheadline {
     @extend .subheadline;
-    color: $white;
     margin-top: 1em;
 }
 

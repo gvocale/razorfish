@@ -24,8 +24,10 @@
             <img class="razorfish-logo" src="images/logo-razorfish.svg" alt="">
             <span class="navigation-global">Global</span>
         </div>
-        <label for="navigation-checkbox" class="hamburger-container">
-            <div class="hamburger"></div>
+        <label for="navigation-checkbox" class="hamburger hamburger--spin">
+            <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+            </span>
         </label>
     </label>
     <nav class="navigation-overlay" role="navigation">
@@ -62,7 +64,6 @@
                             <li class="navigation-overlay--link-container">
                                 <a class="link" href="article-body.html">Article Body</a>
                             </li>
-
                             <li class="navigation-overlay--link-container">
                                 <a class="link" href="content-grid.html">Content Grid</a>
                             </li>
@@ -106,41 +107,41 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12 col-lg-6">
-                    <ul class="share-icons col-xs-12">
-                        <a href="" class="share-icon-container">
-                            <li class="icon-linkedin share-icon">
+                    <ul class="share--icon-group gray">
+                        <a href="" class="share--icon-container">
+                            <li class="icon-linkedin share--icon animate">
                             </li>
                         </a>
-                        <a href="" class="share-icon-container">
-                            <li class="icon-twitter share-icon">
+                        <a href="" class="share--icon-container">
+                            <li class="icon-twitter share--icon animate">
                             </li>
                         </a>
-                        <a href="" class="share-icon-container">
-                            <li class="icon-facebook share-icon">
+                        <a href="" class="share--icon-container">
+                            <li class="icon-facebook share--icon animate">
                             </li>
                         </a>
-                        <a href="" class="share-icon-container">
-                            <li class="icon-mail share-icon">
+                        <a href="" class="share--icon-container">
+                            <li class="icon-mail share--icon animate">
                             </li>
                         </a>
                     </ul>
                 </div>
                 <div class="col-xs-12 col-lg-6">
-                    <ul class="share-icons gray col-xs-12">
-                        <a href="" class="share-icon-container">
-                            <li class="icon-linkedin share-icon">
+                    <ul class="share--icon-group">
+                        <a href="" class="share--icon-container">
+                            <li class="icon-linkedin share--icon animate">
                             </li>
                         </a>
-                        <a href="" class="share-icon-container">
-                            <li class="icon-twitter share-icon">
+                        <a href="" class="share--icon-container">
+                            <li class="icon-twitter share--icon animate">
                             </li>
                         </a>
-                        <a href="" class="share-icon-container">
-                            <li class="icon-facebook share-icon">
+                        <a href="" class="share--icon-container">
+                            <li class="icon-facebook share--icon animate">
                             </li>
                         </a>
-                        <a href="" class="share-icon-container">
-                            <li class="icon-mail share-icon">
+                        <a href="" class="share--icon-container">
+                            <li class="icon-mail share--icon animate">
                             </li>
                         </a>
                     </ul>
@@ -151,7 +152,8 @@
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
-    <script src="js/show-hide-header.js"></script>    <script>
+    <script src="js/show-hide-header.js"></script>
+    <script>
     new cbpScroller(document.getElementById('animate-container'));
     </script>
 </body>
