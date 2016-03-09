@@ -1,4 +1,5 @@
-.article {
+.article,
+.press-release {
     background-color: $white;
     &--photo-divider {
         width: 100vw;
@@ -116,43 +117,25 @@
         opacity: 0.3;
         margin-bottom: 0.25em;
     }
-    &--name {
+    &--body {
         font-family: $sans;
         line-height: $title-sans;
-        font-weight: 700;
-        font-size: $scale05;
-        text-transform: none;
         letter-spacing: $spacing-sans;
-        @media screen and ($xl) {
-            // font-size: $scale06;
-        }
-    }
-    &--title {
-        font-family: $sans;
-        line-height: $title-sans;
-        font-weight: 400;
         font-size: $scale04;
-        text-transform: none;
-        letter-spacing: $spacing-sans;
-        @media screen and ($xl) {
-            // font-size: $scale05;
+        @media screen and ($xxl) {
+            font-size: $scale05;
         }
-    }
-    &--contact {
-        font-family: $sans;
-        line-height: $title-sans;
-        font-weight: 700;
-        font-size: $scale04;
-        text-transform: none;
-        letter-spacing: $spacing-sans;
-        @media screen and ($xl) {
-            // font-size: $scale05;
+        small {
+            font-size: $scale03;
+            @media screen and ($xxl) {
+                font-size: $scale04;
+            }
         }
     }
     &--container {
         margin-top: 1em;
         @media screen and ($xl) {
-            margin-top: 2em;
+            margin-top: 1.5em;
         }
         &:first {
             margin-top: 0;
