@@ -1,1 +1,0 @@
-$(document).ready(function(){function i(i){var n=$(window).scrollTop(),o=n+$(window).height(),t=$(i).offset().top,e=t+$(i).height();return o>=e&&t>=n}$(window).on("load scroll resize",function(){$("section").each(function(){i(this)===!0&&$(this).addClass("in-view"),i(this)===!1&&$(this).removeClass("in-view")})})});
