@@ -1,7 +1,7 @@
 .title {
     position: relative;
     width: 100vw;
-    &--headline {
+    &__headline {
         font-family: $display;
         font-weight: 700;
         line-height: $title-serif;
@@ -14,7 +14,7 @@
             font-size: $scale09;
         }
     }
-    &--subheadline {
+    &__subheadline {
         font-family: $sans;
         line-height: $prose-sans;
         letter-spacing: $spacing-sans;
@@ -46,7 +46,7 @@
             margin-top: 0;
         }
     }
-    &--container {
+    &__container {
         width: 100vw;
         align-items: flex-start;
         transition: width 0.1s ease-in-out 0.1s;
@@ -60,12 +60,12 @@
             width: 100%;
         }
     }
-    &--primary {
+    &__primary {
         height: 80vh;
         .divider-md {
             margin-top: 0;
         }
-        .title--container {
+        .title__container {
             height: 80vh;
             position: fixed;
             &.not-in-viewport {
@@ -75,7 +75,7 @@
                 opacity: 1;
             }
         }
-        .title--headline {
+        .title__headline {
             font-size: $scale07;
             @media screen and ($lg) {
                 font-size: $scale08;
@@ -85,17 +85,17 @@
             }
         }
     }
-    &--secondary {
+    &__secondary {
         text-align: center;
         .divider-md {
             margin-left: auto;
             margin-right: auto;
         }
-        .title--headline {
+        .title__headline {
             margin-bottom: 0.25em;
         }
     }
-    &--tertiary {
+    &__tertiary {
         .divider-md {
             margin-top: 0;
         }

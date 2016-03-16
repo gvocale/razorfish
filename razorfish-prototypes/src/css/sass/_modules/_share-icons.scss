@@ -1,5 +1,5 @@
 .share {
-    &--icon {
+    &__icon {
         display: block;
         width: 2.5rem;
         height: 2.5rem;
@@ -27,7 +27,7 @@
             transition-delay: 0;
         }
     }
-    &--icon-container {
+    &__icon-container {
         margin: 1px;
         display: flex;
         align-items: center;
@@ -52,7 +52,7 @@
                 width: 100%;
             }
             &:hover {
-                .share--icon {
+                .share__icon {
                     animation-name: bounce;
                     animation-duration: 0.5s;
                     animation-timing-function: ease-in-out;
@@ -65,7 +65,7 @@
             }
         }
     }
-    &--icon-group {
+    &__icon-group {
         display: inline-block;
         display: flex;
         flex-direction: row;
@@ -74,7 +74,7 @@
             display: inline-block;
         }
         &.gray {
-            .share--icon-container {
+            .share__icon-container {
                 background-color: $grayLighter;
             }
         }
@@ -82,7 +82,7 @@
 }
 
 @for $i from 1 through 20 {
-    .share--icon-container:nth-of-type(#{$i}) .share--icon.in-viewport {
+    .share__icon-container:nth-of-type(#{$i}) .share__icon.in-viewport {
         transition-delay: calc(0.1s + (0.05s * #{$i}));
         transform: translateY(0%);
         opacity: 1;

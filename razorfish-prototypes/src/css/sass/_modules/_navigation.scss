@@ -81,7 +81,7 @@
     position: absolute;
 }
 
-.navigation-overlay--link-container {
+.navigation-overlay__link-container {
     // animation-name: fadein;
     // animation-duration: 0.1s;
     // animation-timing-function: ease-out;
@@ -95,20 +95,20 @@
     transition: all 0s linear 0s;
 }
 
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay--link-container {
+#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container {
     opacity: 1;
     transform: translateY(0%);
     transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
 }
 
 @for $i from 1 through 20 {
-    #navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay--link-container:nth-of-type(#{$i}) {
+    #navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(#{$i}) {
         transition-delay: calc(0.2s + (0.025s * #{$i}));
     }
 }
 
 .navigation-overlay {
-    &--link-container {
+    &__link-container {
         &:after {
             display: inline;
             content: "/";
@@ -126,7 +126,7 @@
             display: none;
         }
     }
-    &--pages {
+    &__pages {
         @extend .h2-sans;
         text-decoration: none;
         display: flex;
@@ -135,14 +135,14 @@
         justify-content: center;
         margin-bottom: 2em;
     }
-    &--components {
+    &__components {
         @extend .h4-sans;
         text-decoration: none;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
-        .navigation-overlay--link-container {
+        .navigation-overlay__link-container {
             margin-bottom: 0.5em;
         }
     }
@@ -230,7 +230,7 @@
     }
 }
 
-.navigation-bar .hamburger--spin {
+.navigation-bar .hamburger__spin {
     .hamburger-inner {
         transition-duration: 0.3s;
         transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -243,7 +243,7 @@
     }
 }
 
-#navigation-checkbox:checked ~ .navigation-bar .hamburger--spin {
+#navigation-checkbox:checked ~ .navigation-bar .hamburger__spin {
     .hamburger-inner {
         -webkit-transform: rotate(225deg);
         transform: rotate(225deg);
