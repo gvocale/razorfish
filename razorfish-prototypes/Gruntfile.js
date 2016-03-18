@@ -8,7 +8,7 @@ module.exports = function(grunt) {
                 options: {
                     httpPath: "/",
                     cssDir: "dist/css",
-                    sassDir: "src/css/sass",
+                    sassDir: "src/sass",
                     imagesDir: "src/img",
                     javascriptsDir: "src/js",
                     generatedImagesDir: "dist/img/sprites",
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                 options: {
                     httpPath: "/",
                     cssDir: "dist/css",
-                    sassDir: "src/css/sass",
+                    sassDir: "src/sass",
                     imagesDir: "src/img",
                     javascriptsDir: "src/js",
                     generatedImagesDir: "dist/img/sprites",
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
         watch: {
 
             compass: {
-                files: ['src/css/sass/**/*.scss'],
+                files: ['src/sass/**/*.scss'],
                 tasks: ['compass:dev', 'autoprefixer:dev'],
                 options: {
                     livereload: false,
