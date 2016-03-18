@@ -119,7 +119,7 @@ p {
 }
 
 .h1-sans {
-    font-family: $display;
+    font-family: $sans;
     font-size: $scale07;
     line-height: $title-sans;
     letter-spacing: $spacing-serif;
@@ -354,7 +354,7 @@ p {
             font-size: $scale05;
         }
     }
-    &.two-columns {
+    &-two-columns {
         columns: 1;
         @media screen and ($xl) {
             columns: 2;
@@ -445,7 +445,7 @@ p {
             transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
         }
     }
-    &.muted {
+    &-muted {
         color: $grayDarker;
     }
     &-primary {
@@ -489,4 +489,16 @@ p {
 a[href^="tel"] {
     color: inherit;
     text-decoration: none;
+}
+
+// Style for typography page (part of the component list)
+.typography {
+    &__body {
+        .row div {
+            margin-bottom: 4em;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
