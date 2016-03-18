@@ -379,7 +379,7 @@ p {
         width: 0.3em;
         height: 0.3em;
         background-color: #a9c000;
-        margin-right: 0.75em;
+        margin-right: 0.9em;
         top: 50%;
         transform: translateY(-50%);
         display: inline-block;
@@ -389,6 +389,28 @@ p {
     }
     li:last-of-type {
         margin-bottom: 0;
+    }
+}
+
+.ol {
+    list-style-type: none;
+    counter-reset: li;
+    li {
+        margin-bottom: 0.5em;
+        position: relative;
+        margin-left: 0;
+        &:before {
+            content: counter(li);
+            counter-increment: li;
+            color: $primary;
+            font-size: 0.8077em;
+            font-weight: 700;
+            width: 1.5em;
+            display: inline-block;
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 }
 
