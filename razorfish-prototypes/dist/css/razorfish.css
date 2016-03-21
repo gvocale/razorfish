@@ -2615,7 +2615,7 @@ p {
 }
 
 /* line 159, ../../src/sass/_modules/_typography.scss */
-.h2-sans, .navigation-overlay__pages {
+.h2-sans, .site-navigation__pages {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   font-size: 1.6154rem;
   line-height: 1.4;
@@ -2624,19 +2624,19 @@ p {
 }
 @media only screen and (min-width: 768px) {
   /* line 159, ../../src/sass/_modules/_typography.scss */
-  .h2-sans, .navigation-overlay__pages {
+  .h2-sans, .site-navigation__pages {
     font-size: 2.1154rem;
   }
 }
 @media only screen and (min-width: 992px) {
   /* line 159, ../../src/sass/_modules/_typography.scss */
-  .h2-sans, .navigation-overlay__pages {
+  .h2-sans, .site-navigation__pages {
     font-size: 2.6154rem;
   }
 }
 @media only screen and (min-width: 1600px) {
   /* line 159, ../../src/sass/_modules/_typography.scss */
-  .h2-sans, .navigation-overlay__pages {
+  .h2-sans, .site-navigation__pages {
     font-size: 3.4231rem;
   }
 }
@@ -2723,7 +2723,7 @@ p {
 }
 
 /* line 227, ../../src/sass/_modules/_typography.scss */
-.h4-sans, .find-an-office__office-name, .navigation-overlay__components {
+.h4-sans, .find-an-office__office-name, .site-navigation__components {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.4;
@@ -2732,19 +2732,19 @@ p {
 }
 @media only screen and (min-width: 768px) {
   /* line 227, ../../src/sass/_modules/_typography.scss */
-  .h4-sans, .find-an-office__office-name, .navigation-overlay__components {
+  .h4-sans, .find-an-office__office-name, .site-navigation__components {
     font-size: 1.3077rem;
   }
 }
 @media only screen and (min-width: 992px) {
   /* line 227, ../../src/sass/_modules/_typography.scss */
-  .h4-sans, .find-an-office__office-name, .navigation-overlay__components {
+  .h4-sans, .find-an-office__office-name, .site-navigation__components {
     font-size: 1.6154rem;
   }
 }
 @media only screen and (min-width: 1600px) {
   /* line 227, ../../src/sass/_modules/_typography.scss */
-  .h4-sans, .find-an-office__office-name, .navigation-overlay__components {
+  .h4-sans, .find-an-office__office-name, .site-navigation__components {
     font-size: 2.1154rem;
   }
 }
@@ -3088,7 +3088,7 @@ p {
 .h1-serif::-moz-selection,
 .hero-headline::-moz-selection,
 .h2-sans::-moz-selection,
-.navigation-overlay__pages::-moz-selection,
+.site-navigation__pages::-moz-selection,
 .h2-serif::-moz-selection,
 .hero-video-headline::-moz-selection,
 .locations-headline::-moz-selection,
@@ -3099,7 +3099,7 @@ p {
 .newsletter-signup-headline::-moz-selection,
 .h4-sans::-moz-selection,
 .find-an-office__office-name::-moz-selection,
-.navigation-overlay__components::-moz-selection,
+.site-navigation__components::-moz-selection,
 .h4-serif::-moz-selection,
 .input-submit::-moz-selection,
 .body::-moz-selection,
@@ -3126,7 +3126,7 @@ p {
 .h1-serif::selection,
 .hero-headline::selection,
 .h2-sans::selection,
-.navigation-overlay__pages::selection,
+.site-navigation__pages::selection,
 .h2-serif::selection,
 .hero-video-headline::selection,
 .locations-headline::selection,
@@ -3137,7 +3137,7 @@ p {
 .newsletter-signup-headline::selection,
 .h4-sans::selection,
 .find-an-office__office-name::selection,
-.navigation-overlay__components::selection,
+.site-navigation__components::selection,
 .h4-serif::selection,
 .input-submit::selection,
 .body::selection,
@@ -6835,7 +6835,7 @@ span.footer-legal-copyright {
   }
 }
 
-/* line 1, ../../src/sass/_modules/_navigation.scss */
+/* line 1, ../../src/sass/_modules/_site-navigation.scss */
 #navigation-checkbox {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -6843,8 +6843,8 @@ span.footer-legal-copyright {
   display: none;
 }
 
-/* line 6, ../../src/sass/_modules/_navigation.scss */
-.navigation-bar {
+/* line 6, ../../src/sass/_modules/_site-navigation.scss */
+.site-masthead {
   padding: 0 5%;
   height: 5rem;
   width: 100%;
@@ -6865,15 +6865,15 @@ span.footer-legal-copyright {
   transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* line 19, ../../src/sass/_modules/_navigation.scss */
-.navigation-bar.hiding {
+/* line 19, ../../src/sass/_modules/_site-navigation.scss */
+.site-masthead.hiding {
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
 }
 
-/* line 24, ../../src/sass/_modules/_navigation.scss */
-.navigation-overlay {
+/* line 24, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -6884,13 +6884,13 @@ span.footer-legal-copyright {
   left: 100%;
 }
 
-/* line 35, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay {
+/* line 35, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation {
   left: 0%;
 }
 
-/* line 39, ../../src/sass/_modules/_navigation.scss */
-.navigation-overlay-content {
+/* line 39, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__content {
   height: 100%;
   overflow: scroll;
   display: -webkit-flex;
@@ -6901,7 +6901,7 @@ span.footer-legal-copyright {
           align-items: center;
 }
 
-/* line 46, ../../src/sass/_modules/_navigation.scss */
+/* line 46, ../../src/sass/_modules/_site-navigation.scss */
 #navigation-checkbox:checked ~ main,
 #navigation-checkbox:checked ~ section,
 #navigation-checkbox:checked ~ footer,
@@ -6910,8 +6910,8 @@ span.footer-legal-copyright {
           filter: blur(10px);
 }
 
-/* line 53, ../../src/sass/_modules/_navigation.scss */
-.navigation-logo-container {
+/* line 53, ../../src/sass/_modules/_site-navigation.scss */
+.site-masthead__logo-container {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -6923,20 +6923,20 @@ span.footer-legal-copyright {
           flex-direction: row;
 }
 
-/* line 59, ../../src/sass/_modules/_navigation.scss */
+/* line 59, ../../src/sass/_modules/_site-navigation.scss */
 .razorfish-logo {
   transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   height: 1.3rem;
 }
 @media screen and (min-width: 992px) {
-  /* line 59, ../../src/sass/_modules/_navigation.scss */
+  /* line 59, ../../src/sass/_modules/_site-navigation.scss */
   .razorfish-logo {
     height: 1.4rem;
   }
 }
 
-/* line 67, ../../src/sass/_modules/_navigation.scss */
-.navigation-global {
+/* line 67, ../../src/sass/_modules/_site-navigation.scss */
+.site-masthead__country-dropdown {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   color: #a9c000;
@@ -6946,8 +6946,8 @@ span.footer-legal-copyright {
   display: none;
 }
 
-/* line 77, ../../src/sass/_modules/_navigation.scss */
-.navigation-global:after {
+/* line 77, ../../src/sass/_modules/_site-navigation.scss */
+.site-masthead__country-dropdown:after {
   content: ">";
   -webkit-transform: rotate(90deg) scale(0.6, 1.2);
           transform: rotate(90deg) scale(0.6, 1.2);
@@ -6955,124 +6955,124 @@ span.footer-legal-copyright {
   position: absolute;
 }
 
-/* line 84, ../../src/sass/_modules/_navigation.scss */
-.navigation-overlay__link-container {
+/* line 84, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__link-container {
   opacity: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   transition: all 0s linear 0s;
 }
 
-/* line 98, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container {
+/* line 98, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container {
   opacity: 1;
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
   transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(1) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(1) {
   transition-delay: calc(0.2s + (0.025s * 1));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(2) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(2) {
   transition-delay: calc(0.2s + (0.025s * 2));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(3) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(3) {
   transition-delay: calc(0.2s + (0.025s * 3));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(4) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(4) {
   transition-delay: calc(0.2s + (0.025s * 4));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(5) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(5) {
   transition-delay: calc(0.2s + (0.025s * 5));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(6) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(6) {
   transition-delay: calc(0.2s + (0.025s * 6));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(7) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(7) {
   transition-delay: calc(0.2s + (0.025s * 7));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(8) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(8) {
   transition-delay: calc(0.2s + (0.025s * 8));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(9) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(9) {
   transition-delay: calc(0.2s + (0.025s * 9));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(10) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(10) {
   transition-delay: calc(0.2s + (0.025s * 10));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(11) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(11) {
   transition-delay: calc(0.2s + (0.025s * 11));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(12) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(12) {
   transition-delay: calc(0.2s + (0.025s * 12));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(13) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(13) {
   transition-delay: calc(0.2s + (0.025s * 13));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(14) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(14) {
   transition-delay: calc(0.2s + (0.025s * 14));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(15) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(15) {
   transition-delay: calc(0.2s + (0.025s * 15));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(16) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(16) {
   transition-delay: calc(0.2s + (0.025s * 16));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(17) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(17) {
   transition-delay: calc(0.2s + (0.025s * 17));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(18) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(18) {
   transition-delay: calc(0.2s + (0.025s * 18));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(19) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(19) {
   transition-delay: calc(0.2s + (0.025s * 19));
 }
 
-/* line 105, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-overlay .navigation-overlay__link-container:nth-of-type(20) {
+/* line 105, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(20) {
   transition-delay: calc(0.2s + (0.025s * 20));
 }
 
-/* line 112, ../../src/sass/_modules/_navigation.scss */
-.navigation-overlay__link-container:after {
+/* line 112, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__link-container:after {
   display: inline;
   content: "/";
   color: #a9c000;
@@ -7081,17 +7081,17 @@ span.footer-legal-copyright {
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
-/* line 121, ../../src/sass/_modules/_navigation.scss */
-.navigation-overlay__link-container span {
+/* line 121, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__link-container span {
   font-size: 1rem;
   margin-left: 0.5em;
 }
-/* line 125, ../../src/sass/_modules/_navigation.scss */
-.navigation-overlay__link-container:last-of-type:after {
+/* line 125, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__link-container:last-of-type:after {
   display: none;
 }
-/* line 129, ../../src/sass/_modules/_navigation.scss */
-.navigation-overlay__pages {
+/* line 129, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__pages {
   text-decoration: none;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7107,8 +7107,8 @@ span.footer-legal-copyright {
           justify-content: center;
   margin-bottom: 2em;
 }
-/* line 138, ../../src/sass/_modules/_navigation.scss */
-.navigation-overlay__components {
+/* line 138, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__components {
   text-decoration: none;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7123,8 +7123,8 @@ span.footer-legal-copyright {
       -ms-flex-pack: center;
           justify-content: center;
 }
-/* line 145, ../../src/sass/_modules/_navigation.scss */
-.navigation-overlay__components .navigation-overlay__link-container {
+/* line 145, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__components .site-navigation__link-container {
   margin-bottom: 0.5em;
 }
 
@@ -7135,7 +7135,7 @@ span.footer-legal-copyright {
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
-/* line 160, ../../src/sass/_modules/_navigation.scss */
+/* line 160, ../../src/sass/_modules/_site-navigation.scss */
 .hamburger {
   padding-top: 1em;
   padding-left: 1em;
@@ -7154,12 +7154,12 @@ span.footer-legal-copyright {
   margin: 0;
   overflow: visible;
 }
-/* line 176, ../../src/sass/_modules/_navigation.scss */
+/* line 176, ../../src/sass/_modules/_site-navigation.scss */
 .hamburger:focus {
   outline: none;
 }
 
-/* line 181, ../../src/sass/_modules/_navigation.scss */
+/* line 181, ../../src/sass/_modules/_site-navigation.scss */
 .hamburger-box {
   width: 2.5em;
   height: 2em;
@@ -7167,14 +7167,14 @@ span.footer-legal-copyright {
   position: relative;
 }
 
-/* line 188, ../../src/sass/_modules/_navigation.scss */
+/* line 188, ../../src/sass/_modules/_site-navigation.scss */
 .hamburger-inner {
   display: block;
   top: 50%;
   margin-top: -2px;
 }
 
-/* line 194, ../../src/sass/_modules/_navigation.scss */
+/* line 194, ../../src/sass/_modules/_site-navigation.scss */
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
@@ -7188,66 +7188,66 @@ span.footer-legal-copyright {
   transition-timing-function: ease;
 }
 
-/* line 206, ../../src/sass/_modules/_navigation.scss */
+/* line 206, ../../src/sass/_modules/_site-navigation.scss */
 .hamburger-inner::before,
 .hamburger-inner::after {
   content: "";
   display: block;
 }
 
-/* line 212, ../../src/sass/_modules/_navigation.scss */
+/* line 212, ../../src/sass/_modules/_site-navigation.scss */
 .hamburger-inner::before {
   top: -0.75em;
 }
 
-/* line 216, ../../src/sass/_modules/_navigation.scss */
+/* line 216, ../../src/sass/_modules/_site-navigation.scss */
 .hamburger-inner::after {
   bottom: -0.75em;
 }
 
-/* line 221, ../../src/sass/_modules/_navigation.scss */
+/* line 221, ../../src/sass/_modules/_site-navigation.scss */
 .hamburger:hover .hamburger-inner::before {
   transition: top 0.1s 0s ease-in;
   transition-delay: 0s;
   top: -0.6em;
 }
-/* line 226, ../../src/sass/_modules/_navigation.scss */
+/* line 226, ../../src/sass/_modules/_site-navigation.scss */
 .hamburger:hover .hamburger-inner::after {
   transition: bottom 0.1s 0s ease-in;
   transition-delay: 0s;
   bottom: -0.6em;
 }
 
-/* line 234, ../../src/sass/_modules/_navigation.scss */
-.navigation-bar .hamburger__spin .hamburger-inner {
+/* line 234, ../../src/sass/_modules/_site-navigation.scss */
+.site-masthead .hamburger__spin .hamburger-inner {
   transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
-/* line 238, ../../src/sass/_modules/_navigation.scss */
-.navigation-bar .hamburger__spin .hamburger-inner::before {
+/* line 238, ../../src/sass/_modules/_site-navigation.scss */
+.site-masthead .hamburger__spin .hamburger-inner::before {
   transition: top 0.1s 0.34s ease-in-out, opacity 0.1s ease-in;
 }
-/* line 241, ../../src/sass/_modules/_navigation.scss */
-.navigation-bar .hamburger__spin .hamburger-inner::after {
+/* line 241, ../../src/sass/_modules/_site-navigation.scss */
+.site-masthead .hamburger__spin .hamburger-inner::after {
   transition: bottom 0.1s 0.34s ease-in-out, -webkit-transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition: bottom 0.1s 0.34s ease-in-out, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
-/* line 247, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-bar .hamburger__spin .hamburger-inner {
+/* line 247, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-masthead .hamburger__spin .hamburger-inner {
   -webkit-transform: rotate(225deg);
   transform: rotate(225deg);
   transition-delay: 0.14s;
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-/* line 253, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-bar .hamburger__spin .hamburger-inner::before {
+/* line 253, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-masthead .hamburger__spin .hamburger-inner::before {
   top: 0;
   opacity: 0;
   transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out;
 }
-/* line 258, ../../src/sass/_modules/_navigation.scss */
-#navigation-checkbox:checked ~ .navigation-bar .hamburger__spin .hamburger-inner::after {
+/* line 258, ../../src/sass/_modules/_site-navigation.scss */
+#navigation-checkbox:checked ~ .site-masthead .hamburger__spin .hamburger-inner::after {
   bottom: 0;
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
