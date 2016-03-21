@@ -32,7 +32,7 @@
     }
     &-red {
         color: $white;
-        .hero-background {
+        .hero__background {
             background-color: $secondary;
         }
         .divider-md {
@@ -41,24 +41,24 @@
     }
 }
 
-.hero-text-container {
+.hero__text-container {
     text-align: left;
     .divider-md {
         margin-top: 0;
     }
 }
 
-.hero-headline {
+.hero__headline {
     @extend .h1-serif;
     line-height: $title-serif - 0.2;
 }
 
-.hero-subheadline {
+.hero__subheadline {
     @extend .subheadline;
     margin-top: 1em;
 }
 
-.hero-scroll-down-container {
+.hero__scroll-down-container {
     position: absolute;
     bottom: 15%;
     left: 50%;
@@ -70,11 +70,11 @@
     }
 }
 
-.hero-scroll-down-container:hover {
+.hero__scroll-down-container:hover {
     animation-play-state: paused;
 }
 
-.hero-background {
+.hero__background {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -86,10 +86,10 @@
     z-index: 5;
 }
 
-.hero-background.gradient:before {
+.hero__background.gradient:before {
     @include background-gradient;
 }
 
-.hero-background.in-viewport {
+.hero__background.in-viewport {
     animation: 20s ease-out 0.5s forwards zoom;
 }

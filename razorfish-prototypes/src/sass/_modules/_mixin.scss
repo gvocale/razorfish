@@ -62,3 +62,21 @@
         font-weight: 700;
     }
 }
+
+@mixin h2-sans {
+    font-family: $sans;
+    font-size: $scale06;
+    line-height: $title-sans;
+    letter-spacing: $spacing-sans;
+    font-weight: 700;
+    @media only screen and ($md) {
+        font-size: $scale07;
+    }
+    @media only screen and ($lg) {
+        font-size: $scale08;
+    }
+    @media only screen and ($xxl) {
+        font-size: $scale09;
+    }
+}
+
