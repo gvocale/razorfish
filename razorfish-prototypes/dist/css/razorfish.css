@@ -6982,6 +6982,272 @@ span.footer-legal-copyright {
   margin-bottom: 2em;
 }
 
+/* line 2, ../../src/sass/_modules/_people-list.scss */
+.people-list__grid {
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  aling-content: stretch;
+  background-color: #f6f6f6;
+  width: 100vw;
+}
+/* line 13, ../../src/sass/_modules/_people-list.scss */
+.people-list__item {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+  cursor: hand;
+  overflow: hidden;
+  width: 50vw;
+}
+@media screen and (min-width: 768px) {
+  /* line 13, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item {
+    width: 33vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 13, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item {
+    width: 25vw;
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* line 13, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item {
+    width: 20vw;
+  }
+}
+/* line 30, ../../src/sass/_modules/_people-list.scss */
+.people-list__item:before {
+  content: "";
+  display: block;
+  padding-top: 133%;
+}
+/* line 35, ../../src/sass/_modules/_people-list.scss */
+.people-list__item .divider-sm {
+  width: 0%;
+  transition: all 0.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 40, ../../src/sass/_modules/_people-list.scss */
+.people-list__item-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  background-image: linear-gradient(#ffffff, #808080);
+  background-blend-mode: multiply;
+  transition: -webkit-transform 4s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.3s 0s ease-out;
+  transition: transform 4s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.3s 0s ease-out;
+}
+/* line 54, ../../src/sass/_modules/_people-list.scss */
+.people-list__item-text-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  height: 50%;
+  bottom: 0;
+  position: absolute;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  width: 100%;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  text-align: left;
+  color: #FFFFFF;
+  opacity: 0;
+  z-index: 10;
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+}
+/* line 74, ../../src/sass/_modules/_people-list.scss */
+.people-list__item-text-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), #383237);
+  opacity: 0.75;
+}
+@media screen and (min-width: 768px) {
+  /* line 74, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item-text-container:before {
+    display: none;
+  }
+}
+/* line 89, ../../src/sass/_modules/_people-list.scss */
+.people-list__name {
+  font-family: "Miller Display", Times, Georgia, serif;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.6154rem;
+  margin-bottom: 0.75em;
+}
+@media screen and (min-width: 768px) {
+  /* line 89, ../../src/sass/_modules/_people-list.scss */
+  .people-list__name {
+    line-height: 1.3077rem;
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* line 89, ../../src/sass/_modules/_people-list.scss */
+  .people-list__name {
+    font-size: 1.6154rem;
+  }
+}
+/* line 102, ../../src/sass/_modules/_people-list.scss */
+.people-list__title {
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  font-size: 0.6154rem;
+  margin-bottom: 0.25em;
+}
+@media screen and (min-width: 1600px) {
+  /* line 102, ../../src/sass/_modules/_people-list.scss */
+  .people-list__title {
+    font-size: 1rem;
+  }
+}
+/* line 112, ../../src/sass/_modules/_people-list.scss */
+.people-list__office {
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  font-size: 0.6154rem;
+  opacity: 0.5;
+}
+@media screen and (min-width: 1600px) {
+  /* line 112, ../../src/sass/_modules/_people-list.scss */
+  .people-list__office {
+    font-size: 1rem;
+  }
+}
+
+/* line 129, ../../src/sass/_modules/_people-list.scss */
+.people-list__item:nth-of-type(2) .people-list__item-background,
+.people-list__item:nth-of-type(3) .people-list__item-background,
+.people-list__item:nth-of-type(6) .people-list__item-background,
+.people-list__item:nth-of-type(7) .people-list__item-background,
+.people-list__item:nth-of-type(10) .people-list__item-background {
+  background-color: #f6f6f6;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 140, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item:nth-of-type(1) .people-list__item-background,
+  .people-list__item:nth-of-type(3) .people-list__item-background,
+  .people-list__item:nth-of-type(4) .people-list__item-background,
+  .people-list__item:nth-of-type(5) .people-list__item-background,
+  .people-list__item:nth-of-type(7) .people-list__item-background {
+    background-color: #FFFFFF;
+  }
+
+  /* line 149, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item:nth-of-type(2) .people-list__item-background,
+  .people-list__item:nth-of-type(4) .people-list__item-background,
+  .people-list__item:nth-of-type(6) .people-list__item-background,
+  .people-list__item:nth-of-type(8) .people-list__item-background,
+  .people-list__item:nth-of-type(10) .people-list__item-background {
+    background-color: #f6f6f6;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 161, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item:nth-of-type(1) .people-list__item-background,
+  .people-list__item:nth-of-type(3) .people-list__item-background,
+  .people-list__item:nth-of-type(6) .people-list__item-background,
+  .people-list__item:nth-of-type(8) .people-list__item-background,
+  .people-list__item:nth-of-type(9) .people-list__item-background {
+    background-color: #FFFFFF;
+  }
+
+  /* line 170, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item:nth-of-type(2) .people-list__item-background,
+  .people-list__item:nth-of-type(4) .people-list__item-background,
+  .people-list__item:nth-of-type(5) .people-list__item-background,
+  .people-list__item:nth-of-type(7) .people-list__item-background,
+  .people-list__item:nth-of-type(10) .people-list__item-background {
+    background-color: #f6f6f6;
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* line 182, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item:nth-of-type(1) .people-list__item-background,
+  .people-list__item:nth-of-type(3) .people-list__item-background,
+  .people-list__item:nth-of-type(5) .people-list__item-background,
+  .people-list__item:nth-of-type(7) .people-list__item-background,
+  .people-list__item:nth-of-type(9) .people-list__item-background {
+    background-color: #FFFFFF;
+  }
+
+  /* line 191, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item:nth-of-type(2) .people-list__item-background,
+  .people-list__item:nth-of-type(4) .people-list__item-background,
+  .people-list__item:nth-of-type(6) .people-list__item-background,
+  .people-list__item:nth-of-type(8) .people-list__item-background,
+  .people-list__item:nth-of-type(10) .people-list__item-background {
+    background-color: #f6f6f6;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 199, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item:hover .people-list__item-text-container {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+  /* line 203, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item:hover .people-list__item-background {
+    background-color: #808080;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    transition: -webkit-transform 2s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0s 0s ease-out;
+    transition: transform 2s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0s 0s ease-out;
+  }
+  /* line 208, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item:hover .divider-sm {
+    width: 2rem;
+  }
+}
+
 /* line 1, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox {
   -webkit-appearance: none;
