@@ -4506,24 +4506,24 @@ a[href^="tel"] {
   background-color: #D6D6D6;
 }
 
-/* line 18, ../../src/sass/_modules/_divider.scss */
+/* line 19, ../../src/sass/_modules/_divider.scss */
 .divider-md:first-child {
   margin-top: 0;
 }
 
-/* line 22, ../../src/sass/_modules/_divider.scss */
+/* line 23, ../../src/sass/_modules/_divider.scss */
 .divider-md.not-in-viewport {
   width: 0;
   transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 }
 
-/* line 27, ../../src/sass/_modules/_divider.scss */
+/* line 28, ../../src/sass/_modules/_divider.scss */
 .divider-md.not-in-viewport.in-viewport {
   width: 3rem;
   transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
 }
 
-/* line 32, ../../src/sass/_modules/_divider.scss */
+/* line 33, ../../src/sass/_modules/_divider.scss */
 .divider-sm {
   width: 2rem;
   height: 0.2rem;
@@ -4533,12 +4533,12 @@ a[href^="tel"] {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
-/* line 40, ../../src/sass/_modules/_divider.scss */
+/* line 41, ../../src/sass/_modules/_divider.scss */
 .divider-sm__gray {
   background-color: #D6D6D6;
 }
 
-/* line 45, ../../src/sass/_modules/_divider.scss */
+/* line 46, ../../src/sass/_modules/_divider.scss */
 .horizontal-rule {
   background-color: #D6D6D6;
   width: 100%;
@@ -7114,10 +7114,10 @@ span.footer-legal-copyright {
 }
 /* line 89, ../../src/sass/_modules/_people-list.scss */
 .people-list__name {
-  font-family: "Miller Display", Times, Georgia, serif;
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: bold;
-  line-height: 1.6154rem;
+  line-height: 1.4;
   margin-bottom: 0.75em;
 }
 @media screen and (min-width: 768px) {
@@ -7160,8 +7160,96 @@ span.footer-legal-copyright {
     font-size: 1rem;
   }
 }
+/* line 123, ../../src/sass/_modules/_people-list.scss */
+.people-list--white-box .people-list__item-text-container {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  width: 90%;
+  min-height: 33%;
+  height: auto;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+/* line 139, ../../src/sass/_modules/_people-list.scss */
+.people-list--white-box .people-list__item-text-container:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #FFFFFF;
+  opacity: 0.9;
+  z-index: -1;
+}
+/* line 151, ../../src/sass/_modules/_people-list.scss */
+.people-list--white-box .divider-sm {
+  display: none;
+}
+/* line 154, ../../src/sass/_modules/_people-list.scss */
+.people-list--white-box .people-list__name {
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.02em;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 0.25em;
+  color: #a9c000;
+  text-transform: uppercase;
+  font-size: 0.8077rem;
+}
+@media screen and (min-width: 1600px) {
+  /* line 154, ../../src/sass/_modules/_people-list.scss */
+  .people-list--white-box .people-list__name {
+    font-size: 1rem;
+  }
+}
+/* line 167, ../../src/sass/_modules/_people-list.scss */
+.people-list--white-box .people-list__title {
+  font-family: "Miller Display", Times, Georgia, serif;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 1.3077rem;
+  margin-bottom: 0.25em;
+  color: #404040;
+}
+@media screen and (min-width: 1600px) {
+  /* line 167, ../../src/sass/_modules/_people-list.scss */
+  .people-list--white-box .people-list__title {
+    font-size: 1.6154rem;
+  }
+}
+/* line 179, ../../src/sass/_modules/_people-list.scss */
+.people-list--white-box .people-list__office {
+  font-family: "Miller Display", Times, Georgia, serif;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  font-size: 0.8077rem;
+  font-style: italic;
+  color: #404040;
+  opacity: 0.5;
+}
+@media screen and (min-width: 1600px) {
+  /* line 179, ../../src/sass/_modules/_people-list.scss */
+  .people-list--white-box .people-list__office {
+    font-size: 1rem;
+  }
+}
 
-/* line 129, ../../src/sass/_modules/_people-list.scss */
+/* line 199, ../../src/sass/_modules/_people-list.scss */
 .people-list__item:nth-of-type(2) .people-list__item-background,
 .people-list__item:nth-of-type(3) .people-list__item-background,
 .people-list__item:nth-of-type(6) .people-list__item-background,
@@ -7171,7 +7259,7 @@ span.footer-legal-copyright {
 }
 
 @media screen and (min-width: 768px) {
-  /* line 140, ../../src/sass/_modules/_people-list.scss */
+  /* line 210, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:nth-of-type(1) .people-list__item-background,
   .people-list__item:nth-of-type(3) .people-list__item-background,
   .people-list__item:nth-of-type(4) .people-list__item-background,
@@ -7180,7 +7268,7 @@ span.footer-legal-copyright {
     background-color: #FFFFFF;
   }
 
-  /* line 149, ../../src/sass/_modules/_people-list.scss */
+  /* line 219, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:nth-of-type(2) .people-list__item-background,
   .people-list__item:nth-of-type(4) .people-list__item-background,
   .people-list__item:nth-of-type(6) .people-list__item-background,
@@ -7190,7 +7278,7 @@ span.footer-legal-copyright {
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 161, ../../src/sass/_modules/_people-list.scss */
+  /* line 231, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:nth-of-type(1) .people-list__item-background,
   .people-list__item:nth-of-type(3) .people-list__item-background,
   .people-list__item:nth-of-type(6) .people-list__item-background,
@@ -7199,7 +7287,7 @@ span.footer-legal-copyright {
     background-color: #FFFFFF;
   }
 
-  /* line 170, ../../src/sass/_modules/_people-list.scss */
+  /* line 240, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:nth-of-type(2) .people-list__item-background,
   .people-list__item:nth-of-type(4) .people-list__item-background,
   .people-list__item:nth-of-type(5) .people-list__item-background,
@@ -7209,7 +7297,7 @@ span.footer-legal-copyright {
   }
 }
 @media screen and (min-width: 1600px) {
-  /* line 182, ../../src/sass/_modules/_people-list.scss */
+  /* line 252, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:nth-of-type(1) .people-list__item-background,
   .people-list__item:nth-of-type(3) .people-list__item-background,
   .people-list__item:nth-of-type(5) .people-list__item-background,
@@ -7218,7 +7306,7 @@ span.footer-legal-copyright {
     background-color: #FFFFFF;
   }
 
-  /* line 191, ../../src/sass/_modules/_people-list.scss */
+  /* line 261, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:nth-of-type(2) .people-list__item-background,
   .people-list__item:nth-of-type(4) .people-list__item-background,
   .people-list__item:nth-of-type(6) .people-list__item-background,
@@ -7228,13 +7316,13 @@ span.footer-legal-copyright {
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 199, ../../src/sass/_modules/_people-list.scss */
+  /* line 269, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:hover .people-list__item-text-container {
     -webkit-transform: translateY(0%);
             transform: translateY(0%);
     opacity: 1;
   }
-  /* line 203, ../../src/sass/_modules/_people-list.scss */
+  /* line 273, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:hover .people-list__item-background {
     background-color: #808080;
     -webkit-transform: scale(1.1);
@@ -7242,7 +7330,7 @@ span.footer-legal-copyright {
     transition: -webkit-transform 2s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0s 0s ease-out;
     transition: transform 2s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0s 0s ease-out;
   }
-  /* line 208, ../../src/sass/_modules/_people-list.scss */
+  /* line 278, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:hover .divider-sm {
     width: 2rem;
   }
