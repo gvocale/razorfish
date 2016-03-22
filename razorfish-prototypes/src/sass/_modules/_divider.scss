@@ -1,23 +1,12 @@
 .divider-md {
-    width: 2rem;
-    height: 0.2rem;
+    width: 54px;
+    height: 6px;
     background-color: $primary;
     border: none;
-    margin: 2em 0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    @media screen and ($md) {
-        width: calc(2em * 1.5);
-        height: calc(0.2rem * 1.5);
-    }
-    &__gray {
-        background-color: $gray;
-    }
-    
-}
-
-.divider-md:first-child {
+    margin-left: 0;
+    margin-right: 0;
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .divider-md.not-in-viewport {
@@ -26,7 +15,7 @@
 }
 
 .divider-md.not-in-viewport.in-viewport {
-    width: 3rem;
+    width: 54px;
     transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
 }
 

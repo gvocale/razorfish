@@ -1,27 +1,23 @@
 .hero {
-    height: 100vh;
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
     position: relative;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
+    padding-bottom: 40%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-end;
-    .eyebrow {
-        margin-bottom: 1em;
+    @media screen and ($md) {
+        padding-bottom: 15%;
+        max-height: 75vw;
     }
-    .container-fluid {
-        padding-bottom: 25%;
-        z-index: 10;
-        position: relative;
-        @media screen and ($md) {
-            padding-bottom: 15%;
-        }
-        @media screen and ($xl) {
-            padding-bottom: 10%;
-        }
-        .row {
-            position: relative;
-        }
+    @media screen and ($xl) {
+        padding-bottom: 10%;
     }
     .video-play-button {
         margin: auto;
@@ -30,64 +26,128 @@
     &-white {
         color: $white;
     }
-    &-red {
-        color: $white;
-        .hero__background {
-            background-color: $secondary;
-        }
-        .divider-md {
-            background-color: $black;
-        }
+    &__text-container {
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: baseline;
+        justify-content: center;
+        text-align: left;
     }
-}
-
-.hero__text-container {
-    text-align: left;
     .divider-md {
-        margin-top: 0;
+        margin-bottom: 1.5rem;
     }
-}
-
-.hero__headline {
-    @extend .h1-serif;
-    line-height: $title-serif - 0.2;
-}
-
-.hero__subheadline {
-    @extend .subheadline;
-    margin-top: 1em;
-}
-
-.hero__scroll-down-container {
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: 1s ease-in-out 0.5s infinite bounce;
-    z-index: 10;
-    @media screen and ($xl) {
-        bottom: 5%;
+    &__eyebrow {
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans;
+        max-width: 24em;
+        font-size: $scale04;
+        margin-bottom: 0.75em;
+        @media only screen and ($xxl) {
+            font-size: $scale05;
+        }
     }
-}
-
-.hero__scroll-down-container:hover {
-    animation-play-state: paused;
-}
-
-.hero__background {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 5;
-}
-
-.hero__background.gradient:before {
-    @include background-gradient;
+    &__headline {
+        font-family: $display;
+        line-height: $solid-serif + 0.3;
+        letter-spacing: $spacing-serif;
+        font-weight: 700;
+        margin-bottom: 0.2em;
+        max-width: 10em;
+        font-size: $scale07;
+        @media only screen and ($md) {
+            font-size: $scale08;
+        }
+        @media only screen and ($md) {
+            font-size: $scale10;
+            line-height: $solid-serif + 0.1;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale11;
+            line-height: $solid-serif;
+        }
+    }
+    &__subhead {
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans;
+        margin-bottom: 1em;
+        max-width: 30em;
+        font-size: $scale04;
+        font-variant-ligatures: common-ligatures;
+        text-rendering: optimizeLegibility;
+        @media only screen and ($md) {
+            font-size: $scale05;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale06;
+        }
+    }
+    &__styling {
+        &-red {
+            color: $white;
+            .hero__background {
+                background-color: $secondary;
+            }
+            .divider-md {
+                background-color: $black;
+            }
+        }
+        &-light {
+            color: $black;
+            .hero__eyebrow {
+                color: $primary;
+            }
+            .hero__background {
+                background-color: $white;
+            }
+            .divider-md {
+                background-color: $primary;
+            }
+        }
+        &-dark {
+            color: $white;
+            .hero__eyebrow {
+                color: $white;
+            }
+            .hero__background {
+                background-color: $gray;
+            }
+            .divider-md {
+                background-color: $primary;
+            }
+        }
+    }
+    &__scroll-down-container {
+        position: absolute;
+        bottom: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: 1s ease-in-out 0.5s infinite bounce;
+        z-index: 10;
+        @media screen and ($xl) {
+            bottom: 5%;
+        }
+        &:hover {
+            animation-play-state: paused;
+        }
+    }
+    &__background {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+    }
+    &__background.gradient:before {
+        @include background-gradient;
+    }
 }
 
 .hero__background.in-viewport {
