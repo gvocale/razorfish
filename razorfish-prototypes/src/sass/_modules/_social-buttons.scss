@@ -3,7 +3,7 @@
         display: block;
         width: 2.5rem;
         height: 2.5rem;
-        background-size: 35% 35%, contain;
+        background-size: 28% 28%, contain;
         background-position: center;
         background-repeat: no-repeat;
         @media screen and ($md) {
@@ -11,10 +11,6 @@
             height: 3rem;
         }
         @media screen and ($xl) {
-            width: 3.5rem;
-            height: 3.5rem;
-        }
-        @media screen and ($xxl) {
             width: 4rem;
             height: 4rem;
         }
@@ -65,10 +61,11 @@
             }
         }
     }
-    &__icon-group {
+    &__group {
         display: inline-block;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         li {
             margin: 1px;
             display: inline-block;
