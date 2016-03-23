@@ -21,7 +21,6 @@
     }
     .video-play-button {
         margin: auto;
-        margin-bottom: $spacing01;
     }
     &-white {
         color: $white;
@@ -144,6 +143,10 @@
         top: 0;
         left: 0;
         z-index: 5;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
     }
     &__background.gradient:before {
         @include background-gradient;

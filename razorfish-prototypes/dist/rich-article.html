@@ -18,22 +18,6 @@
 </head>
 
 <body id="animate-container">
-    <div class="overlay-grid">
-        <div class="padded-grid">
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-        </div>
-    </div>
     <input type="checkbox" id="site-masthead__checkbox">
     <label class="site-masthead" for="site-masthead__checkbox" role="navigation">
         <div class="site-masthead__logo-container">
@@ -59,9 +43,6 @@
                                 <a class="link" href="about-us.html">About</a>
                             </li>
                             <li class="site-navigation__link-container">
-                                <a class="link" href="rich-article.html">Rich Article</a>
-                            </li>
-                            <li class="site-navigation__link-container">
                                 <a class="link" href="contact.html">Contact</a>
                             </li>
                             <li class="site-navigation__link-container">
@@ -75,6 +56,9 @@
                             </li>
                             <li class="site-navigation__link-container">
                                 <a class="link" href="press-release.html">Press Release</a>
+                            </li>
+                            <li class="site-navigation__link-container">
+                                <a class="link" href="rich-article.html">Rich Article</a>
                             </li>
                         </ul>
                     </div>
@@ -140,6 +124,17 @@
             </div>
         </div>
     </nav>
+    <section class="hero hero__story hero__styling-dark animate">
+        <div class="hero__text-container">
+            <hr class="divider divider-md animate">
+            <p class="hero__eyebrow">Razorfish Emerging Experiences Series</p>
+            <h2 class="hero__headline">What Marketers Can Learn from the Auto Industry</h2>
+        </div>
+        <div class="hero__scroll-down-container">
+            <div class="scroll-down-icon"></div>
+        </div>
+        <div class="hero__background gradient animate" style="background-image: url(images/article-hero-abstract-background.jpg)"></div>
+    </section>
     <article class="article">
         <div class="padded-grid">
             <section class="contact-info">
@@ -306,6 +301,108 @@
             </section>
         </div>
     </article>
+    <section class="newsletter-signup">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2">
+                    <div class="divider divider-md animate"></div>
+                    <h3 class="newsletter-signup-headline">Stay current. Get our newsletter.</h3>
+                    <form class="row form" action="">
+                        <div class="col-xs-12 col-lg-6 form-field">
+                            <input class="input-text" placeholder="Enter your email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                            <label class="input-label" for="">Your email</label>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="col-xs-12 col-lg-6 form-field">
+                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Your name (optional)" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="input-label" for="">Your name</label>
+                            <div class="input-border"></div>
+                        </div>
+                        <div class="col-xs-12">
+                            <button class="secondary">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="title title__tertiary">
+        <div class="padded-grid">
+            <hr class="divider divider-md animate">
+            <h3 class="title__headline">Related Content</h3>
+        </div>
+    </section>
+    <section class="related">
+        <ul class="related-grid">
+            <li class="feed__item animate text-top color-combination-3">
+                <div class="feed__item__content">
+                    <div class="feed__item__text-container">
+                        <p class="feed__item__eyebrow">Thought Leadership</p>
+                        <h3 class="feed__item__headline">In the Safe City of the Future, No One is at the Wheel.</h3>
+                    </div>
+                    <div class="feed__item__background" style="background-image: url(images/feed-thought-leadership.jpg)">
+                    </div>
+                </div>
+            </li>
+            <li class="feed__item animate solid color-combination-4">
+                <div class="feed__item__content">
+                    <div class="feed__item__text-container">
+                        <p class="feed__item__eyebrow">Partecipatory Marketing</p>
+                        <h3 class="feed__item__headline">Donec id elit non mi porta gravida at eget metus.</h3>
+                    </div>
+                    <div class="feed__item__background">
+                    </div>
+                </div>
+            </li>
+            <li class="feed__item animate split color-combination-1">
+                <div class="feed__item__content">
+                    <div class="feed__item__text-container">
+                        <p class="feed__item__eyebrow">News</p>
+                        <h3 class="feed__item__headline">We Turned Instagram into a Mercedes Dealership</h3>
+                    </div>
+                    <div class="feed__item__background" style="background-image: url(images/feed-mercedes-instagram.jpg)">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="contact-promo animate" style="">
+        <div class="contact-promo__text-container">
+            <p class="contact-promo__eyebrow">Locations</p>
+            <h2 class="contact-promo__description">24 Offices.<br>5 Continents.<br><a href="" class="link link-primary">Get in touch.</a></h2>
+        </div>
+        <div class="contact-promo__background">
+        </div>
+    </section>
+    <footer class="footer-v2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-lg-3 footer-v2__container-logo">
+                    <div class="logo-razorfish">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-lg-9 footer-v2__container-legal">
+                    <p class="footer-v2__copyrights">
+                        <span class="legal">© 2015 Razorfish All rights reserved</span><a href="" class="link link-muted">Terms</a><a href="" class="link link-muted">Privacy</a>
+                    </p>
+                    <ul class="social-buttons__group">
+                        <li class="social-buttons__icon-container">
+                            <a href="" class="icon-linkedin social-buttons__icon animate">
+                            </a>
+                        </li>
+                        <li class="social-buttons__icon-container">
+                            <a href="" class="icon-twitter social-buttons__icon animate">
+                            </a>
+                        </li>
+                        <li class="social-buttons__icon-container">
+                            <a href="" class="icon-facebook social-buttons__icon animate">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/cbpScroller.js"></script>
@@ -314,16 +411,13 @@
     <script>
     new cbpScroller(document.getElementById('animate-container'));
     </script>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/stickyfill.js"></script>
     <script>
-    $(function() {
-        $('.sticky').Stickyfill();
-    });
+    $('.sticky').Stickyfill();
     </script>
-    </body-copy__body>
+</body>
 
 </html>
-</body-copy__body>
+</body>
 
 </html>

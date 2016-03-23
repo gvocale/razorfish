@@ -9,6 +9,8 @@
     &__flexible {
         padding-top: 20%;
         padding-bottom: 20%;
+        margin-left: auto;
+        margin-right: auto;
         width: 80%;
         @media only screen and ($md) {
             width: 60%;
@@ -19,17 +21,14 @@
             width: 50%;
         }
         @media only screen and ($xxl) {
-            width: 40%;
+            width: calc(100% / 12 * 6);
             padding-top: 7.5%;
             padding-bottom: 7.5%;
         }
         .divider {
             margin-bottom: 1rem;
         }
-        .pull-quote + .body-copy__h3 {
-            margin-top: 3em;
-        }
-        .body-copy__body-copy + .body-copy__h3 {
+        .body-copy__body + .body-copy__h3 {
             margin-top: 3em;
         }
     }
@@ -142,7 +141,7 @@
             font-size: $scale07;
         }
     }
-    &__body-copy {
+    &__body {
         font-family: $sans;
         line-height: $prose-sans;
         letter-spacing: $spacing-sans;
@@ -182,105 +181,56 @@
         width: 100%;
         height: 100%;
     }
-}
-
-.article,
-.press-release {
-    background-color: $white;
-    &__photo-divider {
-        width: 100vw;
-        height: 80vh;
-        max-height: 100vw;
-        background-attachment: scroll;
-        @media screen and ($xl) {
-            background-attachment: fixed; // Because fixed does not work on ios devices
-        }
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    &__background {
-        width: 100vw;
-        min-height: 80vh;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    &__body {
-        position: relative;
-        z-index: 10;
-        &.white {
-            color: $white;
-        }
-    }
-    .social-buttons__icon-group {
-        margin-bottom: 2em;
-    }
-    .h2-serif + .body {
-        margin-top: 2em;
-    }
-    .h3-sans + .body {
-        margin-top: 1em;
-    }
-    .h2-serif + .h3-sans {
-        margin-top: 2em;
-    }
-    .body + .h3-sans {
-        margin-top: 3em;
-    }
-    .eyebrow + .h2-serif {
-        margin-top: 0.5em;
-    }
-    .pull-quote {
-        color: $tertiaryDarker;
-        margin-top: 2em;
-        margin-bottom: 2em;
-        .author {
-            margin-top: 2em;
-            color: $black;
-        }
-    }
-    .pull-quote + .h3-sans {
-        margin-top: 2em;
-    }
-    &__quote {
-        background-color: $tertiaryDarker;
-        text-align: center;
-    }
-    &__quote-eyebrow {
-        @extend .eyebrow;
-        color: $primary;
-        letter-spacing: $spacing-sans;
-        margin: auto;
-        text-transform: none;
-        margin-bottom: 1em;
-    }
-    &__quote-headline {
-        @extend .quote-large;
-        color: $white;
-    }
-    &__left-rail {
-        margin-bottom: 3em;
-        @media screen and ($md) {
-            margin-bottom: 4em;
-        }
-        @media screen and ($xl) {
-            margin-bottom: 0;
-        }
-    }
     &__footer {
-        margin-top: 4em;
+        margin-top: 2em;
         .body-copy__eyebrow {
             margin-bottom: 0;
         }
     }
+    &__inline-pull-quote {
+        border-left: solid 0.2rem $primary;
+        width: 100%;
+        padding-left: 1em;
+        margin-top: 3em;
+        margin-bottom: 4em;
+        @media only screen and ($md) {
+            border-left: solid calc(0.2rem * 1.5) $primary;
+        }
+        &__quote {
+            font-family: $display;
+            line-height: $prose-serif;
+            font-style: italic;
+            font-size: $scale05;
+            color: $blackLighter;
+            letter-spacing: $spacing-serif-large;
+            margin-bottom: 0.5em;
+            @media only screen and ($md) {
+                font-size: $scale05;
+            }
+            @media only screen and ($lg) {
+                font-size: $scale06;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale07;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__author {
+            font-family: $sans;
+            line-height: $prose-sans;
+            letter-spacing: $spacing-sans;
+            font-size: $scale04;
+            @media only screen and ($md) {
+                font-size: $scale05;
+            }
+            strong {
+                font-weight: 700;
+            }
+        }
+    }
 }
-
 
 .background-gradient:before {
     content: "";
@@ -297,6 +247,6 @@
 
 @media screen and ($xl) {
     .contact-info + .body-copy__flexible {
-        margin-right: 20%;
+        margin-right: calc(100% / 12 * 3);
     }
 }

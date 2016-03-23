@@ -17,9 +17,9 @@
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
 
-<body id="animate-container">
+<body id="animate-container overlay-grid">
     <div class="overlay-grid">
-        <div class="padded-grid">
+        <div class="overlay-grid__row">
             <div class="overlay-grid__col"></div>
             <div class="overlay-grid__col"></div>
             <div class="overlay-grid__col"></div>
@@ -59,6 +59,9 @@
                                 <a class="link" href="about-us.html">About</a>
                             </li>
                             <li class="site-navigation__link-container">
+                                <a class="link" href="rich-article.html">Rich Article</a>
+                            </li>
+                            <li class="site-navigation__link-container">
                                 <a class="link" href="contact.html">Contact</a>
                             </li>
                             <li class="site-navigation__link-container">
@@ -72,9 +75,6 @@
                             </li>
                             <li class="site-navigation__link-container">
                                 <a class="link" href="press-release.html">Press Release</a>
-                            </li>
-                            <li class="site-navigation__link-container">
-                                <a class="link" href="rich-article.html">Rich Article</a>
                             </li>
                         </ul>
                     </div>
@@ -140,94 +140,14 @@
             </div>
         </div>
     </nav>
-    <section class="simple-title">
-        <div class="title__container animate">
-            <div class="padded-grid">
-                <div class="divider divider-md animate"></div>
-                <h2 class="simple-title__title">About us lorem ipsum.</h2>
-            </div>
-        </div>
-    </section>
-    <section class="hero hero-white hero-red">
-        <div class="container-fluid">
-            <div class="row bottom">
-                <div class="hero__text-container col-xs-12 col-xxl-10">
-                    <hr class="divider divider-md animate">
-                    <p class="eyebrow"><small>October 1, 2015</small></p>
-                    <h2 class="hero__headline">Razorfish Delivers Cloud Services to Drive Digital Business Transformation, Showcases Newest Offerings at AWS re:Invent</h2>
-                </div>
-            </div>
-        </div>
-        <div class="hero__scroll-down-container">
-            <div class="scroll-down-icon"></div>
-        </div>
-        <div class="hero__background animate"></div>
-    </section>
-    <section class="title title__secondary white">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h3 class="title__headline">Leadership</h3>
-                    <hr class="divider divider-md animate">
-                    <p class="title__subheadline">Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor sit amet.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="title title__secondary black">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h3 class="title__headline">Leadership</h3>
-                    <hr class="divider divider-md animate">
-                    <p class="title__subheadline">Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor sit amet.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="title title__tertiary white">
+    <section class="pull-quote">
         <div class="padded-grid">
-            <hr class="divider divider-md animate">
-            <h3 class="title__headline">Related Content</h3>
+            <p class="pull-quote__eyebrow">Emerging Technologies</p>
+            <h3 class="pull-quote__quote">While we are years away from R2-D2-inspired projections, advances in technology and some clever parlor tricks have brought holograms within reach.</h3>
+            <p class="pull-quote__credit"><strong>Mark Templin</strong> EVP Lexus International</p>
         </div>
     </section>
-    <section class="title title__tertiary white-darker">
-        <div class="padded-grid">
-            <hr class="divider divider-md animate">
-            <h3 class="title__headline">Related Content</h3>
-        </div>
-    </section>
-    <div class="title title__tertiary">
-        <div class="padded-grid">
-            <hr class="divider divider-md animate">
-            <h3 class="title__headline">Most Recent</h3>
-            <div class="button-container">
-                <select class="secondary">
-                    <option value="none" disabled selected>Industry</option>>
-                    <option value="UK">Automotive</option>
-                    <option value="USA">Financial</option>
-                    <option value="Canada">Healthcare</option>
-                </select>
-                <select class="secondary">
-                    <option value="none" disabled selected>Capability</option>>
-                    <option value="USA">Creative</option>
-                    <option value="Canada">UX</option>
-                    <option value="UK">Tech</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <section class="title title__tertiary white-darker">
-        <div class="padded-grid">
-            <hr class="divider divider-md animate">
-            <h3 class="title__headline">Hot Off the Servers</h3>
-            <div class="col-xs-12 col-lg-6 button-container">
-                <button class="secondary">
-                    read more
-                </button>
-            </div>
-        </div>
-    </section>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
@@ -235,9 +155,16 @@
     <script>
     new cbpScroller(document.getElementById('animate-container'));
     </script>
-</body>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/stickyfill.js"></script>
+    <script>
+    $(function() {
+        $('.sticky').Stickyfill();
+    });
+    </script>
+    </body-copy__body>
 
 </html>
-</body>
+</body-copy__body>
 
 </html>

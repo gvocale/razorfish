@@ -1,0 +1,65 @@
+.pull-quote {
+    width: 100%;
+    padding-top: 6em;
+    padding-bottom: 6em;
+    background-color: $tertiaryDarker;
+    text-align: center;
+    color: $white;
+    @media only screen and ($xxl) {
+        padding-top: 8em;
+        padding-bottom: 8em;
+    }
+    @media only screen and ($xxl) {
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+    @media only screen and ($xxl) {}
+    &__eyebrow {
+        font-family: $sans;
+        line-height: $title-sans;
+        color: $primary;
+        letter-spacing: $spacing-sans;
+        margin-bottom: 0.5em;
+        font-size: $scale04;
+        @media only screen and ($md) {
+            font-size: $scale05;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale06;
+        }
+    }
+    &__quote {
+        font-family: $display;
+        font-style: italic;
+        line-height: $prose-serif;
+        letter-spacing: $spacing-serif-large;
+        margin-bottom: 0.5em;
+        font-size: $scale05;
+        @media only screen and ($md) {
+            font-size: $scale07;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale09;
+        }
+    }
+    &__credit {
+        font-family: $sans;
+        line-height: $prose-sans;
+        letter-spacing: $spacing-sans-large;
+        font-size: $scale03;
+        text-transform: uppercase;
+        @media only screen and ($md) {
+            font-size: $scale04;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale05;
+        }
+        strong {
+            font-weight: 700;
+            margin-right: 0.5em;
+        }
+    }
+    .padded-grid {
+        flex-direction: column;
+    }
+}

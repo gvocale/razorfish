@@ -1,0 +1,66 @@
+.image {
+    width: 100vw;
+    height: 80vh;
+    max-height: 100vw;
+    background-attachment: scroll;
+    position: relative;
+    @media screen and ($xl) {
+        background-attachment: fixed; // Because fixed does not work on ios devices
+    }
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    &__background {
+        width: 100vw;
+        min-height: 80vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        font-family: $sans;
+        line-height: $prose-sans;
+        letter-spacing: $spacing-sans;
+        color: $white;
+        font-size: $scale03;
+        z-index: 0;
+        @media only screen and ($md) {
+            font-size: $scale04;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale05;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+        strong {
+            font-weight: 700;
+            margin-right: 0.5em;
+        }
+        &:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background-color: $black;
+            opacity: 0.8;
+            z-index: -1;
+        }
+    }
+}
