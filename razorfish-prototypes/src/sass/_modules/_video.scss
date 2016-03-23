@@ -41,3 +41,46 @@
     justify-content: center;
     z-index: 10;
 }
+
+.inline-video {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    @media screen and ($md) {
+        margin-top: 6em;
+        margin-bottom: 6em;
+    }
+    &__caption {
+        font-family: $sans;
+        line-height: $prose-sans;
+        letter-spacing: $spacing-sans;
+        margin-top: 1em;
+        font-size: $scale04;
+        @media only screen and ($md) {
+            font-size: $scale05;
+        }
+        strong {
+            font-weight: 700;
+        }
+        align-self: baseline;
+    }
+    &__button-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+}
