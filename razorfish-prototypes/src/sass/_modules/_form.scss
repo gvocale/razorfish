@@ -105,6 +105,7 @@ $visible: 1;
     transform: translateY(0);
     transition: all 0.1s 0.2s ease-out;
     width: 100%;
+    opacity: 0.5;
 }
 .input-file {
     height: 0px;
@@ -122,6 +123,7 @@ $visible: 1;
 }
 .input-text::placeholder {
     color: currentColor;
+    opacity: 0.5;
     transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .input-file-note {
@@ -246,7 +248,7 @@ $visible: 1;
     .input-text[value=""] ~ .input-border,
     .input-file-label ~ .input-border,
     .input-select ~ .input-border {
-        opacity: $opacity01;
+        opacity: 0.3;
     }
     
     .input-border,
