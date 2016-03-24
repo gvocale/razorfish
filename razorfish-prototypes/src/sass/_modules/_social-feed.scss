@@ -1,0 +1,106 @@
+.social-feed {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    &__icon {
+        height: 1.5em;
+        width: 1.5em;
+        margin-bottom: 3em;
+        margin-left: auto;
+        margin-right: auto;
+        background-size: 100% 100%, contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        @media only screen and ($xl) {
+            height: 2em;
+            width: 2em;
+            margin-bottom: 4em;
+        }
+        @media only screen and ($xxl) {
+            height: 3em;
+            width: 3em;
+        }
+    }
+    &__item {
+        width: 100vw;
+        height: auto;
+        min-height: 50vw;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 20%;
+        padding-bottom: 20%;
+        text-align: center;
+        @media only screen and ($md) {
+            width: 50vw;
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
+        @media only screen and ($xl) {
+            min-height: 40vw;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        @media only screen and ($xxl) {
+            min-height: 25vw;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+    }
+    &__headline {
+        font-family: $sans;
+        font-size: $scale05;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans;
+        margin-bottom: 2em;
+        font-weight: 400;
+        @media only screen and ($xl) {
+            font-size: $scale06;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale07;
+        }
+        :last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__account-handle {
+        font-family: $sans;
+        font-size: $scale03;
+        text-transform: uppercase;
+        letter-spacing: $spacing-sans-mega;
+        @media only screen and ($xl) {
+            font-size: $scale04;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale05;
+        }
+        span:after {
+            content: "|";
+            position: relative;
+            font-size: 0.7em;
+            line-height: $prose-sans;
+            color: inherit;
+            margin-left: 2em;
+            margin-right: 2em;
+            top: -0.15em;
+        }
+        span:last-child:after {
+            display: none;
+        }
+    }
+    &__item.red {
+        background-color: $secondary;
+        color: $white;
+        a {
+            color: $secondary_darker;
+        }
+    }
+    &__item.black {
+        background-color: $black;
+        color: $white;
+        a {
+            color: $primary;
+        }
+    }
+}

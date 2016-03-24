@@ -1,5 +1,4 @@
 .newsletter-signup {
-    background-color: $grayLighter;
     padding-top: 20%;
     padding-bottom: 20%;
     .divider {
@@ -9,16 +8,54 @@
         padding-top: 5%;
         padding-bottom: 5%;
     }
-    .form {
-        margin-top: 1em;
+    &--dark {
+        background-color: $blackLighter;
+        color: $white;
     }
-}
-
-.newsletter-signup-headline {
-    @extend .h3-serif;
-}
-
-.newsletter-signup.black {
-    color: $white;
-    background-color: $blackLighter;
+    &--light {
+        background-color: $grayLighter;
+    }
+    &__form {
+        &__padded-grid {
+            width: calc(100% + 1em + 1em);
+            margin-left: -1em;
+            margin-right: -1em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-bottom: 3em;
+            .form-field {
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+        }
+    }
+    &__container {
+        width: 100%;
+        @media screen and ($xl) {
+            width: calc(100% / 12 * 6);
+        }
+    }
+    &__headline {
+        font-family: $display;
+        font-size: $scale06;
+        line-height: $title-serif;
+        letter-spacing: $spacing-serif-tight;
+        font-weight: 700;
+        margin-bottom: 0.5em;
+        @media only screen and ($md) {
+            font-size: $scale07;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale08;
+        }
+    }
+    &__form {
+        .form-field {
+            width: 100%;
+            @media screen and ($md) {
+                width: 50%;
+            }
+        }
+    }
 }

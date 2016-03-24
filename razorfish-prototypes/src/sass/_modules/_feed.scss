@@ -14,6 +14,7 @@
         height: 50vw;
         cursor: pointer;
         cursor: hand;
+        text-align: center;
         @media screen and ($md) {
             width: 50vw;
             height: 25vw;
@@ -72,10 +73,9 @@
         &__eyebrow {
             font-family: $sans;
             line-height: $title-sans;
-            letter-spacing: $spacing-sans-large;
+            letter-spacing: $spacing-sans;
             font-size: $scale03;
             font-weight: 400;
-            text-transform: uppercase;
             margin-bottom: 0.5em;
             @media screen and ($lg) {
                 font-size: $scale04;
@@ -91,11 +91,12 @@
             font-size: $scale06;
             font-weight: 700;
             margin-bottom: 0.5em;
+            max-width: 16em;
             &:last-child {
                 margin-bottom: 0;
             }
             @media screen and ($xxl) {
-                font-size: $scale09;
+                font-size: $scale08;
             }
         }
         &__subheadline {
@@ -129,7 +130,6 @@
             flex-wrap: nowrap;
             align-items: center;
             justify-content: center;
-            text-align: center;
             @media screen and ($xxl) {
                 padding: 0 15%;
             }
@@ -183,6 +183,7 @@
 // Split Tiles
 .split {
     background-position: 50% center;
+    text-align: left;
     .feed__item__background {
         width: 50%;
         position: absolute;
@@ -198,7 +199,7 @@
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
-        align-items: center;
+        align-items: baseline;
         justify-content: center;
         position: relative;
     }
@@ -219,6 +220,9 @@
             border-width: 2rem;
             margin-top: -2rem;
         }
+    }
+    .feed__item__headline {
+        max-width: 8em;
     }
 }
 
@@ -352,11 +356,8 @@
             @media screen and ($lg) {
                 font-size: $scale06;
             }
-            @media screen and ($xl) {
-                font-size: $scale07;
-            }
             @media screen and ($xxl) {
-                font-size: $scale09;
+                font-size: $scale08;
             }
         }
         &__subheadline {
@@ -379,7 +380,7 @@
                 font-size: $scale06;
             }
             @media screen and ($xxl) {
-                font-size: $scale08;
+                font-size: $scale07;
             }
         }
     }

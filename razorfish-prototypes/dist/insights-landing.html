@@ -74,7 +74,7 @@
                                 <a class="link" href="contact-promo.html">Contact Promo</a>
                             </li>
                             <li class="site-navigation__link-container">
-                                <a class="link" href="content-grid.html">Content Grid</a>
+                                <a class="link" href="social-feed.html">Social Feed</a>
                             </li>
                             <li class="site-navigation__link-container">
                                 <a class="link" href="feed.html">Feed</a>
@@ -125,55 +125,34 @@
         </div>
     </nav>
     <section class="simple-title">
-        <div class="title__container animate">
+        <div class="simple-title__container animate">
             <div class="padded-grid">
-                <div class="divider divider-md animate"></div>
-                <h2 class="simple-title__title">About us lorem ipsum.</h2>
-            </div>
-        </div>
-    </section>
-    <section class="hero hero-white hero-image">
-        <div class="container-fluid">
-            <div class="row bottom">
-                <div class="hero__text-container col-xs-12 col-xxl-10">
-                    <hr class="divider divider-md animate">
-                    <h2 class="hero__headline">You Need an XMO. Like Yesterday.</h2>
-                    <p class="hero__subheadline">Learn more about an Experience Managment Office (and our Experience Innovation Practice).</p>
+                <div class="simple-title__text-container">
+                    <div class="divider divider-md animate"></div>
+                    <h2 class="simple-title__title">About us lorem ipsum.</h2>
                 </div>
             </div>
+    </section>
+    <section class="hero hero__story hero__styling-light">
+        <div class="hero__text-container">
+            <hr class="divider divider-md animate">
+            <h2 class="hero__headline">You Need an XMO. Like Yesterday.</h2>
+            <p class="hero__subhead">Learn more about an Experience Managment Office (and our Experience Innovation Practice).</p>
         </div>
         <div class="hero__scroll-down-container">
             <div class="scroll-down-icon"></div>
         </div>
         <div class="hero__background animate" style="background-image: url(images/hero-employee-dashboard-wireframe.jpg)"></div>
     </section>
-    <section class="most-recent">
-        <div class="title title__tertiary">
-            <div class="container-fluid">
-                <div class="row center">
-                    <div class="col-xs-12">
-                        <hr class="divider divider-md animate">
-                    </div>
-                    <div class="col-xs-12 col-lg-6">
-                        <h3 class="title__headline">Most Recent</h3>
-                    </div>
-                    <div class="col-xs-12 col-lg-6 button-container">
-                        <select class="secondary">
-                            <option value="none" disabled selected>Industry</option>>
-                            <option value="UK">Automotive</option>
-                            <option value="USA">Financial</option>
-                            <option value="Canada">Healthcare</option>
-                        </select>
-                        <select class="secondary">
-                            <option value="none" disabled selected>Capability</option>>
-                            <option value="USA">Creative</option>
-                            <option value="Canada">UX</option>
-                            <option value="UK">Tech</option>
-                        </select>
-                    </div>
-                </div>
+    <section class="title title__tertiary title--dark">
+        <div class="padded-grid">
+            <div class="title__text-container">
+                <hr class="divider divider-md animate">
+                <h3 class="title__headline">Hot Off the Servers</h3>
             </div>
         </div>
+    </section>
+    <section class="most-recent">
         <ul class="feed__grid padding">
             <li class="feed__item animate color-combination-1">
                 <div class="feed__item__content">
@@ -286,28 +265,26 @@
             </div>
         </div>
     </section>
-    <section class="newsletter-signup black">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2">
-                    <div class="divider divider-md animate"></div>
-                    <h3 class="newsletter-signup-headline">Stay current. Get our newsletter.</h3>
-                    <form class="row form white" action="">
-                        <div class="col-xs-12 col-lg-6 form-field">
+    <section class="newsletter-signup newsletter-signup--dark">
+        <div class="padded-grid">
+            <div class="newsletter-signup__container">
+                <div class="divider divider-md animate"></div>
+                <h3 class="newsletter-signup__headline">Stay current. Get our newsletter.</h3>
+                <form class="newsletter-signup__form" action="">
+                    <div class="newsletter-signup__form__padded-grid">
+                        <div class="form-field">
                             <input class="input-text" placeholder="Enter your email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
                             <label class="input-label" for="">Your email</label>
                             <div class="input-border"></div>
                         </div>
-                        <div class="col-xs-12 col-lg-6 form-field">
+                        <div class="form-field">
                             <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Your name (optional)" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
                             <label class="input-label" for="">Your name</label>
                             <div class="input-border"></div>
                         </div>
-                        <div class="col-xs-12">
-                            <button class="secondary white">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <button class="button button--secondary">Subscribe</button>
+                </form>
             </div>
         </div>
     </section>
