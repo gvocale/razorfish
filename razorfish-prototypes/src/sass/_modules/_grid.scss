@@ -1,13 +1,10 @@
 .padded-grid {
-    width: 90%;
+    width: calc(80% + 1em + 1em);
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    @media screen and ($xxl) {
-        width: 80%;
-    }
 }
 
 .padded-grid > div,
@@ -43,7 +40,7 @@
         background-color: hsla(0, 0%, 0%, 0.01);
         margin-left: 1em;
         margin-right: 1em;
-        width: calc(100% / 12);
+        width: calc(100% / 4);
         height: 100%;
         display: block;
         user-select: none;
@@ -60,6 +57,10 @@
             display: none;
         }
         @media screen and ($md) {
+            &:nth-of-type(1),
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(4),
             &:nth-of-type(5),
             &:nth-of-type(6),
             &:nth-of-type(7),
@@ -68,6 +69,7 @@
             &:nth-of-type(10),
             &:nth-of-type(11),
             &:nth-of-type(12) {
+                width: calc(100% / 12);
                 display: block;
             }
         }

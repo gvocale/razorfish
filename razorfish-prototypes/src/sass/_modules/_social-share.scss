@@ -1,19 +1,13 @@
-.social-buttons {
+.social-share {
+    padding-top: 20%;
+    padding-bottom: 20%;
     &__icon {
         display: block;
-        width: 2.5rem;
-        height: 2.5rem;
         background-size: 28% 28%, contain;
         background-position: center;
         background-repeat: no-repeat;
-        @media screen and ($md) {
-            width: 3rem;
-            height: 3rem;
-        }
-        @media screen and ($xxl) {
-            width: 4rem;
-            height: 4rem;
-        }
+        width: 100%;
+        position: relative;
         &.not-in-viewport {
             opacity: 0;
             transform: translateY(100%);
@@ -22,16 +16,32 @@
             transition-timing-function: ease-in-out;
             transition-delay: 0;
         }
+        &:before {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+            position: relative;
+        }
     }
     &__icon-container {
         margin: 1px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        position: relative;
+        display: block;
         overflow: hidden;
         position: relative;
         cursor: pointer;
         cursor: hand;
+        width: 2.5rem;
+        flex-grow: 0.33;
+        @media screen and ($md) {
+            width: 3rem;
+        }
+        @media screen and ($lg) {
+            flex-grow: 0;
+        }
+        @media screen and ($xxl) {
+            width: 4rem;
+        }
         @media screen and ($xl) {
             &:after {
                 display: block;
@@ -48,7 +58,7 @@
                 width: 100%;
             }
             &:hover {
-                .social-buttons__icon {
+                .social-share__icon {
                     animation-name: bounce;
                     animation-duration: 0.5s;
                     animation-timing-function: ease-in-out;
@@ -66,20 +76,22 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        li {
-            margin: 1px;
-            display: inline-block;
-        }
         &.gray {
-            .social-buttons__icon-container {
+            .social-share__icon-container {
                 background-color: $grayLighter;
             }
+        }
+    }
+    &__container {
+        width: 100%;
+        @media screen and ($md) {
+            width: 50%;
         }
     }
 }
 
 @for $i from 1 through 20 {
-    .social-buttons__icon-container:nth-of-type(#{$i}) .social-buttons__icon.in-viewport {
+    .social-share__icon-container:nth-of-type(#{$i}) .social-share__icon.in-viewport {
         transition-delay: calc(0.1s + (0.05s * #{$i}));
         transform: translateY(0%);
         opacity: 1;
