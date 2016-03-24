@@ -7637,6 +7637,21 @@ span.footer-legal-copyright {
   }
 }
 /* line 17, ../../src/sass/_modules/_pull-quote.scss */
+.pull-quote__container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/* line 23, ../../src/sass/_modules/_pull-quote.scss */
 .pull-quote__eyebrow {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   line-height: 1.4;
@@ -7646,39 +7661,40 @@ span.footer-legal-copyright {
   font-size: 1rem;
 }
 @media only screen and (min-width: 768px) {
-  /* line 17, ../../src/sass/_modules/_pull-quote.scss */
+  /* line 23, ../../src/sass/_modules/_pull-quote.scss */
   .pull-quote__eyebrow {
     font-size: 1.3077rem;
   }
 }
 @media only screen and (min-width: 1600px) {
-  /* line 17, ../../src/sass/_modules/_pull-quote.scss */
+  /* line 23, ../../src/sass/_modules/_pull-quote.scss */
   .pull-quote__eyebrow {
     font-size: 1.6154rem;
   }
 }
-/* line 31, ../../src/sass/_modules/_pull-quote.scss */
+/* line 37, ../../src/sass/_modules/_pull-quote.scss */
 .pull-quote__quote {
   font-family: "Miller Display", Times, Georgia, serif;
   font-style: italic;
   line-height: 1.8;
   letter-spacing: 0.015em;
   margin-bottom: 0.5em;
+  max-width: 24em;
   font-size: 1.3077rem;
 }
 @media only screen and (min-width: 768px) {
-  /* line 31, ../../src/sass/_modules/_pull-quote.scss */
+  /* line 37, ../../src/sass/_modules/_pull-quote.scss */
   .pull-quote__quote {
     font-size: 2.1154rem;
   }
 }
 @media only screen and (min-width: 1600px) {
-  /* line 31, ../../src/sass/_modules/_pull-quote.scss */
+  /* line 37, ../../src/sass/_modules/_pull-quote.scss */
   .pull-quote__quote {
     font-size: 3.4231rem;
   }
 }
-/* line 45, ../../src/sass/_modules/_pull-quote.scss */
+/* line 52, ../../src/sass/_modules/_pull-quote.scss */
 .pull-quote__credit {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   line-height: 1.8;
@@ -7687,23 +7703,23 @@ span.footer-legal-copyright {
   text-transform: uppercase;
 }
 @media only screen and (min-width: 768px) {
-  /* line 45, ../../src/sass/_modules/_pull-quote.scss */
+  /* line 52, ../../src/sass/_modules/_pull-quote.scss */
   .pull-quote__credit {
     font-size: 1rem;
   }
 }
 @media only screen and (min-width: 1600px) {
-  /* line 45, ../../src/sass/_modules/_pull-quote.scss */
+  /* line 52, ../../src/sass/_modules/_pull-quote.scss */
   .pull-quote__credit {
     font-size: 1.3077rem;
   }
 }
-/* line 57, ../../src/sass/_modules/_pull-quote.scss */
+/* line 64, ../../src/sass/_modules/_pull-quote.scss */
 .pull-quote__credit strong {
   font-weight: 700;
   margin-right: 0.5em;
 }
-/* line 62, ../../src/sass/_modules/_pull-quote.scss */
+/* line 69, ../../src/sass/_modules/_pull-quote.scss */
 .pull-quote .padded-grid {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;

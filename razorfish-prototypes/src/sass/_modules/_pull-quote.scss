@@ -14,6 +14,12 @@
         padding-bottom: 10em;
     }
     @media only screen and ($xxl) {}
+    &__container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
     &__eyebrow {
         font-family: $sans;
         line-height: $title-sans;
@@ -34,6 +40,7 @@
         line-height: $prose-serif;
         letter-spacing: $spacing-serif-large;
         margin-bottom: 0.5em;
+        max-width: 24em;
         font-size: $scale05;
         @media only screen and ($md) {
             font-size: $scale07;
