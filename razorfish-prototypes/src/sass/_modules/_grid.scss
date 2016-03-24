@@ -3,7 +3,8 @@
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    @media screen and ($md) {}
+    flex-wrap: wrap;
+    justify-content: center;
     @media screen and ($xxl) {
         width: 80%;
     }
@@ -33,6 +34,7 @@
         user-select: none;
         cursor: not-allowed;
         pointer-events: none;
+        flex-wrap: nowrap;
     }
     &__col {
         border-left: 1px solid hsla(0, 0%, 0%, 0.04);
