@@ -270,3 +270,21 @@ button.tertiary:hover:before {
         color: $black;
     }
 }
+
+.link--download {
+    margin-left: 1.5em;
+    &:after {
+        content: "";
+        display: block;
+        @include icon-download-primary;
+        content: "";
+        width: 1em;
+        height: 1em;
+        background-size: 100% 100%, contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        display: inline-block;
+        left: -1.5em;
+    }
+}
