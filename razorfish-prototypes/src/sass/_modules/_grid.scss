@@ -1,5 +1,5 @@
 .padded-grid {
-    width: calc(80% + 1em + 1em);
+    width: calc(80% + 1rem + 1rem);
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -8,14 +8,15 @@
 }
 
 .padded-grid > div,
-.padded-grid > section {
-    padding-left: 1em;
-    padding-right: 1em;
+.padded-grid > section,
+.padded-grid > ul {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .overlay-grid {
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     height: 100%;
     width: 100%;
     display: flex;
@@ -38,8 +39,8 @@
         border-right: 1px solid hsla(0, 0%, 0%, 0.04);
         width: 100%;
         background-color: hsla(0, 0%, 0%, 0.01);
-        margin-left: 1em;
-        margin-right: 1em;
+        margin-left: 1rem;
+        margin-right: 1rem;
         width: calc(100% / 4);
         height: 100%;
         display: block;
@@ -57,6 +58,17 @@
             display: none;
         }
         @media screen and ($md) {
+            &:nth-of-type(1),
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(4),
+            &:nth-of-type(5),
+            &:nth-of-type(6) {
+                width: calc(100% / 6);
+                display: block;
+            }
+        }
+        @media screen and ($lg) {
             &:nth-of-type(1),
             &:nth-of-type(2),
             &:nth-of-type(3),

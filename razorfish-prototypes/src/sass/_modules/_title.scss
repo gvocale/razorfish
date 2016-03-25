@@ -78,16 +78,6 @@
             font-size: $scale06;
         }
     }
-    &.white {
-        background-color: $white;
-    }
-    &.white-darker {
-        background-color: $whiteDarker;
-    }
-    &.black {
-        background-color: $black;
-        color: $white;
-    }
     .button-container {
         display: flex;
         flex-direction: row;
@@ -113,10 +103,22 @@
         }
     }
     &__secondary {
-        padding-top: 12em;
-        padding-bottom: 6em;
+        padding-top: 6em;
+        padding-bottom: 3em;
+        text-align: center;
+        @media screen and ($md) {
+            padding-top: 10em;
+            padding-bottom: 5em;
+        }
+        .title__headline {
+            margin-bottom: 2rem;
+        }
         .divider {
             margin-bottom: 2rem;
+        }
+        .padded-grid {
+            flex-direction: column;
+            align-items: center;
         }
     }
     &__tertiary {
@@ -148,5 +150,9 @@
     &--dark {
         color: $black;
         background-color: $grayLighter;
+    }
+    &--black {
+        color: $white;
+        background-color: $black;
     }
 }

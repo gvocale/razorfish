@@ -26,18 +26,12 @@
     &__icon-container {
         margin: 1px;
         position: relative;
-        display: block;
-        overflow: hidden;
-        position: relative;
         cursor: pointer;
         cursor: hand;
-        width: 2.5rem;
-        flex-grow: 0.33;
-        @media screen and ($md) {
-            width: 3rem;
-        }
+        width: 2rem;
+        overflow: hidden;
         @media screen and ($lg) {
-            flex-grow: 0;
+            width: 3rem;
         }
         @media screen and ($xxl) {
             width: 4rem;
@@ -76,6 +70,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        align-items: flex-start;
         &.gray {
             .social-share__icon-container {
                 background-color: $grayLighter;

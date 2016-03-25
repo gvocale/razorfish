@@ -255,8 +255,6 @@ p {
     }
 }
 
-
-
 .subheadline {
     font-family: $sans;
     font-size: $scale05;
@@ -426,25 +424,46 @@ p {
             transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
         }
     }
-    &-muted {
+    &--muted {
         color: $grayDarker;
     }
-    &-primary {
+    &--primary {
         color: $primary;
     }
-    &-secondary {
+    &--secondary {
         text-decoration: none;
         position: relative;
         display: inline-block;
         cursor: pointer;
         cursor: hand;
     }
-    &-arrow {
+    &--tertiary {
+        font-style: italic;
+    }
+    &--arrow {
         margin-right: 1.5em;
         &:after {
             content: "→";
             position: absolute;
             margin-left: 0.5em;
+        }
+    }
+    &--download {
+        margin-left: 1.5em;
+        &:after {
+            content: "";
+            display: block;
+            @include icon-download-primary;
+            content: "";
+            width: 1em;
+            height: 1em;
+            background-size: 100% 100%, contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            display: inline-block;
+            left: -1.5em;
+            top: 0;
         }
     }
     &:focus {

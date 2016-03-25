@@ -1,26 +1,3 @@
-#site-masthead__checkbox {
-    appearance: none;
-    display: none;
-}
-
-.site-masthead {
-    padding: 0 5%;
-    height: 5rem;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    position: fixed;
-    z-index: 1000;
-    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.site-masthead.hiding {
-    transform: translateY(-100%);
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
-}
-
 .site-navigation {
     position: fixed;
     top: 0px;
@@ -30,85 +7,24 @@
     background-color: rgba(255, 255, 255, 0.9);
     z-index: 100;
     left: 100%;
-}
-
-#site-masthead__checkbox:checked ~ .site-navigation {
-    left: 0%;
-}
-
-.site-navigation__content {
-    height: 100%;
-    overflow: scroll;
-    display: flex;
-    align-items: center;
-}
-
-#site-masthead__checkbox:checked ~ main,
-#site-masthead__checkbox:checked ~ section,
-#site-masthead__checkbox:checked ~ footer,
-#site-masthead__checkbox:checked ~ article {
-    filter: blur(10px);
-}
-
-.site-masthead__logo-container {
-    display: flex;
-    align-items: baseline;
-    flex-direction: row;
-}
-
-.razorfish-logo {
-    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    height: 1.3rem;
-    @media screen and ($lg) {
-        height: 1.4rem;
+    &__content {
+        height: 100%;
+        overflow: scroll;
+        display: flex;
+        align-items: center;
     }
-}
-
-.site-masthead__country-dropdown {
-    font-family: $sans;
-    font-size: $scale04;
-    color: $primary;
-    font-weight: 200;
-    display: inline-block;
-    margin-left: 0.6rem;
-    display: none;
-}
-
-.site-masthead__country-dropdown:after {
-    content: ">";
-    transform: rotate(90deg) scale(0.6, 1.2);
-    margin-left: 0.3em;
-    position: absolute;
-}
-
-.site-navigation__link-container {
-    // animation-name: fadein;
-    // animation-duration: 0.1s;
-    // animation-timing-function: ease-out;
-    // animation-delay: 0.1s;
-    // animation-iteration-count: 1;
-    // animation-direction: normal;
-    // animation-fill-mode: forwards;
-    // animation-play-state: pause;
-    opacity: 0;
-    transform: translateY(-50%);
-    transition: all 0s linear 0s;
-}
-
-#site-masthead__checkbox:checked ~ .site-navigation .site-navigation__link-container {
-    opacity: 1;
-    transform: translateY(0%);
-    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
-}
-
-@for $i from 1 through 20 {
-    #site-masthead__checkbox:checked ~ .site-navigation .site-navigation__link-container:nth-of-type(#{$i}) {
-        transition-delay: calc(0.2s + (0.025s * #{$i}));
-    }
-}
-
-.site-navigation {
     &__link-container {
+        // animation-name: fadein;
+        // animation-duration: 0.1s;
+        // animation-timing-function: ease-out;
+        // animation-delay: 0.1s;
+        // animation-iteration-count: 1;
+        // animation-direction: normal;
+        // animation-fill-mode: forwards;
+        // animation-play-state: pause;
+        opacity: 0;
+        transform: translateY(-50%);
+        transition: all 0s linear 0s;
         &:after {
             display: inline;
             content: "/";
@@ -132,8 +48,11 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
         margin-bottom: 2em;
+        @media screen and ($md) {
+            justify-content: center;
+        }
     }
     &__components {
         @extend .h4-sans;
@@ -141,124 +60,24 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
+                @media screen and ($md) {
+            justify-content: center;
+        }
         .site-navigation__link-container {
             margin-bottom: 0.5em;
         }
     }
 }
 
-
-/*!
- * Hamburgers
- * @description Tasty CSS-animated hamburgers
- * @author Jonathan Suh @jonsuh
- * @site https://jonsuh.com/hamburgers
- * @link https://github.com/jonsuh/hamburgers
- */
-
-.hamburger {
-    padding-top: 1em;
-    padding-left: 1em;
-    padding-bottom: 1em;
-    display: inline-block;
-    cursor: pointer;
-    transition-property: opacity, filter;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
-    font: inherit;
-    color: inherit;
-    text-transform: none;
-    background-color: transparent;
-    border: 0;
-    margin: 0;
-    overflow: visible;
-    &:focus {
-        outline: none;
-    }
+#site-masthead__checkbox:checked ~ .site-navigation .site-navigation__link-container {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
 }
 
-.hamburger-box {
-    width: 2.5em;
-    height: 2em;
-    display: inline-block;
-    position: relative;
-}
-
-.hamburger-inner {
-    display: block;
-    top: 50%;
-    margin-top: -2px;
-}
-
-.hamburger-inner,
-.hamburger-inner::before,
-.hamburger-inner::after {
-    width: 100%;
-    height: 4px;
-    background-color: $black;
-    position: absolute;
-    transition-property: transform;
-    transition-duration: 0.15s;
-    transition-timing-function: ease;
-}
-
-.hamburger-inner::before,
-.hamburger-inner::after {
-    content: "";
-    display: block;
-}
-
-.hamburger-inner::before {
-    top: -0.75em;
-}
-
-.hamburger-inner::after {
-    bottom: -0.75em;
-}
-
-.hamburger:hover {
-    .hamburger-inner::before {
-        transition: top 0.1s 0s ease-in;
-        transition-delay: 0s;
-        top: -0.6em;
-    }
-    .hamburger-inner::after {
-        transition: bottom 0.1s 0s ease-in;
-        transition-delay: 0s;
-        bottom: -0.6em;
-    }
-}
-
-.site-masthead .hamburger__spin {
-    .hamburger-inner {
-        transition-duration: 0.3s;
-        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-    .hamburger-inner::before {
-        transition: top 0.1s 0.34s ease-in-out, opacity 0.1s ease-in;
-    }
-    .hamburger-inner::after {
-        transition: bottom 0.1s 0.34s ease-in-out, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-}
-
-#site-masthead__checkbox:checked ~ .site-masthead .hamburger__spin {
-    .hamburger-inner {
-        -webkit-transform: rotate(225deg);
-        transform: rotate(225deg);
-        transition-delay: 0.14s;
-        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-    .hamburger-inner::before {
-        top: 0;
-        opacity: 0;
-        transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out;
-    }
-    .hamburger-inner::after {
-        bottom: 0;
-        -webkit-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-        transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+@for $i from 1 through 20 {
+    .site-navigation__link-container:nth-of-type(#{$i}) {
+        transition-delay: calc(0.2s + (0.025s * #{$i}));
     }
 }
