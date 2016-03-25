@@ -1,95 +1,4 @@
 .footer {
-    width: 100vw;
-    position: relative;
-    overflow: hidden;
-    background: $white;
-}
-
-.footer-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 0;
-    // transform: translateY(50%);
-}
-
-.footer.reveal {
-    .footer-content {
-        transform: translateY(0%);
-        transition: all 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-}
-
-.footer-legal {
-    color: $grayDarker;
-    font-size: $scale03;
-    text-align: center;
-    font-family: $sans;
-    letter-spacing: 0.02em;
-    margin-top: 2rem;
-    @media screen and ($xl) {
-        margin-top: 4rem;
-        font-size: $scale04;
-    }
-}
-
-span.footer-legal-copyright {
-    margin: 0 0.5em 1em 0;
-    display: block;
-    line-height: $scale06;
-    @media screen and ($md) {
-        display: inline-block;
-    }
-}
-
-.footer-legal-dot:before {
-    content: "·";
-    color: $grayDarker;
-    margin-left: 1em;
-    margin-right: 1em;
-    position: relative;
-    display: inline-block;
-}
-
-.footer-legal-dot:nth-of-type(2):before {
-    display: none;
-    @media screen and ($md) {
-        display: inline;
-    }
-}
-
-.footer-razorfish-logo {
-    @extend .logo-razorfish;
-    width: 10rem;
-    height: 2rem;
-    margin-bottom: 0.5rem;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.footer-divider {
-    margin: 2rem 0;
-    @media screen and ($md) {
-        margin: 2.5rem 0;
-    }
-}
-
-.footer-social-share__icons-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .social-share__icon-container {
-        margin: 0 1rem;
-    }
-}
-
-.footer-v2 {
     &__container-logo {
         display: flex;
         flex-direction: row;
@@ -183,6 +92,15 @@ span.footer-legal-copyright {
     }
     .social-share__icon-group {
         vertical-align: middle;
+    }
+    .social-share__icon-container {
+        width: 4rem;
+        @media screen and ($lg) {
+            width: 3rem;
+        }
+        @media screen and ($xl) {
+            width: 4rem;
+        }
     }
     .container-fluid {
         padding: 10% 10%;

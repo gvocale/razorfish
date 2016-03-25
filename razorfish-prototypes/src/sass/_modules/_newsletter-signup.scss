@@ -1,12 +1,24 @@
 .newsletter-signup {
     padding-top: 20%;
     padding-bottom: 20%;
-    .divider {
-        margin-bottom: 2rem;
+    @media screen and ($md) {
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
+    @media screen and ($lg) {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    @media screen and ($lg) {
+        padding-top: 7.5%;
+        padding-bottom: 7.5%;
     }
     @media screen and ($xl) {
         padding-top: 5%;
         padding-bottom: 5%;
+    }
+    .divider {
+        margin-bottom: 1rem;
     }
     &--dark {
         background-color: $blackLighter;
@@ -23,7 +35,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
-            margin-bottom: 3em;
+            margin-bottom: 3rem;
             .form-field {
                 padding-left: 1em;
                 padding-right: 1em;
@@ -32,6 +44,9 @@
     }
     &__container {
         width: 100%;
+        @media screen and ($lg) {
+            width: calc(100% / 12 * 8);
+        }
         @media screen and ($xl) {
             width: calc(100% / 12 * 6);
         }

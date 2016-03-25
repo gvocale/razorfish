@@ -1,3 +1,10 @@
+@mixin col($column) {
+    width: calc((100% / 12 * #{$column}) - ((#{$gutter} * 12) - (1 * (#{$column} - 1))));
+}
+
+
+
+
 @mixin video {
     position: relative;
     width: 100%;

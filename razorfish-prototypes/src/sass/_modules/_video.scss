@@ -50,11 +50,23 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    margin-top: 4em;
-    margin-bottom: 4em;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     @media screen and ($md) {
-        margin-top: 6em;
-        margin-bottom: 6em;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+    @media screen and ($lg) {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    @media screen and ($xl) {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+    @media screen and ($xxl) {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
     }
     &__caption {
         font-family: $sans;
@@ -63,6 +75,12 @@
         margin-top: 1em;
         font-size: $scale04;
         @media only screen and ($md) {
+            font-size: $scale05;
+        }
+        @media only screen and ($lg) {
+            font-size: $scale04;
+        }
+        @media only screen and ($xxl) {
             font-size: $scale05;
         }
         strong {

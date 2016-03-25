@@ -37,7 +37,7 @@
     <input type="checkbox" id="site-masthead__checkbox">
     <label class="site-masthead" for="site-masthead__checkbox" role="navigation">
         <div class="site-masthead__logo-container">
-            <img class="razorfish-logo" src="images/logo-razorfish.svg" alt="">
+            <img class="site-masthead__logo-razorfish" src="images/logo-razorfish.svg" alt="">
             <span class="site-masthead__country-dropdown">Global</span>
         </div>
         <label for="site-masthead__checkbox" class="hamburger hamburger__spin">
@@ -75,12 +75,15 @@
                         <a class="link" href="rich-article.html">Rich Article</a>
                     </li>
                 </ul>
-                                <ul class="site-navigation__components">
+                <ul class="site-navigation__components">
                     <li class="site-navigation__link-container">
                         <a class="link" href="body-copy.html">Body Copy</a>
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="careers-promo.html">Careers Promo</a>
+                    </li>
+                    <li class="site-navigation__link-container">
+                        <a class="link" href="contact-info.html">Contact Info</a>
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="contact-promo.html">Contact Promo</a>
@@ -135,23 +138,17 @@
         </div>
     </nav>
     <section class="ui background-gray">
-        <div class="container-fluid">
-            <div class="row ">
-                <div class="col-xs-12 col-lg-4">
-                    <button class="secondary">
-                        <span>Subscribe</span>
-                    </button>
-                </div>
-                <div class="col-xs-12 col-lg-4 flex-end">
-                    <select class="secondary">
+        <div class="padded-grid" style="margin-top: 6em; ">
+            <div class="body-copy__flexible">
+                <div class="button-container">
+                    <button class="button button--secondary">Subscribe</button>
+                    <select class="select select--secondary">
                         <option value="none" disabled selected>Industry</option>>
                         <option value="UK">Automotive</option>
                         <option value="USA">Financial</option>
                         <option value="Canada">Healthcare</option>
                     </select>
-                </div>
-                <div class="col-xs-12 col-lg-4">
-                    <select class="secondary">
+                    <select class="select select--secondary">
                         <option value="none" disabled selected>Capability</option>>
                         <option value="USA">Creative</option>
                         <option value="Canada">UX</option>
@@ -161,61 +158,23 @@
             </div>
         </div>
     </section>
-    <section class="ui background-black">
-        <div class="container-fluid">
-            <div class="row ">
-                <div class="col-xs-12 col-lg-4">
-                    <button class="secondary white">
-                        <span>Subscribe</span>
-                    </button>
-                </div>
-                <div class="col-xs-12 col-lg-4">
-                    <select class="secondary white">
+        <section class="ui background-black">
+        <div class="padded-grid" style="margin-top: 6em; ">
+            <div class="body-copy__flexible">
+                <div class="button-container">
+                    <button class="button button--secondary button--light">Subscribe</button>
+                    <select class="select select--secondary button--light">
                         <option value="none" disabled selected>Industry</option>>
                         <option value="UK">Automotive</option>
                         <option value="USA">Financial</option>
                         <option value="Canada">Healthcare</option>
                     </select>
-                </div>
-                <div class="col-xs-12 col-lg-4">
-                    <select class="secondary white">
+                    <select class="select select--secondary button--light">
                         <option value="none" disabled selected>Capability</option>>
                         <option value="USA">Creative</option>
                         <option value="Canada">UX</option>
                         <option value="UK">Tech</option>
                     </select>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="ui background-gray">
-        <div class="container-fluid">
-            <div class="row ">
-                <div class="col-xs-12 col-lg-4">
-                    <button class="tertiary">
-                        <span>Submit</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="ui">
-        <div class="container-fluid">
-            <div class="row ">
-                <div class="col-xs-12 col-lg-4">
-                    <p class="body">
-                        <a class="link link--secondary">Emerging Experiences</a>
-                    </p>
-                </div>
-                <div class="col-xs-12 col-lg-4">
-                    <p class="body">
-                        <a class="link link--primary">Emerging Experiences</a>
-                    </p>
-                </div>
-                <div class="col-xs-12 col-lg-4">
-                    <p class="body">
-                        <a class="link link--primary link-arrow">Emerging Experiences</a>
-                    </p>
                 </div>
             </div>
         </div>
@@ -227,9 +186,6 @@
     <script>
     new cbpScroller(document.getElementById('animate-container'));
     </script>
-</body>
-
-</html>
 </body>
 
 </html>

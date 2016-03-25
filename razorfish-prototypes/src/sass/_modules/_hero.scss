@@ -6,18 +6,21 @@
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 10%;
-    padding-bottom: 40%;
+    padding-bottom: 25%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-end;
     @media screen and ($md) {
-        padding-bottom: 15%;
+        padding-bottom: 20%;
+    }
+    @media screen and ($lg) {
+        padding-bottom: 10%;
         max-height: 75vw;
     }
     @media screen and ($xl) {
-        padding-bottom: 10%;
+        padding-bottom: 7.5%;
     }
     .video-play-button {
         margin: auto;
@@ -34,8 +37,8 @@
         justify-content: center;
         text-align: left;
     }
-    .divider-md {
-        margin-bottom: 1.5rem;
+    .divider {
+        margin-bottom: 1rem;
     }
     &__eyebrow {
         font-family: $sans;
@@ -44,6 +47,7 @@
         max-width: 24em;
         font-size: $scale04;
         margin-bottom: 0.75em;
+        text-transform: uppercase;
         @media only screen and ($xxl) {
             font-size: $scale05;
         }
@@ -57,10 +61,7 @@
         max-width: 10em;
         font-size: $scale07;
         @media only screen and ($md) {
-            font-size: $scale08;
-        }
-        @media only screen and ($md) {
-            font-size: $scale10;
+            font-size: $scale09;
             line-height: $solid-serif + 0.1;
         }
         @media only screen and ($xxl) {
@@ -124,14 +125,11 @@
     }
     &__scroll-down-container {
         position: absolute;
-        bottom: 15%;
+        bottom: 5%;
         left: 50%;
         transform: translateX(-50%);
         animation: 1s ease-in-out 0.5s infinite bounce;
         z-index: 10;
-        @media screen and ($xl) {
-            bottom: 5%;
-        }
         &:hover {
             animation-play-state: paused;
         }

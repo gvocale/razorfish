@@ -83,90 +83,6 @@
     color: $white;
 }
 
-button.secondary,
-select.secondary {
-    background-color: transparent;
-    border-radius: 0;
-    border: none;
-    box-sizing: border-box;
-    color: $black;
-    cursor: hand;
-    cursor: pointer;
-    font-family: $sans;
-    font-size: $scale03;
-    font-weight: 700;
-    letter-spacing: $spacing-sans;
-    line-height: $solid-sans;
-    outline: none;
-    overflow: hidden;
-    position: relative;
-    text-decoration: none;
-    text-transform: uppercase;
-    border: 0.15rem solid $gray;
-    transition: all 0.2s ease-in 0s;
-    -webkit-appearance: none;
-    background-clip: border-box;
-    background-color: transparent;
-    background-origin: content-box;
-    background-position-x: calc(100% + 2em);
-    background-position-y: center;
-    background-repeat: no-repeat;
-    background-size: 1em auto;
-}
-
-button.secondary {
-    padding: 1em 3em;
-}
-
-select.secondary:hover,
-button.secondary:hover {
-    border: 0.15rem solid $grayDarker;
-    transition: all 0s ease-out 0s;
-}
-
-select.secondary:focus,
-button.secondary:focus {
-    outline: none;
-    border: 0.15rem solid $black;
-    transition: all 0s ease-out 0s;
-}
-
-select.secondary.white,
-button.secondary.white {
-    color: $white;
-    border: 0.15rem solid $grayDarker;
-}
-
-select.secondary.white:hover,
-button.secondary.white:hover {
-    border: 0.15rem solid $white;
-    transition: all 0s ease-out 0s;
-}
-
-select.secondary.white:focus,
-button.secondary.white:focus {
-    outline: none;
-    border: 0.15rem solid $white;
-    transition: all 0s ease-out 0s;
-}
-
-select.secondary {
-    @extend .icon-arrow-black;
-    padding: 1em 3em 1em 1.2em;
-}
-
-select.secondary.white {
-    @extend .icon-arrow-white;
-}
-
-select.secondary,
-button.secondary {
-    @media screen and ($xl) {
-        min-width: 15rem;
-        font-size: $scale04;
-    }
-}
-
 button.tertiary {
     background-color: transparent;
     border-radius: 0;
@@ -216,12 +132,16 @@ button.tertiary:hover:before {
     width: 100%;
 }
 
-.button {
+.button,
+.select {
     &--secondary {
         -webkit-appearance: none;
+        background-clip: border-box;
         background-color: transparent;
+        background-origin: content-box;
         border-radius: 0;
-        border: 0;
+        border: 2px solid;
+        border-color: rgba( $black, .2);
         box-sizing: border-box;
         color: currentColor;
         cursor: hand;
@@ -232,43 +152,55 @@ button.tertiary:hover:before {
         line-height: $solid-sans;
         outline: none;
         overflow: hidden;
+        padding: 1.2em 3em;
         position: relative;
         text-decoration: none;
         text-transform: uppercase;
-        padding: 1.2em 3em;
         font-size: $scale03;
+        transition: all 0.2s ease-in 0s;
         @media screen and ($xxl) {
             font-size: $scale04;
-        }
-        &:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            border: 2px solid;
-            border-color: inherit;
-            opacity: 0.5;
-            box-sizing: border-box;
-            transition: all 0.2s ease-in 0s;
         }
         &:hover,
         &:focus {
             outline: none;
-        }
-        &:hover:before,
-        &:focus:before {
-            opacity: 1;
+            border-color: rgba( $black, 1);
             transition: all 0s ease-out 0s;
         }
     }
     &--light {
         color: $white;
+        border-color: rgba( $white, .2);
+        &:hover,
+        &:focus {
+            border-color: rgba( $white, 1);
+        }
     }
     &--dark {
         color: $black;
+        border-color: rgba( $black, .2);
+        &:hover,
+        &:focus {
+            border-color: rgba( $black, 1);
+        }
     }
 }
 
-
+.select {
+    &--secondary {
+        background-position-x: calc(100% + 2em);
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-size: 1em auto;
+        @extend .icon-arrow-black;
+        padding: 1.2em 3em 1.2em 1.2em;
+    }
+    &--secondary.button--light {
+        background-position-x: calc(100% + 2em);
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-size: 1em auto;
+        @extend .icon-arrow-white;
+        padding: 1.2em 3em 1.2em 1.2em;
+    }
+}

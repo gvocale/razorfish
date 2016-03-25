@@ -9,7 +9,7 @@
         line-height: $title-serif;
         letter-spacing: $spacing-serif-tight;
         font-weight: 700;
-        margin-bottom: 0.75em;
+        margin-bottom: 1em;
         @media only screen and ($lg) {
             font-size: $scale07;
         }
@@ -43,6 +43,9 @@
         strong {
             font-weight: 700;
         }
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &__item {
         width: 100vw;
@@ -50,7 +53,11 @@
         min-height: 50vw;
         padding: 10%;
         text-align: left;
-        @media only screen and ($md) {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        @media only screen and ($lg) {
             padding: 7.5%;
             width: 50vw;
         }
@@ -80,9 +87,11 @@
         }
     }
     &__multi-column {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        columns: 2;
+        column-gap: 2rem;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
     &__column {
         width: 100%;
@@ -91,6 +100,13 @@
         }
     }
     &__group {
-        margin-bottom: 2em;
+        padding-bottom: 1.5em;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid-column;
+    
+    }
+    .divider {
+        margin-bottom: 1rem;
     }
 }

@@ -21,7 +21,7 @@
     <input type="checkbox" id="site-masthead__checkbox">
     <label class="site-masthead" for="site-masthead__checkbox" role="navigation">
         <div class="site-masthead__logo-container">
-            <img class="razorfish-logo" src="images/logo-razorfish.svg" alt="">
+            <img class="site-masthead__logo-razorfish" src="images/logo-razorfish.svg" alt="">
             <span class="site-masthead__country-dropdown">Global</span>
         </div>
         <label for="site-masthead__checkbox" class="hamburger hamburger__spin">
@@ -59,12 +59,15 @@
                         <a class="link" href="rich-article.html">Rich Article</a>
                     </li>
                 </ul>
-                                <ul class="site-navigation__components">
+                <ul class="site-navigation__components">
                     <li class="site-navigation__link-container">
                         <a class="link" href="body-copy.html">Body Copy</a>
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="careers-promo.html">Careers Promo</a>
+                    </li>
+                    <li class="site-navigation__link-container">
+                        <a class="link" href="contact-info.html">Contact Info</a>
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="contact-promo.html">Contact Promo</a>
@@ -119,16 +122,13 @@
         </div>
     </nav>
     <section class="simple-title">
-        <div class="title__container animate">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="divider divider-md animate"></div>
-                        <h2 class="title__headline">Get in touch</h2>
-                    </div>
+        <div class="simple-title__container animate">
+            <div class="padded-grid">
+                <div class="simple-title__text-container">
+                    <div class="divider divider-md animate"></div>
+                    <h2 class="simple-title__title">Get in touch</h2>
                 </div>
             </div>
-        </div>
     </section>
     <section class="contact-form">
         <div class="container-fluid">
@@ -335,18 +335,14 @@
         </div>
         <div class="contact-form-background"></div>
     </section>
+    <section class="title title__secondary title--dark">
+        <div class="padded-grid">
+            <h3 class="title__headline">Find an office</h3>
+            <hr class="divider divider-md animate">
+            <p class="title__subheadline">Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor sit amet.</p>
+        </div>
+    </section>
     <article class="find-an-office">
-        <section class="title title__secondary white">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12 flex-center">
-                        <h3 class="title__headline">Find an office</h3>
-                        <hr class="divider divider-md animate">
-                        <p class="title__subheadline">Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor sit amet.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
         <nav class="find-an-office__tab-container">
             <div class="tab-border"></div>
             <input class="tab-input" id="office-tab-1-input" type="radio" name="radio-set" checked="checked" />
@@ -753,17 +749,15 @@
             </div>
         </div>
     </article>
-    <section class="related">
-        <section class="title title__tertiary">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12 flex-start">
-                        <hr class="divider divider-md animate">
-                        <h3 class="related-title-headline">Related Content</h3>
-                    </div>
-                </div>
+    <section class="title title__tertiary title--white">
+        <div class="padded-grid">
+            <div class="title__text-container">
+                <hr class="divider divider-md animate">
+                <h3 class="title__headline">Related Content</h3>
             </div>
-        </section>
+        </div>
+    </section>
+    <section class="related">
         <ul class="related-grid">
             <li class="feed__item animate text-top color-combination-3">
                 <div class="feed__item__content">
@@ -800,20 +794,20 @@
     <section class="contact-promo animate" style="">
         <div class="contact-promo__text-container">
             <p class="contact-promo__eyebrow">Locations</p>
-            <h2 class="contact-promo__description">24 Offices.<br>5 Continents.<br><a href="" class="link link--primary">Get in touch.</a></h2>
+            <h2 class="contact-promo__description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link link--primary">Get in touch.</a></h2>
         </div>
         <div class="contact-promo__background">
         </div>
     </section>
-    <footer class="footer-v2">
+    <footer class="footer">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xs-12 col-lg-3 footer-v2__container-logo">
+                <div class="col-xs-12 col-lg-3 footer__container-logo">
                     <div class="logo-razorfish">
                     </div>
                 </div>
-                <div class="col-xs-12 col-lg-9 footer-v2__container-legal">
-                    <p class="footer-v2__copyrights">
+                <div class="col-xs-12 col-lg-9 footer__container-legal">
+                    <p class="footer__copyrights">
                         <span class="legal">© 2015 Razorfish All rights reserved</span><a href="" class="link link--muted">Terms</a><a href="" class="link link--muted">Privacy</a>
                     </p>
                     <ul class="social-share__group">
@@ -837,7 +831,8 @@
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
-    <script src="js/show-hide-header.js"></script>    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/show-hide-header.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script>
     $('#office-tab-1-input').click(function() {
         $(".office-container").removeClass("north-america europe asia australia").addClass("north-america");
@@ -859,9 +854,6 @@
         });
     });
     </script>
-</body>
-
-</html>
 </body>
 
 </html>

@@ -5,6 +5,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    @media screen and ($lg) {
+        width: calc(90% + 1rem + 1rem);
+    }
+    @media screen and ($xl) {
+        width: calc(80% + 1rem + 1rem);
+    }
+    .col-6 {
+        width: 50%;
+    }
 }
 
 .padded-grid > div,
@@ -14,6 +23,7 @@
     padding-right: 1rem;
 }
 
+$gridLine: hsla(100, 100%, 40%, 0.1);
 .overlay-grid {
     position: fixed;
     z-index: 1000;
@@ -33,10 +43,54 @@
         cursor: not-allowed;
         pointer-events: none;
         flex-wrap: nowrap;
+        &:before {
+            content: "$sm";
+            position: fixed;
+            display: block;
+            background-color: $gridLine;
+            width: 4em;
+            height: 4em;
+            font-family: $sans;
+            font-size: $scale03;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            @media screen and ($md) {
+                content: "$md";
+            }
+            @media screen and ($lg) {
+                content: "$lg";
+            }
+            @media screen and ($xl) {
+                content: "$xl";
+            }
+            @media screen and ($xxl) {
+                content: "$xxl";
+            }
+        }
     }
     &__col {
-        border-left: 1px solid hsla(0, 0%, 0%, 0.04);
-        border-right: 1px solid hsla(0, 0%, 0%, 0.04);
+        border-left: 1px solid $gridLine;
+        border-right: 1px solid $gridLine;
+        @media screen and ($md) {
+            border-left: 1px solid $gridLine;
+            border-right: 1px solid $gridLine;
+        }
+        @media screen and ($lg) {
+            border-left: 1px solid $gridLine;
+            border-right: 1px solid $gridLine;
+        }
+        @media screen and ($xl) {
+            border-left: 1px solid $gridLine;
+            border-right: 1px solid $gridLine;
+        }
+        @media screen and ($xxl) {
+            border-left: 1px solid $gridLine;
+            border-right: 1px solid $gridLine;
+        }
         width: 100%;
         background-color: hsla(0, 0%, 0%, 0.01);
         margin-left: 1rem;

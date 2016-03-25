@@ -21,7 +21,7 @@
     <input type="checkbox" id="site-masthead__checkbox">
     <label class="site-masthead" for="site-masthead__checkbox" role="navigation">
         <div class="site-masthead__logo-container">
-            <img class="razorfish-logo" src="images/logo-razorfish.svg" alt="">
+            <img class="site-masthead__logo-razorfish" src="images/logo-razorfish.svg" alt="">
             <span class="site-masthead__country-dropdown">Global</span>
         </div>
         <label for="site-masthead__checkbox" class="hamburger hamburger__spin">
@@ -59,12 +59,15 @@
                         <a class="link" href="rich-article.html">Rich Article</a>
                     </li>
                 </ul>
-                                <ul class="site-navigation__components">
+                <ul class="site-navigation__components">
                     <li class="site-navigation__link-container">
                         <a class="link" href="body-copy.html">Body Copy</a>
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="careers-promo.html">Careers Promo</a>
+                    </li>
+                    <li class="site-navigation__link-container">
+                        <a class="link" href="contact-info.html">Contact Info</a>
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="contact-promo.html">Contact Promo</a>
@@ -130,9 +133,9 @@
         <div class="hero__background animate"></div>
     </section>
     <article class="">
-        <section class="contact-info contact-info--full-width">
-            <div class="contact-info__sticky sticky">
-                <div class="padded-grid">
+        <section class="contact-info full-width">
+            <div class="padded-grid">
+                <div class="contact-info__group--share">
                     <ul class="social-share__group">
                         <a href="" class="social-share__icon-container">
                             <li class="icon-linkedin social-share__icon animate">
@@ -151,66 +154,68 @@
                             </li>
                         </a>
                     </ul>
-                    <div class="contact-info__group--author">
+                </div>
+                <div class="contact-info__group--author">
+                    <div class="contact-info__group">
                         <p class="contact-info__label">Author</p>
-                        <p class="author-name">Matthew Williamson</p>
-                        <p class="author-role">Sr. Dir. of Emerging Experiences</p>
+                        <p class="contact-info__author-name">Matthew Williamson</p>
+                        <p class="contact-info__author-role">Sr. Dir. of Emerging Experiences</p>
                     </div>
-                    <div class="contact-info__group--contact">
-                        <div class="contact-info__group">
-                            <p class="contact-info__label">Email</p>
-                            <p class="email-address"><a href="" class="link link--primary">matthew.williamson@razorfish.com</a></p>
-                        </div>
-                        <div class="contact-info__group">
-                            <p class="contact-info__label">Phone</p>
-                            <p class="other-link">(212) 555-1212</p>
-                        </div>
-                        <hr class="divider divider-md divider--gray">
-                        <div class="contact-info__group">
-                            <p class="other-link"><a href="" class="link link--primary link--download">DOWNLOAD THE PDF</a></p>
-                        </div>
+                    <div class="contact-info__group">
+                        <p class="contact-info__label">Email</p>
+                        <p class="contact-info__body"><a href="" class="link link--primary">matthew.williamson@razorfish.com</a></p>
+                    </div>
+                    <div class="contact-info__group">
+                        <p class="contact-info__label">Phone</p>
+                        <p class="contact-info__body">(212) 555-1212</p>
+                    </div>
+                    <hr class="divider divider-md divider--gray">
+                    <div class="contact-info__group">
+                        <p class="contact-info__body"><a href="" class="link link--primary link--download">DOWNLOAD THE PDF</a></p>
                     </div>
                 </div>
             </div>
         </section>
         <div class="padded-grid">
-            <section class="contact-info contact-info--left-rail">
+            <section class="contact-info with-padding">
                 <div class="contact-info__sticky sticky">
-                    <ul class="social-share__group gray">
-                        <a href="" class="social-share__icon-container">
-                            <li class="icon-linkedin social-share__icon animate">
-                            </li>
-                        </a>
-                        <a href="" class="social-share__icon-container">
-                            <li class="icon-twitter social-share__icon animate">
-                            </li>
-                        </a>
-                        <a href="" class="social-share__icon-container">
-                            <li class="icon-facebook social-share__icon animate">
-                            </li>
-                        </a>
-                        <a href="" class="social-share__icon-container">
-                            <li class="icon-mail social-share__icon animate">
-                            </li>
-                        </a>
-                    </ul>
-                    <div class="contact-info__group--author">
-                        <p class="contact-info__label">Author</p>
-                        <p class="author-name">Matthew Williamson</p>
-                        <p class="author-role">Sr. Dir. of Emerging Experiences</p>
+                    <div class="contact-info__group--share">
+                        <ul class="social-share__group">
+                            <a href="" class="social-share__icon-container">
+                                <li class="icon-linkedin social-share__icon animate">
+                                </li>
+                            </a>
+                            <a href="" class="social-share__icon-container">
+                                <li class="icon-twitter social-share__icon animate">
+                                </li>
+                            </a>
+                            <a href="" class="social-share__icon-container">
+                                <li class="icon-facebook social-share__icon animate">
+                                </li>
+                            </a>
+                            <a href="" class="social-share__icon-container">
+                                <li class="icon-mail social-share__icon animate">
+                                </li>
+                            </a>
+                        </ul>
                     </div>
-                    <div class="contact-info__group--contact">
+                    <div class="contact-info__group--author">
+                        <div class="contact-info__group">
+                            <p class="contact-info__label">Author</p>
+                            <p class="contact-info__author-name">Matthew Williamson</p>
+                            <p class="contact-info__author-role">Sr. Dir. of Emerging Experiences</p>
+                        </div>
                         <div class="contact-info__group">
                             <p class="contact-info__label">Email</p>
-                            <p class="email-address"><a href="" class="link link--primary">matthew.williamson@razorfish.com</a></p>
+                            <p class="contact-info__body"><a href="" class="link link--primary">matthew.williamson@razorfish.com</a></p>
                         </div>
                         <div class="contact-info__group">
                             <p class="contact-info__label">Phone</p>
-                            <p class="other-link">(212) 555-1212</p>
+                            <p class="contact-info__body">(212) 555-1212</p>
                         </div>
                         <hr class="divider divider-md divider--gray">
                         <div class="contact-info__group">
-                            <p class="other-link"><a href="" class="link link--primary link--download">DOWNLOAD THE PDF</a></p>
+                            <p class="contact-info__body"><a href="" class="link link--primary link--download">DOWNLOAD THE PDF</a></p>
                         </div>
                     </div>
                 </div>
@@ -310,20 +315,20 @@
     <section class="contact-promo animate" style="">
         <div class="contact-promo__text-container">
             <p class="contact-promo__eyebrow">Locations</p>
-            <h2 class="contact-promo__description">24 Offices.<br>5 Continents.<br><a href="" class="link link--primary">Get in touch.</a></h2>
+            <h2 class="contact-promo__description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link link--primary">Get in touch.</a></h2>
         </div>
         <div class="contact-promo__background">
         </div>
     </section>
-    <footer class="footer-v2">
+    <footer class="footer">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xs-12 col-lg-3 footer-v2__container-logo">
+                <div class="col-xs-12 col-lg-3 footer__container-logo">
                     <div class="logo-razorfish">
                     </div>
                 </div>
-                <div class="col-xs-12 col-lg-9 footer-v2__container-legal">
-                    <p class="footer-v2__copyrights">
+                <div class="col-xs-12 col-lg-9 footer__container-legal">
+                    <p class="footer__copyrights">
                         <span class="legal">© 2015 Razorfish All rights reserved</span><a href="" class="link link--muted">Terms</a><a href="" class="link link--muted">Privacy</a>
                     </p>
                     <ul class="social-share__group">
@@ -359,9 +364,6 @@
         $('.sticky').Stickyfill();
     });
     </script>
-</body>
-
-</html>
 </body>
 
 </html>

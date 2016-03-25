@@ -4,7 +4,10 @@
 }
 
 .site-masthead {
-    padding: 0 5%;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 0%;
     height: 5rem;
     width: 100%;
     display: flex;
@@ -14,6 +17,38 @@
     position: fixed;
     z-index: 1000;
     transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    &__logo-container {
+        display: flex;
+        align-items: baseline;
+        flex-direction: row;
+    }
+    &__logo-razorfish {
+        transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        height: 1.3rem;
+        @media screen and ($lg) {
+            height: 1.5rem;
+        }
+        @media screen and ($xxl) {
+            height: 1.6rem;
+        }
+    }
+    &__country-dropdown {
+        font-family: $sans;
+        font-size: $scale04;
+        color: $primary;
+        font-weight: 200;
+        margin-left: 0.6rem;
+        display: none;
+        @media screen and ($md) {
+            display: inline-block;
+        }
+        &:after {
+            content: ">";
+            transform: rotate(90deg) scale(0.6, 1.2);
+            margin-left: 0.3em;
+            position: absolute;
+        }
+    }
 }
 
 .site-masthead.hiding {
@@ -21,11 +56,9 @@
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
 }
 
-
 #site-masthead__checkbox:checked ~ .site-navigation {
     left: 0%;
 }
-
 
 #site-masthead__checkbox:checked ~ main,
 #site-masthead__checkbox:checked ~ section,
@@ -33,38 +66,6 @@
 #site-masthead__checkbox:checked ~ article {
     filter: blur(10px);
 }
-
-.site-masthead__logo-container {
-    display: flex;
-    align-items: baseline;
-    flex-direction: row;
-}
-
-.razorfish-logo {
-    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    height: 1.3rem;
-    @media screen and ($lg) {
-        height: 1.4rem;
-    }
-}
-
-.site-masthead__country-dropdown {
-    font-family: $sans;
-    font-size: $scale04;
-    color: $primary;
-    font-weight: 200;
-    display: inline-block;
-    margin-left: 0.6rem;
-    display: none;
-}
-
-.site-masthead__country-dropdown:after {
-    content: ">";
-    transform: rotate(90deg) scale(0.6, 1.2);
-    margin-left: 0.3em;
-    position: absolute;
-}
-
 
 
 /*!
