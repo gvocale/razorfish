@@ -7176,7 +7176,7 @@ a[href^="tel"] {
 
 /* line 1, ../../src/sass/_modules/_office-contact-info.scss */
 .office-contact-info {
-  width: 100vw;
+  width: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -7192,7 +7192,7 @@ a[href^="tel"] {
   font-family: "Miller Display", Times, Georgia, serif;
   font-size: 1.6154rem;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   font-weight: 700;
   margin-bottom: 1em;
 }
@@ -7253,7 +7253,10 @@ a[href^="tel"] {
   width: 100vw;
   height: auto;
   min-height: 50vw;
-  padding: 10%;
+  padding-top: 20%;
+  padding-bottom: 20%;
+  padding-left: 10%;
+  padding-right: 10%;
   text-align: left;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -7268,17 +7271,22 @@ a[href^="tel"] {
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
+@media screen and (min-width: 768px) {
+  /* line 50, ../../src/sass/_modules/_office-contact-info.scss */
+  .office-contact-info__item {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+}
 @media only screen and (min-width: 992px) {
   /* line 50, ../../src/sass/_modules/_office-contact-info.scss */
   .office-contact-info__item {
-    padding: 7.5%;
     width: 50vw;
   }
 }
 @media only screen and (min-width: 1200px) {
   /* line 50, ../../src/sass/_modules/_office-contact-info.scss */
   .office-contact-info__item {
-    padding: 10%;
     min-height: 40vw;
   }
 }
@@ -7288,29 +7296,29 @@ a[href^="tel"] {
     min-height: 25vw;
   }
 }
-/* line 71, ../../src/sass/_modules/_office-contact-info.scss */
+/* line 76, ../../src/sass/_modules/_office-contact-info.scss */
 .office-contact-info__item.red {
   background-color: #ff595b;
   color: #FFFFFF;
 }
-/* line 74, ../../src/sass/_modules/_office-contact-info.scss */
+/* line 79, ../../src/sass/_modules/_office-contact-info.scss */
 .office-contact-info__item.red hr {
   background-color: #404040;
 }
-/* line 77, ../../src/sass/_modules/_office-contact-info.scss */
+/* line 82, ../../src/sass/_modules/_office-contact-info.scss */
 .office-contact-info__item.red a {
   color: #7f1618;
 }
-/* line 81, ../../src/sass/_modules/_office-contact-info.scss */
+/* line 86, ../../src/sass/_modules/_office-contact-info.scss */
 .office-contact-info__item.black {
   background-color: #404040;
   color: #FFFFFF;
 }
-/* line 84, ../../src/sass/_modules/_office-contact-info.scss */
+/* line 89, ../../src/sass/_modules/_office-contact-info.scss */
 .office-contact-info__item.black a {
   color: #a9c000;
 }
-/* line 89, ../../src/sass/_modules/_office-contact-info.scss */
+/* line 94, ../../src/sass/_modules/_office-contact-info.scss */
 .office-contact-info__multi-column {
   -webkit-columns: 2;
      -moz-columns: 2;
@@ -7322,24 +7330,24 @@ a[href^="tel"] {
   page-break-inside: avoid;
   break-inside: avoid;
 }
-/* line 96, ../../src/sass/_modules/_office-contact-info.scss */
+/* line 101, ../../src/sass/_modules/_office-contact-info.scss */
 .office-contact-info__column {
   width: 100%;
 }
 @media only screen and (min-width: 768px) {
-  /* line 96, ../../src/sass/_modules/_office-contact-info.scss */
+  /* line 101, ../../src/sass/_modules/_office-contact-info.scss */
   .office-contact-info__column {
     width: 50%;
   }
 }
-/* line 102, ../../src/sass/_modules/_office-contact-info.scss */
+/* line 107, ../../src/sass/_modules/_office-contact-info.scss */
 .office-contact-info__group {
   padding-bottom: 1.5em;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   break-inside: avoid-column;
 }
-/* line 109, ../../src/sass/_modules/_office-contact-info.scss */
+/* line 113, ../../src/sass/_modules/_office-contact-info.scss */
 .office-contact-info .divider {
   margin-bottom: 1rem;
 }

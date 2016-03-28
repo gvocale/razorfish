@@ -1,5 +1,5 @@
 .office-contact-info {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -7,7 +7,7 @@
         font-family: $display;
         font-size: $scale06;
         line-height: $title-serif;
-        letter-spacing: $spacing-serif-tight;
+        letter-spacing: $spacing-serif;
         font-weight: 700;
         margin-bottom: 1em;
         @media only screen and ($lg) {
@@ -51,18 +51,23 @@
         width: 100vw;
         height: auto;
         min-height: 50vw;
-        padding: 10%;
+        padding-top: 20%;
+        padding-bottom: 20%;
+        padding-left: 10%;
+        padding-right: 10%;
         text-align: left;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: flex-start;
+        @media screen and ($md) {
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
         @media only screen and ($lg) {
-            padding: 7.5%;
             width: 50vw;
         }
         @media only screen and ($xl) {
-            padding: 10%;
             min-height: 40vw;
         }
         @media only screen and ($xxl) {
@@ -104,7 +109,6 @@
         -webkit-column-break-inside: avoid;
         page-break-inside: avoid;
         break-inside: avoid-column;
-    
     }
     .divider {
         margin-bottom: 1rem;
