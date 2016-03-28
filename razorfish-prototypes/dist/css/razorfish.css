@@ -2625,7 +2625,7 @@ p {
 }
 
 /* line 159, ../../src/sass/_modules/_typography.scss */
-.h2-sans, .site-navigation__pages {
+.h2-sans {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   font-size: 1.6154rem;
   line-height: 1.4;
@@ -2634,19 +2634,19 @@ p {
 }
 @media only screen and (min-width: 768px) {
   /* line 159, ../../src/sass/_modules/_typography.scss */
-  .h2-sans, .site-navigation__pages {
+  .h2-sans {
     font-size: 2.1154rem;
   }
 }
 @media only screen and (min-width: 992px) {
   /* line 159, ../../src/sass/_modules/_typography.scss */
-  .h2-sans, .site-navigation__pages {
+  .h2-sans {
     font-size: 2.6154rem;
   }
 }
 @media only screen and (min-width: 1600px) {
   /* line 159, ../../src/sass/_modules/_typography.scss */
-  .h2-sans, .site-navigation__pages {
+  .h2-sans {
     font-size: 3.4231rem;
   }
 }
@@ -2733,7 +2733,7 @@ p {
 }
 
 /* line 227, ../../src/sass/_modules/_typography.scss */
-.h4-sans, .find-an-office__office-name, .site-navigation__components {
+.h4-sans, .find-an-office__office-name {
   font-family: "Gotham", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.4;
@@ -2742,19 +2742,19 @@ p {
 }
 @media only screen and (min-width: 768px) {
   /* line 227, ../../src/sass/_modules/_typography.scss */
-  .h4-sans, .find-an-office__office-name, .site-navigation__components {
+  .h4-sans, .find-an-office__office-name {
     font-size: 1.3077rem;
   }
 }
 @media only screen and (min-width: 992px) {
   /* line 227, ../../src/sass/_modules/_typography.scss */
-  .h4-sans, .find-an-office__office-name, .site-navigation__components {
+  .h4-sans, .find-an-office__office-name {
     font-size: 1.6154rem;
   }
 }
 @media only screen and (min-width: 1600px) {
   /* line 227, ../../src/sass/_modules/_typography.scss */
-  .h4-sans, .find-an-office__office-name, .site-navigation__components {
+  .h4-sans, .find-an-office__office-name {
     font-size: 2.1154rem;
   }
 }
@@ -3081,7 +3081,6 @@ p {
 .h1-sans::-moz-selection,
 .h1-serif::-moz-selection,
 .h2-sans::-moz-selection,
-.site-navigation__pages::-moz-selection,
 .h2-serif::-moz-selection,
 .hero-video-headline::-moz-selection,
 .related-title-headline::-moz-selection,
@@ -3090,7 +3089,6 @@ p {
 .contact-form-headline::-moz-selection,
 .h4-sans::-moz-selection,
 .find-an-office__office-name::-moz-selection,
-.site-navigation__components::-moz-selection,
 .h4-serif::-moz-selection,
 .input-submit::-moz-selection,
 .body::-moz-selection,
@@ -3112,7 +3110,6 @@ p {
 .h1-sans::selection,
 .h1-serif::selection,
 .h2-sans::selection,
-.site-navigation__pages::selection,
 .h2-serif::selection,
 .hero-video-headline::selection,
 .related-title-headline::selection,
@@ -3121,7 +3118,6 @@ p {
 .contact-form-headline::selection,
 .h4-sans::selection,
 .find-an-office__office-name::selection,
-.site-navigation__components::selection,
 .h4-serif::selection,
 .input-submit::selection,
 .body::selection,
@@ -8288,6 +8284,10 @@ a[href^="tel"] {
 }
 /* line 45, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__pages {
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+  font-weight: 700;
   text-decoration: none;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8302,17 +8302,40 @@ a[href^="tel"] {
       -ms-flex-pack: start;
           justify-content: flex-start;
   margin-bottom: 2em;
+  font-size: 1.6154rem;
 }
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   /* line 45, ../../src/sass/_modules/_site-navigation.scss */
   .site-navigation__pages {
+    font-size: 2.1154rem;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
 }
-/* line 57, ../../src/sass/_modules/_site-navigation.scss */
+@media only screen and (min-width: 992px) {
+  /* line 45, ../../src/sass/_modules/_site-navigation.scss */
+  .site-navigation__pages {
+    font-size: 2.6154rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  /* line 45, ../../src/sass/_modules/_site-navigation.scss */
+  .site-navigation__pages {
+    font-size: 3.4231rem;
+  }
+}
+/* line 67, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__pages .note {
+  letter-spacing: -0.02em;
+}
+/* line 72, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__components {
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+  font-weight: 700;
   text-decoration: none;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8327,20 +8350,33 @@ a[href^="tel"] {
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
-@media screen and (min-width: 768px) {
-  /* line 57, ../../src/sass/_modules/_site-navigation.scss */
+@media only screen and (min-width: 768px) {
+  /* line 72, ../../src/sass/_modules/_site-navigation.scss */
   .site-navigation__components {
+    font-size: 1.3077rem;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
 }
-/* line 67, ../../src/sass/_modules/_site-navigation.scss */
+@media only screen and (min-width: 992px) {
+  /* line 72, ../../src/sass/_modules/_site-navigation.scss */
+  .site-navigation__components {
+    font-size: 1.6154rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  /* line 72, ../../src/sass/_modules/_site-navigation.scss */
+  .site-navigation__components {
+    font-size: 2.1154rem;
+  }
+}
+/* line 93, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__components .site-navigation__link-container {
   margin-bottom: 0.5em;
 }
 
-/* line 73, ../../src/sass/_modules/_site-navigation.scss */
+/* line 99, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation .site-navigation__link-container {
   opacity: 1;
   -webkit-transform: translateY(0%);
@@ -8348,102 +8384,102 @@ a[href^="tel"] {
   transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(1) {
   transition-delay: calc(0.2s + (0.025s * 1));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(2) {
   transition-delay: calc(0.2s + (0.025s * 2));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(3) {
   transition-delay: calc(0.2s + (0.025s * 3));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(4) {
   transition-delay: calc(0.2s + (0.025s * 4));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(5) {
   transition-delay: calc(0.2s + (0.025s * 5));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(6) {
   transition-delay: calc(0.2s + (0.025s * 6));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(7) {
   transition-delay: calc(0.2s + (0.025s * 7));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(8) {
   transition-delay: calc(0.2s + (0.025s * 8));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(9) {
   transition-delay: calc(0.2s + (0.025s * 9));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(10) {
   transition-delay: calc(0.2s + (0.025s * 10));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(11) {
   transition-delay: calc(0.2s + (0.025s * 11));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(12) {
   transition-delay: calc(0.2s + (0.025s * 12));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(13) {
   transition-delay: calc(0.2s + (0.025s * 13));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(14) {
   transition-delay: calc(0.2s + (0.025s * 14));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(15) {
   transition-delay: calc(0.2s + (0.025s * 15));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(16) {
   transition-delay: calc(0.2s + (0.025s * 16));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(17) {
   transition-delay: calc(0.2s + (0.025s * 17));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(18) {
   transition-delay: calc(0.2s + (0.025s * 18));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(19) {
   transition-delay: calc(0.2s + (0.025s * 19));
 }
 
-/* line 80, ../../src/sass/_modules/_site-navigation.scss */
+/* line 106, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(20) {
   transition-delay: calc(0.2s + (0.025s * 20));
 }

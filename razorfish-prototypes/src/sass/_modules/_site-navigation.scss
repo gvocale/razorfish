@@ -43,26 +43,52 @@
         }
     }
     &__pages {
-        @extend .h2-sans;
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans-tight;
+        font-weight: 700;
         text-decoration: none;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: flex-start;
         margin-bottom: 2em;
-        @media screen and ($md) {
+        font-size: $scale06;
+        @media only screen and ($md) {
+            font-size: $scale07;
             justify-content: center;
         }
+        @media only screen and ($lg) {
+            font-size: $scale08;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale09;
+        }
+        .note {
+            letter-spacing: $spacing-sans;
+        }
+
     }
     &__components {
-        @extend .h4-sans;
+        font-family: $sans;
+        font-size: $scale04;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans-tight;
+        font-weight: 700;
         text-decoration: none;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: flex-start;
-                @media screen and ($md) {
+        @media only screen and ($md) {
+            font-size: $scale05;
             justify-content: center;
+        }
+        @media only screen and ($lg) {
+            font-size: $scale06;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale07;
         }
         .site-navigation__link-container {
             margin-bottom: 0.5em;
