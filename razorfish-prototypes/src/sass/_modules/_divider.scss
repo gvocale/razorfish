@@ -6,8 +6,10 @@
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
+    transform-origin: left;
     &-sm {
         width: calc(54px / 2);
+        height: 4px;
     }
     &-md {
         width: 54px;
@@ -20,14 +22,14 @@
     }
 }
 
-.divider-md.not-in-viewport {
-    width: 0;
-    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+.divider.not-in-viewport {
+    transform: scaleX(0);
+    transition: all 0.2s $bezier 0s;
 }
 
-.divider-md.not-in-viewport.in-viewport {
-    width: 54px;
-    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+.divider.not-in-viewport.in-viewport {
+    transform: scaleX(1);
+    transition: all 0.2s $bezier 0.2s;
 }
 
 .horizontal-rule {

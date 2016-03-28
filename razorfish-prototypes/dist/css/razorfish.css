@@ -5078,37 +5078,42 @@ a[href^="tel"] {
   margin-right: 0;
   margin-top: 0;
   margin-bottom: 0;
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
-/* line 9, ../../src/sass/_modules/_divider.scss */
+/* line 10, ../../src/sass/_modules/_divider.scss */
 .divider-sm {
   width: calc(54px / 2);
+  height: 4px;
 }
-/* line 12, ../../src/sass/_modules/_divider.scss */
+/* line 14, ../../src/sass/_modules/_divider.scss */
 .divider-md {
   width: 54px;
 }
-/* line 15, ../../src/sass/_modules/_divider.scss */
+/* line 17, ../../src/sass/_modules/_divider.scss */
 .divider-lg {
   width: calc(54px / 2 * 3);
 }
-/* line 18, ../../src/sass/_modules/_divider.scss */
+/* line 20, ../../src/sass/_modules/_divider.scss */
 .divider--gray {
   background-color: #D6D6D6;
 }
 
-/* line 23, ../../src/sass/_modules/_divider.scss */
-.divider-md.not-in-viewport {
-  width: 0;
+/* line 25, ../../src/sass/_modules/_divider.scss */
+.divider.not-in-viewport {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
   transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 }
 
-/* line 28, ../../src/sass/_modules/_divider.scss */
-.divider-md.not-in-viewport.in-viewport {
-  width: 54px;
+/* line 30, ../../src/sass/_modules/_divider.scss */
+.divider.not-in-viewport.in-viewport {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
   transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
 }
 
-/* line 33, ../../src/sass/_modules/_divider.scss */
+/* line 35, ../../src/sass/_modules/_divider.scss */
 .horizontal-rule {
   background-color: #D6D6D6;
   width: 100%;
@@ -7631,37 +7636,25 @@ a[href^="tel"] {
   overflow: hidden;
   width: 50vw;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   /* line 13, ../../src/sass/_modules/_people-list.scss */
   .people-list__item {
     width: 33vw;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1600px) {
   /* line 13, ../../src/sass/_modules/_people-list.scss */
   .people-list__item {
     width: 25vw;
   }
 }
-@media screen and (min-width: 1600px) {
-  /* line 13, ../../src/sass/_modules/_people-list.scss */
-  .people-list__item {
-    width: 20vw;
-  }
-}
-/* line 30, ../../src/sass/_modules/_people-list.scss */
+/* line 27, ../../src/sass/_modules/_people-list.scss */
 .people-list__item:before {
   content: "";
   display: block;
   padding-top: 133%;
 }
-/* line 35, ../../src/sass/_modules/_people-list.scss */
-.people-list__item .divider {
-  width: 0%;
-  transition: all 0.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  margin-bottom: 1rem;
-}
-/* line 41, ../../src/sass/_modules/_people-list.scss */
+/* line 33, ../../src/sass/_modules/_people-list.scss */
 .people-list__item-background {
   background-size: cover;
   background-position: center;
@@ -7677,8 +7670,9 @@ a[href^="tel"] {
   transition: -webkit-transform 4s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.3s 0s ease-out;
   transition: transform 4s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0.3s 0s ease-out;
 }
-/* line 55, ../../src/sass/_modules/_people-list.scss */
-.people-list__item-text-container {
+
+/* line 51, ../../src/sass/_modules/_people-list.scss */
+.people-list--name-priority .people-list__item-text-container {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -7688,119 +7682,6 @@ a[href^="tel"] {
   -webkit-flex-wrap: nowrap;
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap;
-  -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-align-items: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  height: 50%;
-  bottom: 0;
-  position: absolute;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 5%;
-  padding-bottom: 10%;
-  width: 100%;
-  -webkit-align-items: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  text-align: left;
-  color: #FFFFFF;
-  opacity: 0;
-  z-index: 10;
-  -webkit-transform: translateY(20%);
-          transform: translateY(20%);
-}
-/* line 75, ../../src/sass/_modules/_people-list.scss */
-.people-list__item-text-container:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -10;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), #383237);
-  opacity: 0.75;
-}
-@media screen and (min-width: 768px) {
-  /* line 75, ../../src/sass/_modules/_people-list.scss */
-  .people-list__item-text-container:before {
-    display: none;
-  }
-}
-/* line 90, ../../src/sass/_modules/_people-list.scss */
-.people-list__name {
-  font-family: "Gotham", Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 1.4;
-  margin-bottom: 0.75em;
-}
-@media screen and (min-width: 768px) {
-  /* line 90, ../../src/sass/_modules/_people-list.scss */
-  .people-list__name {
-    line-height: 1.3077rem;
-  }
-}
-@media screen and (min-width: 1200px) {
-  /* line 90, ../../src/sass/_modules/_people-list.scss */
-  .people-list__name {
-    font-size: 1.6154rem;
-  }
-}
-/* line 103, ../../src/sass/_modules/_people-list.scss */
-.people-list__title {
-  font-family: "Gotham", Helvetica, Arial, sans-serif;
-  line-height: 1.4;
-  letter-spacing: -0.02em;
-  font-size: 0.6154rem;
-  margin-bottom: 0.25em;
-}
-@media screen and (min-width: 1200px) {
-  /* line 103, ../../src/sass/_modules/_people-list.scss */
-  .people-list__title {
-    font-size: 0.8077rem;
-  }
-}
-@media screen and (min-width: 1600px) {
-  /* line 103, ../../src/sass/_modules/_people-list.scss */
-  .people-list__title {
-    font-size: 1rem;
-  }
-}
-/* line 116, ../../src/sass/_modules/_people-list.scss */
-.people-list__office {
-  font-family: "Gotham", Helvetica, Arial, sans-serif;
-  line-height: 1.4;
-  letter-spacing: -0.02em;
-  font-size: 0.6154rem;
-  opacity: 0.5;
-}
-@media screen and (min-width: 1200px) {
-  /* line 116, ../../src/sass/_modules/_people-list.scss */
-  .people-list__office {
-    font-size: 0.8077rem;
-  }
-}
-@media screen and (min-width: 1600px) {
-  /* line 116, ../../src/sass/_modules/_people-list.scss */
-  .people-list__office {
-    font-size: 1rem;
-  }
-}
-/* line 130, ../../src/sass/_modules/_people-list.scss */
-.people-list--white-box .people-list__item-text-container {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 5%;
-  width: 90%;
-  min-height: 33%;
-  height: auto;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
@@ -7808,13 +7689,54 @@ a[href^="tel"] {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+  width: 90%;
+  height: auto;
+  min-height: 33%;
+  bottom: 0;
+  position: absolute;
+  color: #404040;
+  z-index: 10;
+  opacity: 1;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
   padding-top: 5%;
   padding-bottom: 5%;
   padding-left: 5%;
   padding-right: 5%;
 }
-/* line 146, ../../src/sass/_modules/_people-list.scss */
-.people-list--white-box .people-list__item-text-container:after {
+@media screen and (min-width: 768px) {
+  /* line 51, ../../src/sass/_modules/_people-list.scss */
+  .people-list--name-priority .people-list__item-text-container {
+    min-height: 25%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 51, ../../src/sass/_modules/_people-list.scss */
+  .people-list--name-priority .people-list__item-text-container {
+    color: #FFFFFF;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-align-items: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    text-align: left;
+    width: 100%;
+    height: 50%;
+    opacity: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 10%;
+  }
+}
+/* line 93, ../../src/sass/_modules/_people-list.scss */
+.people-list--name-priority .people-list__item-text-container:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -7825,91 +7747,258 @@ a[href^="tel"] {
   opacity: 0.9;
   z-index: -1;
 }
-/* line 158, ../../src/sass/_modules/_people-list.scss */
-.people-list--white-box .divider-sm {
-  display: none;
+@media screen and (min-width: 1200px) {
+  /* line 93, ../../src/sass/_modules/_people-list.scss */
+  .people-list--name-priority .people-list__item-text-container:before {
+    display: none;
+  }
 }
-/* line 161, ../../src/sass/_modules/_people-list.scss */
-.people-list--white-box .people-list__name {
-  font-family: "Gotham", Helvetica, Arial, sans-serif;
-  letter-spacing: 0.02em;
+/* line 107, ../../src/sass/_modules/_people-list.scss */
+.people-list--name-priority .people-list__item-text-container .divider {
+  display: none;
+  transition: all 0.2s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 1200px) {
+  /* line 107, ../../src/sass/_modules/_people-list.scss */
+  .people-list--name-priority .people-list__item-text-container .divider {
+    display: inline;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    margin-bottom: 1rem;
+  }
+}
+/* line 119, ../../src/sass/_modules/_people-list.scss */
+.people-list--name-priority .people-list__name {
+  font-family: "Miller Display", Times, Georgia, serif;
+  font-size: 1rem;
   font-weight: bold;
-  line-height: 1.4;
-  color: #a9c000;
-  text-transform: uppercase;
-  font-size: 0.6154rem;
-  margin-bottom: 0.1rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4em;
 }
 @media screen and (min-width: 768px) {
-  /* line 161, ../../src/sass/_modules/_people-list.scss */
-  .people-list--white-box .people-list__name {
-    margin-bottom: 0.4rem;
+  /* line 119, ../../src/sass/_modules/_people-list.scss */
+  .people-list--name-priority .people-list__name {
+    font-size: 1.3077rem;
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 161, ../../src/sass/_modules/_people-list.scss */
-  .people-list--white-box .people-list__name {
-    font-size: 0.8077rem;
+  /* line 119, ../../src/sass/_modules/_people-list.scss */
+  .people-list--name-priority .people-list__name {
+    font-size: 2.1154rem;
+    margin-bottom: 0.5em;
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+    opacity: 0;
   }
 }
 @media screen and (min-width: 1600px) {
-  /* line 161, ../../src/sass/_modules/_people-list.scss */
-  .people-list--white-box .people-list__name {
-    font-size: 1rem;
+  /* line 119, ../../src/sass/_modules/_people-list.scss */
+  .people-list--name-priority .people-list__name {
+    font-size: 2.6154rem;
   }
 }
-/* line 180, ../../src/sass/_modules/_people-list.scss */
-.people-list--white-box .people-list__title {
-  font-family: "Miller Display", Times, Georgia, serif;
-  line-height: 1.2;
-  font-weight: 700;
+/* line 139, ../../src/sass/_modules/_people-list.scss */
+.people-list--name-priority .people-list__title {
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
   letter-spacing: -0.02em;
-  font-size: 1rem;
-  color: #404040;
-  margin-bottom: 0.25rem;
+  font-size: 0.6154rem;
+  margin-bottom: 0.25em;
 }
 @media screen and (min-width: 768px) {
-  /* line 180, ../../src/sass/_modules/_people-list.scss */
-  .people-list--white-box .people-list__title {
-    margin-bottom: 0.5rem;
+  /* line 139, ../../src/sass/_modules/_people-list.scss */
+  .people-list--name-priority .people-list__title {
+    font-size: 0.8077rem;
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 180, ../../src/sass/_modules/_people-list.scss */
-  .people-list--white-box .people-list__title {
+  /* line 139, ../../src/sass/_modules/_people-list.scss */
+  .people-list--name-priority .people-list__title {
+    font-size: 1rem;
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+    opacity: 0;
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* line 139, ../../src/sass/_modules/_people-list.scss */
+  .people-list--name-priority .people-list__title {
+    font-size: 1.3077rem;
+  }
+}
+/* line 157, ../../src/sass/_modules/_people-list.scss */
+.people-list--name-priority .people-list__office {
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  font-size: 0.6154rem;
+  opacity: 0.5;
+}
+@media screen and (min-width: 768px) {
+  /* line 157, ../../src/sass/_modules/_people-list.scss */
+  .people-list--name-priority .people-list__office {
+    font-size: 0.8077rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 157, ../../src/sass/_modules/_people-list.scss */
+  .people-list--name-priority .people-list__office {
+    font-size: 1rem;
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+    opacity: 0;
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* line 157, ../../src/sass/_modules/_people-list.scss */
+  .people-list--name-priority .people-list__office {
+    font-size: 1.3077rem;
+  }
+}
+
+/* line 179, ../../src/sass/_modules/_people-list.scss */
+.people-list--title-priority .divider {
+  display: none;
+}
+/* line 183, ../../src/sass/_modules/_people-list.scss */
+.people-list--title-priority .people-list__item-text-container {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 0;
+  color: #404040;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  height: auto;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  min-height: 33%;
+  opacity: 1;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  position: absolute;
+  text-align: center;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  width: 90%;
+  z-index: 10;
+}
+@media screen and (min-width: 768px) {
+  /* line 183, ../../src/sass/_modules/_people-list.scss */
+  .people-list--title-priority .people-list__item-text-container {
+    min-height: 25%;
+  }
+}
+/* line 209, ../../src/sass/_modules/_people-list.scss */
+.people-list--title-priority .people-list__item-text-container:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #FFFFFF;
+  opacity: 0.9;
+  z-index: -1;
+}
+/* line 221, ../../src/sass/_modules/_people-list.scss */
+.people-list--title-priority .people-list__name {
+  color: #a9c000;
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  font-size: 0.6154rem;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  margin-bottom: 0.25em;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  /* line 221, ../../src/sass/_modules/_people-list.scss */
+  .people-list--title-priority .people-list__name {
+    font-size: 0.8077rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 221, ../../src/sass/_modules/_people-list.scss */
+  .people-list--title-priority .people-list__name {
+    font-size: 0.8077rem;
+    margin-bottom: 0.5em;
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* line 221, ../../src/sass/_modules/_people-list.scss */
+  .people-list--title-priority .people-list__name {
+    font-size: 1rem;
+  }
+}
+/* line 241, ../../src/sass/_modules/_people-list.scss */
+.people-list--title-priority .people-list__title {
+  font-family: "Miller Display", Times, Georgia, serif;
+  font-size: 0.8077rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-bottom: 0.4em;
+}
+@media screen and (min-width: 768px) {
+  /* line 241, ../../src/sass/_modules/_people-list.scss */
+  .people-list--title-priority .people-list__title {
+    font-size: 1.3077rem;
+    margin-bottom: 0.4em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 241, ../../src/sass/_modules/_people-list.scss */
+  .people-list--title-priority .people-list__title {
     font-size: 1.3077rem;
   }
 }
 @media screen and (min-width: 1600px) {
-  /* line 180, ../../src/sass/_modules/_people-list.scss */
-  .people-list--white-box .people-list__title {
+  /* line 241, ../../src/sass/_modules/_people-list.scss */
+  .people-list--title-priority .people-list__title {
     font-size: 1.6154rem;
   }
 }
-/* line 198, ../../src/sass/_modules/_people-list.scss */
-.people-list--white-box .people-list__office {
+/* line 259, ../../src/sass/_modules/_people-list.scss */
+.people-list--title-priority .people-list__office {
   font-family: "Miller Display", Times, Georgia, serif;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  font-style: italic;
-  color: #404040;
-  opacity: 0.5;
   font-size: 0.6154rem;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  opacity: 0.5;
 }
-@media screen and (min-width: 1200px) {
-  /* line 198, ../../src/sass/_modules/_people-list.scss */
-  .people-list--white-box .people-list__office {
+@media screen and (min-width: 768px) {
+  /* line 259, ../../src/sass/_modules/_people-list.scss */
+  .people-list--title-priority .people-list__office {
     font-size: 0.8077rem;
   }
 }
-@media screen and (min-width: 1600px) {
-  /* line 198, ../../src/sass/_modules/_people-list.scss */
-  .people-list--white-box .people-list__office {
+@media screen and (min-width: 1200px) {
+  /* line 259, ../../src/sass/_modules/_people-list.scss */
+  .people-list--title-priority .people-list__office {
     font-size: 1rem;
   }
 }
 
-/* line 221, ../../src/sass/_modules/_people-list.scss */
+/* line 281, ../../src/sass/_modules/_people-list.scss */
 .people-list__item:nth-of-type(2) .people-list__item-background,
 .people-list__item:nth-of-type(3) .people-list__item-background,
 .people-list__item:nth-of-type(6) .people-list__item-background,
@@ -7918,8 +8007,8 @@ a[href^="tel"] {
   background-color: #f6f6f6;
 }
 
-@media screen and (min-width: 768px) {
-  /* line 232, ../../src/sass/_modules/_people-list.scss */
+@media screen and (min-width: 992px) {
+  /* line 292, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:nth-of-type(1) .people-list__item-background,
   .people-list__item:nth-of-type(3) .people-list__item-background,
   .people-list__item:nth-of-type(4) .people-list__item-background,
@@ -7928,61 +8017,40 @@ a[href^="tel"] {
     background-color: #FFFFFF;
   }
 
-  /* line 241, ../../src/sass/_modules/_people-list.scss */
+  /* line 301, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:nth-of-type(2) .people-list__item-background,
   .people-list__item:nth-of-type(4) .people-list__item-background,
   .people-list__item:nth-of-type(6) .people-list__item-background,
   .people-list__item:nth-of-type(8) .people-list__item-background,
-  .people-list__item:nth-of-type(10) .people-list__item-background {
-    background-color: #f6f6f6;
-  }
-}
-@media screen and (min-width: 992px) {
-  /* line 253, ../../src/sass/_modules/_people-list.scss */
-  .people-list__item:nth-of-type(1) .people-list__item-background,
-  .people-list__item:nth-of-type(3) .people-list__item-background,
-  .people-list__item:nth-of-type(6) .people-list__item-background,
-  .people-list__item:nth-of-type(8) .people-list__item-background,
-  .people-list__item:nth-of-type(9) .people-list__item-background {
-    background-color: #FFFFFF;
-  }
-
-  /* line 262, ../../src/sass/_modules/_people-list.scss */
-  .people-list__item:nth-of-type(2) .people-list__item-background,
-  .people-list__item:nth-of-type(4) .people-list__item-background,
-  .people-list__item:nth-of-type(5) .people-list__item-background,
-  .people-list__item:nth-of-type(7) .people-list__item-background,
   .people-list__item:nth-of-type(10) .people-list__item-background {
     background-color: #f6f6f6;
   }
 }
 @media screen and (min-width: 1600px) {
-  /* line 274, ../../src/sass/_modules/_people-list.scss */
+  /* line 313, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:nth-of-type(1) .people-list__item-background,
   .people-list__item:nth-of-type(3) .people-list__item-background,
-  .people-list__item:nth-of-type(5) .people-list__item-background,
-  .people-list__item:nth-of-type(7) .people-list__item-background,
+  .people-list__item:nth-of-type(6) .people-list__item-background,
+  .people-list__item:nth-of-type(8) .people-list__item-background,
   .people-list__item:nth-of-type(9) .people-list__item-background {
     background-color: #FFFFFF;
   }
 
-  /* line 283, ../../src/sass/_modules/_people-list.scss */
+  /* line 322, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:nth-of-type(2) .people-list__item-background,
   .people-list__item:nth-of-type(4) .people-list__item-background,
-  .people-list__item:nth-of-type(6) .people-list__item-background,
-  .people-list__item:nth-of-type(8) .people-list__item-background,
+  .people-list__item:nth-of-type(5) .people-list__item-background,
+  .people-list__item:nth-of-type(7) .people-list__item-background,
   .people-list__item:nth-of-type(10) .people-list__item-background {
     background-color: #f6f6f6;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 291, ../../src/sass/_modules/_people-list.scss */
+  /* line 350, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:hover .people-list__item-text-container {
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
     opacity: 1;
   }
-  /* line 295, ../../src/sass/_modules/_people-list.scss */
+  /* line 353, ../../src/sass/_modules/_people-list.scss */
   .people-list__item:hover .people-list__item-background {
     background-color: #808080;
     -webkit-transform: scale(1.1);
@@ -7990,9 +8058,31 @@ a[href^="tel"] {
     transition: -webkit-transform 2s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0s 0s ease-out;
     transition: transform 2s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94), background-color 0s 0s ease-out;
   }
-  /* line 300, ../../src/sass/_modules/_people-list.scss */
-  .people-list__item:hover .divider-sm {
-    width: 2rem;
+  /* line 358, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item:hover .people-list__name {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    transition: all 0.15s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 1;
+  }
+  /* line 363, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item:hover .people-list__title {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 1;
+  }
+  /* line 368, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item:hover .people-list__office {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    transition: all 0.05s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0.5;
+  }
+  /* line 373, ../../src/sass/_modules/_people-list.scss */
+  .people-list__item:hover .divider {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 

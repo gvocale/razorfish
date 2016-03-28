@@ -18,24 +18,16 @@
         cursor: hand;
         overflow: hidden;
         width: 50vw;
-        @media screen and ($md) {
+        @media screen and ($lg) {
             width: 33vw;
         }
-        @media screen and ($lg) {
-            width: 25vw;
-        }
         @media screen and ($xxl) {
-            width: 20vw;
+            width: 25vw;
         }
         &:before {
             content: "";
             display: block;
             padding-top: 133%;
-        }
-        .divider {
-            width: 0%;
-            transition: all 0.2s 0.3s $bezier;
-            margin-bottom: 1rem;
         }
     }
     &__item-background {
@@ -52,98 +44,169 @@
         background-blend-mode: multiply;
         transition: transform 4s 0.1s $bezier, background-color 0.3s 0s ease-out;
     }
-    &__item-text-container {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: flex-end;
-        align-items: baseline;
-        height: 50%;
-        bottom: 0;
-        position: absolute;
-        padding-left: 10%;
-        padding-right: 10%;
-        padding-top: 5%;
-        padding-bottom: 10%;
-        width: 100%;
-        align-items: baseline;
-        text-align: left;
-        color: $white;
-        opacity: 0;
-        z-index: 10;
-        transform: translateY(20%);
-        &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -10;
-            background-image: linear-gradient(transparent, $blackDarker);
-            opacity: 0.75;
-            @media screen and ($md) {
-                display: none;
-            }
-        }
-    }
-    &__name {
-        font-family: $sans;
-        font-size: $scale04;
-        font-weight: bold;
-        line-height: $title-sans;
-        margin-bottom: 0.75em;
-        @media screen and ($md) {
-            line-height: $scale05;
-        }
-        @media screen and ($xl) {
-            font-size: $scale06;
-        }
-    }
-    &__title {
-        font-family: $sans;
-        line-height: $title-sans;
-        letter-spacing: $spacing-sans;
-        font-size: $scale02;
-        margin-bottom: 0.25em;
-        @media screen and ($xl) {
-            font-size: $scale03;
-        }
-        @media screen and ($xxl) {
-            font-size: $scale04;
-        }
-    }
-    &__office {
-        font-family: $sans;
-        line-height: $title-sans;
-        letter-spacing: $spacing-sans;
-        font-size: $scale02;
-        opacity: 0.5;
-        @media screen and ($xl) {
-            font-size: $scale03;
-        }
-        @media screen and ($xxl) {
-            font-size: $scale04;
-        }
-    }
-    &--white-box {
-        .people-list__item-text-container {
-            opacity: 1;
-            transform: translateY(0);
-            margin-left: 5%;
-            margin-right: 5%;
-            margin-bottom: 5%;
-            width: 90%;
-            min-height: 33%;
-            height: auto;
+}
+
+.people-list--name-priority {
+    .people-list {
+        &__item-text-container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
             align-items: center;
             justify-content: center;
             text-align: center;
+            width: 90%;
+            height: auto;
+            min-height: 33%;
+            bottom: 0;
+            position: absolute;
+            color: $black;
+            z-index: 10;
+            opacity: 1;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-bottom: 5%;
             padding-top: 5%;
             padding-bottom: 5%;
             padding-left: 5%;
             padding-right: 5%;
-            &:after {
+            @media screen and ($md) {
+                min-height: 25%;
+            }
+            @media screen and ($xl) {
+                color: $white;
+                justify-content: flex-end;
+                align-items: baseline;
+                text-align: left;
+                width: 100%;
+                height: 50%;
+                opacity: 0;
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 0;
+                margin-top: 0;
+                padding-left: 10%;
+                padding-right: 10%;
+                padding-top: 5%;
+                padding-bottom: 10%;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background-color: $white;
+                opacity: 0.9;
+                z-index: -1;
+                @media screen and ($xl) {
+                    display: none;
+                }
+            }
+            .divider {
+                display: none;
+                transition: all 0.2s 0.3s $bezier;
+                margin-bottom: 0.5rem;
+                @media screen and ($xl) {
+                    display: inline;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+        &__name {
+            font-family: $serif;
+            font-size: $scale04;
+            font-weight: bold;
+            line-height: $title-serif - 0.1;
+            letter-spacing: $spacing-serif;
+            margin-bottom: 0.4em;
+            @media screen and ($md) {
+                font-size: $scale05;
+            }
+            @media screen and ($xl) {
+                font-size: $scale07;
+                margin-bottom: 0.5em;
+                transform: translateX(-20%);
+                opacity: 0;
+            }
+            @media screen and ($xxl) {
+                font-size: $scale08;
+            }
+        }
+        &__title {
+            font-family: $sans;
+            line-height: $title-sans;
+            letter-spacing: $spacing-sans;
+            font-size: $scale02;
+            margin-bottom: 0.25em;
+            @media screen and ($md) {
+                font-size: $scale03;
+            }
+            @media screen and ($xl) {
+                font-size: $scale04;
+                transform: translateX(-20%);
+                opacity: 0;
+            }
+            @media screen and ($xxl) {
+                font-size: $scale05;
+            }
+        }
+        &__office {
+            font-family: $sans;
+            line-height: $title-sans;
+            letter-spacing: $spacing-sans;
+            font-size: $scale02;
+            opacity: 0.5;
+            @media screen and ($md) {
+                font-size: $scale03;
+            }
+            @media screen and ($xl) {
+                font-size: $scale04;
+                transform: translateX(-20%);
+                opacity: 0;
+            }
+            @media screen and ($xxl) {
+                font-size: $scale05;
+            }
+        }
+    }
+}
+
+.people-list--title-priority {
+    .divider {
+        display: none;
+    }
+    .people-list {
+        &__item-text-container {
+            align-items: center;
+            bottom: 0;
+            color: $black;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            height: auto;
+            justify-content: center;
+            margin-bottom: 5%;
+            margin-left: 5%;
+            margin-right: 5%;
+            min-height: 33%;
+            opacity: 1;
+            padding-bottom: 5%;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 5%;
+            position: absolute;
+            text-align: center;
+            transform: translateY(0);
+            width: 90%;
+            z-index: 10;
+            @media screen and ($md) {
+                min-height: 25%;
+            }
+            &:before {
                 content: "";
                 position: absolute;
                 width: 100%;
@@ -155,38 +218,36 @@
                 z-index: -1;
             }
         }
-        .divider-sm {
-            display: none;
-        }
-        .people-list__name {
-            font-family: $sans;
-            letter-spacing: $spacing-sans-large;
-            font-weight: bold;
-            line-height: $title-sans;
+        &__name {
             color: $primary;
-            text-transform: uppercase;
+            font-family: $sans;
             font-size: $scale02;
-            margin-bottom: 0.1rem;
+            font-weight: bold;
+            letter-spacing: $spacing-sans-large;
+            line-height: $title-sans;
+            margin-bottom: 0.25em;
+            text-transform: uppercase;
             @media screen and ($md) {
-                margin-bottom: 0.4rem;
+                font-size: $scale03;
             }
             @media screen and ($xl) {
                 font-size: $scale03;
+                margin-bottom: 0.5em;
             }
             @media screen and ($xxl) {
                 font-size: $scale04;
             }
         }
-        .people-list__title {
+        &__title {
             font-family: $serif;
-            line-height: $title-serif;
+            font-size: $scale03;
             font-weight: 700;
-            letter-spacing: $spacing-sans;
-            font-size: $scale04;
-            color: $black;
-            margin-bottom: 0.25rem;
+            letter-spacing: $spacing-serif;
+            line-height: $title-serif;
+            margin-bottom: 0.4em;
             @media screen and ($md) {
-                margin-bottom: 0.5rem;
+                font-size: $scale05;
+                margin-bottom: 0.4em;
             }
             @media screen and ($xl) {
                 font-size: $scale05;
@@ -195,18 +256,17 @@
                 font-size: $scale06;
             }
         }
-        .people-list__office {
+        &__office {
             font-family: $serif;
-            line-height: $title-serif;
-            letter-spacing: $spacing-sans;
-            font-style: italic;
-            color: $black;
-            opacity: 0.5;
             font-size: $scale02;
-            @media screen and ($xl) {
+            font-style: italic;
+            letter-spacing: $spacing-sans;
+            line-height: $title-serif;
+            opacity: 0.5;
+            @media screen and ($md) {
                 font-size: $scale03;
             }
-            @media screen and ($xxl) {
+            @media screen and ($xl) {
                 font-size: $scale04;
             }
         }
@@ -223,7 +283,7 @@
     }
 }
 
-@media screen and ($md) {
+@media screen and ($lg) {
     .people-list__item:nth-of-type(1),
     .people-list__item:nth-of-type(3),
     .people-list__item:nth-of-type(4),
@@ -244,32 +304,11 @@
     }
 }
 
-@media screen and ($lg) {
-    .people-list__item:nth-of-type(1),
-    .people-list__item:nth-of-type(3),
-    .people-list__item:nth-of-type(6),
-    .people-list__item:nth-of-type(8),
-    .people-list__item:nth-of-type(9) {
-        .people-list__item-background {
-            background-color: $white;
-        }
-    }
-    .people-list__item:nth-of-type(2),
-    .people-list__item:nth-of-type(4),
-    .people-list__item:nth-of-type(5),
-    .people-list__item:nth-of-type(7),
-    .people-list__item:nth-of-type(10) {
-        .people-list__item-background {
-            background-color: $whiteDarker;
-        }
-    }
-}
-
 @media screen and ($xxl) {
     .people-list__item:nth-of-type(1),
     .people-list__item:nth-of-type(3),
-    .people-list__item:nth-of-type(5),
-    .people-list__item:nth-of-type(7),
+    .people-list__item:nth-of-type(6),
+    .people-list__item:nth-of-type(8),
     .people-list__item:nth-of-type(9) {
         .people-list__item-background {
             background-color: $white;
@@ -277,8 +316,8 @@
     }
     .people-list__item:nth-of-type(2),
     .people-list__item:nth-of-type(4),
-    .people-list__item:nth-of-type(6),
-    .people-list__item:nth-of-type(8),
+    .people-list__item:nth-of-type(5),
+    .people-list__item:nth-of-type(7),
     .people-list__item:nth-of-type(10) {
         .people-list__item-background {
             background-color: $whiteDarker;
@@ -286,10 +325,29 @@
     }
 }
 
+// @media screen and ($xxl) {
+//     .people-list__item:nth-of-type(1),
+//     .people-list__item:nth-of-type(3),
+//     .people-list__item:nth-of-type(5),
+//     .people-list__item:nth-of-type(7),
+//     .people-list__item:nth-of-type(9) {
+//         .people-list__item-background {
+//             background-color: $white;
+//         }
+//     }
+//     .people-list__item:nth-of-type(2),
+//     .people-list__item:nth-of-type(4),
+//     .people-list__item:nth-of-type(6),
+//     .people-list__item:nth-of-type(8),
+//     .people-list__item:nth-of-type(10) {
+//         .people-list__item-background {
+//             background-color: $whiteDarker;
+//         }
+//     }
+// }
 .people-list__item:hover {
     @media screen and ($md) {
         .people-list__item-text-container {
-            transform: translateY(0%);
             opacity: 1;
         }
         .people-list__item-background {
@@ -297,8 +355,23 @@
             transform: scale(1.1);
             transition: transform 2s 0.1s $bezier, background-color 0s 0s ease-out;
         }
-        .divider-sm {
-            width: 2rem;
+        .people-list__name {
+            transform: translateX(0%);
+            transition: all 0.15s 0.1s $bezier;
+            opacity: 1;
+        }
+        .people-list__title {
+            transform: translateX(0%);
+            transition: all 0.1s 0.1s $bezier;
+            opacity: 1;
+        }
+        .people-list__office {
+            transform: translateX(0%);
+            transition: all 0.05s 0.1s $bezier;
+            opacity: 0.5;
+        }
+        .divider {
+            transform: scaleX(1);
         }
     }
 }
