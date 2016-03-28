@@ -414,18 +414,21 @@ p {
             bottom: 0;
             left: 0;
             width: 0%;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+            transition: all 0.3s $bezier 0.1s;
             border-bottom-width: 0.1em;
             border-bottom-style: solid;
             border-bottom-color: inherit;
         }
         &:hover:before {
             width: 100%;
-            transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+            transition: all 0.1s $bezier 0s;
         }
     }
     &--muted {
-        color: $grayDarker;
+        color: darken ($gray, 10%);
+        &:hover {
+            color: darken ($gray, 20%);
+        }
     }
     &--primary {
         color: $primary;

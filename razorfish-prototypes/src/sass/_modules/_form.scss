@@ -42,7 +42,7 @@ $visible: 1;
     width: 100%;
     top: 0;
     left: 0;
-    transition: all 0.3s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s 0.1s $bezier;
 }
 .form-container {
     width: 100%;
@@ -124,7 +124,7 @@ $visible: 1;
 .input-text::placeholder {
     color: currentColor;
     opacity: 0.5;
-    transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.1s 0.1s $bezier;
 }
 .input-file-note {
     font-size: $scale04;
@@ -198,7 +198,7 @@ $visible: 1;
 .input-select ~ .input-label {
     opacity: 0;
     transform: translateY(50%);
-    transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.1s 0s $bezier;
 }
 .input-select.selected ~ .input-label {
     transform: translateY(0%);

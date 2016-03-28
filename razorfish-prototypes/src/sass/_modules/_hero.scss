@@ -43,7 +43,7 @@
     &__eyebrow {
         font-family: $sans;
         line-height: $title-sans;
-        letter-spacing: $spacing-sans;
+        letter-spacing: $spacing-sans-large;
         max-width: 24em;
         font-size: $scale04;
         margin-bottom: 0.75em;
@@ -154,5 +154,130 @@
     }
     &__background.in-viewport {
         animation: 20s ease-out 0.5s forwards zoom;
+    }
+    &--profile {
+        color: $blackLighter;
+        &__name {
+            font-family: $display;
+            line-height: $solid-serif + 0.1;
+            letter-spacing: $spacing-serif;
+            font-weight: 700;
+            margin-bottom: 0.75em;
+            max-width: 10em;
+            font-size: $scale07;
+            @media only screen and ($md) {
+                font-size: $scale07;
+                line-height: $solid-serif + 0.1;
+            }
+            @media only screen and ($lg) {
+                font-size: $scale08;
+            }
+            @media only screen and ($xl) {
+                font-size: $scale10;
+                margin-bottom: 0.5em;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale11;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__title,
+        &__office {
+            font-family: $sans;
+            line-height: $title-sans;
+            letter-spacing: $spacing-sans;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: $scale03;
+            @media only screen and ($md) {
+                font-size: $scale04;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale06;
+            }
+            &:nth-child(2) {
+                margin-left: calc(1em - 2px);
+                position: relative;
+                &:before {
+                    content: "";
+                    width: 2px;
+                    height: 1.2em;
+                    background-color: currentColor;
+                    margin-right: 1em;
+                    display: inline-block;
+                    position: relative;
+                    vertical-align: -15%;
+                }
+            }
+        }
+        &__contact--email,
+        &__contact--twitter {
+            font-family: $sans;
+            line-height: $title-sans;
+            letter-spacing: $spacing-sans-large;
+            font-size: $scale03;
+            margin-bottom: 0.75em;
+            display: block;
+            @media only screen and ($md) {
+                font-size: $scale04;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale05;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__contact--email {
+            &:before {
+                content: "";
+                @include icon-mail--dark;
+                width: 1em;
+                height: 1em;
+                margin-right: 0.5em;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 90% 90%, contain;
+                display: inline-block;
+                vertical-align: -10%;
+            }
+        }
+        &__contact--twitter {
+            &:before {
+                content: "";
+                @include icon-twitter--dark;
+                width: 1em;
+                height: 1em;
+                margin-right: 0.5em;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 90% 90%, contain;
+                display: inline-block;
+                vertical-align: -10%;
+            }
+        }
+        &__group {
+            margin-bottom: 1.5em;
+            @media screen and ($lg) {
+                margin-bottom: 2em;
+            }
+            @media screen and ($xxl) {
+                margin-bottom: 2.5em;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .link--primary {
+            color: darken( $primary, 5%);
+        }
+        .hero__background {
+            background-position: 70% center;
+            @media screen and ($xl) {
+                background-position: center;
+            }
+        }
     }
 }
