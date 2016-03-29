@@ -7,48 +7,44 @@
     height: 4rem;
     cursor: pointer;
     cursor: hand;
-    transition: all 0.2s 0.1s ease-out;
     border: solid $white;
     border-radius: 50%;
-    position: relative;
-    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 30;
+    transition: background-color 0.2s 0s $bezier, transform 0.2s 0s $bezier;
     @media screen and ($xl) {
         width: 6rem;
         height: 6rem;
     }
-}
-
-.video-play-button:hover {
-    transform: scale(1.1);
-    transition: all 0.05s 0s ease-out;
-}
-
-.video-play-button:after {
-    content: "";
-    // Equilateral Tringle
-    border-top: calc(4rem / 6) solid transparent;
-    border-bottom: calc(4rem / 6) solid transparent;
-    border-left: calc(4rem / 6 * 2 * 0.8660259) solid $white;
-    //
-    position: absolute;
-    left: 55%;
-    top: 50%;
-    transform: scale(1) translateX(-55%) translateY(-50%);
-    transition: all 0.2s 0.1s ease-out;
-    @media screen and ($xl) {
-        // Equilateral Tringle
-        border-top: calc(6rem / 6) solid transparent;
-        border-bottom: calc(6rem / 6) solid transparent;
-        border-left: calc(6rem / 6 * 2 * 0.8660259) solid $white;
+    &:before {
+        content: "";
+        border-top: calc(4rem / 6) solid transparent;
+        border-bottom: calc(4rem / 6) solid transparent;
+        border-left: calc(4rem / 6 * 2 * 0.8660259) solid $white;
+        position: absolute;
+        left: 55%;
+        top: 50%;
+        transform: scale(1) translateX(-55%) translateY(-50%);
+        transition: all 0.2s 0.1s ease-out;
+        @media screen and ($xl) {
+            // Equilateral Tringle
+            border-top: calc(6rem / 6) solid transparent;
+            border-bottom: calc(6rem / 6) solid transparent;
+            border-left: calc(6rem / 6 * 2 * 0.8660259) solid $white;
+        }
     }
-}
-
-.video-play-button:hover:after {
-    transform: scale(0.9) translateX(-55%) translateY(-50%);
-    transition: all 0.05s 0s ease-out;
-    @media screen and ($xl) {
-        transform: scale(0.9) translateX(-55%) translateY(-50%);
-        transition: all 0.05s 0s ease-out;
+    &:hover {
+        background-color: rgba($white, 0.1);
+        transition: background-color 0s 0s $bezier, transform 0.1s 0s $bezier;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+    &:active,
+    &:target {
+        background-color: rgba($white, 0.4);
+        transition: background-color 0s 0s $bezier;
     }
 }
 

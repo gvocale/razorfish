@@ -7176,6 +7176,111 @@ a[href^="tel"] {
   }
 }
 
+/* line 1, ../../src/sass/_modules/_inline-video.scss */
+.inline-video {
+  position: relative;
+  width: 100%;
+}
+/* line 4, ../../src/sass/_modules/_inline-video.scss */
+.inline-video__container--16-9 {
+  position: relative;
+  width: 100%;
+}
+/* line 7, ../../src/sass/_modules/_inline-video.scss */
+.inline-video__container--16-9:after {
+  content: "";
+  display: block;
+  padding-bottom: calc(100% / 16 * 9);
+  position: relative;
+}
+/* line 14, ../../src/sass/_modules/_inline-video.scss */
+.inline-video__poster-frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* line 21, ../../src/sass/_modules/_inline-video.scss */
+.inline-video__image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+/* line 32, ../../src/sass/_modules/_inline-video.scss */
+.inline-video iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+/* line 40, ../../src/sass/_modules/_inline-video.scss */
+.inline-video__button--play {
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  cursor: hand;
+  border: solid #FFFFFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  z-index: 30;
+  transition: background-color 0.2s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-transform 0.2s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: background-color 0.2s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.2s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@media screen and (min-width: 1200px) {
+  /* line 40, ../../src/sass/_modules/_inline-video.scss */
+  .inline-video__button--play {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+/* line 57, ../../src/sass/_modules/_inline-video.scss */
+.inline-video__button--play:before {
+  content: "";
+  border-top: calc(4rem / 6) solid transparent;
+  border-bottom: calc(4rem / 6) solid transparent;
+  border-left: calc(4rem / 6 * 2 * 0.8660259) solid #FFFFFF;
+  position: absolute;
+  left: 55%;
+  top: 50%;
+  -webkit-transform: scale(1) translateX(-55%) translateY(-50%);
+          transform: scale(1) translateX(-55%) translateY(-50%);
+  transition: all 0.2s 0.1s ease-out;
+}
+@media screen and (min-width: 1200px) {
+  /* line 57, ../../src/sass/_modules/_inline-video.scss */
+  .inline-video__button--play:before {
+    border-top: calc(6rem / 6) solid transparent;
+    border-bottom: calc(6rem / 6) solid transparent;
+    border-left: calc(6rem / 6 * 2 * 0.8660259) solid #FFFFFF;
+  }
+}
+/* line 74, ../../src/sass/_modules/_inline-video.scss */
+.inline-video__button--play:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-transform 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: background-color 0s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transform: translate(-50%, -50%) scale(0.95);
+          transform: translate(-50%, -50%) scale(0.95);
+}
+/* line 79, ../../src/sass/_modules/_inline-video.scss */
+.inline-video__button--play:active, .inline-video__button--play:target {
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: background-color 0s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 /* line 1, ../../src/sass/_modules/_leadership.scss */
 .leadership-grid {
   position: relative;
@@ -10241,11 +10346,16 @@ a[href^="tel"] {
   height: 4rem;
   cursor: pointer;
   cursor: hand;
-  transition: all 0.2s 0.1s ease-out;
   border: solid #FFFFFF;
   border-radius: 50%;
-  position: relative;
-  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  z-index: 30;
+  transition: background-color 0.2s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-transform 0.2s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: background-color 0.2s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.2s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 @media screen and (min-width: 1200px) {
   /* line 5, ../../src/sass/_modules/_ui.scss */
@@ -10254,16 +10364,8 @@ a[href^="tel"] {
     height: 6rem;
   }
 }
-
-/* line 21, ../../src/sass/_modules/_ui.scss */
-.video-play-button:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  transition: all 0.05s 0s ease-out;
-}
-
-/* line 26, ../../src/sass/_modules/_ui.scss */
-.video-play-button:after {
+/* line 22, ../../src/sass/_modules/_ui.scss */
+.video-play-button:before {
   content: "";
   border-top: calc(4rem / 6) solid transparent;
   border-bottom: calc(4rem / 6) solid transparent;
@@ -10276,30 +10378,28 @@ a[href^="tel"] {
   transition: all 0.2s 0.1s ease-out;
 }
 @media screen and (min-width: 1200px) {
-  /* line 26, ../../src/sass/_modules/_ui.scss */
-  .video-play-button:after {
+  /* line 22, ../../src/sass/_modules/_ui.scss */
+  .video-play-button:before {
     border-top: calc(6rem / 6) solid transparent;
     border-bottom: calc(6rem / 6) solid transparent;
     border-left: calc(6rem / 6 * 2 * 0.8660259) solid #FFFFFF;
   }
 }
-
-/* line 46, ../../src/sass/_modules/_ui.scss */
-.video-play-button:hover:after {
-  -webkit-transform: scale(0.9) translateX(-55%) translateY(-50%);
-          transform: scale(0.9) translateX(-55%) translateY(-50%);
-  transition: all 0.05s 0s ease-out;
+/* line 39, ../../src/sass/_modules/_ui.scss */
+.video-play-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-transform 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: background-color 0s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transform: translate(-50%, -50%) scale(0.95);
+          transform: translate(-50%, -50%) scale(0.95);
 }
-@media screen and (min-width: 1200px) {
-  /* line 46, ../../src/sass/_modules/_ui.scss */
-  .video-play-button:hover:after {
-    -webkit-transform: scale(0.9) translateX(-55%) translateY(-50%);
-            transform: scale(0.9) translateX(-55%) translateY(-50%);
-    transition: all 0.05s 0s ease-out;
-  }
+/* line 44, ../../src/sass/_modules/_ui.scss */
+.video-play-button:active, .video-play-button:target {
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: background-color 0s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* line 55, ../../src/sass/_modules/_ui.scss */
+/* line 51, ../../src/sass/_modules/_ui.scss */
 .scroll-down-icon {
   width: 1rem;
   height: 1.7rem;
@@ -10310,7 +10410,7 @@ a[href^="tel"] {
   box-sizing: content-box;
 }
 
-/* line 65, ../../src/sass/_modules/_ui.scss */
+/* line 61, ../../src/sass/_modules/_ui.scss */
 .scroll-down-icon:before {
   content: "";
   position: absolute;
@@ -10324,7 +10424,7 @@ a[href^="tel"] {
   background-color: #FFFFFF;
 }
 
-/* line 77, ../../src/sass/_modules/_ui.scss */
+/* line 73, ../../src/sass/_modules/_ui.scss */
 .scroll-down-icon:after {
   content: ">";
   position: absolute;
@@ -10335,7 +10435,7 @@ a[href^="tel"] {
   color: #FFFFFF;
 }
 
-/* line 86, ../../src/sass/_modules/_ui.scss */
+/* line 82, ../../src/sass/_modules/_ui.scss */
 button.tertiary {
   background-color: transparent;
   border-radius: 0;
@@ -10365,12 +10465,12 @@ button.tertiary {
   background-size: 1em auto;
 }
 
-/* line 115, ../../src/sass/_modules/_ui.scss */
+/* line 111, ../../src/sass/_modules/_ui.scss */
 button.tertiary.white {
   color: #FFFFFF;
 }
 
-/* line 119, ../../src/sass/_modules/_ui.scss */
+/* line 115, ../../src/sass/_modules/_ui.scss */
 button.tertiary:before {
   display: block;
   content: "";
@@ -10383,12 +10483,12 @@ button.tertiary:before {
   border-bottom-style: solid;
 }
 
-/* line 131, ../../src/sass/_modules/_ui.scss */
+/* line 127, ../../src/sass/_modules/_ui.scss */
 button.tertiary:hover:before {
   width: 100%;
 }
 
-/* line 137, ../../src/sass/_modules/_ui.scss */
+/* line 133, ../../src/sass/_modules/_ui.scss */
 .button--secondary,
 .select--secondary {
   -webkit-appearance: none;
@@ -10416,13 +10516,13 @@ button.tertiary:hover:before {
   transition: all 0.2s ease-in 0s;
 }
 @media screen and (min-width: 1600px) {
-  /* line 137, ../../src/sass/_modules/_ui.scss */
+  /* line 133, ../../src/sass/_modules/_ui.scss */
   .button--secondary,
   .select--secondary {
     font-size: 1rem;
   }
 }
-/* line 164, ../../src/sass/_modules/_ui.scss */
+/* line 160, ../../src/sass/_modules/_ui.scss */
 .button--secondary:hover, .button--secondary:focus,
 .select--secondary:hover,
 .select--secondary:focus {
@@ -10430,32 +10530,32 @@ button.tertiary:hover:before {
   border-color: #373737;
   transition: all 0s ease-out 0s;
 }
-/* line 171, ../../src/sass/_modules/_ui.scss */
+/* line 167, ../../src/sass/_modules/_ui.scss */
 .button--light,
 .select--light {
   color: #FFFFFF;
   border-color: rgba(255, 255, 255, 0.2);
 }
-/* line 174, ../../src/sass/_modules/_ui.scss */
+/* line 170, ../../src/sass/_modules/_ui.scss */
 .button--light:hover, .button--light:focus,
 .select--light:hover,
 .select--light:focus {
   border-color: white;
 }
-/* line 179, ../../src/sass/_modules/_ui.scss */
+/* line 175, ../../src/sass/_modules/_ui.scss */
 .button--dark,
 .select--dark {
   color: #373737;
   border-color: rgba(55, 55, 55, 0.2);
 }
-/* line 182, ../../src/sass/_modules/_ui.scss */
+/* line 178, ../../src/sass/_modules/_ui.scss */
 .button--dark:hover, .button--dark:focus,
 .select--dark:hover,
 .select--dark:focus {
   border-color: #373737;
 }
 
-/* line 190, ../../src/sass/_modules/_ui.scss */
+/* line 186, ../../src/sass/_modules/_ui.scss */
 .select--secondary {
   background-position-x: calc(100% + 2em);
   background-position-y: center;
@@ -10463,7 +10563,7 @@ button.tertiary:hover:before {
   background-size: 1em auto;
   padding: 1.2em 3em 1.2em 1.2em;
 }
-/* line 198, ../../src/sass/_modules/_ui.scss */
+/* line 194, ../../src/sass/_modules/_ui.scss */
 .select--secondary.button--light {
   background-position-x: calc(100% + 2em);
   background-position-y: center;

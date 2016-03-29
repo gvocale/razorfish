@@ -48,7 +48,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="insights-landing.html">Insights<span class="note">Landing</span></a>
-                    </li>                                        
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="news-landing.html">News<span class="note">Landing</span></a>
                     </li>
@@ -60,7 +60,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="press-release.html">Press Release</a>
-                    </li>                                        
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="rich-article.html">Rich Article</a>
                     </li>
@@ -79,17 +79,11 @@
                         <a class="link" href="contact-promo.html">Contact Promo</a>
                     </li>
                     <li class="site-navigation__link-container">
-                        <a class="link" href="social-feed-instagram.html">Social Feed<span class="note">Instagram</span></a>
-                    </li>
-                    <li class="site-navigation__link-container">
-                        <a class="link" href="social-feed-twitter.html">Social Feed<span class="note">Twitter</span></a>
-                    </li>                    
-                    <li class="site-navigation__link-container">
                         <a class="link" href="feed.html">Feed</a>
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="filtered-job-listings.html">Filtered Job Listings</a>
-                    </li>                             
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="footer.html">Footer</a>
                     </li>
@@ -102,6 +96,9 @@
                     <li class="site-navigation__link-container">
                         <a class="link" href="image.html">Image</a>
                     </li>
+                    <li class="site-navigation__link-container">
+                        <a class="link" href="inline-video.html">Inline Video</a>
+                    </li>                    
                     <li class="site-navigation__link-container">
                         <a class="link" href="site-navigation.html">Navigation</a>
                     </li>
@@ -116,6 +113,12 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="pull-quote.html">Pull Quote</a>
+                    </li>
+                    <li class="site-navigation__link-container">
+                        <a class="link" href="social-feed-instagram.html">Social Feed<span class="note">Instagram</span></a>
+                    </li>
+                    <li class="site-navigation__link-container">
+                        <a class="link" href="social-feed-twitter.html">Social Feed<span class="note">Twitter</span></a>
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="social-share.html">Social Share</a>
@@ -242,11 +245,12 @@
                 <p class="body-copy__body">The agency has delivered many successful solutions on AWS for clients in a range of industries. Essilor – a leading manufacturer of optical lenses in the United States and the market leader in progressive, high-index, photochromic and anti-reflective coated lenses – recently partnered with Razorfish on the creative design and technical execution of its new digital marketing platform. Essilor and Razorfish used a variety of AWS services and tools, including Amazon DynamoDB as a primary database for collected data.</p>
                 <p class="body-copy__body">“Razorfish helped us create a new digital marketing platform that could seamlessly connect our full brand infrastructure and give our customers a common, contextually relevant experience across our digital properties,” said Daniel Monaco, vice president of consumer marketing and strategic insights at Essilor of America. “The agency’s deep expertise in both AWS and Adobe Experience Manager positioned us to accelerate the design, build and deployment of our site within four months.”</p>
                 <div class="inline-video">
-                    <div class="ratio-16-9">
-                        <div class="inline-video__button-container">
-                            <div class="video-play-button"></div>
+                    <div class="inline-video__container--16-9">
+                        <div class="inline-video__poster-frame">
+                            <div class="inline-video__button--play"></div>
+                            <div class="inline-video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
                         </div>
-                        <div class="video-background" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
+                        <iframe id="vimeo-video" src="https://player.vimeo.com/video/160730254?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
                     <p class="inline-video__caption"><strong>IMAGE SOURCE:</strong> <a class="link link--primary" href="">http://media.daimler.com</a></p>
                 </div>
@@ -377,6 +381,17 @@
     <script>
     $(function() {
         $('.sticky').Stickyfill();
+    });
+    </script>
+        <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        var player = $("#vimeo-video");
+        froogaloop = $f(player[0].id);
+    });
+    $('.inline-video__button--play').click(function(e) {
+        $('.inline-video__poster-frame').fadeOut("slow");
+        froogaloop.api('play');
     });
     </script>
 </body>
