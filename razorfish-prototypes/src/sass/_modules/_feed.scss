@@ -1,73 +1,98 @@
 .feed {
+    width: 100%;
+    .button-container {
+        margin-top: 3em;
+        margin-bottom: 3em;
+        @media screen and ($md) {
+            margin-top: 4em;
+            margin-bottom: 4em;
+        }
+        @media screen and ($xl) {
+            margin-top: 6em;
+            margin-bottom: 6em;
+        }
+    }
     &__grid {
-        width: 100vw;
-        padding: 0;
-        margin: 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
         overflow: hidden;
         @media screen and ($md) {
-            height: 175vw;
+            height: calc(100vw / 4 * 7);
         }
     }
     &__item {
-        float: left;
-        width: 100vw;
-        height: 50vw;
+        width: 100%;
+        height: auto;
+        position: relative;
         cursor: pointer;
         cursor: hand;
-        text-align: center;
         @media screen and ($md) {
-            width: 50vw;
-            height: 25vw;
+            width: 50%;
         }
-        &:nth-of-type(2),
-        &:nth-of-type(3),
-        &:nth-of-type(6),
-        &:nth-of-type(8) {
-            height: 100vw;
-            @media screen and ($md) {
-                height: 50vw;
+        &:before {
+            content: "";
+            display: block;
+            padding-bottom: 50%;
+            position: relative;
+        }
+        &.text-top:before,
+        &.text-bottom:before {
+            padding-bottom: 100%;
+        }
+        @media screen and ($md) {
+            &:nth-of-type(1) {
+                order: 1;
+            }
+            &:nth-of-type(2) {
+                order: 6;
+            }
+            &:nth-of-type(3) {
+                order: 7;
+            }
+            &:nth-of-type(4) {
+                order: 2;
+            }
+            &:nth-of-type(5) {
+                order: 3;
+            }
+            &:nth-of-type(6) {
+                order: 8;
+            }
+            &:nth-of-type(7) {
+                order: 4;
+            }
+            &:nth-of-type(8) {
+                order: 5;
+            }
+            &:nth-of-type(9) {
+                order: 9;
+            }
+            &:nth-of-type(10) {
+                order: 10;
             }
         }
-        &:nth-of-type(3) {
-            transform: translateY(50%);
-            @media screen and ($md) {
-                transform: translateY(-50%);
-            }
+        .feed__item__content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
         }
-        &:nth-of-type(4) {
-            transform: translateY(-200%);
-            @media screen and ($md) {
-                transform: translateY(0);
-            }
-        }
-        &:nth-of-type(5) {
-            @media screen and ($md) {
-                transform: translateX(-100%);
-            }
-        }
-        &:nth-of-type(6) {
-            @media screen and ($md) {
-                transform: translateY(-50%) translateX(100%);
-            }
-        }
-        &:nth-of-type(7) {
-            @media screen and ($md) {
-                transform: translateX(-100%);
-            }
-        }
-        &:nth-of-type(8) {
-            @media screen and ($md) {
-                transform: translateX(-100%);
-            }
-        }
-        &:nth-of-type(9) {
-            @media screen and ($md) {
-                transform: translateY(-200%) translateX(100%);
-            }
-        }
-        &:nth-of-type(10) {
-            @media screen and ($md) {
-                transform: translateY(-100%);
+        span {
+            font-size: $scale06;
+            font-family: $sans;
+            color: $primary;
+            z-index: 20;
+            display: inline-block;
+            position: absolute;
+            top: 1em;
+            left: 1em;
+            opacity: 0.5;
+            @media screen and ($lg) {
+                font-size: $scale10;
             }
         }
         &__eyebrow {
@@ -132,6 +157,7 @@
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
+            text-align: center;
             align-items: center;
             justify-content: center;
             @media screen and ($xxl) {
@@ -148,15 +174,196 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            transition: all 10s 0.2s $bezier;
+            transition: all 0.2s 0s $bezier;
         }
         &:hover {
             .feed__item__background {
-                transform: scale(1.05);
-                transition: all 1s 0.1s $bezier;
+                transition: all 0.2s 0s $bezier;
+                transform: scale(1.025);
             }
         }
         &.split {
+            background-position: 50% center;
+            .feed__item__text-container {
+                margin-left: 50%;
+                padding: 7.5%;
+                width: 50%;
+                background-color: $white;
+                height: 100%;
+                display: flex;
+                text-align: left;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: baseline;
+                justify-content: center;
+                position: relative;
+            }
+            .feed__item__text-container:before {
+                right: 100%;
+                top: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-right-color: $white;
+                border-width: 0.75rem;
+                margin-top: -0.75rem;
+                transition: all 0.2s 0s $bezier;
+                transform: translateX(20%);
+                @media screen and ($md) {
+                    border-width: 2rem;
+                    margin-top: -2rem;
+                }
+            }
+            .feed__item__headline {
+                max-width: 8em;
+                font-size: $scale04;
+                @media screen and ($lg) {
+                    font-size: $scale05;
+                }
+                @media screen and ($xl) {
+                    font-size: $scale06;
+                }
+                @media screen and ($xxl) {
+                    font-size: $scale07;
+                }
+            }
+            &:hover {
+                .feed__item__text-container:before {
+                    transition: all 0.2s 0s $bezier;
+                    transform: translateX(0%);
+                }
+            }
+            .feed__item__background {
+                width: 50%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+    .text-top {
+        .feed__item__text-container {
+            height: 50%;
+            align-self: flex-start;
+        }
+    }
+    .text-bottom {
+        .feed__item__text-container {
+            height: 50%;
+            align-self: flex-end;
+        }
+    }
+    .color-combination-1 {
+        .feed__item__eyebrow {
+            color: $primary;
+        }
+        .feed__item__headline {
+            color: $black;
+        }
+        .feed__item__subheadline {
+            color: $black;
+        }
+        .feed__item__background {
+            background-color: $white;
+        }
+    }
+    .color-combination-2 {
+        .feed__item__eyebrow {
+            color: $primary;
+        }
+        .feed__item__headline {
+            color: $white;
+        }
+        .feed__item__subheadline {
+            color: $white;
+        }
+        .feed__item__background {
+            background-color: $black;
+        }
+    }
+    .color-combination-3 {
+        .feed__item__eyebrow {
+            color: $white;
+        }
+        .feed__item__headline {
+            color: $black;
+        }
+        .feed__item__subheadline {
+            color: $black;
+        }
+        .feed__item__background {
+            background-color: $primary;
+        }
+    }
+    .color-combination-4 {
+        .feed__item__eyebrow {
+            color: $black;
+        }
+        .feed__item__headline {
+            color: $white;
+        }
+        .feed__item__subheadline {
+            color: $white;
+        }
+        .feed__item__background {
+            background-color: $secondary;
+        }
+    }
+    .color-combination-5 {
+        .feed__item__eyebrow {
+            color: $black;
+        }
+        .feed__item__headline {
+            color: $white;
+        }
+        .feed__item__subheadline {
+            color: $white;
+        }
+        .feed__item__background {
+            background-color: $tertiaryLighter;
+        }
+    }
+    &--curated {
+        background-color: $gray;
+        .feed__grid {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            @media screen and ($md) {
+                height: calc(90vw / 4 * 7);
+            }
+            @media screen and ($xl) {
+                width: 80%;
+                height: calc(80vw / 4 * 7);
+            }
+        }
+        .feed__item {
+            &__headline {
+                font-size: $scale05;
+                @media screen and ($lg) {
+                    font-size: $scale06;
+                }
+                @media screen and ($xl) {
+                    font-size: $scale07;
+                }
+                @media screen and ($xxl) {
+                    font-size: $scale08;
+                }
+            }
+            &__subheadline {
+                font-size: $scale04;
+                @media screen and ($xl) {
+                    font-size: $scale04;
+                }
+                @media screen and ($xxl) {
+                    font-size: $scale05;
+                }
+            }
+        }
+        .feed__item.split {
             .feed__item__headline {
                 font-size: $scale04;
                 @media screen and ($lg) {
@@ -170,258 +377,70 @@
                 }
             }
         }
-    }
-    .button-container {
-        margin-top: 3em;
-        margin-bottom: 3em;
-        @media screen and ($md) {
-            margin-top: 4em;
-            margin-bottom: 4em;
-        }
-        @media screen and ($xl) {
-            margin-top: 6em;
-            margin-bottom: 6em;
-        }
-    }
-}
-
-.text-top {
-    .feed__item__text-container {
-        height: 50%;
-        align-self: flex-start;
-    }
-}
-
-.text-bottom {
-    .feed__item__text-container {
-        height: 50%;
-        align-self: flex-end;
-    }
-}
-
-// Split Tiles
-.split {
-    background-position: 50% center;
-    text-align: left;
-    .feed__item__background {
-        width: 50%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    .feed__item__text-container {
-        margin-left: 50%;
-        padding: 7.5%;
-        width: 50%;
-        background-color: $white;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: baseline;
-        justify-content: center;
-        position: relative;
-    }
-    .feed__item__text-container:before {
-        right: 100%;
-        top: 50%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-        border-right-color: $white;
-        border-width: 0.75rem;
-        margin-top: -0.75rem;
-        transition: all 0.2s 0.1s $bezier;
-        @media screen and ($md) {
-            border-width: 1.5rem;
-            margin-top: -1.5rem;
-        }
-    }
-    .feed__item__headline {
-        max-width: 8em;
-    }
-}
-
-.split:hover {
-    .feed__item__text-container:before {
-        border-width: 1rem;
-        margin-top: -1rem;
-        transition: all 0.1s 0.1s $bezier;
-        @media screen and ($md) {
-            border-width: 2rem;
-            margin-top: -2rem;
-        }
-    }
-}
-
-.color-combination-1 {
-    .feed__item__eyebrow {
-        color: $primary;
-    }
-    .feed__item__headline {
-        color: $black;
-    }
-    .feed__item__subheadline {
-        color: $black;
-    }
-    .feed__item__background {
-        background-color: $white;
-    }
-}
-
-.color-combination-2 {
-    .feed__item__eyebrow {
-        color: $primary;
-    }
-    .feed__item__headline {
-        color: $white;
-    }
-    .feed__item__subheadline {
-        color: $white;
-    }
-    .feed__item__background {
-        background-color: $blackDarker;
-    }
-}
-
-.color-combination-3 {
-    .feed__item__eyebrow {
-        color: $white;
-    }
-    .feed__item__headline {
-        color: $black;
-    }
-    .feed__item__subheadline {
-        color: $black;
-    }
-    .feed__item__background {
-        background-color: $primary;
-    }
-}
-
-.color-combination-4 {
-    .feed__item__eyebrow {
-        color: $black;
-    }
-    .feed__item__headline {
-        color: $white;
-    }
-    .feed__item__subheadline {
-        color: $white;
-    }
-    .feed__item__background {
-        background-color: $secondary;
-    }
-}
-
-.color-combination-5 {
-    .feed__item__eyebrow {
-        color: $black;
-    }
-    .feed__item__headline {
-        color: $white;
-    }
-    .feed__item__subheadline {
-        color: $white;
-    }
-    .feed__item__background {
-        background-color: $tertiaryLighter;
-    }
-}
-
-// With Padding
-.feed__grid.padding {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90vw;
-    height: auto;
-    padding: 0;
-    overflow: hidden;
-    @media screen and ($md) {
-        height: calc(90vw / 4 * 7);
-    }
-    @media screen and ($xl) {
-        width: 80vw;
-        height: calc(80vw / 4 * 7);
-    }
-    .feed__item {
-        width: 90vw;
-        height: 45vw;
-        @media screen and ($md) {
-            width: 45vw;
-            height: 22.5vw;
-        }
-        @media screen and ($xl) {
-            width: 40vw;
-            height: 20vw;
-        }
-        &:nth-of-type(2),
-        &:nth-of-type(3),
-        &:nth-of-type(6),
-        &:nth-of-type(8) {
-            height: 90vw;
+        .feed-sort {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
             @media screen and ($md) {
-                height: 45vw;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                margin-top: 0;
             }
-            @media screen and ($xl) {
-                height: 40vw;
-            }
-        }
-        &__headline {
-            font-size: $scale05;
-            @media screen and ($lg) {
-                font-size: $scale06;
-            }
-            @media screen and ($xl) {
-                font-size: $scale07;
-            }
-            @media screen and ($xxl) {
-                font-size: $scale08;
-            }
-        }
-        &__subheadline {
-            font-size: $scale04;
-            @media screen and ($xl) {
-                font-size: $scale04;
-            }
-            @media screen and ($xxl) {
-                font-size: $scale05;
+            select {
+                width: 50%;
+                @media screen and ($md) {
+                    width: auto;
+                }
             }
         }
     }
-    .feed__item.split {
-        .feed__item__headline {
-            font-size: $scale04;
-            @media screen and ($lg) {
-                font-size: $scale05;
-            }
-            @media screen and ($xl) {
-                font-size: $scale06;
-            }
-            @media screen and ($xxl) {
-                font-size: $scale07;
+    &--related {
+        .feed__grid {
+            @media screen and ($md) {
+                height: calc(100vw / 4 * 2);
             }
         }
     }
 }
 
-.feed-sort {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    @media screen and ($md) {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        margin-top: 0;
+// Feed item animations
+
+$distance: 25%;
+$speed: 0.1s;
+$left: 1 3 5 7 9;
+$right: 2 4 6 8 10;
+@each $i in $left {
+    .feed__item:nth-of-type(#{$i}).not-in-viewport {
+        transform: translateX(-#{$distance});
+        transition: all $speed 0s $bezier;
     }
-    select {
-        width: 50%;
-        @media screen and ($md) {
-            width: auto;
+}
+
+@each $i in $right {
+    .feed__item:nth-of-type(#{$i}).not-in-viewport {
+        transform: translateX(#{$distance});
+        transition: all $speed 0s $bezier;
+    }
+}
+
+@media screen and ($md) {
+    $left: 1 4 5 7 8;
+    $right: 2 3 6 9 10;
+    @each $i in $left {
+        .feed__item:nth-of-type(#{$i}).not-in-viewport {
+            transform: translateX(-#{$distance});
+            transition: all $speed 0s $bezier;
         }
     }
+    @each $i in $right {
+        .feed__item:nth-of-type(#{$i}).not-in-viewport {
+            transform: translateX(#{$distance});
+            transition: all $speed 0s $bezier;
+        }
+    }
+}
+
+.feed__item.not-in-viewport.in-viewport {
+    transform: translateX(0);
 }

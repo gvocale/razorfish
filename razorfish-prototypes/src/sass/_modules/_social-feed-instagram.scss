@@ -1,6 +1,6 @@
 .social-feed--instagram {
     width: 100%;
-    background-color: $grayLighter;
+    background-color: $gray;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -50,19 +50,19 @@
             }
             &:hover {
                 .social-feed--instagram__feed__image {
-                    transition: transform 0.1s 0s $bezier;
-                    transform: scale(1.05);
+                    transition: transform 0.2s 0s $bezier;
+                    transform: scale(1.025);
                 }
             }
         }
         &__image-container {
-            
             overflow: hidden;
             display: block;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: calc(100% - 1rem);
+            height: calc(100% - 1rem);
+            position: absolute;
             padding: 0.5rem;
             background-position: center;
             background-repeat: no-repeat;

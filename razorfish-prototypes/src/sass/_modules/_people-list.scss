@@ -40,7 +40,7 @@
         width: 100%;
         height: 100%;
         background-color: $white;
-        background-image: linear-gradient($white, $grayDarker);
+        background-image: linear-gradient($white, darken( $gray, 10%));
         background-blend-mode: multiply;
         transition: transform 4s 0.1s $bezier, background-color 0.3s 0s ease-out;
     }
@@ -173,6 +173,36 @@
             }
         }
     }
+    .people-list__item:hover {
+        @media screen and ($md) {
+            .people-list__item-text-container {
+                opacity: 1;
+            }
+            .people-list__item-background {
+                background-color: darken( $gray, 10%);
+                transform: scale(1.1);
+                transition: transform 2s 0.1s $bezier, background-color 0s 0s ease-out;
+            }
+            .people-list__name {
+                transform: translateX(0%);
+                transition: all 0.15s 0.1s $bezier;
+                opacity: 1;
+            }
+            .people-list__title {
+                transform: translateX(0%);
+                transition: all 0.1s 0.1s $bezier;
+                opacity: 1;
+            }
+            .people-list__office {
+                transform: translateX(0%);
+                transition: all 0.05s 0.1s $bezier;
+                opacity: 0.5;
+            }
+            .divider {
+                transform: scaleX(1);
+            }
+        }
+    }
 }
 
 .people-list--title-priority {
@@ -271,6 +301,15 @@
             }
         }
     }
+    .people-list__item:hover {
+        @media screen and ($md) {
+            .people-list__item-background {
+                background-color: $gray;
+                transform: scale(1.1);
+                transition: transform 2s 0.1s $bezier, background-color 0s 0s ease-out;
+            }
+        }
+    }
 }
 
 .people-list__item:nth-of-type(2),
@@ -345,33 +384,3 @@
 //         }
 //     }
 // }
-.people-list__item:hover {
-    @media screen and ($md) {
-        .people-list__item-text-container {
-            opacity: 1;
-        }
-        .people-list__item-background {
-            background-color: $grayDarker;
-            transform: scale(1.1);
-            transition: transform 2s 0.1s $bezier, background-color 0s 0s ease-out;
-        }
-        .people-list__name {
-            transform: translateX(0%);
-            transition: all 0.15s 0.1s $bezier;
-            opacity: 1;
-        }
-        .people-list__title {
-            transform: translateX(0%);
-            transition: all 0.1s 0.1s $bezier;
-            opacity: 1;
-        }
-        .people-list__office {
-            transform: translateX(0%);
-            transition: all 0.05s 0.1s $bezier;
-            opacity: 0.5;
-        }
-        .divider {
-            transform: scaleX(1);
-        }
-    }
-}
