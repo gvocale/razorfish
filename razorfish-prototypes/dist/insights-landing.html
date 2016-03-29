@@ -164,7 +164,7 @@
     </section>
     <section class="feed feed--curated">
         <ul class="feed__grid">
-            <li class="feed__item animate color-combination-1">
+            <li class="feed__item color-combination-1">
                 <span>1</span>
                 <div class="feed__item__content">
                     <div class="feed__item__text-container">
@@ -175,7 +175,7 @@
                     </div>
                 </div>
             </li>
-            <li class="feed__item animate text-top color-combination-2">
+            <li class="feed__item text-top color-combination-2">
                 <div class="feed__item__content">
                     <span>2</span>
                     <div class="feed__item__text-container">
@@ -186,7 +186,7 @@
                     </div>
                 </div>
             </li>
-            <li class="feed__item animate split color-combination-1">
+            <li class="feed__item split color-combination-1">
                 <div class="feed__item__content">
                     <span>3</span>
                     <div class="feed__item__text-container">
@@ -197,7 +197,7 @@
                     </div>
                 </div>
             </li>
-            <li class="feed__item animate text-bottom color-combination-2">
+            <li class="feed__item text-bottom color-combination-2">
                 <div class="feed__item__content">
                     <span>4</span>
                     <div class="feed__item__text-container">
@@ -208,7 +208,7 @@
                     </div>
                 </div>
             </li>
-            <li class="feed__item animate color-combination-2">
+            <li class="feed__item color-combination-2">
                 <div class="feed__item__content">
                     <span>5</span>
                     <div class="feed__item__text-container">
@@ -219,7 +219,7 @@
                     </div>
                 </div>
             </li>
-            <li class="feed__item animate text-top color-combination-3">
+            <li class="feed__item text-top color-combination-3">
                 <div class="feed__item__content">
                     <span>6</span>
                     <div class="feed__item__text-container">
@@ -230,7 +230,7 @@
                     </div>
                 </div>
             </li>
-            <li class="feed__item animate split color-combination-1">
+            <li class="feed__item split color-combination-1">
                 <div class="feed__item__content">
                     <span>7</span>
                     <div class="feed__item__text-container">
@@ -241,7 +241,7 @@
                     </div>
                 </div>
             </li>
-            <li class="feed__item animate text-bottom color-combination-3">
+            <li class="feed__item text-bottom color-combination-3">
                 <div class="feed__item__content">
                     <span>8</span>
                     <div class="feed__item__text-container">
@@ -252,7 +252,7 @@
                     </div>
                 </div>
             </li>
-            <li class="feed__item animate split color-combination-1">
+            <li class="feed__item split color-combination-1">
                 <div class="feed__item__content">
                     <span>9</span>
                     <div class="feed__item__text-container">
@@ -263,7 +263,7 @@
                     </div>
                 </div>
             </li>
-            <li class="feed__item animate color-combination-4">
+            <li class="feed__item color-combination-4">
                 <div class="feed__item__content">
                     <span>10</span>
                     <div class="feed__item__text-container">
@@ -341,12 +341,25 @@
             </div>
         </div>
     </footer>
+            <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/show-hide-header.js"></script>
     <script>
     new cbpScroller(document.getElementById('animate-container'));
+    </script>
+    <script src="js/isInViewport.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.feed__item').addClass('animate');
+    });
+    $(window).scroll(function() {
+        $(".feed__item:in-viewport").each(function() {
+            $(this).addClass('in-viewport');
+        })
+    });
     </script>
 </body>
 

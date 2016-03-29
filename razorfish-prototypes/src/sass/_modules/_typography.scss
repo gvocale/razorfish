@@ -406,6 +406,11 @@ p {
     word-break: break-word;
     hyphens: auto;
     -webkit-appearance: none;
+    &:active,
+    &:target {
+        background-color: rgba($black, 0.03);
+        transition: background-color 0s 0s;
+    }
     @media screen and ($lg) {
         &:before {
             display: block;

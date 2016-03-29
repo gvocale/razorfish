@@ -1,22 +1,18 @@
 .filtered-job-listings {
-    background-color: $gray;
-    padding-top: 20%;
     padding-bottom: 20%;
-    @media screen and ($md) {
-        padding-top: 15%;
-        padding-bottom: 15%;
-    }
     @media screen and ($lg) {
-        padding-top: 10%;
         padding-bottom: 10%;
+    }
+    @media screen and ($xl) {
+        padding-bottom: 7.5%;
+    }
+    @media screen and ($xxl) {
+        padding-bottom: 5%;
     }
     &__table {
         width: 100%;
         margin-bottom: 5%;
         z-index: 10;
-        @media screen and ($xxl) {
-            width: calc(100% / 12 * 10);
-        }
         &:last-child {
             margin-bottom: 0;
         }
@@ -27,69 +23,46 @@
         justify-content: space-between;
         align-items: baseline;
         width: 100%;
-        border-bottom: 2px solid $white;
-        padding-top: 2em;
-        padding-bottom: 2em;
+        border-bottom: 3px solid rgba($black, 0.03);
+        padding-top: 3em;
+        padding-bottom: 3em;
+        transition: all 0.2s 0s $bezier, transform 0.2s 0s $bezier;
+        cursor: pointer;
+        cursor: hand;
+        position: relative;
+        box-sizing: border-box;
         &:first-of-type {
-            border-top: 4px solid $white;
+            border-top: 3px solid rgba($black, 0.05);
         }
         &:last-of-type {
-            border-bottom: 4px solid $white;
+            border-bottom: 3px solid rgba($black, 0.05);
         }
-        &:hover {
-            background-color: rgba($black, 0.025);
-            cursor: pointer;
-            cursor: hand;
+        &:hover:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: calc(100% + 2rem);
+            height: 100%;
+            left: -1rem;
+            top: 0;
+            background-color: rgba($black, 0.03);
+            transition: all 0s 0s $bezier;
         }
         &:active,
         &:target {
-            background-color: rgba($black, 0.05);
-            cursor: pointer;
-            cursor: hand;
+            background-color: rgba($black, 0.03);
+            transition: all 0s 0s $bezier;
+            border-bottom: 3px solid transparent;
         }
-    }
-    &__label {
-        &--title,
-        &--date,
-        &--location {
-            font-family: $sans;
-            line-height: $title-sans;
-            letter-spacing: $spacing-sans-large;
-            text-transform: uppercase;
-            opacity: 0.5;
-            font-size: $scale02;
-            @media only screen and ($md) {
-                font-size: $scale03;
-            }
-        }
-        &--title {
-            text-align: left;
-            width: calc(100% / 12 * 4);
-        }
-        &--date {
-            text-align: center;
-            width: calc(100% / 12 * 2);
-        }
-        &--location {
-            text-align: right;
-            width: calc(100% / 12 * 4);
-        }
-    }
-    &__header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-        padding-top: 1em;
-        padding-bottom: 1em;
     }
     &__job-title {
-        font-family: $serif;
-        line-height: $title-serif;
-        letter-spacing: $spacing-serif;
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans;
         font-weight: 700;
         text-align: left;
         width: calc(100% / 12 * 4);
+        color: $primary;
         font-size: $scale04;
         @media only screen and ($md) {
             font-size: $scale05;
@@ -101,9 +74,9 @@
         letter-spacing: $spacing-sans;
         text-align: center;
         width: calc(100% / 12 * 2);
-        font-size: $scale03;
+        font-size: $scale04;
         @media only screen and ($md) {
-            font-size: $scale04;
+            font-size: $scale05;
         }
     }
     &__location {
@@ -112,9 +85,9 @@
         letter-spacing: $spacing-sans;
         text-align: right;
         width: calc(100% / 12 * 4);
-        font-size: $scale03;
+        font-size: $scale04;
         @media only screen and ($md) {
-            font-size: $scale04;
+            font-size: $scale05;
         }
     }
     .padded-grid {

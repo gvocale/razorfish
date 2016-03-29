@@ -49,34 +49,84 @@
 }
 
 .scroll-down-icon {
-    width: 1rem;
-    height: 1.7rem;
-    border-radius: calc(1.3rem / 2);
-    border: solid $white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: solid currentColor;
     border-width: 0.15rem;
     position: relative;
-    box-sizing: content-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    &:after {
+        content: "";
+        position: absolute;
+        width: 0.1rem;
+        height: 0.75rem;
+        background-color: currentColor;
+        top: 55%;
+        left: 61%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        transition: transform 0.1s 0s $bezier;
+        animation-name: scroll-down-icon-animation-left;
+        animation-duration: 0.2s;
+        animation-play-state: paused;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        width: 0.1rem;
+        height: 0.75rem;
+        background-color: currentColor;
+        top: 55%;
+        left: 37%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        transition: transform 0.1s 0s $bezier;
+        animation-name: scroll-down-icon-animation-right;
+        animation-duration: 0.2s;
+        animation-play-state: paused;
+    }
+    &:hover:after {
+        animation-play-state: running;
+    }
+    &:hover:before {
+        animation-play-state: running;
+    }
 }
 
-.scroll-down-icon:before {
-    content: "";
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0.3rem;
-    height: 0.3rem;
-    border-radius: 50%;
-    background-color: $white;
+@keyframes scroll-down-icon-animation-left {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    30% {
+        transform: translate(-50%, 100%) rotate(45deg);
+    }
+    31% {
+        transform: translate(-50%, -150%) rotate(45deg);
+    }
+    61% {
+        transform: translate(-50%, -150%) rotate(45deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
 }
 
-.scroll-down-icon:after {
-    content: ">";
-    position: absolute;
-    top: 120%;
-    left: 50%;
-    transform: translateX(-50%) rotate(90deg) scale(0.6, 1.2);
-    color: $white;
+@keyframes scroll-down-icon-animation-right {
+    0% {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    30% {
+        transform: translate(-50%, 100%) rotate(-45deg);
+    }
+    31% {
+        transform: translate(-50%, -150%) rotate(-45deg);
+    }
+    61% {
+        transform: translate(-50%, -150%) rotate(-45deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
 }
 
 button.tertiary {
@@ -162,6 +212,20 @@ button.tertiary:hover:before {
             outline: none;
             border-color: rgba( $black, 1);
             transition: all 0s ease-out 0s;
+        }
+        &:active:after,
+        &:target:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: currentColor;
+            opacity: 0.05;
+        }
+        option {
+            text-transform: none;
         }
     }
     &--light {

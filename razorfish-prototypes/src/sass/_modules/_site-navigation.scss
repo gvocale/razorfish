@@ -12,6 +12,12 @@
         overflow: scroll;
         display: flex;
         align-items: center;
+        padding-top: 20%;
+        padding-bottom: 20%;
+        @media screen and ($lg) {
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
     }
     &__link-container {
         // animation-name: fadein;
@@ -67,7 +73,6 @@
         .note {
             letter-spacing: $spacing-sans;
         }
-
     }
     &__components {
         font-family: $sans;

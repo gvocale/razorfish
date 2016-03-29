@@ -250,7 +250,7 @@
                             <div class="inline-video__button--play"></div>
                             <div class="inline-video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
                         </div>
-                        <iframe id="vimeo-video" src="https://player.vimeo.com/video/160730254?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <iframe id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
                     <p class="inline-video__caption"><strong>IMAGE SOURCE:</strong> <a class="link link--primary" href="">http://media.daimler.com</a></p>
                 </div>
@@ -296,7 +296,7 @@
     </section>
     <section class="feed feed--related">
         <ul class="feed__grid">
-            <li class="feed__item animate text-top color-combination-3">
+            <li class="feed__item text-top color-combination-3">
                 <div class="feed__item__content">
                     <span>1</span>
                     <div class="feed__item__text-container">
@@ -307,7 +307,7 @@
                     </div>
                 </div>
             </li>
-            <li class="feed__item animate solid color-combination-4">
+            <li class="feed__item solid color-combination-4">
                 <div class="feed__item__content">
                     <span>2</span>
                     <div class="feed__item__text-container">
@@ -318,7 +318,7 @@
                     </div>
                 </div>
             </li>
-            <li class="feed__item animate split color-combination-1">
+            <li class="feed__item split color-combination-1">
                 <div class="feed__item__content">
                     <span>3</span>
                     <div class="feed__item__text-container">
@@ -392,6 +392,17 @@
     $('.inline-video__button--play').click(function(e) {
         $('.inline-video__poster-frame').fadeOut("slow");
         froogaloop.api('play');
+    });
+    </script>
+    <script src="js/isInViewport.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.feed__item').addClass('animate');
+    });
+    $(window).scroll(function() {
+        $(".feed__item:in-viewport").each(function() {
+            $(this).addClass('in-viewport');
+        })
     });
     </script>
 </body>

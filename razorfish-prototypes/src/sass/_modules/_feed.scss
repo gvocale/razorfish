@@ -405,22 +405,23 @@
 }
 
 // Feed item animations
-
 $distance: 25%;
 $speed: 0.1s;
 $left: 1 3 5 7 9;
 $right: 2 4 6 8 10;
 @each $i in $left {
-    .feed__item:nth-of-type(#{$i}).not-in-viewport {
-        transform: translateX(-#{$distance});
+    .feed__item:nth-of-type(#{$i}).animate {
+        transform: translate(-#{$distance}, #{$distance});
         transition: all $speed 0s $bezier;
+        opacity: 0;
     }
 }
 
 @each $i in $right {
-    .feed__item:nth-of-type(#{$i}).not-in-viewport {
-        transform: translateX(#{$distance});
+    .feed__item:nth-of-type(#{$i}).animate {
+        transform: translate(#{$distance}, #{$distance});
         transition: all $speed 0s $bezier;
+        opacity: 0;
     }
 }
 
@@ -428,19 +429,18 @@ $right: 2 4 6 8 10;
     $left: 1 4 5 7 8;
     $right: 2 3 6 9 10;
     @each $i in $left {
-        .feed__item:nth-of-type(#{$i}).not-in-viewport {
-            transform: translateX(-#{$distance});
-            transition: all $speed 0s $bezier;
+        .feed__item:nth-of-type(#{$i}).animate {
+            transform: translate(-#{$distance}, #{$distance});
         }
     }
     @each $i in $right {
-        .feed__item:nth-of-type(#{$i}).not-in-viewport {
-            transform: translateX(#{$distance});
-            transition: all $speed 0s $bezier;
+        .feed__item:nth-of-type(#{$i}).animate {
+            transform: translate(#{$distance}, #{$distance});
         }
     }
 }
 
-.feed__item.not-in-viewport.in-viewport {
-    transform: translateX(0);
+.feed__item.animate.in-viewport {
+    transform: translate(0,0);
+    opacity: 1;
 }
