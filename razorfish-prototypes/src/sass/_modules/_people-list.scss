@@ -7,7 +7,7 @@
         align-items: stretch;
         justify-content: flex-start;
         aling-content: stretch;
-        background-color: $whiteDarker;
+        background-color: darken($white, 2%);
         width: 100vw;
     }
     &__item {
@@ -304,7 +304,7 @@
     .people-list__item:hover {
         @media screen and ($md) {
             .people-list__item-background {
-                background-color: $gray;
+                background-color: darken($white, 15%);
                 transform: scale(1.1);
                 transition: transform 2s 0.1s $bezier, background-color 0s 0s ease-out;
             }
@@ -312,75 +312,44 @@
     }
 }
 
-.people-list__item:nth-of-type(2),
-.people-list__item:nth-of-type(3),
-.people-list__item:nth-of-type(6),
-.people-list__item:nth-of-type(7),
-.people-list__item:nth-of-type(10) {
-    .people-list__item-background {
-        background-color: $whiteDarker;
+@each $i in (2 3 6 7 10) {
+    .people-list__item:nth-of-type(#{$i}) {
+        .people-list__item-background {
+            background-color: darken($white, 3%);
+        }
     }
 }
 
 @media screen and ($lg) {
-    .people-list__item:nth-of-type(1),
-    .people-list__item:nth-of-type(3),
-    .people-list__item:nth-of-type(4),
-    .people-list__item:nth-of-type(5),
-    .people-list__item:nth-of-type(7) {
-        .people-list__item-background {
-            background-color: $white;
+    @each $i in (1 3 4 5 7) {
+        .people-list__item:nth-of-type(#{$i}) {
+            .people-list__item-background {
+                background-color: $white;
+            }
         }
     }
-    .people-list__item:nth-of-type(2),
-    .people-list__item:nth-of-type(4),
-    .people-list__item:nth-of-type(6),
-    .people-list__item:nth-of-type(8),
-    .people-list__item:nth-of-type(10) {
-        .people-list__item-background {
-            background-color: $whiteDarker;
+    @each $i in (2 4 6 8 10) {
+        .people-list__item:nth-of-type(#{$i}) {
+            .people-list__item-background {
+                background-color: darken($white, 3%);
+            }
         }
     }
 }
 
 @media screen and ($xxl) {
-    .people-list__item:nth-of-type(1),
-    .people-list__item:nth-of-type(3),
-    .people-list__item:nth-of-type(6),
-    .people-list__item:nth-of-type(8),
-    .people-list__item:nth-of-type(9) {
-        .people-list__item-background {
-            background-color: $white;
+    @each $i in (1 3 6 8 9) {
+        .people-list__item:nth-of-type(#{$i}) {
+            .people-list__item-background {
+                background-color: $white;
+            }
         }
     }
-    .people-list__item:nth-of-type(2),
-    .people-list__item:nth-of-type(4),
-    .people-list__item:nth-of-type(5),
-    .people-list__item:nth-of-type(7),
-    .people-list__item:nth-of-type(10) {
-        .people-list__item-background {
-            background-color: $whiteDarker;
+    @each $i in (2 4 5 7 10) {
+        .people-list__item:nth-of-type(#{$i}) {
+            .people-list__item-background {
+                background-color: darken($white, 3%);
+            }
         }
     }
 }
-
-// @media screen and ($xxl) {
-//     .people-list__item:nth-of-type(1),
-//     .people-list__item:nth-of-type(3),
-//     .people-list__item:nth-of-type(5),
-//     .people-list__item:nth-of-type(7),
-//     .people-list__item:nth-of-type(9) {
-//         .people-list__item-background {
-//             background-color: $white;
-//         }
-//     }
-//     .people-list__item:nth-of-type(2),
-//     .people-list__item:nth-of-type(4),
-//     .people-list__item:nth-of-type(6),
-//     .people-list__item:nth-of-type(8),
-//     .people-list__item:nth-of-type(10) {
-//         .people-list__item-background {
-//             background-color: $whiteDarker;
-//         }
-//     }
-// }
