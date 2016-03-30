@@ -93,10 +93,10 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="contact-promo.html">Contact Promo</a>
-                    </li>                
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="content-grid.html">Content Grid</a>
-                    </li>                
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="feed.html">Feed</a>
                     </li>
@@ -115,9 +115,6 @@
                     <li class="site-navigation__link-container">
                         <a class="link" href="image.html">Image</a>
                     </li>
-                    <li class="site-navigation__link-container">
-                        <a class="link" href="inline-video.html">Inline Video</a>
-                    </li>                    
                     <li class="site-navigation__link-container">
                         <a class="link" href="site-navigation.html">Navigation</a>
                     </li>
@@ -155,34 +152,73 @@
             </div>
         </div>
     </nav>
-    <div class="padded-grid">
-        <div class="body-copy__flexible">
-            <div class="inline-video">
-                <div class="inline-video__container--16-9">
-                    <div class="inline-video__poster-frame">
-                        <div class="inline-video__button--play"></div>
-                        <div class="inline-video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
-                    </div>
-                    <iframe id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                </div>
-                <p class="inline-video__caption"><strong>IMAGE SOURCE:</strong> <a class="link link--primary" href="">http://media.daimler.com</a></p>
+    <section class="content-grid">
+        <div class="content-grid__item">
+            <div class="content-grid__image" style="background-image: url(images/disciplines-content-grid-1.jpg);"></div>
+        </div>
+        <div class="content-grid__item content-grid__item--body content-grid__item--red">
+            <div class="content-grid__item--container">
+                <hr class="divider divider-md">
+                <h2 class="content-grid__headline">Skills and Deliverables</h2>
+                <ul class="content-grid__body">
+                    <li class="">Omnichannel commerce</li>
+                    <li class="">Commerce experience and platforms</li>
+                    <li class="">New retail models</li>
+                    <li class="">Data visibility and efficient logistics</li>
+                    <li class="">Social Proof</li>
+                </ul>
             </div>
         </div>
-    </div>
+        <div class="content-grid__item">
+            <div class="content-grid__image" style="background-image: url(images/disciplines-content-grid-2.jpg);"></div>
+        </div>
+        <div class="content-grid__item content-grid__item--body content-grid__item--brown">
+            <div class="content-grid__item--container">
+                <hr class="divider divider-md">
+                <h2 class="content-grid__headline">Results</h2>
+                <ul class="content-grid__body">
+                    <li class="">Brand Loyalty</li>
+                    <li class="">Engagement</li>
+                    <li class="">Retention</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="content-grid">
+        <div class="content-grid__item content-grid__item--red">
+            <div class="content-grid__item--container content-grid__item--container--pull-quote">
+                <div class="content-grid__icon quotation-mark--dark"></div>
+                <p class="content-grid__eyebrow">Business development</p>
+                <h2 class="content-grid__pull-quote">I don’t know the key to success, but the key  to failure is trying to please everybody.</h2>
+                <div class="content-grid__pull-quote--author-photo" style="background-image: url(images/content-grid-author-photo-1.jpg);"></div>
+                <p class="content-grid__pull-quote--author-name">Trevor Williams</p>
+                <p class="content-grid__pull-quote--author-title">Director of Business Development</p>
+            </div>
+        </div>
+        <div class="content-grid__item content-grid__item--dark">
+            <div class="content-grid__item--container content-grid__item--container--pull-quote">
+                <div class="content-grid__icon quotation-mark--white"></div>
+                <p class="content-grid__eyebrow">Business development</p>
+                <h2 class="content-grid__pull-quote">I don’t know the key to success, but the key  to failure is trying to please everybody.</h2>
+                <div class="content-grid__pull-quote--author-photo" style="background-image: url(images/content-grid-author-photo-2.jpg);"></div>
+                <p class="content-grid__pull-quote--author-name">Trevor Williams</p>
+                <p class="content-grid__pull-quote--author-title">Director of Business Development</p>
+            </div>
+        </div>
+    </section>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/show-hide-header.js"></script>
-    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
     <script>
-    $(document).ready(function() {
-        var player = $("#vimeo-video");
-        froogaloop = $f(player[0].id);
-    });
-    $('.inline-video__button--play').click(function(e) {
-        $('.inline-video__poster-frame').fadeOut("slow");
-        froogaloop.api('play');
+    new cbpScroller(document.getElementById('animate-container'));
+    </script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/stickyfill.js"></script>
+    <script>
+    $(function() {
+        $('.sticky').Stickyfill();
     });
     </script>
 </body>
