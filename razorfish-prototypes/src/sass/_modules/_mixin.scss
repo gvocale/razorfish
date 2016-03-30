@@ -2,8 +2,28 @@
     width: calc((100% / 12 * #{$column}) - ((#{$gutter} * 12) - (1 * (#{$column} - 1))));
 }
 
+@mixin grid-padding {
+    padding-left: calc(10% - 1rem);
+    padding-right: calc(10% - 1rem);
+    @media screen and ($lg) {
+        padding-left: calc(5% - 1rem);
+        padding-right: calc(5% - 1rem);
+    }
+    @media screen and ($xl) {
+        padding-left: calc(10% - 1rem);
+        padding-right: calc(10% - 1rem);
+    }
+}
 
+@mixin component-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
 
+@mixin component-margin {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
 
 @mixin video {
     position: relative;
@@ -109,4 +129,3 @@
         font-size: $scale09;
     }
 }
-

@@ -1,10 +1,12 @@
 .pull-quote {
     width: 100%;
-    padding-top: 6em;
-    padding-bottom: 6em;
+    @include grid-padding;
     background-color: $black;
     text-align: center;
     color: $white;
+    position: relative;
+    padding-top: 6em;
+    padding-bottom: 6em;
     @media only screen and ($xxl) {
         padding-top: 8em;
         padding-bottom: 8em;
@@ -13,35 +15,60 @@
         padding-top: 10em;
         padding-bottom: 10em;
     }
-    @media only screen and ($xxl) {}
     &__container {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         align-items: center;
+        position: relative;
+        z-index: 100;
+        @include component-padding;
+    }
+    &__icon {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-bottom: 1.5rem;
+        background-size: 100% 100%, contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        @media only screen and ($xl) {
+            height: 2rem;
+            width: 2rem;
+        }
+        @media only screen and ($xxl) {
+            margin-bottom: 2rem;
+        }
+        &.quotation-mark--white,
+        &.quotation-mark--dark {}
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &__eyebrow {
         font-family: $sans;
         line-height: $title-sans;
         color: $primary;
-        letter-spacing: $spacing-sans-large;
-        margin-bottom: 0.5em;
-        font-size: $scale04;
+        letter-spacing: $spacing-sans-mega;
+        margin-bottom: 1em;
+        font-size: $scale03;
         text-transform: uppercase;
         @media only screen and ($md) {
-            font-size: $scale05;
+            font-size: $scale04;
         }
         @media only screen and ($xxl) {
-            font-size: $scale06;
+            font-size: $scale05;
         }
+    }
+    .quotation-mark--primary + .pull-quote__eyebrow {
+        color: currentColor;
     }
     &__quote {
         font-family: $display;
         font-style: italic;
-        line-height: $prose-serif;
+        line-height: $prose-serif - 0.2;
         letter-spacing: $spacing-serif-large;
         margin-bottom: 0.5em;
-        max-width: 24em;
+        max-width: 20em;
         font-size: $scale05;
         @media only screen and ($md) {
             font-size: $scale07;
@@ -49,10 +76,13 @@
         @media only screen and ($xxl) {
             font-size: $scale09;
         }
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &__credit {
         font-family: $sans;
-        line-height: $prose-sans;
+        line-height: $title-sans;
         letter-spacing: $spacing-sans-large;
         font-size: $scale03;
         text-transform: uppercase;
@@ -65,9 +95,81 @@
         strong {
             font-weight: 700;
             margin-right: 0.5em;
+            display: block;
+            @media only screen and ($md) {
+                display: inline-block;
+            }
         }
     }
-    .padded-grid {
-        flex-direction: column;
+    &__author-name {
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans-large;
+        font-weight: 700;
+        font-size: $scale04;
+        margin-bottom: 0.25em;
+        @media only screen and ($xxl) {
+            font-size: $scale05;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__author-title {
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans-large;
+        font-weight: 400;
+        font-size: $scale03;
+        opacity: 0.5;
+        @media only screen and ($xxl) {
+            font-size: $scale04;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__author-photo {
+        width: 4rem;
+        height: 4rem;
+        background-color: $white;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 1rem;
+        @media screen and ($xl) {
+            width: 5rem;
+            height: 5rem;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .pull-quote__quote + .pull-quote__author-photo {
+        margin-top: 2rem;
+    }
+    &__image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+    &--lead {
+        padding-top: 6em;
+        padding-bottom: 6em;
+        @media only screen and ($xxl) {
+            padding-top: 12em;
+            padding-bottom: 12em;
+        }
+        @media only screen and ($xxl) {
+            padding-top: 14em;
+            padding-bottom: 14em;
+        }
     }
 }

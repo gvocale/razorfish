@@ -28,7 +28,7 @@
         position: relative;
         cursor: pointer;
         cursor: hand;
-        width: 3rem;
+        width: 4rem;
         overflow: hidden;
         &:active:before,
         &:target:before {
@@ -39,6 +39,12 @@
             top: 0;
             left: 0;
             background-color: rgba($black, 0.05);
+        }
+        @media screen and ($lg) {
+            width: 3rem;
+        }
+        @media screen and ($xl) {
+            width: 4rem;
         }
         @media screen and ($xl) {
             &:after {

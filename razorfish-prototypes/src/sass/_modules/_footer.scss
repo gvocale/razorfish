@@ -1,59 +1,56 @@
 .footer {
-    &__container-logo {
-        display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include grid-padding;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    @media screen and ($lg) {
         flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
+        justify-content: space-between;
+        align-items: baseline;
+        padding-top: 5%;
+        padding-bottom: 5%;
     }
-    &__container-legal {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        @media only screen and ($lg) {
-            flex-direction: row;
-        }
-    }
-    .logo-razorfish {
+    &__logo-razorfish {
+        @include component-margin;
         @include logo-razorfish;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
         height: 3em;
         width: 8em;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 1em;
+        margin-bottom: 2.5rem;
         @media only screen and ($lg) {
-            margin-left: 0;
-            margin-right: 0;
             margin-bottom: 0;
         }
         @media only screen and ($xl) {
-            height: 4em;
+            height: 3em;
             width: 11em;
         }
     }
     &__copyrights {
+        @include component-padding;
         font-family: $sans;
         font-size: $scale03;
         letter-spacing: $spacing-sans-large;
         line-height: $title-sans;
-        color: darken( $gray, 10%);
-        display: inline-block;
-        vertical-align: middle;
-        margin-bottom: 1em;
+        color: darken( $gray, 20%);
         text-align: center;
         @media only screen and ($lg) {
-            text-align: right;
             margin-bottom: 0;
+            margin-left: auto;
         }
         @media only screen and ($xxl) {
             font-size: $scale04;
         }
-        .legal {
+        &--legal {
             display: block;
             margin-bottom: 1em;
-            @media only screen and ($lg) {
+            @media screen and ($md) {
                 display: inline-block;
-                margin-bottom: 0;
+                margin-bottom: 0em;
             }
         }
         .link {
@@ -67,7 +64,7 @@
             &:last-of-type {
                 margin-right: 0;
             }
-            @media only screen and ($lg) {
+            @media only screen and ($md) {
                 margin-left: 2.2em;
                 &:first-of-type {
                     margin-left: 2.2em;
@@ -90,22 +87,8 @@
             }
         }
     }
-    .social-share__icon-group {
-        vertical-align: middle;
-    }
-    .social-share__icon-container {
-        width: 4rem;
-        @media screen and ($lg) {
-            width: 3rem;
-        }
-        @media screen and ($xl) {
-            width: 4rem;
-        }
-    }
-    .container-fluid {
-        padding: 10% 10%;
-        @media only screen and ($lg) {
-            padding: 4% 5%;
-        }
+    .social-share__group {
+        @include component-padding;
+        transform: translateY(35%);
     }
 }

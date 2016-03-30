@@ -7,27 +7,21 @@
     background-color: rgba(255, 255, 255, 0.9);
     z-index: 100;
     left: 100%;
-    &__content {
-        height: 100%;
-        overflow: scroll;
-        display: flex;
-        align-items: center;
-        padding-top: 20%;
-        padding-bottom: 20%;
-        @media screen and ($lg) {
-            padding-top: 10%;
-            padding-bottom: 10%;
-        }
+    padding-top: 20%;
+    padding-bottom: 20%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    @include grid-padding;
+    @media screen and ($lg) {
+        padding-top: 10%;
+        padding-bottom: 10%;
     }
     &__link-container {
-        // animation-name: fadein;
-        // animation-duration: 0.1s;
-        // animation-timing-function: ease-out;
-        // animation-delay: 0.1s;
-        // animation-iteration-count: 1;
-        // animation-direction: normal;
-        // animation-fill-mode: forwards;
-        // animation-play-state: pause;
         opacity: 0;
         transform: translateY(-50%);
         transition: all 0s linear 0s;
@@ -40,15 +34,19 @@
             margin-left: 0.5em;
             margin-right: 0.5em;
         }
-        span {
+        span:not(.skinny) {
             font-size: $scale04;
             margin-left: 0.5em;
+        }
+        .skinny {
+            font-weight: 200;
         }
         &:last-of-type:after {
             display: none;
         }
     }
     &__pages {
+        @include component-padding;
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans-tight;
@@ -75,6 +73,7 @@
         }
     }
     &__components {
+        @include component-padding;
         font-family: $sans;
         font-size: $scale04;
         line-height: $title-sans;

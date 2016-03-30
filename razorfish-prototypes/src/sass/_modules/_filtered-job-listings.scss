@@ -1,4 +1,7 @@
 .filtered-job-listings {
+    @include grid-padding;
+    display: flex;
+    flex-direction: column;
     padding-bottom: 20%;
     @media screen and ($lg) {
         padding-bottom: 10%;
@@ -13,6 +16,7 @@
         width: 100%;
         margin-bottom: 5%;
         z-index: 10;
+        @include component-padding;
         &:last-child {
             margin-bottom: 0;
         }
@@ -23,36 +27,47 @@
         justify-content: space-between;
         align-items: baseline;
         width: 100%;
-        border-bottom: 3px solid rgba($black, 0.03);
-        padding-top: 3em;
-        padding-bottom: 3em;
-        transition: all 0.2s 0s $bezier, transform 0.2s 0s $bezier;
+        border-bottom: 3px solid darken($white, 5%);
+        padding-top: 2em;
+        padding-bottom: 2em;
+        transition: all 0.2s 0s $bezier, transform 0.2s 0s $bezier, border-bottom 0s 0s $bezier, ;
         cursor: pointer;
         cursor: hand;
         position: relative;
         box-sizing: border-box;
+        z-index: 0;
+        @media screen and ($md) {
+            padding-top: 2.5em;
+            padding-bottom: 2.5em;
+        }
+        @media screen and ($xxl) {
+            padding-top: 3em;
+            padding-bottom: 3em;
+        }
         &:first-of-type {
-            border-top: 3px solid rgba($black, 0.05);
+            border-top: 3px solid darken($white, 10%);
         }
         &:last-of-type {
-            border-bottom: 3px solid rgba($black, 0.05);
+            border-bottom: 3px solid darken($white, 10%);
         }
-        &:hover:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: calc(100% + 2rem);
-            height: 100%;
-            left: -1rem;
-            top: 0;
-            background-color: rgba($black, 0.03);
-            transition: all 0s 0s $bezier;
-        }
-        &:active,
-        &:target {
-            background-color: rgba($black, 0.03);
-            transition: all 0s 0s $bezier;
-            border-bottom: 3px solid transparent;
+        @media screen and ($xl) {
+            &:hover:before,
+            &:focus:before {
+                z-index: 5;
+                content: "";
+                display: block;
+                position: absolute;
+                width: calc(100% + 4rem);
+                height: calc(100% + 6px);
+                left: -2rem;
+                top: -3px;
+                background-color: darken($white, 3%);
+                transition: all 0s 0s $bezier;
+            }
+            &:active:before,
+            &:target:before {
+                background-color: darken($white, 5%);
+            }
         }
     }
     &__job-title {
@@ -61,10 +76,12 @@
         letter-spacing: $spacing-sans;
         font-weight: 700;
         text-align: left;
-        width: calc(100% / 12 * 4);
+        width: calc(100% / 12 * 6);
         color: $primary;
+        z-index: 10;
         font-size: $scale04;
         @media only screen and ($md) {
+            width: calc(100% / 12 * 4);
             font-size: $scale05;
         }
     }
@@ -74,7 +91,8 @@
         letter-spacing: $spacing-sans;
         text-align: center;
         width: calc(100% / 12 * 2);
-        font-size: $scale04;
+        z-index: 10;
+        font-size: $scale03;
         @media only screen and ($md) {
             font-size: $scale05;
         }
@@ -85,14 +103,14 @@
         letter-spacing: $spacing-sans;
         text-align: right;
         width: calc(100% / 12 * 4);
-        font-size: $scale04;
+        z-index: 10;
+        font-size: $scale03;
         @media only screen and ($md) {
             font-size: $scale05;
         }
     }
-    .padded-grid {
-        flex-wrap: nowrap;
-        flex-direction: column;
-        align-items: center;
+    &__button-group {
+        @include component-padding;
+        align-self: center;
     }
 }

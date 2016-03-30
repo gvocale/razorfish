@@ -1,29 +1,28 @@
-//*____________________________________*\
-//    $COLOR PALETTE
-//*____________________________________*/
-
-
-
 $white: #FFFFFF;
 $whiteDarker: darken( $white, 10%);
-
-
-
 $gray: #ebe7e6;
-
 $black: #373737;
 $blackLighter: lighten( $black, 10%);
 $blackDarker: darken( $black, 10%);
-
 // Razorfish Green
 $primary: #a9c000;
-
 // Red
 $secondary: #ff595b;
-
 $brown: #362f2d;
-
 // Dark Green
 $tertiary:#4c585a;
 $tertiaryLighter: lighten( $tertiary, 10%);
 $tertiaryDarker: darken( $tertiary, 10%);
+.overlay--green:before {
+    content: "";
+    background-image: linear-gradient(90deg, $tertiary, $tertiaryDarker);
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    opacity: 0.9;
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
