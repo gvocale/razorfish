@@ -4,6 +4,7 @@
     max-height: 100vw;
     background-attachment: scroll;
     position: relative;
+    overflow-y: hidden;
     @media screen and ($xl) {
         background-attachment: fixed; // Because fixed does not work on ios devices
     }
@@ -23,12 +24,78 @@
         height: 100%;
     }
     &__caption {
-        &-container {
+        &__icon {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 4rem;
+            height: 4rem;
+            background-size: 40% 40%, contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 100;
+            cursor: pointer;
+            cursor: hand;
+            color: $primary;
+            // @include icon-info-primary;
+            &--component {
+                width: 2rem;
+                height: 2rem;
+                margin: 1rem;
+                border: 2px solid rgba($primary, 0.7);
+                display: block;
+                position: relative;
+                border-radius: 50%;
+                background-clip: content-box;
+                transition: all 0.2s 0s $bezier;
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 3px;
+                    height: 3px;
+                    background-color: currentColor;
+                    position: absolute;
+                    top: 20%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(0%) rotate(0deg);
+                    transition: all 0.2s 0s $bezier;
+                }
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 3px;
+                    height: 10px;
+                    background-color: currentColor;
+                    position: absolute;
+                    top: 42%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(0%) rotate(0deg);
+                    transition: all 0.2s 0s $bezier;
+                }
+            }
+            &:hover,
+            &:focus {
+                .image__caption__icon--component {
+                    border: 2px solid rgba($primary, 1);
+                    transition: all 0s 0s $bezier;
+                }
+            }
+            &:active,
+            &:target {
+                ;
+                .image__caption__icon--component {
+                    border: 2px solid rgba($primary, 1);
+                    background-color: rgba($white, 0.2);
+                    transition: all 0s 0s $bezier;
+                }
+            }
+        }
+        &--container {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            padding-left: 5%;
+            padding-left: 4rem;
             padding-right: 5%;
             padding-top: 1.2em;
             padding-bottom: 1.2em;
@@ -36,10 +103,8 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            @media only screen and ($xxl) {
-                padding-left: 2.5%;
-                padding-right: 2.5%;
-            }
+            transform: translateY(100%);
+            transition: transform 0.2s 0s $bezier;
             &:before {
                 content: "";
                 width: 100%;
@@ -49,7 +114,7 @@
                 position: absolute;
                 background-color: $black;
                 opacity: 0.8;
-                z-index: -1;
+                z-index: 0;
             }
         }
         &-body {
@@ -59,36 +124,44 @@
             color: $white;
             font-size: $scale03;
             position: relative;
-            margin-left: 2.2em;
             @media only screen and ($md) {
                 font-size: $scale04;
-            }
-            @media only screen and ($xxl) {
-                font-size: $scale05;
             }
             strong {
                 font-weight: 700;
                 margin-right: 0.5em;
             }
-            :before {
-                content: "";
-                width: 1.6em;
-                height: 1.6em;
-                background-size: 100% 100%, contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                @include icon-info-primary;
-                position: absolute;
-                display: inline-block;
-                top: -0.2em;
-                left: -2.2em;
-                @media screen and ($xxl) {
-                    width: 1.4em;
-                    height: 1.4em;
-                    top: 0;
-                    left: -2em;
-                }
-            }
         }
+    }
+    #image__caption__checkbox:checked ~ .image__caption--container {
+        transform: translateY(0%);
+    }
+    #image__caption__checkbox:checked ~ .image__caption__icon {
+        .image__caption__icon--component:before {
+            content: "";
+            display: block;
+            width: 3px;
+            height: 15px;
+            background-color: currentColor;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        }
+        .image__caption__icon--component:after {
+            content: "";
+            display: block;
+            width: 3px;
+            height: 15px;
+            background-color: currentColor;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+        }
+    }
+    #image__caption__checkbox {
+        appearance: none;
+        display: none;
     }
 }
