@@ -101,11 +101,6 @@
             transform: translateY(50%);
             transition: all 0.1s 0s ease-in;
         }
-        .hamburger-inner {
-            display: block;
-            top: 50%;
-            margin-top: -2px;
-        }
         .hamburger-inner,
         .hamburger-inner::before,
         .hamburger-inner::after {
@@ -113,41 +108,32 @@
             height: 4px;
             background-color: $black;
             position: absolute;
-            transition-property: transform;
-            transition-duration: 0.15s;
-            transition-timing-function: ease;
-        }
-        .hamburger-inner::before,
-        .hamburger-inner::after {
             content: "";
             display: block;
         }
-        .hamburger-inner::before {
-            transition: all 0.1s 0s ease-in;
-            top: -8px;
-        }
-        .hamburger-inner::after {
-            transition: all 0.1s 0s ease-in;
-            bottom: -8px;
+        .hamburger-inner {
+            display: block;
+            top: 50%;
+            margin-top: -2px;
+            transition: transform 0.3s 0.0s $bezier;
+            &:before {
+                transform: translateY(-8px);
+                opacity: 1;
+                transition: opacity 0.3s 0.24s $bezier, transform 0.3s 0.24s $bezier;
+            }
+            &:after {
+                transform: translateY(8px);
+                transition: transform 0.3s 0.14s $bezier;
+            }
         }
         &:hover {
-            .hamburger-box {
-                transition: all 0.1s 0s ease-in;
-                width: 36px;
-                height: 4px;
-                transform-origin: center;
-            }
             .hamburger-inner::before {
-                transition: all 0.1s 0s ease-in;
-                transition-delay: 0s;
-                top: -10px;
-                transform-origin: center;
+                transition: transform 0.1s 0s $bezier;
+                transform: translateY(-12px);
             }
             .hamburger-inner::after {
-                transition: all 0.1s 0s ease-in;
-                transition-delay: 0s;
-                bottom: -10px;
-                transform-origin: center;
+                transition: transform 0.1s 0s $bezier;
+                transform: translateY(12px);
             }
         }
     }
@@ -158,55 +144,19 @@
     transition: all 0.3s $bezier 0.1s;
 }
 
-#site-masthead__checkbox:checked ~ .site-navigation {
-    left: 0%;
-}
-
-#site-masthead__checkbox:checked ~ main,
-#site-masthead__checkbox:checked ~ section,
-#site-masthead__checkbox:checked ~ footer,
-#site-masthead__checkbox:checked ~ article {
-    filter: blur(10px);
-}
-
-
-/*!
- * Hamburgers
- * @description Tasty CSS-animated hamburgers
- * @author Jonathan Suh @jonsuh
- * @site https://jonsuh.com/hamburgers
- * @link https://github.com/jonsuh/hamburgers
- */
-
-.site-masthead .hamburger__spin {
+#site-masthead__checkbox:checked ~ .site-masthead {
     .hamburger-inner {
-        transition-duration: 0.3s;
-        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-    .hamburger-inner::before {
-        transition: top 0.1s 0.34s ease-in-out, opacity 0.1s ease-in;
-    }
-    .hamburger-inner::after {
-        transition: bottom 0.1s 0.34s ease-in-out, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-}
-
-#site-masthead__checkbox:checked ~ .site-masthead .hamburger__spin {
-    .hamburger-inner {
-        -webkit-transform: rotate(225deg);
         transform: rotate(225deg);
-        transition-delay: 0.14s;
-        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-    .hamburger-inner::before {
-        top: 0;
-        opacity: 0;
-        transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out;
-    }
-    .hamburger-inner::after {
-        bottom: 0;
-        -webkit-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-        transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: transform 0.3s 0.14s $bezier;
+        &:before {
+            transform: translateY(0px);
+            opacity: 0;
+            transition: transform 0.3s 0.14s $bezier, opacity 0.3s 0.14s $bezier;
+            ;
+        }
+        &:after {
+            transform: translateY(0px) rotate(-90deg);
+            transition: transform 0.3s 0.14s $bezier;
+        }
     }
 }
