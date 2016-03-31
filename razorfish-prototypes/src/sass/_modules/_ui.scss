@@ -1,5 +1,10 @@
 .ui {
     width: 100vw;
+    @include grid-padding;
+    @include top-bottom-padding;
+    .button-container {
+        @include component-padding;
+    }
 }
 
 .video-play-button {
@@ -262,5 +267,61 @@ button.tertiary:hover:before {
         background-size: 1em auto;
         @extend .icon-arrow-white;
         padding: 1.2em 3em 1.2em 1.2em;
+    }
+}
+
+.button {
+    &--tertiary {
+        -webkit-appearance: none;
+        background-clip: border-box;
+        background-color: transparent;
+        background-origin: content-box;
+        border-radius: 0;
+        border: 2px solid;
+        border-color: currentColor;
+        box-sizing: border-box;
+        color: currentColor;
+        cursor: hand;
+        cursor: pointer;
+        font-family: $sans;
+        font-weight: 700;
+        letter-spacing: $spacing-sans-large;
+        line-height: $solid-sans;
+        outline: none;
+        overflow: hidden;
+        padding: 1.2em 3em;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: $scale03;
+        transition: all 0.2s ease-in 0s;
+        
+        @media screen and ($xxl) {
+            font-size: $scale04;
+        }
+        span {
+            
+        }
+        &:before {
+            content: "";
+            width: 100%;
+            position: absolute;
+            background-color: $primary;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            transform: scaleY(0);
+            transition: all 0.2s 0s ease-out;
+            
+            transform-origin: bottom;
+            
+        }
+        &:hover:before,
+        &:focus:before,
+        &:active:before,
+        &:target:before {
+            transform: scaleY(1);
+            transition: all 0.05s 0s ease-out;
+        }
     }
 }
