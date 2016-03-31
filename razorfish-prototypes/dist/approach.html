@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
 
-<body id="animate-container" class="snap">
+<body id="animate-container" class="snap approach">
     <input type="checkbox" id="site-masthead__checkbox">
     <nav class="site-masthead" role="navigation">
         <div class="site-masthead__logo-container">
@@ -26,7 +26,7 @@
         </div>
         <label for="site-masthead__checkbox" class="site-masthead__hamburger">
             <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
+                <span class="hamburger-inner"></span>
             </span>
         </label>
         <div class="site-navigation" role="navigation">
@@ -99,6 +99,9 @@
                 <li class="site-navigation__link-container">
                     <a class="link" href="image.html">Image</a>
                 </li>
+                <li class="site-navigation__link-container">
+                    <a class="link" href="inline-video.html">Inline Video</a>
+                </li>                
                 <li class="site-navigation__link-container">
                     <a class="link" href="site-navigation.html">Navigation</a>
                 </li>
@@ -241,73 +244,99 @@
         </ul>
     </nav>
     <section class="approach__card">
-        <div class="approach__video">
-            <video src="videos/approach/00_Faces.mp4" autoplay loop></video>
-        </div>
         <div class="approach__text-container animate">
-            <div class="lines">
-                <h1>A</h1>
-                <h1>relentless</h1>
-                <h1>focus</h1>
-                <h1>on</h1>
-                <h1>customers</h1>
-            </div>
-            <p>At Razorfish, everything we do springs from a single core belief: In this swiftly changing marketplace, customers have all the power.</p>
+            <h1 class="approach__h1">
+                <b>A</b>
+                <b>relentless</b>
+                <b>focus</b>
+                <b>on</b>
+                <b>customers</b>
+            </h1>
+            <p class="approach__subheadline">At Razorfish, everything we do springs from a single core belief: In this swiftly changing marketplace, customers have all the power.</p>
+        </div>
+        <div class="approach__video">
+            <video src="videos/approach/00_Faces.mp4" loop></video>
         </div>
     </section>
     <!-- Innovation -->
     <section class="approach__card">
-        <img class="cover" src="images/16x9.png" alt="">
-        <div class="approach__video">
-            <video src="videos/approach/01_card.mp4" autoplay loop></video>
+        <div class="approach__text-container animate">
+            <div class="divider divider-md"></div>
+            <h2 class="approach__h2">
+                <b>Customers understand that owning</b>
+                <b>nice things is great, but having profound</b>
+                <b>experiences is better.</b>
+            </h2>
+            <a class="approach__link link link--primary link--arrow" href="#">Learn more about Experience Innovation</a>
         </div>
-        <div class="content">
-            <div class="approach__text-container animate">
-                <p>Customers understand that owning nice things is great. But having profound experiences is better.</p>
-                <a href="#">Learn more about Experience Innovation</a>
-            </div>
+        <div class="approach__video">
+            <video src="videos/approach/01_card.mp4" loop></video>
         </div>
     </section>
     <section class="approach__card">
-        <img class="cover" src="images/16x9.png" alt="">
-        <div class="approach__video">
-            <video src="videos/approach/02_card.mp4" autoplay loop></video>
+        <div class="approach__text-container animate">
+            <div class="divider divider-md"></div>
+            <h2 class="approach__h2">
+                <b>Customers have learned that advertising can be ignored.</b>
+                <b>Meaningful conversations can't.</b>
+            </h2>
+            <a class="approach__link link link--primary link--arrow" href="#">Learn more about Participatory Marketing</a>
         </div>
-        <div class="content">
-            <div class="approach__text-container animate">
-                <p>Customers have learned that advertising can be ignored. Meaningful conversations can&rsquo;t.</p>
-                <a href="#">Learn more about Participatory Marketing</a>
-            </div>
+        <div class="approach__video">
+            <video src="videos/approach/02_card.mp4" loop></video>
         </div>
     </section>
     <section class="approach__card">
-        <img class="cover" src="images/16x9.png" alt="">
-        <div class="approach__video">
-            <video src="videos/approach/03_card.mp4" autoplay loop></video>
+        <div class="approach__text-container animate">
+            <div class="divider divider-md"></div>
+            <h2 class="approach__h2">
+                <b>Customers expect to buy what they want wherever</b>
+                <b>they happen to be - and have it now.</b>
+            </h2>
+            <a class="approach__link link link--primary link--arrow" href="#">Learn more about Ubiquitous Commerce</a>
         </div>
-        <div class="content">
-            <div class="approach__text-container animate">
-                <p>Customers expect to buy what they want wherever they happen to be &mdash; and have it now.</p>
-                <a href="#">Learn more about Ubiquitous Commerce</a>
-            </div>
+        <div class="approach__video">
+            <video src="videos/approach/03_card.mp4" loop></video>
         </div>
     </section>
     <section class="approach__card" id="intelligent-platforms">
-        <img class="cover" src="images/16x9.png" alt="">
-        <div class="approach__video">
-            <video src="videos/approach/04_card.mp4" autoplay loop></video>
-        </div>
         <div class="approach__text-container animate">
-            <p>Customers demand to be recognized and served as individuals, not as members of a crowd.</p>
-            <a href="#">Learn more about Intelligent Platforms</a>
+            <div class="divider divider-md"></div>
+            <h2 class="approach__h2">
+                <b>Customers demand to be recognized and served as individuals,</b>
+                <b>not as members of a crowd.</b>
+            </h2>
+            <a class="approach__link link link--primary link--arrow" href="#">Learn more about Intelligent Platforms</a>
+        </div>
+        <div class="approach__video">
+            <video src="videos/approach/04_card.mp4" loop></video>
         </div>
     </section>
-    <footer>
-        <div class="center-both">
-            <p>Here at Razorfish, we're excited abot all this disruption. Because we were purpose-built to navigate a world in which everhything that can be digital, is.</p>
-            <p>Which is why &mdash; when it comes to customers &mdash; the only word that really described our approach is&hellip;&ldquo;obsession&rdquo;</p>
-            <a href="#">Let&rsquo;s be obsessed together.</a>
+    <section class="approach__contact">
+        <div class="approach__text-container animate">
+            <p class="approach__contact__body">Here at Razorfish, we're excited abot all this disruption. Because we were purpose-built to navigate a world in which everhything that can be digital, is.</p>
+            <p class="approach__contact__body">Which is why &mdash; when it comes to customers &mdash; the only word that really described our approach is&hellip;&ldquo;obsession&rdquo;</p>
+            <a class="approach__contact__link" href="#">Let&rsquo;s be obsessed together.</a>
         </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__logo-razorfish">
+        </div>
+        <p class="footer__copyrights"><span class="footer__copyrights--legal">© 2015 Razorfish All rights reserved</span><a href="" class="link link--muted">Terms</a><a href="" class="link link--muted">Privacy</a></p>
+        <ul class="social-share__group">
+            <li class="social-share__icon-container">
+                <a href="" class="icon-linkedin social-share__icon animate">
+                </a>
+            </li>
+            <li class="social-share__icon-container">
+                <a href="" class="icon-twitter social-share__icon animate">
+                </a>
+            </li>
+            <li class="social-share__icon-container">
+                <a href="" class="icon-facebook social-share__icon animate">
+                </a>
+            </li>
+        </ul>
     </footer>
     <nav>
         <a class="nav-item"><span>Experience Innovation</span></a>
@@ -317,20 +346,21 @@
     </nav>
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/show-hide-header.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpScroller.js"></script>
-    <script>
-    new cbpScroller(document.getElementById('animate-container'));
-    </script>
-    <script src="js/isInViewport.js"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/jquery.viewportchecker.min.js"></script>
     <script>
     $(document).ready(function() {
-        $('.feed__item').addClass('animate');
-    });
-    $(window).scroll(function() {
-        $(".feed__item:in-viewport").each(function() {
-            $(this).addClass('in-viewport');
-        })
+        $('.animate').viewportChecker({
+            classToAdd: 'visible', // Class to add to the elements when they are visible,
+            // classToAddForFullView: 'full-visible', // Class to add when an item is completely visible in the viewport
+            // classToRemove: 'invisible', // Class to remove before adding 'classToAdd' to the elements
+            // removeClassAfterAnimation: false, // Remove added classes after animation has finished
+            // offset: [100 OR 10 % ], // The offset of the elements (let them appear earlier or later). This can also be percentage based by adding a '%' at the end
+            // invertBottomOffset: true, // Add the offset as a negative number to the element's bottom
+            repeat: true, // Add the possibility to remove the class if the elements are not visible
+            // callbackFunction: function(elem, action) {}, // Callback to do after a class was added to an element. Action will return "add" or "remove", depending if the class was added or removed
+            // scrollHorizontal: false // Set to true if your website scrolls horizontal instead of vertical.
+        });
     });
     </script>
 </body>
