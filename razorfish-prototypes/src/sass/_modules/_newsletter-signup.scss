@@ -1,4 +1,9 @@
 .newsletter-signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include grid-padding;
     padding-top: 20%;
     padding-bottom: 20%;
     @media screen and ($md) {
@@ -27,6 +32,26 @@
     &--light {
         background-color: $gray;
     }
+    &--confirmation {
+        padding-top: 30%;
+        padding-bottom: 30%;
+        @media screen and ($md) {
+            padding-top: 20%;
+            padding-bottom: 20%;
+        }
+        @media screen and ($lg) {
+            padding-top: 15%;
+            padding-bottom: 15%;
+        }
+        @media screen and ($lg) {
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
+        @media screen and ($xl) {
+            padding-top: 7.5%;
+            padding-bottom: 7.5%;
+        }
+    }
     &__form {
         &__padded-grid {
             width: calc(100% + 1em + 1em);
@@ -43,6 +68,7 @@
         }
     }
     &__container {
+        @include component-padding;
         width: 100%;
         @media screen and ($lg) {
             width: calc(100% / 12 * 8);
@@ -57,7 +83,7 @@
         line-height: $title-serif;
         letter-spacing: $spacing-serif-tight;
         font-weight: 700;
-        margin-bottom: 0.5em;
+        margin-bottom: 0.25em;
         @media only screen and ($md) {
             font-size: $scale07;
         }
@@ -65,6 +91,20 @@
             font-size: $scale08;
         }
     }
+    &__subheadline {
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans;
+        max-width: 24em;
+        font-size: $scale03;
+        @media only screen and ($md) {
+            font-size: $scale04;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale05;
+        }
+    }
+
     &__form {
         .form-field {
             width: 100%;
