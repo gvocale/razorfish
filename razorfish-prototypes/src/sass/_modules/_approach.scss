@@ -1,21 +1,18 @@
 .snap {
-    -ms-scroll-snap-destination: 0% 0%;
-    -ms-scroll-snap-points-y: repeat(100%);
-    -ms-scroll-snap-type: proximity;
-    -webkit-scroll-snap-destination: 0% 0%;
-    -webkit-scroll-snap-points-y: repeat(100%);
-    -webkit-scroll-snap-type: proximity;
-    scroll-snap-destination: 0% 0%;
-    scroll-snap-points-y: repeat(100%);
-    scroll-snap-type: proximity;
+    // -ms-scroll-snap-destination: 0% 0%;
+    // // -ms-scroll-snap-points-y: repeat(100%);
+    // -ms-scroll-snap-type: proximity;
+    // -webkit-scroll-snap-destination: 0% 0%;
+    // // -webkit-scroll-snap-points-y: repeat(100%);
+    // -webkit-scroll-snap-type: proximity;
+    // scroll-snap-destination: 0% 0%;
+    // // scroll-snap-points-y: repeat(100%);
+    // scroll-snap-type: proximity;
 }
 
 .approach {
-    background-color: $black;
+    background-color: darken($black, 10%);
     &__card {
-        -webkit-scroll-snap-coordinate: 50% 50%;
-        -ms-scroll-snap-coordinate: 50% 50%;
-        scroll-snap-coordinate: 50% 50%;
         width: 100vw;
         height: 100vh;
         overflow: hidden;
@@ -24,7 +21,6 @@
         flex-direction: column;
         align-items: baseline;
         justify-content: center;
-        background-color: gray;
         @include grid-padding;
     }
     &__video {
@@ -148,8 +144,6 @@
         margin-bottom: 1em;
         max-width: 32em;
         font-size: $scale04;
-        font-variant-ligatures: common-ligatures;
-        text-rendering: optimizeLegibility;
         transform: translateY(50%);
         opacity: 0;
         transition-duration: 0.1s;
@@ -162,6 +156,77 @@
         @media only screen and ($xxl) {
             font-size: $scale06;
         }
+    }
+    &__contact {
+        @include grid-padding;
+        @include top-bottom-padding;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__text-container {
+            width: 100%;
+            @media screen and ($md) {
+                width: calc(100% / 10 * 10);
+            }
+            @media screen and ($xl) {
+                width: calc(100% / 12 * 8);
+            }
+            @media screen and ($xxl) {
+                width: calc(100% / 12 * 6);
+            }
+        }
+        &__body {
+            font-family: $sans;
+            line-height: $title-sans;
+            letter-spacing: $spacing-sans;
+            margin-bottom: 2em;
+            max-width: 32em;
+            font-size: $scale04;
+            @media only screen and ($md) {
+                font-size: $scale05;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale06;
+            }
+        }
+        &__link {
+            font-variant-ligatures: common-ligatures;
+            font-family: $display;
+            font-style: italic;
+            font-size: $scale07;
+            line-height: $title-serif;
+            letter-spacing: $spacing-serif-large + 0.01em;
+            font-weight: 700;
+            max-width: 24em;
+            @media only screen and ($xxl) {
+                font-size: $scale08;
+            }
+        }
+    }
+}
+
+#approach__shrink {
+    transition: all 0.1s 0s $bezier;
+    transform-origin: top;
+    transform: scale(1);
+    box-shadow: 0 1em 4em darken($black, 20%);
+    z-index: 0;
+    &.shrink {
+        transition: all 0.2s 0s $bezier;
+        transform: scale(0.9);
+    }
+}
+
+#approach__shrink--far {
+    transition: all 0.1s 0s $bezier;
+    transform-origin: bottom;
+    transform: scale(1);
+    z-index: 5;
+    &.shrink {
+        transition: all 0.2s 0s $bezier;
+        transform: scale(0.9);
     }
 }
 

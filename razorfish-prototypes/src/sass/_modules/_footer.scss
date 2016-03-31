@@ -36,7 +36,8 @@
         font-size: $scale03;
         letter-spacing: $spacing-sans-large;
         line-height: $title-sans;
-        color: darken( $gray, 20%);
+        color: currentColor;
+        opacity: 0.5;
         text-align: center;
         @media only screen and ($lg) {
             margin-bottom: 0;
@@ -90,5 +91,15 @@
     .social-share__group {
         @include component-padding;
         transform: translateY(35%);
+    }
+    &--dark {
+        color: $white;
+        .footer__logo-razorfish {
+            @include logo-razorfish--white;
+        }
+        .footer__copyrights {
+            opacity: 0.3;
+        }
+
     }
 }

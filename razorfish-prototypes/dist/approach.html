@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
 
-<body id="animate-container" class="snap approach">
+<body class="snap approach">
     <input type="checkbox" id="site-masthead__checkbox">
     <nav class="site-masthead" role="navigation">
         <div class="site-masthead__logo-container">
@@ -101,7 +101,7 @@
                 </li>
                 <li class="site-navigation__link-container">
                     <a class="link" href="inline-video.html">Inline Video</a>
-                </li>                
+                </li>
                 <li class="site-navigation__link-container">
                     <a class="link" href="site-navigation.html">Navigation</a>
                 </li>
@@ -255,7 +255,7 @@
             <p class="approach__subheadline">At Razorfish, everything we do springs from a single core belief: In this swiftly changing marketplace, customers have all the power.</p>
         </div>
         <div class="approach__video">
-            <video src="videos/approach/00_Faces.mp4" loop></video>
+            <video src="videos/approach/00_Faces.mp4" autoplay loop></video>
         </div>
     </section>
     <!-- Innovation -->
@@ -270,70 +270,73 @@
             <a class="approach__link link link--primary link--arrow" href="#">Learn more about Experience Innovation</a>
         </div>
         <div class="approach__video">
-            <video src="videos/approach/01_card.mp4" loop></video>
+            <video src="videos/approach/01_card.mp4" autoplay loop></video>
         </div>
     </section>
     <section class="approach__card">
         <div class="approach__text-container animate">
             <div class="divider divider-md"></div>
             <h2 class="approach__h2">
-                <b>Customers have learned that advertising can be ignored.</b>
+                <b>Customers have learned that</b>
+                <b>advertising can be ignored.</b>
                 <b>Meaningful conversations can't.</b>
             </h2>
             <a class="approach__link link link--primary link--arrow" href="#">Learn more about Participatory Marketing</a>
         </div>
         <div class="approach__video">
-            <video src="videos/approach/02_card.mp4" loop></video>
+            <video src="videos/approach/02_card.mp4" autoplay loop></video>
         </div>
     </section>
-    <section class="approach__card">
+    <section class="approach__card" id="approach__shrink--far">
         <div class="approach__text-container animate">
             <div class="divider divider-md"></div>
             <h2 class="approach__h2">
-                <b>Customers expect to buy what they want wherever</b>
-                <b>they happen to be - and have it now.</b>
+                <b>Customers expect to buy what</b>
+                <b>they want wherever they</b>
+                <b>happen to be - and have it now.</b>
             </h2>
             <a class="approach__link link link--primary link--arrow" href="#">Learn more about Ubiquitous Commerce</a>
         </div>
         <div class="approach__video">
-            <video src="videos/approach/03_card.mp4" loop></video>
+            <video src="videos/approach/03_card.mp4" autoplay loop></video>
         </div>
     </section>
-    <section class="approach__card" id="intelligent-platforms">
+    <section class="approach__card" id="approach__shrink">
         <div class="approach__text-container animate">
             <div class="divider divider-md"></div>
             <h2 class="approach__h2">
-                <b>Customers demand to be recognized and served as individuals,</b>
+                <b>Customers demand to be recognized</b>
+                <b>and served as individuals,</b>
                 <b>not as members of a crowd.</b>
             </h2>
             <a class="approach__link link link--primary link--arrow" href="#">Learn more about Intelligent Platforms</a>
         </div>
         <div class="approach__video">
-            <video src="videos/approach/04_card.mp4" loop></video>
+            <video src="videos/approach/04_card.mp4" autoplay loop></video>
         </div>
     </section>
-    <section class="approach__contact">
+    <section class="approach__contact animate">
         <div class="approach__text-container animate">
             <p class="approach__contact__body">Here at Razorfish, we're excited abot all this disruption. Because we were purpose-built to navigate a world in which everhything that can be digital, is.</p>
-            <p class="approach__contact__body">Which is why &mdash; when it comes to customers &mdash; the only word that really described our approach is&hellip;&ldquo;obsession&rdquo;</p>
-            <a class="approach__contact__link" href="#">Let&rsquo;s be obsessed together.</a>
+            <p class="approach__contact__body">Which is why &mdash; when it comes to customers &mdash; the only word that really described our approach is...“obsession”.</p>
+            <a class="approach__contact__link link link--primary" href="#">Let&rsquo;s be obsessed together.</a>
         </div>
     </section>
-    <footer class="footer">
+    <footer class="footer footer--dark">
         <div class="footer__logo-razorfish">
         </div>
-        <p class="footer__copyrights"><span class="footer__copyrights--legal">© 2015 Razorfish All rights reserved</span><a href="" class="link link--muted">Terms</a><a href="" class="link link--muted">Privacy</a></p>
-        <ul class="social-share__group">
+        <p class="footer__copyrights"><span class="footer__copyrights--legal">© 2015 Razorfish All rights reserved</span><a href="" class="link">Terms</a><a href="" class="link">Privacy</a></p>
+        <ul class="social-share__group social-share__group--dark">
             <li class="social-share__icon-container">
-                <a href="" class="icon-linkedin social-share__icon animate">
+                <a href="" class="icon-linkedin--white social-share__icon animate">
                 </a>
             </li>
             <li class="social-share__icon-container">
-                <a href="" class="icon-twitter social-share__icon animate">
+                <a href="" class="icon-twitter--white social-share__icon animate">
                 </a>
             </li>
             <li class="social-share__icon-container">
-                <a href="" class="icon-facebook social-share__icon animate">
+                <a href="" class="icon-facebook--white social-share__icon animate">
                 </a>
             </li>
         </ul>
@@ -361,6 +364,16 @@
             // callbackFunction: function(elem, action) {}, // Callback to do after a class was added to an element. Action will return "add" or "remove", depending if the class was added or removed
             // scrollHorizontal: false // Set to true if your website scrolls horizontal instead of vertical.
         });
+    });
+    $(window).scroll(function() {
+        if ($(".approach__contact").is(".visible")) {
+            $("#approach__shrink").addClass("shrink");
+            $("#approach__shrink--far").addClass("shrink");
+        }
+        if (!$(".approach__contact").is(".visible")) {
+            $("#approach__shrink").removeClass("shrink");
+            $("#approach__shrink--far").removeClass("shrink");
+        }
     });
     </script>
 </body>

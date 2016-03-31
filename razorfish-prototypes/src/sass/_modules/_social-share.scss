@@ -1,6 +1,8 @@
 .social-share {
-    padding-top: 20%;
-    padding-bottom: 20%;
+    display: flex;
+    flex-direction: row;
+    @include grid-padding;
+    @include top-bottom-padding;
     &__icon {
         display: block;
         background-size: 28% 28%, contain;
@@ -30,6 +32,12 @@
         cursor: hand;
         width: 4rem;
         overflow: hidden;
+        &:focus,
+        &:hover,
+        &:target,
+        &:active {
+            outline: none;
+        }
         &:active:before,
         &:target:before {
             content: "";
@@ -89,11 +97,33 @@
                 background-color: $gray;
             }
         }
+        &--dark {
+            color: $white;
+            .social-share__icon {
+                opacity: 0.3;
+            }
+            .social-share__icon-container {
+                &:active:before,
+                &:target:before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    background-color: rgba($white, 0.1);
+                }
+            }
+        }
     }
     &__container {
+        @include component-padding;
         width: 100%;
         @media screen and ($md) {
             width: 50%;
+        }
+        &--dark {
+            background-color: $black;
         }
     }
 }

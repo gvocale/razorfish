@@ -431,9 +431,10 @@ p {
         }
     }
     &--muted {
-        color: darken ($gray, 10%);
+        color: currentColor;
+        opacity: 0.5;
         &:hover {
-            color: darken ($gray, 20%);
+            opacity: 0.8;
         }
     }
     &--primary {
