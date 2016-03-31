@@ -129,7 +129,7 @@
             @media screen and ($xl) {
                 font-size: $scale07;
                 margin-bottom: 0.5em;
-                transform: translateX(-20%);
+                transform: translateY(50%);
                 opacity: 0;
             }
             @media screen and ($xxl) {
@@ -147,7 +147,7 @@
             }
             @media screen and ($xl) {
                 font-size: $scale04;
-                transform: translateX(-20%);
+                transform: translateY(50%);
                 opacity: 0;
             }
             @media screen and ($xxl) {
@@ -165,7 +165,7 @@
             }
             @media screen and ($xl) {
                 font-size: $scale04;
-                transform: translateX(-20%);
+                transform: translateY(50%);
                 opacity: 0;
             }
             @media screen and ($xxl) {
@@ -179,27 +179,28 @@
                 opacity: 1;
             }
             .people-list__item-background {
-                background-color: darken( $gray, 10%);
+                background-color: darken( $white, 30%);
                 transform: scale(1.1);
                 transition: transform 2s 0.1s $bezier, background-color 0s 0s ease-out;
             }
             .people-list__name {
-                transform: translateX(0%);
-                transition: all 0.15s 0.1s $bezier;
+                transform: translateY(0%);
+                transition: all 0.2s 0.1s $bezier;
                 opacity: 1;
             }
             .people-list__title {
-                transform: translateX(0%);
-                transition: all 0.1s 0.1s $bezier;
+                transform: translateY(0%);
+                transition: all 0.15s 0.15s $bezier;
                 opacity: 1;
             }
             .people-list__office {
-                transform: translateX(0%);
-                transition: all 0.05s 0.1s $bezier;
+                transform: translateY(0%);
+                transition: all 0.1s 0.2s $bezier;
                 opacity: 0.5;
             }
             .divider {
                 transform: scaleX(1);
+                transition: all 0.05s 0.75s $bezier;
             }
         }
     }
@@ -304,7 +305,7 @@
     .people-list__item:hover {
         @media screen and ($md) {
             .people-list__item-background {
-                background-color: darken($white, 15%);
+                background-color: darken($white, 30%);
                 transform: scale(1.1);
                 transition: transform 2s 0.1s $bezier, background-color 0s 0s ease-out;
             }

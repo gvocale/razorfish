@@ -1,0 +1,885 @@
+.snap {
+    -ms-scroll-snap-destination: 0% 0%;
+    -ms-scroll-snap-points-y: repeat(100%);
+    -ms-scroll-snap-type: proximity;
+    -webkit-scroll-snap-destination: 0% 0%;
+    -webkit-scroll-snap-points-y: repeat(100%);
+    -webkit-scroll-snap-type: proximity;
+    scroll-snap-destination: 0% 0%;
+    scroll-snap-points-y: repeat(100%);
+    scroll-snap-type: proximity;
+}
+
+.approach {
+    width: 100%;
+    height: auto;
+    position: relative;
+    &__card {
+        -webkit-scroll-snap-coordinate: 50% 50%;
+        -ms-scroll-snap-coordinate: 50% 50%;
+        scroll-snap-coordinate: 50% 50%;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: center;
+        background-color: gray;
+        @include grid-padding;
+    }
+    &__video {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        video {
+            min-width: 100%;
+            min-height: 100%;
+            overflow: hidden;
+        }
+    }
+    &__intro {}
+    &__text-container {
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: baseline;
+        justify-content: center;
+        color: $white;
+        text-align: left;
+        @include component-padding;
+        &.not-in-viewport {
+
+        }
+        &.not-in-viewport.in-viewport {
+
+        }
+    }
+}
+
+@font-face {
+    font-family: icons;
+    src: url("../fonts/icons.eot");
+    src: url("../fonts/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons.woff") format("woff"), url("../fonts/icons.ttf") format("truetype"), url("../fonts/icons.svg#icons") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    content: "";
+    font-family: 'icons';
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+}
+
+.icon.-chevron-down:before {
+    content: "";
+}
+
+.icon.-twitter:before {
+    content: "";
+}
+
+.icon.-facebook:before {
+    content: "";
+}
+
+.icon.-linked-in:before {
+    content: "";
+}
+
+#approach section.has-shadow,
+#approach section#intelligent-platforms.play-in-start.down,
+#approach section#intelligent-platforms.play-out.up,
+#approach section#intelligent-platforms.play-out-complete.up {
+    box-shadow: 0px 0px 54px 5px rgba(0, 0, 0, 0.78);
+}
+
+#approach section .cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+}
+
+#approach section .cover.landscape {
+    height: auto;
+    width: 100%;
+}
+
+#approach section video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#approach section.default-card .content {
+    transition: all 1.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+#approach section.default-card .v-center {
+    transition: all 1.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    width: 75%;
+    opacity: 0;
+}
+
+#approach section.default-card .v-center p {
+    font-family: 'Miller Display';
+    font-size: 1.875rem;
+    line-height: 3.75rem;
+}
+
+#approach section.default-card .v-center p:before {
+    content: "";
+    display: block;
+    width: 3.125rem;
+    height: 0.375rem;
+    background-color: #a9c026;
+    margin-bottom: 1.75rem;
+}
+
+#approach section.default-card .v-center a {
+    width: 80%;
+    font-family: 'Miller';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: none;
+    line-height: 3.75rem;
+}
+
+#approach section.default-card .v-center a:after {
+    border: none;
+    margin: 0;
+}
+
+#approach section.default-card .v-center p,
+#approach section.default-card .v-center a {
+    transition: all 1.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transform: translate(0, 31.25rem);
+    -ms-transform: translate(0, 31.25rem);
+    transform: translate(0, 31.25rem);
+}
+
+#approach section.default-card.play-in-start .v-center,
+#approach section.default-card.play-out-complete .v-center,
+#approach section.default-card.play-out .v-center {
+    opacity: 0;
+}
+
+#approach section.default-card.play-in-start .v-center p,
+#approach section.default-card.play-in-start .v-center a,
+#approach section.default-card.play-out-complete .v-center p,
+#approach section.default-card.play-out-complete .v-center a,
+#approach section.default-card.play-out .v-center p,
+#approach section.default-card.play-out .v-center a {
+    -webkit-transform: translate(0, 31.25rem);
+    -ms-transform: translate(0, 31.25rem);
+    transform: translate(0, 31.25rem);
+}
+
+#approach section.default-card.play-in .v-center p,
+#approach section.default-card.play-in .v-center a,
+#approach section.default-card.play-in-complete .v-center p,
+#approach section.default-card.play-in-complete .v-center a,
+#approach section.default-card.play-out-start .v-center p,
+#approach section.default-card.play-out-start .v-center a {
+    -webkit-transform: translate(0, 0rem);
+    -ms-transform: translate(0, 0rem);
+    transform: translate(0, 0rem);
+}
+
+#approach section.default-card.play-in-complete .v-center {
+    opacity: 1;
+}
+
+#approach section.default-card.play-in-complete .v-center p {
+    line-height: 2.1875rem;
+}
+
+#approach section.default-card.play-in-complete .v-center a {
+    line-height: 1.875rem;
+}
+
+#approach section.play-out.up {
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#approach section.play-out.down {
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+#approach section.play-in.up {
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#approach section.play-in.down {
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+#approach section.play-out-complete {
+    transition: none;
+    display: none;
+}
+
+#approach section.play-out-complete.up {
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#approach section.play-out-complete.down {
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+#approach section.play-in-complete {
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+}
+
+#approach section.play-in-start {
+    transition: none;
+}
+
+#approach section.play-in-start.up {
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+#approach section.play-in-start.down {
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#approach section#intro.play-in-start.down {
+    transition: none;
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+}
+
+#approach section#intro .v-center {
+    position: static;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    height: 100%;
+}
+
+#approach section#intro .lines {
+    position: relative;
+    top: 20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 450px;
+}
+
+#approach section#intro h1 {
+    transition: all 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Miller", Times, Georgia, serif;
+    font-weight: bold;
+    font-size: 7.5rem;
+    letter-spacing: -0.01em;
+    position: absolute;
+    clip: rect(180px, 1000px, 180px, 0);
+}
+
+#approach section#intro h1:nth-child(1) {
+    transition-delay: 0.525s;
+}
+
+#approach section#intro h1:nth-child(2) {
+    transition-delay: 0.55s;
+}
+
+#approach section#intro h1:nth-child(3) {
+    transition-delay: 0.575s;
+}
+
+#approach section#intro h1:nth-child(4) {
+    transition-delay: 0.6s;
+}
+
+#approach section#intro h1:nth-child(5) {
+    transition-delay: 0.625s;
+}
+
+#approach section#intro h1:nth-child(2) {
+    top: 70px;
+}
+
+#approach section#intro h1:nth-child(3) {
+    top: 170px;
+}
+
+#approach section#intro h1:nth-child(4) {
+    top: 240px;
+}
+
+#approach section#intro h1:nth-child(5) {
+    top: 310px;
+}
+
+#approach section#intro p {
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-delay: 1.6s;
+    -webkit-transform: translateY(2.5rem);
+    -ms-transform: translateY(2.5rem);
+    transform: translateY(2.5rem);
+    position: absolute;
+    top: auto;
+    right: 5%;
+    bottom: 1.25rem;
+    left: 5%;
+    opacity: 0;
+}
+
+#approach section#intro i {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    color: white;
+    top: auto;
+    bottom: 0.625rem;
+    font-size: 0.8125rem;
+}
+
+#approach section#intro.play-in-complete h1 {
+    clip: rect(0px, 1000px, 180px, 0);
+}
+
+#approach section#intro.play-in-complete p {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#approach section#intelligent-platforms.play-in-start.down,
+#approach section#intelligent-platforms.play-out.up,
+#approach section#intelligent-platforms.play-out-complete.up {
+    display: block;
+    -webkit-transform: translateY(-80%) scale(0.88);
+    -ms-transform: translateY(-80%) scale(0.88);
+    transform: translateY(-80%) scale(0.88);
+}
+
+#approach p {
+    display: block;
+    color: white;
+    font-family: "Gotham", Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-bottom: 1.25rem;
+}
+
+#approach footer {
+    background: #232323;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#approach footer > div {
+    width: 60%;
+}
+
+#approach nav {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transform: translate(0rem, -50%);
+    -ms-transform: translate(0rem, -50%);
+    transform: translate(0rem, -50%);
+    height: 50%;
+    width: 0.5rem;
+    z-index: 100;
+    right: 0;
+    left: auto;
+}
+
+#approach nav .nav-item {
+    line-height: 0;
+    position: relative;
+    width: 100%;
+    height: 25%;
+    text-decoration: none;
+    margin: 50% 0;
+}
+
+#approach nav .nav-item:first-child {
+    margin-top: 0;
+}
+
+#approach nav .nav-item:last-child {
+    margin-bottom: 0;
+}
+
+#approach nav .nav-item:before,
+#approach nav .nav-item:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    content: "";
+    border: none;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#approach nav .nav-item:after {
+    transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transform-origin: top center;
+    -ms-transform-origin: top center;
+    transform-origin: top center;
+}
+
+#approach nav .nav-item.current:after {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+    background: white;
+}
+
+#approach nav .nav-item.fromLeft:after {
+    -webkit-transform-origin: top center;
+    -ms-transform-origin: top center;
+    transform-origin: top center;
+}
+
+#approach nav .nav-item.fromRight:after {
+    -webkit-transform-origin: bottom center;
+    -ms-transform-origin: bottom center;
+    transform-origin: bottom center;
+}
+
+#approach nav .nav-item span {
+    display: none;
+}
+
+#approach nav.hide {
+    -webkit-transform: translate(0.5rem, -50%);
+    -ms-transform: translate(0.5rem, -50%);
+    transform: translate(0.5rem, -50%);
+}
+
+@media screen and (min-width: 48em) {
+    #approach a {
+        font-family: "Miller Display", Times, Georgia, serif;
+        font-weight: 700;
+        color: #a9c000;
+        font-style: italic;
+        text-decoration: none;
+        font-size: 2.125rem;
+        display: inline-block;
+    }
+    #approach a:after {
+        border-bottom: 0.125rem solid #a9c000;
+        content: "";
+        display: block;
+        margin-top: 1.25rem;
+    }
+    #approach section {
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        transform: translateY(100%);
+        -webkit-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+        background: #232323;
+        padding: 5%;
+        z-index: 1;
+        overflow: hidden;
+    }
+    #approach section.has-shadow,
+    #approach section#intelligent-platforms.play-in-start.down,
+    #approach section#intelligent-platforms.play-out.up,
+    #approach section#intelligent-platforms.play-out-complete.up {
+        box-shadow: 0px 0px 54px 5px rgba(0, 0, 0, 0.78);
+    }
+    #approach section .cover {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: auto;
+    }
+    #approach section .cover.landscape {
+        height: auto;
+        width: 100%;
+    }
+    #approach section video {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: inherit;
+        width: inherit;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    #approach section.default-card .content {
+        transition: all 1.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+    #approach section.default-card .v-center {
+        transition: all 1.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        width: 50%;
+        opacity: 0;
+    }
+    #approach section.default-card .v-center p {
+        font-family: 'Miller Display';
+        font-size: 3.125rem;
+        line-height: 6.25rem;
+    }
+    #approach section.default-card .v-center p:before {
+        content: "";
+        display: block;
+        width: 3.125rem;
+        height: 0.375rem;
+        background-color: #a9c026;
+        margin-bottom: 1.75rem;
+    }
+    #approach section.default-card .v-center a {
+        font-family: 'Miller';
+        font-style: italic;
+        font-weight: 700;
+        font-size: 1.5rem;
+        text-decoration: none;
+        border: none;
+    }
+    #approach section.default-card .v-center a:after {
+        border: none;
+        margin: 0;
+    }
+    #approach section.default-card.play-in-start .v-center,
+    #approach section.default-card.play-out-complete .v-center,
+    #approach section.default-card.play-out .v-center {
+        opacity: 0;
+    }
+    #approach section.default-card.play-in-complete .v-center {
+        opacity: 1;
+    }
+    #approach section.default-card.play-in-complete .v-center p {
+        line-height: 4.375rem;
+    }
+    #approach section.default-card.play-in-complete .v-center a {
+        line-height: normal;
+    }
+    #approach section.play-out.up {
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    #approach section.play-out.down {
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+    #approach section.play-in.up {
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    #approach section.play-in.down {
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+    #approach section.play-out-complete {
+        transition: none;
+        display: none;
+    }
+    #approach section.play-out-complete.up {
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    #approach section.play-out-complete.down {
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+    #approach section.play-in-complete {
+        -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+    #approach section.play-in-start {
+        transition: none;
+    }
+    #approach section.play-in-start.up {
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+    #approach section.play-in-start.down {
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    #approach section#intro.play-in-start.down {
+        transition: none;
+        -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+    #approach section#intro .lines {
+        position: static;
+        height: 650px;
+    }
+    #approach section#intro .v-center {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        height: auto;
+        width: 100%;
+    }
+    #approach section#intro h1 {
+        transition: all 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        color: rgba(255, 255, 255, 0.5);
+        font-family: "Miller", Times, Georgia, serif;
+        font-weight: bold;
+        font-size: 11.25rem;
+        position: absolute;
+        clip: rect(180px, 1000px, 180px, 0);
+    }
+    #approach section#intro h1:nth-child(1) {
+        transition-delay: 0.525s;
+    }
+    #approach section#intro h1:nth-child(2) {
+        transition-delay: 0.55s;
+    }
+    #approach section#intro h1:nth-child(3) {
+        transition-delay: 0.575s;
+    }
+    #approach section#intro h1:nth-child(4) {
+        transition-delay: 0.6s;
+    }
+    #approach section#intro h1:nth-child(5) {
+        transition-delay: 0.625s;
+    }
+    #approach section#intro h1:nth-child(2) {
+        top: 110px;
+    }
+    #approach section#intro h1:nth-child(3) {
+        top: 260px;
+    }
+    #approach section#intro h1:nth-child(4) {
+        top: 370px;
+    }
+    #approach section#intro h1:nth-child(5) {
+        top: 480px;
+    }
+    #approach section#intro p {
+        transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition-delay: 1.6s;
+        -webkit-transform: translateY(2.5rem);
+        -ms-transform: translateY(2.5rem);
+        transform: translateY(2.5rem);
+        position: static;
+        opacity: 0;
+        width: 55%;
+    }
+    #approach section#intro i {
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        color: white;
+        top: auto;
+        bottom: 0.625rem;
+        font-size: 0.8125rem;
+    }
+    #approach section#intro.play-in-complete h1 {
+        clip: rect(0px, 1000px, 180px, 0);
+    }
+    #approach section#intro.play-in-complete p {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+    #approach section#intelligent-platforms.play-in-start.down,
+    #approach section#intelligent-platforms.play-out.up,
+    #approach section#intelligent-platforms.play-out-complete.up {
+        display: block;
+        -webkit-transform: translateY(-80%) scale(0.88);
+        -ms-transform: translateY(-80%) scale(0.88);
+        transform: translateY(-80%) scale(0.88);
+    }
+    #approach p {
+        display: block;
+        color: white;
+        font-family: "Gotham", Helvetica, Arial, sans-serif;
+        font-weight: 200;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+    #approach footer {
+        background: #232323;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+    }
+    #approach footer > div {
+        width: 60%;
+    }
+    #approach nav {
+        transition: all 750ms cubic-bezier(0.645, 0.045, 0.355, 1);
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+        height: 3.125rem;
+        width: 100%;
+        position: absolute;
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 0 5%;
+    }
+    #approach nav.hide {
+        opacity: 0;
+        -webkit-transform: translateY(3.125rem);
+        -ms-transform: translateY(3.125rem);
+        transform: translateY(3.125rem);
+    }
+    #approach nav .nav-item {
+        font-size: 0.875rem;
+        font-family: "Gotham";
+        font-weight: 200;
+        line-height: normal;
+        color: white;
+        width: 25%;
+        margin: 0;
+    }
+    #approach nav .nav-item span {
+        display: inline-block;
+    }
+    #approach nav .nav-item span:after {
+        transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1) 500ms;
+        -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: center left;
+        -ms-transform-origin: center left;
+        transform-origin: center left;
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 0.3125rem;
+        background: white;
+        margin-top: 1.75rem;
+    }
+    #approach nav .nav-item.fromLeft span:after {
+        -webkit-transform-origin: center left;
+        -ms-transform-origin: center left;
+        transform-origin: center left;
+    }
+    #approach nav .nav-item.fromRight span:after {
+        -webkit-transform-origin: center right;
+        -ms-transform-origin: center right;
+        transform-origin: center right;
+    }
+    #approach nav .nav-item.current span:after {
+        transition-delay: 1s;
+        -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+    #approach nav .nav-item:nth-child(2) {
+        padding: 0 0 0 5%;
+    }
+    #approach nav .nav-item:nth-child(3) {
+        padding: 0 5% 0 0;
+        text-align: right;
+    }
+    #approach nav .nav-item:first-child {
+        text-align: left;
+        padding: 0;
+    }
+    #approach nav .nav-item:last-child {
+        text-align: right;
+        padding: 0;
+    }
+    #approach nav .nav-item:before,
+    #approach nav .nav-item:after {
+        margin: 0;
+        border: none;
+        display: none;
+    }
+}

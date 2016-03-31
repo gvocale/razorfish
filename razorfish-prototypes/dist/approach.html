@@ -17,23 +17,7 @@
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
 
-<body id="animate-container">
-    <div class="overlay-grid">
-        <div class="padded-grid">
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-        </div>
-    </div>
+<body id="animate-container" class="snap">
     <input type="checkbox" id="site-masthead__checkbox">
     <nav class="site-masthead" role="navigation">
         <div class="site-masthead__logo-container">
@@ -55,7 +39,7 @@
                 </li>
                 <li class="site-navigation__link-container">
                     <a class="link" href="approach.html">Approach</a>
-                </li>                
+                </li>
                 <li class="site-navigation__link-container">
                     <a class="link" href="contact.html">Contact</a>
                 </li>
@@ -201,6 +185,12 @@
                 <a class="link" href="content-grid.html">Content Grid</a>
             </li>
             <li class="site-navigation__link-container">
+                <a class="link" href="social-feed-instagram.html">Social Feed<span class="note">Instagram</span></a>
+            </li>
+            <li class="site-navigation__link-container">
+                <a class="link" href="social-feed-twitter.html">Social Feed<span class="note">Twitter</span> <span class="skinny">&</span> Content Feed</a>
+            </li>
+            <li class="site-navigation__link-container">
                 <a class="link" href="feed.html">Feed</a>
             </li>
             <li class="site-navigation__link-container">
@@ -219,6 +209,9 @@
                 <a class="link" href="image.html">Image</a>
             </li>
             <li class="site-navigation__link-container">
+                <a class="link" href="inline-video.html">Inline Video</a>
+            </li>
+            <li class="site-navigation__link-container">
                 <a class="link" href="site-navigation.html">Navigation</a>
             </li>
             <li class="site-navigation__link-container">
@@ -234,12 +227,6 @@
                 <a class="link" href="pull-quote.html">Pull Quote</a>
             </li>
             <li class="site-navigation__link-container">
-                <a class="link" href="social-feed-instagram.html">Social Feed<span class="note">Instagram</span></a>
-            </li>
-            <li class="site-navigation__link-container">
-                <a class="link" href="social-feed-twitter.html">Social Feed<span class="note">Twitter</span></a>
-            </li>
-            <li class="site-navigation__link-container">
                 <a class="link" href="social-share.html">Social Share</a>
             </li>
             <li class="site-navigation__link-container">
@@ -253,31 +240,98 @@
             </li>
         </ul>
     </nav>
-    <footer class="footer">
-        <div class="footer__logo-razorfish">
+    <section class="approach__card">
+        <div class="approach__video">
+            <video src="videos/approach/00_Faces.mp4" autoplay loop></video>
         </div>
-        <p class="footer__copyrights"><span class="footer__copyrights--legal">© 2015 Razorfish All rights reserved</span><a href="" class="link link--muted">Terms</a><a href="" class="link link--muted">Privacy</a></p>
-        <ul class="social-share__group">
-            <li class="social-share__icon-container">
-                <a href="" class="icon-linkedin social-share__icon animate">
-                </a>
-            </li>
-            <li class="social-share__icon-container">
-                <a href="" class="icon-twitter social-share__icon animate">
-                </a>
-            </li>
-            <li class="social-share__icon-container">
-                <a href="" class="icon-facebook social-share__icon animate">
-                </a>
-            </li>
-        </ul>
+        <div class="approach__text-container animate">
+            <div class="lines">
+                <h1>A</h1>
+                <h1>relentless</h1>
+                <h1>focus</h1>
+                <h1>on</h1>
+                <h1>customers</h1>
+            </div>
+            <p>At Razorfish, everything we do springs from a single core belief: In this swiftly changing marketplace, customers have all the power.</p>
+        </div>
+    </section>
+    <!-- Innovation -->
+    <section class="approach__card">
+        <img class="cover" src="images/16x9.png" alt="">
+        <div class="approach__video">
+            <video src="videos/approach/01_card.mp4" autoplay loop></video>
+        </div>
+        <div class="content">
+            <div class="approach__text-container animate">
+                <p>Customers understand that owning nice things is great. But having profound experiences is better.</p>
+                <a href="#">Learn more about Experience Innovation</a>
+            </div>
+        </div>
+    </section>
+    <section class="approach__card">
+        <img class="cover" src="images/16x9.png" alt="">
+        <div class="approach__video">
+            <video src="videos/approach/02_card.mp4" autoplay loop></video>
+        </div>
+        <div class="content">
+            <div class="approach__text-container animate">
+                <p>Customers have learned that advertising can be ignored. Meaningful conversations can&rsquo;t.</p>
+                <a href="#">Learn more about Participatory Marketing</a>
+            </div>
+        </div>
+    </section>
+    <section class="approach__card">
+        <img class="cover" src="images/16x9.png" alt="">
+        <div class="approach__video">
+            <video src="videos/approach/03_card.mp4" autoplay loop></video>
+        </div>
+        <div class="content">
+            <div class="approach__text-container animate">
+                <p>Customers expect to buy what they want wherever they happen to be &mdash; and have it now.</p>
+                <a href="#">Learn more about Ubiquitous Commerce</a>
+            </div>
+        </div>
+    </section>
+    <section class="approach__card" id="intelligent-platforms">
+        <img class="cover" src="images/16x9.png" alt="">
+        <div class="approach__video">
+            <video src="videos/approach/04_card.mp4" autoplay loop></video>
+        </div>
+        <div class="approach__text-container animate">
+            <p>Customers demand to be recognized and served as individuals, not as members of a crowd.</p>
+            <a href="#">Learn more about Intelligent Platforms</a>
+        </div>
+    </section>
+    <footer>
+        <div class="center-both">
+            <p>Here at Razorfish, we're excited abot all this disruption. Because we were purpose-built to navigate a world in which everhything that can be digital, is.</p>
+            <p>Which is why &mdash; when it comes to customers &mdash; the only word that really described our approach is&hellip;&ldquo;obsession&rdquo;</p>
+            <a href="#">Let&rsquo;s be obsessed together.</a>
+        </div>
     </footer>
+    <nav>
+        <a class="nav-item"><span>Experience Innovation</span></a>
+        <a class="nav-item"><span>Ubiquitous Commerce</span></a>
+        <a class="nav-item"><span>Intelligent Platforms</span></a>
+        <a class="nav-item"><span>Participatory Marketing</span></a>
+    </nav>
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/show-hide-header.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script>
     new cbpScroller(document.getElementById('animate-container'));
+    </script>
+    <script src="js/isInViewport.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.feed__item').addClass('animate');
+    });
+    $(window).scroll(function() {
+        $(".feed__item:in-viewport").each(function() {
+            $(this).addClass('in-viewport');
+        })
+    });
     </script>
 </body>
 
