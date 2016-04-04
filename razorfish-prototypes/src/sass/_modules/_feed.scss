@@ -81,20 +81,6 @@
             top: 0;
             left: 0;
         }
-        span {
-            font-size: $scale06;
-            font-family: $sans;
-            color: $primary;
-            z-index: 20;
-            display: inline-block;
-            position: absolute;
-            top: 1em;
-            left: 1em;
-            opacity: 0.5;
-            @media screen and ($lg) {
-                font-size: $scale10;
-            }
-        }
         &__eyebrow {
             font-family: $sans;
             line-height: $title-sans;
@@ -402,6 +388,25 @@
             }
         }
     }
+    &__debug {
+        display: none;
+        font-size: $scale06;
+        font-family: $sans;
+        color: $primary;
+        z-index: 20;
+        position: absolute;
+        top: 1em;
+        left: 1em;
+        opacity: 0.5;
+        @media screen and ($lg) {
+            font-size: $scale10;
+        }
+    }
+    &.debug {
+        .feed__debug {
+            display: inline-block;
+        }
+    }
 }
 
 // Feed item animations
@@ -412,7 +417,7 @@ $right: 2 4 6 8 10;
 @each $i in $left {
     .feed__item:nth-of-type(#{$i}).animate {
         transform: translateY(#{$distance});
-        transition: opacity 0.1s 0.1s $bezier, transform 0.3s 0.1s $bezier ;
+        transition: opacity 0.1s 0.1s $bezier, transform 0.3s 0.1s $bezier;
         opacity: 0;
     }
 }
@@ -420,7 +425,7 @@ $right: 2 4 6 8 10;
 @each $i in $right {
     .feed__item:nth-of-type(#{$i}).animate {
         transform: translateY(#{$distance});
-        transition: opacity 0.1s 0.1s $bezier, transform 0.3s 0.1s $bezier ;
+        transition: opacity 0.1s 0.1s $bezier, transform 0.3s 0.1s $bezier;
         opacity: 0;
     }
 }
@@ -430,17 +435,17 @@ $right: 2 4 6 8 10;
     $right: 2 3 6 9 10;
     @each $i in $left {
         .feed__item:nth-of-type(#{$i}).animate {
-        transform: translateY(#{$distance});
+            transform: translateY(#{$distance});
         }
     }
     @each $i in $right {
         .feed__item:nth-of-type(#{$i}).animate {
-        transform: translateY(#{$distance});
+            transform: translateY(#{$distance});
         }
     }
 }
 
 .feed__item.animate.in-viewport {
-    transform: translate(0,0);
+    transform: translate(0, 0);
     opacity: 1;
 }
