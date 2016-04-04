@@ -2,8 +2,13 @@
     position: relative;
     @include component-padding;
     width: 100%;
+    margin-bottom: 10%;
+    @media screen and ($md) {
+        margin-bottom: 7.5%;
+    }
     @media screen and ($lg) {
         width: calc(100% / 12 * 2);
+        margin-bottom: 0;
     }
     @media screen and ($xxl) {
         width: calc(100% / 12 * 3);
@@ -21,6 +26,12 @@
         @media screen and ($md) {
             opacity: 0.5;
         }
+        @media screen and ($lg) {
+            font-size: $scale02;
+        }
+        @media screen and ($xl) {
+            font-size: $scale03;
+        }
     }
     &__author-name {
         font-family: $sans;
@@ -29,10 +40,10 @@
         font-weight: 700;
         font-size: $scale05;
         margin-bottom: 0.1em;
-        @media screen and ($md) {
+        @media screen and ($lg) {
             font-size: $scale04;
         }
-        @media screen and ($xxl) {
+        @media screen and ($xl) {
             font-size: $scale05;
         }
     }
@@ -41,10 +52,10 @@
         line-height: $title-sans;
         letter-spacing: $spacing-sans;
         font-size: $scale04;
-        @media screen and ($md) {
+        @media screen and ($lg) {
             font-size: $scale03;
         }
-        @media screen and ($xxl) {
+        @media screen and ($xl) {
             font-size: $scale04;
         }
     }
@@ -114,10 +125,6 @@
         &--share {
             width: 100%;
             margin-bottom: 2em;
-            @media screen and ($md) {
-                width: calc(100% / 12 * 4);
-                margin-bottom: 0;
-            }
             @media screen and ($lg) {
                 width: 100%;
                 margin-bottom: 2em;
@@ -128,9 +135,6 @@
         }
         &--author {
             width: 100%;
-            @media screen and ($md) {
-                width: calc(100% / 12 * 8);
-            }
             margin-bottom: 1rem;
             @media screen and ($xxl) {
                 margin-bottom: 1.5rem;

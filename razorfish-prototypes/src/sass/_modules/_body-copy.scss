@@ -9,8 +9,6 @@
     &__flexible {
         @include component-padding;
         width: 100%;
-        margin-left: auto;
-        margin-right: auto;
         @media only screen and ($lg) {
             width: calc(100% / 12 * 8);
         }
@@ -22,6 +20,22 @@
         }
         .body-copy__body + .body-copy__h3 {
             margin-top: 3em;
+        }
+        &:first-child {
+            @media only screen and ($lg) {
+                margin-left: calc(100% / 12 * 2);
+            }
+            @media only screen and ($xxl) {
+                margin-left: calc(100% / 12 * 3);
+            }
+        }
+        &:last-child {
+            @media only screen and ($lg) {
+                margin-right: calc(100% / 12 * 2);
+            }
+            @media only screen and ($xxl) {
+                margin-right: calc(100% / 12 * 3);
+            }
         }
     }
     &__two-column-container {

@@ -40,6 +40,44 @@
     }
 }
 
+@mixin top-padding {
+    padding-top: 20%;
+    @media screen and ($md) {
+        padding-top: 15%;
+    }
+    @media screen and ($lg) {
+        padding-top: 10%;
+    }
+    @media screen and ($lg) {
+        padding-top: 7.5%;
+    }
+    @media screen and ($xl) {
+        padding-top: 10%;
+    }
+    @media screen and ($xxl) {
+        padding-top: 7.5%;
+    }
+}
+
+@mixin bottom-padding {
+    padding-bottom: 20%;
+    @media screen and ($md) {
+        padding-bottom: 15%;
+    }
+    @media screen and ($lg) {
+        padding-bottom: 10%;
+    }
+    @media screen and ($lg) {
+        padding-bottom: 7.5%;
+    }
+    @media screen and ($xl) {
+        padding-bottom: 10%;
+    }
+    @media screen and ($xxl) {
+        padding-bottom: 7.5%;
+    }
+}
+
 @mixin component-padding {
     padding-left: 1rem;
     padding-right: 1rem;
