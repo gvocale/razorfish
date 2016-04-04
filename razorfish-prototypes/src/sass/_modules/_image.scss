@@ -5,12 +5,27 @@
     background-attachment: scroll;
     position: relative;
     overflow-y: hidden;
-    @media screen and ($xl) {
-        background-attachment: fixed; // Because fixed does not work on ios devices
-    }
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    &--divider {
+        @media screen and ($xl) {
+            background-attachment: fixed; // Fixed only on desktop as it is buggy on ios
+        }
+    }
+    &--full-height {
+        height: auto;
+        max-height: none;
+    }
+    &--full-width {
+        width: 100%;
+        height: auto;
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
     &__background {
         width: 100vw;
         min-height: 80vh;

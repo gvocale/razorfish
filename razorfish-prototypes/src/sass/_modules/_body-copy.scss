@@ -5,6 +5,10 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        &--dark {
+            color: $white;
+            background-color: $black;
+        }
     }
     &__flexible {
         @include component-padding;
@@ -186,6 +190,10 @@
             font-weight: 700;
         }
         &--lead {
+            font-family: $sans;
+            line-height: $prose-sans;
+            letter-spacing: $spacing-sans;
+            margin-bottom: 1em;
             font-size: $scale05;
             @media only screen and ($md) {
                 font-size: $scale06;
@@ -196,8 +204,15 @@
             @media only screen and ($xxl) {
                 font-size: $scale06;
             }
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
         &--small {
+            font-family: $sans;
+            line-height: $prose-sans;
+            letter-spacing: $spacing-sans;
+            margin-bottom: 1em;
             font-size: $scale03;
             @media only screen and ($md) {
                 font-size: $scale04;
@@ -207,6 +222,9 @@
             }
             @media only screen and ($xxl) {
                 font-size: $scale04;
+            }
+            &:last-child {
+                margin-bottom: 0;
             }
         }
         &:last-child {

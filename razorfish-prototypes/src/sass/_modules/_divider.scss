@@ -7,16 +7,12 @@
     margin-top: 0;
     margin-bottom: 0;
     transform-origin: left;
-    &-sm {
-        width: calc(54px / 2);
-        height: 4px;
-    }
-    &-md {
-        width: 39px;
+    width: 0.8em;
+    height: 4px;
+    @media screen and ($lg) {
         height: 5px;
     }
-    &-lg {
-        width: 54px;
+    @media screen and ($xxl) {
         height: 6px;
     }
     &--gray {
