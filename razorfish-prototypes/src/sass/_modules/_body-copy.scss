@@ -1,20 +1,19 @@
 .body-copy {
+    &__container {
+        @include grid-padding;
+        @include top-bottom-padding;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
     &__flexible {
-        padding-top: 15%;
-        padding-bottom: 15%;
+        @include component-padding;
         width: 100%;
-        @media only screen and ($md) {
-            padding-top: 10%;
-            padding-bottom: 10%;
-        }
         @media only screen and ($lg) {
-            width: calc(100% / 12 * 6);
-            padding-top: 10%;
-            padding-bottom: 10%;
+            width: calc(100% / 12 * 8);
         }
         @media only screen and ($xxl) {
-            padding-top: 7.5%;
-            padding-bottom: 7.5%;
+            width: calc(100% / 12 * 6);
         }
         .divider {
             margin-bottom: 1.25rem;
@@ -206,15 +205,6 @@
         width: 100%;
         height: 100%;
     }
-    &__footer {
-        margin-top: 4em;
-        .body-copy__eyebrow {
-            margin-bottom: 0;
-        }
-        .body-copy__body--lead {
-            margin-bottom: 0;
-        }
-    }
     &__inline-pull-quote {
         border-left: solid 0.2rem $primary;
         width: 100%;
@@ -265,6 +255,63 @@
             }
             strong {
                 font-weight: 700;
+            }
+        }
+    }
+    &__foot-note {
+        margin-top: 4em;
+        &__group {
+            margin-bottom: 1em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__eyebrow {
+            text-transform: uppercase;
+            font-family: $sans;
+            line-height: $title-sans;
+            letter-spacing: $spacing-sans-large;
+            margin-bottom: 0.75em;
+            font-size: $scale03;
+            @media only screen and ($md) {
+                font-size: $scale04;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale05;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__link {
+            font-family: $sans;
+            line-height: $title-sans;
+            letter-spacing: $spacing-sans;
+            font-weight: 700;
+            font-size: $scale05;
+            @media only screen and ($md) {
+                font-size: $scale06;
+            }
+            @media only screen and ($lg) {
+                font-size: $scale05;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale06;
+            }
+            &--description {
+                font-family: $sans;
+                line-height: $prose-sans;
+                letter-spacing: $spacing-sans;
+                font-size: $scale03;
+                @media only screen and ($md) {
+                    font-size: $scale04;
+                }
+                @media only screen and ($lg) {
+                    font-size: $scale03;
+                }
+                @media only screen and ($xxl) {
+                    font-size: $scale04;
+                }
             }
         }
     }

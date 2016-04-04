@@ -186,6 +186,7 @@ button.tertiary:hover:before {
 .button,
 .select {
     &--secondary {
+        display: inline-block;
         -webkit-appearance: none;
         background-clip: border-box;
         background-color: transparent;
@@ -209,8 +210,13 @@ button.tertiary:hover:before {
         text-transform: uppercase;
         font-size: $scale03;
         transition: all 0.2s ease-in 0s;
+        margin: 1px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         @media screen and ($xxl) {
             font-size: $scale04;
+            min-height: 4rem;
         }
         &:hover,
         &:focus {
@@ -272,15 +278,14 @@ button.tertiary:hover:before {
 
 .button {
     &--tertiary {
+        display: inline-block;
         -webkit-appearance: none;
         background-clip: border-box;
         background-color: transparent;
         background-origin: content-box;
         border-radius: 0;
-        border: 2px solid;
-        border-color: currentColor;
         box-sizing: border-box;
-        color: currentColor;
+        color: $black;
         cursor: hand;
         cursor: pointer;
         font-family: $sans;
@@ -294,34 +299,60 @@ button.tertiary:hover:before {
         text-decoration: none;
         text-transform: uppercase;
         font-size: $scale03;
-        transition: all 0.2s ease-in 0s;
-        
+        transition: color 0s 0.05s linear, background-color 0s 0s linear;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        z-index: 0;
+        background-color: $white;
+        overflow: hidden;
         @media screen and ($xxl) {
             font-size: $scale04;
+            min-height: 4rem;
         }
-        span {
-            
+        &:active,
+        &:target {
+            background-color: rgba($black, 0.1);
         }
+        &:hover,
+        &:focus {
+            outline: none;
+            color: $white;
+        }
+        // Green background
         &:before {
             content: "";
-            width: 100%;
             position: absolute;
-            background-color: $primary;
-            height: 100%;
-            bottom: 0;
+            top: 0;
             left: 0;
-            transform: scaleY(0);
-            transition: all 0.2s 0s ease-out;
-            
+            width: 100%;
+            height: 100%;
+            background-color: $primary;
+            transform: translateY(100%);
             transform-origin: bottom;
-            
+            transition: transform 0.1s 0s ease-in;
+            z-index: -1;
         }
-        &:hover:before,
-        &:focus:before,
-        &:active:before,
-        &:target:before {
+        &:hover:before {
             transform: scaleY(1);
-            transition: all 0.05s 0s ease-out;
+            transition: transform 0.1s 0s ease-out;
+        }
+        // 2px border and white background
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid;
+            border-color: $black;
+            background-color: $white;
+            box-sizing: border-box;
+            z-index: -2;
+        }
+        option {
+            text-transform: none;
         }
     }
 }

@@ -1,5 +1,13 @@
 .contact-info {
     position: relative;
+    @include component-padding;
+    width: 100%;
+    @media screen and ($lg) {
+        width: calc(100% / 12 * 2);
+    }
+    @media screen and ($xxl) {
+        width: calc(100% / 12 * 3);
+    }
     &__label {
         font-family: $sans;
         font-size: $scale03;
@@ -40,6 +48,23 @@
             font-size: $scale04;
         }
     }
+    &__author-social-icons {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-left: -0.8rem;
+        margin-top: 0.5rem;
+        @media screen and ($md) {
+            width: calc(100% / 12 * 8);
+        }
+        margin-bottom: 1rem;
+        @media screen and ($xxl) {
+            margin-bottom: 1.5rem;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
     &__body {
         font-family: $sans;
         line-height: $title-sans;
@@ -52,10 +77,36 @@
             font-size: $scale04;
         }
     }
+    &__icon {
+        display: block;
+        width: 3rem;
+        background-size: 50%, contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        cursor: pointer;
+        cursor: hand;
+        &:before {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+            position: relative;
+        }
+        &:hover {
+            animation-name: bounce;
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 0.05s;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: none;
+            animation-play-state: running;
+        }
+    }
     &__group {
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         @media screen and ($xxl) {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
         &:last-child {
             margin-bottom: 0;
@@ -79,7 +130,13 @@
             width: 100%;
             @media screen and ($md) {
                 width: calc(100% / 12 * 8);
-    
+            }
+            margin-bottom: 1rem;
+            @media screen and ($xxl) {
+                margin-bottom: 1.5rem;
+            }
+            &:last-child {
+                margin-bottom: 0;
             }
         }
     }

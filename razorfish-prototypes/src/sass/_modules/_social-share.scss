@@ -5,7 +5,7 @@
     @include top-bottom-padding;
     &__icon {
         display: block;
-        background-size: 28% 28%, contain;
+        background-size: 30%, contain;
         background-position: center;
         background-repeat: no-repeat;
         width: 100%;
@@ -116,15 +116,157 @@
             }
         }
     }
+    &--dark {
+        background-color: $black;
+    }
+    &__button {
+        &--label {}
+    }
+    &__folded {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        display: inline-block;
+        .social-share__icon-container {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .social-share__button-container {
+            position: relative;
+        }
+    }
     &__container {
+        width: calc(100% / 12 * 3);
         @include component-padding;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}
+
+.social-share__folded {
+    @include component-padding;
+    width: 100%;
+    @media screen and ($lg) {
+        width: calc(100% / 12 * 2);
+    }
+    @media screen and ($xxl) {
+        width: calc(100% / 12 * 3);
+    }
+    &__group {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: relative;
+    }
+    &__button {
+        z-index: 0;
+        margin: 1px;
+        width: 3rem;
+        height: 3rem;
+    }
+    &__icon-container {
+        width: 4rem;
+        @for $i from 1 through 6 {
+            &:nth-of-type(#{$i}) {
+                z-index: calc(7 - #{$i});
+            }
+        }
+        &:nth-of-type(1) {
+            background-size: 40%, contain;
+        }
+        list-style: none;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+        // &:after {
+        //     content: "";
+        //     display: block;
+        //     position: absolute;
+        //     width: 100%;
+        //     height: 200%;
+        //     background-image: linear-gradient(to bottom, $gray 0%, $gray 50%, $primary 50%, $primary 100%);
+        //     transform: translateY(0%);
+        //     transition: 0.1s 0s ease-in-out;
+        //     top: 0;
+        //     left: 0;
+        // }
+        &:hover {
+            &:before {
+                transform: translateY(-50%);
+            }
+        }
+    }
+    &__icon {
         width: 100%;
-        @media screen and ($md) {
-            width: 50%;
+        height: 100%;
+        cursor: pointer;
+        cursor: hand;
+        display: block;
+        position: relative;
+        background-size: 30%, contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 20;
+        &:before {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+            position: relative;
         }
-        &--dark {
-            background-color: $black;
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: gray;
+            z-index: 10;
         }
+    }
+    &__label {
+        width: 4rem;
+        position: relative;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+    .social-share__group {
+        @for $i from 1 through 5 {
+            .social-share__icon-container:nth-of-type(#{$i}) {
+                transition-delay: calc(0.1s + (0.05s * #{$i}));
+                transition-duration: 0.01s * (6 - $i);
+                transition-timing-function: ease-in;
+                opacity: 0;
+            }
+        }
+    }
+    #social-share__folded__checkbox:checked ~ .social-share__folded__label .button--tertiary {
+        color: $white;
+        &:before {
+            transform: scaleY(1);
+        }
+    }
+}
+
+#social-share__folded__checkbox {
+    // appearance: none;
+    // display: none;
+    transform: translateY(-100%);
+}
+
+@for $i from 2 through 6 {
+    #social-share__folded__checkbox:checked ~ .social-share__folded__icon-container:nth-of-type(#{$i}) {
+        transform: translateY(calc((100% * (-1 + #{$i}))));
+        transition-delay: calc(0.1s + (0.05s * #{$i}));
+        transition-duration: 0.05s * (6 - $i);
+        transition-timing-function: ease-out;
+        opacity: 1;
     }
 }
 

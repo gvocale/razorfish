@@ -1,4 +1,3 @@
-
 .hero {
     width: 100vw;
     height: 100vh;
@@ -59,7 +58,7 @@
         line-height: $solid-serif + 0.3;
         letter-spacing: $spacing-serif;
         font-weight: 700;
-        margin-bottom: 0.2em;
+        margin-bottom: 0.3em;
         max-width: 10em;
         font-size: $scale07;
         @media only screen and ($md) {
@@ -78,8 +77,24 @@
         margin-bottom: 1em;
         max-width: 30em;
         font-size: $scale04;
-        font-variant-ligatures: common-ligatures;
-        text-rendering: optimizeLegibility;
+        @media only screen and ($md) {
+            font-size: $scale05;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale06;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__cta {
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans;
+        margin-bottom: 1em;
+        max-width: 30em;
+        font-size: $scale04;
+        font-weight: 700;
         @media only screen and ($md) {
             font-size: $scale05;
         }
@@ -158,25 +173,24 @@
         animation: 20s ease-out 0.5s forwards zoom;
     }
     &--profile {
-        color: $blackLighter;
+        color: $white;
+        @media screen and ($lg) {
+            color: lighten($black, 10%);
+        }
         &__name {
             font-family: $display;
             line-height: $solid-serif + 0.1;
             letter-spacing: $spacing-serif;
             font-weight: 700;
-            margin-bottom: 0.75em;
+            margin-bottom: 0.5em;
             max-width: 10em;
             font-size: $scale07;
             @media only screen and ($md) {
-                font-size: $scale07;
-                line-height: $solid-serif + 0.1;
-            }
-            @media only screen and ($lg) {
                 font-size: $scale08;
+                line-height: $solid-serif + 0.1;
             }
             @media only screen and ($xl) {
                 font-size: $scale10;
-                margin-bottom: 0.5em;
             }
             @media only screen and ($xxl) {
                 font-size: $scale11;
@@ -190,7 +204,6 @@
             font-family: $sans;
             line-height: $title-sans;
             letter-spacing: $spacing-sans;
-            font-weight: 700;
             text-transform: uppercase;
             font-size: $scale03;
             @media only screen and ($md) {
@@ -199,66 +212,16 @@
             @media only screen and ($xxl) {
                 font-size: $scale06;
             }
-            &:nth-child(2) {
-                margin-left: calc(1em - 2px);
-                position: relative;
-                &:before {
-                    content: "";
-                    width: 2px;
-                    height: 1.2em;
-                    background-color: currentColor;
-                    margin-right: 1em;
-                    display: inline-block;
-                    position: relative;
-                    vertical-align: -15%;
-                }
-            }
         }
-        &__contact--email,
-        &__contact--twitter {
-            font-family: $sans;
-            line-height: $title-sans;
-            letter-spacing: $spacing-sans-large;
-            font-size: $scale03;
-            margin-bottom: 0.75em;
-            display: block;
-            @media only screen and ($md) {
-                font-size: $scale04;
-            }
-            @media only screen and ($xxl) {
-                font-size: $scale05;
-            }
+        &__title {
+            font-weight: 700;
+            margin-right: 0.5em;
             &:last-child {
-                margin-bottom: 0;
+                margin-right: 0;
             }
         }
-        &__contact--email {
-            &:before {
-                content: "";
-                @include icon-mail--dark;
-                width: 1em;
-                height: 1em;
-                margin-right: 0.5em;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: 90% 90%, contain;
-                display: inline-block;
-                vertical-align: -10%;
-            }
-        }
-        &__contact--twitter {
-            &:before {
-                content: "";
-                @include icon-twitter--dark;
-                width: 1em;
-                height: 1em;
-                margin-right: 0.5em;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: 90% 90%, contain;
-                display: inline-block;
-                vertical-align: -10%;
-            }
+        &__office {
+            font-width: 400;
         }
         &__group {
             margin-bottom: 1.5em;
@@ -271,6 +234,43 @@
             &:last-child {
                 margin-bottom: 0;
             }
+            &--icon {
+                margin-left: -0.9em;
+                margin-top: -0.9em;
+                @media screen and ($xxl) {
+                    margin-left: -1.1em;
+                    margin-left: -1.1em;
+                }
+            }
+        }
+        &__icon {
+            display: inline-block;
+            width: 3rem;
+            background-size: 50%, contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            cursor: pointer;
+            cursor: hand;
+            @media screen and ($xxl) {
+                width: 4rem;
+            }
+            &:before {
+                content: "";
+                display: block;
+                padding-bottom: 100%;
+                position: relative;
+            }
+            &:hover {
+                animation-name: bounce;
+                animation-duration: 0.5s;
+                animation-timing-function: ease-in-out;
+                animation-delay: 0.05s;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: none;
+                animation-play-state: running;
+            }
         }
         .link--primary {
             color: darken( $primary, 5%);
@@ -280,6 +280,24 @@
             @media screen and ($xl) {
                 background-position: center;
             }
+            &:before {
+                content: "";
+                background-color: rgba($black, 0.4);
+                background-blend-mode: darken;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                @media screen and ($lg) {
+                    display: none;
+                }
+            }
+        }
+    }
+    &--approach {
+        .hero__headline {
+            opacity: 0.5;
         }
     }
 }
