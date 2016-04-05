@@ -21,14 +21,29 @@
     @media screen and ($xl) {
         min-height: 40vw;
     }
+    @mixin related-promo__headline {
+        font-size: $scale06;
+        @media only screen and ($md) {
+            font-size: $scale08;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale10;
+        }
+    }
     &__text-container {
-        z-index: 10;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         align-items: baseline;
         justify-content: center;
         text-align: left;
+    }
+    .divider {
+        @include related-promo__headline;
+        margin-bottom: 0.25em;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &__eyebrow {
         font-family: $sans;
@@ -37,26 +52,32 @@
         max-width: 24em;
         font-size: $scale04;
         font-weight: 400;
-        margin-bottom: 0.75em;
         text-transform: uppercase;
         @media only screen and ($xxl) {
             font-size: $scale05;
         }
+        &--margin {
+            @include related-promo__headline;
+            margin-bottom: 0.1em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
     &__headline {
+        @include related-promo__headline;
         font-family: $display;
         line-height: $solid-serif + 0.1;
         letter-spacing: $spacing-serif;
         font-weight: 700;
         margin-bottom: 0.3em;
         max-width: 10em;
-        font-size: $scale06;
-        @media only screen and ($md) {
-            font-size: $scale08;
-        }
+        margin-bottom: 0.3em;
         @media only screen and ($xxl) {
-            font-size: $scale10;
             line-height: $solid-serif;
+        }
+        &:last-child {
+            margin-bottom: 0;
         }
     }
     &__subhead {
@@ -103,7 +124,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 5;
+        z-index: -1;
         svg {
             width: 100%;
             height: 100%;
@@ -115,8 +136,4 @@
     &__background.in-viewport {
         animation: 20s ease-out 0.5s forwards zoom;
     }
-    .divider {
-        margin-bottom: 1rem;
-    }
 }
-

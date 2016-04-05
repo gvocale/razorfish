@@ -38,9 +38,6 @@
         justify-content: center;
         text-align: left;
     }
-    .divider {
-        margin-bottom: 1rem;
-    }
     &__eyebrow {
         font-family: $sans;
         line-height: $title-sans;
@@ -48,18 +45,20 @@
         max-width: 24em;
         font-size: $scale04;
         font-weight: 400;
-        margin-bottom: 0.75em;
         text-transform: uppercase;
         @media only screen and ($xxl) {
             font-size: $scale05;
         }
+        &:not(:last-child) {
+            margin-bottom: 0.75em;
+        }
     }
-    &__headline {
+    &__headline,
+    &__headline--group {
         font-family: $display;
         line-height: $solid-serif + 0.1;
         letter-spacing: $spacing-serif;
         font-weight: 700;
-        margin-bottom: 0.3em;
         max-width: 10em;
         font-size: $scale07;
         @media only screen and ($md) {
@@ -68,6 +67,9 @@
         @media only screen and ($xxl) {
             font-size: $scale11;
             line-height: $solid-serif;
+        }
+        &:not(:last-child) {
+            margin-bottom: 0.3em;
         }
     }
     &__subhead {
