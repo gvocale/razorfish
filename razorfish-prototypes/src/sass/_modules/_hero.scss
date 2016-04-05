@@ -181,15 +181,19 @@
         }
         &__name {
             font-family: $display;
-            line-height: $solid-serif + 0.1;
+            line-height: 1.05;
             letter-spacing: $spacing-serif;
             font-weight: 700;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.4em;
             max-width: 10em;
-            font-size: $scale07;
+            font-size: $scale08;
             @media only screen and ($md) {
+                font-size: $scale09;
+                max-width: 8em;
+            }
+            @media only screen and ($lg) {
                 font-size: $scale08;
-                line-height: $solid-serif + 0.1;
+                max-width: 12em;
             }
             @media only screen and ($xl) {
                 font-size: $scale10;
@@ -199,6 +203,9 @@
             }
             &:last-child {
                 margin-bottom: 0;
+            }
+            &.divider {
+                margin-bottom: 0.25em;
             }
         }
         &__title,
@@ -294,6 +301,13 @@
                 @media screen and ($lg) {
                     display: none;
                 }
+            }
+        }
+        .hero--profile__icon,
+        .divider {
+            filter: brightness(110%);
+            @media screen and ($lg) {
+                filter: none;
             }
         }
     }

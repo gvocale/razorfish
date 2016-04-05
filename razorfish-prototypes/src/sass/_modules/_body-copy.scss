@@ -3,46 +3,37 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    @include grid-padding;
+    @include top-bottom-padding;
+    &--dark {
+        color: $white;
+        background-color: $black;
+    }
     &__container {
         display: flex;
-        width: 100%;
-        @include grid-padding;
-        @include top-bottom-padding;
-        &--dark {
-            color: $white;
-            background-color: $black;
-        }
-    }
-    &__flexible {
         @include component-padding;
         width: 100%;
         @media only screen and ($lg) {
-            width: calc(100% / 12 * 8);
-        }
-        @media only screen and ($xxl) {
             width: calc(100% / 12 * 6);
-        }
-        .divider {
-            margin-bottom: 1.25rem;
-        }
-        .body-copy__body + .body-copy__h3 {
-            margin-top: 3em;
         }
         &:first-child {
             @media only screen and ($lg) {
-                margin-left: calc(100% / 12 * 2);
-            }
-            @media only screen and ($xxl) {
                 margin-left: calc(100% / 12 * 3);
             }
         }
         &:last-child {
             @media only screen and ($lg) {
-                margin-right: calc(100% / 12 * 2);
-            }
-            @media only screen and ($xxl) {
                 margin-right: calc(100% / 12 * 3);
             }
+        }
+    }
+    &__flexible {
+        width: 100%;
+        .divider {
+            margin-bottom: 1.25rem;
+        }
+        .body-copy__body + .body-copy__h3 {
+            margin-top: 3em;
         }
     }
     &__two-column-container {
@@ -95,9 +86,7 @@
         @media only screen and ($xxl) {
             width: calc(100% / 12 * 6);
         }
-        &__group {
-
-        }
+        &__group {}
     }
     &__image {
         overflow: hidden;
@@ -155,7 +144,7 @@
         }
         margin-bottom: 1em;
         &.divider {
-            margin-bottom: 0.25em;
+            margin-bottom: 0.4em;
             &:last-child {
                 margin-bottom: 0;
             }

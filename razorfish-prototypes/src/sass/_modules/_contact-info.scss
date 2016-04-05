@@ -1,31 +1,30 @@
 .contact-info {
     position: relative;
     @include component-padding;
+    @include bottom-padding;
     width: 100%;
-    margin-bottom: 10%;
     @media screen and ($md) {
-        margin-bottom: 7.5%;
+        column-count: 3;
+        column-gap: 2rem;
     }
     @media screen and ($lg) {
-        width: calc(100% / 12 * 2);
-        margin-bottom: 0;
-    }
-    @media screen and ($xxl) {
         width: calc(100% / 12 * 3);
+        margin-bottom: 0;
+        column-count: 1;
     }
     &__label {
         font-family: $sans;
         font-size: $scale03;
         font-weight: 400;
         font-style: normal;
-        line-height: $title-sans;
-        letter-spacing: $spacing-sans-large;
+        line-height: 1.1;
+        letter-spacing: 0.025em;
         text-transform: uppercase;
         color: rgba($black, 0.75);
         margin-bottom: 0.25em;
         max-width: 15em;
         @media screen and ($md) {
-            color: rgba($black, 0.5);
+            color: rgba($black, 0.6);
         }
         @media screen and ($lg) {
             font-size: $scale02;
@@ -96,6 +95,43 @@
             margin-bottom: 0;
         }
     }
+    &__stat {
+        font-family: $sans;
+        line-height: 1.1;
+        letter-spacing: $spacing-sans;
+        margin-bottom: 0.15em;
+        font-size: $scale05;
+        font-weight: 400;
+        @media screen and ($md) {
+            font-size: $scale06;
+        }
+        @media screen and ($lg) {
+            font-size: $scale05;
+        }
+        @media screen and ($xxl) {
+            font-size: $scale06;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &--group {
+            break-inside: avoid;
+            font-size: $scale04;
+            @media screen and ($md) {
+                font-size: $scale04;
+            }
+            @media screen and ($xl) {
+                font-size: $scale05;
+            }
+            @media screen and ($xxl) {
+                font-size: $scale06;
+            }
+            margin-bottom: 1em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
     &__logo {
         max-width: calc(100% / 12 * 6);
         margin-bottom: 2em;
@@ -141,6 +177,7 @@
         }
     }
     &__group {
+        break-inside: avoid;
         margin-bottom: 1rem;
         @media screen and ($xl) {
             margin-bottom: 1rem;
@@ -206,26 +243,6 @@
         }
         &:last-child {
             margin-bottom: 0;
-        }
-    }
-    &__sticky {
-        width: 100%;
-        display: inline-block;
-        @media screen and ($lg) {
-            top: 10%;
-        }
-        @media screen and ($xl) {
-            top: 7.5%;
-        }
-        padding-bottom: 7.5%;
-    }
-    .sticky {
-        position: -webkit-sticky;
-        position: sticky;
-        &:before,
-        &:after {
-            content: '';
-            display: table;
         }
     }
     &.full-width {

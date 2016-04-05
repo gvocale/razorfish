@@ -1,6 +1,6 @@
 .careers-promo {
     width: 100vw;
-    min-height: 40vw;
+    min-height: 50vw;
     cursor: pointer;
     cursor: hand;
     position: relative;
@@ -12,6 +12,9 @@
     padding-right: 10%;
     padding-top: 10%;
     padding-bottom: 10%;
+    @media screen and ($lg) {
+        min-height: 40vw;
+    }
     &__text-container {
         z-index: 10;
         display: flex;
@@ -22,18 +25,19 @@
         color: $white;
         text-align: left;
     }
-    .divider-md {
-        margin: 0;
-    }
     &__heading {
         font-family: $display;
         font-size: $scale06;
         line-height: $title-serif;
         letter-spacing: $spacing-serif;
         font-weight: 700;
-        margin-top: 0.25em;
-        margin-bottom: 0.2em;
         max-width: 12em;
+        margin-bottom: 0.3em;
+        font-variant-ligatures: common-ligatures;
+        text-rendering: optimizeLegibility;
+        &:last-child {
+            margin-bottom: 0;
+        }
         @media only screen and ($md) {
             font-size: $scale08;
         }
@@ -44,6 +48,9 @@
             font-size: $scale10;
             line-height: $title-serif - 0.1;
         }
+        &.divider {
+            margin-bottom: 0.3em;
+        }
     }
     &__description {
         font-family: $sans;
@@ -52,13 +59,14 @@
         margin-bottom: 1em;
         max-width: 24em;
         font-size: $scale04;
-        font-variant-ligatures: common-ligatures;
-        text-rendering: optimizeLegibility;
-        @media only screen and ($md) {
-            font-size: $scale05;
+        // @media only screen and ($md) {
+        //     font-size: $scale05;
+        // }
+        &:last-child {
+            margin-bottom: 0;
         }
         @media only screen and ($xxl) {
-            font-size: $scale06;
+            font-size: $scale05;
         }
     }
     &__background {
