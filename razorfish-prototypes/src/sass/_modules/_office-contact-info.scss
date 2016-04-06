@@ -18,17 +18,7 @@
         }
     }
     &__label {
-        font-family: $sans;
-        font-size: $scale03;
-        line-height: $title-sans;
-        letter-spacing: $spacing-sans-tight;
-        font-weight: 700;
-        text-transform: uppercase;
-        opacity: 0.5;
-        margin-bottom: 0.5em;
-        @media only screen and ($xxl) {
-            font-size: $scale04;
-        }
+        @include label;
     }
     &__body {
         font-family: $sans;

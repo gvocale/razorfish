@@ -13,25 +13,7 @@
         column-count: 1;
     }
     &__label {
-        font-family: $sans;
-        font-size: $scale03;
-        font-weight: 400;
-        font-style: normal;
-        line-height: 1.1;
-        letter-spacing: 0.025em;
-        text-transform: uppercase;
-        color: rgba($black, 0.75);
-        margin-bottom: 0.25em;
-        max-width: 15em;
-        @media screen and ($md) {
-            color: rgba($black, 0.6);
-        }
-        @media screen and ($lg) {
-            font-size: $scale02;
-        }
-        @media screen and ($xl) {
-            font-size: $scale03;
-        }
+        @include label;
     }
     &__author-name {
         font-family: $sans;
@@ -77,43 +59,10 @@
         }
     }
     &__body {
-        font-family: $sans;
-        line-height: $title-sans;
-        letter-spacing: $spacing-sans;
-        margin-bottom: 0.1em;
-        font-size: $scale04;
-        @media screen and ($md) {
-            font-size: $scale03;
-        }
-        @media screen and ($xl) {
-            font-size: $scale04;
-        }
-        @media screen and ($xxl) {
-            font-size: $scale05;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
+        @include sidebar-body;
     }
     &__stat {
-        font-family: $sans;
-        line-height: 1.1;
-        letter-spacing: $spacing-sans;
-        margin-bottom: 0.15em;
-        font-size: $scale05;
-        font-weight: 400;
-        @media screen and ($md) {
-            font-size: $scale06;
-        }
-        @media screen and ($lg) {
-            font-size: $scale05;
-        }
-        @media screen and ($xxl) {
-            font-size: $scale06;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
+        @include stat-body;
         &--group {
             break-inside: avoid;
             font-size: $scale04;
@@ -177,17 +126,7 @@
         }
     }
     &__group {
-        break-inside: avoid;
-        margin-bottom: 1rem;
-        @media screen and ($xl) {
-            margin-bottom: 1rem;
-        }
-        @media screen and ($xxl) {
-            margin-bottom: 1.5rem;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
+        @include two-column--group;
         &--share {
             width: 100%;
             margin-bottom: 2em;

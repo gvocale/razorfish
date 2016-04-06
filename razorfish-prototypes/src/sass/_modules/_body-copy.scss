@@ -11,6 +11,7 @@
     }
     &__container {
         display: flex;
+        flex-direction: column;
         @include component-padding;
         width: 100%;
         @media only screen and ($lg) {
@@ -70,7 +71,6 @@
         }
     }
     &__two-column {
-        @include component-padding;
         width: 100%;
         columns: 1;
         margin-left: auto;
@@ -78,15 +78,16 @@
         @media screen and ($lg) {
             columns: 2;
             column-gap: 2rem;
-            width: calc(100% / 12 * 8);
         }
-        @media only screen and ($xl) {
-            width: calc(100% / 12 * 10);
+        &__group {
+            @include two-column--group;
         }
-        @media only screen and ($xxl) {
-            width: calc(100% / 12 * 6);
+        &--award {
+            @media screen and ($md) {
+                columns: 2;
+                column-gap: 2rem;
+            }
         }
-        &__group {}
     }
     &__image {
         overflow: hidden;
@@ -187,25 +188,14 @@
         }
     }
     &__label {
-        text-transform: uppercase;
-        font-family: $sans;
-        line-height: $title-sans;
-        letter-spacing: $spacing-sans-large;
-        margin-bottom: 0.25em;
-        font-size: $scale02;
-        @media only screen and ($md) {
-            font-size: $scale03;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
+        @include label;
     }
     &__body {
         font-family: $sans;
         line-height: $prose-sans;
         letter-spacing: $spacing-sans;
         margin-bottom: 1em;
-        font-size: $scale03;
+        font-size: $scale04;
         @media only screen and ($md) {
             font-size: $scale04;
         }
@@ -215,6 +205,28 @@
         strong {
             font-weight: 700;
         }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &--title {
+            font-family: $sans;
+            line-height: 1.2;
+            letter-spacing: $spacing-sans;
+            margin-bottom: 1em;
+            font-size: $scale03;
+            @media only screen and ($md) {
+                font-size: $scale04;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale05;
+            }
+            strong {
+                font-weight: 700;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
         &--lead {
             font-family: $sans;
             line-height: $prose-sans;
@@ -222,9 +234,6 @@
             margin-bottom: 1em;
             font-size: $scale05;
             @media only screen and ($md) {
-                font-size: $scale06;
-            }
-            @media only screen and ($lg) {
                 font-size: $scale05;
             }
             @media only screen and ($xxl) {
@@ -252,9 +261,6 @@
             &:last-child {
                 margin-bottom: 0;
             }
-        }
-        &:last-child {
-            margin-bottom: 0;
         }
     }
     &__background {
@@ -378,6 +384,9 @@
                 }
             }
         }
+    }
+    &--zero-top-padding {
+        padding-top: 0;
     }
 }
 

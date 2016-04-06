@@ -192,3 +192,77 @@
         font-size: $scale09;
     }
 }
+
+@mixin label {
+    font-family: $sans;
+    font-size: $scale03;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    margin-bottom: 0.25em;
+    max-width: 15em;
+    color: rgba($black, 0.75);
+    @media screen and ($md) {
+        color: rgba($black, 0.6);
+    }
+    @media screen and ($lg) {
+        font-size: $scale02;
+    }
+    @media screen and ($xl) {
+        font-size: $scale03;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@mixin stat-body {
+    font-family: $sans;
+    line-height: 1.1;
+    letter-spacing: $spacing-sans;
+    margin-bottom: 0.15em;
+    font-weight: 400;
+    font-size: $scale05;
+    @media screen and ($md) {
+        font-size: $scale06;
+    }
+    @media screen and ($lg) {
+        font-size: $scale05;
+    }
+    @media screen and ($xxl) {
+        font-size: $scale06;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@mixin sidebar-body {
+    font-family: $sans;
+    line-height: 1.2;
+    letter-spacing: $spacing-sans;
+    margin-bottom: 0.15em;
+    font-size: $scale04;
+    @media screen and ($xl) {
+        font-size: $scale04;
+    }
+    @media screen and ($xxl) {
+        font-size: $scale05;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@mixin two-column--group {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+    padding-bottom: 1.5em;
+    margin-bottom: 0;
+    &:last-child {
+        padding-bottom: 0;
+    }
+}
