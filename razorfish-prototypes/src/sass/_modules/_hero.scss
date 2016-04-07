@@ -42,7 +42,7 @@
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans-large;
-        max-width: 24em;
+        max-width: 30em;
         font-size: $scale04;
         font-weight: 400;
         text-transform: uppercase;
@@ -105,41 +105,6 @@
         }
         &:last-child {
             margin-bottom: 0;
-        }
-    }
-    &__styling {
-        &-red {
-            color: $white;
-            .hero__background {
-                background-color: $color-theme-a;
-            }
-            .divider {
-                background-color: $black;
-            }
-        }
-        &-light {
-            color: $black;
-            .hero__eyebrow {
-                color: $primary;
-            }
-            .hero__background {
-                background-color: $white;
-            }
-            .divider {
-                background-color: $primary;
-            }
-        }
-        &-dark {
-            color: $white;
-            .hero__eyebrow {
-                color: $white;
-            }
-            .hero__background {
-                background-color: $gray;
-            }
-            .divider {
-                background-color: $primary;
-            }
         }
     }
     &__scroll-down-container {
@@ -306,9 +271,6 @@
         .hero--profile__icon,
         .divider {
             filter: brightness(110%);
-            @media screen and ($lg) {
-                filter: none;
-            }
         }
     }
     &--approach {

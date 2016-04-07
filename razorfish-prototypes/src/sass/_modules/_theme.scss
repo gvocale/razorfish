@@ -53,9 +53,13 @@
             background-color: $black-divider;
         }
     }
+}
+
+.theme-,
+.hero--theme {
     &-white {
         color: $white;
-        .hero__background {
+        div[class*="background"] {
             background-color: $black-divider;
         }
         .divider {
@@ -64,10 +68,10 @@
     }
     &-white-accent {
         color: $white;
-        .hero__eyebrow {
+        p[class*="eyebrow"] {
             color: lighten($primary, 10%);
         }
-        .hero__background {
+        div[class*="background"] {
             background-color: $black-divider;
         }
         .divider {
@@ -76,7 +80,7 @@
     }
     &-black {
         color: $black-divider;
-        .hero__background {
+        div[class*="background"] {
             background-color: $off-white;
         }
         .divider {
@@ -85,29 +89,19 @@
     }
     &-black-accent {
         color: $black-divider;
-        .hero__eyebrow {
-            color: $primary;
+        p[class*="eyebrow"] {
+            color: lighten($primary, 10%);
         }
-        .hero__background {
+        div[class*="background"] {
             background-color: $off-white;
         }
         .divider {
-            background-color: $primary;
+            background-color: lighten($primary, 10%);
         }
     }
 }
 
-.theme,
-.hero {
-    &--white-1 {
-        color: $white;
-        .divider {
-            background-color: currentColor;
-        }
-        .hero__background {
-            background-color: $gray;
-        }
-    }
+.theme {
     &--smart {
         $primary-smart: #f4ac00;
         $black-smart: #222424;
@@ -169,6 +163,9 @@
         $black-heforshe: #222424;
         $gray-heforshe: #3d3d3d;
         $off-white-heforshe: #f3f3f3;
+        &.hero {
+            color: $white;
+        }
         .divider {
             background-color: $primary-heforshe !important;
         }
