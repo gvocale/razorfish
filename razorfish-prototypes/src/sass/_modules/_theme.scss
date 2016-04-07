@@ -1,4 +1,5 @@
-.theme {
+.theme,
+.hero {
     &--white-1 {
         color: $white;
         .divider {
@@ -20,6 +21,18 @@
     &--light {
         color: $black;
         .hero__eyebrow {
+            color: currentColor;
+        }
+        .hero__background {
+            background-color: $white;
+        }
+        .divider {
+            background-color: currentColor;
+        }
+    }
+    &--light--accent {
+        color: $black;
+        .hero__eyebrow {
             color: $primary;
         }
         .hero__background {
@@ -35,10 +48,134 @@
             color: currentColor;
         }
         .hero__background {
-            background-color: $gray;
+            background-color: $black;
+        }
+        .divider {
+            background-color: currentColor;
+        }
+    }
+    &--dark--accent {
+        color: $white;
+        .hero__eyebrow {
+            color: $primary;
+        }
+        .hero__background {
+            background-color: $black;
         }
         .divider {
             background-color: $primary;
+        }
+    }
+    &--smart {
+        $primary-smart: #f4ac00;
+        $black-smart: #222424;
+        $gray-smart: #3d3d3d;
+        $off-white-smart: #f3f3f3;
+        .divider {
+            background-color: $primary-smart !important;
+        }
+        .contact-info__label {
+            color: $primary-smart;
+        }
+        .link--primary {
+            color: $primary-smart;
+        }
+        .social-share--folded__icon {
+            &:hover {
+                background-color: $primary-smart;
+            }
+        }
+        .body-copy--dark {
+            background-color: $gray-smart;
+        }
+        .body-copy__container--dark {
+            background-color: $gray-smart;
+        }
+        .pull-quote {
+            background-color: $black-smart;
+        }
+        .body-copy__label {
+            color: $primary-smart;
+        }
+        .content-feed--results {
+            .content-feed__icon {
+                fill: $primary-smart;
+            }
+            @each $n in (1 3 5) {
+                .content-feed__item:nth-child(#{$n}) {
+                    background-color: $black-smart;
+                    color: $off-white-smart;
+                }
+            }
+            @each $n in (2 4 6) {
+                .content-feed__item:nth-child(#{$n}) {
+                    background-color: $off-white-smart;
+                    color: $black-smart;
+                }
+            }
+        }
+        .theme-gray {
+            background-color: $off-white-smart;
+            color: $black;
+        }
+        .body-copy__inline-pull-quote__author {
+            color: $primary-smart;
+        }
+    }
+    &--he-for-she {
+        $primary-heforshe: #ff1d66;
+        $black-heforshe: #222424;
+        $gray-heforshe: #3d3d3d;
+        $off-white-heforshe: #f3f3f3;
+        .divider {
+            background-color: $primary-heforshe !important;
+        }
+        .contact-info__label {
+            color: $primary-heforshe;
+        }
+        .link--primary {
+            color: $primary-heforshe;
+        }
+        .social-share--folded__icon {
+            &:hover {
+                background-color: $primary-heforshe;
+            }
+        }
+        .body-copy--dark {
+            background-color: $gray-heforshe;
+        }
+        .body-copy__container--dark {
+            background-color: $gray-heforshe;
+        }
+        .pull-quote {
+            background-color: $black-heforshe;
+        }
+        .body-copy__label {
+            color: $primary-heforshe;
+        }
+        .content-feed--results {
+            .content-feed__icon {
+                fill: $primary-heforshe;
+            }
+            @each $n in (1 3 5) {
+                .content-feed__item:nth-child(#{$n}) {
+                    background-color: $black-heforshe;
+                    color: $off-white-heforshe;
+                }
+            }
+            @each $n in (2 4 6) {
+                .content-feed__item:nth-child(#{$n}) {
+                    background-color: $off-white-heforshe;
+                    color: $black-heforshe;
+                }
+            }
+        }
+        .color-theme-1 {
+            background-color: $gray-heforshe;
+            color: $white;
+            .body-copy__body {
+                color: darken($white, 50%);
+            }
         }
     }
 }

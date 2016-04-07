@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    position: relative;
     @include grid-padding;
     @include top-bottom-padding;
     &--dark {
@@ -13,7 +14,10 @@
         display: flex;
         flex-direction: column;
         @include component-padding;
+        @include bottom-margin;
         width: 100%;
+        margin-left: auto;
+        margin-right: auto;
         @media only screen and ($lg) {
             width: calc(100% / 12 * 6);
         }
@@ -26,7 +30,11 @@
             @media only screen and ($lg) {
                 margin-right: calc(100% / 12 * 3);
             }
+            margin-bottom: 0;
         }
+    }
+    .contact-info + .body-copy__container {
+        margin-left: 0;
     }
     &__flexible {
         width: 100%;
@@ -75,12 +83,28 @@
         columns: 1;
         margin-left: auto;
         margin-right: auto;
-        @media screen and ($lg) {
+        @media screen and ($md) {
             columns: 2;
             column-gap: 2rem;
         }
         &__group {
             @include two-column--group;
+            padding-bottom: 2em;
+            .body-copy__inline-pull-quote__quote {
+                font-size: $scale05;
+                @media only screen and ($md) {
+                    font-size: $scale05;
+                }
+                @media only screen and ($lg) {
+                    font-size: $scale04;
+                }
+                @media only screen and ($xl) {
+                    font-size: $scale05;
+                }
+                @media only screen and ($xxl) {
+                    font-size: $scale06;
+                }
+            }
         }
         &--award {
             @media screen and ($md) {
@@ -287,11 +311,11 @@
         }
         &__quote {
             font-family: $display;
-            line-height: $prose-serif;
+            line-height: 1.5;
             font-style: italic;
             color: $blackLighter;
             letter-spacing: $spacing-serif-large;
-            margin-bottom: 0.75em;
+            margin-bottom: 0.5em;
             font-size: $scale05;
             @media only screen and ($md) {
                 font-size: $scale06;
@@ -325,6 +349,29 @@
             }
             strong {
                 font-weight: 700;
+            }
+        }
+        &--simple {
+            border-left: 0;
+            padding-left: 0;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            .body-copy__inline-pull-quote__quote {
+                position: relative;
+                &:before {
+                    content: "“";
+                    position: absolute;
+                    margin-left: -0.5em;
+                    margin-right: 0.1em;
+                }
+                &:after {
+                    content: "”";
+                    position: relative;
+                    margin-left: 0.1em;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
         }
     }
@@ -387,6 +434,17 @@
     }
     &--zero-top-padding {
         padding-top: 0;
+    }
+    &__hr {
+        width: 100%;
+        background-color: rgba($black, 0.15);
+        height: 3px;
+        border: none;
+        margin-top: 4em;
+        margin-bottom: 4em;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 

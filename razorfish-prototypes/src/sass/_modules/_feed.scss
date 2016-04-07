@@ -18,7 +18,6 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        overflow: hidden;
         @media screen and ($md) {
             height: calc(100vw / 4 * 7);
         }
@@ -74,7 +73,6 @@
                 order: 10;
             }
         }
-
         .feed__item__content {
             position: absolute;
             width: 100%;
@@ -164,10 +162,7 @@
             transition: all 0.2s 0s $bezier;
         }
         &:hover {
-            .feed__item__background {
-                transition: all 0.2s 0s $bezier;
-                transform: scale(1.025);
-            }
+            .feed__item__background {}
         }
         &.split {
             background-position: 50% center;
@@ -408,6 +403,10 @@
             display: inline-block;
         }
     }
+    a {
+        color: currentColor;
+        text-decoration: none;
+    }
 }
 
 // Feed item animations
@@ -447,6 +446,13 @@ $right: 2 4 6 8 10;
 }
 
 .feed__item.animate.in-viewport {
-    transform: translate(0, 0);
+    transform: translate(0, 0) scale(1);
+    transition: all 0.15s 0s ease-in-out;
     opacity: 1;
+    box-shadow: 0em 0em 0em 0em rgba($black, 0);
+    &:hover {
+        transform: translate(0, 0) scale(1.02);
+        box-shadow: 0em 1em 2em 0em rgba($black, 0.3);
+        z-index: 10;
+    }
 }

@@ -139,10 +139,29 @@
     }
 }
 
+.article.visible,
+.press-release.visible,
+.case-study.visible {
+    .social-share--folded__footer {
+        position: fixed;
+    }
+}
+
 .social-share--folded {
     &__footer,
     &__header {
-        @include component-padding;
+        position: absolute;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 10vw;
+        @media screen and ($lg) {
+            margin-right: 5vw;
+        }
+        @media screen and ($xl) {
+            margin-right: 10vw;
+        }
         width: 100%;
         @media screen and ($lg) {
             width: calc(100% / 12 * 2);
@@ -151,36 +170,44 @@
             width: calc(100% / 12 * 3);
         }
     }
-    &__footer {
-        position: fixed;
-        top: calc(100vh - 3rem - 10vw);
-        right: 10%;
+    &__header {
+        top: 0;
+        display: none;
+        @include top-padding;
         @media screen and ($lg) {
-            position: relative;
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;
+            top: 0;
+            justify-content: flex-start;
+        }
+    }
+    &__footer {
+        position: absolute;
+        // top: calc(100vh - 3rem - 10vw);
+        margin-right: 10vw;
+        @media screen and ($lg) {
+            margin-right: 5vw;
+        }
+        @media screen and ($xl) {
+            margin-right: 10vw;
+        }
+        z-index: 1;
+        bottom: 0;
+        @include bottom-padding;
+        @media screen and ($lg) {
+            position: absolute;
+            bottom: 0;
             justify-content: flex-end;
             top: auto;
-            right: auto;
+            right: 0;
             .social-share--folded__icon-container {
                 top: auto;
                 bottom: 0;
             }
         }
     }
+
     &__group {
         position: relative;
-    }
-    &__header {
-        display: none;
-        @media screen and ($lg) {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: flex-start;
-        }
     }
     &__checkbox {
         appearance: none;

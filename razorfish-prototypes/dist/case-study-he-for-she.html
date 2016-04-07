@@ -146,19 +146,77 @@
             </div>
         </div>
     </nav>
-    <article class="case-study__he-for-she">
-        <section class="hero hero--story hero__styling-dark animate">
-            <div class="hero__text-container">
-                <hr class="hero__headline divider animate">
-                <div class="hero__headline--group">
-                    <p class="hero__eyebrow">Heforshe</p>
-                </div>
-                <h2 class="hero__headline">Gender Equality with HeForShe</h2>
+    <section class="hero hero--story hero--dark theme--he-for-she animate">
+        <div class="hero__text-container">
+            <hr class="hero__headline divider animate">
+            <div class="hero__headline--group">
+                <p class="hero__eyebrow">Heforshe</p>
             </div>
-            <div class="hero__scroll-down-container">
-                <div class="scroll-down-icon"></div>
+            <h2 class="hero__headline">Gender Equality with HeForShe</h2>
+        </div>
+        <div class="hero__scroll-down-container">
+            <div class="scroll-down-icon"></div>
+        </div>
+        <div class="hero__background animate" style="background-image: url(images/hero-he-for-she.jpg)"></div>
+    </section>
+    <article class="case-study theme--he-for-she animate">
+        <section class="social-share--folded__header">
+            <div class="social-share--folded__group">
+                <input type="checkbox" id="social-share--folded__checkbox--bottom" class="social-share--folded__checkbox">
+                <li class="social-share--folded__icon-container social-share--folded__icon-container--label">
+                    <label class="social-share--folded__icon icon-share--black" for="social-share--folded__checkbox--bottom">
+                    </label>
+                </li>
+                <li class="social-share--folded__icon-container">
+                    <a href="" class="social-share--folded__icon icon-twitter--black">
+                    </a>
+                </li>
+                <li class="social-share--folded__icon-container">
+                    <a href="" class="social-share--folded__icon icon-facebook--black">
+                    </a>
+                </li>
+                <li class="social-share--folded__icon-container">
+                    <a href="" class="social-share--folded__icon icon-linkedin--black">
+                    </a>
+                </li>
+                <li class="social-share--folded__icon-container">
+                    <a href="" class="social-share--folded__icon icon-mail--black">
+                    </a>
+                </li>
+                <li class="social-share--folded__icon-container">
+                    <a href="" class="social-share--folded__icon icon-weibo--black">
+                    </a>
+                </li>
             </div>
-            <div class="hero__background animate" style="background-image: url(images/hero-he-for-she.jpg)"></div>
+        </section>
+        <section class="social-share--folded__footer">
+            <div class="social-share--folded__group">
+                <input type="checkbox" id="social-share--folded__checkbox--top" class="social-share--folded__checkbox">
+                <li class="social-share--folded__icon-container social-share--folded__icon-container--label">
+                    <label class="social-share--folded__icon icon-share--black" for="social-share--folded__checkbox--top">
+                    </label>
+                </li>
+                <li class="social-share--folded__icon-container">
+                    <a href="" class="social-share--folded__icon icon-twitter--black">
+                    </a>
+                </li>
+                <li class="social-share--folded__icon-container">
+                    <a href="" class="social-share--folded__icon icon-facebook--black">
+                    </a>
+                </li>
+                <li class="social-share--folded__icon-container">
+                    <a href="" class="social-share--folded__icon icon-linkedin--black">
+                    </a>
+                </li>
+                <li class="social-share--folded__icon-container">
+                    <a href="" class="social-share--folded__icon icon-mail--black">
+                    </a>
+                </li>
+                <li class="social-share--folded__icon-container">
+                    <a href="" class="social-share--folded__icon icon-weibo--black">
+                    </a>
+                </li>
+            </div>
         </section>
         <div class="body-copy">
             <section class="contact-info">
@@ -395,16 +453,17 @@
             <h3 class="title__headline">Related Work</h3>
         </div>
     </section>
-    <section class="related-promo theme--white-1">
-        <div class="related-promo__text-container">
-            <div class="divider animate"></div>
-            <div class="related-promo__eyebrow--margin">
-                <p class="related-promo__eyebrow">Spotify</p>
+    <section class="related-promo theme--dark">
+        <a href="">
+            <div class="related-promo__text-container">
+                <div class="divider animate"></div>
+                <div class="related-promo__eyebrow--margin">
+                    <p class="related-promo__eyebrow">Spotify</p>
+                </div>
+                <h2 class="related-promo__headline">Music deﬁnes us.<br>Data proves it.</h2>
             </div>
-            <h2 class="related-promo__headline">Music deﬁnes us.<br>Data proves it.</h2>
-            <p class="related-promo__cta"><a class="link link--arrow" href="">Lorem ipsum dolor sit</a></p>
-        </div>
-        <div class="related-promo__background anmate" style="background-image: url(images/hero-spotify.jpg)"></div>
+            <div class="related-promo__background anmate" style="background-image: url(images/hero-spotify.jpg)"></div>
+        </a>
     </section>
     <section class="contact-promo animate" style="">
         <div class="contact-promo__text-container">
@@ -438,12 +497,9 @@
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/show-hide-header.js"></script>
+    <script src="js/jquery.viewportchecker.min.js"></script>
     <script>
     new cbpScroller(document.getElementById('animate-container'));
-    </script>
-    <script src="js/stickyfill.js"></script>
-    <script>
-    $('.sticky').Stickyfill();
     </script>
     <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
     <script>

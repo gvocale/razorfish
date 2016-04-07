@@ -11,7 +11,7 @@
         justify-content: space-between;
         align-items: baseline;
         padding-top: 5%;
-        padding-bottom: 5%;
+        padding-bottom: 7%;
     }
     &__logo-razorfish {
         @include component-margin;
@@ -90,7 +90,9 @@
     }
     .social-share__group {
         @include component-padding;
-        transform: translateY(35%);
+        @media screen and ($lg) {
+            transform: translateY(35%);
+        }
     }
     &--dark {
         color: $white;
@@ -100,6 +102,5 @@
         .footer__copyrights {
             opacity: 0.3;
         }
-
     }
 }
