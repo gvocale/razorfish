@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
 
-<body id="animate-container">
+<body id="animate-container snap">
     <div class="overlay-grid">
         <div class="padded-grid">
             <div class="overlay-grid__col"></div>
@@ -139,7 +139,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="our-services.html">Our Services</a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="people-list.html">People List</a>
                     </li>
@@ -168,80 +168,18 @@
             </div>
         </div>
     </nav>
-    <section class="title title__tertiary title--white">
-        <div class="padded-grid">
-            <div class="title__text-container">
-                <div class="divider title__headline animate"></div>
-                <h3 class="title__headline">Job Openings</h3>
-            </div>
-            <div class="title__button-group">
-                <select class="select select--secondary">
-                    <option value="none" disabled selected>Location</option>>
-                    <option value="UK">New York</option>
-                    <option value="USA">San Francisco</option>
-                    <option value="Canada">Sydney</option>
-                    <option value="Canada">Chicago</option>
-                </select>
-                <select class="select select--secondary">
-                    <option value="none" disabled selected>Disciplines</option>>
-                    <option value="USA">Creative</option>
-                    <option value="Canada">UX</option>
-                    <option value="UK">Tech</option>
-                </select>
-            </div>
+    <section class="related-promo">
+        <div class="related-promo__text-container">
+            <div class="divider related-promo__headline animate"></div>
+            <h2 class="related-promo__eyebrow">Spotify</h2>
+            <h2 class="related-promo__headline">Music deﬁnes us.<br>Data proves it.</h2>
+            <p class="related-promo__cta"><a class="link link--arrow" href="">Lorem ipsum dolor sit</a></p>
         </div>
-    </section>
-    <section class="filtered-job-listings">
-        <ul class="filtered-job-listings__table">
-            <li class="filtered-job-listings__row">
-                <p class="filtered-job-listings__job-title">Art Director</p>
-                <p class="filtered-job-listings__date">12/1/15</p>
-                <p class="filtered-job-listings__location">New York</p>
-            </li>
-            <li class="filtered-job-listings__row">
-                <p class="filtered-job-listings__job-title">Sr. Information Architect</p>
-                <p class="filtered-job-listings__date">12/1/15</p>
-                <p class="filtered-job-listings__location">San Francisco</p>
-            </li>
-            <li class="filtered-job-listings__row">
-                <p class="filtered-job-listings__job-title">Sr. Information Architect</p>
-                <p class="filtered-job-listings__date">12/1/15</p>
-                <p class="filtered-job-listings__location">Sydney</p>
-            </li>
-            <li class="filtered-job-listings__row">
-                <p class="filtered-job-listings__job-title">Copywriter</p>
-                <p class="filtered-job-listings__date">12/1/15</p>
-                <p class="filtered-job-listings__location">Chicago</p>
-            </li>
-            <li class="filtered-job-listings__row">
-                <p class="filtered-job-listings__job-title">Art Director</p>
-                <p class="filtered-job-listings__date">12/1/15</p>
-                <p class="filtered-job-listings__location">New York</p>
-            </li>
-            <li class="filtered-job-listings__row">
-                <p class="filtered-job-listings__job-title">Sr. Information Architect</p>
-                <p class="filtered-job-listings__date">12/1/15</p>
-                <p class="filtered-job-listings__location">San Francisco</p>
-            </li>
-            <li class="filtered-job-listings__row">
-                <p class="filtered-job-listings__job-title">Sr. Information Architect</p>
-                <p class="filtered-job-listings__date">12/1/15</p>
-                <p class="filtered-job-listings__location">Sydney</p>
-            </li>
-            <li class="filtered-job-listings__row">
-                <p class="filtered-job-listings__job-title">Art Director</p>
-                <p class="filtered-job-listings__date">12/1/15</p>
-                <p class="filtered-job-listings__location">Chicago</p>
-            </li>
-        </ul>
-        <div class="filtered-job-listings__button-group">
-            <button class="button button--secondary">Load more</button>
-        </div>
+        <div class="related-promo__background anmate" style="background-image: url(images/hero-spotify.jpg)"></div>
     </section>
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
-    <script src="js/content-blocks.js"></script>
     <script src="js/show-hide-header.js"></script>
     <script>
     new cbpScroller(document.getElementById('animate-container'));
