@@ -81,19 +81,14 @@
     }
     &__secondary {
         text-align: center;
+        flex-direction: column;
+        align-items: center;
         @media screen and ($md) {
             padding-top: 10em;
             padding-bottom: 5em;
         }
         .title__headline {
-            margin-bottom: 2rem;
-        }
-        .divider {
-            margin-bottom: 2rem;
-        }
-        .padded-grid {
-            flex-direction: column;
-            align-items: center;
+            margin-bottom: 1em;
         }
     }
     &__tertiary {
@@ -107,11 +102,6 @@
         }
         .divider {
             margin-bottom: 1.25rem;
-        }
-        .padded-grid {
-            justify-content: space-between;
-            flex-direction: row;
-            flex-wrap: wrap;
         }
     }
     &__text-container {

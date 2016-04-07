@@ -139,7 +139,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="our-services.html">Our Services</a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="people-list.html">People List</a>
                     </li>
@@ -165,19 +165,81 @@
             </div>
         </div>
     </nav>
-    <section class="contact-promo animate" style="">
-        <div class="contact-promo__text-container">
-            <p class="contact-promo__eyebrow">Locations</p>
-            <h2 class="contact-promo__description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link link--primary">Get in touch.</a></h2>
-        </div>
-        <div class="contact-promo__background">
+    <section class="title title__tertiary title--black">
+        <div class="title__text-container">
+            <div class="divider title__headline animate"></div>
+            <h3 class="title__headline">Our Services</h3>
         </div>
     </section>
+    <section class="our-services">
+        <div class="our-services__grid">
+            <div class="our-services__item">
+                <div class="our-services__text-container">
+                    <div class="divider our-services__headline animate"></div>
+                    <h2 class="our-services__headline">Insight & Strategy</h2>
+                    <p class="our-services__subhead">Lorem ipsum dolor sit amet consectetur adipsciling todo dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="our-services__item">
+                <div class="our-services__image" style="background-image: url(images/our-services-01.jpg);"></div>
+            </div>
+            <div class="our-services__item">
+                <div class="our-services__text-container">
+                    <div class="divider our-services__headline animate"></div>
+                    <h2 class="our-services__headline">Creative & UX</h2>
+                    <p class="our-services__subhead">Lorem ipsum dolor sit amet consectetur adipsciling todo dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="our-services__item">
+                <div class="our-services__image" style="background-image: url(images/our-services-02.jpg);"></div>
+            </div>
+            <div class="our-services__item">
+                <div class="our-services__text-container">
+                    <div class="divider our-services__headline animate"></div>
+                    <h2 class="our-services__headline">Technology</h2>
+                    <p class="our-services__subhead">Lorem ipsum dolor sit amet consectetur adipsciling todo dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="our-services__item">
+                <div class="our-services__image" style="background-image: url(images/our-services-03.jpg);"></div>
+            </div>
+            <div class="our-services__item">
+                <div class="our-services__text-container">
+                    <div class="divider our-services__headline animate"></div>
+                    <h2 class="our-services__headline">Data Science</h2>
+                    <p class="our-services__subhead">Lorem ipsum dolor sit amet consectetur adipsciling todo dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="our-services__item">
+                <div class="our-services__image" style="background-image: url(images/our-services-04.jpg);"></div>
+            </div>
+            <div class="our-services__item">
+                <div class="our-services__text-container">
+                    <div class="divider our-services__headline animate"></div>
+                    <h2 class="our-services__headline">Media</h2>
+                    <p class="our-services__subhead">Lorem ipsum dolor sit amet consectetur adipsciling todo dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="our-services__item">
+                <div class="our-services__image" style="background-image: url(images/our-services-01.jpg);"></div>
+            </div>
+        </div>
+    </section>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/show-hide-header.js"></script>
+    <script>
+    new cbpScroller(document.getElementById('animate-container'));
+    </script>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/stickyfill.js"></script>
+    <script>
+    $(function() {
+        $('.sticky').Stickyfill();
+    });
+    </script>
 </body>
 
 </html>
