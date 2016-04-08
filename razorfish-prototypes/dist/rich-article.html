@@ -110,7 +110,7 @@
                         <a class="link" href="image.html">Image</a>
                     </li>
                     <li class="site-navigation__link-container">
-                        <a class="link" href="inline-video.html">Inline Video</a>
+                        <a class="link" href="video.html">Video</a>
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="site-navigation.html">Navigation</a>
@@ -285,15 +285,15 @@
                     <h3 class="body-copy__h3">Holograms Bring Another Dimension to the Driver</h3>
                     <p class="body-copy__body">While we are years away from R2-D2-inspired projections, advances in technology and some clever parlor tricks have brought holograms within reach. For example, Mercedes-Benz just launched its Vision Tokyo concept with a dynamic hologram interface infotainment controls.</p>
                     <p class="body-copy__body">There is something undeniably magical about holograms that enamors us all. But such technology also makes controls more accessible, more intuitive and less distracting, letting the driver focus on moments that matter versus fiddling with switches and knobs.</p>
-                    <div class="inline-video">
-                        <div class="inline-video__container--16-9">
-                            <div class="inline-video__poster-frame">
-                                <div class="inline-video__button--play"></div>
-                                <div class="inline-video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
+                    <div class="video video--inline">
+                        <div class="video__container--16-9">
+                            <div class="video__poster-frame">
+                                <div class="video__button--play"></div>
+                                <div class="video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
                             </div>
                             <iframe id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
-                        <p class="inline-video__caption"><strong>IMAGE SOURCE:</strong> <a class="link link--primary" href="">http://media.daimler.com</a></p>
+                        <p class="video__caption"><strong>IMAGE SOURCE:</strong> <a class="link link--primary" href="">http://media.daimler.com</a></p>
                     </div>
                     <h3 class="body-copy__h3">Machine Learning Makes Cars & Their Passengers Even Smarter</h3>
                     <p class="body-copy__body">With increasing momentum in the autonomous driving experience, it is only natural to have an always-on approach to data. From scouring email and GPS records to social sentiment and telematics, smarter experiences deliver unprecedented personalized moments that are as unique as the individual. Watch Google Now for more inspiring approaches to advancing the experience with machine learning.</p>
@@ -503,8 +503,8 @@
         var player = $("#vimeo-video");
         froogaloop = $f(player[0].id);
     });
-    $('.inline-video__button--play').click(function(e) {
-        $('.inline-video__poster-frame').fadeOut("slow");
+    $('.video__button--play').click(function(e) {
+        $('.video__poster-frame').fadeOut("slow");
         froogaloop.api('play');
     });
     </script>

@@ -48,106 +48,82 @@
     }
 }
 
-@mixin top-bottom-padding {
-    padding-top: 20vw;
-    padding-bottom: 20vw;
+@mixin top-padding($multiplier: 1) {
+    padding-top: 20vw * $multiplier;
     @media screen and ($md) {
-        padding-top: 15vw;
-        padding-bottom: 15vw;
+        padding-top: 15vw * $multiplier;
     }
     @media screen and ($lg) {
-        padding-top: 10vw;
-        padding-bottom: 10vw;
+        padding-top: 10vw * $multiplier;
     }
     @media screen and ($lg) {
-        padding-top: 7.5vw;
-        padding-bottom: 7.5vw;
+        padding-top: 7.5vw * $multiplier;
     }
     @media screen and ($xl) {
-        padding-top: 10vw;
-        padding-bottom: 10vw;
+        padding-top: 10vw * $multiplier;
     }
     @media screen and ($xxl) {
-        padding-top: 7.5vw;
-        padding-bottom: 7.5vw;
+        padding-top: 7.5vw * $multiplier;
     }
 }
 
-@mixin top-padding {
-    padding-top: 20vw;
+@mixin bottom-padding($multiplier: 1) {
+    padding-bottom: 20vw * $multiplier;
     @media screen and ($md) {
-        padding-top: 15vw;
+        padding-bottom: 15vw * $multiplier;
     }
     @media screen and ($lg) {
-        padding-top: 10vw;
+        padding-bottom: 10vw * $multiplier;
     }
     @media screen and ($lg) {
-        padding-top: 7.5vw;
+        padding-bottom: 7.5vw * $multiplier;
     }
     @media screen and ($xl) {
-        padding-top: 10vw;
+        padding-bottom: 10vw * $multiplier;
     }
     @media screen and ($xxl) {
-        padding-top: 7.5vw;
+        padding-bottom: 7.5vw * $multiplier;
     }
 }
 
-@mixin top-margin {
-    margin-top: 20vw;
+@mixin top-margin($multiplier: 1) {
+    margin-top: 20vw * $multiplier;
     @media screen and ($md) {
-        margin-top: 15vw;
+        margin-top: 15vw * $multiplier;
     }
     @media screen and ($lg) {
-        margin-top: 10vw;
+        margin-top: 10vw * $multiplier;
     }
     @media screen and ($lg) {
-        margin-top: 7.5vw;
+        margin-top: 7.5vw * $multiplier;
     }
     @media screen and ($xl) {
-        margin-top: 10vw;
+        margin-top: 10vw * $multiplier;
     }
     @media screen and ($xxl) {
-        margin-top: 7.5vw;
+        margin-top: 7.5vw * $multiplier;
     }
 }
 
-@mixin bottom-padding {
-    padding-bottom: 20vw;
+@mixin bottom-margin($multiplier: 1) {
+    margin-bottom: 20vw * $multiplier;
     @media screen and ($md) {
-        padding-bottom: 15vw;
+        margin-bottom: 15vw * $multiplier;
     }
     @media screen and ($lg) {
-        padding-bottom: 10vw;
+        margin-bottom: 10vw * $multiplier;
     }
     @media screen and ($lg) {
-        padding-bottom: 7.5vw;
+        margin-bottom: 7.5vw * $multiplier;
     }
     @media screen and ($xl) {
-        padding-bottom: 10vw;
+        margin-bottom: 10vw * $multiplier;
     }
     @media screen and ($xxl) {
-        padding-bottom: 7.5vw;
+        margin-bottom: 7.5vw * $multiplier;
     }
 }
 
-@mixin bottom-margin {
-    margin-bottom: 20vw;
-    @media screen and ($md) {
-        margin-bottom: 15vw;
-    }
-    @media screen and ($lg) {
-        margin-bottom: 10vw;
-    }
-    @media screen and ($lg) {
-        margin-bottom: 7.5vw;
-    }
-    @media screen and ($xl) {
-        margin-bottom: 10vw;
-    }
-    @media screen and ($xxl) {
-        margin-bottom: 7.5vw;
-    }
-}
 
 @mixin component-padding {
     padding-left: 1rem;

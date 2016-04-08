@@ -110,7 +110,7 @@
                         <a class="link" href="image.html">Image</a>
                     </li>
                     <li class="site-navigation__link-container">
-                        <a class="link" href="inline-video.html">Inline Video</a>
+                        <a class="link" href="video.html">Video</a>
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="site-navigation.html">Navigation</a>
@@ -410,8 +410,8 @@
         var player = $("#vimeo-video");
         froogaloop = $f(player[0].id);
     });
-    $('.inline-video__button--play').click(function(e) {
-        $('.inline-video__poster-frame').fadeOut("slow");
+    $('.video__button--play').click(function(e) {
+        $('.video__poster-frame').fadeOut("slow");
         froogaloop.api('play');
     });
     </script>

@@ -126,7 +126,7 @@
                         <a class="link" href="image.html">Image</a>
                     </li>
                     <li class="site-navigation__link-container">
-                        <a class="link" href="inline-video.html">Inline Video</a>
+                        <a class="link" href="video.html">Video</a>
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="site-navigation.html">Navigation</a>
@@ -139,7 +139,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="our-services.html">Our Services</a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="people-list.html">People List</a>
                     </li>
@@ -148,7 +148,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="related-promo.html">Related Promo</a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="social-feed-instagram.html">Social Feed<span class="note">Instagram</span></a>
                     </li>
@@ -168,19 +168,37 @@
             </div>
         </div>
     </nav>
-    <article class="body-copy__container">
-        <section class="body-copy__flexible">
-            <div class="inline-video">
-                <div class="inline-video__container--16-9">
-                    <div class="inline-video__poster-frame">
-                        <div class="inline-video__button--play"></div>
-                        <div class="inline-video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
+    <article class="article">
+        <div class="body-copy">
+            <div class="body-copy__container">
+                <section class="body-copy__flexible">
+                    <div class="video video--inline">
+                        <div class="video__container--16-9">
+                            <div class="video__poster-frame">
+                                <div class="video__button--play"></div>
+                                <div class="video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
+                            </div>
+                            <iframe id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                        <p class="video__caption"><strong>IMAGE SOURCE:</strong> <a class="link link--primary" href="">http://media.daimler.com</a></p>
                     </div>
-                    <iframe id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                </div>
-                <p class="inline-video__caption"><strong>IMAGE SOURCE:</strong> <a class="link link--primary" href="">http://media.daimler.com</a></p>
+                </section>
             </div>
-        </section>
+        </div>
+    </article>
+    <article class="article">
+        <div class="body-copy">
+                    <div class="video video--inline">
+                        <div class="video__container--16-9">
+                            <div class="video__poster-frame">
+                                <div class="video__button--play"></div>
+                                <div class="video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
+                            </div>
+                            <iframe id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                        <p class="video__caption"><strong>IMAGE SOURCE:</strong> <a class="link link--primary" href="">http://media.daimler.com</a></p>
+                    </div>
+        </div>
     </article>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/min/razorfish.min.js"></script>
@@ -193,8 +211,8 @@
         var player = $("#vimeo-video");
         froogaloop = $f(player[0].id);
     });
-    $('.inline-video__button--play').click(function(e) {
-        $('.inline-video__poster-frame').fadeOut("slow");
+    $('.video__button--play').click(function(e) {
+        $('.video__poster-frame').fadeOut("slow");
         froogaloop.api('play');
     });
     </script>

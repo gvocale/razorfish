@@ -1,89 +1,34 @@
 .video {
     position: relative;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-    &__caption {
-        @extend .body;
-        align-self: baseline;
-        margin-top: 1em;
-    }
-    &--grid-padding {
-        @include grid-padding;
-        @include bottom-padding;
-    }
-    &--full-width {}
-    &--inline {
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-        @media screen and ($md) {
-            margin-top: 4rem;
-            margin-bottom: 4rem;
-        }
-        @media screen and ($lg) {
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
-        @media screen and ($xl) {
-            margin-top: 4rem;
-            margin-bottom: 4rem;
-        }
-        @media screen and ($xxl) {
-            margin-top: 5rem;
-            margin-bottom: 5rem;
-        }
-    }
-    &__container {
-        &--16-9 {
-            @include component-padding;
-            width: 100%;
+    &__container--16-9 {
+        position: relative;
+        width: 100%;
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: calc(100% / 16 * 9);
             position: relative;
-            &:before {
-                content: "";
-                padding-top: calc(100% / 16 * 9);
-                display: block;
-            }
         }
     }
-    iframe {
+    &__poster-frame {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+    }
+    &__image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
     }
-}
-
-.video-background {
-    @extend .background-cover;
-}
-
-.video-overlay-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.video {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
     &__caption {
         font-family: $sans;
         line-height: $prose-sans;
@@ -104,17 +49,65 @@
         }
         align-self: baseline;
     }
-    &__button-container {
+    &__button--play {
+        width: 4rem;
+        height: 4rem;
+        cursor: pointer;
+        cursor: hand;
+        border: solid $white;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        z-index: 1;
+        transition: background-color 0.2s 0s $bezier, transform 0.2s 0s $bezier;
+        @media screen and ($xl) {
+            width: 6rem;
+            height: 6rem;
+        }
+        &:before {
+            content: "";
+            border-top: calc(4rem / 6) solid transparent;
+            border-bottom: calc(4rem / 6) solid transparent;
+            border-left: calc(4rem / 6 * 2 * 0.8660259) solid $white;
+            position: absolute;
+            left: 55%;
+            top: 50%;
+            transform: scale(1) translateX(-55%) translateY(-50%);
+            transition: all 0.2s 0.1s ease-out;
+            @media screen and ($xl) {
+                // Equilateral Tringle
+                border-top: calc(6rem / 6) solid transparent;
+                border-bottom: calc(6rem / 6) solid transparent;
+                border-left: calc(6rem / 6 * 2 * 0.8660259) solid $white;
+            }
+        }
+        &:hover {
+            background-color: rgba($white, 0.1);
+            transition: background-color 0s 0s $bezier, transform 0.1s 0s $bezier;
+            transform: translate(-50%, -50%) scale(0.95);
+        }
+        &:active,
+        &:target {
+            background-color: rgba($white, 0.4);
+            transition: background-color 0s 0s $bezier;
+        }
+    }
+    &--grid-padding {
+        @include grid-padding;
+        @include bottom-padding;
+    }
+    &--full-width {}
+    &--inline {
+        @include top-padding(0.5);
+        @include bottom-padding(0.5);
+    }
+    iframe {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: center;
-
     }
 }
