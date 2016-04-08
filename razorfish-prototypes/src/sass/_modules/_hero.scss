@@ -273,11 +273,6 @@
             filter: brightness(110%);
         }
     }
-    &--approach {
-        .hero__headline {
-            opacity: 0.5;
-        }
-    }
     &.client-promo {
         min-height: 50vw;
         justify-content: center;
@@ -301,5 +296,15 @@
     a {
         color: currentColor;
         text-decoration: none;
+    }
+    &--approach {
+        color: $white;
+        .hero__headline {
+            opacity: 0.5;
+        }
+        .divider {
+            background-color: lighten($primary, 10%);
+            opacity: 1;
+        }
     }
 }

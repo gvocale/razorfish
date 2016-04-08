@@ -1,30 +1,54 @@
 .simple-title {
     position: relative;
-    width: 100vw;
-    height: 50vh;
-    @include grid-padding;
+    width: 100%;
+    height: 35vh;
+    @media screen and ($md) {
+        height: 30vh;
+    }
+    @media screen and ($lg) {
+        height: 40vh;
+    }
     .divider {
         margin-bottom: 1rem;
     }
     &__text-container {
-        @include component-padding;
         width: 100%;
-        height: 50vh;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        height: 35vh;
+        @media screen and ($md) {
+            height: 30vh;
+        }
+        @media screen and ($lg) {
+            height: 40vh;
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
+        @media screen and ($xl) {
+            padding-left: 10vw;
+            padding-right: 10vw;
+        }
         position: fixed;
         display: flex;
         flex-direction: column;
-        flex-wrap: no-wrap;
+        flex-wrap: wrap;
         justify-content: flex-end;
-        padding-bottom: 10%;
-        @media screen and ($lg) {
-            padding-bottom: 5%;
-        }
+        @include bottom-padding(0.6);
+        @include top-padding;
         &.not-in-viewport {
             opacity: 0;
         }
         &.not-in-viewport.in-viewport {
             opacity: 1;
         }
+    }
+    &__group {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
     }
     &__title {
         font-family: $serif;
@@ -33,23 +57,77 @@
         letter-spacing: $spacing-serif;
         font-size: $scale06;
         max-width: 12em;
+        position: relative;
+        margin-bottom: 0.5em;
         @media screen and ($md) {
             font-size: $scale08;
+            margin-bottom: 0;
         }
         @media screen and ($xxl) {
             font-size: $scale10;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -0.4em;
+            left: 0;
+            background-color: #a9c000;
+            border: none;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            -webkit-transform-origin: left;
+            transform-origin: left;
+            width: 0.8em;
+            height: 4px;
+            @media screen and ($lg) {
+                height: 5px;
+            }
+            @media screen and ($xxl) {
+                height: 6px;
+            }
+        }
+    }
+    &__phone {
+        font-family: $sans;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: $spacing-sans;
+        font-size: $scale04;
+        @media screen and ($md) {
+            font-size: $scale04;
+        }
+        @media screen and ($lg) {
+            font-size: $scale05;
+        }
+        @media screen and ($xxl) {
+            font-size: $scale06;
         }
     }
 }
 
 .title {
+    @include grid-padding;
+    @include top-padding;
+    @include bottom-padding(0.5);
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 40vw;
     position: relative;
     width: 100%;
-    min-height: 40vw;
-    @include grid-padding;
-    padding-top: 20%;
-    padding-bottom: 10%;
+    .divider {
+        margin-bottom: 1.25rem;
+    }
     @media screen and ($md) {
+        flex-direction: row;
+        align-items: flex-end;
         min-height: 20vw;
         padding-top: 8%;
         padding-bottom: 4%;
@@ -81,31 +159,6 @@
         }
         @media only screen and ($xxl) {
             font-size: $scale06;
-        }
-    }
-    &__secondary {
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
-        @media screen and ($md) {
-            padding-top: 10em;
-            padding-bottom: 5em;
-        }
-        .title__headline {
-            margin-bottom: 1em;
-        }
-    }
-    &__tertiary {
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
-        justify-content: space-between;
-        @media screen and ($md) {
-            flex-direction: row;
-            align-items: flex-end;
-        }
-        .divider {
-            margin-bottom: 1.25rem;
         }
     }
     &__text-container {

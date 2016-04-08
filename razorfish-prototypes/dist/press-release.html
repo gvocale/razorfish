@@ -89,9 +89,6 @@
                         <a class="link" href="content-feed.html">Content Feed <span class="skinny">&</span> Social Feed<span class="note">Twitter</span></a>
                     </li>
                     <li class="site-navigation__link-container">
-                        <a class="link" href="content-grid.html">Content Grid</a>
-                    </li>
-                    <li class="site-navigation__link-container">
                         <a class="link" href="feed.html">Feed</a>
                     </li>
                     <li class="site-navigation__link-container">
@@ -120,6 +117,9 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="office-contact-info.html">Office Contact Info</a>
+                    </li>
+                    <li class="site-navigation__link-container">
+                        <a class="link" href="office-list.html">Office List</a>
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="our-services.html">Our Services</a>
@@ -252,15 +252,15 @@
                     <p class="body-copy__body">Razorfish has built proprietary cloud-based platforms on AWS that are currently deployed for several global customers. Fluent, an Adobe Experience Manager-based solution, uses AWS Cloud Formation templates on a global scale and has helped Razorfish successfully implement the flexible and scalable AWS Cloud solutions for several global brands. The NEXUS Audience Intelligence platform enables Razorfish to bring unique machine learning and algorithmic data insights at scale to help organizations better personalize the customer journey through branded, contextually relevant experiences across all touch points.</p>
                     <p class="body-copy__body">The agency has delivered many successful solutions on AWS for clients in a range of industries. Essilor – a leading manufacturer of optical lenses in the United States and the market leader in progressive, high-index, photochromic and anti-reflective coated lenses – recently partnered with Razorfish on the creative design and technical execution of its new digital marketing platform. Essilor and Razorfish used a variety of AWS services and tools, including Amazon DynamoDB as a primary database for collected data.</p>
                     <p class="body-copy__body">“Razorfish helped us create a new digital marketing platform that could seamlessly connect our full brand infrastructure and give our customers a common, contextually relevant experience across our digital properties,” said Daniel Monaco, vice president of consumer marketing and strategic insights at Essilor of America. “The agency’s deep expertise in both AWS and Adobe Experience Manager positioned us to accelerate the design, build and deployment of our site within four months.”</p>
-                    <div class="inline-video">
-                        <div class="inline-video__container--16-9">
-                            <div class="inline-video__poster-frame">
-                                <div class="inline-video__button--play"></div>
-                                <div class="inline-video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
+                    <div class="video video--inline">
+                        <div class="video__container--16-9">
+                            <div class="video__poster-frame">
+                                <div class="video__button--play"></div>
+                                <div class="video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
                             </div>
                             <iframe id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
-                        <p class="inline-video__caption"><strong>IMAGE SOURCE:</strong> <a class="link link--primary" href="">http://media.daimler.com</a></p>
+                        <p class="video__caption"><strong>IMAGE SOURCE:</strong> <a class="link link--primary" href="">http://media.daimler.com</a></p>
                     </div>
                     <p class="body-copy__body">“Razorfish is a longtime member of the APN, and we are pleased that they continue to build innovative digital marketing platforms for their customers on AWS,” says Dorothy Copeland, global partner program leader at Amazon Web Services, Inc. “Razorfish’s achievement of the APN Marketing & Commerce Competency demonstrates their specialized capabilities.”</p>
                     <p class="body-copy__body">The fourth annual AWS re:Invent conference will feature keynote announcements, training and certification opportunities, a partner expo, after-hours activities and more. Razorfish will be available to work with client teams at the event and share examples of the innovative solutions the agency is bringing to clients.</p>
@@ -273,29 +273,27 @@
         </div>
     </article>
     <section class="newsletter-signup newsletter-signup--light">
-        <div class="padded-grid">
-            <div class="newsletter-signup__container">
-                <div class="divider newsletter-signup__headline animate"></div>
-                <h3 class="newsletter-signup__headline">Stay current. Get our newsletter.</h3>
-                <form class="newsletter-signup__form" action="">
-                    <div class="newsletter-signup__form__padded-grid">
-                        <div class="form-field">
-                            <input class="input-text" placeholder="Enter your email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                            <label class="input-label" for="">Your email</label>
-                            <div class="input-border"></div>
-                        </div>
-                        <div class="form-field">
-                            <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Your name (optional)" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                            <label class="input-label" for="">Your name</label>
-                            <div class="input-border"></div>
-                        </div>
+        <div class="newsletter-signup__container">
+            <div class="divider newsletter-signup__headline animate"></div>
+            <h3 class="newsletter-signup__headline">Stay current. Get our newsletter.</h3>
+            <form class="newsletter-signup__form" action="">
+                <div class="newsletter-signup__form__padded-grid">
+                    <div class="form-field">
+                        <input class="input-text" placeholder="Enter your email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                        <label class="input-label" for="">Your email</label>
+                        <div class="input-border"></div>
                     </div>
-                    <button class="button button--secondary">Subscribe</button>
-                </form>
-            </div>
+                    <div class="form-field">
+                        <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Your name (optional)" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                        <label class="input-label" for="">Your name</label>
+                        <div class="input-border"></div>
+                    </div>
+                </div>
+                <button class="button button--secondary">Subscribe</button>
+            </form>
         </div>
     </section>
-    <section class="title title__tertiary title--light">
+    <section class="title title--light">
         <div class="title__text-container">
             <div class="divider title__headline animate"></div>
             <h3 class="title__headline">Related Content</h3>
@@ -383,8 +381,8 @@
         var player = $("#vimeo-video");
         froogaloop = $f(player[0].id);
     });
-    $('.inline-video__button--play').click(function(e) {
-        $('.inline-video__poster-frame').fadeOut("slow");
+    $('.video__button--play').click(function(e) {
+        $('.video__poster-frame').fadeOut("slow");
         froogaloop.api('play');
     });
     </script>

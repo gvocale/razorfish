@@ -2,8 +2,12 @@
     width: 100vw;
     @include grid-padding;
     @include top-padding;
-@include bottom-padding;
+    @include bottom-padding;
     .button-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
         @include component-padding;
     }
 }

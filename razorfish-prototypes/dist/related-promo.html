@@ -17,23 +17,7 @@
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
 
-<body id="animate-container snap">
-    <div class="overlay-grid">
-        <div class="padded-grid">
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-            <div class="overlay-grid__col"></div>
-        </div>
-    </div>
+<body id="animate-container">
     <input type="checkbox" id="site-masthead__checkbox">
     <nav class="site-masthead" role="navigation">
         <div class="site-masthead__logo-container">
@@ -105,9 +89,6 @@
                         <a class="link" href="content-feed.html">Content Feed <span class="skinny">&</span> Social Feed<span class="note">Twitter</span></a>
                     </li>
                     <li class="site-navigation__link-container">
-                        <a class="link" href="content-grid.html">Content Grid</a>
-                    </li>
-                    <li class="site-navigation__link-container">
                         <a class="link" href="feed.html">Feed</a>
                     </li>
                     <li class="site-navigation__link-container">
@@ -138,6 +119,9 @@
                         <a class="link" href="office-contact-info.html">Office Contact Info</a>
                     </li>
                     <li class="site-navigation__link-container">
+                        <a class="link" href="office-list.html">Office List</a>
+                    </li>
+                    <li class="site-navigation__link-container">
                         <a class="link" href="our-services.html">Our Services</a>
                     </li>
                     <li class="site-navigation__link-container">
@@ -148,7 +132,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="related-promo.html">Related Promo</a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="social-feed-instagram.html">Social Feed<span class="note">Instagram</span></a>
                     </li>
@@ -168,21 +152,54 @@
             </div>
         </div>
     </nav>
-    <section class="related-promo">
-        <div class="related-promo__text-container">
-            <div class="divider related-promo__headline animate"></div>
-            <h2 class="related-promo__eyebrow">Spotify</h2>
-            <h2 class="related-promo__headline">Music deﬁnes us.<br>Data proves it.</h2>
-            <p class="related-promo__cta"><a class="link link--arrow" href="">Lorem ipsum dolor sit</a></p>
+    <section class="title title--light">
+        <div class="title__text-container">
+            <div class="divider title__headline animate"></div>
+            <h3 class="title__headline">Related Work</h3>
         </div>
-        <div class="related-promo__background anmate" style="background-image: url(images/hero-spotify.jpg)"></div>
     </section>
+    <section class="related-promo theme--white">
+        <a href="">
+            <div class="related-promo__text-container">
+                <div class="divider animate"></div>
+                <div class="related-promo__eyebrow--margin">
+                    <p class="related-promo__eyebrow">Spotify</p>
+                </div>
+                <h2 class="related-promo__headline">Music deﬁnes us.<br>Data proves it.</h2>
+            </div>
+            <div class="related-promo__background animate" style="background-image: url(images/hero-spotify.jpg)"></div>
+        </a>
+    </section>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/show-hide-header.js"></script>
+    <script src="js/jquery.viewportchecker.min.js"></script>
     <script>
     new cbpScroller(document.getElementById('animate-container'));
+    </script>
+    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        var player = $("#vimeo-video");
+        froogaloop = $f(player[0].id);
+    });
+    $('.video__button--play').click(function(e) {
+        $('.video__poster-frame').fadeOut("slow");
+        froogaloop.api('play');
+    });
+    </script>
+    <script src="js/isInViewport.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.feed__item').addClass('animate');
+    });
+    $(window).scroll(function() {
+        $(".feed__item:in-viewport").each(function() {
+            $(this).addClass('in-viewport');
+        })
+    });
     </script>
 </body>
 

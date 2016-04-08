@@ -59,11 +59,11 @@
     &__h1 {
         font-variant-ligatures: common-ligatures;
         font-family: $display;
-        font-size: $scale08;
+        font-size: $scale09;
         line-height: 0.6;
         letter-spacing: $spacing-serif-tight;
         font-weight: 700;
-        margin-bottom: 0.2em;
+        margin-bottom: 0.4em;
         max-width: 12em;
         opacity: 0.5;
         b {
@@ -79,20 +79,22 @@
             transition-timing-function: $bezier;
         }
         @media only screen and ($md) {
-            font-size: $scale09;
+            font-size: $scale12;
+            margin-bottom: 0.20em;
         }
         @media only screen and ($lg) {
             font-size: $scale12;
         }
         @media only screen and ($xxl) {
             font-size: $scale12 * 2;
+            margin-bottom: 0.15em;
         }
     }
     &__h2 {
         font-variant-ligatures: common-ligatures;
         font-family: $display;
-        font-size: $scale08;
-        line-height: $title-serif;
+        font-size: $scale07;
+        line-height: 1.1;
         letter-spacing: $spacing-serif;
         font-weight: 400;
         margin-bottom: 0.5em;
@@ -108,10 +110,10 @@
             transition-timing-function: $bezier;
         }
         @media only screen and ($md) {
-            font-size: $scale09;
+            font-size: $scale08;
         }
         @media only screen and ($lg) {
-            font-size: $scale09;
+            font-size: $scale08;
         }
         @media only screen and ($xxl) {
             font-size: $scale10;
@@ -121,7 +123,7 @@
         font-variant-ligatures: common-ligatures;
         font-family: $display;
         font-style: italic;
-        font-size: $scale05;
+        font-size: $scale04;
         line-height: $title-serif;
         letter-spacing: $spacing-serif-large;
         font-weight: 700;
@@ -133,6 +135,9 @@
         transition-delay: 0;
         transition-property: all;
         transition-timing-function: $bezier;
+        @media only screen and ($md) {
+            font-size: $scale05;
+        }
         @media only screen and ($xxl) {
             font-size: $scale06;
         }
@@ -160,7 +165,7 @@
     &__contact {
         @include grid-padding;
         @include top-padding;
-@include bottom-padding;
+        @include bottom-padding;
         color: $white;
         display: flex;
         flex-direction: column;
@@ -196,11 +201,14 @@
             font-variant-ligatures: common-ligatures;
             font-family: $display;
             font-style: italic;
-            font-size: $scale07;
-            line-height: $title-serif;
+            font-size: $scale05;
+            line-height: 1.5;
             letter-spacing: $spacing-serif-large + 0.01em;
             font-weight: 700;
             max-width: 24em;
+            @media only screen and ($md) {
+                font-size: $scale07;
+            }
             @media only screen and ($xxl) {
                 font-size: $scale08;
             }
