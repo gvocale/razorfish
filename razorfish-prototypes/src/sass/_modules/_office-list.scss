@@ -1,11 +1,220 @@
 .office-list {
     background-color: $gray;
     @include grid-padding;
+    @include bottom-padding;
+    &__country {
+        display: flex;
+        flex-direction: column;
+        @include bottom-margin(0.5);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__country-name {
+        @include component-padding;
+        font-family: $sans;
+        line-height: 1;
+        letter-spacing: $spacing-sans;
+        font-weight: 700;
+        margin-bottom: 1.5em;
+        max-width: 14em;
+        font-size: $scale04;
+        @media screen and ($md) {
+            font-size: $scale05;
+        }
+        @media screen and ($lg) {
+            margin-bottom: 1em;
+        }
+        @media screen and ($xl) {
+            font-size: $scale06;
+        }
+        @media screen and ($xxl) {
+            font-size: $scale07;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
     &__item {
+        background-color: $white;
+        background-clip: content-box;
         width: 100%;
-
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @include component-padding;
+        margin-bottom: 2rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &__image {
-        
+        width: 100%;
+        order: 2;
+        @media screen and ($lg) {
+            width: calc(100% / 12 * 4);
+            order: 1;
+        }
+        @media screen and ($xxl) {
+            width: calc(100% / 12 * 3);
+        }
+        background-size: cover;
+        background-position: 100% 100%,
+        center;
+        background-repeat: no-repeat;
+        &:before {
+            content: "";
+            padding-top: calc(100% / 16 * 9);
+            display: block;
+            @media screen and ($lg) {
+                padding-top: 100%;
+            }
+        }
+    }
+    &__description {
+        padding-top: 15%;
+        padding-bottom: 15%;
+        padding-left: 10%;
+        padding-right: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        order: 1;
+        @media screen and ($md) {
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
+        @media screen and ($lg) {
+            width: calc(100% / 12 * 8);
+            padding-top: 5%;
+            padding-bottom: 5%;
+            padding-left: 5%;
+            padding-right: 5%;
+            order: 2;
+        }
+        @media screen and ($xxl) {
+            width: calc(100% / 12 * 9);
+        }
+    }
+    &__multi-column {
+        @media screen and ($md) {
+            column-count: 2;
+            column-gap: 2rem;
+        }
+        @media screen and ($xl) {
+            column-count: 3;
+            column-gap: 2rem;
+        }
+    }
+    &__group {
+        @include two-column--group;
+    }
+    &__office-name {
+        font-family: $serif;
+        line-height: 1.2;
+        letter-spacing: $spacing-serif;
+        font-weight: 700;
+        margin-bottom: 1.5em;
+        max-width: 14em;
+        font-size: $scale05;
+        @media screen and ($md) {
+            font-size: $scale06;
+        }
+        @media screen and ($lg) {
+            margin-bottom: 1em;
+        }
+        @media screen and ($xl) {
+            font-size: $scale07;
+        }
+        @media screen and ($xxl) {
+            font-size: $scale08;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &--highlight {
+            color: $primary;
+            margin-right: 0.5em;
+        }
+    }
+    &__label {
+        @include label;
+    }
+    &__body {
+        font-family: $sans;
+        line-height: 1.3;
+        letter-spacing: $spacing-sans;
+        margin-bottom: 0.15em;
+        font-weight: 400;
+        font-size: $scale04;
+        @media screen and ($xl) {
+            font-size: $scale04;
+        }
+        @media screen and ($xxl) {
+            font-size: $scale05;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .link {
+            margin-top: 0.25em;
+        }
+    }
+    &__area-container {
+        overflow: hidden;
+        position: relative;
+    }
+    &__area {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: transform 0.4s 0s $bezier;
+        &:nth-child(1) {
+            transform: translateX(100%);
+        }
+        &:nth-child(2) {
+            transform: translateX(200%);
+        }
+    }
+    &.north-america {
+        .office-list__area {
+            &:nth-child(1) {
+                transform: translateX(0%);
+            }
+            &:nth-child(2) {
+                transform: translateX(100%);
+            }
+            &:nth-child(3) {
+                transform: translateX(200%);
+            }
+        }
+    }
+    &.europe {
+        .office-list__area {
+            &:nth-child(1) {
+                transform: translateX(-100%);
+            }
+            &:nth-child(2) {
+                transform: translateX(0%);
+            }
+            &:nth-child(3) {
+                transform: translateX(100%);
+            }
+        }
+    }
+    &.asia-pacific {
+        .office-list__area {
+            &:nth-child(1) {
+                transform: translateX(-200%);
+            }
+            &:nth-child(2) {
+                transform: translateX(-100%);
+            }
+            &:nth-child(3) {
+                transform: translateX(0%);
+            }
+        }
     }
 }
