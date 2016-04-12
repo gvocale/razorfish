@@ -180,3 +180,151 @@
         display: none;
     }
 }
+
+.image-carousel {
+    @include top-padding;
+    @include bottom-padding(0.5);
+    .owl-controls {
+        width: 100%;
+        margin-top: 3em;
+        height: 1em;
+        position: relative;
+        font-family: $serif;
+        font-style: italic;
+        line-height: 1;
+        letter-spacing: $spacing-serif;
+        font-size: $scale04;
+        @media only screen and ($md) {
+            font-size: $scale04;
+        }
+        @media only screen and ($xl) {
+            font-size: $scale05;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale06;
+        }
+    }
+    .owl-prev {
+        position: relative;
+        float: left;
+        padding: 1em;
+        &:before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-right: 9px solid currentColor;
+            border-left: 0 solid transparent;
+            position: absolute;
+            display: block;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 11px;
+            transition: all 0.1s 0s ease-in-out;
+        }
+        &:after {
+            content: "";
+            width: 11px;
+            height: 3px;
+            display: block;
+            background-color: currentColor;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0px;
+            transition: all 0.1s 0s ease-in-out;
+        }
+        &:hover {
+            &:before {
+                right: 20px;
+            }
+            &:after {
+                width: 20px;
+            }
+        }
+    }
+    .owl-next {
+        position: relative;
+        float: right;
+        padding: 1em;
+        &:before {
+            content: "";
+            width: 11px;
+            height: 3px;
+            display: block;
+            background-color: currentColor;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0px;
+            transition: all 0.1s 0s ease-in-out;
+        }
+        &:after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 9px solid currentColor;
+            border-right: 0 solid transparent;
+            position: absolute;
+            display: block;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 11px;
+            transition: all 0.1s 0s ease-in-out;
+        }
+        &:hover {
+            &:before {
+                width: 20px;
+            }
+            &:after {
+                left: 20px;
+            }
+        }
+    }
+    .owl-nav {
+        width: 8em;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .owl-dots {
+        counter-reset: slides-num;
+        /* Initialize counter. */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        &:after {
+            content: counter(slides-num);
+            margin-left: 0.3em;
+        }
+    }
+    .owl-dot {
+        display: inline-block;
+        counter-increment: slides-num;
+        /* Increment counter */
+        position: relative;
+        span {
+            display: none;
+        }
+        &.active {
+            &:before {
+                content: counter(slides-num) " of";
+            }
+        }
+    }
+}

@@ -12,6 +12,8 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cloud.webtype.com/css/9c2a62de-ec52-4927-98b6-09130f006c3d.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7377314/7595552/css/fonts.css" />
     <link rel="stylesheet" href="css/razorfish.css">
     <script src="js/vendor/modernizr.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.png">
@@ -120,10 +122,10 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="office-list.html">Office List</a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="our-services.html">Our Services</a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="people-list.html">People List</a>
                     </li>
@@ -132,7 +134,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="related-promo.html">Related Promo</a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="social-feed-instagram.html">Social Feed<span class="note">Instagram</span></a>
                     </li>
@@ -300,6 +302,15 @@
         <figure class="image image--full-width image--full-height">
             <img src="images/case-study-he-for-she-03.jpg" alt="">
         </figure>
+        <section class="image-carousel owl-carousel">
+            <div><img src="images/image-carousel-slide-01.jpg" alt=""></div>
+            <div><img src="images/image-carousel-slide-01.jpg" alt=""></div>
+            <div><img src="images/image-carousel-slide-01.jpg" alt=""></div>
+            <div><img src="images/image-carousel-slide-01.jpg" alt=""></div>
+            <div><img src="images/image-carousel-slide-01.jpg" alt=""></div>
+            <div><img src="images/image-carousel-slide-01.jpg" alt=""></div>
+            <div><img src="images/image-carousel-slide-01.jpg" alt=""></div>
+        </section>
         <section class="body-copy">
             <div class="body-copy__container">
                 <div class="body-copy__flexible">
@@ -527,6 +538,42 @@
         $(".feed__item:in-viewport").each(function() {
             $(this).addClass('in-viewport');
         })
+    });
+    </script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $(".owl-carousel").owlCarousel();
+    });
+    $(".owl-carousel").owlCarousel({
+        margin: 10,
+        loop: true,
+        dots: true,
+        nav: true,
+        items: 1,
+        navText: ["", ""],
+        responsive: {
+            0: {
+                margin: 16,
+                stagePadding: 32
+            },
+            768: {
+                margin: 32,
+                stagePadding: 64
+            },
+            992: {
+                margin: 32,
+                stagePadding: 64
+            },
+            1200: {
+                margin: 64,
+                stagePadding: 128
+            },
+            1600: {
+                margin: 128,
+                stagePadding: 256
+            }
+        }
     });
     </script>
 </body>

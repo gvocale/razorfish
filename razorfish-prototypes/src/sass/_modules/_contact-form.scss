@@ -1,53 +1,154 @@
 .contact-form {
-    @extend .content-centered;
     position: relative;
     color: $white;
+    @include grid-padding;
+    @include top-padding;
+    @include bottom-padding;
+    &__headline {
+        font-family: $serif;
+        font-size: $scale06;
+        line-height: $title-serif;
+        letter-spacing: $spacing-serif-tight;
+        font-weight: 700;
+        @media only screen and ($md) {
+            font-size: $scale07;
+        }
+        @media only screen and ($lg) {
+            font-size: $scale08;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale09;
+        }
+    }
+    &__background-image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    &__form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    &__text-container {
+        @include component-padding;
+        @include top-padding(0.5);
+        @include bottom-padding(0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        .divider {
+            margin-bottom: 0.4em;
+        }
+    }
+    &__field {
+        position: relative;
+        @include component-margin;
+        @media screen and ($lg) {
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
+                width: calc((100% / 12 * 4) - 2rem);
+            }
+            &:nth-child(7),
+            &:nth-child(8),
+            &:nth-child(9),
+            &:nth-child(10) {
+                width: calc((100% / 12 * 6) - 2rem);
+            }
+        }
+    }
+    &__button-group {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        @include top-padding(0.5);
+    }
+    &__input {
+        &[type="text"] {
+            border: none;
+            color: currentColor;
+            font-family: $sans;
+            font-size: $scale05;
+            font-weight: 200;
+            letter-spacing: $spacing-sans;
+            line-height: 1;
+            margin-bottom: 0.4em;
+            margin-top: 0.2em;
+            padding-left: 0;
+            padding-right: 0;
+            position: relative;
+            width: 100%;
+            order: 2;
+            width: 100%;
+            background-size: contain;
+            background-clip: content-box;
+            background-origin: content-box;
+            background-size: 0.8em 0.8em;
+            background-position: right;
+            background-repeat: no-repeat;
+            background-origin: border-box;
+            background-color: transparent;
+            &::placeholder {
+                color: currentColor;
+                opacity: 0.5;
+                transition: all 0.1s 0.1s $bezier;
+            }
+            &:valid {
+                @include icon-tick-primary;
+            }
+            &:invalid {
+                @include icon-info-red;
+            }
+            &:focus {
+                outline: none;
+            }
+            &[value=""] ~ .input-label {
+                opacity: 0;
+                transform: translateY(50%);
+                transition: all 0.1s 0s $bezier;
+            }
+            &[value=""] {
+                background-image: none;
+            }
+        }
+    }
 }
 
+.form {
 
+    &:focus ~ .input-border,
+    &:invalid ~ .input-border,
+    &:valid ~ .input-border,
+    &[value=""]:focus ~ .input-border {
+        opacity: 1;
+    }
+    
 
-.contact-form-title {
-    text-align: center;
-    width: 100%;
-    margin-top: 5em;
-    margin-bottom: 3em;
-}
+    &::placeholder,
+    &[value=""] ~ .input-label {
+        opacity: 0;
+    }
+    
+    &[value=""] ~ .input-border {
+        opacity: 0.3;
+    }
+    
 
-.contact-form-headline {
-    @extend .h3-serif;
-}
-
-.contact-form-subheadline {
-    @extend .body;
-    @extend .body-lead;
-}
-
-.contact-form-background {
-    @extend .background-cover;
-    background-image: url('./../images/contact-form-background.jpg');
-    z-index: 0;
-}
-
-.contact-form-background:before {
-    @extend .background-cover;
-    content: "";
-    background-color: $white;
-    opacity: 0.5;
-    z-index: 1;
-}
-
-.contact-form-background:after {
-    @extend .background-cover;
-    content: "";
-    background-color: $tertiary;
-    opacity: 0.9;
-    z-index: 2;
-}
-
-.contact-form-tabs + .contact-form-title {
-    margin-top: 5%;
-}
-
-.contact-form-title + .contact-form-container {
-    margin-top: 5%;
+    &[value=""] ~ .input-icon,
+    &[value=""],
+    &[value=""]::placeholder {
+        opacity: 0.5;
+    }
 }

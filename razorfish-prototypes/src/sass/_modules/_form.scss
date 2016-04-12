@@ -190,9 +190,9 @@ $visible: 1;
 .input-select:focus {
     outline: none;
 }
-.input-text:invalid ~ .input-icon {
-    @include icon-info-red;
-}
+// .input-text:invalid ~ .input-icon {
+//     @include icon-info-red;
+// }
 .input-text[value=""] ~ .input-label,
 .input-file ~ .input-label,
 .input-select ~ .input-label {
@@ -203,13 +203,13 @@ $visible: 1;
 .input-select.selected ~ .input-label {
     transform: translateY(0%);
 }
-.input-text[value=""] ~ .input-icon {
-    @include icon-info-red;
-    background-size: 80%;
-}
-.input-text:valid ~ .input-icon {
-    @include icon-tick-primary;
-}
+// .input-text[value=""] ~ .input-icon {
+//     @include icon-info-red;
+//     background-size: 80%;
+// }
+// .input-text:valid ~ .input-icon {
+//     @include icon-tick-primary;
+// }
 .input-text[value=""] {
     background-image: none;
 }
