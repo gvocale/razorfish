@@ -68,14 +68,14 @@
     }
     &-white-accent {
         color: $white;
-        p[class*="eyebrow"] {
+        p[class*="eyebrow"]:first-child {
             color: lighten($primary, 10%);
         }
         div[class*="background"] {
             background-color: $black-divider;
         }
         .divider {
-            background-color: lighten($primary, 10%);   
+            background-color: lighten($primary, 10%);
         }
     }
     &-black {
@@ -89,7 +89,7 @@
     }
     &-black-accent {
         color: $black-divider;
-        p[class*="eyebrow"] {
+        p[class*="eyebrow"]:first-child {
             color: lighten($primary, 10%);
         }
         div[class*="background"] {
@@ -100,7 +100,6 @@
         }
     }
 }
-
 
 .theme {
     &--smart {
