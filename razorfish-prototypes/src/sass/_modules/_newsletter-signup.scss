@@ -5,9 +5,60 @@
     align-items: center;
     @include grid-padding;
     @include top-padding;
-@include bottom-padding;
+    @include bottom-padding;
     .divider {
         margin-bottom: 1rem;
+    }
+    &__form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        @media screen and ($lg) {
+            width: calc(100% / 12 * 8);
+        }
+        @media screen and ($xl) {
+            width: calc(100% / 12 * 6);
+        }
+    }
+    .form__field {
+        width: 100%;
+        @media screen and ($md) {
+            width: calc((100% / 3) - 2rem);
+        }
+    }
+    &__text-container {
+        display: flex;
+        flex-direction: column;
+        @include component-padding;
+        @include bottom-padding(0.1);
+        width: 100%;
+        @media screen and ($lg) {
+            width: calc(100% / 12 * 8);
+        }
+        @media screen and ($xl) {
+            width: calc(100% / 12 * 6);
+        }
+    }
+    &__button-group {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        @include top-padding(0.2);
+        @media screen and ($md) {
+            @include top-padding(0.1);
+        }
+        @media screen and ($lg) {
+            @include top-padding(0.05);
+        }
+        .button {
+            justify-content: center;
+            @include component-margin;
+            @media screen and ($md) {
+                width: calc((100% / 3) - 2rem);
+            }
+        }
     }
     &--dark {
         background-color: $blackLighter;
@@ -37,30 +88,30 @@
         }
     }
     &__form {
-        &__padded-grid {
-            width: calc(100% + 1em + 1em);
-            margin-left: -1em;
-            margin-right: -1em;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            margin-bottom: 3rem;
-            .form-field {
-                padding-left: 1em;
-                padding-right: 1em;
-            }
-        }
+        // &__padded-grid {
+        //     width: calc(100% + 1em + 1em);
+        //     margin-left: -1em;
+        //     margin-right: -1em;
+        //     display: flex;
+        //     flex-wrap: wrap;
+        //     justify-content: flex-start;
+        //     margin-bottom: 3rem;
+        //     .form-field {
+        //         padding-left: 1em;
+        //         padding-right: 1em;
+        //     }
+        // }
     }
-    &__container {
-        @include component-padding;
-        width: 100%;
-        @media screen and ($lg) {
-            width: calc(100% / 12 * 8);
-        }
-        @media screen and ($xl) {
-            width: calc(100% / 12 * 6);
-        }
-    }
+    // &__container {
+    //     @include component-padding;
+    //     width: 100%;
+    //     @media screen and ($lg) {
+    //         width: calc(100% / 12 * 8);
+    //     }
+    //     @media screen and ($xl) {
+    //         width: calc(100% / 12 * 6);
+    //     }
+    // }
     &__headline {
         font-family: $serif;
         font-size: $scale06;
@@ -88,12 +139,11 @@
             font-size: $scale05;
         }
     }
-
     &__form {
         .form-field {
             width: 100%;
             @media screen and ($md) {
-                width: 50%;
+                width: calc(100% / 3);
             }
         }
     }

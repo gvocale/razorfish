@@ -13,8 +13,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="//cloud.webtype.com/css/9c2a62de-ec52-4927-98b6-09130f006c3d.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7377314/7595552/css/fonts.css" />
-<link rel="stylesheet" href="css/razorfish.css">
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7377314/7595552/css/fonts.css" />
+    <link rel="stylesheet" href="css/razorfish.css">
     <script src="js/vendor/modernizr.min.js"></script>
     <link rel="shortcut icon" href="images/favicon.png"> </head>
 
@@ -137,10 +137,10 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="office-list.html">Office List</a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="our-services.html">Our Services</a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="people-list.html">People List</a>
                     </li>
@@ -149,7 +149,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="related-promo.html">Related Promo</a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="social-feed-instagram.html">Social Feed<span class="note">Instagram</span></a>
                     </li>
@@ -170,56 +170,66 @@
         </div>
     </nav>
     <section class="newsletter-signup newsletter-signup--light">
-        <div class="newsletter-signup__container">
+        <div class="newsletter-signup__text-container">
             <div class="divider newsletter-signup__headline animate"></div>
             <h3 class="newsletter-signup__headline">Stay current. Get our newsletter.</h3>
-            <form class="newsletter-signup__form" action="">
-                <div class="newsletter-signup__form__padded-grid">
-                    <div class="form-field">
-                        <input class="input-text" placeholder="Enter your email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                        <label class="input-label" for="">Your email</label>
-                        <div class="input-border"></div>
-                    </div>
-                    <div class="form-field">
-                        <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Your name (optional)" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                        <label class="input-label" for="">Your name</label>
-                        <div class="input-border"></div>
-                    </div>
-                </div>
-                <button class="button button--secondary">Subscribe</button>
-            </form>
         </div>
+        <form class="newsletter-signup__form" action="">
+            <div class="form__field">
+                <input class="form__input" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                <label class="form__placeholder">Your email<span class="form__required">*</span></label>
+                <div class="form__border"></div>
+            </div>
+            <div class="form__field">
+                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                <label class="form__placeholder">First name</label>
+                <div class="form__border"></div>
+            </div>
+            <div class="form__field">
+                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                <label class="form__placeholder">Last name</label>
+                <div class="form__border"></div>
+            </div>
+            <div class="newsletter-signup__button-group">
+                <button class="button button--secondary button--black">Subscribe</button><span class="form__required--note">* Required</span>
+            </div>
+        </form>
     </section>
     <section class="newsletter-signup newsletter-signup--dark">
-        <div class="newsletter-signup__container">
+        <div class="newsletter-signup__text-container">
             <div class="divider newsletter-signup__headline animate"></div>
             <h3 class="newsletter-signup__headline">Stay current. Get our newsletter.</h3>
-            <form class="newsletter-signup__form" action="">
-                <div class="newsletter-signup__form__padded-grid">
-                    <div class="form-field">
-                        <input class="input-text" placeholder="Enter your email" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                        <label class="input-label" for="">Your email</label>
-                        <div class="input-border"></div>
-                    </div>
-                    <div class="form-field">
-                        <input class="input-text" pattern="[A-Za-z]{3,}" placeholder="Your name (optional)" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                        <label class="input-label" for="">Your name</label>
-                        <div class="input-border"></div>
-                    </div>
-                </div>
-                <button class="button button--secondary button--white">Subscribe</button>
-            </form>
         </div>
+        <form class="newsletter-signup__form" action="">
+            <div class="form__field">
+                <input class="form__input" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                <label class="form__placeholder">Your email<span class="form__required">*</span></label>
+                <div class="form__border"></div>
+            </div>
+            <div class="form__field">
+                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                <label class="form__placeholder">First name</label>
+                <div class="form__border"></div>
+            </div>
+            <div class="form__field">
+                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                <label class="form__placeholder">Last name</label>
+                <div class="form__border"></div>
+            </div>
+            <div class="newsletter-signup__button-group">
+                <button class="button button--secondary button--white">Subscribe</button><span class="form__required--note">* Required</span>
+            </div>
+        </form>
     </section>
     <section class="newsletter-signup newsletter-signup--light newsletter-signup--confirmation">
-        <div class="newsletter-signup__container">
+        <div class="newsletter-signup__text-container">
             <div class="divider newsletter-signup__headline animate"></div>
             <h3 class="newsletter-signup__headline">Congratulations!</h3>
             <p class="newsletter-signup__subheadline">Your form has been submitted.</p>
         </div>
     </section>
     <section class="newsletter-signup newsletter-signup--dark newsletter-signup--confirmation">
-        <div class="newsletter-signup__container">
+        <div class="newsletter-signup__text-container">
             <div class="divider newsletter-signup__headline animate"></div>
             <h3 class="newsletter-signup__headline">Congratulations!</h3>
             <p class="newsletter-signup__subheadline">Your form has been submitted.</p>

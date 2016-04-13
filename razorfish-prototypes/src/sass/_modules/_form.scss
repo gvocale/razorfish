@@ -4,68 +4,137 @@ $opacity02: 0.5;
 $opacity03: 0.8;
 $visible: 1;
 .form {
-    position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    z-index: 10;
     flex-wrap: wrap;
-    &-light {
-        color: $black;
-        
-    }
-    &-dark {
-        color: $white;
-        
-    }
-}
-
-
-
-.form-wrapper {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-    @media screen and ($md) {
+    &__field {
         position: relative;
-        height: 600px;
-        overflow: hidden;
+        @include component-margin;
+        @include bottom-margin(0.25);
+        width: 100%;
+        &:last-child {
+            @include bottom-margin(0.5);
+        }
     }
-    
-    @media screen and ($lg) {
-        height: 325px;
+    &__input {
+        &[type="text"],
+        &[type="email"] {
+            color: currentColor;
+            -webkit-appearance: textfield;
+            -webkit-box-sizing: content-box;
+            -webkit-appearance: none;
+            font-family: $sans;
+            font-size: $scale04;
+            @media screen and ($xxl) {
+                font-size: $scale05;
+            }
+            letter-spacing: $spacing-sans;
+            line-height: 1;
+            border: none;
+            padding-bottom: 0.75em;
+            padding-left: 0;
+            padding-right: 1em;
+            padding-top: 0.75em;
+            margin-top: 0.25em;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            position: relative;
+            box-sizing: border-box;
+            width: 100%;
+            background-color: transparent;
+            background-position: right,
+            center;
+            background-repeat: no-repeat;
+            background-size: 0.8em 0.8em;
+            z-index: 1;
+            &::placeholder {
+                opacity: 0.5;
+                transition: all 0.1s 0.1s $bezier;
+            }
+            &:valid {
+                @include icon-tick-primary;
+            }
+            &:invalid {
+                @include icon-info-red;
+            }
+            &:focus {
+                outline: none;
+            }
+            &[value=""] ~ .input-label {
+                opacity: 0;
+                transform: translateY(50%);
+                transition: all 0.1s 0s $bezier;
+            }
+            &[value=""] {
+                background-image: none;
+            }
+        }
     }
-}
-.form-content {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    transition: all 0.3s 0.1s $bezier;
-}
-.form-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    @media screen and ($md) {
+    &__placeholder {
+        font-family: $sans;
+        font-size: $scale04;
+        @media screen and ($xxl) {
+            font-size: $scale05;
+        }
+        letter-spacing: $spacing-sans;
+        line-height: 1;
+        bottom: 0;
+        display: flex;
         flex-direction: row;
+        align-items: baseline;
+        left: 0;
+        padding-bottom: calc(0.75em + 2px);
+        // @media screen and ($lg) {
+        //     padding-bottom: calc(1em + 2px); // strange chrome fix because type does not align into form field, still not working on ios, maybe user agent stylesheet overwriting somethingpadding-bottom: 1em;
+        // }
+        opacity: 0.3;
+        position: absolute;
+        width: 100%;
+        transform-origin: left;
+        transition: all 0.1s 0s ease-in-out;
+        span {
+            transition: opacity 0.1s 0.1s ease-in-out;
+        }
+    }
+    &__required {
+        margin-left: 0.25em;
+        &--note {
+            @include component-padding;
+            font-family: $sans;
+            opacity: 0.3;
+            font-size: $scale03;
+            @media screen and ($xxl) {
+                font-size: $scale04;
+            }
+        }
+    }
+    &__border {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: currentColor;
+    }
+    &--black {
+        color: $black;
+    }
+    &--white {
+        color: $white;
     }
 }
-.form-field {
-    position: relative;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    padding-top: 2em;
-    padding-bottom: 0.5em;
-    flex-wrap: wrap;
+
+.form__input:not([value=""]) ~ .form__placeholder {
+    transform: translateY(-80%) scale(0.7);
+    transition: all 0.1s 0.1s ease-in-out;
+    span {
+        opacity: 0;
+        transition: opacity 0.1s 0s ease-in-out;
+    }
 }
+
 .input-text,
 .input-select,
 .input-file-label {
@@ -83,6 +152,7 @@ $visible: 1;
     position: relative;
     width: 100%;
 }
+
 .input-select {
     @extend .icon-arrow-black;
     -webkit-appearance: none;
@@ -96,17 +166,7 @@ $visible: 1;
     border-radius: none;
     order: 2;
 }
-.input-label {
-    font-family: $sans;
-    font-size: $scale04;
-    font-weight: lighter;
-    line-height: $solid-sans;
-    order: 1;
-    transform: translateY(0);
-    transition: all 0.1s 0.2s ease-out;
-    width: 100%;
-    opacity: 0.5;
-}
+
 .input-file {
     height: 0px;
     order: 3;
@@ -115,52 +175,26 @@ $visible: 1;
     width: 0px;
     z-index: -10;
 }
+
 .input-file-label {
     order: 2;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
 }
-.input-text::placeholder {
-    color: currentColor;
-    opacity: 0.5;
-    transition: all 0.1s 0.1s $bezier;
-}
+
 .input-file-note {
     font-size: $scale04;
     margin-left: 0.5em;
 }
-.input-border {
-    order: 4;
-    display: block;
-    height: 2px;
-    width: 100%;
-    background-color: currentColor;
-}
-.input-text {
-    order: 2;
-    width: 100%;
-    background-size: contain;
-    background-clip: content-box;
-    background-origin: content-box;
-    background-size: 0.8em 0.8em;
-    background-position: right;
-    background-repeat: no-repeat;
-    background-origin: border-box;
-    background-color: transparent;
-}
-.input-text:valid {
-    @include icon-tick-primary;
-}
-.input-text:invalid {
-    @include icon-info-red;
-}
+
 .input-file-button {
     font-size: $scale04;
     text-transform: uppercase;
     cursor: pointer;
     cursor: hand;
 }
+
 .input-file-button:after {
     content: "";
     @extend .icon-arrow-white;
@@ -175,21 +209,13 @@ $visible: 1;
     background-clip: content-box;
     background-origin: content-box;
 }
-.input-submit {
-    @extend .h4-serif;
-    @extend .link;
-    border: none;
-    background-color: transparent;
-    display: inline-block;
-    color: currentColor;
-    margin: auto;
-    margin-top: 4rem;
-}
+
 .input-submit:focus,
 .input-text:focus,
 .input-select:focus {
     outline: none;
 }
+
 // .input-text:invalid ~ .input-icon {
 //     @include icon-info-red;
 // }
@@ -200,25 +226,11 @@ $visible: 1;
     transform: translateY(50%);
     transition: all 0.1s 0s $bezier;
 }
+
 .input-select.selected ~ .input-label {
     transform: translateY(0%);
 }
-// .input-text[value=""] ~ .input-icon {
-//     @include icon-info-red;
-//     background-size: 80%;
-// }
-// .input-text:valid ~ .input-icon {
-//     @include icon-tick-primary;
-// }
-.input-text[value=""] {
-    background-image: none;
-}
-.form {
-    .tertiary {
-        margin: auto;
-        display: block;
-    }
-}
+
 .form {
     .input-file:focus ~ .input-border,
     .input-file:focus ~ .input-file-button,
@@ -234,7 +246,6 @@ $visible: 1;
     .input-text[value=""]:focus ~ .input-border {
         opacity: $visible;
     }
-    
     .input-file ~ .input-label,
     .input-file,
     .input-select ~ .input-label,
@@ -244,13 +255,11 @@ $visible: 1;
     .input-select ~ .input-label {
         opacity: $transparent;
     }
-    
     .input-text[value=""] ~ .input-border,
     .input-file-label ~ .input-border,
     .input-select ~ .input-border {
         opacity: 0.3;
     }
-    
     .input-border,
     .input-file-label,
     .input-label,
@@ -263,9 +272,9 @@ $visible: 1;
         opacity: $opacity02;
     }
 }
+
 .form.white {
     color: $white;
-    
     .input-select {
         @extend .icon-arrow-white;
     }
