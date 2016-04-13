@@ -17,6 +17,11 @@
     &-white {
         color: $white;
     }
+    &__link {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
     &__text-container {
         @include component-padding;
         display: flex;
@@ -95,14 +100,42 @@
             margin-bottom: 0;
         }
     }
-    &__scroll-down-container {
+    &__scroll-down-icon {
         position: absolute;
-        bottom: 5%;
+        bottom: 2vh;
         left: 50%;
         transform: translateX(-50%);
         animation: 1s ease-in-out 0.5s infinite bounce;
-        z-index: 10;
-        &:hover {
+        z-index: 1;
+        width: 2rem;
+        height: 2rem;
+        box-sizing: border-box;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 0.1rem;
+            height: 0.75rem;
+            background-color: currentColor;
+            top: 55%;
+            left: 61%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            transition: transform 0.1s 0s $bezier;
+            animation-name: scroll-down-icon-animation-left;
+            animation-duration: 0.2s;
+            animation-play-state: paused;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0.1rem;
+            height: 0.75rem;
+            background-color: currentColor;
+            top: 55%;
+            left: 37%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            transition: transform 0.1s 0s $bezier;
+            animation-name: scroll-down-icon-animation-right;
+            animation-duration: 0.2s;
             animation-play-state: paused;
         }
     }
@@ -294,5 +327,41 @@
             background-color: lighten($primary, 10%);
             opacity: 1;
         }
+    }
+}
+
+@keyframes scroll-down-icon-animation-left {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    30% {
+        transform: translate(-50%, 100%) rotate(45deg);
+    }
+    31% {
+        transform: translate(-50%, -150%) rotate(45deg);
+    }
+    61% {
+        transform: translate(-50%, -150%) rotate(45deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+}
+
+@keyframes scroll-down-icon-animation-right {
+    0% {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    30% {
+        transform: translate(-50%, 100%) rotate(-45deg);
+    }
+    31% {
+        transform: translate(-50%, -150%) rotate(-45deg);
+    }
+    61% {
+        transform: translate(-50%, -150%) rotate(-45deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-45deg);
     }
 }
