@@ -15,6 +15,13 @@ $visible: 1;
         &:last-child {
             @include bottom-margin(0.5);
         }
+        &:hover .form__input[value=""] ~ .form__border {
+            opacity: 0.5;
+        }
+        &:hover .form__input[value=""] ~ .form__placeholder {
+            opacity: 0.5;
+            transition: opacity 0s 0s linear;
+        }
     }
     &__input {
         &[type="text"],
@@ -48,10 +55,6 @@ $visible: 1;
             background-repeat: no-repeat;
             background-size: 0.8em 0.8em;
             z-index: 1;
-            &::placeholder {
-                opacity: 0.5;
-                transition: all 0.1s 0.1s $bezier;
-            }
             &:valid {
                 @include icon-tick-primary;
             }
@@ -61,10 +64,16 @@ $visible: 1;
             &:focus {
                 outline: none;
             }
-            &[value=""] ~ .input-label {
-                opacity: 0;
-                transform: translateY(50%);
-                transition: all 0.1s 0s $bezier;
+            &[value=""] ~ .form__border {
+                opacity: 0.2;
+            }
+            &:active ~ .form__border,
+            &:focus ~ .form__border {
+                opacity: 1;
+            }
+            &:active ~ .form__placeholder,
+            &:focus ~ .form__placeholder {
+                opacity: 0.5;
             }
             &[value=""] {
                 background-image: none;
@@ -85,10 +94,7 @@ $visible: 1;
         align-items: baseline;
         left: 0;
         padding-bottom: calc(0.75em + 2px);
-        // @media screen and ($lg) {
-        //     padding-bottom: calc(1em + 2px); // strange chrome fix because type does not align into form field, still not working on ios, maybe user agent stylesheet overwriting somethingpadding-bottom: 1em;
-        // }
-        opacity: 0.3;
+        opacity: 0.2;
         position: absolute;
         width: 100%;
         transform-origin: left;
@@ -117,6 +123,61 @@ $visible: 1;
         height: 2px;
         width: 100%;
         background-color: currentColor;
+        transition: all 0.1s 0s ease-in-out;
+    }
+    &__checkbox {
+        visibility: hidden;
+        position: absolute;
+        &--label {
+            width: 2em;
+            height: 2em;
+            display: inline-block;
+            cursor: pointer;
+            border: 2px solid currentColor;
+            background-color: transparent;
+            position: relative;
+            margin-right: 1em;
+            &:after {
+                content: "";
+                width: 1em;
+                height: 0.5em;
+                position: absolute;
+                border: 2px solid currentColor;
+                border-top: none;
+                border-right: none;
+                background: transparent;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+                opacity: 0;
+                transition: opacity 0.1s 0s ease-out;
+            }
+        }
+        &--body {
+            font-family: $sans;
+            font-size: $scale03;
+            @media screen and ($md) {
+                font-size: $scale04;
+            }
+            letter-spacing: $spacing-sans;
+            line-height: 1;
+            cursor: pointer;
+            cursor: hand;
+        }
+        &:checked ~ .form__checkbox--label:after {
+            opacity: 1;
+            transition: opacity 0s 0s linear;
+        }
+        &:active ~ .form__checkbox--label,
+        &:target ~ .form__checkbox--label {
+            background-color: rgba($white, 0.15);
+        }
+        &--group {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
     }
     &--black {
         color: $black;

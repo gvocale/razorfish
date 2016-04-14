@@ -4,12 +4,17 @@
     @include grid-padding;
     @include top-padding;
     @include bottom-padding;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &__headline {
         font-family: $serif;
         font-size: $scale06;
         line-height: $title-serif;
         letter-spacing: $spacing-serif-tight;
         font-weight: 700;
+        margin-bottom: 0.8em;
+        max-width: 10em;
         @media only screen and ($md) {
             font-size: $scale07;
         }
@@ -19,11 +24,15 @@
         @media only screen and ($xxl) {
             font-size: $scale09;
         }
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &__background-image {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        background-attachment: fixed;
         width: 100%;
         height: 100%;
         position: absolute;
@@ -35,17 +44,25 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        width: 100%;
+        @media screen and ($md) {
+            width: calc(100% / 6 * 4);
+        }
+        @media screen and ($lg) {
+            width: calc(100% / 12 * 6);
+        }
+        @media screen and ($xxl) {
+            width: calc(100% / 12 * 4);
+        }
     }
     &__text-container {
         @include component-padding;
-        @include top-padding(0.5);
-        @include bottom-padding(0.5);
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
         .divider {
-            margin-bottom: 0.4em;
+            margin-bottom: 0.8em;
         }
     }
     &__field {
@@ -124,28 +141,25 @@
             }
         }
     }
+    &__tabs {
+
+    }
 }
 
 .form {
-
     &:focus ~ .input-border,
     &:invalid ~ .input-border,
     &:valid ~ .input-border,
     &[value=""]:focus ~ .input-border {
         opacity: 1;
     }
-    
-
     &::placeholder,
     &[value=""] ~ .input-label {
         opacity: 0;
     }
-    
     &[value=""] ~ .input-border {
         opacity: 0.3;
     }
-    
-
     &[value=""] ~ .input-icon,
     &[value=""],
     &[value=""]::placeholder {

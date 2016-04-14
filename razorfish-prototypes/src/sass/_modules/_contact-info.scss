@@ -4,7 +4,7 @@
     @include bottom-padding;
     width: 100%;
     @media screen and ($md) {
-        column-count: 3;
+        column-count: 2;
         column-gap: 2rem;
     }
     @media screen and ($lg) {
@@ -46,7 +46,6 @@
         flex-direction: row;
         width: 100%;
         margin-left: -0.8rem;
-        margin-top: 0.5rem;
         @media screen and ($md) {
             width: calc(100% / 12 * 8);
         }
@@ -127,6 +126,9 @@
     }
     &__group {
         @include two-column--group;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid-column;
         &--share {
             width: 100%;
             margin-bottom: 2em;
@@ -140,12 +142,12 @@
         }
         &--author {
             width: 100%;
-            margin-bottom: 1rem;
+            @include bottom-padding(0.25);
             @media screen and ($xxl) {
                 margin-bottom: 1.5rem;
             }
             &:last-child {
-                margin-bottom: 0;
+                padding-bottom: 0;
             }
         }
     }
