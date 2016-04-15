@@ -130,22 +130,24 @@
         page-break-inside: avoid;
         break-inside: avoid-column;
         &--share {
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid-column;
             width: 100%;
-            margin-bottom: 2em;
+            @include bottom-padding(0.25);
             @media screen and ($lg) {
                 width: 100%;
-                margin-bottom: 2em;
             }
-            @media screen and ($xxl) {
-                margin-bottom: 3em;
+            &:last-child {
+                padding-bottom: 0;
             }
         }
         &--author {
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid-column;
             width: 100%;
             @include bottom-padding(0.25);
-            @media screen and ($xxl) {
-                margin-bottom: 1.5rem;
-            }
             &:last-child {
                 padding-bottom: 0;
             }

@@ -47,6 +47,40 @@
         &:last-child {
             margin-bottom: 0;
         }
+        &--close {
+            .office-list__office-name {
+                margin-bottom: 0;
+            }
+            .office-list__multi-column {
+                display: none;
+            }
+            .office-list__image {
+                height: 0;
+            }
+            cursor: pointer;
+            cursor: hand;
+            background-color: rgba($white, 0.4);
+            &:hover {
+                background-color: rgba($white, 0.6);
+            }
+        }
+        &--open {
+            .office-list__office-name {
+                margin-bottom: 0;
+            }
+            .office-list__multi-column {
+                display: none;
+            }
+            .office-list__image {
+                height: 0;
+            }
+            cursor: pointer;
+            cursor: hand;
+            background-color: rgba($white, 0.4);
+            &:hover {
+                background-color: rgba($white, 0.6);
+            }
+        }
     }
     &__image {
         width: 100%;
@@ -55,13 +89,11 @@
             width: calc(100% / 12 * 4);
             order: 1;
         }
-        @media screen and ($xxl) {
-            width: calc(100% / 12 * 3);
-        }
         background-size: cover;
         background-position: 100% 100%,
         center;
         background-repeat: no-repeat;
+        will-change: height;
         &:before {
             content: "";
             padding-top: calc(100% / 16 * 9);
@@ -93,9 +125,6 @@
             padding-right: 5%;
             order: 2;
         }
-        @media screen and ($xxl) {
-            width: calc(100% / 12 * 9);
-        }
     }
     &__multi-column {
         @media screen and ($md) {
@@ -117,18 +146,19 @@
         font-weight: 700;
         margin-bottom: 1.5em;
         max-width: 14em;
-        font-size: $scale05;
+        font-size: $scale06;
         @media screen and ($md) {
-            font-size: $scale06;
+            font-size: $scale07;
         }
         @media screen and ($lg) {
             margin-bottom: 1em;
-        }
-        @media screen and ($xl) {
             font-size: $scale07;
         }
-        @media screen and ($xxl) {
+        @media screen and ($xl) {
             font-size: $scale08;
+        }
+        @media screen and ($xxl) {
+            font-size: $scale09;
         }
         &:last-child {
             margin-bottom: 0;

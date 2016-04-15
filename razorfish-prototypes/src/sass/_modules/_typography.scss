@@ -6,21 +6,18 @@
 //     font-style: normal;
 //     font-weight: 400;
 // }
-
 // @font-face {
 //     font-family: 'MillerDisplay';
 //     // src: url(../fonts/miller/MillerDisplayItalic.woff);
 //     font-style: italic;
 //     font-weight: 400;
 // }
-
 // @font-face {
 //     font-family: 'MillerDisplay';
 //     // src: url(../fonts/miller/MillerDisplayBold.woff);
 //     font-style: normal;
 //     font-weight: 700;
 // }
-
 
 /* Gotham */
 
@@ -30,14 +27,12 @@
 //     font-weight: 700;
 //     font-style: normal;
 // }
-
 // @font-face {
 //     font-family: 'Gotham';
 //     src: url(../fonts/gotham/Gotham-Book.woff);
 //     font-weight: 400;
 //     font-style: normal;
 // }
-
 // Type scale "Le Corbusier" taken from http:/lamb.cc/typograph/
 $scale01: 0.5rem;
 $scale02: 0.6154rem;
@@ -64,10 +59,10 @@ $serif: 'MillerDisplay',
 Times,
 Georgia,
 serif;
-$sans: "Gotham A", Helvetica, Arial, sans-serif;    
-
-
-
+$sans: "Gotham A",
+Helvetica,
+Arial,
+sans-serif;
 // Letter Spacing
 $spacing-serif-tight: 0;
 $spacing-serif: 0;
@@ -350,39 +345,48 @@ p {
 
 .ul {
     list-style-type: none;
-    li:before {
-        content: "";
-        width: 0.3em;
-        height: 0.3em;
-        background-color: #a9c000;
-        margin-right: 0.9em;
-        top: 50%;
-        transform: translateY(-50%);
-        display: inline-block;
-    }
+    line-height: 1.4;
     li {
-        margin-bottom: 0.5em;
-    }
-    li:last-of-type {
-        margin-bottom: 0;
+        padding-bottom: 1em;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        &:before {
+            content: "";
+            width: 0.3em;
+            height: 0.3em;
+            background-color: #a9c000;
+            margin-right: 0.7em;
+            display: block;
+            flex-shrink: 0;
+            transform: translateY(-0.2em);
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 }
 
 .ol {
     list-style-type: none;
     counter-reset: li;
+    line-height: 1.4;
     li {
-        margin-bottom: 0.5em;
+        padding-bottom: 1em;
         position: relative;
-        margin-left: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
         &:before {
             content: counter(li);
             counter-increment: li;
             color: $primary;
             font-size: 0.8077em;
             font-weight: 700;
-            width: 1.5em;
-            display: inline-block;
+            width: 1.8em;
+            display: block;
+            flex-shrink: 0;
         }
         &:last-of-type {
             margin-bottom: 0;
