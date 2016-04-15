@@ -1,4 +1,67 @@
 .contact-form {
+    &__close-button {
+        margin-left: auto;
+        margin-right: auto;
+        width: 34px;
+        height: 4px;
+        display: block;
+        position: relative;
+        top: 50%;
+        transform: translateY(50%);
+        transition: all 0.1s 0s ease-in;
+        &--container {
+            width: 3rem;
+            height: 3rem;
+            display: inline-block;
+            cursor: pointer;
+            cursor: hand;
+            transition-property: opacity, filter;
+            transition-duration: 0.15s;
+            transition-timing-function: linear;
+            font: inherit;
+            color: inherit;
+            text-transform: none;
+            background-color: transparent;
+            border: 0;
+            margin: 0;
+            z-index: 10;
+            overflow: visible;
+            position: fixed;
+            right: 0;
+            top: 0;
+            @include top-padding;
+            @include grid-padding;
+            &:focus {
+                outline: none;
+            }
+        }
+        &--inner,
+        &--inner::before,
+        &--inner::after {
+            width: 100%;
+            height: 4px;
+            background-color: currentColor;
+            position: absolute;
+            content: "";
+            display: block;
+        }
+        &--inner {
+            display: block;
+            top: 50%;
+            margin-top: -2px;
+            transition: transform 0.3s 0.0s $bezier;
+            transform: rotate(225deg);
+            &:before {
+                transform: translateY(0px);
+                opacity: 1;
+                transition: opacity 0.3s 0.24s $bezier, transform 0.3s 0.24s $bezier;
+            }
+            &:after {
+                transform: translateY(0px) rotate(-90deg);
+                transition: transform 0.3s 0.14s $bezier;
+            }
+        }
+    }
     &__overlay {
         position: fixed;
         width: 100%;
@@ -7,12 +70,6 @@
         left: 0;
         visibility: hidden;
         color: $white;
-        @include grid-padding;
-        @include top-padding;
-        @include bottom-padding;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         transform: translateY(100%);
         transition: transform 0.5s, visibility 0s 0.5s;
         &--checkbox {
@@ -25,6 +82,62 @@
                 transition: transform 0.5s;
                 transform: translateY(0%);
             }
+            &:checked ~ .site-masthead {
+                transition: transform 0.5s;
+                transform: translateY(-100%);
+            }
+        }
+    }
+    &__scroll {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+    }
+    &__container {
+        position: relative;
+        width: 100%;
+        min-height: 100%;
+        height: auto;
+        @include grid-padding;
+        @include top-padding;
+        @include bottom-padding;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+    &__radio {
+        &--input {
+            display: none;
+        }
+        text-transform: uppercase;
+        color: currentColor;
+        font-family: $sans;
+        font-size: $scale04;
+        letter-spacing: $spacing-sans;
+        line-height: 1;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        li {
+            margin-bottom: 2em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        label {
+            cursor: pointer;
+            cursor: hand;
+        }
+        @media screen and ($xl) {
+            width: calc(100% / 12 * 4);
+        }
+        @media screen and ($xxl) {
+            font-size: $scale05;
         }
     }
     &__select {
@@ -54,6 +167,7 @@
         z-index: 1;
         opacity: 0.2;
         text-aling: center;
+        display: none;
         @media screen and ($xl) {
             width: calc(100% / 12 * 4);
         }
@@ -109,7 +223,10 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
         width: 100%;
+        left: 50%;
         @media screen and ($md) {
             width: calc(100% / 6 * 4);
         }
@@ -119,6 +236,16 @@
         @media screen and ($xxl) {
             width: calc(100% / 12 * 4);
         }
+        &--group {
+            width: 100%;
+            position: relative;
+        }
+        &--container {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
     }
     &__text-container {
         @include component-padding;
@@ -126,8 +253,11 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
         .divider {
             margin-bottom: 0.8em;
+            width: 1.2
         }
     }
     &__field {
@@ -207,6 +337,21 @@
         }
     }
     &__tabs {}
+    .form__field {
+        z-index: 1;
+        transform: translateY(100%);
+        opacity: 0;
+        transition-duration: 0.1s;
+        transition-property: all;
+        transition-timing-function: ease;
+    }
+}
+
+
+@for $i from 1 through 12 {
+    .form__field:nth-of-type(#{$i}) {
+        transition-delay: calc(0.01s * #{$i});
+    }
 }
 
 .form {
@@ -227,5 +372,45 @@
     &[value=""],
     &[value=""]::placeholder {
         opacity: 0.5;
+    }
+}
+
+@for $i from 1 through 12 {
+    #contact-form__radio-1:checked ~ .contact-form__form--group .contact-form__form--container:nth-child(1) {
+        .form__field:nth-of-type(#{$i}) {
+            transform: translateY(0%);
+            opacity: 1;
+            transition-delay: calc((0.05s * #{$i}) + 0.5s);
+        }
+    }
+}
+
+@for $i from 1 through 12 {
+    #contact-form__radio-2:checked ~ .contact-form__form--group .contact-form__form--container:nth-child(2) {
+        .form__field:nth-of-type(#{$i}) {
+            transform: translateY(0%);
+            opacity: 1;
+            transition-delay: calc((0.05s * #{$i}) + 0.5s);
+        }
+    }
+}
+
+@for $i from 1 through 12 {
+    #contact-form__radio-3:checked ~ .contact-form__form--group .contact-form__form--container:nth-child(3) {
+        .form__field:nth-of-type(#{$i}) {
+            transform: translateY(0%);
+            opacity: 1;
+            transition-delay: calc((0.05s * #{$i}) + 0.5s);
+        }
+    }
+}
+
+@for $i from 1 through 12 {
+    #contact-form__radio-4:checked ~ .contact-form__form--group .contact-form__form--container:nth-child(4) {
+        .form__field:nth-of-type(#{$i}) {
+            transform: translateY(0%);
+            opacity: 1;
+            transition-delay: calc((0.05s * #{$i}) + 0.5s);
+        }
     }
 }

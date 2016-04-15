@@ -37,6 +37,7 @@
         </div>
     </div>
     <input type="checkbox" id="site-masthead__checkbox">
+    <input type="checkbox" id="contact-form__overlay--checkbox" class="contact-form__overlay--checkbox">
     <nav class="site-masthead" role="navigation">
         <div class="site-masthead__logo-container">
             <div class="site-masthead__logo-razorfish"></div>
@@ -181,92 +182,360 @@
         </div>
         <div class="hero__background background-gradient animate" style="background-image: url(images/hero-contact-form.jpg)"></div>
     </section>
-    <input type="checkbox" id="contact-form__overlay--checkbox" class="contact-form__overlay--checkbox">
-    <section class="contact-form__overlay">
-        <div class="contact-form__text-container">
-            <h2 class="contact-form__headline">What would you like to talk to us about?</h2>
-            <div class="divider contact-form__headline animate"></div>
+    <section class="contact-form contact-form__overlay">
+        <div class="contact-form__scroll">
+            <div class="contact-form__container">
+                <label for="contact-form__overlay--checkbox" class="contact-form__close-button--container">
+                    <span class="contact-form__close-button">
+                    <span class="contact-form__close-button--inner"></span>
+                    </span>
+                </label>
+                <div class="contact-form__text-container">
+                    <h2 class="contact-form__headline">What would you like to talk to us about?</h2>
+                    <div class="divider contact-form__headline animate"></div>
+                </div>
+                <input type="radio" id="contact-form__radio-1" class="contact-form__radio--input" name="selector">
+                <input type="radio" id="contact-form__radio-2" class="contact-form__radio--input" name="selector">
+                <input type="radio" id="contact-form__radio-3" class="contact-form__radio--input" name="selector">
+                <input type="radio" id="contact-form__radio-4" class="contact-form__radio--input" name="selector">
+                <ul class="contact-form__radio">
+                    <li>
+                        <label for="contact-form__radio-1">Become a client</label>
+                        <div class="check"></div>
+                    </li>
+                    <li>
+                        <label for="contact-form__radio-2">Recruiting Inquires</label>
+                        <div class="check">
+                            <div class="inside"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <label for="contact-form__radio-3">Media Relations</label>
+                        <div class="check">
+                            <div class="inside"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <label for="contact-form__radio-4">Publishing</label>
+                        <div class="check">
+                            <div class="inside"></div>
+                        </div>
+                    </li>
+                </ul>
+                <select name="contact-form__select" class="contact-form__select">
+                    <option value="value1">Become a client</option>
+                    <option value="value2">Recruiting Inquires</option>
+                    <option value="value3">Media Relations</option>
+                    <option value="value4">Publishing</option>
+                </select>
+                <div class="contact-form__form--group">
+                    <form class="contact-form__form--container" id="contact-form__form-1">
+                        <div class="contact-form__form">
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                                <label class="form__placeholder" for="">First Name</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                                <label class="form__placeholder" for="">Last Name</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                                <label class="form__placeholder" for="">Title</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                                <label class="form__placeholder" for="">Company</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                                <label class="form__placeholder" for="">Phone Number</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                                <label class="form__placeholder" for="">Email</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <select class="form__select">
+                                    <option value="none" disabled selected>Country</option>>
+                                    <option value="USA">USA</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="UK">UK</option>
+                                </select>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <select class="form__select">
+                                    <option value="none" disabled selected>State / Province</option>>
+                                    <option value="Canada">NJ</option>
+                                    <option value="USA">NY</option>
+                                    <option value="UK">SF</option>
+                                </select>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <textarea name="form__textarea" class="form__textarea" contenteditable="true"></textarea>
+                                <label class="form__placeholder" for="form__textarea">Comments</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input type="file" name="input-file" class="input-file" />
+                                <div class="input-file-label">
+                                    <span class="">Attachment<span class="input-file-note">(Optional)</span></span>
+                                    <label class="input-file-button" for="input-file">Browse</label>
+                                </div>
+                                <label class="form__placeholder">Attachment</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <div class="form__checkbox--group">
+                                    <input type="checkbox" id="contact-form__checkbox--newsletter" class="form__checkbox">
+                                    <label for="contact-form__checkbox--newsletter" class="form__checkbox--label"></label>
+                                    <label for="contact-form__checkbox--newsletter" class="form__checkbox--body">Yes, subscribe me to the Razorfish Newsletter</label>
+                                </div>
+                            </div>
+                            <div class="contact-form__button-group">
+                                <button class="button button--secondary button--white">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="contact-form__form--container" id="contact-form__form-2">
+                        <div class="contact-form__form">
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                                <label class="form__placeholder" for="">First Name</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                                <label class="form__placeholder" for="">Last Name</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                                <label class="form__placeholder" for="">Title</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                                <label class="form__placeholder" for="">Company</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                                <label class="form__placeholder" for="">Phone Number</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                                <label class="form__placeholder" for="">Email</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <select class="form__select">
+                                    <option value="none" disabled selected>Country</option>>
+                                    <option value="USA">USA</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="UK">UK</option>
+                                </select>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <select class="form__select">
+                                    <option value="none" disabled selected>State / Province</option>>
+                                    <option value="Canada">NJ</option>
+                                    <option value="USA">NY</option>
+                                    <option value="UK">SF</option>
+                                </select>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <textarea name="form__textarea" class="form__textarea" contenteditable="true"></textarea>
+                                <label class="form__placeholder" for="form__textarea">Comments</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input type="file" name="input-file" class="input-file" />
+                                <div class="input-file-label">
+                                    <span class="">Attachment<span class="input-file-note">(Optional)</span></span>
+                                    <label class="input-file-button" for="input-file">Browse</label>
+                                </div>
+                                <label class="form__placeholder">Attachment</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <div class="form__checkbox--group">
+                                    <input type="checkbox" id="contact-form__checkbox--newsletter" class="form__checkbox">
+                                    <label for="contact-form__checkbox--newsletter" class="form__checkbox--label"></label>
+                                    <label for="contact-form__checkbox--newsletter" class="form__checkbox--body">Yes, subscribe me to the Razorfish Newsletter</label>
+                                </div>
+                            </div>
+                            <div class="contact-form__button-group">
+                                <button class="button button--secondary button--white">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="contact-form__form--container" id="contact-form__form-3">
+                        <div class="contact-form__form">
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                                <label class="form__placeholder" for="">First Name</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                                <label class="form__placeholder" for="">Last Name</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                                <label class="form__placeholder" for="">Title</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                                <label class="form__placeholder" for="">Company</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                                <label class="form__placeholder" for="">Phone Number</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                                <label class="form__placeholder" for="">Email</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <select class="form__select">
+                                    <option value="none" disabled selected>Country</option>>
+                                    <option value="USA">USA</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="UK">UK</option>
+                                </select>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <select class="form__select">
+                                    <option value="none" disabled selected>State / Province</option>>
+                                    <option value="Canada">NJ</option>
+                                    <option value="USA">NY</option>
+                                    <option value="UK">SF</option>
+                                </select>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <textarea name="form__textarea" class="form__textarea" contenteditable="true"></textarea>
+                                <label class="form__placeholder" for="form__textarea">Comments</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input type="file" name="input-file" class="input-file" />
+                                <div class="input-file-label">
+                                    <span class="">Attachment<span class="input-file-note">(Optional)</span></span>
+                                    <label class="input-file-button" for="input-file">Browse</label>
+                                </div>
+                                <label class="form__placeholder">Attachment</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <div class="form__checkbox--group">
+                                    <input type="checkbox" id="contact-form__checkbox--newsletter" class="form__checkbox">
+                                    <label for="contact-form__checkbox--newsletter" class="form__checkbox--label"></label>
+                                    <label for="contact-form__checkbox--newsletter" class="form__checkbox--body">Yes, subscribe me to the Razorfish Newsletter</label>
+                                </div>
+                            </div>
+                            <div class="contact-form__button-group">
+                                <button class="button button--secondary button--white">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="contact-form__form--container" id="contact-form__form-4">
+                        <div class="contact-form__form">
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                                <label class="form__placeholder" for="">First Name</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                                <label class="form__placeholder" for="">Last Name</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                                <label class="form__placeholder" for="">Title</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                                <label class="form__placeholder" for="">Company</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                                <label class="form__placeholder" for="">Phone Number</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input class="form__input" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                                <label class="form__placeholder" for="">Email</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <select class="form__select">
+                                    <option value="none" disabled selected>Country</option>>
+                                    <option value="USA">USA</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="UK">UK</option>
+                                </select>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <select class="form__select">
+                                    <option value="none" disabled selected>State / Province</option>>
+                                    <option value="Canada">NJ</option>
+                                    <option value="USA">NY</option>
+                                    <option value="UK">SF</option>
+                                </select>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <textarea name="form__textarea" class="form__textarea" contenteditable="true"></textarea>
+                                <label class="form__placeholder" for="form__textarea">Comments</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <input type="file" name="input-file" class="input-file" />
+                                <div class="input-file-label">
+                                    <span class="">Attachment<span class="input-file-note">(Optional)</span></span>
+                                    <label class="input-file-button" for="input-file">Browse</label>
+                                </div>
+                                <label class="form__placeholder">Attachment</label>
+                                <div class="form__border"></div>
+                            </div>
+                            <div class="form__field">
+                                <div class="form__checkbox--group">
+                                    <input type="checkbox" id="contact-form__checkbox--newsletter" class="form__checkbox">
+                                    <label for="contact-form__checkbox--newsletter" class="form__checkbox--label"></label>
+                                    <label for="contact-form__checkbox--newsletter" class="form__checkbox--body">Yes, subscribe me to the Razorfish Newsletter</label>
+                                </div>
+                            </div>
+                            <div class="contact-form__button-group">
+                                <button class="button button--secondary button--white">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <select name="contact-form__select" class="contact-form__select">
-            <option value="value1">Become a client</option>
-            <option value="value2">Recruiting Inquires</option>
-            <option value="value3">Media Relations</option>
-            <option value="value4">Publishing</option>
-        </select>
-        <form class="contact-form__form">
-            <div class="form__field">
-                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                <label class="form__placeholder" for="">First Name</label>
-                <div class="form__border"></div>
-            </div>
-            <div class="form__field">
-                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                <label class="form__placeholder" for="">Last Name</label>
-                <div class="form__border"></div>
-            </div>
-            <div class="form__field">
-                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                <label class="form__placeholder" for="">Title</label>
-                <div class="form__border"></div>
-            </div>
-            <div class="form__field">
-                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                <label class="form__placeholder" for="">Company</label>
-                <div class="form__border"></div>
-            </div>
-            <div class="form__field">
-                <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                <label class="form__placeholder" for="">Phone Number</label>
-                <div class="form__border"></div>
-            </div>
-            <div class="form__field">
-                <input class="form__input" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                <label class="form__placeholder" for="">Email</label>
-                <div class="form__border"></div>
-            </div>
-            <div class="form__field">
-                <select class="form__select">
-                    <option value="none" disabled selected>Country</option>>
-                    <option value="USA">USA</option>
-                    <option value="Canada">Canada</option>
-                    <option value="UK">UK</option>
-                </select>
-                <div class="form__border"></div>
-            </div>
-            <div class="form__field">
-                <select class="form__select">
-                    <option value="none" disabled selected>State / Province</option>>
-                    <option value="Canada">NJ</option>
-                    <option value="USA">NY</option>
-                    <option value="UK">SF</option>
-                </select>
-                <div class="form__border"></div>
-            </div>
-            <div class="form__field">
-                <textarea name="form__textarea" class="form__textarea" contenteditable="true"></textarea>
-                <label class="form__placeholder" for="form__textarea">Comments</label>
-                <div class="form__border"></div>
-            </div>
-            <div class="form__field">
-                <input type="file" name="input-file" class="input-file" />
-                <div class="input-file-label">
-                    <span class="">Attachment<span class="input-file-note">(Optional)</span></span>
-                    <label class="input-file-button" for="input-file">Browse</label>
-                </div>
-                <label class="form__placeholder">Attachment</label>
-                <div class="form__border"></div>
-            </div>
-            <div class="form__field">
-                <div class="form__checkbox--group">
-                    <input type="checkbox" id="contact-form__checkbox--newsletter" class="form__checkbox">
-                    <label for="contact-form__checkbox--newsletter" class="form__checkbox--label"></label>
-                    <label for="contact-form__checkbox--newsletter" class="form__checkbox--body">Yes, subscribe me to the Razorfish Newsletter</label>
-                </div>
-            </div>
-            <div class="contact-form__button-group">
-                <button class="button button--secondary button--white">Submit</button>
-            </div>
-        </form>
         <div class="contact-form__background-image background-gradient" style="background-image: url(images/hero-contact-form.jpg)"></div>
     </section>
 </body>
@@ -284,6 +553,22 @@ $(document).ready(function() {
         });
     });
 });
+</script>
+<script>
+// $(document).ready(function() {
+//     $(".contact-form__form--container").each(function() {
+//         var x = $(this).children("div").height();
+//         $(this).css('height', x);
+//     });
+// });
+
+// $(window).on("resize", function() {
+//     $(".contact-form__form--container").each(function() {
+//         var x = $(this).children("div").height();
+//         $(this).css('height', x);
+//     });
+//     // Invoke the resize event immediately
+// }).resize();
 </script>
 <script>
 ;
