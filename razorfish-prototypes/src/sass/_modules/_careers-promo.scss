@@ -26,6 +26,7 @@
         text-align: left;
     }
     &__heading {
+        @include ligatures;
         font-family: $serif;
         font-size: $scale06;
         line-height: $title-serif;
@@ -33,8 +34,7 @@
         font-weight: 700;
         max-width: 12em;
         margin-bottom: 0.3em;
-        font-variant-ligatures: common-ligatures;
-        text-rendering: optimizeLegibility;
+
         &:last-child {
             margin-bottom: 0;
         }

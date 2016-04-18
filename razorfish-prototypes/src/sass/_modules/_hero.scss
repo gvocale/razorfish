@@ -74,6 +74,7 @@
     }
     &__headline,
     &__headline--group {
+        @include ligatures;
         font-family: $serif;
         line-height: $solid-serif + 0.1;
         letter-spacing: $spacing-serif;
@@ -153,6 +154,7 @@
             color: lighten($black, 10%);
         }
         &__name {
+            @include ligatures;
             font-family: $serif;
             line-height: 1.05;
             letter-spacing: $spacing-serif;

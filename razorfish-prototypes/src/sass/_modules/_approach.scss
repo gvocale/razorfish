@@ -57,7 +57,7 @@
         &.not-in-viewport.in-viewport {}
     }
     &__h1 {
-        font-variant-ligatures: common-ligatures;
+          @include ligatures;
         font-family: $serif;
         font-size: $scale09;
         line-height: 0.6;
@@ -91,7 +91,7 @@
         }
     }
     &__h2 {
-        font-variant-ligatures: common-ligatures;
+        @include ligatures;
         font-family: $serif;
         font-size: $scale07;
         line-height: 1.1;
@@ -120,7 +120,7 @@
         }
     }
     &__link {
-        font-variant-ligatures: common-ligatures;
+        @include ligatures;
         font-family: $serif;
         font-style: italic;
         font-size: $scale04;
@@ -198,7 +198,7 @@
             }
         }
         &__link {
-            font-variant-ligatures: common-ligatures;
+            @include ligatures;
             font-family: $serif;
             font-style: italic;
             font-size: $scale05;

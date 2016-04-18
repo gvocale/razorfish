@@ -118,7 +118,6 @@
     }
 }
 
-
 @mixin component-padding {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -306,4 +305,11 @@
     &:last-child {
         padding-bottom: 0;
     }
+}
+
+@mixin ligatures {
+    text-rendering: optimizeLegibility;
+    font-variant-ligatures: common-ligatures;
+    font-feature-settings: "kern";
+    font-kerning: normal;
 }
