@@ -433,9 +433,26 @@ $(document).ready(function() {
         return that;
     }
 })(jQuery);
-$('textarea').autogrow({
+$('.form__textarea').autogrow({
     onInitialize: true
 });
+</script>
+<script>
+// Check if .form__textarea is empty. If so add class not-empty, so that the placeholder label can move above text-area
+$(document).ready(function() {
+    $('.form__textarea').change(function() {
+        if ($.trim($(this).val()).length < 1) {
+            $(this).removeClass("filled");
+        } else {
+            $(this).addClass("filled");
+        }
+    });
+});
+
+if ($.trim($(".form__textarea").val())) {
+    // textarea is not empty or doesn't contains only white-space
+    $(this).addClass("not-empty");
+}
 </script>
 <script>
 // This script shows the name of the file selected into attachment, or the number of files selected 

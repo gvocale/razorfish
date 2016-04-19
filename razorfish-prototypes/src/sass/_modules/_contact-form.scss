@@ -1,9 +1,9 @@
 .contact-form {
     &__link {
         font-family: $serif;
-        font-size: $scale04;
         line-height: 1;
         font-weight: 400;
+        font-size: $scale04;
         @media screen and ($xxl) {
             font-size: $scale05;
         }
@@ -12,9 +12,15 @@
         }
         &--group {
             display: flex;
-            flex-direction: row;
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin-top: 1.5em;
+            @media screen and ($md) {
+                flex-direction: row;
+            }
             li {
                 margin-right: 2em;
+                margin-bottom: 2em;
                 &:last-child {
                     margin-right: 0;
                 }
@@ -251,10 +257,10 @@
 
 // Contact Form CLOSE
 .contact-form__overlay {
-    // 0s to 0.5s form fields hide
+    // 0s to 0.2s form fields hide
     @mixin fields-hide {
         animation-name: fields_hide;
-        animation-duration: 0.3s;
+        animation-duration: 0.2s;
         animation-delay: 0s;
         animation-timing-function: ease-in;
         animation-iteration-count: 1;
@@ -266,8 +272,12 @@
         0% {
             opacity: 1;
         }
+        99% {
+            opacity: 0;
+        }
         100% {
             opacity: 0;
+            transform: translateY(100px);
         }
     }
     .contact-form__back-container {

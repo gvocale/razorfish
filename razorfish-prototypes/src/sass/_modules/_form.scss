@@ -1,3 +1,10 @@
+@mixin form-placeholder-up {
+    transform: translateY(-80%) scale(0.7);
+    opacity: 0.2;
+    transition: all 0.1s 0.1s ease-in-out;
+    
+}
+
 .form {
     display: flex;
     flex-direction: row;
@@ -71,7 +78,13 @@
             opacity: 1;
         }
         &:focus ~ .form__placeholder {
-            opacity: 0.5;
+            @include form-placeholder-up;
+        }
+        &.filled ~ .form__placeholder {
+            @include form-placeholder-up;
+        }
+        &.filled ~ .form__border {
+            opacity: 1;
         }
     }
     &__input {
@@ -244,7 +257,7 @@
             align-items: baseline;
             left: 0;
             padding-bottom: 0.75em;
-            opacity: 0.2;
+            opacity: 0;
             position: absolute;
             width: 100%;
             transform-origin: left;
@@ -257,13 +270,17 @@
                 }
             }
         }
+        &.active {
+            .form__attachment--placeholder {
+                @include form-placeholder-up;
+            }
+        }
         &--attachment {
             cursor: hand;
             cursor: pointer;
             font-family: $sans;
             letter-spacing: $spacing-sans;
             line-height: 1.3;
-            max-width: 80%;
             opacity: 0.2;
             overflow: hidden;
             position: relative;
@@ -271,7 +288,6 @@
             transform-origin: left;
             transition: transform 0.1s 0s ease-in-out;
             white-space: nowrap;
-            width: 100%;
             padding-bottom: 0.75em;
             padding-top: 0.75em;
             margin-top: 0.25em;
@@ -286,7 +302,10 @@
             cursor: hand;
             cursor: pointer;
             font-family: $sans;
-            font-size: $scale04;
+            font-size: $scale03;
+            @media screen and ($xl) {
+                font-size: $scale04;
+            }
             pointer-events: none;
             position: relative;
             text-transform: uppercase;
@@ -374,6 +393,13 @@
             }
         }
         &--label {
+            font-size: $scale03;
+            @media screen and ($lg) {
+                font-size: $scale02;
+            }
+            @media screen and ($xl) {
+                font-size: $scale03;
+            }
             width: 2em;
             height: 2em;
             display: inline-block;
@@ -415,6 +441,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
+            padding-top: 1em;
         }
     }
     &--black {
