@@ -1,8 +1,3 @@
-$transparent: 0;
-$opacity01: 0.2;
-$opacity02: 0.5;
-$opacity03: 0.8;
-$visible: 1;
 .form {
     display: flex;
     flex-direction: row;
@@ -15,14 +10,28 @@ $visible: 1;
         &:last-child {
             @include bottom-margin(0.5);
         }
-        &:hover .form__input[value=""] ~ .form__border,
-        &:hover .form__select ~ .form__border {
-            opacity: 0.5;
-        }
-        &:hover .form__input[value=""] ~ .form__placeholder,
-        &:hover .form__select {
-            opacity: 0.5;
-            transition: opacity 0s 0s linear;
+        &:hover {
+            .form__input[value=""] ~ .form__border,
+            .form__select ~ .form__border {
+                opacity: 0.5;
+            }
+            .form__input[value=""] ~ .form__placeholder,
+            .form__select {
+                opacity: 0.5;
+                transition: opacity 0s 0s linear;
+            }
+            .form__attachment--attachment,
+            .form__attachment--browse {
+                opacity: 0.5;
+                transition: opacity 0s 0s linear;
+            }
+            .form__border {
+                opacity: 0.5;
+            }
+            .form__textarea,
+            .form__textarea ~ .form__placeholder {
+                opacity: 0.5;
+            }
         }
     }
     &__textarea {
@@ -56,9 +65,24 @@ $visible: 1;
         }
         &:focus {
             outline: none;
+            opacity: 1;
+        }
+        &:focus ~ .form__border {
+            opacity: 1;
+        }
+        &:focus ~ .form__placeholder {
+            opacity: 0.5;
         }
     }
     &__input {
+        &[type="file"] {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
         &[type="text"],
         &[type="email"] {
             color: currentColor;
@@ -174,6 +198,131 @@ $visible: 1;
         transform-origin: left;
         transition: transform 0.1s 0s ease-in-out;
     }
+    &__file {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+        &:active ~ .form__border,
+        &:focus ~ .form__border {
+            opacity: 1;
+        }
+        &:active ~ .form__attachment,
+        &:focus ~ .form__attachment {
+            .form__attachment--attachment,
+            .form__attachment--browse {
+                opacity: 0.5;
+            }
+        }
+        &[value=""] ~ .form__attachment {
+            background-color: red;
+        }
+    }
+    &__attachment {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        // padding-bottom: 0.75em;
+        position: relative;
+        width: 100%;
+        cursor: hand;
+        cursor: pointer;
+        justify-content: space-between;
+        &--placeholder {
+            font-family: $sans;
+            font-size: $scale04;
+            @media screen and ($xxl) {
+                font-size: $scale05;
+            }
+            letter-spacing: $spacing-sans;
+            line-height: 1.3;
+            bottom: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            left: 0;
+            padding-bottom: 0.75em;
+            opacity: 0.2;
+            position: absolute;
+            width: 100%;
+            transform-origin: left;
+            transition: transform 0.1s 0s ease-in-out;
+            &--optional {
+                margin-left: 0.5em;
+                font-size: $scale03;
+                @media screen and ($xxl) {
+                    font-size: $scale04;
+                }
+            }
+        }
+        &--attachment {
+            cursor: hand;
+            cursor: pointer;
+            font-family: $sans;
+            letter-spacing: $spacing-sans;
+            line-height: 1.3;
+            max-width: 80%;
+            opacity: 0.2;
+            overflow: hidden;
+            position: relative;
+            text-overflow: ellipsis;
+            transform-origin: left;
+            transition: transform 0.1s 0s ease-in-out;
+            white-space: nowrap;
+            width: 100%;
+            padding-bottom: 0.75em;
+            padding-top: 0.75em;
+            margin-top: 0.25em;
+            font-size: $scale04;
+            @media screen and ($xxl) {
+                font-size: $scale05;
+            }
+        }
+        &--browse {
+            border: none;
+            color: currentColor;
+            cursor: hand;
+            cursor: pointer;
+            font-family: $sans;
+            font-size: $scale04;
+            pointer-events: none;
+            position: relative;
+            text-transform: uppercase;
+            opacity: 0.2;
+            &:after {
+                content: "";
+                @extend .icon-arrow-white;
+                transform: rotate(-90deg);
+                display: inline-block;
+                width: 0.6em;
+                height: 0.6em;
+                margin-left: 0.3em;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-clip: content-box;
+                background-origin: content-box;
+            }
+        }
+        &.active {
+            .form__attachment--attachment,
+            .form__attachment--browse {
+                opacity: 1;
+            }
+            .form__attachment--placeholder {
+                transform: translateY(-80%) scale(0.7);
+                transition: transform 0.1s 0.1s ease-in-out;
+                span {
+                    opacity: 0;
+                }
+            }
+        }
+        &.active ~ .form__border {
+            opacity: 1;
+        }
+    }
     &__required {
         margin-left: 0.25em;
         &--note {
@@ -197,8 +346,33 @@ $visible: 1;
         opacity: 0.2;
     }
     &__checkbox {
-        visibility: hidden;
-        position: absolute;
+        &[type="checkbox"] {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+            &:hover ~ .form__checkbox--label,
+            &:hover ~ .form__checkbox--body {
+                opacity: 0.5;
+            }
+            &:focus ~ .form__checkbox--label,
+            &:focus ~ .form__checkbox--body,
+            &:active ~ .form__checkbox--label,
+            &:active ~ .form__checkbox--body,
+            &:target ~ .form__checkbox--label,
+            &:target ~ .form__checkbox--body {
+                opacity: 1;
+            }
+            &:target ~ .form__checkbox--label,
+            &:active ~ .form__checkbox--label {
+                background-color: rgba($white, 0.15);
+            }
+            &:checked ~ .form__checkbox--label:after {
+                opacity: 1;
+            }
+        }
         &--label {
             width: 2em;
             height: 2em;
@@ -208,6 +382,8 @@ $visible: 1;
             background-color: transparent;
             position: relative;
             margin-right: 1em;
+            color: currentColor;
+            opacity: 0.2;
             &:after {
                 content: "";
                 width: 1em;
@@ -232,14 +408,7 @@ $visible: 1;
             letter-spacing: $spacing-sans;
             line-height: 1.3;
             cursor: pointer;
-            cursor: hand;
-        }
-        &:checked ~ .form__checkbox--label:after {
-            opacity: 1;
-        }
-        &:active ~ .form__checkbox--label,
-        &:target ~ .form__checkbox--label {
-            background-color: rgba($white, 0.15);
+            opacity: 0.2;
         }
         &--group {
             position: relative;
@@ -268,133 +437,6 @@ $visible: 1;
     }
 }
 
-.input-text,
-.input-select,
-.input-file-label {
-    border: none;
-    color: currentColor;
-    font-family: $sans;
-    font-size: $scale05;
-    font-weight: 200;
-    letter-spacing: $spacing-sans;
-    line-height: $title-sans;
-    margin-bottom: 0.4em;
-    margin-top: 0.2em;
-    padding-left: 0;
-    padding-right: 0;
-    position: relative;
-    width: 100%;
-}
-
-.input-file {
-    height: 0px;
-    order: 3;
-    overflow: hidden;
-    position: absolute;
-    width: 0px;
-    z-index: -10;
-}
-
-.input-file-label {
-    order: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.input-file-note {
-    font-size: $scale04;
-    margin-left: 0.5em;
-}
-
-.input-file-button {
-    font-size: $scale04;
-    text-transform: uppercase;
-    cursor: pointer;
-    cursor: hand;
-}
-
-.input-file-button:after {
-    content: "";
-    @extend .icon-arrow-white;
-    transform: rotate(-90deg);
-    display: inline-block;
-    width: 0.6em;
-    height: 0.6em;
-    margin-left: 0.3em;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-clip: content-box;
-    background-origin: content-box;
-}
-
-.input-submit:focus,
-.input-text:focus,
-.input-select:focus {
-    outline: none;
-}
-
-// .input-text:invalid ~ .input-icon {
-//     @include icon-info-red;
-// }
-.input-text[value=""] ~ .input-label,
-.input-file ~ .input-label,
-.input-select ~ .input-label {
-    opacity: 0;
-    transform: translateY(50%);
-    transition: all 0.1s 0s $bezier;
-}
-
-.input-select.selected ~ .input-label {
-    transform: translateY(0%);
-}
-
-.form {
-    .input-file:focus ~ .input-border,
-    .input-file:focus ~ .input-file-button,
-    .input-file:focus ~ .input-file-label,
-    .input-select.selected ~ .input-border,
-    .input-select.selected,
-    .input-select:focus ~ .input-border,
-    .input-select:focus ~ .input-icon,
-    .input-select:focus,
-    .input-text:focus ~ .input-border,
-    .input-text:invalid ~ .input-border,
-    .input-text:valid ~ .input-border,
-    .input-text[value=""]:focus ~ .input-border {
-        opacity: $visible;
-    }
-    .input-file ~ .input-label,
-    .input-file,
-    .input-select ~ .input-label,
-    .input-text::placeholder,
-    .input-text[value=""] ~ .input-label,
-    .input-file ~ .input-label,
-    .input-select ~ .input-label {
-        opacity: $transparent;
-    }
-    .input-text[value=""] ~ .input-border,
-    .input-file-label ~ .input-border,
-    .input-select ~ .input-border {
-        opacity: 0.3;
-    }
-    .input-border,
-    .input-file-label,
-    .input-label,
-    .input-select ~ .input-icon,
-    .input-select,
-    .input-select.selected ~ .input-label,
-    .input-text[value=""] ~ .input-icon,
-    .input-text[value=""],
-    .input-text[value=""]::placeholder {
-        opacity: $opacity02;
-    }
-}
-
-.form.white {
-    color: $white;
-    .input-select {
-        @extend .icon-arrow-white;
-    }
+.form__file + label * {
+    pointer-events: none;
 }

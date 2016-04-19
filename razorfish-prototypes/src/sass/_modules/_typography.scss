@@ -464,6 +464,95 @@ p {
             margin-left: 0.5em;
         }
     }
+    &--arrow {
+        &--left {
+            position: relative;
+            padding: 1em;
+            &:before {
+                content: "";
+                width: 0;
+                height: 0;
+                border-style: solid;
+                width: 0;
+                height: 0;
+                border-top: 0.3em solid transparent;
+                border-bottom: 0.3em solid transparent;
+                border-right: 0.5em solid currentColor;
+                border-left: 0 solid transparent;
+                position: absolute;
+                display: block;
+                top: 50%;
+                transform: translateY(-50%);
+                left: -0.4em;
+                transition: all 0.2s 0s ease-out;
+            }
+            &:after {
+                content: "";
+                width: 0.5em;
+                height: 3px;
+                display: block;
+                background-color: currentColor;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0em;
+                transition: all 0.2s 0s ease-out;
+            }
+            &:hover {
+                &:before {
+                    left: -0.9em;
+                    transition: all 0.1s 0s ease-in;
+                }
+                &:after {
+                    width: 1em;
+                    left: -0.5em;
+                    transition: all 0.1s 0s ease-in;
+                }
+            }
+        }
+        &--right {
+            position: relative;
+            padding: 1em;
+            &:before {
+                content: "";
+                width: 11px;
+                height: 3px;
+                display: block;
+                background-color: currentColor;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0px;
+                transition: all 0.1s 0s ease-in-out;
+            }
+            &:after {
+                content: "";
+                width: 0;
+                height: 0;
+                border-style: solid;
+                width: 0;
+                height: 0;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 9px solid currentColor;
+                border-right: 0 solid transparent;
+                position: absolute;
+                display: block;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 11px;
+                transition: all 0.1s 0s ease-in-out;
+            }
+            &:hover {
+                &:before {
+                    width: 20px;
+                }
+                &:after {
+                    right: 20px;
+                }
+            }
+        }
+    }
     &--download {
         margin-left: 1.5em;
         &:after {

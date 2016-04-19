@@ -1,64 +1,23 @@
 .contact-form {
-    &__close-button {
-        margin-left: auto;
-        margin-right: auto;
-        width: 34px;
-        height: 4px;
-        display: block;
-        position: relative;
-        top: 50%;
-        transform: translateY(50%);
-        transition: all 0.1s 0s ease-in;
-        &--container {
-            width: 3rem;
-            height: 3rem;
-            display: inline-block;
-            cursor: pointer;
-            cursor: hand;
-            transition-property: opacity, filter;
-            transition-duration: 0.15s;
-            transition-timing-function: linear;
-            font: inherit;
-            color: inherit;
-            text-transform: none;
-            background-color: transparent;
-            border: 0;
-            margin: 0;
-            z-index: 10;
-            overflow: visible;
-            position: fixed;
-            right: 0;
-            top: 0;
-            @include top-padding;
-            @include grid-padding;
-            &:focus {
-                outline: none;
-            }
+    &__link {
+        font-family: $serif;
+        font-size: $scale04;
+        line-height: 1;
+        font-weight: 400;
+        @media screen and ($xxl) {
+            font-size: $scale05;
         }
-        &--inner,
-        &--inner::before,
-        &--inner::after {
-            width: 100%;
-            height: 4px;
-            background-color: currentColor;
-            position: absolute;
-            content: "";
-            display: block;
+        &:before {
+            bottom: -0.5em;
         }
-        &--inner {
-            display: block;
-            top: 50%;
-            margin-top: -2px;
-            transition: transform 0.3s 0.0s $bezier;
-            transform: rotate(225deg);
-            &:before {
-                transform: translateY(0px);
-                opacity: 1;
-                transition: opacity 0.3s 0.24s $bezier, transform 0.3s 0.24s $bezier;
-            }
-            &:after {
-                transform: translateY(0px) rotate(-90deg);
-                transition: transform 0.3s 0.14s $bezier;
+        &--group {
+            display: flex;
+            flex-direction: row;
+            li {
+                margin-right: 2em;
+                &:last-child {
+                    margin-right: 0;
+                }
             }
         }
     }
@@ -68,25 +27,7 @@
         height: 100%;
         top: 0;
         left: 0;
-        visibility: hidden;
         color: $white;
-        transform: translateY(100%);
-        transition: transform 0.5s, visibility 0s 0.5s;
-        &--checkbox {
-            visibility: hidden;
-            position: absolute;
-            top: 0;
-            left: 0;
-            &:checked ~ .contact-form__overlay {
-                visibility: visible;
-                transition: transform 0.5s;
-                transform: translateY(0%);
-            }
-            &:checked ~ .site-masthead {
-                transition: transform 0.5s;
-                transform: translateY(-100%);
-            }
-        }
     }
     &__scroll {
         position: relative;
@@ -108,82 +49,46 @@
         align-items: center;
         justify-content: center;
     }
-    &__radio {
-        &--input {
-            display: none;
-        }
-        text-transform: uppercase;
-        color: currentColor;
+    &__back {
         font-family: $sans;
         font-size: $scale04;
-        letter-spacing: $spacing-sans;
         line-height: 1;
-        position: relative;
-        width: 100%;
+        font-weight: 400;
+        text-transform: uppercase;
+        cursor: hand;
+        cursor: pointer;
+        @media screen and ($xxl) {
+            font-size: $scale05;
+        }
+        &:before {
+            bottom: -0.5em;
+        }
+        &--group {
+            display: flex;
+            flex-direction: row;
+            li {
+                margin-right: 2em;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    &__back-container {
+        @include bottom-padding(0.5);
+    }
+    &__headline-container {
+        @include component-padding;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        li {
-            margin-bottom: 2em;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-        label {
-            cursor: pointer;
-            cursor: hand;
-        }
-        @media screen and ($xl) {
-            width: calc(100% / 12 * 4);
-        }
-        @media screen and ($xxl) {
-            font-size: $scale05;
-        }
-    }
-    &__select {
-        text-transform: uppercase;
-        -webkit-appearance: textfield;
-        background-color: transparent;
-        background-position: right, center;
-        background-repeat: no-repeat;
-        background-size: 0.8em 0.8em;
-        border: none;
-        box-sizing: border-box;
-        color: currentColor;
-        font-family: $sans;
-        font-size: $scale04;
-        letter-spacing: $spacing-sans;
-        line-height: 1;
-        margin-bottom: 0;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0.25em;
-        padding-bottom: 0.75em;
-        padding-left: 0;
-        padding-right: 1em;
-        padding-top: 0.75em;
-        position: relative;
-        width: 100%;
-        z-index: 1;
-        opacity: 0.2;
-        text-aling: center;
-        display: none;
-        @media screen and ($xl) {
-            width: calc(100% / 12 * 4);
-        }
-        @media screen and ($xxl) {
-            font-size: $scale05;
-            width: calc(100% / 12 * 2);
-        }
-        &:focus {
-            outline: none;
-            opacity: 0.5;
-        }
-        @extend .icon-arrow-white;
-        &:focus ~ .form__border,
-        &.selected,
-        &.selected ~ .form__border {
-            opacity: 1;
+        @include bottom-padding(0.5);
+        .divider {
+            margin-bottom: 0.8em;
+            width: 1.2
         }
     }
     &__headline {
@@ -219,6 +124,7 @@
         top: 0;
         left: 0;
         z-index: -1;
+        transition: all 0.4s 0.01s ease-in-out;
     }
     &__form {
         display: flex;
@@ -236,29 +142,6 @@
         }
         @media screen and ($xxl) {
             width: calc(100% / 12 * 4);
-        }
-        &--group {
-            width: 100%;
-            position: relative;
-        }
-        &--container {
-            position: absolute;
-            width: 100%;
-            top: 0;
-            left: 0;
-        }
-    }
-    &__text-container {
-        @include component-padding;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        .divider {
-            margin-bottom: 0.8em;
-            width: 1.2
         }
     }
     &__field {
@@ -286,7 +169,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        @include top-padding(0.5);
+        @include top-padding(0.25);
     }
     &__input {
         &[type="text"] {
@@ -337,17 +220,7 @@
             }
         }
     }
-    &__tabs {}
-    .form__field {
-        z-index: 1;
-        transform: translateY(100%);
-        opacity: 0;
-        transition-duration: 0.1s;
-        transition-property: all;
-        transition-timing-function: ease;
-    }
 }
-
 
 @for $i from 1 through 15 {
     .form__field:nth-of-type(#{$i}) {
@@ -376,42 +249,121 @@
     }
 }
 
-@for $i from 1 through 15 {
-    #contact-form__radio-1:checked ~ .contact-form__form--group .contact-form__form--container:nth-child(1) {
-        .form__field:nth-of-type(#{$i}) {
-            transform: translateY(0%);
+// Contact Form CLOSE
+.contact-form__overlay {
+    // 0s to 0.5s form fields hide
+    @mixin fields-hide {
+        animation-name: fields_hide;
+        animation-duration: 0.3s;
+        animation-delay: 0s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+    }
+    @keyframes fields_hide {
+        0% {
             opacity: 1;
-            transition-delay: calc((0.05s * #{$i}) + 0.5s);
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    .contact-form__back-container {
+        @include fields-hide;
+    }
+    .contact-form__headline {
+        @include fields-hide;
+    }
+    .contact-form__headline.divider {
+        @include fields-hide;
+    }
+    .form__field {
+        @include fields-hide;
+    }
+    // 0.2s to 0.4s Background blur out and fades out
+    .contact-form__background-image {
+        opacity: 0;
+        filter: blur(0);
+        transform-origin: center;
+        transform: scale(1) translate3d(0, 0, 0);
+        transition: all 0.4s 0.2s ease-in;
+    }
+    // 0.6s visibility hidden
+    visibility: hidden;
+    transition: visibility 0s 1s linear;
+}
+
+// Contact Form OPEN
+.contact-form__overlay.open {
+    // 0s visibility on
+    visibility: visible;
+    transition: visibility 0s 0s linear;
+    // 0.01s to 0.5s background image fades in and blur
+    .contact-form__background-image {
+        transform: scale(1.3) translate3d(0, 5%, 0);
+        opacity: 1;
+        filter: blur(20px);
+        transition: all 0.5s 0.01s ease-in-out;
+    }
+    // 0.5s to 1s form fields come in
+    @mixin fields-visible {
+        transform: translateY(100px);
+        opacity: 0;
+        animation-name: fields_visible;
+        animation-duration: 0.6s;
+        animation-timing-function: ease;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+    }
+    @keyframes fields_visible {
+        0% {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+        40% {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+        80% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    .contact-form__back-container {
+        @include fields-visible;
+        animation-delay: 0.10s;
+    }
+    .contact-form__headline {
+        @include fields-visible;
+        animation-delay: 0.125s;
+    }
+    .contact-form__headline.divider {
+        @include fields-visible;
+        animation-delay: 0.15s;
+    }
+    .form__field {
+        @include fields-visible;
+        @for $i from 1 through 15 {
+            &:nth-of-type(#{$i}) {
+                animation-delay: (0.025s * $i) + 0.15s;
+            }
         }
     }
 }
 
-@for $i from 1 through 15 {
-    #contact-form__radio-2:checked ~ .contact-form__form--group .contact-form__form--container:nth-child(2) {
-        .form__field:nth-of-type(#{$i}) {
-            transform: translateY(0%);
-            opacity: 1;
-            transition-delay: calc((0.05s * #{$i}) + 0.5s);
-        }
-    }
+.contact-form__form-1 {
+    display: none;
 }
 
-@for $i from 1 through 15 {
-    #contact-form__radio-3:checked ~ .contact-form__form--group .contact-form__form--container:nth-child(3) {
-        .form__field:nth-of-type(#{$i}) {
-            transform: translateY(0%);
-            opacity: 1;
-            transition-delay: calc((0.05s * #{$i}) + 0.5s);
-        }
-    }
-}
-
-@for $i from 1 through 15 {
-    #contact-form__radio-4:checked ~ .contact-form__form--group .contact-form__form--container:nth-child(4) {
-        .form__field:nth-of-type(#{$i}) {
-            transform: translateY(0%);
-            opacity: 1;
-            transition-delay: calc((0.05s * #{$i}) + 0.5s);
-        }
+.contact-form__overlay.form-1 {
+    .contact-form__form-1 {
+        display: block;
     }
 }
