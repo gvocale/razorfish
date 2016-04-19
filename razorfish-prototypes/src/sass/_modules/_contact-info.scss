@@ -3,45 +3,107 @@
     @include component-padding;
     @include bottom-padding;
     width: 100%;
-    @media screen and ($md) {
-        column-count: 2;
-        column-gap: 2rem;
-    }
     @media screen and ($lg) {
         width: calc(100% / 12 * 3);
         margin-bottom: 0;
-        column-count: 1;
+    }
+    &__multi-column {
+        width: 100%;
+        @media screen and ($md) {
+            column-count: 2;
+            column-gap: 2rem;
+        }
+        @media screen and ($lg) {
+            column-count: 1;
+        }
+    }
+    &__group {
+        font-size: $scale04;
+        @media screen and ($xxl) {
+            font-size: $scale05;
+        }
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid-column;
+        padding-bottom: 1.5em;
+        margin-bottom: 0;
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+    &__group--data {
+        font-size: $scale05;
+        @media screen and ($xxl) {
+            font-size: $scale06;
+        }
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid-column;
+        padding-bottom: 1.5em;
+        margin-bottom: 0;
+        &:last-child {
+            padding-bottom: 0;
+        }
     }
     &__label {
-        @include label;
+        font-family: $sans;
+        font-size: $scale03;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1.1;
+        letter-spacing: 0.025em;
+        text-transform: uppercase;
+        margin-bottom: 0.5em;
+        max-width: 20em;
+        color: rgba($black, 0.75);
+        @media screen and ($md) {
+            color: rgba($black, 0.6);
+        }
+        @media screen and ($lg) {
+            font-size: $scale02;
+        }
+        @media screen and ($xxl) {
+            font-size: $scale03;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &__author-name {
         font-family: $sans;
-        line-height: $title-sans;
-        letter-spacing: $spacing-sans;
+        line-height: 1.2;
         font-weight: 700;
-        font-size: $scale05;
         margin-bottom: 0.1em;
-        @media screen and ($lg) {
-            font-size: $scale04;
-        }
-        @media screen and ($xl) {
+        font-size: $scale04;
+        @media screen and ($xxl) {
             font-size: $scale05;
         }
     }
-    &__author-role {
+    &__body {
         font-family: $sans;
-        line-height: $title-sans;
-        letter-spacing: $spacing-sans;
+        line-height: 1.2;
+        margin-bottom: 0.25em;
         font-size: $scale04;
-        @media screen and ($lg) {
-            font-size: $scale03;
+        @media screen and ($xxl) {
+            font-size: $scale05;
         }
-        @media screen and ($xl) {
-            font-size: $scale04;
+        &:last-child {
+            margin-bottom: 0;
         }
     }
-    &__author-social-icons {
+    &__body--data {
+        font-family: $sans;
+        line-height: 1.2;
+        margin-bottom: 0.25em;
+        font-size: $scale05;
+        @media screen and ($xxl) {
+            font-size: $scale06;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__social-icons {
         display: flex;
         flex-direction: row;
         width: 100%;
@@ -56,9 +118,6 @@
         &:last-child {
             margin-bottom: 0;
         }
-    }
-    &__body {
-        @include sidebar-body;
     }
     &__stat {
         @include stat-body;
@@ -122,35 +181,6 @@
             animation-direction: normal;
             animation-fill-mode: none;
             animation-play-state: running;
-        }
-    }
-    &__group {
-        @include two-column--group;
-        -webkit-column-break-inside: avoid;
-        page-break-inside: avoid;
-        break-inside: avoid-column;
-        &--share {
-            -webkit-column-break-inside: avoid;
-            page-break-inside: avoid;
-            break-inside: avoid-column;
-            width: 100%;
-            @include bottom-padding(0.25);
-            @media screen and ($lg) {
-                width: 100%;
-            }
-            &:last-child {
-                padding-bottom: 0;
-            }
-        }
-        &--author {
-            -webkit-column-break-inside: avoid;
-            page-break-inside: avoid;
-            break-inside: avoid-column;
-            width: 100%;
-            @include bottom-padding(0.25);
-            &:last-child {
-                padding-bottom: 0;
-            }
         }
     }
     .social-share__group {

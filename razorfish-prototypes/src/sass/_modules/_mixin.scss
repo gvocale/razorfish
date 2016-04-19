@@ -45,47 +45,47 @@
 }
 
 @mixin link--arrow--right {
-            position: relative;
-            padding: 1em;
-            &:before {
-                content: "";
-                width: 11px;
-                height: 3px;
-                display: block;
-                background-color: currentColor;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                right: 0px;
-                transition: all 0.1s 0s ease-in-out;
-            }
-            &:after {
-                content: "";
-                width: 0;
-                height: 0;
-                border-style: solid;
-                width: 0;
-                height: 0;
-                border-top: 5px solid transparent;
-                border-bottom: 5px solid transparent;
-                border-left: 9px solid currentColor;
-                border-right: 0 solid transparent;
-                position: absolute;
-                display: block;
-                top: 50%;
-                transform: translateY(-50%);
-                right: 11px;
-                transition: all 0.1s 0s ease-in-out;
-            }
-            &:hover {
-                &:before {
-                    width: 20px;
-                }
-                &:after {
-                    right: 20px;
-                }
-            }
+    position: relative;
+    padding: 1em;
+    &:before {
+        content: "";
+        width: 11px;
+        height: 3px;
+        display: block;
+        background-color: currentColor;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0px;
+        transition: all 0.1s 0s ease-in-out;
+    }
+    &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 9px solid currentColor;
+        border-right: 0 solid transparent;
+        position: absolute;
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 11px;
+        transition: all 0.1s 0s ease-in-out;
+    }
+    &:hover {
+        &:before {
+            width: 20px;
         }
+        &:after {
+            right: 20px;
+        }
+    }
+}
 
 @mixin col($column) {
     width: calc((100% / 12 * #{$column}) - ((#{$gutter} * 12) - (1 * (#{$column} - 1))));
@@ -323,28 +323,7 @@
 }
 
 @mixin label {
-    font-family: $sans;
-    font-size: $scale03;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 1.1;
-    letter-spacing: 0.025em;
-    text-transform: uppercase;
-    margin-bottom: 0.25em;
-    max-width: 20em;
-    color: rgba($black, 0.75);
-    @media screen and ($md) {
-        color: rgba($black, 0.6);
-    }
-    @media screen and ($lg) {
-        font-size: $scale02;
-    }
-    @media screen and ($xl) {
-        font-size: $scale03;
-    }
-    &:last-child {
-        margin-bottom: 0;
-    }
+
 }
 
 @mixin stat-body {
