@@ -1,30 +1,22 @@
 .site-navigation {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
     background-color: rgba(255, 255, 255, 0);
-    z-index: 100;
-    left: 100%;
-    padding-top: 20%;
-    padding-bottom: 20%;
-    overflow: scroll;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
-    transition: background-color 0.1s 0.1s $bezier, left 0s 0.2s linear;
-    @include grid-padding;
-    @media screen and ($lg) {
-        padding-top: 10%;
-        padding-bottom: 10%;
-    }
+    top: 0;
+    left: 0;
+    transition: background-color 0.1s 0.1s $bezier, left 0s 0.2s linear, visibility 0s 0.5s linear;
+    visibility: hidden;
     &__container {
+        @include grid-padding;
         @include top-padding;
-@include bottom-padding;
+        @include bottom-padding;
+        overflow: scroll;
+        position: relative;
     }
     &__link-container {
         opacity: 0;
@@ -68,6 +60,9 @@
             justify-content: center;
         }
         @media only screen and ($lg) {
+            font-size: $scale07;
+        }
+        @media only screen and ($xl) {
             font-size: $scale08;
         }
         @media only screen and ($xxl) {
@@ -80,7 +75,7 @@
     &__components {
         @include component-padding;
         font-family: $sans;
-        font-size: $scale04;
+        font-size: $scale03;
         line-height: $title-sans;
         letter-spacing: $spacing-sans-tight;
         font-weight: 700;
@@ -90,17 +85,42 @@
         flex-direction: row;
         justify-content: flex-start;
         @media only screen and ($md) {
-            font-size: $scale05;
+            font-size: $scale04;
             justify-content: center;
         }
         @media only screen and ($lg) {
-            font-size: $scale06;
+            font-size: $scale04;
+        }
+        @media only screen and ($xl) {
+            font-size: $scale05;
         }
         @media only screen and ($xxl) {
-            font-size: $scale07;
+            font-size: $scale06;
         }
         .site-navigation__link-container {
             margin-bottom: 0.5em;
+        }
+    }
+    .link {
+        transition: all 0.1s ease 0.1s;
+        &:before {
+            display: block;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            transition: all 0.3s ease 0.1s;
+            box-shadow: 0 -0.08em 0 0 $primary inset;
+        }
+        &:hover:before {
+            width: 100%;
+            transition: all 0.1s ease 0s;
+        }
+        &:hover {
+            box-shadow: none;
+            transition: color 0.1s ease 0s;
         }
     }
 }
@@ -115,9 +135,9 @@
 
 #site-masthead__checkbox:checked ~ .site-masthead {
     .site-navigation {
-        left: 0%;
+        visibility: visible;
         background-color: rgba($white, 1);
-        transition: background-color 0.1s 0s $bezier, left 0s 0s linear;
+        transition: background-color 0.1s 0s $bezier, left 0s 0s linear, visibility 0s 0s linear;
     }
     .site-navigation__link-container {
         opacity: 1;
