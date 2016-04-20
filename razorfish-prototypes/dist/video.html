@@ -77,6 +77,9 @@
                         <a class="link" href="insights-landing.html">Insights<span class="note">Landing</span></a>
                     </li>
                     <li class="site-navigation__link-container">
+                        <a class="link" href="join-us-landing.html">Join Us<span class="note">Landing</span></a>
+                    </li>
+                    <li class="site-navigation__link-container">
                         <a class="link" href="news-landing.html">News<span class="note">Landing</span></a>
                     </li>
                     <li class="site-navigation__link-container">
@@ -171,7 +174,6 @@
                 </ul>
             </div>
         </div>
-        <div class="contact-form__background-image background-gradient" style="background-image: url(images/hero-contact-form.jpg)"></div>
     </nav>
     <article class="article">
         <div class="body-copy">
@@ -205,11 +207,21 @@
             </div>
         </div>
     </article>
+    <section class="hero hero__video hero--theme-white-accent">
+        <div class="hero__video__poster">
+            <div class="video__button--play"></div>
+            <a href="" class="hero__link">
+                <div class="hero__text-container">
+                    <div class="divider hero__headline animate"></div>
+                    <h2 class="hero__headline">Maecenas sed diam eget risus varius</h2>
+                    <p class="hero__subhead">Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </a>
+            <div class="hero__background image-grading--darker" style="background-image: url(images/hero-join-us.jpg)"></div>
+        </div>
+        <iframe class="hero__video-embed" id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </section>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="js/min/razorfish.min.js"></script>
-    <script src="js/cbpScroller.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/show-hide-header.js"></script>
     <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
     <script>
     $(document).ready(function() {
@@ -218,9 +230,14 @@
     });
     $('.video__button--play').click(function(e) {
         $('.video__poster-frame').fadeOut("slow");
+        $('.hero__video__poster').fadeOut("slow");
         froogaloop.api('play');
     });
     </script>
+    <script src="js/min/razorfish.min.js"></script>
+    <script src="js/cbpScroller.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/show-hide-header.js"></script>
 </body>
 
 </html>

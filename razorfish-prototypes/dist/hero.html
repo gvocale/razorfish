@@ -77,6 +77,9 @@
                         <a class="link" href="insights-landing.html">Insights<span class="note">Landing</span></a>
                     </li>
                     <li class="site-navigation__link-container">
+                        <a class="link" href="join-us-landing.html">Join Us<span class="note">Landing</span></a>
+                    </li>
+                    <li class="site-navigation__link-container">
                         <a class="link" href="news-landing.html">News<span class="note">Landing</span></a>
                     </li>
                     <li class="site-navigation__link-container">
@@ -171,7 +174,6 @@
                 </ul>
             </div>
         </div>
-        <div class="contact-form__background-image background-gradient" style="background-image: url(images/hero-contact-form.jpg)"></div>
     </nav>
     <section class="title title--light">
         <div class="title__text-container">
@@ -304,7 +306,6 @@
                 <div class="divider hero__headline animate"></div>
                 <p class="hero__eyebrow">Razorfish Emerging Experiences Series</p>
                 <h2 class="hero__headline">What Marketers Can Learn from the Auto Industry</h2>
-                <p class="hero__cta"><a class="link link--arrow" href="">Lorem ipsum dolor sit</a></p>
             </div>
         </a>
         <figure class="hero__background animate">
@@ -356,16 +357,19 @@
             <h3 class="title__headline">Hero Video</h3>
         </div>
     </section>
-    <section class="hero hero--video hero--theme-white-accent">
-        <a href="" class="hero__link">
-            <div class="video-play-button"></div>
-            <div class="hero__text-container">
-                <div class="divider hero__headline animate"></div>
-                <h2 class="hero__headline">About Us Headline Lorem Ipsum Dolor Sit</h2>
-                <p class="hero__subhead">Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor.</p>
-            </div>
-        </a>
-        <div class="hero__background gradient anmate" style="background-image: url(images/contact-promo-background.jpg)"></div>
+    <section class="hero hero__video hero--theme-white-accent">
+        <div class="hero__video__poster">
+            <div class="video__button--play"></div>
+            <a href="" class="hero__link">
+                <div class="hero__text-container">
+                    <div class="divider hero__headline animate"></div>
+                    <h2 class="hero__headline">Maecenas sed diam eget risus varius</h2>
+                    <p class="hero__subhead">Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                </div>
+            </a>
+            <div class="hero__background image-grading--darker" style="background-image: url(images/hero-join-us.jpg)"></div>
+        </div>
+        <iframe class="hero__video-embed" id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </section>
     <section class="title title--light">
         <div class="title__text-container">
@@ -379,11 +383,23 @@
                 <div class="divider hero__headline animate"></div>
                 <h2 class="hero__headline">The ﬁve elements of business transformation.</h2>
                 <p class="hero__subhead">In an age of relentless disruption, it helps to understand a few key things. Allow us to present our capabilities.</p>
-                <p class="hero__cta"><a class="link link--arrow" href="">Lorem ipsum dolor sit</a></p>
             </div>
         </a>
         <div class="hero__background gradient anmate" style="background-image: url(images/hero-approach.jpg)"></div>
     </section>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        var player = $("#vimeo-video");
+        froogaloop = $f(player[0].id);
+    });
+    $('.video__button--play').click(function(e) {
+        $('.video__poster-frame').fadeOut("slow");
+        $('.hero__video__poster').fadeOut("slow");
+        froogaloop.api('play');
+    });
+    </script>
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
