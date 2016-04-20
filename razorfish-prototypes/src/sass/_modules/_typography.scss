@@ -371,6 +371,9 @@ p {
             margin-bottom: 0;
         }
     }
+    &.body-copy__body {
+        line-height: 1.4;
+    }
 }
 
 .ol {
@@ -397,6 +400,9 @@ p {
             margin-bottom: 0;
         }
     }
+    &.body-copy__body {
+        line-height: 1.4;
+    }
 }
 
 .link {
@@ -421,9 +427,6 @@ p {
     }
     &:hover {
         color: $primary;
-        // box-shadow: 0 -0.08em 0 0 currentColor inset;
-        // box-sizing: border-box;
-        // transition: box-shadow 0s 0s linear;
     }
     &--muted {
         color: currentColor;
@@ -434,11 +437,16 @@ p {
     }
     &--primary {
         color: $primary;
+        &:hover {
+            box-shadow: 0 -0.08em 0 0 currentColor inset;
+            box-sizing: border-box;
+            transition: box-shadow 0s 0s linear;
+        }
     }
     &--arrow {
         &--left {
             position: relative;
-            padding-left: 0.75em;
+            padding-left: 0.5em;
             // Carrot
             &:before {
                 content: "";
@@ -482,7 +490,7 @@ p {
         }
         &--right {
             position: relative;
-            margin-right: 0.75em;
+            padding-right: 0.5em;
             // Stick
             &:before {
                 content: "";
@@ -543,8 +551,6 @@ p {
             top: 0;
         }
     }
-
-
     &:focus {
         outline: none;
     }

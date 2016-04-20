@@ -190,93 +190,95 @@
     <section class="contact-form__overlay">
         <div class="contact-form__scroll">
             <div class="contact-form__container">
-                <div class="contact-form__back-container">
-                    <a class="contact-form__back link--arrow--left">Back</a>
-                </div>
-                <div class="contact-form__headline-container">
-                    <h2 class="contact-form__headline">What would you like to talk to us about?</h2>
-                    <div class="divider contact-form__headline animate"></div>
-                </div>
-                <form class="contact-form__form" id="contact-form__form-1" onsubmit="return false">
-                    <div class="form__field">
-                        <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                        <label class="form__placeholder" for="">First Name</label>
-                        <div class="form__border"></div>
+                <div class="contact-form__form-group">
+                    <div class="contact-form__back-container">
+                        <a class="contact-form__back link--arrow--left">Back</a>
                     </div>
-                    <div class="form__field">
-                        <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                        <label class="form__placeholder" for="">Last Name</label>
-                        <div class="form__border"></div>
+                    <div class="contact-form__headline-container">
+                        <h2 class="contact-form__headline">What would you like to talk to us about?</h2>
+                        <div class="divider contact-form__headline animate"></div>
                     </div>
-                    <div class="form__field">
-                        <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                        <label class="form__placeholder" for="">Title</label>
-                        <div class="form__border"></div>
-                    </div>
-                    <div class="form__field">
-                        <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                        <label class="form__placeholder" for="">Company</label>
-                        <div class="form__border"></div>
-                    </div>
-                    <div class="form__field">
-                        <input class="form__input" pattern="[0-9-]{6,}" autocomplete="false" type="tel" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                        <label class="form__placeholder" for="">Phone Number</label>
-                        <div class="form__border"></div>
-                    </div>
-                    <div class="form__field">
-                        <input class="form__input" autocomplete="false" type="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                        <label class="form__placeholder" for="">Email</label>
-                        <div class="form__border"></div>
-                    </div>
-                    <div class="form__field">
-                        <select class="form__select">
-                            <option value="none" disabled selected>Country</option>>
-                            <option value="USA">USA</option>
-                            <option value="Canada">Canada</option>
-                            <option value="UK">UK</option>
-                        </select>
-                        <div class="form__border"></div>
-                    </div>
-                    <div class="form__field">
-                        <select class="form__select">
-                            <option value="none" disabled selected>State / Province</option>>
-                            <option value="Canada">NJ</option>
-                            <option value="USA">NY</option>
-                            <option value="UK">SF</option>
-                        </select>
-                        <div class="form__border"></div>
-                    </div>
-                    <div class="form__field">
-                        <textarea name="form__textarea" class="form__textarea" contenteditable="true" rows="1"></textarea>
-                        <label class="form__placeholder" for="form__textarea">Comments</label>
-                        <div class="form__border"></div>
-                    </div>
-                    <div class="form__field">
-                        <input type="file" name="form__file-1[]" id="form__file-1" class="form__input form__file" data-multiple-caption="{count} files selected" multiple="">
-                        <label class="form__attachment" for="form__file-1">
-                            <span class="form__attachment--placeholder">Attachment</span>
-                            <span class="form__attachment--attachment"><span>Attachment<span class="form__attachment--placeholder--optional">(Optional)</span></span>
-                            </span>
-                            <span class="form__attachment--browse">Browse</span>
-                        </label>
-                        <div class="form__border"></div>
-                    </div>
-                    <div class="form__field">
-                        <div class="form__checkbox--group">
-                            <input type="checkbox" id="contact-form__checkbox--newsletter" class="form__checkbox" checked>
-                            <label for="contact-form__checkbox--newsletter" class="form__checkbox--label"></label>
-                            <label for="contact-form__checkbox--newsletter" class="form__checkbox--body">Yes, subscribe me to the Razorfish Newsletter</label>
+                    <form class="contact-form__form" id="contact-form__form-1" onsubmit="return false">
+                        <div class="form__field">
+                            <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                            <label class="form__placeholder" for="">First Name</label>
+                            <div class="form__border"></div>
                         </div>
-                    </div>
-                    <div class="contact-form__button-group">
-                        <button class="button button--secondary button--white" id="form__submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-            <div class="contact-form__confirmation">
-                <h2 class="contact-form__headline">Thanks</h2>
-                <div class="divider contact-form__headline"></div>
-                <p class="contact-form__subhead">We'll contact you shortly!</p>
+                        <div class="form__field">
+                            <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                            <label class="form__placeholder" for="">Last Name</label>
+                            <div class="form__border"></div>
+                        </div>
+                        <div class="form__field">
+                            <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                            <label class="form__placeholder" for="">Title</label>
+                            <div class="form__border"></div>
+                        </div>
+                        <div class="form__field">
+                            <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="form__placeholder" for="">Company</label>
+                            <div class="form__border"></div>
+                        </div>
+                        <div class="form__field">
+                            <input class="form__input" pattern="[0-9-]{6,}" autocomplete="false" type="tel" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="form__placeholder" for="">Phone Number</label>
+                            <div class="form__border"></div>
+                        </div>
+                        <div class="form__field">
+                            <input class="form__input" autocomplete="false" type="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="form__placeholder" for="">Email</label>
+                            <div class="form__border"></div>
+                        </div>
+                        <div class="form__field">
+                            <select class="form__select">
+                                <option value="none" disabled selected>Country</option>>
+                                <option value="USA">USA</option>
+                                <option value="Canada">Canada</option>
+                                <option value="UK">UK</option>
+                            </select>
+                            <div class="form__border"></div>
+                        </div>
+                        <div class="form__field">
+                            <select class="form__select">
+                                <option value="none" disabled selected>State / Province</option>>
+                                <option value="Canada">NJ</option>
+                                <option value="USA">NY</option>
+                                <option value="UK">SF</option>
+                            </select>
+                            <div class="form__border"></div>
+                        </div>
+                        <div class="form__field">
+                            <textarea name="form__textarea" class="form__textarea" contenteditable="true" rows="1"></textarea>
+                            <label class="form__placeholder" for="form__textarea">Comments</label>
+                            <div class="form__border"></div>
+                        </div>
+                        <div class="form__field">
+                            <input type="file" name="form__file-1[]" id="form__file-1" class="form__input form__file" data-multiple-caption="{count} files selected" multiple="">
+                            <label class="form__attachment" for="form__file-1">
+                                <span class="form__attachment--placeholder">Attachment</span>
+                                <span class="form__attachment--attachment"><span>Attachment<span class="form__attachment--placeholder--optional">(Optional)</span></span>
+                                </span>
+                                <span class="form__attachment--browse">Browse</span>
+                            </label>
+                            <div class="form__border"></div>
+                        </div>
+                        <div class="form__field">
+                            <div class="form__checkbox--group">
+                                <input type="checkbox" id="contact-form__checkbox--newsletter" class="form__checkbox" checked>
+                                <label for="contact-form__checkbox--newsletter" class="form__checkbox--label"></label>
+                                <label for="contact-form__checkbox--newsletter" class="form__checkbox--body">Yes, subscribe me to the Razorfish Newsletter</label>
+                            </div>
+                        </div>
+                        <div class="contact-form__button-group">
+                            <button class="button button--secondary button--white" id="form__submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="contact-form__confirmation-group">
+                    <h2 class="contact-form__headline">Thanks</h2>
+                    <div class="divider contact-form__headline"></div>
+                    <p class="contact-form__subhead">We'll contact you shortly!</p>
+                </div>
             </div>
         </div>
         <div class="contact-form__background-image background-gradient" style="background-image: url(images/hero-contact-form.jpg)"></div>
@@ -297,27 +299,27 @@ $(document).ready(function() {
     });
     $("#contact-form__link-1").click(function() {
         $(".contact-form__overlay").addClass("open");
-        $(".contact-form__container").addClass("open");
+        $(".contact-form__form-group").addClass("open");
         $("#contact-form__form-1").addClass("open");
     });
     $("#contact-form__link-2").click(function() {
         $(".contact-form__overlay").addClass("open");
-        $(".contact-form__container").addClass("open");
+        $(".contact-form__form-group").addClass("open");
         $("#contact-form__form-2").addClass("open");
     });
     $("#contact-form__link-3").click(function() {
         $(".contact-form__overlay").addClass("open");
-        $(".contact-form__container").addClass("open");
+        $(".contact-form__form-group").addClass("open");
         $("#contact-form__form-3").addClass("open");
     });
     $("#contact-form__link-4").click(function() {
         $(".contact-form__overlay").addClass("open");
-        $(".contact-form__container").addClass("open");
+        $(".contact-form__form-group").addClass("open");
         $("#contact-form__form-4").addClass("open");
     });
     $(".contact-form__back").click(function() {
         $(".contact-form__overlay").removeClass("open");
-        $(".contact-form__container").removeClass("open");
+        $(".contact-form__form-group").addClass("open");
         $("#contact-form__form-1").removeClass("open");
         $("#contact-form__form-2").removeClass("open");
         $("#contact-form__form-3").removeClass("open");
@@ -335,10 +337,20 @@ $(document).ready(function() {
     //     }
     // });
     $('#form__submit').click(function() {
-        $(".contact-form__container").removeClass("open form-1 form-2 form-3 form-4");
-        $(".contact-form__confirmation").addClass("open");
-        $(".contact-form__confirmation").delay(2000).removeClass("open");
-        $(".contact-form__overlay").delay(2000).removeClass("open");
+        $(".contact-form__form-group").removeClass("open");
+        $(".contact-form__form").removeClass("open");
+        setTimeout(function() {
+            $(".contact-form__confirmation-group").addClass("open");
+        }, 1000);
+        // $("#contact-form__form-1").removeClass("open");
+        // $("#contact-form__form-2").removeClass("open");
+        // $("#contact-form__form-3").removeClass("open");
+        // $("#contact-form__form-4").removeClass("open");
+        setTimeout(function() {
+            // $(".contact-form__confirmation").removeClass("open");
+            // $(".contact-form__overlay").removeClass("open");
+        }, 2000);
+
     });
 });
 </script>

@@ -58,15 +58,31 @@
         .body-copy__body + .body-copy__h3 {
             margin-top: 3em;
         }
+        @include top-padding(0.25);
+        @include bottom-padding(0.25);
+        &:first-child {
+            padding-top: 0;
+        }
+        &:last-child {
+            padding-bottom: 0;
+        }
     }
     &__two-column {
         width: 100%;
         columns: 1;
         margin-left: auto;
         margin-right: auto;
+        @include top-padding(0.25);
+        @include bottom-padding(0.25);
         @media screen and ($md) {
             columns: 2;
             column-gap: 2rem;
+        }
+        &:first-child {
+            padding-top: 0;
+        }
+        &:last-child {
+            padding-bottom: 0;
         }
         &__group {
             @include two-column--group;
@@ -130,7 +146,7 @@
     &__h2 {
         @include ligatures;
         font-family: $serif;
-        line-height: $title-serif - 0.1;
+        line-height: 1.1;
         letter-spacing: $spacing-serif;
         font-weight: 700;
         max-width: 12em;
@@ -169,6 +185,28 @@
         }
         &.divider {
             margin-bottom: 0.5em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__h4 {
+        @include ligatures;
+        font-family: $serif;
+        line-height: 1.1;
+        letter-spacing: $spacing-serif;
+        font-weight: 700;
+        max-width: 12em;
+        font-size: $scale06;
+        @media only screen and ($md) {
+            font-size: $scale07;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale08;
+        }
+        margin-bottom: 1em;
+        &.divider {
+            margin-bottom: 0.4em;
             &:last-child {
                 margin-bottom: 0;
             }
