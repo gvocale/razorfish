@@ -197,13 +197,16 @@
     &__button-group {
         @include component-padding;
         display: flex;
+        flex-direction: row;
         margin-top: 2em;
         @media screen and ($md) {
             margin-top: 0;
+            max-width: 50%;
         }
         .button,
         .select {
-            margin-right: 0.25rem;
+            width: 100%;
+            margin-right: 0.5em;
             &:last-child {
                 margin-right: 0;
             }
