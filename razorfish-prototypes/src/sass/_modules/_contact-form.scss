@@ -1,11 +1,13 @@
 .contact-form {
     &__link {
-        font-family: $serif;
+        font-family: $sans;
         line-height: 1;
         font-weight: 400;
-        font-size: $scale04;
+        text-transform: uppercase;
+        letter-spacing: $spacing-sans-mega;
+        font-size: $scale03;
         @media screen and ($xxl) {
-            font-size: $scale05;
+            font-size: $scale04;
         }
         &:before {
             bottom: -0.5em;
@@ -40,6 +42,7 @@
         width: 100%;
         height: 100%;
         overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
     }
     &__container {
         position: relative;
@@ -102,7 +105,6 @@
         font-family: $serif;
         font-size: $scale06;
         line-height: $title-serif;
-        letter-spacing: $spacing-serif-tight;
         font-weight: 700;
         margin-bottom: 0.8em;
         max-width: 10em;
@@ -114,6 +116,23 @@
         }
         @media only screen and ($xxl) {
             font-size: $scale09;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__subhead {
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans;
+        margin-bottom: 1em;
+        max-width: 26em;
+        font-size: $scale04;
+        @media only screen and ($md) {
+            font-size: $scale05;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale06;
         }
         &:last-child {
             margin-bottom: 0;
@@ -225,6 +244,32 @@
                 background-image: none;
             }
         }
+    }
+    &__confirmation {
+        position: relative;
+        width: 100%;
+        min-height: 100%;
+        height: auto;
+        @include grid-padding;
+        @include top-padding;
+        @include bottom-padding;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        .divider {
+            margin-bottom: 0.8em;
+            width: 1.2
+        }
+    }
+}
+
+// 
+.contact-form__confirmation-container {
+    display: none;
+    &.confirmation {
+        display: block;
     }
 }
 
@@ -368,12 +413,13 @@
     }
 }
 
-.contact-form__form-1 {
+#contact-form__form-1,
+#contact-form__form-2,
+#contact-form__form-3,
+#contact-form__form-4,
+.contact-form__confirmation {
     display: none;
-}
-
-.contact-form__overlay.form-1 {
-    .contact-form__form-1 {
+    &.open {
         display: block;
     }
 }

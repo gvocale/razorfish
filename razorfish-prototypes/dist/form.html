@@ -47,7 +47,9 @@
                     <span class="hamburger-inner"></span>
             </span>
         </label>
-        <div class="site-navigation" role="navigation">
+    </nav>
+    <nav class="site-navigation__overlay">
+        <div class="site-navigation__scroll">
             <div class="site-navigation__container">
                 <ul class="site-navigation__pages">
                     <li class="site-navigation__link-container">
@@ -169,6 +171,7 @@
                 </ul>
             </div>
         </div>
+        <div class="contact-form__background-image background-gradient" style="background-image: url(images/hero-contact-form.jpg)"></div>
     </nav>
     <section class="hero hero--story hero--theme-white-accent animate">
         <div class="hero__text-container">
@@ -194,7 +197,7 @@
                     <h2 class="contact-form__headline">What would you like to talk to us about?</h2>
                     <div class="divider contact-form__headline animate"></div>
                 </div>
-                <form class="contact-form__form" id="contact-form__form-1">
+                <form class="contact-form__form" id="contact-form__form-1" onsubmit="return false">
                     <div class="form__field">
                         <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
                         <label class="form__placeholder" for="">First Name</label>
@@ -216,12 +219,12 @@
                         <div class="form__border"></div>
                     </div>
                     <div class="form__field">
-                        <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                        <input class="form__input" pattern="[0-9-]{6,}" autocomplete="false" type="tel" onkeyup="this.setAttribute('value', this.value);" value="" required>
                         <label class="form__placeholder" for="">Phone Number</label>
                         <div class="form__border"></div>
                     </div>
                     <div class="form__field">
-                        <input class="form__input" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                        <input class="form__input" autocomplete="false" type="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" onkeyup="this.setAttribute('value', this.value);" value="" required>
                         <label class="form__placeholder" for="">Email</label>
                         <div class="form__border"></div>
                     </div>
@@ -266,9 +269,14 @@
                         </div>
                     </div>
                     <div class="contact-form__button-group">
-                        <button class="button button--secondary button--white">Submit</button>
+                        <button class="button button--secondary button--white" id="form__submit">Submit</button>
                     </div>
                 </form>
+            </div>
+            <div class="contact-form__confirmation">
+                <h2 class="contact-form__headline">Thanks</h2>
+                <div class="divider contact-form__headline"></div>
+                <p class="contact-form__subhead">We'll contact you shortly!</p>
             </div>
         </div>
         <div class="contact-form__background-image background-gradient" style="background-image: url(images/hero-contact-form.jpg)"></div>
@@ -287,21 +295,50 @@ $(document).ready(function() {
             $(this).addClass("selected");
         });
     });
-
     $("#contact-form__link-1").click(function() {
-        $(".contact-form__overlay").addClass("open form-1");
+        $(".contact-form__overlay").addClass("open");
+        $(".contact-form__container").addClass("open");
+        $("#contact-form__form-1").addClass("open");
     });
     $("#contact-form__link-2").click(function() {
-        $(".contact-form__overlay").addClass("open form-2");
+        $(".contact-form__overlay").addClass("open");
+        $(".contact-form__container").addClass("open");
+        $("#contact-form__form-2").addClass("open");
     });
     $("#contact-form__link-3").click(function() {
-        $(".contact-form__overlay").addClass("open form-3");
+        $(".contact-form__overlay").addClass("open");
+        $(".contact-form__container").addClass("open");
+        $("#contact-form__form-3").addClass("open");
     });
     $("#contact-form__link-4").click(function() {
-        $(".contact-form__overlay").addClass("open form-4");
+        $(".contact-form__overlay").addClass("open");
+        $(".contact-form__container").addClass("open");
+        $("#contact-form__form-4").addClass("open");
     });
     $(".contact-form__back").click(function() {
-        $(".contact-form__overlay").removeClass("open form-1 form-2 form-3 form-4");
+        $(".contact-form__overlay").removeClass("open");
+        $(".contact-form__container").removeClass("open");
+        $("#contact-form__form-1").removeClass("open");
+        $("#contact-form__form-2").removeClass("open");
+        $("#contact-form__form-3").removeClass("open");
+        $("#contact-form__form-4").removeClass("open");
+    });
+    $("form").submit(function() {
+        return false;
+    });
+    // $('#form__submit').click(function() {
+    //     if ($(".contact-form__form").valid()) {
+    //         $(".contact-form__container").removeClass("open form-1 form-2 form-3 form-4");
+    //         $(".contact-form__confirmation-container").addClass("open");
+    //         $(".contact-form__confirmation-container").delay(2000).removeClass("open");
+    //         $(".contact-form__overlay").delay(2000).removeClass("open");
+    //     }
+    // });
+    $('#form__submit').click(function() {
+        $(".contact-form__container").removeClass("open form-1 form-2 form-3 form-4");
+        $(".contact-form__confirmation").addClass("open");
+        $(".contact-form__confirmation").delay(2000).removeClass("open");
+        $(".contact-form__overlay").delay(2000).removeClass("open");
     });
 });
 </script>

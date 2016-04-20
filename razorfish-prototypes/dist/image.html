@@ -47,7 +47,9 @@
                     <span class="hamburger-inner"></span>
             </span>
         </label>
-        <div class="site-navigation" role="navigation">
+    </nav>
+    <nav class="site-navigation__overlay">
+        <div class="site-navigation__scroll">
             <div class="site-navigation__container">
                 <ul class="site-navigation__pages">
                     <li class="site-navigation__link-container">
@@ -169,6 +171,7 @@
                 </ul>
             </div>
         </div>
+        <div class="contact-form__background-image background-gradient" style="background-image: url(images/hero-contact-form.jpg)"></div>
     </nav>
     <section class="image image--divider" style="background-image: url(images/article-photo-audi.jpg)">
         <input type="checkbox" id="image__caption__checkbox">
@@ -193,7 +196,6 @@
     </section>
     <script src="js/min/razorfish.min.js"></script>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/show-hide-header.js"></script>
@@ -208,7 +210,7 @@
         dots: true,
         nav: true,
         items: 1,
-        navText: ["",""],
+        navText: ["", ""],
         responsive: {
             0: {
                 margin: 16,

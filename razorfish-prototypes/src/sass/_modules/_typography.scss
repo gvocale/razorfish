@@ -438,7 +438,7 @@ p {
     &--arrow {
         &--left {
             position: relative;
-            padding-left: 1em;
+            padding-left: 0.75em;
             // Carrot
             &:before {
                 content: "";
@@ -455,25 +455,25 @@ p {
                 display: block;
                 top: 50%;
                 transform: translateY(-50%);
-                right: calc(100% + 16px);
-                transition: left 0.1s 0s ease-in-out;
+                right: calc(100% + 11px);
+                transition: right 0.1s 0s ease-in-out;
             }
             // Stick
             &:after {
                 content: "";
-                width: 0.5em;
-                height: 3px;
+                width: 11px;
+                height: 2px;
                 display: block;
                 background-color: currentColor;
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                right: calc(100% + 5px);
+                right: 100%;
                 transition: width 0.1s 0s ease-in-out;
             }
             &:hover {
                 &:before {
-                    right: calc(100% + 21px);
+                    right: calc(100% + 16px);
                 }
                 &:after {
                     width: 16px;
@@ -482,7 +482,7 @@ p {
         }
         &--right {
             position: relative;
-            margin-right: 1em;
+            margin-right: 0.75em;
             // Stick
             &:before {
                 content: "";
@@ -493,7 +493,7 @@ p {
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                left: calc(100% + 5px);
+                left: 100%;
                 transition: width 0.1s 0s ease-in-out;
             }
             // Carrot
@@ -512,7 +512,7 @@ p {
                 display: block;
                 top: 50%;
                 transform: translateY(-50%);
-                left: calc(100% + 16px);
+                left: calc(100% + 11px);
                 transition: left 0.1s 0s ease-in-out;
             }
             &:hover {
@@ -520,7 +520,7 @@ p {
                     width: 16px;
                 }
                 &:after {
-                    left: calc(100% + 21px);
+                    left: calc(100% + 16px);
                 }
             }
         }

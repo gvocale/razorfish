@@ -1,22 +1,37 @@
 .site-navigation {
-    position: fixed;
-    background-color: rgba(255, 255, 255, 0);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    transition: background-color 0.1s 0.1s $bezier, left 0s 0.2s linear, visibility 0s 0.5s linear;
-    visibility: hidden;
+    &__overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        visibility: hidden;
+        transition: visibility 0s 0.2s linear;
+    }
+    &__scroll {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
     &__container {
+        position: relative;
+        width: 100%;
+        min-height: 100%;
+        height: auto;
         @include grid-padding;
         @include top-padding;
         @include bottom-padding;
-        overflow: scroll;
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        background-color: $white;
+        opacity: 0;
+        transition: opacity 0.2s 0s ease-in-out;
     }
     &__link-container {
         opacity: 0;
@@ -40,6 +55,28 @@
         }
         &:last-of-type:after {
             display: none;
+        }
+        .link {
+            transition: all 0.1s ease 0.1s;
+            &:before {
+                display: block;
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                height: 100%;
+                transition: all 0.3s ease 0.1s;
+                box-shadow: 0 -0.08em 0 0 $primary inset;
+            }
+            &:hover:before {
+                width: 100%;
+                transition: all 0.1s ease 0s;
+            }
+            &:hover {
+                box-shadow: none;
+                transition: color 0.1s ease 0s;
+            }
         }
     }
     &__pages {
@@ -101,28 +138,6 @@
             margin-bottom: 0.5em;
         }
     }
-    .link {
-        transition: all 0.1s ease 0.1s;
-        &:before {
-            display: block;
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            transition: all 0.3s ease 0.1s;
-            box-shadow: 0 -0.08em 0 0 $primary inset;
-        }
-        &:hover:before {
-            width: 100%;
-            transition: all 0.1s ease 0s;
-        }
-        &:hover {
-            box-shadow: none;
-            transition: color 0.1s ease 0s;
-        }
-    }
 }
 
 @for $i from 1 through 20 {
@@ -133,31 +148,23 @@
     }
 }
 
-#site-masthead__checkbox:checked ~ .site-masthead {
-    .site-navigation {
-        visibility: visible;
-        background-color: rgba($white, 1);
-        transition: background-color 0.1s 0s $bezier, left 0s 0s linear, visibility 0s 0s linear;
-    }
+#site-masthead__checkbox:checked ~ .site-navigation__overlay {
+    visibility: visible;
+    transition: visibility 0s 0s linear;
     .site-navigation__link-container {
         opacity: 1;
         transform: translateY(0%);
         transition-timing-function: $bezier;
         transition-property: all;
-    }
-    @for $i from 1 through 20 {
-        .site-navigation__link-container:nth-of-type(#{$i}) {
-            // transition-delay: calc(0.2s + (0.025s * #{$i}));
-            transition-delay: calc(0.2s * (0.1 * #{random(25)}));
-            transition-duration: calc(0.05s * (0.1 * #{random(25)}));
+        @for $i from 1 through 20 {
+            &:nth-of-type(#{$i}) {
+                // transition-delay: calc(0.2s + (0.025s * #{$i}));
+                transition-delay: calc(0.2s * (0.1 * #{random(25)}));
+                transition-duration: calc(0.05s * (0.1 * #{random(25)}));
+            }
         }
     }
-}
-
-#site-masthead__checkbox:checked ~ main,
-#site-masthead__checkbox:checked ~ section,
-#site-masthead__checkbox:checked ~ footer,
-#site-masthead__checkbox:checked ~ article {
-    // filter: blur(10px);
-    // transition: filter 0s 0.1s linear;
+    .site-navigation__container {
+        opacity: 1;
+    }
 }
