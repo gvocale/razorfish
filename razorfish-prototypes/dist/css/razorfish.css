@@ -6258,9 +6258,13 @@ a[href^="tel"] {
 @-webkit-keyframes fields_hide {
   0% {
     opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   99% {
     opacity: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   100% {
     opacity: 0;
@@ -6271,9 +6275,13 @@ a[href^="tel"] {
 @keyframes fields_hide {
   0% {
     opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   99% {
     opacity: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   100% {
     opacity: 0;
@@ -6281,7 +6289,7 @@ a[href^="tel"] {
             transform: translateY(100px);
   }
 }
-/* line 57, ../../src/sass/_modules/_contact-form.scss */
+/* line 63, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__link {
   font-family: "Gotham A", Helvetica, Arial, sans-serif;
   line-height: 1;
@@ -6291,16 +6299,16 @@ a[href^="tel"] {
   font-size: 0.8077rem;
 }
 @media screen and (min-width: 1600px) {
-  /* line 57, ../../src/sass/_modules/_contact-form.scss */
+  /* line 63, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__link {
     font-size: 1rem;
   }
 }
-/* line 67, ../../src/sass/_modules/_contact-form.scss */
+/* line 73, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__link:before {
   bottom: -0.5em;
 }
-/* line 70, ../../src/sass/_modules/_contact-form.scss */
+/* line 76, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__link--group {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6314,23 +6322,23 @@ a[href^="tel"] {
   margin-top: 1.5em;
 }
 @media screen and (min-width: 768px) {
-  /* line 70, ../../src/sass/_modules/_contact-form.scss */
+  /* line 76, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__link--group {
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
   }
 }
-/* line 78, ../../src/sass/_modules/_contact-form.scss */
+/* line 84, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__link--group li {
   margin-right: 2em;
   margin-bottom: 2em;
 }
-/* line 81, ../../src/sass/_modules/_contact-form.scss */
+/* line 87, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__link--group li:last-child {
   margin-right: 0;
 }
-/* line 87, ../../src/sass/_modules/_contact-form.scss */
+/* line 93, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__overlay {
   position: fixed;
   width: 100%;
@@ -6339,7 +6347,53 @@ a[href^="tel"] {
   left: 0;
   color: #FFFFFF;
 }
-/* line 95, ../../src/sass/_modules/_contact-form.scss */
+/* line 100, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__overlay.close {
+  visibility: hidden;
+  transition: visibility 0s 1s linear;
+}
+/* line 101, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__overlay.close .contact-form__background-image {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: scale(1) translate3d(0, 0, 0);
+          transform: scale(1) translate3d(0, 0, 0);
+  -webkit-filter: blur(0);
+          filter: blur(0);
+  opacity: 0;
+  transition: all 0.5s 0s ease-in;
+}
+/* line 111, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__overlay.open--blurred {
+  visibility: visible;
+}
+/* line 113, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__overlay.open--blurred .contact-form__background-image {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: scale(1.3) translate3d(0, 5%, 0);
+          transform: scale(1.3) translate3d(0, 5%, 0);
+  opacity: 1;
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  transition: all 0.5s 0.01s ease-in-out;
+}
+/* line 121, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__overlay.open--sharp {
+  visibility: visible;
+}
+/* line 123, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__overlay.open--sharp .contact-form__background-image {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: scale(1) translate3d(0, 0, 0);
+          transform: scale(1) translate3d(0, 0, 0);
+  -webkit-filter: blur(0);
+          filter: blur(0);
+  opacity: 1;
+  transition: all 0.5s 0s ease-in;
+}
+/* line 132, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__scroll {
   position: relative;
   width: 100%;
@@ -6347,82 +6401,18 @@ a[href^="tel"] {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-/* line 102, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__container {
+/* line 139, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group {
+  position: absolute;
+  overflow: hidden;
   width: 100%;
   min-height: 100%;
-  height: auto;
+  top: 0;
+  left: 0;
   padding-left: calc(10vw - 1rem);
   padding-right: calc(10vw - 1rem);
   padding-top: 20vw;
   padding-bottom: 20vw;
-}
-@media screen and (min-width: 992px) {
-  /* line 102, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__container {
-    padding-left: calc(5vw - 1rem);
-    padding-right: calc(5vw - 1rem);
-  }
-}
-@media screen and (min-width: 1200px) {
-  /* line 102, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__container {
-    padding-left: calc(10vw - 1rem);
-    padding-right: calc(10vw - 1rem);
-  }
-}
-@media screen and (min-width: 768px) {
-  /* line 102, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__container {
-    padding-top: 15vw;
-  }
-}
-@media screen and (min-width: 992px) {
-  /* line 102, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__container {
-    padding-top: 7.5vw;
-  }
-}
-@media screen and (min-width: 1200px) {
-  /* line 102, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__container {
-    padding-top: 10vw;
-  }
-}
-@media screen and (min-width: 1600px) {
-  /* line 102, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__container {
-    padding-top: 7.5vw;
-  }
-}
-@media screen and (min-width: 768px) {
-  /* line 102, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__container {
-    padding-bottom: 15vw;
-  }
-}
-@media screen and (min-width: 992px) {
-  /* line 102, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__container {
-    padding-bottom: 7.5vw;
-  }
-}
-@media screen and (min-width: 1200px) {
-  /* line 102, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__container {
-    padding-bottom: 10vw;
-  }
-}
-@media screen and (min-width: 1600px) {
-  /* line 102, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__container {
-    padding-bottom: 7.5vw;
-  }
-}
-/* line 110, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__form-group, .contact-form__confirmation-group {
-  position: relative;
-  width: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -6439,7 +6429,575 @@ a[href^="tel"] {
       -ms-flex-pack: center;
           justify-content: center;
 }
-/* line 120, ../../src/sass/_modules/_contact-form.scss */
+@media screen and (min-width: 992px) {
+  /* line 139, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__form-group {
+    padding-left: calc(5vw - 1rem);
+    padding-right: calc(5vw - 1rem);
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 139, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__form-group {
+    padding-left: calc(10vw - 1rem);
+    padding-right: calc(10vw - 1rem);
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 139, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__form-group {
+    padding-top: 15vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 139, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__form-group {
+    padding-top: 7.5vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 139, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__form-group {
+    padding-top: 10vw;
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* line 139, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__form-group {
+    padding-top: 7.5vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 139, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__form-group {
+    padding-bottom: 15vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 139, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__form-group {
+    padding-bottom: 7.5vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 139, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__form-group {
+    padding-bottom: 10vw;
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* line 139, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__form-group {
+    padding-bottom: 7.5vw;
+  }
+}
+/* line 154, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group .divider {
+  margin-bottom: 0.8em;
+  font-size: 1.6154rem;
+}
+@media only screen and (min-width: 768px) {
+  /* line 154, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__form-group .divider {
+    font-size: 2.1154rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* line 154, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__form-group .divider {
+    font-size: 2.6154rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  /* line 154, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__form-group .divider {
+    font-size: 3.4231rem;
+  }
+}
+/* line 167, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.close {
+  visibility: hidden;
+  height: 0;
+  transition: visibility 0s 0.5s linear, height 0s 0.5s linear;
+}
+/* line 171, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.close .contact-form__back-container,
+.contact-form__form-group.close .contact-form__headline,
+.contact-form__form-group.close .divider,
+.contact-form__form-group.close .form__field {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  transition: -webkit-transform 0s 0.21s linear, opacity 0s 0.21s linear;
+  transition: transform 0s 0.21s linear, opacity 0s 0.21s linear;
+  -webkit-animation-name: fields_hide;
+          animation-name: fields_hide;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+/* line 179, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open {
+  visibility: visible;
+  height: auto;
+}
+/* line 182, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .contact-form__back-container {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
+  transition: transform 0s 0s linear, opacity 0s 0s linear;
+  -webkit-animation-name: fields_visible;
+          animation-name: fields_visible;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+/* line 186, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .contact-form__headline {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
+  transition: transform 0s 0s linear, opacity 0s 0s linear;
+  -webkit-animation-name: fields_visible;
+          animation-name: fields_visible;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 0.025s;
+          animation-delay: 0.025s;
+}
+/* line 190, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .divider {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
+  transition: transform 0s 0s linear, opacity 0s 0s linear;
+  -webkit-animation-name: fields_visible;
+          animation-name: fields_visible;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 0.05s;
+          animation-delay: 0.05s;
+}
+/* line 194, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
+  transition: transform 0s 0s linear, opacity 0s 0s linear;
+  -webkit-animation-name: fields_visible;
+          animation-name: fields_visible;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(1) {
+  -webkit-animation-delay: 0.075s;
+          animation-delay: 0.075s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(2) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(3) {
+  -webkit-animation-delay: 0.125s;
+          animation-delay: 0.125s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(4) {
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(5) {
+  -webkit-animation-delay: 0.175s;
+          animation-delay: 0.175s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(6) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(7) {
+  -webkit-animation-delay: 0.225s;
+          animation-delay: 0.225s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(8) {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(9) {
+  -webkit-animation-delay: 0.275s;
+          animation-delay: 0.275s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(10) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(11) {
+  -webkit-animation-delay: 0.325s;
+          animation-delay: 0.325s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(12) {
+  -webkit-animation-delay: 0.35s;
+          animation-delay: 0.35s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(13) {
+  -webkit-animation-delay: 0.375s;
+          animation-delay: 0.375s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(14) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+/* line 197, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.open .form__field:nth-of-type(15) {
+  -webkit-animation-delay: 0.425s;
+          animation-delay: 0.425s;
+}
+/* line 204, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__confirmation-group {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  padding-left: calc(10vw - 1rem);
+  padding-right: calc(10vw - 1rem);
+  padding-top: 20vw;
+  padding-bottom: 20vw;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media screen and (min-width: 992px) {
+  /* line 204, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__confirmation-group {
+    padding-left: calc(5vw - 1rem);
+    padding-right: calc(5vw - 1rem);
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 204, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__confirmation-group {
+    padding-left: calc(10vw - 1rem);
+    padding-right: calc(10vw - 1rem);
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 204, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__confirmation-group {
+    padding-top: 15vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 204, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__confirmation-group {
+    padding-top: 7.5vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 204, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__confirmation-group {
+    padding-top: 10vw;
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* line 204, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__confirmation-group {
+    padding-top: 7.5vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 204, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__confirmation-group {
+    padding-bottom: 15vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 204, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__confirmation-group {
+    padding-bottom: 7.5vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 204, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__confirmation-group {
+    padding-bottom: 10vw;
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* line 204, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__confirmation-group {
+    padding-bottom: 7.5vw;
+  }
+}
+/* line 219, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__confirmation-group .divider {
+  margin-bottom: 0.8em;
+  font-size: 1.6154rem;
+}
+@media only screen and (min-width: 768px) {
+  /* line 219, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__confirmation-group .divider {
+    font-size: 2.1154rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* line 219, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__confirmation-group .divider {
+    font-size: 2.6154rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  /* line 219, ../../src/sass/_modules/_contact-form.scss */
+  .contact-form__confirmation-group .divider {
+    font-size: 3.4231rem;
+  }
+}
+/* line 232, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__confirmation-group.close {
+  visibility: hidden;
+  height: 0;
+  transition: visibility 0s 0.5s linear, height 0s 0.5s linear;
+}
+/* line 236, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__confirmation-group.close .contact-form__headline {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  transition: -webkit-transform 0s 0.21s linear, opacity 0s 0.21s linear;
+  transition: transform 0s 0.21s linear, opacity 0s 0.21s linear;
+  -webkit-animation-name: fields_hide;
+          animation-name: fields_hide;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+/* line 240, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__confirmation-group.close .divider {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  transition: -webkit-transform 0s 0.21s linear, opacity 0s 0.21s linear;
+  transition: transform 0s 0.21s linear, opacity 0s 0.21s linear;
+  -webkit-animation-name: fields_hide;
+          animation-name: fields_hide;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+/* line 244, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__confirmation-group.close .contact-form__subhead {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  transition: -webkit-transform 0s 0.21s linear, opacity 0s 0.21s linear;
+  transition: transform 0s 0.21s linear, opacity 0s 0.21s linear;
+  -webkit-animation-name: fields_hide;
+          animation-name: fields_hide;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+/* line 249, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__confirmation-group.open {
+  visibility: visible;
+  height: auto;
+}
+/* line 252, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__confirmation-group.open .contact-form__headline {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
+  transition: transform 0s 0s linear, opacity 0s 0s linear;
+  -webkit-animation-name: fields_visible;
+          animation-name: fields_visible;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+/* line 256, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__confirmation-group.open .divider {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
+  transition: transform 0s 0s linear, opacity 0s 0s linear;
+  -webkit-animation-name: fields_visible;
+          animation-name: fields_visible;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 0.025s;
+          animation-delay: 0.025s;
+}
+/* line 260, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__confirmation-group.open .contact-form__subhead {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
+  transition: transform 0s 0s linear, opacity 0s 0s linear;
+  -webkit-animation-name: fields_visible;
+          animation-name: fields_visible;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-delay: 0.05s;
+          animation-delay: 0.05s;
+}
+/* line 266, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__back {
   font-family: "Gotham A", Helvetica, Arial, sans-serif;
   font-size: 1rem;
@@ -6450,16 +7008,16 @@ a[href^="tel"] {
   cursor: pointer;
 }
 @media screen and (min-width: 1600px) {
-  /* line 120, ../../src/sass/_modules/_contact-form.scss */
+  /* line 266, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__back {
     font-size: 1.3077rem;
   }
 }
-/* line 131, ../../src/sass/_modules/_contact-form.scss */
+/* line 277, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__back:before {
   bottom: -0.5em;
 }
-/* line 134, ../../src/sass/_modules/_contact-form.scss */
+/* line 280, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__back--group {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6468,43 +7026,43 @@ a[href^="tel"] {
       -ms-flex-direction: row;
           flex-direction: row;
 }
-/* line 137, ../../src/sass/_modules/_contact-form.scss */
+/* line 283, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__back--group li {
   margin-right: 2em;
 }
-/* line 139, ../../src/sass/_modules/_contact-form.scss */
+/* line 285, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__back--group li:last-child {
   margin-right: 0;
 }
-/* line 145, ../../src/sass/_modules/_contact-form.scss */
+/* line 291, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__back-container {
   padding-bottom: 10vw;
 }
 @media screen and (min-width: 768px) {
-  /* line 145, ../../src/sass/_modules/_contact-form.scss */
+  /* line 291, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__back-container {
     padding-bottom: 7.5vw;
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 145, ../../src/sass/_modules/_contact-form.scss */
+  /* line 291, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__back-container {
     padding-bottom: 3.75vw;
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 145, ../../src/sass/_modules/_contact-form.scss */
+  /* line 291, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__back-container {
     padding-bottom: 5vw;
   }
 }
 @media screen and (min-width: 1600px) {
-  /* line 145, ../../src/sass/_modules/_contact-form.scss */
+  /* line 291, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__back-container {
     padding-bottom: 3.75vw;
   }
 }
-/* line 148, ../../src/sass/_modules/_contact-form.scss */
+/* line 294, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__headline-container {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -6520,38 +7078,8 @@ a[href^="tel"] {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 10vw;
 }
-@media screen and (min-width: 768px) {
-  /* line 148, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__headline-container {
-    padding-bottom: 7.5vw;
-  }
-}
-@media screen and (min-width: 992px) {
-  /* line 148, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__headline-container {
-    padding-bottom: 3.75vw;
-  }
-}
-@media screen and (min-width: 1200px) {
-  /* line 148, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__headline-container {
-    padding-bottom: 5vw;
-  }
-}
-@media screen and (min-width: 1600px) {
-  /* line 148, ../../src/sass/_modules/_contact-form.scss */
-  .contact-form__headline-container {
-    padding-bottom: 3.75vw;
-  }
-}
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__headline-container .divider {
-  margin-bottom: 0.8em;
-  width: 1.2;
-}
-/* line 162, ../../src/sass/_modules/_contact-form.scss */
+/* line 303, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__headline {
   text-rendering: optimizeLegibility;
   -webkit-font-variant-ligatures: common-ligatures;
@@ -6561,35 +7089,35 @@ a[href^="tel"] {
   -webkit-font-kerning: normal;
           font-kerning: normal;
   font-family: "MillerDisplay", Times, Georgia, serif;
-  font-size: 1.6154rem;
   line-height: 1.2;
   font-weight: 700;
   margin-bottom: 0.8em;
   max-width: 10em;
+  font-size: 1.6154rem;
 }
 @media only screen and (min-width: 768px) {
-  /* line 162, ../../src/sass/_modules/_contact-form.scss */
+  /* line 303, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__headline {
     font-size: 2.1154rem;
   }
 }
 @media only screen and (min-width: 992px) {
-  /* line 162, ../../src/sass/_modules/_contact-form.scss */
+  /* line 303, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__headline {
     font-size: 2.6154rem;
   }
 }
 @media only screen and (min-width: 1600px) {
-  /* line 162, ../../src/sass/_modules/_contact-form.scss */
+  /* line 303, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__headline {
     font-size: 3.4231rem;
   }
 }
-/* line 179, ../../src/sass/_modules/_contact-form.scss */
+/* line 320, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__headline:last-child {
   margin-bottom: 0;
 }
-/* line 183, ../../src/sass/_modules/_contact-form.scss */
+/* line 324, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__subhead {
   font-family: "Gotham A", Helvetica, Arial, sans-serif;
   line-height: 1.4;
@@ -6599,22 +7127,22 @@ a[href^="tel"] {
   font-size: 1rem;
 }
 @media only screen and (min-width: 768px) {
-  /* line 183, ../../src/sass/_modules/_contact-form.scss */
+  /* line 324, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__subhead {
     font-size: 1.3077rem;
   }
 }
 @media only screen and (min-width: 1600px) {
-  /* line 183, ../../src/sass/_modules/_contact-form.scss */
+  /* line 324, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__subhead {
     font-size: 1.6154rem;
   }
 }
-/* line 196, ../../src/sass/_modules/_contact-form.scss */
+/* line 337, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__subhead:last-child {
   margin-bottom: 0;
 }
-/* line 200, ../../src/sass/_modules/_contact-form.scss */
+/* line 341, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__background-image {
   background-size: cover;
   background-position: center;
@@ -6628,7 +7156,7 @@ a[href^="tel"] {
   z-index: -1;
   transition: all 0.4s 0.01s ease-in-out;
 }
-/* line 213, ../../src/sass/_modules/_contact-form.scss */
+/* line 354, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6645,40 +7173,40 @@ a[href^="tel"] {
   left: 50%;
 }
 @media screen and (min-width: 768px) {
-  /* line 213, ../../src/sass/_modules/_contact-form.scss */
+  /* line 354, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__form {
     width: calc(100% / 6 * 4);
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 213, ../../src/sass/_modules/_contact-form.scss */
+  /* line 354, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__form {
     width: calc(100% / 12 * 6);
   }
 }
 @media screen and (min-width: 1600px) {
-  /* line 213, ../../src/sass/_modules/_contact-form.scss */
+  /* line 354, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__form {
     width: calc(100% / 12 * 4);
   }
 }
-/* line 231, ../../src/sass/_modules/_contact-form.scss */
+/* line 372, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__field {
   position: relative;
   margin-left: 1rem;
   margin-right: 1rem;
 }
 @media screen and (min-width: 992px) {
-  /* line 235, ../../src/sass/_modules/_contact-form.scss */
+  /* line 376, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__field:nth-child(1), .contact-form__field:nth-child(2), .contact-form__field:nth-child(3), .contact-form__field:nth-child(4), .contact-form__field:nth-child(5), .contact-form__field:nth-child(6) {
     width: calc((100% / 12 * 4) - 2rem);
   }
-  /* line 243, ../../src/sass/_modules/_contact-form.scss */
+  /* line 384, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__field:nth-child(7), .contact-form__field:nth-child(8), .contact-form__field:nth-child(9), .contact-form__field:nth-child(10) {
     width: calc((100% / 12 * 6) - 2rem);
   }
 }
-/* line 251, ../../src/sass/_modules/_contact-form.scss */
+/* line 392, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__button-group {
   width: 100%;
   display: -webkit-flex;
@@ -6693,30 +7221,30 @@ a[href^="tel"] {
   padding-top: 5vw;
 }
 @media screen and (min-width: 768px) {
-  /* line 251, ../../src/sass/_modules/_contact-form.scss */
+  /* line 392, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__button-group {
     padding-top: 3.75vw;
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 251, ../../src/sass/_modules/_contact-form.scss */
+  /* line 392, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__button-group {
     padding-top: 1.875vw;
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 251, ../../src/sass/_modules/_contact-form.scss */
+  /* line 392, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__button-group {
     padding-top: 2.5vw;
   }
 }
 @media screen and (min-width: 1600px) {
-  /* line 251, ../../src/sass/_modules/_contact-form.scss */
+  /* line 392, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__button-group {
     padding-top: 1.875vw;
   }
 }
-/* line 259, ../../src/sass/_modules/_contact-form.scss */
+/* line 400, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"] {
   border: none;
   color: currentColor;
@@ -6744,7 +7272,7 @@ a[href^="tel"] {
   background-origin: border-box;
   background-color: transparent;
 }
-/* line 283, ../../src/sass/_modules/_contact-form.scss */
+/* line 424, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"]::-webkit-input-placeholder {
   color: currentColor;
   opacity: 0.5;
@@ -6765,110 +7293,35 @@ a[href^="tel"] {
   opacity: 0.5;
   transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-/* line 288, ../../src/sass/_modules/_contact-form.scss */
+/* line 429, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"]:valid {
   background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?><svg width='60px' height='60px' version='1.1' xmlns='http://www.w3.org/2000/svg'><path d='M30,60 C13.43,60 0,46.5715524 0,30.001 C0,13.4304477 13.43,0 30,0 C46.57,0 60,13.4304477 60,30.001 C60,46.5715524 46.57,60 30,60 L30,60 Z M30,6 C16.746,6 6,16.7443581 6,30.0008 C6,43.2552418 16.746,53.9996 30,53.9996 C43.254,53.9996 54,43.2552418 54,30.0008 C54,16.7443581 43.254,6 30,6 L30,6 Z M41.7333333,21 L46,25.1818182 L31.0666667,39.8181818 L26.8,35.6363636 L41.7333333,21 L41.7333333,21 Z M14,31.4545455 L18.2666667,27.2727273 L31.0666667,39.8181818 L26.8,44 L14,31.4545455 L14,31.4545455 Z' id='icon-tick' fill='#a9c000'></path> </svg> ");
 }
-/* line 291, ../../src/sass/_modules/_contact-form.scss */
+/* line 432, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"]:invalid {
   background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?><svg width='60px' height='60px' version='1.1' xmlns='http://www.w3.org/2000/svg'><path d='M30,60 C13.43,60 0,46.5715524 0,30.001 C0,13.4304477 13.43,0 30,0 C46.57,0 60,13.4304477 60,30.001 C60,46.5715524 46.57,60 30,60 Z M30,6 C16.746,6 6,16.7443581 6,30.0008 C6,43.2552418 16.746,53.9996 30,53.9996 C43.254,53.9996 54,43.2552418 54,30.0008 C54,16.7443581 43.254,6 30,6 Z M27,43.4826494 L33.8400002,43.4826494 L33.8400002,24 L27,24 L27,43.4826494 Z M27,22.0421681 L33.8400002,22.0421681 L33.8400002,17 L27,17 L27,22.0421681 Z' id='icon-info' fill='#ff595b'></path> </svg> ");
 }
-/* line 294, ../../src/sass/_modules/_contact-form.scss */
+/* line 435, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"]:focus {
   outline: none;
 }
-/* line 297, ../../src/sass/_modules/_contact-form.scss */
+/* line 438, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"][value=""] ~ .input-label {
   opacity: 0;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
   transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-/* line 302, ../../src/sass/_modules/_contact-form.scss */
+/* line 443, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"][value=""] {
   background-image: none;
 }
 
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(1) {
-  transition-delay: calc(0.01s * 1);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(2) {
-  transition-delay: calc(0.01s * 2);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(3) {
-  transition-delay: calc(0.01s * 3);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(4) {
-  transition-delay: calc(0.01s * 4);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(5) {
-  transition-delay: calc(0.01s * 5);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(6) {
-  transition-delay: calc(0.01s * 6);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(7) {
-  transition-delay: calc(0.01s * 7);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(8) {
-  transition-delay: calc(0.01s * 8);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(9) {
-  transition-delay: calc(0.01s * 9);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(10) {
-  transition-delay: calc(0.01s * 10);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(11) {
-  transition-delay: calc(0.01s * 11);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(12) {
-  transition-delay: calc(0.01s * 12);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(13) {
-  transition-delay: calc(0.01s * 13);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(14) {
-  transition-delay: calc(0.01s * 14);
-}
-
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
-.form__field:nth-of-type(15) {
-  transition-delay: calc(0.01s * 15);
-}
-
-/* line 316, ../../src/sass/_modules/_contact-form.scss */
+/* line 451, ../../src/sass/_modules/_contact-form.scss */
 .form:focus ~ .input-border, .form:invalid ~ .input-border, .form:valid ~ .input-border, .form[value=""]:focus ~ .input-border {
   opacity: 1;
 }
-/* line 322, ../../src/sass/_modules/_contact-form.scss */
+/* line 457, ../../src/sass/_modules/_contact-form.scss */
 .form::-webkit-input-placeholder, .form[value=""] ~ .input-label {
   opacity: 0;
 }
@@ -6881,11 +7334,11 @@ a[href^="tel"] {
 .form::placeholder, .form[value=""] ~ .input-label {
   opacity: 0;
 }
-/* line 326, ../../src/sass/_modules/_contact-form.scss */
+/* line 461, ../../src/sass/_modules/_contact-form.scss */
 .form[value=""] ~ .input-border {
   opacity: 0.3;
 }
-/* line 329, ../../src/sass/_modules/_contact-form.scss */
+/* line 464, ../../src/sass/_modules/_contact-form.scss */
 .form[value=""] ~ .input-icon, .form[value=""], .form[value=""]::-webkit-input-placeholder {
   opacity: 0.5;
 }
@@ -6899,502 +7352,31 @@ a[href^="tel"] {
   opacity: 0.5;
 }
 
-/* line 337, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay {
-  visibility: hidden;
-  transition: visibility 0s 1s linear;
+/* line 471, ../../src/sass/_modules/_contact-form.scss */
+.divider-gio {
+  height: 6px;
+  background-color: #a9c000;
+  border: none;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  width: 0.8em;
+  height: 4px;
 }
-/* line 339, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay .contact-form__back-container {
-  -webkit-animation-name: fields_hide;
-          animation-name: fields_hide;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
+@media screen and (min-width: 992px) {
+  /* line 471, ../../src/sass/_modules/_contact-form.scss */
+  .divider-gio {
+    height: 5px;
+  }
 }
-/* line 342, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay .contact-form__headline {
-  -webkit-animation-name: fields_hide;
-          animation-name: fields_hide;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-/* line 345, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay .contact-form__headline.divider {
-  -webkit-animation-name: fields_hide;
-          animation-name: fields_hide;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-/* line 348, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay .form__field {
-  -webkit-animation-name: fields_hide;
-          animation-name: fields_hide;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-/* line 352, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay .contact-form__background-image {
-  opacity: 0;
-  -webkit-filter: blur(0);
-          filter: blur(0);
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  -webkit-transform: scale(1) translate3d(0, 0, 0);
-          transform: scale(1) translate3d(0, 0, 0);
-  transition: all 0.4s 0.2s ease-in;
-}
-
-/* line 365, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open {
-  visibility: visible;
-  transition: visibility 0s 0s linear;
-}
-/* line 370, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .contact-form__background-image {
-  -webkit-transform: scale(1.3) translate3d(0, 5%, 0);
-          transform: scale(1.3) translate3d(0, 5%, 0);
-  opacity: 1;
-  -webkit-filter: blur(20px);
-          filter: blur(20px);
-  transition: all 0.5s 0.01s ease-in-out;
-}
-/* line 377, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .contact-form__back-container {
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
-  opacity: 0;
-  -webkit-animation-name: fields_visible;
-          animation-name: fields_visible;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-  -webkit-animation-delay: 0.10s;
-          animation-delay: 0.10s;
-}
-/* line 381, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .contact-form__headline {
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
-  opacity: 0;
-  -webkit-animation-name: fields_visible;
-          animation-name: fields_visible;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-  -webkit-animation-delay: 0.125s;
-          animation-delay: 0.125s;
-}
-/* line 385, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .contact-form__headline.divider {
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
-  opacity: 0;
-  -webkit-animation-name: fields_visible;
-          animation-name: fields_visible;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-  -webkit-animation-delay: 0.15s;
-          animation-delay: 0.15s;
-}
-/* line 389, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .contact-form__subhead {
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
-  opacity: 0;
-  -webkit-animation-name: fields_visible;
-          animation-name: fields_visible;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-  -webkit-animation-delay: 0.175s;
-          animation-delay: 0.175s;
-}
-/* line 393, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field {
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
-  opacity: 0;
-  -webkit-animation-name: fields_visible;
-          animation-name: fields_visible;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(1) {
-  -webkit-animation-delay: 0.175s;
-          animation-delay: 0.175s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(2) {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(3) {
-  -webkit-animation-delay: 0.225s;
-          animation-delay: 0.225s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(4) {
-  -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(5) {
-  -webkit-animation-delay: 0.275s;
-          animation-delay: 0.275s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(6) {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(7) {
-  -webkit-animation-delay: 0.325s;
-          animation-delay: 0.325s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(8) {
-  -webkit-animation-delay: 0.35s;
-          animation-delay: 0.35s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(9) {
-  -webkit-animation-delay: 0.375s;
-          animation-delay: 0.375s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(10) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(11) {
-  -webkit-animation-delay: 0.425s;
-          animation-delay: 0.425s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(12) {
-  -webkit-animation-delay: 0.45s;
-          animation-delay: 0.45s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(13) {
-  -webkit-animation-delay: 0.475s;
-          animation-delay: 0.475s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(14) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-}
-/* line 396, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__overlay.open .form__field:nth-of-type(15) {
-  -webkit-animation-delay: 0.525s;
-          animation-delay: 0.525s;
-}
-
-/* line 403, ../../src/sass/_modules/_contact-form.scss */
-#contact-form__form-1,
-#contact-form__form-2,
-#contact-form__form-3,
-#contact-form__form-4,
-.contact-form__confirmation {
-  visibility: hidden;
-  height: 0;
-  transition: visibility 0s 0.5s linear, height 0s 0.5s linear;
-}
-/* line 411, ../../src/sass/_modules/_contact-form.scss */
-#contact-form__form-1.open,
-#contact-form__form-2.open,
-#contact-form__form-3.open,
-#contact-form__form-4.open,
-.contact-form__confirmation.open {
-  visibility: visible;
-  height: auto;
-  transition: visibility 0s 0s linear, height 0s 0s linear;
-}
-
-/* line 419, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__form-group {
-  visibility: hidden;
-  height: 0;
-  transition: visibility 0s 0.5s linear, height 0s 0.5s linear;
-}
-/* line 424, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__form-group .contact-form__back,
-.contact-form__form-group .contact-form__headline,
-.contact-form__form-group .divider.contact-form__headline,
-.contact-form__form-group .form__field {
-  -webkit-animation-name: fields_hide;
-          animation-name: fields_hide;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-/* line 431, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__form-group.open {
-  visibility: visible;
-  height: auto;
-  min-height: 100%;
-  transition: visibility 0s 0s linear, height 0s 0s linear;
-}
-/* line 437, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__form-group.open > .contact-form__back, .contact-form__form-group.open > .contact-form__headline, .contact-form__form-group.open > .divider.contact-form__headline, .contact-form__form-group.open > .form__field {
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
-  opacity: 0;
-  -webkit-animation-name: fields_visible;
-          animation-name: fields_visible;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-
-/* line 446, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group {
-  visibility: hidden;
-  height: 0;
-  transition: visibility 0s 0.5s linear, height 0s 0.5s linear;
-}
-/* line 451, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > * {
-  -webkit-animation-name: fields_hide;
-          animation-name: fields_hide;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-  -webkit-animation-delay: 0;
-          animation-delay: 0;
-}
-/* line 456, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group.open {
-  visibility: visible;
-  height: auto;
-  min-height: 100%;
-  transition: visibility 0s 0s linear, height 0s 0s linear;
-}
-/* line 462, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > * {
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
-  opacity: 0;
-  -webkit-animation-name: fields_visible;
-          animation-name: fields_visible;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(1) {
-  -webkit-animation-delay: 0.125s;
-          animation-delay: 0.125s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(2) {
-  -webkit-animation-delay: 0.15s;
-          animation-delay: 0.15s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(3) {
-  -webkit-animation-delay: 0.175s;
-          animation-delay: 0.175s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(4) {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(5) {
-  -webkit-animation-delay: 0.225s;
-          animation-delay: 0.225s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(6) {
-  -webkit-animation-delay: 0.25s;
-          animation-delay: 0.25s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(7) {
-  -webkit-animation-delay: 0.275s;
-          animation-delay: 0.275s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(8) {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(9) {
-  -webkit-animation-delay: 0.325s;
-          animation-delay: 0.325s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(10) {
-  -webkit-animation-delay: 0.35s;
-          animation-delay: 0.35s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(11) {
-  -webkit-animation-delay: 0.375s;
-          animation-delay: 0.375s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(12) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(13) {
-  -webkit-animation-delay: 0.425s;
-          animation-delay: 0.425s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(14) {
-  -webkit-animation-delay: 0.45s;
-          animation-delay: 0.45s;
-}
-/* line 465, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group .contact-form__confirmation > *:nth-of-type(15) {
-  -webkit-animation-delay: 0.475s;
-          animation-delay: 0.475s;
+@media screen and (min-width: 1600px) {
+  /* line 471, ../../src/sass/_modules/_contact-form.scss */
+  .divider-gio {
+    height: 6px;
+  }
 }
 
 /* line 1, ../../src/sass/_modules/_contact-info.scss */
@@ -14694,122 +14676,122 @@ a[href^="tel"] {
 
 /* line 144, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(1) {
-  transition-delay: calc(0s * (0.1 * 15));
-  transition-duration: calc(0.05s * (0.1 * 25));
-}
-
-/* line 144, ../../src/sass/_modules/_site-navigation.scss */
-.site-navigation__link-container:nth-of-type(2) {
-  transition-delay: calc(0s * (0.1 * 14));
+  transition-delay: calc(0s * (0.1 * 11));
   transition-duration: calc(0.05s * (0.1 * 1));
 }
 
 /* line 144, ../../src/sass/_modules/_site-navigation.scss */
-.site-navigation__link-container:nth-of-type(3) {
-  transition-delay: calc(0s * (0.1 * 10));
-  transition-duration: calc(0.05s * (0.1 * 16));
-}
-
-/* line 144, ../../src/sass/_modules/_site-navigation.scss */
-.site-navigation__link-container:nth-of-type(4) {
-  transition-delay: calc(0s * (0.1 * 1));
-  transition-duration: calc(0.05s * (0.1 * 21));
-}
-
-/* line 144, ../../src/sass/_modules/_site-navigation.scss */
-.site-navigation__link-container:nth-of-type(5) {
-  transition-delay: calc(0s * (0.1 * 15));
+.site-navigation__link-container:nth-of-type(2) {
+  transition-delay: calc(0s * (0.1 * 24));
   transition-duration: calc(0.05s * (0.1 * 20));
 }
 
 /* line 144, ../../src/sass/_modules/_site-navigation.scss */
-.site-navigation__link-container:nth-of-type(6) {
-  transition-delay: calc(0s * (0.1 * 8));
-  transition-duration: calc(0.05s * (0.1 * 19));
-}
-
-/* line 144, ../../src/sass/_modules/_site-navigation.scss */
-.site-navigation__link-container:nth-of-type(7) {
-  transition-delay: calc(0s * (0.1 * 14));
+.site-navigation__link-container:nth-of-type(3) {
+  transition-delay: calc(0s * (0.1 * 3));
   transition-duration: calc(0.05s * (0.1 * 6));
 }
 
 /* line 144, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__link-container:nth-of-type(4) {
+  transition-delay: calc(0s * (0.1 * 13));
+  transition-duration: calc(0.05s * (0.1 * 18));
+}
+
+/* line 144, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__link-container:nth-of-type(5) {
+  transition-delay: calc(0s * (0.1 * 21));
+  transition-duration: calc(0.05s * (0.1 * 14));
+}
+
+/* line 144, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__link-container:nth-of-type(6) {
+  transition-delay: calc(0s * (0.1 * 18));
+  transition-duration: calc(0.05s * (0.1 * 8));
+}
+
+/* line 144, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__link-container:nth-of-type(7) {
+  transition-delay: calc(0s * (0.1 * 20));
+  transition-duration: calc(0.05s * (0.1 * 22));
+}
+
+/* line 144, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(8) {
-  transition-delay: calc(0s * (0.1 * 25));
-  transition-duration: calc(0.05s * (0.1 * 19));
+  transition-delay: calc(0s * (0.1 * 24));
+  transition-duration: calc(0.05s * (0.1 * 4));
 }
 
 /* line 144, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(9) {
   transition-delay: calc(0s * (0.1 * 3));
-  transition-duration: calc(0.05s * (0.1 * 9));
+  transition-duration: calc(0.05s * (0.1 * 8));
 }
 
 /* line 144, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(10) {
-  transition-delay: calc(0s * (0.1 * 16));
-  transition-duration: calc(0.05s * (0.1 * 23));
+  transition-delay: calc(0s * (0.1 * 7));
+  transition-duration: calc(0.05s * (0.1 * 24));
 }
 
 /* line 144, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(11) {
-  transition-delay: calc(0s * (0.1 * 20));
-  transition-duration: calc(0.05s * (0.1 * 19));
+  transition-delay: calc(0s * (0.1 * 11));
+  transition-duration: calc(0.05s * (0.1 * 24));
 }
 
 /* line 144, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(12) {
-  transition-delay: calc(0s * (0.1 * 3));
+  transition-delay: calc(0s * (0.1 * 13));
   transition-duration: calc(0.05s * (0.1 * 3));
 }
 
 /* line 144, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(13) {
-  transition-delay: calc(0s * (0.1 * 15));
-  transition-duration: calc(0.05s * (0.1 * 4));
-}
-
-/* line 144, ../../src/sass/_modules/_site-navigation.scss */
-.site-navigation__link-container:nth-of-type(14) {
-  transition-delay: calc(0s * (0.1 * 13));
-  transition-duration: calc(0.05s * (0.1 * 15));
-}
-
-/* line 144, ../../src/sass/_modules/_site-navigation.scss */
-.site-navigation__link-container:nth-of-type(15) {
-  transition-delay: calc(0s * (0.1 * 14));
-  transition-duration: calc(0.05s * (0.1 * 7));
-}
-
-/* line 144, ../../src/sass/_modules/_site-navigation.scss */
-.site-navigation__link-container:nth-of-type(16) {
-  transition-delay: calc(0s * (0.1 * 15));
-  transition-duration: calc(0.05s * (0.1 * 18));
-}
-
-/* line 144, ../../src/sass/_modules/_site-navigation.scss */
-.site-navigation__link-container:nth-of-type(17) {
-  transition-delay: calc(0s * (0.1 * 9));
+  transition-delay: calc(0s * (0.1 * 1));
   transition-duration: calc(0.05s * (0.1 * 17));
 }
 
 /* line 144, ../../src/sass/_modules/_site-navigation.scss */
-.site-navigation__link-container:nth-of-type(18) {
-  transition-delay: calc(0s * (0.1 * 11));
-  transition-duration: calc(0.05s * (0.1 * 8));
-}
-
-/* line 144, ../../src/sass/_modules/_site-navigation.scss */
-.site-navigation__link-container:nth-of-type(19) {
+.site-navigation__link-container:nth-of-type(14) {
   transition-delay: calc(0s * (0.1 * 19));
   transition-duration: calc(0.05s * (0.1 * 21));
 }
 
 /* line 144, ../../src/sass/_modules/_site-navigation.scss */
-.site-navigation__link-container:nth-of-type(20) {
-  transition-delay: calc(0s * (0.1 * 13));
+.site-navigation__link-container:nth-of-type(15) {
+  transition-delay: calc(0s * (0.1 * 20));
   transition-duration: calc(0.05s * (0.1 * 12));
+}
+
+/* line 144, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__link-container:nth-of-type(16) {
+  transition-delay: calc(0s * (0.1 * 18));
+  transition-duration: calc(0.05s * (0.1 * 12));
+}
+
+/* line 144, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__link-container:nth-of-type(17) {
+  transition-delay: calc(0s * (0.1 * 23));
+  transition-duration: calc(0.05s * (0.1 * 7));
+}
+
+/* line 144, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__link-container:nth-of-type(18) {
+  transition-delay: calc(0s * (0.1 * 4));
+  transition-duration: calc(0.05s * (0.1 * 10));
+}
+
+/* line 144, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__link-container:nth-of-type(19) {
+  transition-delay: calc(0s * (0.1 * 21));
+  transition-duration: calc(0.05s * (0.1 * 3));
+}
+
+/* line 144, ../../src/sass/_modules/_site-navigation.scss */
+.site-navigation__link-container:nth-of-type(20) {
+  transition-delay: calc(0s * (0.1 * 9));
+  transition-duration: calc(0.05s * (0.1 * 8));
 }
 
 /* line 151, ../../src/sass/_modules/_site-navigation.scss */
@@ -14827,103 +14809,103 @@ a[href^="tel"] {
 }
 /* line 160, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(1) {
-  transition-delay: calc(0.2s * (0.1 * 15));
-  transition-duration: calc(0.05s * (0.1 * 2));
+  transition-delay: calc(0.2s * (0.1 * 6));
+  transition-duration: calc(0.05s * (0.1 * 9));
 }
 /* line 160, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(2) {
-  transition-delay: calc(0.2s * (0.1 * 7));
-  transition-duration: calc(0.05s * (0.1 * 19));
+  transition-delay: calc(0.2s * (0.1 * 22));
+  transition-duration: calc(0.05s * (0.1 * 20));
 }
 /* line 160, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(3) {
-  transition-delay: calc(0.2s * (0.1 * 3));
-  transition-duration: calc(0.05s * (0.1 * 7));
-}
-/* line 160, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(4) {
-  transition-delay: calc(0.2s * (0.1 * 17));
-  transition-duration: calc(0.05s * (0.1 * 22));
-}
-/* line 160, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(5) {
-  transition-delay: calc(0.2s * (0.1 * 24));
-  transition-duration: calc(0.05s * (0.1 * 10));
-}
-/* line 160, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(6) {
-  transition-delay: calc(0.2s * (0.1 * 22));
+  transition-delay: calc(0.2s * (0.1 * 20));
   transition-duration: calc(0.05s * (0.1 * 12));
 }
 /* line 160, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(7) {
-  transition-delay: calc(0.2s * (0.1 * 21));
-  transition-duration: calc(0.05s * (0.1 * 10));
-}
-/* line 160, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(8) {
-  transition-delay: calc(0.2s * (0.1 * 25));
-  transition-duration: calc(0.05s * (0.1 * 18));
-}
-/* line 160, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(9) {
-  transition-delay: calc(0.2s * (0.1 * 10));
-  transition-duration: calc(0.05s * (0.1 * 24));
-}
-/* line 160, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(10) {
-  transition-delay: calc(0.2s * (0.1 * 24));
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(4) {
+  transition-delay: calc(0.2s * (0.1 * 15));
   transition-duration: calc(0.05s * (0.1 * 7));
 }
 /* line 160, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(5) {
+  transition-delay: calc(0.2s * (0.1 * 25));
+  transition-duration: calc(0.05s * (0.1 * 7));
+}
+/* line 160, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(6) {
+  transition-delay: calc(0.2s * (0.1 * 1));
+  transition-duration: calc(0.05s * (0.1 * 7));
+}
+/* line 160, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(7) {
+  transition-delay: calc(0.2s * (0.1 * 17));
+  transition-duration: calc(0.05s * (0.1 * 24));
+}
+/* line 160, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(8) {
+  transition-delay: calc(0.2s * (0.1 * 21));
+  transition-duration: calc(0.05s * (0.1 * 16));
+}
+/* line 160, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(9) {
+  transition-delay: calc(0.2s * (0.1 * 2));
+  transition-duration: calc(0.05s * (0.1 * 9));
+}
+/* line 160, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(10) {
+  transition-delay: calc(0.2s * (0.1 * 23));
+  transition-duration: calc(0.05s * (0.1 * 24));
+}
+/* line 160, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(11) {
-  transition-delay: calc(0.2s * (0.1 * 6));
-  transition-duration: calc(0.05s * (0.1 * 8));
+  transition-delay: calc(0.2s * (0.1 * 3));
+  transition-duration: calc(0.05s * (0.1 * 4));
 }
 /* line 160, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(12) {
-  transition-delay: calc(0.2s * (0.1 * 10));
-  transition-duration: calc(0.05s * (0.1 * 9));
+  transition-delay: calc(0.2s * (0.1 * 15));
+  transition-duration: calc(0.05s * (0.1 * 20));
 }
 /* line 160, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(13) {
-  transition-delay: calc(0.2s * (0.1 * 13));
-  transition-duration: calc(0.05s * (0.1 * 13));
+  transition-delay: calc(0.2s * (0.1 * 15));
+  transition-duration: calc(0.05s * (0.1 * 24));
 }
 /* line 160, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(14) {
-  transition-delay: calc(0.2s * (0.1 * 18));
-  transition-duration: calc(0.05s * (0.1 * 2));
-}
-/* line 160, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(15) {
-  transition-delay: calc(0.2s * (0.1 * 20));
-  transition-duration: calc(0.05s * (0.1 * 15));
-}
-/* line 160, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(16) {
-  transition-delay: calc(0.2s * (0.1 * 4));
-  transition-duration: calc(0.05s * (0.1 * 9));
-}
-/* line 160, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(17) {
-  transition-delay: calc(0.2s * (0.1 * 5));
-  transition-duration: calc(0.05s * (0.1 * 8));
-}
-/* line 160, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(18) {
-  transition-delay: calc(0.2s * (0.1 * 12));
+  transition-delay: calc(0.2s * (0.1 * 3));
   transition-duration: calc(0.05s * (0.1 * 25));
 }
 /* line 160, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(19) {
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(15) {
   transition-delay: calc(0.2s * (0.1 * 9));
+  transition-duration: calc(0.05s * (0.1 * 12));
+}
+/* line 160, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(16) {
+  transition-delay: calc(0.2s * (0.1 * 25));
+  transition-duration: calc(0.05s * (0.1 * 16));
+}
+/* line 160, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(17) {
+  transition-delay: calc(0.2s * (0.1 * 7));
   transition-duration: calc(0.05s * (0.1 * 17));
 }
 /* line 160, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(18) {
+  transition-delay: calc(0.2s * (0.1 * 9));
+  transition-duration: calc(0.05s * (0.1 * 22));
+}
+/* line 160, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(19) {
+  transition-delay: calc(0.2s * (0.1 * 11));
+  transition-duration: calc(0.05s * (0.1 * 15));
+}
+/* line 160, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(20) {
-  transition-delay: calc(0.2s * (0.1 * 6));
-  transition-duration: calc(0.05s * (0.1 * 21));
+  transition-delay: calc(0.2s * (0.1 * 18));
+  transition-duration: calc(0.05s * (0.1 * 17));
 }
 /* line 167, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__container {
