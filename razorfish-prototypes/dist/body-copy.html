@@ -242,7 +242,7 @@
                         <p class="contact-info__author-name">Wade Forst</p>
                         <p class="contact-info__body">Sr. Dir. of Emerging Experiences</p>
                         <div class="contact-info__social-icons">
-                            <div class="contact-info__icon icon-mail--primary"></div>
+                            <div class="contact-info__icon icon-linkedin--primary"></div>
                             <div class="contact-info__icon icon-twitter--primary"></div>
                         </div>
                     </div>
@@ -250,7 +250,7 @@
                         <p class="contact-info__author-name">Robert Williamson</p>
                         <p class="contact-info__body">VP of Emerging Experiences</p>
                         <div class="contact-info__social-icons">
-                            <div class="contact-info__icon icon-mail--primary"></div>
+                            <div class="contact-info__icon icon-linkedin--primary"></div>
                             <div class="contact-info__icon icon-twitter--primary"></div>
                         </div>
                     </div>
@@ -309,7 +309,7 @@
                     <p class="body-copy__body">There is something undeniably magical about holograms that enamors us all. But such technology also makes controls more accessible, more intuitive and less distracting, letting the driver focus on moments that matter versus fiddling with switches and knobs.</p>
                     <div class="video video--inline">
                         <div class="video__container--16-9">
-                            <div class="video__poster-frame">
+                            <div class="video__poster">
                                 <div class="video__button--play"></div>
                                 <div class="video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
                             </div>
@@ -434,7 +434,7 @@
         froogaloop = $f(player[0].id);
     });
     $('.video__button--play').click(function(e) {
-        $('.video__poster-frame').fadeOut("slow");
+        $('.video__poster').fadeOut("slow");
         froogaloop.api('play');
     });
     </script>

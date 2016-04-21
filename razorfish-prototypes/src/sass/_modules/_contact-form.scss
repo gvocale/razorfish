@@ -144,8 +144,8 @@
         top: 0;
         left: 0;
         @include grid-padding;
-        @include top-padding;
-        @include bottom-padding;
+        @include padding-top;
+        @include padding-bottom;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -209,8 +209,8 @@
         top: 0;
         left: 0;
         @include grid-padding;
-        @include top-padding;
-        @include bottom-padding;
+        @include padding-top;
+        @include padding-bottom;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -289,7 +289,7 @@
         }
     }
     &__back-container {
-        @include bottom-padding(0.5);
+        @include padding-bottom(0.5);
     }
     &__headline-container {
         @include component-padding;
@@ -394,7 +394,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        @include top-padding(0.25);
+        @include padding-top(0.25);
     }
     &__input {
         &[type="text"] {

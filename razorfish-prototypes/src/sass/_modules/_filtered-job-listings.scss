@@ -2,21 +2,12 @@
     @include grid-padding;
     display: flex;
     flex-direction: column;
-    padding-bottom: 20%;
-    @media screen and ($lg) {
-        padding-bottom: 10%;
-    }
-    @media screen and ($xl) {
-        padding-bottom: 7.5%;
-    }
-    @media screen and ($xxl) {
-        padding-bottom: 5%;
-    }
+    @include padding-bottom(0.5);
     &__table {
         width: 100%;
-        margin-bottom: 5%;
         text-align: left;
         @include component-padding;
+        @include padding-bottom(0.5);
         &:last-child {
             margin-bottom: 0;
         }
@@ -57,11 +48,6 @@
             padding-top: 3em;
             padding-bottom: 3em;
         }
-        &:first-of-type {
-            &:before {
-                border-top: 3px solid darken($white, 10%);
-            }
-        }
         @media screen and ($xl) {
             &:hover,
             &:focus {
@@ -82,9 +68,113 @@
                 }
             }
         }
+        &:first-child {
+            display: none;
+            &:before {
+                border-top: 3px solid darken($white, 10%);
+            }
+            @media screen and ($md) {
+                padding-top: 0;
+                padding-bottom: 1em;
+            }
+            @media screen and ($lg) {
+                display: flex;
+                cursor: pointer;
+                cursor: hand;
+                &:before {
+                    border-top: 0;
+                }
+                &:hover,
+                &:focus {
+                    &:before {
+                        background-color: transparent;
+                    }
+                }
+                &:active,
+                &:target {
+                    &:before {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+        & *:nth-child(1) {
+            @include component-padding;
+            width: 100%;
+            padding-left: 2rem;
+            @media only screen and ($lg) {
+                width: calc(100% / 12 * 4);
+            }
+        }
+        & *:nth-child(2) {
+            @include component-padding;
+            width: calc(100% / 2);
+            padding-left: 2rem;
+            @media only screen and ($md) {
+                width: calc(100% / 12 * 4);
+            }
+            @media only screen and ($lg) {
+                width: calc(100% / 12 * 3);
+                padding-left: 1rem;
+            }
+        }
+        & *:nth-child(3) {
+            @include component-padding;
+            width: calc(100% / 2);
+            padding-right: 2rem;
+            text-align: right;
+            @media only screen and ($md) {
+                text-align: left;
+                width: calc(100% / 12 * 4);
+                padding-right: 1rem;
+            }
+            @media only screen and ($lg) {
+                width: calc(100% / 12 * 2);
+                padding-right: 1rem;
+            }
+        }
+        & *:nth-child(4) {
+            @include component-padding;
+            width: 100%;
+            padding-left: 2rem;
+            @media only screen and ($md) {
+                text-align: right;
+                padding-left: 1rem;
+                padding-right: 2rem;
+                width: calc(100% / 12 * 4);
+            }
+            @media only screen and ($lg) {
+                width: calc(100% / 12 * 3);
+            }
+        }
+    }
+    &__label {
+        font-family: $sans;
+        font-size: $scale03;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1.1;
+        letter-spacing: 0.025em;
+        text-transform: uppercase;
+        margin-bottom: 0.5em;
+        color: rgba($black, 0.75);
+        @media screen and ($md) {
+            color: rgba($black, 0.6);
+        }
+        @media screen and ($lg) {
+            font-size: $scale02;
+        }
+        @media screen and ($xxl) {
+            font-size: $scale03;
+        }
+        @media screen and ($xxl) {
+            font-size: $scale04;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &__job-title {
-        @include component-padding;
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans;
@@ -92,12 +182,10 @@
         width: 100%;
         padding-bottom: 0.5em;
         font-size: $scale04;
-        padding-left: 2rem;
         @media only screen and ($md) {
             font-size: $scale05;
         }
         @media only screen and ($lg) {
-            width: calc(100% / 12 * 4);
             padding-bottom: 0em;
             font-size: $scale04;
         }
@@ -110,17 +198,12 @@
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans;
-        width: calc(100% / 2);
         font-size: $scale03;
-        padding-left: 2rem;
         @media only screen and ($md) {
-            width: calc(100% / 12 * 4);
             font-size: $scale04;
         }
         @media only screen and ($lg) {
-            width: calc(100% / 12 * 3);
             font-size: $scale04;
-            padding-left: 1rem;
         }
         @media only screen and ($xxl) {
             font-size: $scale05;
@@ -131,19 +214,11 @@
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans;
-        width: calc(100% / 2);
         font-size: $scale03;
-        text-align: right;
-        padding-right: 2rem;
         @media only screen and ($md) {
-            width: calc(100% / 12 * 4);
-            text-align: left;
-            padding-right: 1rem;
             font-size: $scale04;
         }
         @media only screen and ($lg) {
-            width: calc(100% / 12 * 2);
-            padding-right: 1rem;
             font-size: $scale04;
         }
         @media only screen and ($xxl) {
@@ -155,20 +230,13 @@
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans;
-        width: 100%;
         font-size: $scale03;
         opacity: 0.5;
-        padding-left: 2rem;
         @media only screen and ($md) {
-            text-align: right;
-            padding-left: 1rem;
-            padding-right: 2rem;
-            width: calc(100% / 12 * 4);
             opacity: 1;
             font-size: $scale04;
         }
         @media only screen and ($lg) {
-            width: calc(100% / 12 * 3);
             font-size: $scale04;
         }
         @media only screen and ($xxl) {

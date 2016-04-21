@@ -33,8 +33,8 @@
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: flex-end;
-        @include top-padding;
-        @include bottom-padding(0.6);
+        @include padding-top;
+        @include padding-bottom(0.6);
         &.not-in-viewport {
             opacity: 0;
         }
@@ -135,14 +135,14 @@
 
 .title {
     @include grid-padding;
-    @include top-padding;
-    @include bottom-padding(0.5);
+    @include padding-top(1);
+    @include padding-bottom(0.5);
     align-items: baseline;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 40vw;
+    // min-height: 40vw;
     position: relative;
     width: 100%;
     .divider {
@@ -151,9 +151,7 @@
     @media screen and ($md) {
         flex-direction: row;
         align-items: flex-end;
-        min-height: 20vw;
-        padding-top: 8%;
-        padding-bottom: 4%;
+        // min-height: 20vw;
     }
     &__headline {
         @include ligatures;
@@ -220,8 +218,8 @@
         justify-content: space-between;
         position: relative;
         width: 100%;
-        @include top-margin(0.5);
-        @include bottom-margin(0.25);
+        @include margin-top(0.5);
+        @include margin-bottom(0.25);
         @media screen and ($lg) {
             width: calc(100% / 12 * 5);
             margin-top: 0;

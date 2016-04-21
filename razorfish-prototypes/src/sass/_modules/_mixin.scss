@@ -137,73 +137,31 @@
     }
 }
 
-@mixin top-padding($multiplier: 1) {
-    padding-top: 20vw * $multiplier;
+@mixin padding-top($multiplier: 1) {
+    padding-top: 15vmax * $multiplier;
     @media screen and ($md) {
-        padding-top: 15vw * $multiplier;
-    }
-    @media screen and ($lg) {
-        padding-top: 7.5vw * $multiplier;
-    }
-    @media screen and ($xl) {
-        padding-top: 10vw * $multiplier;
-    }
-    @media screen and ($xxl) {
-        padding-top: 7.5vw * $multiplier;
+        padding-top: 15vmin * $multiplier;
     }
 }
 
-@mixin bottom-padding($multiplier: 1) {
-    padding-bottom: 20vw * $multiplier;
+@mixin padding-bottom($multiplier: 1) {
+    padding-bottom: 15vmax * $multiplier;
     @media screen and ($md) {
-        padding-bottom: 15vw * $multiplier;
-    }
-    @media screen and ($lg) {
-        padding-bottom: 7.5vw * $multiplier;
-    }
-    @media screen and ($xl) {
-        padding-bottom: 10vw * $multiplier;
-    }
-    @media screen and ($xxl) {
-        padding-bottom: 7.5vw * $multiplier;
+        padding-bottom: 15vmin * $multiplier;
     }
 }
 
-@mixin top-margin($multiplier: 1) {
-    margin-top: 20vw * $multiplier;
+@mixin margin-top($multiplier: 1) {
+    margin-top: 15vmax * $multiplier;
     @media screen and ($md) {
-        margin-top: 15vw * $multiplier;
-    }
-    @media screen and ($lg) {
-        margin-top: 10vw * $multiplier;
-    }
-    @media screen and ($lg) {
-        margin-top: 7.5vw * $multiplier;
-    }
-    @media screen and ($xl) {
-        margin-top: 10vw * $multiplier;
-    }
-    @media screen and ($xxl) {
-        margin-top: 7.5vw * $multiplier;
+        margin-top: 15vmin * $multiplier;
     }
 }
 
-@mixin bottom-margin($multiplier: 1) {
-    margin-bottom: 20vw * $multiplier;
+@mixin margin-bottom($multiplier: 1) {
+    margin-bottom: 15vmax * $multiplier;
     @media screen and ($md) {
-        margin-bottom: 15vw * $multiplier;
-    }
-    @media screen and ($lg) {
-        margin-bottom: 10vw * $multiplier;
-    }
-    @media screen and ($lg) {
-        margin-bottom: 7.5vw * $multiplier;
-    }
-    @media screen and ($xl) {
-        margin-bottom: 10vw * $multiplier;
-    }
-    @media screen and ($xxl) {
-        margin-bottom: 7.5vw * $multiplier;
+        margin-bottom: 15vmin * $multiplier;
     }
 }
 
@@ -226,8 +184,6 @@
     align-items: center;
     justify-content: center;
 }
-
-
 
 @mixin background-image {
     background-size: cover;
@@ -313,9 +269,7 @@
     }
 }
 
-@mixin label {
-
-}
+@mixin label {}
 
 @mixin stat-body {
     font-family: $sans;

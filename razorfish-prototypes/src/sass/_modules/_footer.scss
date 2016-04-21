@@ -4,14 +4,12 @@
     align-items: center;
     justify-content: center;
     @include grid-padding;
-    padding-top: 10%;
-    padding-bottom: 10%;
+    @include padding-top(0.5);
+    @include padding-bottom(0.75);
     @media screen and ($lg) {
         flex-direction: row;
         justify-content: space-between;
         align-items: baseline;
-        padding-top: 5%;
-        padding-bottom: 7%;
     }
     &__logo-razorfish {
         @include component-margin;

@@ -266,7 +266,7 @@
         </div>
         <section class="video video--grid-padding">
             <div class="video__container--16-9">
-                <div class="video__poster-frame">
+                <div class="video__poster">
                     <div class="video__button--play"></div>
                     <div class="video__image" style="background-image: url(images/video-he-for-she.jpg)"></div>
                 </div>
@@ -530,7 +530,7 @@
         froogaloop = $f(player[0].id);
     });
     $('.video__button--play').click(function(e) {
-        $('.video__poster-frame').fadeOut("slow");
+        $('.video__poster').fadeOut("slow");
         froogaloop.api('play');
     });
     </script>

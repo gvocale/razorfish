@@ -1,11 +1,21 @@
 .contact-info {
     position: relative;
     @include component-padding;
-    @include bottom-padding;
+    @include padding-bottom;
     width: 100%;
     @media screen and ($lg) {
         width: calc(100% / 12 * 3);
         margin-bottom: 0;
+    }
+    .divider {
+        width: 1.2em;
+        height: 3px;
+        @media screen and ($lg) {
+            height: 4px;
+        }
+        @media screen and ($xxl) {
+            height: 5px;
+        }
     }
     &__multi-column {
         width: 100%;
@@ -32,7 +42,6 @@
         }
         &--link {
             margin-top: 0.75em;
-
         }
     }
     &__group--data {
@@ -94,6 +103,9 @@
         &:last-child {
             margin-bottom: 0;
         }
+    }
+    &__body--phone {
+        margin-top: 1em;
     }
     &__body--data {
         font-family: $sans;

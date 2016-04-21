@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: row;
     @include grid-padding;
-    @include top-padding;
-@include bottom-padding;
+    @include padding-top;
+@include padding-bottom;
     &__icon {
         display: block;
         background-size: 30%, contain;
@@ -174,7 +174,7 @@
     &__header {
         top: 0;
         display: none;
-        @include top-padding;
+        @include padding-top;
         @media screen and ($lg) {
             display: flex;
             top: 0;
@@ -193,7 +193,7 @@
         }
         z-index: 1;
         bottom: 0;
-        @include bottom-padding;
+        @include padding-bottom;
         @media screen and ($lg) {
             position: absolute;
             bottom: 0;

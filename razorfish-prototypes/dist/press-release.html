@@ -234,7 +234,7 @@
                         <p class="contact-info__author-name">Matthew Williamson</p>
                         <p class="contact-info__body">Sr. Dir. of Emerging Experiences</p>
                         <div class="contact-info__social-icons">
-                            <div class="contact-info__icon icon-mail--primary"></div>
+                            <div class="contact-info__icon icon-linkedin--primary"></div>
                             <div class="contact-info__icon icon-twitter--primary"></div>
                         </div>
                     </div>
@@ -260,7 +260,7 @@
                     <p class="body-copy__body">“Razorfish helped us create a new digital marketing platform that could seamlessly connect our full brand infrastructure and give our customers a common, contextually relevant experience across our digital properties,” said Daniel Monaco, vice president of consumer marketing and strategic insights at Essilor of America. “The agency’s deep expertise in both AWS and Adobe Experience Manager positioned us to accelerate the design, build and deployment of our site within four months.”</p>
                     <div class="video video--inline">
                         <div class="video__container--16-9">
-                            <div class="video__poster-frame">
+                            <div class="video__poster">
                                 <div class="video__button--play"></div>
                                 <div class="video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
                             </div>
@@ -387,7 +387,7 @@
         froogaloop = $f(player[0].id);
     });
     $('.video__button--play').click(function(e) {
-        $('.video__poster-frame').fadeOut("slow");
+        $('.video__poster').fadeOut("slow");
         froogaloop.api('play');
     });
     </script>

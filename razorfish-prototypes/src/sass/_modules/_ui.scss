@@ -1,9 +1,8 @@
-
 .ui {
     width: 100vw;
     @include grid-padding;
-    @include top-padding;
-    @include bottom-padding;
+    @include padding-top;
+    @include padding-bottom;
     .button-container {
         display: flex;
         flex-direction: row;
@@ -109,6 +108,10 @@ button.tertiary:hover:before {
     width: 100%;
 }
 
+.button {
+    text-transform: uppercase;
+}
+
 .button,
 .select {
     &--secondary {
@@ -133,13 +136,15 @@ button.tertiary:hover:before {
         padding: 1.2em 3em;
         position: relative;
         text-decoration: none;
-        text-transform: uppercase;
         font-size: $scale03;
         transition: all 0.2s ease-in 0s;
         margin: 1px;
         display: flex;
         flex-direction: row;
         align-items: center;
+        option:first-child {
+            text-transform: uppercase;
+        }
         @media screen and ($xxl) {
             font-size: $scale04;
             min-height: 4rem;

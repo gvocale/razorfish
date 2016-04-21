@@ -175,7 +175,7 @@
                     <p class="hero__subhead">Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
                 </div>
             </a>
-            <div class="hero__background image-grading--darker" style="background-image: url(images/hero-join-us.jpg)"></div>
+            <div class="hero__background image-grading--darker animate" style="background-image: url(images/hero-join-us.jpg)"></div>
         </div>
         <iframe class="hero__video-embed" id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </section>
@@ -186,7 +186,7 @@
         </div>
         <div class="title__button-group">
             <select class="select select--secondary">
-                <option value="none" disabled selected>Job Category</option>
+                <option value="none" disabled selected>JOB CATEGORY</option>
                 <option value="">Insight & Strategy</option>
                 <option value="">Creative & UX</option>
                 <option value="">Data Science</option>
@@ -194,7 +194,7 @@
                 <option value="">Lorem Ipsum</option>
             </select>
             <select class="select select--secondary">
-                <option value="none" disabled selected>Location</option>
+                <option value="none" disabled selected>LOCATION</option>
                 <optgroup label="North America">
                     <option value="">Atlanta</option>
                     <option value="">Austin</option>
@@ -232,8 +232,15 @@
             </select>
         </div>
     </section>
+    </section>
     <section class="filtered-job-listings">
         <ul class="filtered-job-listings__table">
+            <li class="filtered-job-listings__row">
+                <h4 class="filtered-job-listings__label">Title</h4>
+                <h4 class="filtered-job-listings__label">Job Category</h4>
+                <h4 class="filtered-job-listings__label">Location</h4>
+                <h4 class="filtered-job-listings__label">Job ID</h4>
+            </li>
             <li class="filtered-job-listings__row">
                 <p class="filtered-job-listings__job-title">Art Director</p>
                 <p class="filtered-job-listings__category">Creative & UX</p>
@@ -322,7 +329,7 @@
         froogaloop = $f(player[0].id);
     });
     $('.video__button--play').click(function(e) {
-        $('.video__poster-frame').fadeOut("slow");
+        $('.video__poster').fadeOut("slow");
         $('.hero__video__poster').fadeOut("slow");
         froogaloop.api('play');
     });

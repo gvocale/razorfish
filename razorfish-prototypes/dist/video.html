@@ -181,7 +181,7 @@
                 <section class="body-copy__flexible">
                     <div class="video video--inline">
                         <div class="video__container--16-9">
-                            <div class="video__poster-frame">
+                            <div class="video__poster">
                                 <div class="video__button--play"></div>
                                 <div class="video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
                             </div>
@@ -197,11 +197,11 @@
         <div class="body-copy">
             <div class="video video--inline">
                 <div class="video__container--16-9">
-                    <div class="video__poster-frame">
+                    <div class="video__poster">
                         <div class="video__button--play"></div>
                         <div class="video__image" style="background-image: url(images/article-video-thumbnail-mercedes.jpg)"></div>
                     </div>
-                    <iframe id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe class="video__embed" id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
                 <p class="video__caption"><strong>IMAGE SOURCE:</strong> <a class="link link--primary" href="">http://media.daimler.com</a></p>
             </div>
@@ -217,7 +217,7 @@
                     <p class="hero__subhead">Lorem ipsum dolor sit amet consectetur adipsciling todo ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
                 </div>
             </a>
-            <div class="hero__background image-grading--darker" style="background-image: url(images/hero-join-us.jpg)"></div>
+            <div class="hero__background image-grading--darker animate" style="background-image: url(images/hero-join-us.jpg)"></div>
         </div>
         <iframe class="hero__video-embed" id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </section>
@@ -229,7 +229,7 @@
         froogaloop = $f(player[0].id);
     });
     $('.video__button--play').click(function(e) {
-        $('.video__poster-frame').fadeOut("slow");
+        $('.video__poster').fadeOut("slow");
         $('.hero__video__poster').fadeOut("slow");
         froogaloop.api('play');
     });
@@ -238,6 +238,9 @@
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/show-hide-header.js"></script>
+    <script>
+    new cbpScroller(document.getElementById('animate-container'));
+    </script>
 </body>
 
 </html>
