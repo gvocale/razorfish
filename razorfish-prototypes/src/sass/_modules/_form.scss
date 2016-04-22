@@ -2,7 +2,6 @@
     transform: translateY(-80%) scale(0.7);
     opacity: 0.2;
     transition: all 0.1s 0.1s ease-in-out;
-    
 }
 
 .form {
@@ -467,4 +466,130 @@
 
 .form__file + label * {
     pointer-events: none;
+}
+
+#form__submit {
+    overflow: auto;
+    transition: all 0.2s 0s ease;
+    width: 10em;
+    border: 0;
+    box-shadow: inset 0 0 0 2px rgba($white, 0.2);
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s 0s ease;
+    }
+    &.loading {
+        border-radius: 50%;
+        padding: 1.2em;
+        width: 4em;
+        height: 4em;
+        box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0px $primary;
+        span {
+            opacity: 0;
+            transform: translate(-50%, -200%);
+        }
+    }
+    &.filling {
+        box-shadow: inset 0 0 0 0px rgba($white, 0), inset 0 0 0 100px $primary;
+        transition: box-shadow 1s 0s ease;
+    }
+    &.spin {
+        .preloader {
+            display: inline-block;
+        }
+    }
+    .preloader {
+        display: none;
+    }
+    #tick {
+        display: none;
+    }
+    &.tick {
+        #tick {
+            display: block;
+        }
+    }
+}
+
+#tick {
+    position: absolute;
+    top: 45%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    polyline {
+        stroke: $white;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        animation: tick 1s ease 1 forwards;
+    }
+    
+    @keyframes tick {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+}
+
+.preloader {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    &:before,
+    &:after {
+        white-space-collapse: collapse;
+    }
+    $easing: cubic-bezier(.8, .0, .4, .8);
+    $speed: 1320ms; // animation time for each loop
+    $linecap: square; // could be 'round', but the official one is square
+    $loops: 5; // number of points where the arc meets
+    $arc: 0.72; // fraction of the circumference that the arc grows to
+    $perimeter: 67px * pi(); // circumference of the raw svg inner cricle
+    // measure to prevent inline block spacing from affecting the outer rotation
+    font-size: 0;
+    display: inline-block;
+    animation: outer ($speed * $loops) linear infinite;
+    svg {
+        animation: inner $speed linear infinite;
+        circle {
+            fill: none;
+            stroke: $primary;
+            stroke-linecap: $linecap;
+            animation: arc $speed $easing infinite;
+            stroke-width: 2;
+        }
+    }
+    @keyframes outer {
+        0% {
+            transform: rotate(0);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes inner {
+        0% {
+            transform: rotate(-360deg * (1 - $arc));
+        }
+        100% {
+            transform: rotate(0);
+        }
+    }
+    @keyframes arc {
+        0% {
+            stroke-dasharray: 1 $perimeter;
+            stroke-dashoffset: 0;
+        }
+        40% {
+            stroke-dasharray: ($arc * $perimeter), $perimeter;
+            stroke-dashoffset: 0;
+        }
+        100% {
+            stroke-dasharray: 1 $perimeter;
+            stroke-dashoffset: (-$arc * $perimeter);
+        }
+    }
 }

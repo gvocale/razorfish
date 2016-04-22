@@ -122,7 +122,7 @@ button.tertiary:hover:before {
         background-origin: content-box;
         border-radius: 0;
         border: 2px solid;
-        border-color: rgba( $black, .2);
+        box-shadow: inset 0 0 0 2px rgba($black, 0.2);
         box-sizing: border-box;
         color: currentColor;
         cursor: hand;
@@ -152,7 +152,7 @@ button.tertiary:hover:before {
         &:hover,
         &:focus {
             outline: none;
-            border-color: rgba( $black, 1);
+            box-shadow: inset 0 0 0 2px rgba($black, 1);
             transition: all 0s ease-out 0s;
         }
         &:active:after,
@@ -172,18 +172,18 @@ button.tertiary:hover:before {
     }
     &--white {
         color: $white;
-        border-color: rgba( $white, .2);
+        box-shadow: inset 0 0 0 2px rgba($white, 0.2);
         &:hover,
         &:focus {
-            border-color: rgba( $white, 1);
+            box-shadow: inset 0 0 0 2px rgba($white, 1);
         }
     }
     &--black {
         color: $black;
-        border-color: rgba( $black, .2);
+        box-shadow: inset 0 0 0 2px rgba($black, 0.2);
         &:hover,
         &:focus {
-            border-color: rgba( $black, 1);
+            box-shadow: inset 0 0 0 2px rgba($black, 1);
         }
     }
 }

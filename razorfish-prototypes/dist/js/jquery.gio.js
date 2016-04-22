@@ -33,7 +33,7 @@ $(function() {
     // Contact-form, toggling classes when overlay is open
 
     $(".contact-form__link").click(function() {
-        console.log('open forum');
+        console.log('open form');
         $(".contact-form__overlay").removeClass("close").addClass("open--blurred");
         $("html,body").css("overflow-y", "hidden");
         setTimeout(function() {
@@ -49,20 +49,37 @@ $(function() {
 
 
     });
+
+
     $('#form__submit').click(function() {
-        $(".contact-form__form-group").removeClass("open").addClass("close");
-        $(".contact-form__form").removeClass("open");
-        $(".contact-form__overlay").removeClass("open--blurred").addClass("open--sharp");
+        $(this).toggleClass("loading");
+        setTimeout(function() {
+            $('#form__submit').toggleClass("spin");
+        }, 300);
+        setTimeout(function() {
+            $('#form__submit').toggleClass("filling");
+        }, 4300);
+        setTimeout(function() {
+            $('#form__submit').toggleClass("spin");
+        }, 4800);
+        setTimeout(function() {
+            $('#form__submit').toggleClass("tick");
+        }, 5200);
+        setTimeout(function() {
+            $(".contact-form__form-group").removeClass("open").addClass("close");
+            $(".contact-form__form").removeClass("open");
+            $(".contact-form__overlay").removeClass("open--blurred").addClass("open--sharp");
+        }, 7200);
         setTimeout(function() {
             $(".contact-form__confirmation-group").removeClass("close").addClass("open");
-        }, 500);
+        }, 8900);
         setTimeout(function() {
             $(".contact-form__confirmation-group").removeClass("open").addClass("close");
-        }, 3000);
+        }, 12900);
         setTimeout(function() {
             $(".contact-form__overlay").removeClass("open--sharp").addClass("close");
             $('html,body').css('overflow-y', 'auto');
-        }, 3500);
+        }, 13900);
     });
 
 
