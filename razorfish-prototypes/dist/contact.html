@@ -346,47 +346,14 @@
         </ul>
     </footer>
     <script src="js/min/razorfish.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/jquery.gio.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/show-hide-header.js"></script>
     <script src="js/autogrow.js"></script>
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        $(".form__select").each(function() {
-            $(this).change(function() {
-                $(this).addClass("selected");
-            });
-        });
-        $(".contact-form__link").click(function() {
-            $(".contact-form__overlay").removeClass("close").addClass("open--blurred");
-            setTimeout(function() {
-                $(".contact-form__form-group").removeClass("close").addClass("open");
-            }, 100);
-        });
-        $(".contact-form__back").click(function() {
-            $(".contact-form__form-group").removeClass("open").addClass("close");
-            setTimeout(function() {
-                $(".contact-form__overlay").removeClass("open--blurred").addClass("close");
-            }, 400);
 
-        });
-        $('#form__submit').click(function() {
-            $(".contact-form__form-group").removeClass("open").addClass("close");
-            $(".contact-form__form").removeClass("open");
-            $(".contact-form__overlay").removeClass("open--blurred").addClass("open--sharp");
-            setTimeout(function() {
-                $(".contact-form__confirmation-group").removeClass("close").addClass("open");
-            }, 500);
-            // setTimeout(function() {
-            //     $(".contact-form__confirmation-group").removeClass("open").addClass("close");
-            // }, 3000);
-            // setTimeout(function() {
-            //     $(".contact-form__overlay").removeClass("open--sharp").addClass("close");
-            // }, 3500);
-        });
-    });
-    </script>
+
     <script>
     ;
     (function($) {

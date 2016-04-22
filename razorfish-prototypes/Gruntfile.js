@@ -93,7 +93,8 @@ module.exports = function(grunt) {
             bsFiles: {
                 src: [
                     'dist/css/razorfish.css',
-                    'dist/*.html'
+                    'dist/*.html',
+                    'dist/js/*.js'
                 ]
             },
             options: {

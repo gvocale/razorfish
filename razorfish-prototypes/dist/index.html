@@ -62,7 +62,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="join-us-landing.html">Join Us<span class="note">Landing</span></a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link" href="news-landing.html">News<span class="note">Landing</span></a>
                     </li>
@@ -329,27 +329,16 @@
             </li>
         </ul>
     </footer>
+    <!-- <script src="js/headline-animation.js"></script> -->
+
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/min/razorfish.min.js"></script>
+    <script src="js/jquery.gio.js"></script>
     <script src="js/cbpScroller.js"></script>
     <script src="js/classie.js"></script>
-    <script src="js/feed.js"></script>
     <script src="js/show-hide-header.js"></script>
-    <script src="js/headline-animation.js"></script>
-    <script>
-    new cbpScroller(document.getElementById('animate-container'));
-    </script>
+    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
     <script src="js/isInViewport.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('.feed__item').addClass('animate');
-    });
-    $(window).scroll(function() {
-        $(".feed__item:in-viewport").each(function() {
-            $(this).addClass('in-viewport');
-        })
-    });
-    </script>
 </body>
 
 </html>
