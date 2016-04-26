@@ -14,9 +14,6 @@
 $(function() {
     console.log('jquery works');
 
-    // Toggle in-viewport / not-in-viewport classes for any div that has class .animate
-    new cbpScroller(document.getElementById('animate-container'));
-
 
     // If site-masthead__checkbox is checked, then toggle overflow:hidden to body, so that the rest of tha page doesn't scroll
 
@@ -32,54 +29,73 @@ $(function() {
 
     // Contact-form, toggling classes when overlay is open
 
+    $(".contact-form__form-group").addClass("close");
+
     $(".contact-form__link").click(function() {
         console.log('open form');
-        $(".contact-form__overlay").removeClass("close").addClass("open--blurred");
+        $(".contact-form__overlay").addClass("display");
         $("html,body").css("overflow-y", "hidden");
         setTimeout(function() {
-            $(".contact-form__form-group").removeClass("close").addClass("open");
+            $(".contact-form__background-image").addClass("visible blur scale");
+        }, 10);
+        setTimeout(function() {
+            $(".contact-form__form-group").addClass("display");
         }, 100);
+        setTimeout(function() {
+            $(".contact-form__form-group").removeClass("close").addClass("open");
+        }, 110);
     });
-    $(".contact-form__back").click(function() {
+
+    $(".contact-form__back").click(function() { // On click on Back button
         $(".contact-form__form-group").removeClass("open").addClass("close");
         setTimeout(function() {
-            $(".contact-form__overlay").removeClass("open--blurred").addClass("close");
+            $(".contact-form__background-image").removeClass("visible blur scale");
+        }, 100);
+        setTimeout(function() {
+            $(".contact-form__overlay").removeClass("display");
+            $(".contact-form__form-group").removeClass("display");
             $('html,body').css('overflow-y', 'auto');
-        }, 400);
-
-
+        }, 510);
     });
 
 
-    $('#form__submit').click(function() {
-        $(this).toggleClass("loading");
+    $('#form__submit').click(function() { // On click on Sumbit button
+        $(this).addClass("loading");
         setTimeout(function() {
-            $('#form__submit').toggleClass("spin");
+            $('#form__submit').addClass("spin");
         }, 300);
         setTimeout(function() {
-            $('#form__submit').toggleClass("filling");
-        }, 4300);
+            $('#form__submit').addClass("filling");
+            $('#form__submit').removeClass("spin");
+        }, 3300);
         setTimeout(function() {
-            $('#form__submit').toggleClass("spin");
-        }, 4800);
-        setTimeout(function() {
-            $('#form__submit').toggleClass("tick");
-        }, 5200);
+            $('#form__submit').addClass("tick");
+        }, 3600);
         setTimeout(function() {
             $(".contact-form__form-group").removeClass("open").addClass("close");
-            $(".contact-form__form").removeClass("open");
-            $(".contact-form__overlay").removeClass("open--blurred").addClass("open--sharp");
-        }, 7200);
+        }, 5600);
         setTimeout(function() {
-            $(".contact-form__confirmation-group").removeClass("close").addClass("open");
+            $(".contact-form__background-image").removeClass("blur scale");
+        }, 5700);
+        setTimeout(function() {
+            $(".contact-form__form-group").removeClass("display");
+            $('#form__submit').removeClass("loading filling tick");
+            $(".contact-form__confirmation-group").addClass("display");
+        }, 5810);
+        setTimeout(function() {
+            $(".contact-form__confirmation-group").addClass("open");
+        }, 5900);
+        setTimeout(function() {
+            $(".contact-form__confirmation-group").removeClass("open");
         }, 8900);
         setTimeout(function() {
-            $(".contact-form__confirmation-group").removeClass("open").addClass("close");
-        }, 12900);
-        setTimeout(function() {
-            $(".contact-form__overlay").removeClass("open--sharp").addClass("close");
+            $(".contact-form__confirmation-group").removeClass("display");
+            $(".contact-form__background-image").removeClass("visible");
             $('html,body').css('overflow-y', 'auto');
-        }, 13900);
+        }, 9110);
+        setTimeout(function() {
+            $(".contact-form__overlay").removeClass("close display");
+        }, 9320);
     });
 
 
@@ -91,15 +107,10 @@ $(function() {
     });
 
 
-    // Feed: on scroll, if feed tile is in viewport, add class in-viewport
+    // Feed: add class .animate to each .feed__item
 
     $('.feed__item').addClass('animate');
 
-    $(window).scroll(function() {
-        $(".feed__item:in-viewport").each(function() {
-            $(this).addClass('in-viewport');
-        })
-    });
 
 
     // Check if .form__textarea is empty. If so add class not-empty, so that the placeholder label can move above text-area
@@ -293,5 +304,86 @@ $(function() {
     } else {
         console.log('#video does not exist on the page');
     }
+
+    // Resize clip-path of simple title based on viewport height
+
+    var $simpleTitle = $('.simple-title'); //record the elem so you don't crawl the DOM everytime
+
+    $(window).bind("load resize", function(e) { // refresh on load and resize
+
+        var bottom = $simpleTitle.outerHeight(true); // find height of .simple-title
+        $(".simple-title").css({ "-webkit-clip-path": "polygon(0 0, 100% 0, 100% " + bottom + "px, 0 " + bottom + "px)" });
+
+    });
+
+
+    // Owl carousel configuration
+
+    var isOwlCarousel = document.getElementsByClassName('owl-carousel');
+    if (isOwlCarousel.length > 0) {
+        console.log('.owl-carousel exists on the page');
+        $(".owl-carousel").owlCarousel({
+            margin: 10,
+            loop: true,
+            dots: true,
+            nav: true,
+            items: 1,
+            navText: ["", ""],
+            responsive: {
+                0: {
+                    margin: 16,
+                    stagePadding: 32
+                },
+                768: {
+                    margin: 32,
+                    stagePadding: 64
+                },
+                992: {
+                    margin: 32,
+                    stagePadding: 64
+                },
+                1200: {
+                    margin: 64,
+                    stagePadding: 128
+                },
+                1600: {
+                    margin: 128,
+                    stagePadding: 256
+                }
+            }
+        });
+    } else {
+        console.log('.owl-carousel does not exist on the page');
+    }
+
+
+    // Toggle class .visible .full-visible when in viewport
+
+
+    $('.animate').viewportChecker({
+        classToAdd: 'visible', // Class to add to the elements when they are visible,
+        classToAddForFullView: 'full-visible', // Class to add when an item is completely visible in the viewport
+        // classToRemove: 'invisible', // Class to remove before adding 'classToAdd' to the elements
+        // removeClassAfterAnimation: false, // Remove added classes after animation has finished
+        // offset: [100 OR 10 % ], // The offset of the elements (let them appear earlier or later). This can also be percentage based by adding a '%' at the end
+        // invertBottomOffset: true, // Add the offset as a negative number to the element's bottom
+        repeat: true, // Add the possibility to remove the class if the elements are not visible
+        // callbackFunction: function(elem, action) {}, // Callback to do after a class was added to an element. Action will return "add" or "remove", depending if the class was added or removed
+        // scrollHorizontal: false // Set to true if your website scrolls horizontal instead of vertical.
+    });
+
+
+    // Approach page - Bottom module (contact0=)
+
+    $(window).scroll(function() {
+        if ($(".approach__contact").is(".visible")) {
+            $("#approach__shrink").addClass("shrink");
+            $("#approach__shrink--far").addClass("shrink");
+        }
+        if (!$(".approach__contact").is(".visible")) {
+            $("#approach__shrink").removeClass("shrink");
+            $("#approach__shrink--far").removeClass("shrink");
+        }
+    });
 
 })

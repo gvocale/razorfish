@@ -1,6 +1,7 @@
 @mixin link--arrow--left {
     position: relative;
-    padding: 1em;
+    padding-left: 0.5em;
+    // Carrot
     &:before {
         content: "";
         width: 0;
@@ -8,57 +9,57 @@
         border-style: solid;
         width: 0;
         height: 0;
-        border-top: 0.3em solid transparent;
-        border-bottom: 0.3em solid transparent;
-        border-right: 0.5em solid currentColor;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-right: 4px solid currentColor;
         border-left: 0 solid transparent;
         position: absolute;
         display: block;
-        top: 50%;
+        top: 55%;
         transform: translateY(-50%);
-        left: -0.4em;
-        transition: all 0.2s 0s ease-out;
+        right: calc(100% + 11px);
+        transition: right 0.1s 0s ease-in-out;
     }
+    // Stick
     &:after {
         content: "";
-        width: 0.5em;
-        height: 3px;
+        width: 11px;
+        height: 2px;
         display: block;
         background-color: currentColor;
         position: absolute;
-        top: 50%;
+        top: 55%;
         transform: translateY(-50%);
-        left: 0em;
-        transition: all 0.2s 0s ease-out;
+        right: 100%;
+        transition: width 0.1s 0s ease-in-out;
     }
     &:hover {
         &:before {
-            left: -0.9em;
-            transition: all 0.1s 0s ease-in;
+            right: calc(100% + 16px);
         }
         &:after {
-            width: 1em;
-            left: -0.5em;
-            transition: all 0.1s 0s ease-in;
+            width: 16px;
         }
     }
 }
 
 @mixin link--arrow--right {
     position: relative;
-    padding: 1em;
+    padding-right: 0.5em;
+    // Stick
     &:before {
         content: "";
         width: 11px;
-        height: 3px;
+        height: 2px;
         display: block;
         background-color: currentColor;
         position: absolute;
-        top: 50%;
+        top: 55%;
         transform: translateY(-50%);
-        right: 0px;
-        transition: all 0.1s 0s ease-in-out;
+        left: 100%;
+        transition: width 0.1s 0s ease-in-out;
     }
+    // Carrot
     &:after {
         content: "";
         width: 0;
@@ -66,23 +67,78 @@
         border-style: solid;
         width: 0;
         height: 0;
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-        border-left: 9px solid currentColor;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid currentColor;
         border-right: 0 solid transparent;
         position: absolute;
         display: block;
-        top: 50%;
+        top: 55%;
         transform: translateY(-50%);
-        right: 11px;
-        transition: all 0.1s 0s ease-in-out;
+        left: calc(100% + 11px);
+        transition: left 0.1s 0s ease-in-out;
     }
     &:hover {
         &:before {
-            width: 20px;
+            width: 16px;
         }
         &:after {
-            right: 20px;
+            left: calc(100% + 16px);
+        }
+    }
+}
+
+@mixin link--underline--animated($multiplier: 1) {
+    position: relative;
+    &:before {
+        content: "";
+        width: 100%;
+        @if unit($multiplier) == "px" {
+            height: $multiplier;
+        }
+        @else {
+            height: 0.1em * $multiplier;
+        }
+        max-height: 5px;
+        display: block;
+        background-color: currentColor;
+        position: absolute;
+        bottom: 0;
+        animation-name: underline_out;
+        animation-duration: 0.2s;
+        animation-timing-function: ease;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+    }
+    &:hover:before {
+        animation-name: underline_in;
+        animation-duration: 0.2s;
+        animation-timing-function: ease;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+    }
+    @keyframes underline_in {
+        0% {
+            width: 0%;
+            left: 0;
+        }
+        100% {
+            width: 100%;
+            left: 0;
+        }
+    }
+    @keyframes underline_out {
+        0% {
+            width: 100%;
+            right: 0;
+        }
+        100% {
+            width: 0%;
+            right: 0;
         }
     }
 }

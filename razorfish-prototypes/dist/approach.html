@@ -183,7 +183,7 @@
                 <b>nice things is great, but having profound</b>
                 <b>experiences is better.</b>
             </h2>
-            <a class="approach__link link link--primary link--arrow" href="#">Learn more about Experience Innovation</a>
+            <a class="approach__link link link--arrow" href="#">Learn more about Experience Innovation</a>
         </div>
         <div class="approach__video">
             <video src="videos/approach/01_card.mp4" autoplay loop></video>
@@ -197,7 +197,7 @@
                 <b>advertising can be ignored.</b>
                 <b>Meaningful conversations can't.</b>
             </h2>
-            <a class="approach__link link link--primary link--arrow" href="#">Learn more about Participatory Marketing</a>
+            <a class="approach__link link link--arrow" href="#">Learn more about Participatory Marketing</a>
         </div>
         <div class="approach__video">
             <video src="videos/approach/02_card.mp4" autoplay loop></video>
@@ -211,7 +211,7 @@
                 <b>they want wherever they</b>
                 <b>happen to be - and have it now.</b>
             </h2>
-            <a class="approach__link link link--primary link--arrow" href="#">Learn more about Ubiquitous Commerce</a>
+            <a class="approach__link link link--arrow" href="#">Learn more about Ubiquitous Commerce</a>
         </div>
         <div class="approach__video">
             <video src="videos/approach/03_card.mp4" autoplay loop></video>
@@ -225,7 +225,7 @@
                 <b>and served as individuals,</b>
                 <b>not as members of a crowd.</b>
             </h2>
-            <a class="approach__link link link--primary link--arrow" href="#">Learn more about Intelligent Platforms</a>
+            <a class="approach__link link link--arrow" href="#">Learn more about Intelligent Platforms</a>
         </div>
         <div class="approach__video">
             <video src="videos/approach/04_card.mp4" autoplay loop></video>
@@ -235,7 +235,7 @@
         <div class="approach__text-container animate">
             <p class="approach__contact__body">Here at Razorfish, we're excited abot all this disruption. Because we were purpose-built to navigate a world in which everhything that can be digital, is.</p>
             <p class="approach__contact__body">Which is why &mdash; when it comes to customers &mdash; the only word that really described our approach is...“obsession”.</p>
-            <a class="approach__contact__link link link--primary" href="#">Let&rsquo;s be obsessed together.</a>
+            <a class="approach__contact__link link" href="#">Let&rsquo;s be obsessed together.</a>
         </div>
     </section>
     <footer class="footer footer--dark">
@@ -263,36 +263,13 @@
         <a class="nav-item"><span>Intelligent Platforms</span></a>
         <a class="nav-item"><span>Participatory Marketing</span></a>
     </nav>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/min/razorfish.min.js"></script>
-<script src="js/jquery.gio.js"></script>
-    <script src="js/show-hide-header.js"></script>
-    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.viewportchecker.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('.animate').viewportChecker({
-            classToAdd: 'visible', // Class to add to the elements when they are visible,
-            // classToAddForFullView: 'full-visible', // Class to add when an item is completely visible in the viewport
-            // classToRemove: 'invisible', // Class to remove before adding 'classToAdd' to the elements
-            // removeClassAfterAnimation: false, // Remove added classes after animation has finished
-            // offset: [100 OR 10 % ], // The offset of the elements (let them appear earlier or later). This can also be percentage based by adding a '%' at the end
-            // invertBottomOffset: true, // Add the offset as a negative number to the element's bottom
-            repeat: true, // Add the possibility to remove the class if the elements are not visible
-            // callbackFunction: function(elem, action) {}, // Callback to do after a class was added to an element. Action will return "add" or "remove", depending if the class was added or removed
-            // scrollHorizontal: false // Set to true if your website scrolls horizontal instead of vertical.
-        });
-    });
-    $(window).scroll(function() {
-        if ($(".approach__contact").is(".visible")) {
-            $("#approach__shrink").addClass("shrink");
-            $("#approach__shrink--far").addClass("shrink");
-        }
-        if (!$(".approach__contact").is(".visible")) {
-            $("#approach__shrink").removeClass("shrink");
-            $("#approach__shrink--far").removeClass("shrink");
-        }
-    });
-    </script>
+    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <script src="js/show-hide-header.js"></script>
+    <script src="js/jquery.gio.js"></script>
 </body>
 
 </html>

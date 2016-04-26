@@ -31,6 +31,7 @@
         margin-bottom: 1.5rem;
         transform: scaleX(0);
         transform-origin: left;
+        color: lighten($primary, 10%);
     }
     &__text-container {
         display: flex;
@@ -45,7 +46,7 @@
         &.not-in-viewport.in-viewport {}
     }
     &__h1 {
-          @include ligatures;
+        @include ligatures;
         font-family: $serif;
         font-size: $scale09;
         line-height: 0.6;
@@ -109,14 +110,15 @@
     }
     &__link {
         @include ligatures;
+        @include link--arrow--right;
         font-family: $serif;
         font-style: italic;
         font-size: $scale04;
         line-height: $title-serif;
         letter-spacing: $spacing-serif-large;
+        color: lighten($primary, 10%);
         font-weight: 700;
         max-width: 24em;
-        opacity: 1;
         transform: translateY(50%);
         opacity: 0;
         transition-duration: 0.1s;
@@ -194,6 +196,11 @@
             letter-spacing: $spacing-serif-large + 0.01em;
             font-weight: 700;
             max-width: 24em;
+            color: $primary;
+            @include link--underline--animated;
+            &:before {
+                height: 2px;
+            }
             @media only screen and ($md) {
                 font-size: $scale07;
             }

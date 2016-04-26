@@ -295,13 +295,13 @@
             <h3 class="title__headline">Most Recent</h3>
         </div>
         <div class="title__button-group">
-            <select class="select select--secondary">
+            <select class="select">
                 <option value="none" disabled selected>INDUSTRY</option>>
                 <option value="UK">Automotive</option>
                 <option value="USA">Financial</option>
                 <option value="Canada">Healthcare</option>
             </select>
-            <select class="select select--secondary">
+            <select class="select">
                 <option value="none" disabled selected>CAPABILITY</option>>
                 <option value="USA">Creative</option>
                 <option value="Canada">UX</option>
@@ -425,7 +425,7 @@
         </ul>
         <div class="padded-grid">
             <div class="button-container">
-                <button class="button button--secondary">Load more</button>
+                <button class="button">Load more</button>
             </div>
         </div>
     </section>
@@ -472,19 +472,13 @@
             </li>
         </ul>
     </section>
-    <script src="js/show-hide-header.js"></script>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="js/isInViewport.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('.feed__item').addClass('animate');
-    });
-    $(window).scroll(function() {
-        $(".feed__item:in-viewport").each(function() {
-            $(this).addClass('in-viewport');
-        })
-    });
-    </script>
+    <script src="js/min/razorfish.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.viewportchecker.min.js"></script>
+    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <script src="js/show-hide-header.js"></script>
+    <script src="js/jquery.gio.js"></script>
 </body>
 
 </html>

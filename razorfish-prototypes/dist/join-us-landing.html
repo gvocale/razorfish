@@ -185,7 +185,7 @@
             <h3 class="title__headline">Current Listings</h3>
         </div>
         <div class="title__button-group">
-            <select class="select select--secondary">
+            <select class="select">
                 <option value="none" disabled selected>JOB CATEGORY</option>
                 <option value="">Insight & Strategy</option>
                 <option value="">Creative & UX</option>
@@ -193,7 +193,7 @@
                 <option value="">Media</option>
                 <option value="">Lorem Ipsum</option>
             </select>
-            <select class="select select--secondary">
+            <select class="select">
                 <option value="none" disabled selected>LOCATION</option>
                 <optgroup label="North America">
                     <option value="">Atlanta</option>
@@ -291,13 +291,13 @@
             </li>
         </ul>
         <div class="filtered-job-listings__button-group">
-            <button class="button button--secondary">more listings</button>
+            <button class="button">more listings</button>
         </div>
     </section>
     <section class="contact-promo animate" style="">
         <div class="contact-promo__text-container">
             <p class="contact-promo__eyebrow">Locations</p>
-            <h2 class="contact-promo__description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link link--primary">Get in touch.</a></h2>
+            <h2 class="contact-promo__description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link">Get in touch.</a></h2>
         </div>
         <div class="contact-promo__background">
         </div>
@@ -322,23 +322,12 @@
         </ul>
     </footer>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        var player = $("#vimeo-video");
-        froogaloop = $f(player[0].id);
-    });
-    $('.video__button--play').click(function(e) {
-        $('.video__poster').fadeOut("slow");
-        $('.hero__video__poster').fadeOut("slow");
-        froogaloop.api('play');
-    });
-    </script>
     <script src="js/min/razorfish.min.js"></script>
-<script src="js/jquery.gio.js"></script>
-    <script src="js/cbpScroller.js"></script>
-    <script src="js/classie.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.viewportchecker.min.js"></script>
+    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
     <script src="js/show-hide-header.js"></script>
+    <script src="js/jquery.gio.js"></script>
 
 </body>
 

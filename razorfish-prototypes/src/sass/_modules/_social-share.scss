@@ -3,7 +3,7 @@
     flex-direction: row;
     @include grid-padding;
     @include padding-top;
-@include padding-bottom;
+    @include padding-bottom;
     &__icon {
         display: block;
         background-size: 30%, contain;
@@ -39,14 +39,8 @@
         &:active {
             outline: none;
         }
-        &:active:before,
-        &:target:before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
+        &:active,
+        &:target {
             background-color: rgba($black, 0.05);
         }
         @media screen and ($lg) {
@@ -56,19 +50,52 @@
             width: 4rem;
         }
         @media screen and ($xl) {
-            &:after {
-                display: block;
+            &:before {
                 content: "";
-                position: absolute;
-                height: 0.15rem;
-                bottom: 0;
-                left: 0;
-                width: 0%;
-                background-color: $primary;
-                transition: width 0.1s ease-in-out 0.1s;
-            }
-            &:hover:after {
                 width: 100%;
+                height: 2px;
+                min-height: 2px;
+                max-height: 4px;
+                display: block;
+                background-color: $primary;
+                position: absolute;
+                bottom: 0;
+                animation-name: underline_out;
+                animation-duration: 0.2s;
+                animation-timing-function: ease;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+                animation-play-state: running;
+            }
+            &:hover:before {
+                animation-name: underline_in;
+                animation-duration: 0.2s;
+                animation-timing-function: ease;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+                animation-play-state: running;
+            }
+            @keyframes underline_in {
+                0% {
+                    width: 0%;
+                    left: 0;
+                }
+                100% {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+            @keyframes underline_out {
+                0% {
+                    width: 100%;
+                    right: 0;
+                }
+                100% {
+                    width: 0%;
+                    right: 0;
+                }
             }
             &:hover {
                 .social-share__icon {
@@ -156,6 +183,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+        z-index: 5;
         margin-right: 10vw;
         @media screen and ($lg) {
             margin-right: 5vw;
@@ -191,7 +219,6 @@
         @media screen and ($xl) {
             margin-right: 10vw;
         }
-        z-index: 1;
         bottom: 0;
         @include padding-bottom;
         @media screen and ($lg) {
@@ -206,7 +233,6 @@
             }
         }
     }
-
     &__group {
         position: relative;
     }

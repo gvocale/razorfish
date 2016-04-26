@@ -299,7 +299,7 @@
                             </div>
                             <iframe id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
-                        <p class="video__caption"><strong>IMAGE SOURCE:</strong> <a class="link link--primary" href="">http://media.daimler.com</a></p>
+                        <p class="video__caption"><strong>IMAGE SOURCE:</strong> <a class="link" href="">http://media.daimler.com</a></p>
                     </div>
                     <h3 class="body-copy__h3">Machine Learning Makes Cars & Their Passengers Even Smarter</h3>
                     <p class="body-copy__body">With increasing momentum in the autonomous driving experience, it is only natural to have an always-on approach to data. From scouring email and GPS records to social sentiment and telematics, smarter experiences deliver unprecedented personalized moments that are as unique as the individual. Watch Google Now for more inspiring approaches to advancing the experience with machine learning.</p>
@@ -354,7 +354,7 @@
                         <p class="body-copy__inline-pull-quote__quote">Embarking on this project, we set out to push the boundaries of technology, design and innovation to make the impossible possible…</p>
                         <p class="body-copy__inline-pull-quote__author"><strong>MARK TEMPLIN</strong> EVP LEXUS INTERNATIONAL</p>
                     </div>
-                    <p class="body-copy__body"><strong>SEE IT HERE:</strong> <a href="" class="link link--primary">http://www.lexus-int.com/amazinginmotion/</a></p>
+                    <p class="body-copy__body"><strong>SEE IT HERE:</strong> <a href="" class="link">http://www.lexus-int.com/amazinginmotion/</a></p>
                 </section>
             </div>
         </div>
@@ -387,15 +387,15 @@
                     <div class="body-copy__foot-note">
                         <h4 class="body-copy__foot-note__eyebrow">About</h4>
                         <div class="body-copy__foot-note__group">
-                            <p class="body-copy__foot-note__link"><a href="" class="link link--primary link--arrow">Razorfish Emerging Experiences</a></p>
+                            <p class="body-copy__foot-note__link"><a href="" class="link link--arrow">Razorfish Emerging Experiences</a></p>
                             <p class="body-copy__foot-note__link--description">Subheadline lorem ipsum.</p>
                         </div>
                         <div class="body-copy__foot-note__group">
-                            <p class="body-copy__foot-note__link"><a href="" class="link link--primary link--arrow">Razorfish Emerging Experiences</a></p>
+                            <p class="body-copy__foot-note__link"><a href="" class="link link--arrow">Razorfish Emerging Experiences</a></p>
                             <p class="body-copy__foot-note__link--description">Subheadline lorem ipsum.</p>
                         </div>
                         <div class="body-copy__foot-note__group">
-                            <p class="body-copy__foot-note__link"><a href="" class="link link--primary link--arrow">Razorfish Emerging Experiences</a></p>
+                            <p class="body-copy__foot-note__link"><a href="" class="link link--arrow">Razorfish Emerging Experiences</a></p>
                             <p class="body-copy__foot-note__link--description">Subheadline lorem ipsum.</p>
                         </div>
                     </div>
@@ -425,7 +425,7 @@
                 <div class="form__border"></div>
             </div>
             <div class="newsletter-signup__button-group">
-                <button class="button button--secondary button--black">Subscribe</button><span class="form__required--note">* Required</span>
+                <button class="button button--black">Subscribe</button><span class="form__required--note">* Required</span>
             </div>
         </form>
     </section>
@@ -472,7 +472,7 @@
     <section class="contact-promo animate" style="">
         <div class="contact-promo__text-container">
             <p class="contact-promo__eyebrow">Locations</p>
-            <h2 class="contact-promo__description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link link--primary">Get in touch.</a></h2>
+            <h2 class="contact-promo__description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link">Get in touch.</a></h2>
         </div>
         <div class="contact-promo__background">
         </div>
@@ -498,37 +498,11 @@
     </footer>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/min/razorfish.min.js"></script>
-<script src="js/jquery.gio.js"></script>
-    <script src="js/cbpScroller.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/show-hide-header.js"></script>
-
-    <script src="js/stickyfill.js"></script>
-    <script>
-    $('.sticky').Stickyfill();
-    </script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.viewportchecker.min.js"></script>
     <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        var player = $("#vimeo-video");
-        froogaloop = $f(player[0].id);
-    });
-    $('.video__button--play').click(function(e) {
-        $('.video__poster').fadeOut("slow");
-        froogaloop.api('play');
-    });
-    </script>
-    <script src="js/isInViewport.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('.feed__item').addClass('animate');
-    });
-    $(window).scroll(function() {
-        $(".feed__item:in-viewport").each(function() {
-            $(this).addClass('in-viewport');
-        })
-    });
-    </script>
+    <script src="js/show-hide-header.js"></script>
+    <script src="js/jquery.gio.js"></script>
 </body>
 
 </html>

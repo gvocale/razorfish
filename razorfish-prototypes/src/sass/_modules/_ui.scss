@@ -58,117 +58,65 @@
     }
 }
 
-button.tertiary {
-    background-color: transparent;
-    border-radius: 0;
-    border: none;
-    box-sizing: border-box;
-    color: $black;
-    cursor: hand;
-    cursor: pointer;
-    @include ligatures;
-    font-family: $serif;
-    font-size: $scale07;
-    font-weight: 400;
-    font-style: italic;
-    letter-spacing: $spacing-serif-large;
-    line-height: $solid-serif;
-    outline: none;
-    overflow: hidden;
-    position: relative;
-    text-decoration: none;
-    transition: all 0.2s ease-in 0s;
-    -webkit-appearance: none;
-    background-clip: border-box;
-    background-color: transparent;
-    background-origin: content-box;
-    background-position-x: calc(100% + 2em);
-    background-position-y: center;
-    background-repeat: no-repeat;
-    background-size: 1em auto;
-}
-
-button.tertiary.white {
-    color: $white;
-}
-
-button.tertiary:before {
-    display: block;
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    transition: all 0.1s $bezier;
-    border-bottom-width: 0.15rem;
-    border-bottom-style: solid;
-}
-
-button.tertiary:hover:before {
-    width: 100%;
-}
-
 .button {
     text-transform: uppercase;
 }
 
 .button,
 .select {
-    &--secondary {
-        display: inline-block;
-        -webkit-appearance: none;
-        background-clip: border-box;
-        background-color: transparent;
-        background-origin: content-box;
-        border-radius: 0;
-        border: 2px solid;
-        box-shadow: inset 0 0 0 2px rgba($black, 0.2);
-        box-sizing: border-box;
-        color: currentColor;
-        cursor: hand;
-        cursor: pointer;
-        font-family: $sans;
-        font-weight: 700;
-        letter-spacing: $spacing-sans-large;
-        line-height: $solid-sans;
+    display: inline-block;
+    -webkit-appearance: none;
+    background-clip: border-box;
+    background-color: transparent;
+    background-origin: content-box;
+    border-radius: 0;
+    border: 0;
+    box-shadow: inset 0 0 0 2px rgba($black, 0.2);
+    box-sizing: border-box;
+    color: currentColor;
+    cursor: hand;
+    cursor: pointer;
+    font-family: $sans;
+    font-weight: 700;
+    letter-spacing: $spacing-sans-large;
+    line-height: $solid-sans;
+    outline: none;
+    overflow: hidden;
+    padding: 1.2em 3em;
+    position: relative;
+    text-decoration: none;
+    font-size: $scale03;
+    transition: all 0.2s ease-in 0s;
+    margin: 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    option:first-child {
+        text-transform: uppercase;
+    }
+    @media screen and ($xxl) {
+        font-size: $scale04;
+        min-height: 4rem;
+    }
+    &:hover,
+    &:focus {
         outline: none;
-        overflow: hidden;
-        padding: 1.2em 3em;
-        position: relative;
-        text-decoration: none;
-        font-size: $scale03;
-        transition: all 0.2s ease-in 0s;
-        margin: 1px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        option:first-child {
-            text-transform: uppercase;
-        }
-        @media screen and ($xxl) {
-            font-size: $scale04;
-            min-height: 4rem;
-        }
-        &:hover,
-        &:focus {
-            outline: none;
-            box-shadow: inset 0 0 0 2px rgba($black, 1);
-            transition: all 0s ease-out 0s;
-        }
-        &:active:after,
-        &:target:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: currentColor;
-            opacity: 0.05;
-        }
-        option {
-            text-transform: none;
-        }
+        box-shadow: inset 0 0 0 2px rgba($black, 1);
+        transition: all 0s ease-out 0s;
+    }
+    &:active:after,
+    &:target:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: currentColor;
+        opacity: 0.05;
+    }
+    option {
+        text-transform: none;
     }
     &--white {
         color: $white;
@@ -186,104 +134,23 @@ button.tertiary:hover:before {
             box-shadow: inset 0 0 0 2px rgba($black, 1);
         }
     }
+    &--arrow {
+        &.white {
+            background-position-x: calc(100% + 2em);
+            background-position-y: center;
+            background-repeat: no-repeat;
+            background-size: 1em auto;
+            @extend .icon-arrow-white;
+            padding: 1.2em 3em 1.2em 1.2em;
+        }
+    }
 }
 
 .select {
-    &--secondary {
-        background-position-x: calc(100% + 2em);
-        background-position-y: center;
-        background-repeat: no-repeat;
-        background-size: 1em auto;
-        @extend .icon-arrow-black;
-        padding: 1.2em 3em 1.2em 1.2em;
-    }
-    &--secondary.button--white {
-        background-position-x: calc(100% + 2em);
-        background-position-y: center;
-        background-repeat: no-repeat;
-        background-size: 1em auto;
-        @extend .icon-arrow-white;
-        padding: 1.2em 3em 1.2em 1.2em;
-    }
-}
-
-.button {
-    &--tertiary {
-        display: inline-block;
-        -webkit-appearance: none;
-        background-clip: border-box;
-        background-color: transparent;
-        background-origin: content-box;
-        border-radius: 0;
-        box-sizing: border-box;
-        color: $black;
-        cursor: hand;
-        cursor: pointer;
-        font-family: $sans;
-        font-weight: 700;
-        letter-spacing: $spacing-sans-large;
-        line-height: $solid-sans;
-        outline: none;
-        overflow: hidden;
-        padding: 1.2em 3em;
-        position: relative;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: $scale03;
-        transition: color 0s 0.05s linear, background-color 0s 0s linear;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        z-index: 0;
-        background-color: $white;
-        overflow: hidden;
-        @media screen and ($xxl) {
-            font-size: $scale04;
-            min-height: 4rem;
-        }
-        &:active,
-        &:target {
-            background-color: rgba($black, 0.1);
-        }
-        &:hover,
-        &:focus {
-            outline: none;
-            color: $white;
-        }
-        // Green background
-        &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: $primary;
-            transform: translateY(100%);
-            transform-origin: bottom;
-            transition: transform 0.1s 0s ease-in;
-            z-index: -1;
-        }
-        &:hover:before {
-            transform: scaleY(1);
-            transition: transform 0.1s 0s ease-out;
-        }
-        // 2px border and white background
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 2px solid;
-            border-color: $black;
-            background-color: $white;
-            box-sizing: border-box;
-            z-index: -2;
-        }
-        option {
-            text-transform: none;
-        }
-    }
+    background-position-x: calc(100% + 2em);
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: 1em auto;
+    @extend .icon-arrow-black;
+    padding: 1.2em 3em 1.2em 1.2em;
 }

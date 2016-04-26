@@ -5,7 +5,7 @@
         position: relative;
         width: 100%;
         z-index: 2;
-                display: flex;
+        display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: flex-end;
@@ -61,6 +61,12 @@
             font-weight: 700;
         }
         align-self: baseline;
+        .link {
+            text-decoration: underline;
+            &:hover {
+                opacity: 0.6;
+            }
+        }
     }
     &__button--play {
         width: 4rem;

@@ -108,6 +108,9 @@
                 columns: 2;
                 column-gap: 2rem;
             }
+            .body-copy__body--title {
+                font-weight: 700;
+            }
         }
     }
     &__image {
@@ -324,6 +327,12 @@
                 margin-bottom: 0;
             }
         }
+        .link {
+            text-decoration: underline;
+            &:hover {
+                opacity: 0.6;
+            }
+        }
     }
     &__background {
         width: 100vw;
@@ -446,6 +455,10 @@
             letter-spacing: $spacing-sans;
             font-weight: 700;
             font-size: $scale05;
+            color: $primary;
+            .link:hover {
+                text-decoration: underline;
+            }
             @media only screen and ($md) {
                 font-size: $scale06;
             }

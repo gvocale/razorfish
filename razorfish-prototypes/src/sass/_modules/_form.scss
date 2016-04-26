@@ -444,6 +444,93 @@
             padding-top: 1em;
         }
     }
+    &__radio {
+        &[type="radio"] {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+            &:hover ~ .form__radio--label,
+            &:hover ~ .form__radio--body {
+                opacity: 0.5;
+            }
+            &:focus ~ .form__radio--label,
+            &:focus ~ .form__radio--body,
+            &:active ~ .form__radio--label,
+            &:active ~ .form__radio--body,
+            &:target ~ .form__radio--label,
+            &:target ~ .form__radio--body {
+                opacity: 1;
+            }
+            &:target ~ .form__radio--label,
+            &:active ~ .form__radio--label {
+                background-color: rgba($white, 0.15);
+            }
+            &:checked ~ .form__radio--label:after {
+                opacity: 1;
+            }
+        }
+        &--label {
+            font-size: $scale03;
+            @media screen and ($lg) {
+                font-size: $scale02;
+            }
+            @media screen and ($xl) {
+                font-size: $scale03;
+            }
+            width: 2em;
+            height: 2em;
+            display: inline-block;
+            cursor: pointer;
+            border: 2px solid currentColor;
+            background-color: transparent;
+            position: relative;
+            margin-right: 1em;
+            border-radius: 50%;
+            color: currentColor;
+            opacity: 0.2;
+            &:after {
+                content: "";
+                width: calc(100% - 8px);
+                height: calc(100% - 8px);
+                position: absolute;
+                background: currentColor;
+                background-clip: content-box;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+            }
+        }
+        &--body {
+            font-family: $sans;
+            font-size: $scale03;
+            @media screen and ($md) {
+                font-size: $scale04;
+            }
+            letter-spacing: $spacing-sans;
+            line-height: 1.3;
+            cursor: pointer;
+            opacity: 0.2;
+        }
+        &--group {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            padding-top: 1em;
+            width: calc(100% + 2rem);
+            margin-left: -1rem;
+        }
+        &--item {
+            @include component-padding;
+            width: 50%;
+        }
+    }
     &--black {
         color: $black;
     }
@@ -525,7 +612,6 @@
         stroke-dashoffset: 100;
         animation: tick 1s ease 1 forwards;
     }
-    
     @keyframes tick {
         to {
             stroke-dashoffset: 0;

@@ -406,7 +406,6 @@ p {
 }
 
 .link {
-    line-height: $title-serif;
     text-decoration: none;
     position: relative;
     display: inline-block;
@@ -419,14 +418,10 @@ p {
     word-break: break-word;
     hyphens: auto;
     -webkit-appearance: none;
-    // transition: box-shadow 0.1s 0s ease-out;
     &:active,
     &:target {
         background-color: rgba($black, 0.03);
         transition: background-color 0s 0s;
-    }
-    &:hover {
-        color: $primary;
     }
     &--muted {
         color: currentColor;
@@ -461,7 +456,7 @@ p {
                 border-left: 0 solid transparent;
                 position: absolute;
                 display: block;
-                top: 50%;
+                top: 55%;
                 transform: translateY(-50%);
                 right: calc(100% + 11px);
                 transition: right 0.1s 0s ease-in-out;
@@ -474,7 +469,7 @@ p {
                 display: block;
                 background-color: currentColor;
                 position: absolute;
-                top: 50%;
+                top: 55%;
                 transform: translateY(-50%);
                 right: 100%;
                 transition: width 0.1s 0s ease-in-out;
@@ -499,7 +494,7 @@ p {
                 display: block;
                 background-color: currentColor;
                 position: absolute;
-                top: 50%;
+                top: 55%;
                 transform: translateY(-50%);
                 left: 100%;
                 transition: width 0.1s 0s ease-in-out;
@@ -518,7 +513,7 @@ p {
                 border-right: 0 solid transparent;
                 position: absolute;
                 display: block;
-                top: 50%;
+                top: 55%;
                 transform: translateY(-50%);
                 left: calc(100% + 11px);
                 transition: left 0.1s 0s ease-in-out;
