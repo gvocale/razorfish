@@ -329,8 +329,10 @@
         }
         .link {
             text-decoration: underline;
-            &:hover {
-                opacity: 0.6;
+            @media (hover) {
+                &:hover {
+                    opacity: 0.6;
+                }
             }
         }
     }
@@ -456,8 +458,10 @@
             font-weight: 700;
             font-size: $scale05;
             color: $primary;
-            .link:hover {
-                text-decoration: underline;
+            @media (hover) {
+                .link:hover {
+                    text-decoration: underline;
+                }
             }
             @media only screen and ($md) {
                 font-size: $scale06;

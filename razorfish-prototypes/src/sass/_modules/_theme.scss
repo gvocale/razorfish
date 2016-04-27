@@ -105,8 +105,10 @@
     &--smart {
         .link {
             color: currentColor;
-            &:hover {
-                opacity: 0.6;
+            @media (hover) {
+                &:hover {
+                    opacity: 0.6;
+                }
             }
         }
         $primary-smart: #f4ac00;
@@ -126,7 +128,11 @@
             color: $primary-smart;
         }
         .social-share--folded__icon {
-            &:hover,
+            @media (hover) {
+                &:hover {
+                    background-color: darken($gray, 5%);
+                }
+            }
             &:focus {
                 background-color: darken($gray, 5%);
             }
@@ -179,8 +185,10 @@
         $off-white-heforshe: #f3f3f3;
         .link {
             color: currentColor;
-            &:hover {
-                opacity: 0.6;
+            @media (hover) {
+                &:hover {
+                    opacity: 0.6;
+                }
             }
         }
         p[class*="eyebrow"] {
@@ -199,7 +207,11 @@
             color: $primary-heforshe;
         }
         .social-share--folded__icon {
-            &:hover,
+            @media (hover) {
+                &:hover {
+                    background-color: darken($gray, 5%);
+                }
+            }
             &:focus {
                 background-color: darken($gray, 5%);
             }

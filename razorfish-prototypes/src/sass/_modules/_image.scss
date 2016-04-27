@@ -88,7 +88,14 @@
                     transition: all 0.2s 0s $bezier;
                 }
             }
-            &:hover,
+            @media (hover) {
+                &:hover {
+                    .image__caption__icon--component {
+                        border: 2px solid rgba($primary, 1);
+                        transition: all 0s 0s $bezier;
+                    }
+                }
+            }
             &:focus {
                 .image__caption__icon--component {
                     border: 2px solid rgba($primary, 1);
@@ -239,6 +246,7 @@
             right: 0px;
             transition: all 0.1s 0s ease-in-out;
         }
+        @media (hover) {
         &:hover {
             &:before {
                 right: 20px;
@@ -246,7 +254,7 @@
             &:after {
                 width: 20px;
             }
-        }
+        }}
     }
     .owl-next {
         position: relative;
@@ -282,6 +290,7 @@
             left: 11px;
             transition: all 0.1s 0s ease-in-out;
         }
+        @media (hover) {
         &:hover {
             &:before {
                 width: 20px;
@@ -289,7 +298,7 @@
             &:after {
                 left: 20px;
             }
-        }
+        }}
     }
     .owl-nav {
         width: 8em;

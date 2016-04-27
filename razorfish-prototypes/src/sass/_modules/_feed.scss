@@ -160,10 +160,7 @@
             height: 100%;
             z-index: -1;
         }
-        &:hover,
-        &:focus {
-            .feed__item__background {}
-        }
+
         &:target,
         &:active {
             filter: brightness(110%);
@@ -215,11 +212,12 @@
                     font-size: $scale07;
                 }
             }
+            @media (hover) {
             &:hover {
                 .feed__item__text-container:before {
                     transform: translateX(1%);
                 }
-            }
+            }}
             .feed__item__background {
                 width: 50%;
                 position: absolute;
@@ -450,9 +448,10 @@ $right: 2 4 6 8 10;
     transition: transform 0.15s 0s ease-in-out, opacity 0.15s 0s ease-in-out;
     opacity: 1;
     box-shadow: 0em 0em 0em 0em rgba($black, 0);
+    @media (hover) {
     &:hover {
         transform: translate(0, 0) scale(1.02);
         box-shadow: 0em 1em 2em 0em rgba($black, 0.3);
         z-index: 1;
-    }
+    }}
 }

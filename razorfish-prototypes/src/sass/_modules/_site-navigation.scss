@@ -74,14 +74,16 @@
                 animation-fill-mode: forwards;
                 animation-play-state: running;
             }
-            &:hover:before {
-                animation-name: underline_in;
-                animation-duration: 0.2s;
-                animation-timing-function: ease;
-                animation-iteration-count: 1;
-                animation-direction: normal;
-                animation-fill-mode: forwards;
-                animation-play-state: running;
+            @media (hover) {
+                &:hover:before {
+                    animation-name: underline_in;
+                    animation-duration: 0.2s;
+                    animation-timing-function: ease;
+                    animation-iteration-count: 1;
+                    animation-direction: normal;
+                    animation-fill-mode: forwards;
+                    animation-play-state: running;
+                }
             }
             @keyframes underline_in {
                 0% {
@@ -103,9 +105,11 @@
                     right: 0;
                 }
             }
-            &:hover {
-                transition: color 0.1s ease 0s;
-                color: $primary;
+            @media (hover) {
+                &:hover {
+                    transition: color 0.1s ease 0s;
+                    color: $primary;
+                }
             }
         }
     }

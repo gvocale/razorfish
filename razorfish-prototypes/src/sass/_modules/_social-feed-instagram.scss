@@ -48,10 +48,12 @@
                 padding-bottom: 100%;
                 position: relative;
             }
-            &:hover {
-                .social-feed--instagram__feed__image {
-                    transition: transform 0.2s 0s $bezier;
-                    transform: scale(1.025);
+            @media (hover) {
+                &:hover {
+                    .social-feed--instagram__feed__image {
+                        transition: transform 0.2s 0s $bezier;
+                        transform: scale(1.025);
+                    }
                 }
             }
         }

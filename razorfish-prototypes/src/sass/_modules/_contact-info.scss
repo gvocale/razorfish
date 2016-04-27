@@ -185,15 +185,17 @@
             padding-bottom: 100%;
             position: relative;
         }
-        &:hover {
-            animation-name: bounce;
-            animation-duration: 0.5s;
-            animation-timing-function: ease-in-out;
-            animation-delay: 0.05s;
-            animation-iteration-count: 1;
-            animation-direction: normal;
-            animation-fill-mode: none;
-            animation-play-state: running;
+        @media (hover) {
+            &:hover {
+                animation-name: bounce;
+                animation-duration: 0.5s;
+                animation-timing-function: ease-in-out;
+                animation-delay: 0.05s;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: none;
+                animation-play-state: running;
+            }
         }
     }
     .social-share__group {

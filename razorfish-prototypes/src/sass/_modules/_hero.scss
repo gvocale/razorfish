@@ -243,6 +243,7 @@
                 padding-bottom: 100%;
                 position: relative;
             }
+            @media (hover) {
             &:hover {
                 animation-name: bounce;
                 animation-duration: 0.5s;
@@ -252,7 +253,7 @@
                 animation-direction: normal;
                 animation-fill-mode: none;
                 animation-play-state: running;
-            }
+            }}
         }
         .link--primary {
             color: darken( $primary, 5%);

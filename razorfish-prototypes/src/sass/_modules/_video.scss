@@ -63,8 +63,10 @@
         align-self: baseline;
         .link {
             text-decoration: underline;
-            &:hover {
-                opacity: 0.6;
+            @media (hover) {
+                &:hover {
+                    opacity: 0.6;
+                }
             }
         }
     }
@@ -102,11 +104,12 @@
                 border-left: calc(6rem / 6 * 2 * 0.8660259) solid $white;
             }
         }
+        @media (hover) {
         &:hover {
             background-color: rgba($white, 0.1);
             transition: background-color 0s 0s $bezier, transform 0.1s 0s $bezier;
             transform: translate(-50%, -50%) scale(0.95);
-        }
+        }}
         &:active,
         &:target {
             background-color: rgba($white, 0.4);

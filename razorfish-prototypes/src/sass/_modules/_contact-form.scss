@@ -57,9 +57,10 @@
     &__link {
         font-family: $sans;
         @include link--underline--animated(2px);
+        @media (hover) {
         &:hover {
             color: $primary;
-        }
+        }}
         line-height: 1;
         font-weight: 400;
         text-transform: uppercase;

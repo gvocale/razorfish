@@ -33,6 +33,7 @@
         right: 100%;
         transition: width 0.1s 0s ease-in-out;
     }
+    @media (hover) {
     &:hover {
         &:before {
             right: calc(100% + 16px);
@@ -40,7 +41,7 @@
         &:after {
             width: 16px;
         }
-    }
+    }}
 }
 
 @mixin link--arrow--right {
@@ -77,7 +78,7 @@
         transform: translateY(-50%);
         left: calc(100% + 11px);
         transition: left 0.1s 0s ease-in-out;
-    }
+    }@media (hover) {
     &:hover {
         &:before {
             width: 16px;
@@ -85,7 +86,7 @@
         &:after {
             left: calc(100% + 16px);
         }
-    }
+    }}
 }
 
 @mixin link--underline--animated($multiplier: 1) {
@@ -112,6 +113,7 @@
         animation-fill-mode: forwards;
         animation-play-state: running;
     }
+    @media (hover) {
     &:hover:before {
         animation-name: underline_in;
         animation-duration: 0.2s;
@@ -120,7 +122,7 @@
         animation-direction: normal;
         animation-fill-mode: forwards;
         animation-play-state: running;
-    }
+    }}
     @keyframes underline_in {
         0% {
             width: 0%;

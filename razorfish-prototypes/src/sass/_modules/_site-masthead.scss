@@ -126,14 +126,16 @@
                 transition: transform 0.3s 0.14s $bezier;
             }
         }
-        &:hover {
-            .hamburger-inner::before {
-                transition: transform 0.1s 0s $bezier;
-                transform: translateY(-12px);
-            }
-            .hamburger-inner::after {
-                transition: transform 0.1s 0s $bezier;
-                transform: translateY(12px);
+        @media (hover) {
+            &:hover {
+                .hamburger-inner::before {
+                    transition: transform 0.1s 0s $bezier;
+                    transform: translateY(-12px);
+                }
+                .hamburger-inner::after {
+                    transition: transform 0.1s 0s $bezier;
+                    transform: translateY(12px);
+                }
             }
         }
     }

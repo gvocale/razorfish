@@ -84,10 +84,16 @@
                 &:before {
                     border-top: 0;
                 }
-                &:hover,
                 &:focus {
                     &:before {
                         background-color: transparent;
+                    }
+                }
+                @media (hover) {
+                    &:hover {
+                        &:before {
+                            background-color: transparent;
+                        }
                     }
                 }
                 &:active,

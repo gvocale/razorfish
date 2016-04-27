@@ -426,16 +426,20 @@ p {
     &--muted {
         color: currentColor;
         opacity: 0.5;
-        &:hover {
-            opacity: 0.8;
+        @media (hover) {
+            &:hover {
+                opacity: 0.8;
+            }
         }
     }
     &--primary {
         color: $primary;
-        &:hover {
-            box-shadow: 0 -0.08em 0 0 currentColor inset;
-            box-sizing: border-box;
-            transition: box-shadow 0s 0s linear;
+        @media (hover) {
+            &:hover {
+                box-shadow: 0 -0.08em 0 0 currentColor inset;
+                box-sizing: border-box;
+                transition: box-shadow 0s 0s linear;
+            }
         }
     }
     &--arrow {
@@ -474,12 +478,14 @@ p {
                 right: 100%;
                 transition: width 0.1s 0s ease-in-out;
             }
-            &:hover {
-                &:before {
-                    right: calc(100% + 16px);
-                }
-                &:after {
-                    width: 16px;
+            @media (hover) {
+                &:hover {
+                    &:before {
+                        right: calc(100% + 16px);
+                    }
+                    &:after {
+                        width: 16px;
+                    }
                 }
             }
         }
@@ -518,12 +524,14 @@ p {
                 left: calc(100% + 11px);
                 transition: left 0.1s 0s ease-in-out;
             }
-            &:hover {
-                &:before {
-                    width: 16px;
-                }
-                &:after {
-                    left: calc(100% + 16px);
+            @media (hover) {
+                &:hover {
+                    &:before {
+                        width: 16px;
+                    }
+                    &:after {
+                        left: calc(100% + 16px);
+                    }
                 }
             }
         }
@@ -544,15 +552,16 @@ p {
                 display: inline-block;
                 left: -1.5em;
                 top: 0;
-                
             }
         }
         &--download {
             &:before {
                 @include icon-download--black;
             }
-            &:hover:before {
-                @include icon-download--primary;
+            @media (hover) {
+                &:hover:before {
+                    @include icon-download--primary;
+                }
             }
         }
     }
