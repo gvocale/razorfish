@@ -2,39 +2,6 @@
     background-color: $gray;
     @include grid-padding;
     @include padding-bottom;
-    &__country {
-        display: flex;
-        flex-direction: column;
-        @include margin-bottom(0.5);
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-    &__country-name {
-        @include component-padding;
-        font-family: $sans;
-        line-height: 1;
-        letter-spacing: $spacing-sans;
-        font-weight: 700;
-        margin-bottom: 1.5em;
-        max-width: 14em;
-        font-size: $scale04;
-        @media screen and ($md) {
-            font-size: $scale05;
-        }
-        @media screen and ($lg) {
-            margin-bottom: 1em;
-        }
-        @media screen and ($xl) {
-            font-size: $scale06;
-        }
-        @media screen and ($xxl) {
-            font-size: $scale07;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
     &__item {
         position: relative;
         width: 100%;
@@ -53,43 +20,14 @@
             position: relative;
             padding-bottom: calc(100% / 16 * 9);
         }
-        &:hover {
-            .office-list__image {
-                transform: scale(1.025);
-            }
-        }
-        &--close {
-            .office-list__office-name {
-                margin-bottom: 0;
-            }
-            .office-list__multi-column {
-                display: none;
-            }
-            .office-list__image {
-                height: 0;
-            }
-            cursor: pointer;
-            cursor: hand;
-            background-color: rgba($white, 0.4);
+        @media (hover) {
             &:hover {
-                background-color: rgba($white, 0.6);
-            }
-        }
-        &--open {
-            .office-list__office-name {
-                margin-bottom: 0;
-            }
-            .office-list__multi-column {
-                display: none;
-            }
-            .office-list__image {
-                height: 0;
-            }
-            cursor: pointer;
-            cursor: hand;
-            background-color: rgba($white, 0.4);
-            &:hover {
-                background-color: rgba($white, 0.6);
+                .office-list__image {
+                    transform: scale(1.03);
+                    &:before {
+                        background-color: rgba($black, 0.4);
+                    }
+                }
             }
         }
     }
@@ -104,13 +42,23 @@
         background-repeat: no-repeat;
         z-index: -1;
         transition: 0.2s 0s ease;
-        @include image-grading--darker;
+        &:before {
+            content: "";
+            background-color: rgba($black, 0.2);
+            transition: 0.2s 0s ease;
+            background-blend-mode: darken;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
     }
     &__description {
-        @include padding-top(0.5);
-        @include padding-bottom(0.5);
-        @include padding-left(0.5);
-        @include padding-right(0.5);
+        @include padding-top(0.25);
+        @include padding-bottom(0.25);
+        @include padding-left(0.25);
+        @include padding-right(0.25);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -122,8 +70,24 @@
         height: 100%;
         color: $white;
     }
-    &__group {
-        @include two-column--group;
+    &__country-eyebrow {
+        font-family: $sans;
+        line-height: 1.3;
+        letter-spacing: $spacing-sans-mega;
+        margin-bottom: 0.4em;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: lighten($primary, 10%);
+        font-size: $scale02;
+        @media screen and ($lg) {
+            font-size: $scale03;
+        }
+        @media screen and ($xxl) {
+            font-size: $scale04;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &__office-name {
         @include ligatures;
@@ -131,21 +95,20 @@
         line-height: 1.2;
         letter-spacing: $spacing-serif;
         font-weight: 700;
-        margin-bottom: 1.5em;
         max-width: 14em;
+        margin-bottom: 0.25em;
         font-size: $scale06;
         @media screen and ($md) {
             font-size: $scale07;
         }
         @media screen and ($lg) {
-            margin-bottom: 1em;
-            font-size: $scale07;
+            font-size: $scale08;
         }
         @media screen and ($xl) {
             font-size: $scale08;
         }
         @media screen and ($xxl) {
-            font-size: $scale09;
+            font-size: $scale10;
         }
         &:last-child {
             margin-bottom: 0;
@@ -155,48 +118,141 @@
             margin-right: 0.5em;
         }
     }
-    &__label {
+    &__body {
         font-family: $sans;
-        font-size: $scale03;
+        line-height: 1.3;
+        letter-spacing: $spacing-sans-mega;
+        margin-bottom: 0.15em;
         font-weight: 400;
-        font-style: normal;
-        line-height: 1.1;
-        letter-spacing: 0.025em;
         text-transform: uppercase;
-        margin-bottom: 0.5em;
-        max-width: 20em;
-        color: rgba($black, 0.75);
-        @media screen and ($md) {
-            color: rgba($black, 0.6);
-        }
+        font-size: $scale02;
         @media screen and ($lg) {
-            font-size: $scale02;
+            font-size: $scale03;
         }
         @media screen and ($xxl) {
-            font-size: $scale03;
+            font-size: $scale04;
         }
         &:last-child {
             margin-bottom: 0;
         }
     }
-    &__body {
-        font-family: $sans;
-        line-height: 1.3;
-        letter-spacing: $spacing-sans;
-        margin-bottom: 0.15em;
-        font-weight: 400;
-        font-size: $scale04;
-        @media screen and ($xl) {
-            font-size: $scale04;
+    &__cta {
+        &:after {
+            content: "";
+            display: inline-block;
+            margin-left: 1em;
+            margin-right: 1em;
+            height: 1em;
+            width: 1px;
+            background-color: currentColor;
+            position: relative;
+            top: 0.125em;
         }
-        @media screen and ($xxl) {
-            font-size: $scale05;
+    }
+    &__arrow {
+        display: none;
+        @media (hover) {
+            display: block;
+            font-size: $scale03;
+            @media screen and ($xxl) {
+                font-size: $scale04;
+            }
+            position: relative;
+            margin-top: 1em;
+            width: 6em;
+            height: 1em;
+            overflow: hidden;
+            // border: 1px solid red; 
+            &:before,
+            &:after {
+                content: "";
+                background-image: url("../images/icon-arrow-white.svg");
+                background-position: center center;
+                background-size: 100% 100%, contain;
+                background-repeat: no-repeat;
+                width: 2em;
+                height: 1em;
+                display: block;
+                position: absolute;
+                top: 0;
+                transition: all 0.2s 0s $bezier;
+            }
+            &:before {
+                animation-name: arrow_out_before;
+                animation-duration: 0.2s;
+                animation-timing-function: $bezier;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+                animation-play-state: running;
+                @keyframes arrow_out_before {
+                    0% {
+                        left: 6em;
+                    }
+                    100% {
+                        left: 6em;
+                    }
+                }
+                left: -2em;
+            }
+            &:after {
+                left: -4em;
+                animation-name: arrow_out_after;
+                animation-duration: 0.2s;
+                animation-timing-function: $bezier;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+                animation-play-state: running;
+                @keyframes arrow_out_after {
+                    0% {
+                        left: 2em;
+                    }
+                    100% {
+                        left: -4em;
+                    }
+                }
+            }
         }
-        &:last-child {
-            margin-bottom: 0;
-        }
-        .link {
-            margin-top: 0.25em;
+    }
+    @media (hover) {
+        &__item:hover {
+            .office-list__arrow {
+                &:before {
+                    animation-name: arrow_in_before;
+                    animation-duration: 0.2s;
+                    animation-timing-function: $bezier;
+                    animation-iteration-count: 1;
+                    animation-direction: normal;
+                    animation-fill-mode: forwards;
+                    animation-play-state: running;
+                    @keyframes arrow_in_before {
+                        0% {
+                            left: -2em;
+                        }
+                        100% {
+                            left: 6em;
+                        }
+                    }
+                }
+                &:after {
+                    animation-name: arrow_in_after;
+                    animation-duration: 0.2s;
+                    animation-timing-function: $bezier;
+                    animation-iteration-count: 1;
+                    animation-direction: normal;
+                    animation-fill-mode: forwards;
+                    animation-play-state: running;
+                    @keyframes arrow_in_after {
+                        0% {
+                            left: -4em;
+                        }
+                        100% {
+                            left: 2em;
+                        }
+                    }
+                }
+            }
         }
     }
     &__area-container {

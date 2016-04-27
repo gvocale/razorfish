@@ -443,12 +443,4 @@ $(function() {
         });
     });
 
-
-    $(".office-list__item").each(function() {
-        $(this).click(function() {
-            $(this).addClass("open");
-        });
-    });
-
-
 })
