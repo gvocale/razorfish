@@ -4377,7 +4377,7 @@ a[href^="tel"] {
             transform: translateY(100px);
   }
 }
-/* line 58, ../../src/sass/_modules/_contact-form.scss */
+/* line 57, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__link {
   font-family: "Gotham A", Helvetica, Arial, sans-serif;
   position: relative;
@@ -4449,21 +4449,21 @@ a[href^="tel"] {
     right: 0;
   }
 }
-/* line 61, ../../src/sass/_modules/_contact-form.scss */
+/* line 60, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__link:hover {
   color: #a9c000;
 }
 @media screen and (min-width: 1600px) {
-  /* line 58, ../../src/sass/_modules/_contact-form.scss */
+  /* line 57, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__link {
     font-size: 1rem;
   }
 }
-/* line 72, ../../src/sass/_modules/_contact-form.scss */
+/* line 71, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__link:before {
   bottom: -0.5em;
 }
-/* line 75, ../../src/sass/_modules/_contact-form.scss */
+/* line 74, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__link--group {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4477,23 +4477,23 @@ a[href^="tel"] {
   margin-top: 1.5em;
 }
 @media screen and (min-width: 768px) {
-  /* line 75, ../../src/sass/_modules/_contact-form.scss */
+  /* line 74, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__link--group {
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
   }
 }
-/* line 83, ../../src/sass/_modules/_contact-form.scss */
+/* line 82, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__link--group li {
   margin-right: 2em;
   margin-bottom: 2em;
 }
-/* line 86, ../../src/sass/_modules/_contact-form.scss */
+/* line 85, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__link--group li:last-child {
   margin-right: 0;
 }
-/* line 92, ../../src/sass/_modules/_contact-form.scss */
+/* line 91, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__overlay {
   position: fixed;
   width: 100%;
@@ -4504,11 +4504,11 @@ a[href^="tel"] {
   z-index: 100;
   display: none;
 }
-/* line 101, ../../src/sass/_modules/_contact-form.scss */
+/* line 100, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__overlay.display {
   display: block;
 }
-/* line 105, ../../src/sass/_modules/_contact-form.scss */
+/* line 104, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__scroll {
   position: relative;
   width: 100%;
@@ -4516,7 +4516,7 @@ a[href^="tel"] {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-/* line 112, ../../src/sass/_modules/_contact-form.scss */
+/* line 111, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group {
   position: absolute;
   overflow: hidden;
@@ -4528,9 +4528,6 @@ a[href^="tel"] {
   padding-right: calc(10vw - 1rem);
   padding-top: 15vmax;
   padding-bottom: 15vmax;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
@@ -4546,43 +4543,55 @@ a[href^="tel"] {
   display: none;
 }
 @media screen and (min-width: 992px) {
-  /* line 112, ../../src/sass/_modules/_contact-form.scss */
+  /* line 111, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__form-group {
     padding-left: calc(5vw - 1rem);
     padding-right: calc(5vw - 1rem);
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 112, ../../src/sass/_modules/_contact-form.scss */
+  /* line 111, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__form-group {
     padding-left: calc(10vw - 1rem);
     padding-right: calc(10vw - 1rem);
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 112, ../../src/sass/_modules/_contact-form.scss */
+  /* line 111, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__form-group {
     padding-top: 15vmin;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 112, ../../src/sass/_modules/_contact-form.scss */
+  /* line 111, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__form-group {
     padding-bottom: 15vmin;
   }
 }
-/* line 128, ../../src/sass/_modules/_contact-form.scss */
+/* line 126, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group .contact-form__back-container,
+.contact-form__form-group .contact-form__headline,
+.contact-form__form-group .divider,
+.contact-form__form-group .form__field,
+.contact-form__form-group .contact-form__button-group {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  transition: -webkit-transform 0s 0.21s linear, opacity 0.2s 0s ease;
+  transition: transform 0s 0.21s linear, opacity 0.2s 0s ease;
+}
+/* line 135, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.display {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
-/* line 132, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__form-group.close .contact-form__back-container,
-.contact-form__form-group.close .contact-form__headline,
-.contact-form__form-group.close .divider,
-.contact-form__form-group.close .form__field,
-.contact-form__form-group.close .contact-form__button-group {
+/* line 139, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__form-group.hide .contact-form__back-container,
+.contact-form__form-group.hide .contact-form__headline,
+.contact-form__form-group.hide .divider,
+.contact-form__form-group.hide .form__field,
+.contact-form__form-group.hide .contact-form__button-group {
   -webkit-animation-name: fields_hide;
           animation-name: fields_hide;
   -webkit-animation-duration: 0.2s;
@@ -4602,10 +4611,8 @@ a[href^="tel"] {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
 }
-/* line 142, ../../src/sass/_modules/_contact-form.scss */
+/* line 149, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .contact-form__back-container {
-  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
-  transition: transform 0s 0s linear, opacity 0s 0s linear;
   -webkit-animation-name: fields_visible;
           animation-name: fields_visible;
   -webkit-animation-duration: 0.6s;
@@ -4623,10 +4630,8 @@ a[href^="tel"] {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
 }
-/* line 146, ../../src/sass/_modules/_contact-form.scss */
+/* line 153, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .contact-form__headline {
-  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
-  transition: transform 0s 0s linear, opacity 0s 0s linear;
   -webkit-animation-name: fields_visible;
           animation-name: fields_visible;
   -webkit-animation-duration: 0.6s;
@@ -4644,10 +4649,8 @@ a[href^="tel"] {
   -webkit-animation-delay: 0.025s;
           animation-delay: 0.025s;
 }
-/* line 150, ../../src/sass/_modules/_contact-form.scss */
+/* line 157, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .divider {
-  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
-  transition: transform 0s 0s linear, opacity 0s 0s linear;
   -webkit-animation-name: fields_visible;
           animation-name: fields_visible;
   -webkit-animation-duration: 0.6s;
@@ -4665,10 +4668,8 @@ a[href^="tel"] {
   -webkit-animation-delay: 0.05s;
           animation-delay: 0.05s;
 }
-/* line 154, ../../src/sass/_modules/_contact-form.scss */
+/* line 161, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field {
-  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
-  transition: transform 0s 0s linear, opacity 0s 0s linear;
   -webkit-animation-name: fields_visible;
           animation-name: fields_visible;
   -webkit-animation-duration: 0.6s;
@@ -4684,85 +4685,83 @@ a[href^="tel"] {
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(1) {
   -webkit-animation-delay: 0.075s;
           animation-delay: 0.075s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(2) {
   -webkit-animation-delay: 0.1s;
           animation-delay: 0.1s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(3) {
   -webkit-animation-delay: 0.125s;
           animation-delay: 0.125s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(4) {
   -webkit-animation-delay: 0.15s;
           animation-delay: 0.15s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(5) {
   -webkit-animation-delay: 0.175s;
           animation-delay: 0.175s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(6) {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(7) {
   -webkit-animation-delay: 0.225s;
           animation-delay: 0.225s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(8) {
   -webkit-animation-delay: 0.25s;
           animation-delay: 0.25s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(9) {
   -webkit-animation-delay: 0.275s;
           animation-delay: 0.275s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(10) {
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(11) {
   -webkit-animation-delay: 0.325s;
           animation-delay: 0.325s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(12) {
   -webkit-animation-delay: 0.35s;
           animation-delay: 0.35s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(13) {
   -webkit-animation-delay: 0.375s;
           animation-delay: 0.375s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(14) {
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
 }
-/* line 157, ../../src/sass/_modules/_contact-form.scss */
+/* line 164, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .form__field:nth-of-type(15) {
   -webkit-animation-delay: 0.425s;
           animation-delay: 0.425s;
 }
-/* line 162, ../../src/sass/_modules/_contact-form.scss */
+/* line 169, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group.open .contact-form__button-group {
-  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
-  transition: transform 0s 0s linear, opacity 0s 0s linear;
   -webkit-animation-name: fields_visible;
           animation-name: fields_visible;
   -webkit-animation-duration: 0.6s;
@@ -4780,30 +4779,30 @@ a[href^="tel"] {
   -webkit-animation-delay: 0.40s;
           animation-delay: 0.40s;
 }
-/* line 167, ../../src/sass/_modules/_contact-form.scss */
+/* line 174, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form-group .divider {
   margin-bottom: 0.8em;
   font-size: 1.6154rem;
 }
 @media only screen and (min-width: 768px) {
-  /* line 167, ../../src/sass/_modules/_contact-form.scss */
+  /* line 174, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__form-group .divider {
     font-size: 2.1154rem;
   }
 }
 @media only screen and (min-width: 992px) {
-  /* line 167, ../../src/sass/_modules/_contact-form.scss */
+  /* line 174, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__form-group .divider {
     font-size: 2.6154rem;
   }
 }
 @media only screen and (min-width: 1600px) {
-  /* line 167, ../../src/sass/_modules/_contact-form.scss */
+  /* line 174, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__form-group .divider {
     font-size: 3.4231rem;
   }
 }
-/* line 181, ../../src/sass/_modules/_contact-form.scss */
+/* line 188, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__confirmation-group {
   position: absolute;
   overflow: hidden;
@@ -4815,9 +4814,6 @@ a[href^="tel"] {
   padding-right: calc(10vw - 1rem);
   padding-top: 15vmax;
   padding-bottom: 15vmax;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
@@ -4833,64 +4829,74 @@ a[href^="tel"] {
   display: none;
 }
 @media screen and (min-width: 992px) {
-  /* line 181, ../../src/sass/_modules/_contact-form.scss */
+  /* line 188, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__confirmation-group {
     padding-left: calc(5vw - 1rem);
     padding-right: calc(5vw - 1rem);
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 181, ../../src/sass/_modules/_contact-form.scss */
+  /* line 188, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__confirmation-group {
     padding-left: calc(10vw - 1rem);
     padding-right: calc(10vw - 1rem);
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 181, ../../src/sass/_modules/_contact-form.scss */
+  /* line 188, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__confirmation-group {
     padding-top: 15vmin;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 181, ../../src/sass/_modules/_contact-form.scss */
+  /* line 188, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__confirmation-group {
     padding-bottom: 15vmin;
   }
 }
-/* line 197, ../../src/sass/_modules/_contact-form.scss */
+/* line 203, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__confirmation-group.display {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
-/* line 200, ../../src/sass/_modules/_contact-form.scss */
+/* line 206, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__confirmation-group .divider {
   margin-bottom: 0.8em;
   font-size: 1.6154rem;
 }
 @media only screen and (min-width: 768px) {
-  /* line 200, ../../src/sass/_modules/_contact-form.scss */
+  /* line 206, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__confirmation-group .divider {
     font-size: 2.1154rem;
   }
 }
 @media only screen and (min-width: 992px) {
-  /* line 200, ../../src/sass/_modules/_contact-form.scss */
+  /* line 206, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__confirmation-group .divider {
     font-size: 2.6154rem;
   }
 }
 @media only screen and (min-width: 1600px) {
-  /* line 200, ../../src/sass/_modules/_contact-form.scss */
+  /* line 206, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__confirmation-group .divider {
     font-size: 3.4231rem;
   }
 }
-/* line 214, ../../src/sass/_modules/_contact-form.scss */
+/* line 220, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__confirmation-group .contact-form__headline,
 .contact-form__confirmation-group .divider,
 .contact-form__confirmation-group .contact-form__subhead {
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+  transition: -webkit-transform 0s 0.21s linear, opacity 0.2s 0s ease;
+  transition: transform 0s 0.21s linear, opacity 0.2s 0s ease;
+}
+/* line 228, ../../src/sass/_modules/_contact-form.scss */
+.contact-form__confirmation-group.hide .contact-form__headline,
+.contact-form__confirmation-group.hide .divider,
+.contact-form__confirmation-group.hide .contact-form__subhead {
   -webkit-animation-name: fields_hide;
           animation-name: fields_hide;
   -webkit-animation-duration: 0.2s;
@@ -4909,19 +4915,9 @@ a[href^="tel"] {
           animation-play-state: running;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
-  opacity: 0;
 }
-/* line 222, ../../src/sass/_modules/_contact-form.scss */
-.contact-form__confirmation-group.open {
-  visibility: visible;
-  height: auto;
-}
-/* line 225, ../../src/sass/_modules/_contact-form.scss */
+/* line 236, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__confirmation-group.open .contact-form__headline {
-  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
-  transition: transform 0s 0s linear, opacity 0s 0s linear;
   -webkit-animation-name: fields_visible;
           animation-name: fields_visible;
   -webkit-animation-duration: 0.6s;
@@ -4939,10 +4935,8 @@ a[href^="tel"] {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
 }
-/* line 229, ../../src/sass/_modules/_contact-form.scss */
+/* line 240, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__confirmation-group.open .divider {
-  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
-  transition: transform 0s 0s linear, opacity 0s 0s linear;
   -webkit-animation-name: fields_visible;
           animation-name: fields_visible;
   -webkit-animation-duration: 0.6s;
@@ -4960,10 +4954,8 @@ a[href^="tel"] {
   -webkit-animation-delay: 0.025s;
           animation-delay: 0.025s;
 }
-/* line 233, ../../src/sass/_modules/_contact-form.scss */
+/* line 244, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__confirmation-group.open .contact-form__subhead {
-  transition: -webkit-transform 0s 0s linear, opacity 0s 0s linear;
-  transition: transform 0s 0s linear, opacity 0s 0s linear;
   -webkit-animation-name: fields_visible;
           animation-name: fields_visible;
   -webkit-animation-duration: 0.6s;
@@ -4981,7 +4973,7 @@ a[href^="tel"] {
   -webkit-animation-delay: 0.05s;
           animation-delay: 0.05s;
 }
-/* line 239, ../../src/sass/_modules/_contact-form.scss */
+/* line 250, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__back {
   font-family: "Gotham A", Helvetica, Arial, sans-serif;
   font-size: 1rem;
@@ -4992,16 +4984,16 @@ a[href^="tel"] {
   cursor: pointer;
 }
 @media screen and (min-width: 1600px) {
-  /* line 239, ../../src/sass/_modules/_contact-form.scss */
+  /* line 250, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__back {
     font-size: 1.3077rem;
   }
 }
-/* line 250, ../../src/sass/_modules/_contact-form.scss */
+/* line 261, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__back:before {
   bottom: -0.5em;
 }
-/* line 253, ../../src/sass/_modules/_contact-form.scss */
+/* line 264, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__back--group {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5010,25 +5002,25 @@ a[href^="tel"] {
       -ms-flex-direction: row;
           flex-direction: row;
 }
-/* line 256, ../../src/sass/_modules/_contact-form.scss */
+/* line 267, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__back--group li {
   margin-right: 2em;
 }
-/* line 258, ../../src/sass/_modules/_contact-form.scss */
+/* line 269, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__back--group li:last-child {
   margin-right: 0;
 }
-/* line 264, ../../src/sass/_modules/_contact-form.scss */
+/* line 275, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__back-container {
   padding-bottom: 7.5vmax;
 }
 @media screen and (min-width: 768px) {
-  /* line 264, ../../src/sass/_modules/_contact-form.scss */
+  /* line 275, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__back-container {
     padding-bottom: 7.5vmin;
   }
 }
-/* line 267, ../../src/sass/_modules/_contact-form.scss */
+/* line 278, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__headline-container {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -5045,7 +5037,7 @@ a[href^="tel"] {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 276, ../../src/sass/_modules/_contact-form.scss */
+/* line 287, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__headline {
   text-rendering: optimizeLegibility;
   -webkit-font-variant-ligatures: common-ligatures;
@@ -5062,28 +5054,28 @@ a[href^="tel"] {
   font-size: 1.6154rem;
 }
 @media only screen and (min-width: 768px) {
-  /* line 276, ../../src/sass/_modules/_contact-form.scss */
+  /* line 287, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__headline {
     font-size: 2.1154rem;
   }
 }
 @media only screen and (min-width: 992px) {
-  /* line 276, ../../src/sass/_modules/_contact-form.scss */
+  /* line 287, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__headline {
     font-size: 2.6154rem;
   }
 }
 @media only screen and (min-width: 1600px) {
-  /* line 276, ../../src/sass/_modules/_contact-form.scss */
+  /* line 287, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__headline {
     font-size: 3.4231rem;
   }
 }
-/* line 293, ../../src/sass/_modules/_contact-form.scss */
+/* line 304, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__headline:last-child {
   margin-bottom: 0;
 }
-/* line 297, ../../src/sass/_modules/_contact-form.scss */
+/* line 308, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__subhead {
   font-family: "Gotham A", Helvetica, Arial, sans-serif;
   line-height: 1.4;
@@ -5093,22 +5085,22 @@ a[href^="tel"] {
   font-size: 1rem;
 }
 @media only screen and (min-width: 768px) {
-  /* line 297, ../../src/sass/_modules/_contact-form.scss */
+  /* line 308, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__subhead {
     font-size: 1.3077rem;
   }
 }
 @media only screen and (min-width: 1600px) {
-  /* line 297, ../../src/sass/_modules/_contact-form.scss */
+  /* line 308, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__subhead {
     font-size: 1.6154rem;
   }
 }
-/* line 310, ../../src/sass/_modules/_contact-form.scss */
+/* line 321, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__subhead:last-child {
   margin-bottom: 0;
 }
-/* line 314, ../../src/sass/_modules/_contact-form.scss */
+/* line 325, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__background-image {
   background-size: cover;
   background-position: center;
@@ -5123,23 +5115,23 @@ a[href^="tel"] {
   transition: all 0.5s 0.01s ease-in-out;
   opacity: 0;
 }
-/* line 327, ../../src/sass/_modules/_contact-form.scss */
+/* line 338, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__background-image.visible {
   opacity: 1;
 }
-/* line 330, ../../src/sass/_modules/_contact-form.scss */
+/* line 341, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__background-image.blur {
   -webkit-filter: blur(20px);
           filter: blur(20px);
 }
-/* line 333, ../../src/sass/_modules/_contact-form.scss */
+/* line 344, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__background-image.scale {
   -webkit-transform-origin: center;
           transform-origin: center;
   -webkit-transform: scale(1.3) translate3d(0, 5%, 0);
           transform: scale(1.3) translate3d(0, 5%, 0);
 }
-/* line 338, ../../src/sass/_modules/_contact-form.scss */
+/* line 349, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__form {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -5156,40 +5148,40 @@ a[href^="tel"] {
   left: 50%;
 }
 @media screen and (min-width: 768px) {
-  /* line 338, ../../src/sass/_modules/_contact-form.scss */
+  /* line 349, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__form {
     width: calc(100% / 6 * 4);
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 338, ../../src/sass/_modules/_contact-form.scss */
+  /* line 349, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__form {
     width: calc(100% / 12 * 6);
   }
 }
 @media screen and (min-width: 1600px) {
-  /* line 338, ../../src/sass/_modules/_contact-form.scss */
+  /* line 349, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__form {
     width: calc(100% / 12 * 4);
   }
 }
-/* line 356, ../../src/sass/_modules/_contact-form.scss */
+/* line 367, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__field {
   position: relative;
   margin-left: 1rem;
   margin-right: 1rem;
 }
 @media screen and (min-width: 992px) {
-  /* line 360, ../../src/sass/_modules/_contact-form.scss */
+  /* line 371, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__field:nth-child(1), .contact-form__field:nth-child(2), .contact-form__field:nth-child(3), .contact-form__field:nth-child(4), .contact-form__field:nth-child(5), .contact-form__field:nth-child(6) {
     width: calc((100% / 12 * 4) - 2rem);
   }
-  /* line 368, ../../src/sass/_modules/_contact-form.scss */
+  /* line 379, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__field:nth-child(7), .contact-form__field:nth-child(8), .contact-form__field:nth-child(9), .contact-form__field:nth-child(10) {
     width: calc((100% / 12 * 6) - 2rem);
   }
 }
-/* line 376, ../../src/sass/_modules/_contact-form.scss */
+/* line 387, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__button-group {
   width: 100%;
   display: -webkit-flex;
@@ -5204,12 +5196,12 @@ a[href^="tel"] {
   padding-top: 3.75vmax;
 }
 @media screen and (min-width: 768px) {
-  /* line 376, ../../src/sass/_modules/_contact-form.scss */
+  /* line 387, ../../src/sass/_modules/_contact-form.scss */
   .contact-form__button-group {
     padding-top: 3.75vmin;
   }
 }
-/* line 384, ../../src/sass/_modules/_contact-form.scss */
+/* line 395, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"] {
   border: none;
   color: currentColor;
@@ -5237,7 +5229,7 @@ a[href^="tel"] {
   background-origin: border-box;
   background-color: transparent;
 }
-/* line 408, ../../src/sass/_modules/_contact-form.scss */
+/* line 419, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"]::-webkit-input-placeholder {
   color: currentColor;
   opacity: 0.5;
@@ -5258,35 +5250,35 @@ a[href^="tel"] {
   opacity: 0.5;
   transition: all 0.1s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-/* line 413, ../../src/sass/_modules/_contact-form.scss */
+/* line 424, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"]:valid {
   background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?><svg width='60px' height='60px' version='1.1' xmlns='http://www.w3.org/2000/svg'><path d='M30,60 C13.43,60 0,46.5715524 0,30.001 C0,13.4304477 13.43,0 30,0 C46.57,0 60,13.4304477 60,30.001 C60,46.5715524 46.57,60 30,60 L30,60 Z M30,6 C16.746,6 6,16.7443581 6,30.0008 C6,43.2552418 16.746,53.9996 30,53.9996 C43.254,53.9996 54,43.2552418 54,30.0008 C54,16.7443581 43.254,6 30,6 L30,6 Z M41.7333333,21 L46,25.1818182 L31.0666667,39.8181818 L26.8,35.6363636 L41.7333333,21 L41.7333333,21 Z M14,31.4545455 L18.2666667,27.2727273 L31.0666667,39.8181818 L26.8,44 L14,31.4545455 L14,31.4545455 Z' id='icon-tick' fill='#a9c000'></path> </svg> ");
 }
-/* line 416, ../../src/sass/_modules/_contact-form.scss */
+/* line 427, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"]:invalid {
   background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?><svg width='60px' height='60px' version='1.1' xmlns='http://www.w3.org/2000/svg'><path d='M30,60 C13.43,60 0,46.5715524 0,30.001 C0,13.4304477 13.43,0 30,0 C46.57,0 60,13.4304477 60,30.001 C60,46.5715524 46.57,60 30,60 Z M30,6 C16.746,6 6,16.7443581 6,30.0008 C6,43.2552418 16.746,53.9996 30,53.9996 C43.254,53.9996 54,43.2552418 54,30.0008 C54,16.7443581 43.254,6 30,6 Z M27,43.4826494 L33.8400002,43.4826494 L33.8400002,24 L27,24 L27,43.4826494 Z M27,22.0421681 L33.8400002,22.0421681 L33.8400002,17 L27,17 L27,22.0421681 Z' id='icon-info' fill='#ff595b'></path> </svg> ");
 }
-/* line 419, ../../src/sass/_modules/_contact-form.scss */
+/* line 430, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"]:focus {
   outline: none;
 }
-/* line 422, ../../src/sass/_modules/_contact-form.scss */
+/* line 433, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"][value=""] ~ .input-label {
   opacity: 0;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
   transition: all 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-/* line 427, ../../src/sass/_modules/_contact-form.scss */
+/* line 438, ../../src/sass/_modules/_contact-form.scss */
 .contact-form__input[type="text"][value=""] {
   background-image: none;
 }
 
-/* line 435, ../../src/sass/_modules/_contact-form.scss */
+/* line 446, ../../src/sass/_modules/_contact-form.scss */
 .form:focus ~ .input-border, .form:invalid ~ .input-border, .form:valid ~ .input-border, .form[value=""]:focus ~ .input-border {
   opacity: 1;
 }
-/* line 441, ../../src/sass/_modules/_contact-form.scss */
+/* line 452, ../../src/sass/_modules/_contact-form.scss */
 .form::-webkit-input-placeholder, .form[value=""] ~ .input-label {
   opacity: 0;
 }
@@ -5299,11 +5291,11 @@ a[href^="tel"] {
 .form::placeholder, .form[value=""] ~ .input-label {
   opacity: 0;
 }
-/* line 445, ../../src/sass/_modules/_contact-form.scss */
+/* line 456, ../../src/sass/_modules/_contact-form.scss */
 .form[value=""] ~ .input-border {
   opacity: 0.3;
 }
-/* line 448, ../../src/sass/_modules/_contact-form.scss */
+/* line 459, ../../src/sass/_modules/_contact-form.scss */
 .form[value=""] ~ .input-icon, .form[value=""], .form[value=""]::-webkit-input-placeholder {
   opacity: 0.5;
 }
@@ -5317,7 +5309,7 @@ a[href^="tel"] {
   opacity: 0.5;
 }
 
-/* line 455, ../../src/sass/_modules/_contact-form.scss */
+/* line 466, ../../src/sass/_modules/_contact-form.scss */
 .divider-gio {
   height: 6px;
   background-color: #a9c000;
@@ -5332,13 +5324,13 @@ a[href^="tel"] {
   height: 4px;
 }
 @media screen and (min-width: 992px) {
-  /* line 455, ../../src/sass/_modules/_contact-form.scss */
+  /* line 466, ../../src/sass/_modules/_contact-form.scss */
   .divider-gio {
     height: 5px;
   }
 }
 @media screen and (min-width: 1600px) {
-  /* line 455, ../../src/sass/_modules/_contact-form.scss */
+  /* line 466, ../../src/sass/_modules/_contact-form.scss */
   .divider-gio {
     height: 6px;
   }
@@ -8106,11 +8098,11 @@ a[href^="tel"] {
 /* line 395, ../../src/sass/_modules/_form.scss */
 .form__checkbox--label {
   font-size: 0.8077rem;
-  width: 2em;
-  height: 2em;
+  width: 1.6em;
+  height: 1.6em;
   display: inline-block;
   cursor: pointer;
-  border: 2px solid currentColor;
+  box-shadow: inset 0 0 0 2px currentColor;
   background-color: transparent;
   position: relative;
   margin-right: 1em;
@@ -8132,8 +8124,8 @@ a[href^="tel"] {
 /* line 413, ../../src/sass/_modules/_form.scss */
 .form__checkbox--label:after {
   content: "";
-  width: 1em;
-  height: 0.5em;
+  width: 0.7em;
+  height: 0.35em;
   position: absolute;
   border: 2px solid currentColor;
   border-top: none;
@@ -8172,9 +8164,13 @@ a[href^="tel"] {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 1em;
+  margin-bottom: 1em;
 }
-/* line 448, ../../src/sass/_modules/_form.scss */
+/* line 445, ../../src/sass/_modules/_form.scss */
+.form__checkbox--group:last-child {
+  margin-bottom: 0;
+}
+/* line 451, ../../src/sass/_modules/_form.scss */
 .form__radio[type="radio"] {
   width: 0.1px;
   height: 0.1px;
@@ -8183,80 +8179,92 @@ a[href^="tel"] {
   position: absolute;
   z-index: -1;
 }
-/* line 455, ../../src/sass/_modules/_form.scss */
-.form__radio[type="radio"]:hover ~ .form__radio--label, .form__radio[type="radio"]:hover ~ .form__radio--body {
-  opacity: 0.5;
-}
-/* line 459, ../../src/sass/_modules/_form.scss */
-.form__radio[type="radio"]:focus ~ .form__radio--label, .form__radio[type="radio"]:focus ~ .form__radio--body, .form__radio[type="radio"]:active ~ .form__radio--label, .form__radio[type="radio"]:active ~ .form__radio--body, .form__radio[type="radio"]:target ~ .form__radio--label, .form__radio[type="radio"]:target ~ .form__radio--body {
+/* line 458, ../../src/sass/_modules/_form.scss */
+.form__radio[type="radio"]:focus ~ .form__radio--label, .form__radio[type="radio"]:active ~ .form__radio--label, .form__radio[type="radio"]:target ~ .form__radio--label {
   opacity: 1;
 }
-/* line 467, ../../src/sass/_modules/_form.scss */
-.form__radio[type="radio"]:target ~ .form__radio--label, .form__radio[type="radio"]:active ~ .form__radio--label {
+/* line 465, ../../src/sass/_modules/_form.scss */
+.form__radio[type="radio"]:target ~ .form__radio--label .form__radio--box:after, .form__radio[type="radio"]:active ~ .form__radio--label .form__radio--box:after {
   background-color: rgba(255, 255, 255, 0.15);
 }
-/* line 471, ../../src/sass/_modules/_form.scss */
-.form__radio[type="radio"]:checked ~ .form__radio--label:after {
+/* line 470, ../../src/sass/_modules/_form.scss */
+.form__radio[type="radio"]:checked ~ .form__radio--label .form__radio--box:after {
   opacity: 1;
 }
 /* line 475, ../../src/sass/_modules/_form.scss */
-.form__radio--label {
+.form__radio--box {
   font-size: 0.8077rem;
-  width: 2em;
-  height: 2em;
+  width: 1.7em;
+  height: 1.7em;
   display: inline-block;
-  cursor: pointer;
-  border: 2px solid currentColor;
+  box-shadow: inset 0 0 0 2px currentColor;
   background-color: transparent;
   position: relative;
   margin-right: 1em;
   border-radius: 50%;
+  top: 0.5em;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
   color: currentColor;
-  opacity: 0.2;
 }
 @media screen and (min-width: 992px) {
   /* line 475, ../../src/sass/_modules/_form.scss */
-  .form__radio--label {
+  .form__radio--box {
     font-size: 0.6154rem;
   }
 }
 @media screen and (min-width: 1200px) {
   /* line 475, ../../src/sass/_modules/_form.scss */
-  .form__radio--label {
+  .form__radio--box {
     font-size: 0.8077rem;
   }
 }
 /* line 494, ../../src/sass/_modules/_form.scss */
-.form__radio--label:after {
+.form__radio--box:after {
   content: "";
-  width: calc(100% - 8px);
-  height: calc(100% - 8px);
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
   position: absolute;
-  background: currentColor;
+  background-color: #a9c000;
   background-clip: content-box;
   border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   opacity: 0;
 }
-/* line 508, ../../src/sass/_modules/_form.scss */
-.form__radio--body {
+/* line 507, ../../src/sass/_modules/_form.scss */
+.form__radio--label {
   font-family: "Gotham A", Helvetica, Arial, sans-serif;
   font-size: 0.8077rem;
   letter-spacing: 0em;
   line-height: 1.3;
   cursor: pointer;
+  cursor: hand;
   opacity: 0.2;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
 }
 @media screen and (min-width: 768px) {
-  /* line 508, ../../src/sass/_modules/_form.scss */
-  .form__radio--body {
+  /* line 507, ../../src/sass/_modules/_form.scss */
+  .form__radio--label {
     font-size: 1rem;
   }
 }
-/* line 519, ../../src/sass/_modules/_form.scss */
+/* line 524, ../../src/sass/_modules/_form.scss */
 .form__radio--group {
   position: relative;
   display: -webkit-flex;
@@ -8268,51 +8276,77 @@ a[href^="tel"] {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-top: 1em;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   width: calc(100% + 2rem);
   margin-left: -1rem;
 }
-/* line 529, ../../src/sass/_modules/_form.scss */
+/* line 533, ../../src/sass/_modules/_form.scss */
+.form__radio--group.selected .form__radio--label {
+  opacity: 1;
+}
+/* line 538, ../../src/sass/_modules/_form.scss */
 .form__radio--item {
   padding-left: 1rem;
   padding-right: 1rem;
-  width: 50%;
+  margin-bottom: 1em;
+  width: 100%;
 }
-/* line 534, ../../src/sass/_modules/_form.scss */
+/* line 541, ../../src/sass/_modules/_form.scss */
+.form__radio--item:last-child {
+  margin-bottom: 0;
+}
+/* line 544, ../../src/sass/_modules/_form.scss */
+.form__radio--item:nth-last-child(even) {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  /* line 538, ../../src/sass/_modules/_form.scss */
+  .form__radio--item {
+    width: 50%;
+  }
+}
+/* line 552, ../../src/sass/_modules/_form.scss */
+.form__radio--item:hover .form__radio--label {
+  opacity: 0.5;
+}
+/* line 558, ../../src/sass/_modules/_form.scss */
+.form__radio--item.selected .form__radio--label, .form__radio--item:hover.selected .form__radio--label {
+  opacity: 1;
+}
+/* line 564, ../../src/sass/_modules/_form.scss */
 .form--black {
   color: #373737;
 }
-/* line 537, ../../src/sass/_modules/_form.scss */
+/* line 567, ../../src/sass/_modules/_form.scss */
 .form--white {
   color: #FFFFFF;
 }
-/* line 540, ../../src/sass/_modules/_form.scss */
+/* line 570, ../../src/sass/_modules/_form.scss */
 .form--comments {
   width: 100%;
   max-height: 5em;
 }
 
-/* line 546, ../../src/sass/_modules/_form.scss */
+/* line 576, ../../src/sass/_modules/_form.scss */
 .form__input:not([value=""]) ~ .form__placeholder {
   -webkit-transform: translateY(-80%) scale(0.7);
           transform: translateY(-80%) scale(0.7);
   transition: -webkit-transform 0.1s 0.1s ease-in-out;
   transition: transform 0.1s 0.1s ease-in-out;
 }
-/* line 549, ../../src/sass/_modules/_form.scss */
+/* line 579, ../../src/sass/_modules/_form.scss */
 .form__input:not([value=""]) ~ .form__placeholder span {
   opacity: 0;
 }
 
-/* line 554, ../../src/sass/_modules/_form.scss */
+/* line 584, ../../src/sass/_modules/_form.scss */
 .form__file + label * {
   pointer-events: none;
 }
 
-/* line 558, ../../src/sass/_modules/_form.scss */
+/* line 588, ../../src/sass/_modules/_form.scss */
 #form__submit {
   overflow: auto;
   transition: all 0.2s 0s ease;
@@ -8320,7 +8354,7 @@ a[href^="tel"] {
   border: 0;
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
 }
-/* line 564, ../../src/sass/_modules/_form.scss */
+/* line 594, ../../src/sass/_modules/_form.scss */
 #form__submit span {
   position: absolute;
   top: 50%;
@@ -8329,7 +8363,7 @@ a[href^="tel"] {
           transform: translate(-50%, -50%);
   transition: all 0.2s 0s ease;
 }
-/* line 571, ../../src/sass/_modules/_form.scss */
+/* line 601, ../../src/sass/_modules/_form.scss */
 #form__submit.loading {
   border-radius: 50%;
   padding: 1.2em;
@@ -8337,35 +8371,35 @@ a[href^="tel"] {
   height: 4em;
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 0px #a9c000;
 }
-/* line 577, ../../src/sass/_modules/_form.scss */
+/* line 607, ../../src/sass/_modules/_form.scss */
 #form__submit.loading span {
   opacity: 0;
   -webkit-transform: translate(-50%, -200%);
           transform: translate(-50%, -200%);
 }
-/* line 582, ../../src/sass/_modules/_form.scss */
+/* line 612, ../../src/sass/_modules/_form.scss */
 #form__submit.filling {
   box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 100px #a9c000;
   transition: box-shadow 1s 0s ease;
 }
-/* line 587, ../../src/sass/_modules/_form.scss */
+/* line 617, ../../src/sass/_modules/_form.scss */
 #form__submit.spin .preloader {
   display: inline-block;
 }
-/* line 591, ../../src/sass/_modules/_form.scss */
+/* line 621, ../../src/sass/_modules/_form.scss */
 #form__submit .preloader {
   display: none;
 }
-/* line 594, ../../src/sass/_modules/_form.scss */
+/* line 624, ../../src/sass/_modules/_form.scss */
 #form__submit #tick {
   display: none;
 }
-/* line 598, ../../src/sass/_modules/_form.scss */
+/* line 628, ../../src/sass/_modules/_form.scss */
 #form__submit.tick #tick {
   display: block;
 }
 
-/* line 604, ../../src/sass/_modules/_form.scss */
+/* line 634, ../../src/sass/_modules/_form.scss */
 #tick {
   position: absolute;
   top: 45%;
@@ -8373,7 +8407,7 @@ a[href^="tel"] {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-/* line 609, ../../src/sass/_modules/_form.scss */
+/* line 639, ../../src/sass/_modules/_form.scss */
 #tick polyline {
   stroke: #FFFFFF;
   stroke-dasharray: 100;
@@ -8391,7 +8425,7 @@ a[href^="tel"] {
     stroke-dashoffset: 0;
   }
 }
-/* line 622, ../../src/sass/_modules/_form.scss */
+/* line 652, ../../src/sass/_modules/_form.scss */
 .preloader {
   position: absolute;
   top: -3px;
@@ -8402,16 +8436,16 @@ a[href^="tel"] {
   -webkit-animation: outer 6600ms linear infinite;
           animation: outer 6600ms linear infinite;
 }
-/* line 627, ../../src/sass/_modules/_form.scss */
+/* line 657, ../../src/sass/_modules/_form.scss */
 .preloader:before, .preloader:after {
   white-space-collapse: collapse;
 }
-/* line 641, ../../src/sass/_modules/_form.scss */
+/* line 671, ../../src/sass/_modules/_form.scss */
 .preloader svg {
   -webkit-animation: inner 1320ms linear infinite;
           animation: inner 1320ms linear infinite;
 }
-/* line 643, ../../src/sass/_modules/_form.scss */
+/* line 673, ../../src/sass/_modules/_form.scss */
 .preloader svg circle {
   fill: none;
   stroke: #a9c000;
@@ -12714,7 +12748,7 @@ a[href^="tel"] {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 200;
   visibility: hidden;
   transition: visibility 0s 0.2s linear;
 }
@@ -12993,122 +13027,122 @@ a[href^="tel"] {
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(1) {
-  transition-delay: calc(0s * (0.1 * 14));
-  transition-duration: calc(0.05s * (0.1 * 15));
+  transition-delay: calc(0s * (0.1 * 24));
+  transition-duration: calc(0.05s * (0.1 * 13));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(2) {
-  transition-delay: calc(0s * (0.1 * 5));
-  transition-duration: calc(0.05s * (0.1 * 5));
+  transition-delay: calc(0s * (0.1 * 11));
+  transition-duration: calc(0.05s * (0.1 * 21));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(3) {
-  transition-delay: calc(0s * (0.1 * 14));
-  transition-duration: calc(0.05s * (0.1 * 3));
+  transition-delay: calc(0s * (0.1 * 13));
+  transition-duration: calc(0.05s * (0.1 * 25));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(4) {
   transition-delay: calc(0s * (0.1 * 1));
-  transition-duration: calc(0.05s * (0.1 * 3));
+  transition-duration: calc(0.05s * (0.1 * 7));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(5) {
-  transition-delay: calc(0s * (0.1 * 7));
-  transition-duration: calc(0.05s * (0.1 * 22));
+  transition-delay: calc(0s * (0.1 * 23));
+  transition-duration: calc(0.05s * (0.1 * 7));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(6) {
-  transition-delay: calc(0s * (0.1 * 24));
-  transition-duration: calc(0.05s * (0.1 * 10));
+  transition-delay: calc(0s * (0.1 * 10));
+  transition-duration: calc(0.05s * (0.1 * 20));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(7) {
-  transition-delay: calc(0s * (0.1 * 10));
-  transition-duration: calc(0.05s * (0.1 * 16));
+  transition-delay: calc(0s * (0.1 * 9));
+  transition-duration: calc(0.05s * (0.1 * 14));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(8) {
   transition-delay: calc(0s * (0.1 * 3));
-  transition-duration: calc(0.05s * (0.1 * 11));
+  transition-duration: calc(0.05s * (0.1 * 1));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(9) {
-  transition-delay: calc(0s * (0.1 * 17));
-  transition-duration: calc(0.05s * (0.1 * 9));
+  transition-delay: calc(0s * (0.1 * 14));
+  transition-duration: calc(0.05s * (0.1 * 7));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(10) {
-  transition-delay: calc(0s * (0.1 * 10));
-  transition-duration: calc(0.05s * (0.1 * 5));
+  transition-delay: calc(0s * (0.1 * 8));
+  transition-duration: calc(0.05s * (0.1 * 23));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(11) {
-  transition-delay: calc(0s * (0.1 * 11));
-  transition-duration: calc(0.05s * (0.1 * 12));
+  transition-delay: calc(0s * (0.1 * 4));
+  transition-duration: calc(0.05s * (0.1 * 7));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(12) {
-  transition-delay: calc(0s * (0.1 * 7));
-  transition-duration: calc(0.05s * (0.1 * 8));
+  transition-delay: calc(0s * (0.1 * 18));
+  transition-duration: calc(0.05s * (0.1 * 7));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(13) {
   transition-delay: calc(0s * (0.1 * 8));
-  transition-duration: calc(0.05s * (0.1 * 1));
+  transition-duration: calc(0.05s * (0.1 * 16));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(14) {
-  transition-delay: calc(0s * (0.1 * 6));
-  transition-duration: calc(0.05s * (0.1 * 2));
+  transition-delay: calc(0s * (0.1 * 12));
+  transition-duration: calc(0.05s * (0.1 * 21));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(15) {
-  transition-delay: calc(0s * (0.1 * 24));
-  transition-duration: calc(0.05s * (0.1 * 21));
+  transition-delay: calc(0s * (0.1 * 4));
+  transition-duration: calc(0.05s * (0.1 * 25));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(16) {
-  transition-delay: calc(0s * (0.1 * 2));
-  transition-duration: calc(0.05s * (0.1 * 21));
+  transition-delay: calc(0s * (0.1 * 12));
+  transition-duration: calc(0.05s * (0.1 * 6));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(17) {
-  transition-delay: calc(0s * (0.1 * 25));
-  transition-duration: calc(0.05s * (0.1 * 18));
+  transition-delay: calc(0s * (0.1 * 12));
+  transition-duration: calc(0.05s * (0.1 * 2));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(18) {
   transition-delay: calc(0s * (0.1 * 17));
-  transition-duration: calc(0.05s * (0.1 * 24));
+  transition-duration: calc(0.05s * (0.1 * 6));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(19) {
-  transition-delay: calc(0s * (0.1 * 18));
-  transition-duration: calc(0.05s * (0.1 * 2));
+  transition-delay: calc(0s * (0.1 * 19));
+  transition-duration: calc(0.05s * (0.1 * 18));
 }
 
 /* line 174, ../../src/sass/_modules/_site-navigation.scss */
 .site-navigation__link-container:nth-of-type(20) {
-  transition-delay: calc(0s * (0.1 * 4));
-  transition-duration: calc(0.05s * (0.1 * 13));
+  transition-delay: calc(0s * (0.1 * 22));
+  transition-duration: calc(0.05s * (0.1 * 14));
 }
 
 /* line 181, ../../src/sass/_modules/_site-navigation.scss */
@@ -13126,103 +13160,103 @@ a[href^="tel"] {
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(1) {
-  transition-delay: calc(0.2s * (0.1 * 5));
-  transition-duration: calc(0.05s * (0.1 * 20));
+  transition-delay: calc(0.2s * (0.1 * 3));
+  transition-duration: calc(0.05s * (0.1 * 9));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(2) {
-  transition-delay: calc(0.2s * (0.1 * 10));
-  transition-duration: calc(0.05s * (0.1 * 13));
+  transition-delay: calc(0.2s * (0.1 * 13));
+  transition-duration: calc(0.05s * (0.1 * 3));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(3) {
-  transition-delay: calc(0.2s * (0.1 * 12));
-  transition-duration: calc(0.05s * (0.1 * 24));
-}
-/* line 190, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(4) {
-  transition-delay: calc(0.2s * (0.1 * 18));
-  transition-duration: calc(0.05s * (0.1 * 19));
-}
-/* line 190, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(5) {
-  transition-delay: calc(0.2s * (0.1 * 16));
-  transition-duration: calc(0.05s * (0.1 * 13));
-}
-/* line 190, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(6) {
-  transition-delay: calc(0.2s * (0.1 * 19));
+  transition-delay: calc(0.2s * (0.1 * 5));
   transition-duration: calc(0.05s * (0.1 * 14));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(4) {
+  transition-delay: calc(0.2s * (0.1 * 12));
+  transition-duration: calc(0.05s * (0.1 * 9));
+}
+/* line 190, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(5) {
+  transition-delay: calc(0.2s * (0.1 * 6));
+  transition-duration: calc(0.05s * (0.1 * 1));
+}
+/* line 190, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(6) {
+  transition-delay: calc(0.2s * (0.1 * 24));
+  transition-duration: calc(0.05s * (0.1 * 18));
+}
+/* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(7) {
-  transition-delay: calc(0.2s * (0.1 * 8));
+  transition-delay: calc(0.2s * (0.1 * 21));
   transition-duration: calc(0.05s * (0.1 * 8));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(8) {
-  transition-delay: calc(0.2s * (0.1 * 11));
-  transition-duration: calc(0.05s * (0.1 * 23));
+  transition-delay: calc(0.2s * (0.1 * 8));
+  transition-duration: calc(0.05s * (0.1 * 4));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(9) {
-  transition-delay: calc(0.2s * (0.1 * 10));
-  transition-duration: calc(0.05s * (0.1 * 17));
+  transition-delay: calc(0.2s * (0.1 * 11));
+  transition-duration: calc(0.05s * (0.1 * 12));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(10) {
-  transition-delay: calc(0.2s * (0.1 * 11));
-  transition-duration: calc(0.05s * (0.1 * 24));
+  transition-delay: calc(0.2s * (0.1 * 16));
+  transition-duration: calc(0.05s * (0.1 * 19));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(11) {
-  transition-delay: calc(0.2s * (0.1 * 15));
-  transition-duration: calc(0.05s * (0.1 * 4));
-}
-/* line 190, ../../src/sass/_modules/_site-navigation.scss */
-#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(12) {
-  transition-delay: calc(0.2s * (0.1 * 17));
+  transition-delay: calc(0.2s * (0.1 * 18));
   transition-duration: calc(0.05s * (0.1 * 13));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
+#site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(12) {
+  transition-delay: calc(0.2s * (0.1 * 3));
+  transition-duration: calc(0.05s * (0.1 * 11));
+}
+/* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(13) {
-  transition-delay: calc(0.2s * (0.1 * 8));
-  transition-duration: calc(0.05s * (0.1 * 1));
+  transition-delay: calc(0.2s * (0.1 * 4));
+  transition-duration: calc(0.05s * (0.1 * 5));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(14) {
-  transition-delay: calc(0.2s * (0.1 * 10));
-  transition-duration: calc(0.05s * (0.1 * 4));
+  transition-delay: calc(0.2s * (0.1 * 18));
+  transition-duration: calc(0.05s * (0.1 * 19));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(15) {
-  transition-delay: calc(0.2s * (0.1 * 21));
-  transition-duration: calc(0.05s * (0.1 * 22));
+  transition-delay: calc(0.2s * (0.1 * 23));
+  transition-duration: calc(0.05s * (0.1 * 25));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(16) {
-  transition-delay: calc(0.2s * (0.1 * 7));
-  transition-duration: calc(0.05s * (0.1 * 5));
+  transition-delay: calc(0.2s * (0.1 * 15));
+  transition-duration: calc(0.05s * (0.1 * 3));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(17) {
   transition-delay: calc(0.2s * (0.1 * 8));
-  transition-duration: calc(0.05s * (0.1 * 25));
+  transition-duration: calc(0.05s * (0.1 * 20));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(18) {
-  transition-delay: calc(0.2s * (0.1 * 18));
-  transition-duration: calc(0.05s * (0.1 * 4));
+  transition-delay: calc(0.2s * (0.1 * 14));
+  transition-duration: calc(0.05s * (0.1 * 8));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(19) {
-  transition-delay: calc(0.2s * (0.1 * 19));
-  transition-duration: calc(0.05s * (0.1 * 1));
+  transition-delay: calc(0.2s * (0.1 * 10));
+  transition-duration: calc(0.05s * (0.1 * 20));
 }
 /* line 190, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__link-container:nth-of-type(20) {
-  transition-delay: calc(0.2s * (0.1 * 5));
-  transition-duration: calc(0.05s * (0.1 * 21));
+  transition-delay: calc(0.2s * (0.1 * 11));
+  transition-duration: calc(0.05s * (0.1 * 24));
 }
 /* line 197, ../../src/sass/_modules/_site-navigation.scss */
 #site-masthead__checkbox:checked ~ .site-navigation__overlay .site-navigation__container {

@@ -29,25 +29,36 @@ $(function() {
 
     // Contact-form, toggling classes when overlay is open
 
-    $(".contact-form__form-group").addClass("close");
-
     $(".contact-form__link").click(function() {
         console.log('open form');
-        $(".contact-form__overlay").addClass("display");
+
+        // Scroll page so that the form hero alignes with viewport
+        $.fn.scrollView = function() {
+            return this.each(function() {
+                $('html, body').animate({
+                    scrollTop: $(this).offset().top
+                }, 400);
+            });
+        }
+        $('#contact-form__hero').scrollView();
         $("html,body").css("overflow-y", "hidden");
+
         setTimeout(function() {
+            $(".contact-form__overlay").addClass("display");
+
+        }, 405);
+        setTimeout(function() {
+
             $(".contact-form__background-image").addClass("visible blur scale");
-        }, 10);
+        }, 410);
         setTimeout(function() {
             $(".contact-form__form-group").addClass("display");
-        }, 100);
-        setTimeout(function() {
-            $(".contact-form__form-group").removeClass("close").addClass("open");
-        }, 110);
+            $(".contact-form__form-group").addClass("open");
+        }, 500);
     });
 
     $(".contact-form__back").click(function() { // On click on Back button
-        $(".contact-form__form-group").removeClass("open").addClass("close");
+        $(".contact-form__form-group").removeClass("open").addClass("hide");
         setTimeout(function() {
             $(".contact-form__background-image").removeClass("visible blur scale");
         }, 100);
@@ -72,7 +83,7 @@ $(function() {
             $('#form__submit').addClass("tick");
         }, 3600);
         setTimeout(function() {
-            $(".contact-form__form-group").removeClass("open").addClass("close");
+            $(".contact-form__form-group").removeClass("open").addClass("hide");
         }, 5600);
         setTimeout(function() {
             $(".contact-form__background-image").removeClass("blur scale");
@@ -86,7 +97,7 @@ $(function() {
             $(".contact-form__confirmation-group").addClass("open");
         }, 5900);
         setTimeout(function() {
-            $(".contact-form__confirmation-group").removeClass("open");
+            $(".contact-form__confirmation-group").removeClass("open").addClass("hide");
         }, 8900);
         setTimeout(function() {
             $(".contact-form__confirmation-group").removeClass("display");
@@ -105,6 +116,22 @@ $(function() {
             $(this).addClass("selected");
         });
     });
+
+    // Form: if form__radio is selected, add class .selected, and remove it from other .form__radio
+    $('.form__radio').each(function() {
+        $(this).change(function() {
+            if (this.checked) {
+                console.log("bla");
+                $(this).parent().addClass("selected");
+                $('.form__radio').not(this).each(function() {
+                    $(this).parent().removeClass("selected");
+                });
+            }
+        })
+    });
+
+
+
 
 
     // Feed: add class .animate to each .feed__item

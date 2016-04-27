@@ -175,7 +175,7 @@
             </div>
         </div>
     </nav>
-    <section class="hero hero--story hero--theme-white-accent animate">
+    <section class="hero hero--story hero--theme-white-accent animate" id="contact-form__hero">
         <div class="hero__text-container">
             <div class="divider hero__headline animate"></div>
             <h2 class="hero__headline">How can we help you?</h2>
@@ -189,7 +189,7 @@
         </div>
         <div class="hero__background background-gradient animate" style="background-image: url(images/hero-contact-form.jpg)"></div>
     </section>
-    <section class="contact-form__overlay">
+    <section class="contact-form__overlay close">
         <div class="contact-form__scroll">
             <div class="contact-form__form-group">
                 <div class="contact-form__back-container">
@@ -264,18 +264,16 @@
                         <div class="form__border"></div>
                     </div>
                     <div class="form__field">
-                        <div class="form__radio--group">
-                            <div class="form__radio--item">
-                                <input name="radio-1" class="form__radio" type="radio" value="Magna Sit Elit">
-                                <label for="radio-1" class="form__radio--label"></label>
-                                <label for="radio-1" class="form__radio--body">Magna Sit Elit</label>
-                            </div>
-                            <div class="form__radio--item">
-                                <input name="radio-2" class="form__radio" type="radio" value="Magna Tristique Cursus">
-                                <label for="radio-2" class="form__radio--label"></label>
-                                <label for="radio-2" class="form__radio--body">Magna Tristique Cursus</label>
-                            </div>
-                        </div>
+                        <ul class="form__radio--group">
+                            <li class="form__radio--item">
+                                <input id="radio-1" type="radio" class="form__radio" name="form__radio">
+                                <label for="radio-1" class="form__radio--label"><span class="form__radio--box"></span>Aenean lacinia bibendum nulla sed consectetur.</label>
+                            </li>
+                            <li class="form__radio--item">
+                                <input id="radio-2" class="form__radio" type="radio" name="form__radio">
+                                <label for="radio-2" class="form__radio--label"><span class="form__radio--box"></span>Magna Tristique Cursus</label>
+                            </li>
+                        </ul>
                     </div>
                     <div class="form__field">
                         <div class="form__checkbox--group">
@@ -299,7 +297,7 @@
                     </div>
                 </form>
             </div>
-            <div class="contact-form__confirmation-group">
+            <div class="contact-form__confirmation-group close">
                 <h2 class="contact-form__headline">Thanks</h2>
                 <div class="divider"></div>
                 <p class="contact-form__subhead">We'll contact you shortly!</p>

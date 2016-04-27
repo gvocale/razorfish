@@ -400,11 +400,11 @@
             @media screen and ($xl) {
                 font-size: $scale03;
             }
-            width: 2em;
-            height: 2em;
+            width: 1.6em;
+            height: 1.6em;
             display: inline-block;
             cursor: pointer;
-            border: 2px solid currentColor;
+            box-shadow: inset 0 0 0 2px currentColor;
             background-color: transparent;
             position: relative;
             margin-right: 1em;
@@ -412,8 +412,8 @@
             opacity: 0.2;
             &:after {
                 content: "";
-                width: 1em;
-                height: 0.5em;
+                width: 0.7em;
+                height: 0.35em;
                 position: absolute;
                 border: 2px solid currentColor;
                 border-top: none;
@@ -441,7 +441,10 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            padding-top: 1em;
+            margin-bottom: 1em;
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
     &__radio {
@@ -452,27 +455,24 @@
             overflow: hidden;
             position: absolute;
             z-index: -1;
-            &:hover ~ .form__radio--label,
-            &:hover ~ .form__radio--body {
-                opacity: 0.5;
-            }
             &:focus ~ .form__radio--label,
-            &:focus ~ .form__radio--body,
             &:active ~ .form__radio--label,
-            &:active ~ .form__radio--body,
-            &:target ~ .form__radio--label,
-            &:target ~ .form__radio--body {
+            &:target ~ .form__radio--label {
                 opacity: 1;
             }
             &:target ~ .form__radio--label,
             &:active ~ .form__radio--label {
-                background-color: rgba($white, 0.15);
+                .form__radio--box:after {
+                    background-color: rgba($white, 0.15);
+                }
             }
-            &:checked ~ .form__radio--label:after {
-                opacity: 1;
+            &:checked ~ .form__radio--label {
+                .form__radio--box:after {
+                    opacity: 1;
+                }
             }
         }
-        &--label {
+        &--box {
             font-size: $scale03;
             @media screen and ($lg) {
                 font-size: $scale02;
@@ -480,32 +480,31 @@
             @media screen and ($xl) {
                 font-size: $scale03;
             }
-            width: 2em;
-            height: 2em;
+            width: 1.7em;
+            height: 1.7em;
             display: inline-block;
-            cursor: pointer;
-            border: 2px solid currentColor;
+            box-shadow: inset 0 0 0 2px currentColor;
             background-color: transparent;
             position: relative;
             margin-right: 1em;
             border-radius: 50%;
+            top: 0.5em;
+            flex-shrink: 0;
             color: currentColor;
-            opacity: 0.2;
             &:after {
                 content: "";
-                width: calc(100% - 8px);
-                height: calc(100% - 8px);
+                top: 5px;
+                left: 5px;
+                width: calc(100% - 10px);
+                height: calc(100% - 10px);
                 position: absolute;
-                background: currentColor;
+                background-color: $primary;
                 background-clip: content-box;
                 border-radius: 50%;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
                 opacity: 0;
             }
         }
-        &--body {
+        &--label {
             font-family: $sans;
             font-size: $scale03;
             @media screen and ($md) {
@@ -514,21 +513,52 @@
             letter-spacing: $spacing-sans;
             line-height: 1.3;
             cursor: pointer;
+            cursor: hand;
             opacity: 0.2;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: baseline;
+            flex-shrink: 0;
         }
         &--group {
             position: relative;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            align-items: center;
-            padding-top: 1em;
+            align-items: baseline;
             width: calc(100% + 2rem);
             margin-left: -1rem;
+            &.selected {
+                .form__radio--label {
+                    opacity: 1;
+                }
+            }
         }
         &--item {
             @include component-padding;
-            width: 50%;
+            margin-bottom: 1em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &:nth-last-child(even) {
+                margin-bottom: 0;
+            }
+            width: 100%;
+            @media screen and ($md) {
+                width: 50%;
+            }
+            &:hover {
+                .form__radio--label {
+                    opacity: 0.5;
+                }
+            }
+            &.selected,
+            &:hover.selected {
+                .form__radio--label {
+                    opacity: 1;
+                }
+            }
         }
     }
     &--black {
