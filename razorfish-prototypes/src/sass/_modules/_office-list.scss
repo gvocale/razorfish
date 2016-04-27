@@ -36,16 +36,27 @@
         }
     }
     &__item {
-        background-color: $white;
-        background-clip: content-box;
+        position: relative;
         width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        @include component-padding;
-        margin-bottom: 2rem;
+        cursor: pointer;
+        cursor: hand;
+        overflow: hidden;
         &:last-child {
             margin-bottom: 0;
+        }
+        @media screen and ($md) {
+            width: 50%;
+        }
+        &:after {
+            content: "";
+            display: block;
+            position: relative;
+            padding-bottom: calc(100% / 16 * 9);
+        }
+        &:hover {
+            .office-list__image {
+                transform: scale(1.025);
+            }
         }
         &--close {
             .office-list__office-name {
@@ -84,57 +95,32 @@
     }
     &__image {
         width: 100%;
-        order: 2;
-        @media screen and ($lg) {
-            width: calc(100% / 12 * 4);
-            order: 1;
-        }
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
         background-size: cover;
-        background-position: 100% 100%,
-        center;
+        background-position: 100% 100%, center;
         background-repeat: no-repeat;
-        will-change: height;
-        &:before {
-            content: "";
-            padding-top: calc(100% / 16 * 9);
-            display: block;
-            @media screen and ($lg) {
-                padding-top: 100%;
-            }
-        }
+        z-index: -1;
+        transition: 0.2s 0s ease;
+        @include image-grading--darker;
     }
     &__description {
-        padding-top: 15%;
-        padding-bottom: 15%;
-        padding-left: 10%;
-        padding-right: 10%;
+        @include padding-top(0.5);
+        @include padding-bottom(0.5);
+        @include padding-left(0.5);
+        @include padding-right(0.5);
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         width: 100%;
-        order: 1;
-        @media screen and ($md) {
-            padding-top: 10%;
-            padding-bottom: 10%;
-        }
-        @media screen and ($lg) {
-            width: calc(100% / 12 * 8);
-            padding-top: 5%;
-            padding-bottom: 5%;
-            padding-left: 5%;
-            padding-right: 5%;
-            order: 2;
-        }
-    }
-    &__multi-column {
-        @media screen and ($md) {
-            column-count: 2;
-            column-gap: 2rem;
-        }
-        @media screen and ($xl) {
-            column-count: 3;
-            column-gap: 2rem;
-        }
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        color: $white;
     }
     &__group {
         @include two-column--group;
@@ -216,6 +202,7 @@
     &__area-container {
         overflow: hidden;
         position: relative;
+        @include component-margin;
     }
     &__area {
         position: absolute;
@@ -223,6 +210,9 @@
         left: 0;
         width: 100%;
         transition: transform 0.4s 0s $bezier;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         &:nth-child(1) {
             transform: translateX(100%);
         }

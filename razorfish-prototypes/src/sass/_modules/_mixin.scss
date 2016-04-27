@@ -207,6 +207,20 @@
     }
 }
 
+@mixin padding-left($multiplier: 1) {
+    padding-left: 15vmax * $multiplier;
+    @media screen and ($md) {
+        padding-left: 15vmin * $multiplier;
+    }
+}
+
+@mixin padding-right($multiplier: 1) {
+    padding-right: 15vmax * $multiplier;
+    @media screen and ($md) {
+        padding-right: 15vmin * $multiplier;
+    }
+}
+
 @mixin margin-top($multiplier: 1) {
     margin-top: 15vmax * $multiplier;
     @media screen and ($md) {
@@ -218,6 +232,20 @@
     margin-bottom: 15vmax * $multiplier;
     @media screen and ($md) {
         margin-bottom: 15vmin * $multiplier;
+    }
+}
+
+@mixin margin-left($multiplier: 1) {
+    margin-left: 15vmax * $multiplier;
+    @media screen and ($md) {
+        margin-left: 15vmin * $multiplier;
+    }
+}
+
+@mixin margin-right($multiplier: 1) {
+    margin-right: 15vmax * $multiplier;
+    @media screen and ($md) {
+        margin-right: 15vmin * $multiplier;
     }
 }
 

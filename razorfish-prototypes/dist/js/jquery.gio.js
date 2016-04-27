@@ -386,4 +386,69 @@ $(function() {
         }
     });
 
+
+    // Office-list Tab shifting between North America / Europe / Asia PAcific
+
+
+    var x = $('.office-list__area:nth-child(1)').height();
+    $('.office-list__area-container').css('height', x);
+    $(".office-list").addClass("north-america");
+
+    $('#office-list__tab__north-america').click(function() {
+        var x = $('.office-list__area:nth-child(1)').height();
+        $('.office-list__area-container').css('height', x);
+        $("#office-list__tab__europe").removeClass("active");
+        $("#office-list__tab__asia-pacific").removeClass("active");
+        $(this).addClass("active");
+        $(".office-list").removeClass("europe asia-pacific").addClass("north-america");
+    });
+    $('#office-list__tab__europe').click(function() {
+        var x = $('.office-list__area:nth-child(2)').height();
+        $('.office-list__area-container').css('height', x);
+        $("#office-list__tab__north-america").removeClass("active");
+        $("#office-list__tab__asia-pacific").removeClass("active");
+        $(this).addClass("active");
+        $(".office-list").removeClass("north-america asia-pacific").addClass("europe");
+    });
+    $('#office-list__tab__asia-pacific').click(function() {
+        var x = $('.office-list__area:nth-child(3)').height();
+        $('.office-list__area-container').css('height', x);
+        $("#office-list__tab__north-america").removeClass("active");
+        $("#office-list__tab__europe").removeClass("active");
+        $(this).addClass("active");
+        $(".office-list").removeClass("north-america europe").addClass("asia-pacific");
+    });
+
+    $(window).bind("load resize", function(e) { // refresh on load and resize
+
+        if ($(".office-list").hasClass("north-america")) {
+            var x = $('.office-list__area:nth-child(1)').height();
+            $('.office-list__area-container').css('height', x);
+        }
+        if ($(".office-list").hasClass("europe")) {
+            var x = $('.office-list__area:nth-child(2)').height();
+            $('.office-list__area-container').css('height', x);
+        }
+        if ($(".office-list").hasClass("asia-pacific")) {
+            var x = $('.office-list__area:nth-child()').height();
+            $('.office-list__area-container').css('height', x);
+        }
+
+    });
+    $(document).ready(function() {
+        $(".input-select").change(function() {
+            if ($(".input-select option[value='none']").attr('select')) {
+                $(".input-select").addClass("selected");
+            }
+        });
+    });
+
+
+    $(".office-list__item").each(function() {
+        $(this).click(function() {
+            $(this).addClass("open");
+        });
+    });
+
+
 })
