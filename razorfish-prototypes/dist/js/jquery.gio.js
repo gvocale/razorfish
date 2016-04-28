@@ -462,12 +462,60 @@ $(function() {
         }
 
     });
-    $(document).ready(function() {
-        $(".input-select").change(function() {
-            if ($(".input-select option[value='none']").attr('select')) {
-                $(".input-select").addClass("selected");
-            }
-        });
+
+    $(".input-select").change(function() {
+        if ($(".input-select option[value='none']").attr('select')) {
+            $(".input-select").addClass("selected");
+        }
     });
+
+    // Google map embed on office-contact-info
+    // When the window has finished loading create our google map below
+    google.maps.event.addDomListener(window, 'load', init);
+
+    function init() {
+        // Basic options for a simple Google Map
+        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+        var mapOptions = {
+            // How zoomed in you want the map to start at (always required)
+            zoom: 13,
+
+            // The latitude and longitude to center the map (always required)
+            center: new google.maps.LatLng(40.728531, -74.007424), // New York Office latitute and longitude
+
+            // How you would like to style the map. 
+            // This is where you would paste any style found on Snazzy Maps.
+            styles: [{ "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#e9e9e9" }, { "lightness": 17 }] }, { "featureType": "landscape", "elementType": "geometry", "stylers": [{ "color": "#f5f5f5" }, { "lightness": 20 }] }, { "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{ "color": "#ffffff" }, { "lightness": 17 }] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{ "color": "#ffffff" }, { "lightness": 29 }, { "weight": 0.2 }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#ffffff" }, { "lightness": 18 }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#ffffff" }, { "lightness": 16 }] }, { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#f5f5f5" }, { "lightness": 21 }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#dedede" }, { "lightness": 21 }] }, { "elementType": "labels.text.stroke", "stylers": [{ "visibility": "on" }, { "color": "#ffffff" }, { "lightness": 16 }] }, { "elementType": "labels.text.fill", "stylers": [{ "saturation": 36 }, { "color": "#333333" }, { "lightness": 40 }] }, { "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit", "elementType": "geometry", "stylers": [{ "color": "#f2f2f2" }, { "lightness": 19 }] }, { "featureType": "administrative", "elementType": "geometry.fill", "stylers": [{ "color": "#fefefe" }, { "lightness": 20 }] }, { "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{ "color": "#fefefe" }, { "lightness": 17 }, { "weight": 1.2 }] }],
+
+            // disable scroll wheel on map
+            scrollwheel: false
+        };
+
+        // Get the HTML DOM element that will contain your map 
+        // We are using a div with id="map" seen below in the <body>
+        var mapElement = document.getElementById('map');
+
+        // Create the Google Map using our element and options defined above
+        var map = new google.maps.Map(mapElement, mapOptions);
+
+
+        // SVG of the razorfish marker
+        var icon = {
+
+                path: "M18.9162733,25.8449684 C15.45574,25.8449684 12.6500733,23.0376 12.6500733,19.5740211 C12.6500733,16.1104421 15.45574,13.3030737 18.9162733,13.3030737 C22.3768067,13.3030737 25.1824733,16.1104421 25.1824733,19.5740211 C25.1824733,23.0376 22.3768067,25.8449684 18.9162733,25.8449684 M17.76044,0.0342315789 C8.30287333,0.5976 0.60344,8.30475789 0.0347066667,17.7696 C-0.174293333,21.2552842 0.56544,24.5483368 2.01134,27.4245474 C2.01260667,27.4277053 2.01260667,27.4302316 2.01387333,27.4327579 C4.24574,33.4245474 14.6970067,53.1487579 17.94854,59.2403368 C18.3621067,60.0159158 19.47044,60.0159158 19.88464,59.2403368 C23.1361733,53.1487579 33.58744,33.4245474 35.8193067,27.4327579 C35.81994,27.4302316 35.81994,27.4277053 35.8212067,27.4245474 C37.1049733,24.8704421 37.8326733,21.9866526 37.8326733,18.9317053 C37.8326733,8.09317895 28.7316733,-0.618189474 17.76044,0.0342315789",
+                fillColor: '#a9c000',
+                fillOpacity: 1,
+                anchor: new google.maps.Point(0, 0),
+                strokeWeight: 0,
+                scale: 1
+            }
+            // Let's also add a marker while we're at it
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(40.728531, -74.007424),
+            map: map,
+            title: 'Snazzy!',
+            icon: icon
+        });
+    }
 
 })
