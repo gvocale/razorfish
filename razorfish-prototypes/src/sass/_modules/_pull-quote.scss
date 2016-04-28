@@ -66,7 +66,7 @@
         @include ligatures;
         font-family: $serif;
         font-style: italic;
-        line-height: $prose-serif - 0.2;
+        line-height: 1.5;
         letter-spacing: $spacing-serif-large;
         margin-bottom: 0.5em;
         max-width: 20em;
@@ -79,27 +79,6 @@
         }
         &:last-child {
             margin-bottom: 0;
-        }
-    }
-    &__credit {
-        font-family: $sans;
-        line-height: $title-sans;
-        letter-spacing: $spacing-sans-large;
-        font-size: $scale03;
-        text-transform: uppercase;
-        @media only screen and ($md) {
-            font-size: $scale04;
-        }
-        @media only screen and ($xxl) {
-            font-size: $scale05;
-        }
-        strong {
-            font-weight: 700;
-            margin-right: 0.5em;
-            display: block;
-            @media only screen and ($md) {
-                display: inline-block;
-            }
         }
     }
     &__link {

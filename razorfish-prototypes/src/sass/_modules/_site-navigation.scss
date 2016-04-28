@@ -7,6 +7,7 @@
         left: 0;
         z-index: 200;
         visibility: hidden;
+        height: 0px;
         transition: visibility 0s 0.2s linear;
     }
     &__scroll {
@@ -128,6 +129,7 @@
 
 #site-masthead__checkbox:checked ~ .site-navigation__overlay {
     visibility: visible;
+    height: 100%;
     transition: visibility 0s 0s linear;
     .site-navigation__link-container {
         opacity: 1;

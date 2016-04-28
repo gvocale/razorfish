@@ -193,7 +193,11 @@
         @include component-padding;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         margin-top: 2em;
+        @media screen and ($md) {
+            flex-wrap: nowrap;
+        }
         @media screen and ($md) {
             margin-top: 0;
             max-width: 50%;
@@ -201,9 +205,14 @@
         .button,
         .select {
             width: 100%;
-            margin-right: 0.5em;
+            margin-bottom: 0.5em;
+            @media screen and ($md) {
+                margin-right: 0.5em;
+                margin-bottom: 0;
+            }
             &:last-child {
                 margin-right: 0;
+                margin-bottom: 0;
             }
         }
     }

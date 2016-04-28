@@ -119,8 +119,9 @@
     &--grid-padding {
         @include grid-padding;
         @include padding-bottom;
+        @include component-margin;
+        width: calc(100% - 2rem);
     }
-    &--full-width {}
     &--inline {
         @include padding-top(0.5);
         @include padding-bottom(0.5);

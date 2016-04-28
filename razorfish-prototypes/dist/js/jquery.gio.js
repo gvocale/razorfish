@@ -419,7 +419,6 @@ $(function() {
 
     var x = $('.office-list__area:nth-child(1)').height();
     $('.office-list__area-container').css('height', x);
-    $(".office-list").addClass("north-america");
 
     $('#office-list__tab__north-america').click(function() {
         var x = $('.office-list__area:nth-child(1)').height();
@@ -517,5 +516,17 @@ $(function() {
             icon: icon
         });
     }
+
+    // Disable zoom when user uses select
+    
+    $('select').mousedown(function() {
+        $('meta[name=viewport]').remove();
+        $('head').append('<meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=0">');
+    })
+
+    $('select').focusout(function() {
+        $('meta[name=viewport]').remove();
+        $('head').append('<meta name="viewport" content="width=device-width, initial-scale=yes">');
+    })
 
 })
