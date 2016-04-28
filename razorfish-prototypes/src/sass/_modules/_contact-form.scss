@@ -56,11 +56,11 @@
 .contact-form {
     &__link {
         font-family: $sans;
-        @include link--underline--animated(2px);
         @media (hover) {
-        &:hover {
-            color: $primary;
-        }}
+            &:hover {
+                color: $primary;
+            }
+        }
         line-height: 1;
         font-weight: 400;
         text-transform: uppercase;
@@ -68,6 +68,9 @@
         font-size: $scale03;
         @media screen and ($xxl) {
             font-size: $scale04;
+        }
+        &.link--underline:before {
+            height: 2px;
         }
         &:before {
             bottom: -0.5em;

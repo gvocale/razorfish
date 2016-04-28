@@ -52,9 +52,15 @@
                 margin-bottom: 0em;
             }
         }
-        .link {
+        .link--underline {
             margin-left: 2.2em;
-            @include link--underline--animated(0.5);
+            &:hover {
+                color: currentColor;
+            }
+            &:before {
+                background-color: currentColor;
+                opacity: 0.5;
+            }
             &:first-of-type {
                 margin-left: 0;
                 &:after {

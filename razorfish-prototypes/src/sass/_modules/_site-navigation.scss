@@ -56,62 +56,6 @@
         &:last-of-type:after {
             display: none;
         }
-        .link {
-            transition: all 0.1s ease 0.1s;
-            &:before {
-                content: "";
-                width: 100%;
-                height: 0.075em;
-                display: block;
-                background-color: $primary;
-                position: absolute;
-                bottom: 0;
-                animation-name: underline_out;
-                animation-duration: 0.2s;
-                animation-timing-function: ease;
-                animation-iteration-count: 1;
-                animation-direction: normal;
-                animation-fill-mode: forwards;
-                animation-play-state: running;
-            }
-            @media (hover) {
-                &:hover:before {
-                    animation-name: underline_in;
-                    animation-duration: 0.2s;
-                    animation-timing-function: ease;
-                    animation-iteration-count: 1;
-                    animation-direction: normal;
-                    animation-fill-mode: forwards;
-                    animation-play-state: running;
-                }
-            }
-            @keyframes underline_in {
-                0% {
-                    width: 0%;
-                    left: 0;
-                }
-                100% {
-                    width: 100%;
-                    left: 0;
-                }
-            }
-            @keyframes underline_out {
-                0% {
-                    width: 100%;
-                    right: 0;
-                }
-                100% {
-                    width: 0%;
-                    right: 0;
-                }
-            }
-            @media (hover) {
-                &:hover {
-                    transition: color 0.1s ease 0s;
-                    color: $primary;
-                }
-            }
-        }
     }
     &__pages {
         @include component-padding;

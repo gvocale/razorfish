@@ -406,45 +406,50 @@ p {
 }
 
 .link {
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    cursor: hand;
-    color: inherit;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-all;
-    word-break: break-word;
-    hyphens: auto;
-    -webkit-appearance: none;
-    &:active,
-    &:target {
-        background-color: rgba($black, 0.03);
-        transition: background-color 0s 0s;
-    }
-    &--muted {
-        color: currentColor;
-        opacity: 0.5;
-        @media (hover) {
-            &:hover {
-                opacity: 0.8;
-            }
+    &--primary,
+    &--secondary,
+    &--arrow--left,
+    &--arrow--right,
+    &--muted,
+    &--underline {
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        cursor: hand;
+        color: inherit;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-all;
+        word-break: break-word;
+        hyphens: auto;
+        -webkit-appearance: none;
+        &:active,
+        &:target {
+            background-color: rgba($black, 0.03);
+            transition: background-color 0s 0s;
+        }
+        &:focus {
+            outline: none;
         }
     }
     &--primary {
-        color: $primary;
-        @media (hover) {
-            &:hover {
-                box-shadow: 0 -0.08em 0 0 currentColor inset;
-                box-sizing: border-box;
-                transition: box-shadow 0s 0s linear;
-            }
+        font-weight: 800;
+        &:hover {
+            color: $primary;
         }
     }
     &--arrow {
-        &--left {
+        &--left,
+        &--right {
             position: relative;
+            font-weight: 700;
+            transition: all 0.1s ease 0s;
+            &:hover {
+                color: $primary;
+            }
+        }
+        &--left {
             padding-left: 0.5em;
             // Carrot
             &:before {
@@ -490,7 +495,6 @@ p {
             }
         }
         &--right {
-            position: relative;
             padding-right: 0.5em;
             // Stick
             &:before {
@@ -536,37 +540,88 @@ p {
             }
         }
     }
-    &--icon {
-        &--left {
-            margin-left: 1.5em;
-            // Icon holder
-            &:before {
-                content: "";
-                display: block;
-                width: 1em;
-                height: 1em;
-                background-size: 100% 100%, contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                position: absolute;
-                display: inline-block;
-                left: -1.5em;
-                top: 0;
+    &--underline {
+        transition: all 0.1s ease 0.1s;
+        &:before {
+            content: "";
+            width: 100%;
+            height: 0.075em;
+            display: block;
+            background-color: $primary;
+            position: absolute;
+            bottom: 0;
+            animation-name: underline_out;
+            animation-duration: 0.2s;
+            animation-timing-function: ease;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+            animation-play-state: running;
+        }
+        @media (hover) {
+            &:hover:before {
+                animation-name: underline_in;
+                animation-duration: 0.2s;
+                animation-timing-function: ease;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+                animation-play-state: running;
             }
         }
-        &--download {
-            &:before {
-                @include icon-download--black;
+        @keyframes underline_in {
+            0% {
+                width: 0%;
+                left: 0;
             }
-            @media (hover) {
-                &:hover:before {
-                    @include icon-download--primary;
-                }
+            100% {
+                width: 100%;
+                left: 0;
+            }
+        }
+        @keyframes underline_out {
+            0% {
+                width: 100%;
+                right: 0;
+            }
+            100% {
+                width: 0%;
+                right: 0;
+            }
+        }
+        @media (hover) {
+            &:hover {
+                transition: color 0.1s ease 0s;
+                color: $primary;
             }
         }
     }
-    &:focus {
-        outline: none;
+}
+
+.link {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    cursor: hand;
+    color: inherit;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+    hyphens: auto;
+    -webkit-appearance: none;
+    color: $primary;
+    &:hover {
+        text-decoration: underline;
+    }
+    &:active,
+    &:target {
+        background-color: rgba($black, 0.03);
+        transition: background-color 0s 0s;
+    }
+    strong {
+        font-weight: 700;
     }
 }
 
