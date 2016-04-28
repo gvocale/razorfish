@@ -11,7 +11,7 @@
         background-repeat: no-repeat;
         width: 100%;
         position: relative;
-        &.not-in-viewport {
+        &.animate {
             opacity: 0;
             transform: translateY(100%);
             transition-duration: 0.2s;
@@ -166,7 +166,7 @@
 }
 
 @for $i from 1 through 20 {
-    .social-share__icon-container:nth-of-type(#{$i}) .social-share__icon.in-viewport {
+    .social-share__icon-container:nth-of-type(#{$i}) .social-share__icon.animate.visible {
         transition-delay: calc(0.1s + (0.05s * #{$i}));
         transform: translateY(0%);
         opacity: 1;

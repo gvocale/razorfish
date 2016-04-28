@@ -84,12 +84,18 @@
     line-height: $solid-sans;
     outline: none;
     overflow: hidden;
-    padding: 2em 3em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 3em;
+    padding-right: 3em;
+    @media screen and ($lg) {
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+    }
     position: relative;
     text-decoration: none;
     font-size: $scale03;
     transition: all 0.2s ease-in 0s;
-    margin: 1px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -98,7 +104,6 @@
     }
     @media screen and ($xxl) {
         font-size: $scale04;
-        min-height: 4rem;
     }
     @media (hover) {
         &:hover {

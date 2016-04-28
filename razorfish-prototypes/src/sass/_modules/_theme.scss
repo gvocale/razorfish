@@ -104,10 +104,15 @@
 .theme {
     &--smart {
         .link {
-            color: currentColor;
+            text-decoration: underline;
+        }
+        .link--arrow--right,
+        .link--primary,
+        .link {
             @media (hover) {
                 &:hover {
-                    opacity: 0.6;
+                    color: currentColor;
+                    opacity: 0.5;
                 }
             }
         }
@@ -122,9 +127,6 @@
             background-color: $primary-smart !important;
         }
         .contact-info__label {
-            color: $primary-smart;
-        }
-        .link--primary {
             color: $primary-smart;
         }
         .social-share--folded__icon {
@@ -183,14 +185,6 @@
         $black-heforshe: #222424;
         $gray-heforshe: #3d3d3d;
         $off-white-heforshe: #f3f3f3;
-        .link {
-            color: currentColor;
-            @media (hover) {
-                &:hover {
-                    opacity: 0.6;
-                }
-            }
-        }
         p[class*="eyebrow"] {
             color: $primary-heforshe;
         }
@@ -203,8 +197,18 @@
         .contact-info__label {
             color: $primary-heforshe;
         }
-        .link--primary {
-            color: $primary-heforshe;
+        .link {
+            text-decoration: underline;
+        }
+        .link--arrow--right,
+        .link--primary,
+        .link {
+            @media (hover) {
+                &:hover {
+                    color: currentColor;
+                    opacity: 0.5;
+                }
+            }
         }
         .social-share--folded__icon {
             @media (hover) {
