@@ -127,7 +127,7 @@
         .contact-form__back-container,
         .contact-form__headline,
         .divider,
-        .form__field,
+        .contact-form__form > *,
         .contact-form__button-group {
             transform: translateY(100px);
             opacity: 0;
@@ -140,7 +140,7 @@
             .contact-form__back-container,
             .contact-form__headline,
             .divider,
-            .form__field,
+            .contact-form__form > *,
             .contact-form__button-group {
                 @include fields-hide;
                 animation-delay: 0s;
@@ -159,7 +159,7 @@
                 @include fields-visible;
                 animation-delay: 0.05s;
             }
-            .form__field {
+            .contact-form__form > * {
                 @include fields-visible;
                 @for $i from 1 through 15 {
                     &:nth-of-type(#{$i}) {

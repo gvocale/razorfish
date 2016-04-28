@@ -388,10 +388,11 @@
             position: absolute;
             z-index: -1;
             @media (hover) {
-            &:hover ~ .form__checkbox--label,
-            &:hover ~ .form__checkbox--body {
-                opacity: 0.5;
-            }}
+                &:hover ~ .form__checkbox--label,
+                &:hover ~ .form__checkbox--body {
+                    opacity: 0.5;
+                }
+            }
             &:focus ~ .form__checkbox--label,
             &:focus ~ .form__checkbox--body,
             &:active ~ .form__checkbox--label,
@@ -472,10 +473,27 @@
         letter-spacing: $spacing-sans;
         line-height: 1.3;
         color: $red;
-        margin-top: 1em;
+        margin-top: 0.75em;
         margin-bottom: 1em;
         &--container {
             @include component-padding;
+        }
+        &--icon {
+            display: flex;
+            flex-direction: row;
+            flex-shrink: 0;
+            &:before {
+                content: "";
+                width: 1.4em;
+                height: 1.4em;
+                display: block;
+                position: relative;
+                margin-right: 0.75em;
+                @include icon-info-red;
+                background-size: 100% 100%, contain;
+                background-repeat: no-repeat;
+                top: -0.1em;
+            }
         }
     }
     &__radio {
