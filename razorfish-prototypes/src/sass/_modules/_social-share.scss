@@ -173,11 +173,31 @@
     }
 }
 
-.article.visible,
-.press-release.visible,
-.case-study.visible {
+.article,
+.press-release,
+.case-study {
     .social-share--folded__footer {
-        position: fixed;
+        position: absolute;
+        top: 0;
+        bottom: auto;
+        @include padding-top;
+        @include padding-bottom;
+        @media screen and ($xl) {
+            position: absolute;
+            top: auto;
+            bottom: 0;
+        }
+        &.fixed {
+            position: fixed;
+            top: auto;
+            bottom: 0;
+            @media screen and ($xl) {
+                position: absolute;
+            }
+            &.bottom {
+                position: absolute;
+            }
+        }
     }
 }
 
@@ -209,7 +229,7 @@
         top: 0;
         display: none;
         @include padding-top;
-        @media screen and ($lg) {
+        @media screen and ($xl) {
             display: flex;
             top: 0;
             justify-content: flex-start;
@@ -219,13 +239,13 @@
         position: absolute;
         // top: calc(100vh - 3rem - 10vw);
         margin-right: 10vw;
+        bottom: 0;
         @media screen and ($lg) {
             margin-right: 5vw;
         }
         @media screen and ($xl) {
             margin-right: 10vw;
         }
-        bottom: 0;
         @include padding-bottom;
         @media screen and ($lg) {
             position: absolute;
@@ -241,6 +261,19 @@
     }
     &__group {
         position: relative;
+        width: 4rem;
+        @media screen and ($lg) {
+            width: 3rem;
+        }
+        @media screen and ($xl) {
+            width: 4rem;
+        }
+        &:before {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+            position: relative;
+        }
     }
     &__checkbox {
         appearance: none;
@@ -255,11 +288,16 @@
         position: absolute;
         top: 0;
         right: 0;
+        width: 4rem;
+        @media screen and ($lg) {
+            width: 3rem;
+        }
+        @media screen and ($xl) {
+            width: 4rem;
+        }
     }
     &__icon {
-        width: 3rem;
-        height: 3rem;
-        margin: 1px;
+        width: 100%;
         cursor: pointer;
         cursor: hand;
         display: block;
@@ -269,13 +307,17 @@
         background-repeat: no-repeat;
         overflow: hidden;
         background-color: $gray;
-        @media screen and ($lg) {
-            width: 4rem;
-            height: 4rem;
-        }
         &:hover {
             background-color: $primary;
         }
+        &:before {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+            position: relative;
+        }
+        margin-bottom: 1px;
+        margin-top: 1px;
     }
 }
 

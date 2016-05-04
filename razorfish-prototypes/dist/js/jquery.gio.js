@@ -518,7 +518,7 @@ $(function() {
     }
 
     // Disable zoom when user uses select
-    
+
     $('select').mousedown(function() {
         $('meta[name=viewport]').remove();
         $('head').append('<meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=0">');
@@ -528,5 +528,23 @@ $(function() {
         $('meta[name=viewport]').remove();
         $('head').append('<meta name="viewport" content="width=device-width, initial-scale=yes">');
     })
+
+
+    // Make share button position:fixed on case study pages
+
+    $(window).bind("load resize scroll", function(e) { // refresh on load, resize and scroll
+
+        if (($('.social-share--folded__footer')[0].getBoundingClientRect().bottom <= $(window).height()) && ($('.social-share--folded__footer').parent()[0].getBoundingClientRect().top <= $('.social-share--folded__footer')[0].getBoundingClientRect().top)) {
+            $('.social-share--folded__footer').addClass("fixed");
+        } else {
+            $('.social-share--folded__footer').removeClass("fixed");
+        };
+
+        if ($('.social-share--folded__footer').parent()[0].getBoundingClientRect().bottom <= $(window).height()) {
+            $('.social-share--folded__footer').addClass("bottom");
+        } else {
+            $('.social-share--folded__footer').removeClass("bottom");
+        }
+    });
 
 })
