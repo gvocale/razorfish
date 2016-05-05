@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
 
-<body class="snap approach">
+<body class="approach">
     <input type="checkbox" id="site-masthead__checkbox">
     <nav class="site-masthead" role="navigation">
         <div class="site-masthead__logo-container">
@@ -62,7 +62,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link--underline" href="join-us-landing.html">Join Us<span class="note">Landing</span></a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link--underline" href="news-landing.html">News<span class="note">Landing</span></a>
                     </li>
@@ -81,6 +81,9 @@
                     <li class="site-navigation__link-container">
                         <a class="link--underline" href="solutions-detail-page.html">Solutions<span class="note">Detail Page</span></a>
                     </li>
+                    <li class="site-navigation__link-container">
+                        <a class="link--underline" href="404.html">404<span class="note">Error Page</span></a>
+                    </li>                    
                 </ul>
                 <ul class="site-navigation__components">
                     <li class="site-navigation__link-container">
@@ -162,110 +165,97 @@
             </div>
         </div>
     </nav>
-    <section class="approach__card">
-        <div class="approach__text-container animate">
-            <h1 class="approach__h1">
-                <b>A</b>
-                <b>relentless</b>
-                <b>focus</b>
-                <b>on</b>
-                <b>customers</b>
-            </h1>
-            <p class="approach__subheadline">At Razorfish, everything we do springs from a single core belief: In this swiftly changing marketplace, customers have all the power.</p>
-        </div>
-        <div class="approach__video">
-            <video src="videos/approach/00_Faces.mp4" autoplay loop></video>
-        </div>
-    </section>
-    <!-- Innovation -->
-    <section class="approach__card">
-        <div class="approach__text-container animate">
-            <div class="divider approach__h2"></div>
-            <h2 class="approach__h2">
-                <b>Customers understand that owning</b>
-                <b>nice things is great, but having profound</b>
-                <b>experiences is better.</b>
+    <article id="fullpage">
+        <section class="approach__card section" data-anchor="slide1">
+            <div class="approach__text-container animate">
+                <div class="divider approach__h1 animate"></div>
+                <h1 class="approach__h1"><b>A relentless focus on customers.</b></h1>
+                <p class="approach__subheadline">At Razorfish, everything we do springs from a single core belief: In this swiftly changing marketplace, customers have all the power.</p>
+            </div>
+            <div class="approach__video">
+                <video src="videos/approach/00_Faces.mp4" autoplay loop></video>
+            </div>
+        </section>
+        <section class="approach__card section" data-anchor="slide2">
+            <div class="approach__text-container animate">
+                <div class="divider approach__h2"></div>
+                <h2 class="approach__h2">
+                <b>Customers have learned that advertising can be ignored. Meaningful conversations can't.</b>
             </h2>
-            <a class="approach__link link--arrow--right" href="#">Learn more about Experience Innovation</a>
-        </div>
-        <div class="approach__video">
-            <video src="videos/approach/01_card.mp4" autoplay loop></video>
-        </div>
-    </section>
-    <section class="approach__card">
-        <div class="approach__text-container animate">
-            <div class="divider approach__h2"></div>
-            <h2 class="approach__h2">
-                <b>Customers have learned that</b>
-                <b>advertising can be ignored.</b>
-                <b>Meaningful conversations can't.</b>
+                <a class="approach__link link--arrow--right" href="#">Learn more about Experience Innovation</a>
+            </div>
+            <div class="approach__video">
+                <video src="videos/approach/01_card.mp4" autoplay loop></video>
+            </div>
+        </section>
+        <section class="approach__card section" data-anchor="slide3">
+            <div class="approach__text-container animate">
+                <div class="divider approach__h2"></div>
+                <h2 class="approach__h2">
+                <b>Customers have learned that advertising can be ignored. Meaningful conversations can't.</b>
             </h2>
-            <a class="approach__link link--arrow--right" href="#">Learn more about Participatory Marketing</a>
-        </div>
-        <div class="approach__video">
-            <video src="videos/approach/02_card.mp4" autoplay loop></video>
-        </div>
-    </section>
-    <section class="approach__card" id="approach__shrink--far">
-        <div class="approach__text-container animate">
-            <div class="divider approach__h2"></div>
-            <h2 class="approach__h2">
-                <b>Customers expect to buy what</b>
-                <b>they want wherever they</b>
-                <b>happen to be - and have it now.</b>
+                <a class="approach__link link--arrow--right" href="#">Learn more about Participatory Marketing</a>
+            </div>
+            <div class="approach__video">
+                <video src="videos/approach/02_card.mp4" autoplay loop></video>
+            </div>
+        </section>
+        <section class="approach__card section" id="approach__shrink--far" data-anchor="slide4">
+            <div class="approach__text-container animate">
+                <div class="divider approach__h2"></div>
+                <h2 class="approach__h2">
+                <b>Customers have learned that advertising can be ignored. Meaningful conversations can't.</b>
             </h2>
-            <a class="approach__link link--arrow--right" href="#">Learn more about Ubiquitous Commerce</a>
-        </div>
-        <div class="approach__video">
-            <video src="videos/approach/03_card.mp4" autoplay loop></video>
-        </div>
-    </section>
-    <section class="approach__card" id="approach__shrink">
-        <div class="approach__text-container animate">
-            <div class="divider approach__h2"></div>
-            <h2 class="approach__h2">
-                <b>Customers demand to be recognized</b>
-                <b>and served as individuals,</b>
-                <b>not as members of a crowd.</b>
+                <a class="approach__link link--arrow--right" href="#">Learn more about Ubiquitous Commerce</a>
+            </div>
+            <div class="approach__video">
+                <video src="videos/approach/03_card.mp4" autoplay loop></video>
+            </div>
+        </section>
+        <section class="approach__card section" id="approach__shrink" data-anchor="slide5">
+            <div class="approach__text-container animate">
+                <div class="divider approach__h2"></div>
+                <h2 class="approach__h2">
+                <b>Customers have learned that advertising can be ignored. Meaningful conversations can't.</b>
             </h2>
-            <a class="approach__link link--arrow--right" href="#">Learn more about Intelligent Platforms</a>
-        </div>
-        <div class="approach__video">
-            <video src="videos/approach/04_card.mp4" autoplay loop></video>
-        </div>
-    </section>
-    <section class="approach__contact animate">
-        <div class="approach__text-container animate">
-            <p class="approach__contact__body">Here at Razorfish, we're excited abot all this disruption. Because we were purpose-built to navigate a world in which everhything that can be digital, is.</p>
-            <p class="approach__contact__body">Which is why &mdash; when it comes to customers &mdash; the only word that really described our approach is...“obsession”.</p>
-            <a class="approach__contact__link link--underline" href="">Let&rsquo;s be obsessed together.</a>
-        </div>
-    </section>
-    <footer class="footer footer--dark">
-        <div class="footer__logo-razorfish">
-        </div>
-        <p class="footer__copyrights"><span class="footer__copyrights--legal">© 2015 Razorfish All rights reserved</span><a href="" class="link--underline">Terms</a><a href="" class="link--underline">Privacy</a></p>
-        <ul class="social-share__group social-share__group--dark">
-            <li class="social-share__icon-container">
-                <a href="" class="icon-linkedin--white social-share__icon animate">
-                </a>
-            </li>
-            <li class="social-share__icon-container">
-                <a href="" class="icon-twitter--white social-share__icon animate">
-                </a>
-            </li>
-            <li class="social-share__icon-container">
-                <a href="" class="icon-facebook--white social-share__icon animate">
-                </a>
-            </li>
-        </ul>
-    </footer>
-    <nav>
-        <a class="nav-item"><span>Experience Innovation</span></a>
-        <a class="nav-item"><span>Ubiquitous Commerce</span></a>
-        <a class="nav-item"><span>Intelligent Platforms</span></a>
-        <a class="nav-item"><span>Participatory Marketing</span></a>
-    </nav>
+                <a class="approach__link link--arrow--right" href="#">Learn more about Intelligent Platforms</a>
+            </div>
+            <div class="approach__video">
+                <video src="videos/approach/04_card.mp4" autoplay loop></video>
+            </div>
+        </section>
+        <section class="approach__contact section fp-auto-height" data-anchor="contact">
+            <div class="approach__contact__text-container animate">
+                <h2 class="approach__contact__h1">Etiam porta sem malesuada risus.</h2>
+                <p class="approach__contact__subhead">Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet.</p>
+                <div class="divider approach__contact__h1 animate "></div>
+                <ul class="approach__contact__link--group">
+                    <li>
+                        <a href="" class="approach__contact__link link--underline">Strategy & Digtial Consulting</a></li>
+                    <li>
+                        <a href="" class="approach__contact__link link--underline">Media Planning & Buying</a></li>
+                    <li>
+                        <a href="" class="approach__contact__link link--underline">Innovation Program</a></li>
+                    <li>
+                        <a href="" class="approach__contact__link link--underline">IP & Technology</a></li>
+                    <li>
+                        <a href="" class="approach__contact__link link--underline">Mobile</a></li>
+                    <li>
+                        <a href="" class="approach__contact__link link--underline">Data Sciences</a></li>
+                </ul>
+                <button class="button button--white">let’s be obsessed together</button>
+            </div>
+        </section>
+        <nav id="approach__menu">
+            <ul>
+                <li><a data-menuanchor="slide1" class="nav-item approach__menu__link" href="#slide1">Experience bla Innovation</a></li>
+                <li><a data-menuanchor="slide2" class="nav-item approach__menu__link" href="#slide2">Ubiquitous Commerce</a></li>
+                <li><a data-menuanchor="slide3" class="nav-item approach__menu__link" href="#slide3">Intelligent Platforms</a></li>
+                <li><a data-menuanchor="slide4" class="nav-item approach__menu__link" href="#slide4">Participatory Marketing</a></li>
+                <li><a data-menuanchor="slide5" class="nav-item approach__menu__link" href="#slide5">Lifetime Loyality</a></li>
+            </ul>
+        </nav>
+    </article>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
@@ -273,6 +263,7 @@
     <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
     <script src="js/show-hide-header.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="js/jquery.fullPage.js"></script>
     <script src="js/jquery.gio.js"></script>
 </body>
 

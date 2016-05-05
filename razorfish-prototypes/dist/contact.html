@@ -81,6 +81,9 @@
                     <li class="site-navigation__link-container">
                         <a class="link--underline" href="solutions-detail-page.html">Solutions<span class="note">Detail Page</span></a>
                     </li>
+                    <li class="site-navigation__link-container">
+                        <a class="link--underline" href="404.html">404<span class="note">Error Page</span></a>
+                    </li>                    
                 </ul>
                 <ul class="site-navigation__components">
                     <li class="site-navigation__link-container">
@@ -263,21 +266,22 @@
                     <div class="form__field">
                         <ul class="form__radio--group">
                             <li class="form__radio--item">
-                                <input id="radio-1" type="radio" class="form__radio" name="form__radio">
+                                <input id="radio-1" class="form__input" type="radio" name="form__radio">
                                 <label for="radio-1" class="form__radio--label"><span class="form__radio--box"></span>Aenean lacinia bibendum nulla sed consectetur</label>
                             </li>
                             <li class="form__radio--item">
-                                <input id="radio-2" class="form__radio" type="radio" name="form__radio">
+                                <input id="radio-2" class="form__input" type="radio" name="form__radio">
                                 <label for="radio-2" class="form__radio--label"><span class="form__radio--box"></span>Magna Tristique Cursus</label>
                             </li>
                         </ul>
                     </div>
                     <div class="form__field">
-                        <div class="form__checkbox--group">
-                            <input type="checkbox" id="contact-form__checkbox--newsletter" class="form__checkbox" checked>
-                            <label for="contact-form__checkbox--newsletter" class="form__checkbox--label"></label>
-                            <label for="contact-form__checkbox--newsletter" class="form__checkbox--body">Yes, subscribe me to the Razorfish Newsletter</label>
-                        </div>
+                        <ul class="form__checkbox--group">
+                            <li class="form__checkbox--item">
+                                <input type="checkbox" id="form__checkbox" class="form__input" checked>
+                                <label for="form__checkbox" class="form__checkbox--label"><span class="form__checkbox--box"></span>Yes, subscribe me to the Razorfish Newsletter</label>
+                            </li>
+                        </ul>
                     </div>
                     <div class="form__error--container">
                         <p class="form__error form__error--icon">Error message from the server after the submit button is clicked</p>

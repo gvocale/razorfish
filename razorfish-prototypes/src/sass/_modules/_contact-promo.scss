@@ -80,6 +80,9 @@
             top: 0;
             left: 0;
         }
+        &.visible {
+            animation: 20s ease-out 0.5s forwards zoom;
+        }
     }
     .link--underline {
         font-style: italic;
@@ -93,11 +96,6 @@
         }
         &:before {
             height: 4px;
-        }
-    }
-    &.visible {
-        .contact-promo__background {
-            animation: 20s ease-out 0.5s forwards zoom;
         }
     }
 }

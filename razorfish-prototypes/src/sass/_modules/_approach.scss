@@ -1,5 +1,6 @@
 .approach {
     background-color: darken($black, 10%);
+    color: $white;
     &__card {
         width: 100vw;
         height: 100vh;
@@ -8,8 +9,43 @@
         display: flex;
         flex-direction: column;
         align-items: baseline;
-        justify-content: center;
+        justify-content: flex-end;
+        @include padding-bottom;
+        @include padding-top;
         @include grid-padding;
+        .divider {
+            margin-bottom: 0.4em;
+        }
+        &:first-of-type {
+            .divider {
+                background-color: $white;
+                opacity: 0.5;
+            }
+            &:before {
+                content: "";
+                position: absolute;
+                width: 0.1rem;
+                height: 0.75rem;
+                background-color: currentColor;
+                bottom: 3vmin;
+                right: calc(50% + 0.2rem);
+                transform: translateY(0) rotate(-45deg);
+                transition: transform 0.1s 0s $bezier;
+                animation: 1s bounce-left infinite;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                width: 0.1rem;
+                height: 0.75rem;
+                background-color: currentColor;
+                bottom: 3vmin;
+                left: calc(50% + 0.2rem);
+                transform: translateY(0) rotate(45deg);
+                transition: transform 0.1s 0s $bezier;
+                animation: 1s bounce-right infinite;
+            }
+        }
     }
     &__video {
         background-size: cover;
@@ -28,10 +64,14 @@
         }
     }
     .divider {
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.75em;
         transform: scaleX(0);
         transform-origin: left;
         color: lighten($primary, 10%);
+    }
+    .button {
+        @include margin-top(0.5);
+        @include margin-bottom(0.5);
     }
     &__text-container {
         display: flex;
@@ -46,18 +86,15 @@
     &__h1 {
         @include ligatures;
         font-family: $serif;
-        font-size: $scale09;
-        line-height: 0.6;
+        font-size: $scale08;
+        line-height: 0.8;
         letter-spacing: $spacing-serif-tight;
         font-weight: 700;
-        margin-bottom: 0.4em;
-        max-width: 12em;
+        margin-bottom: 0.3em;
+        max-width: 8em;
         opacity: 0.5;
         b {
             display: block;
-            &:nth-child(3) {
-                margin-top: 0.2em;
-            }
             transform: translateY(50%);
             opacity: 0;
             transition-duration: 0.1s;
@@ -66,26 +103,24 @@
             transition-timing-function: $bezier;
         }
         @media only screen and ($md) {
-            font-size: $scale12;
-            margin-bottom: 0.20em;
+            font-size: $scale10;
         }
-        @media only screen and ($lg) {
-            font-size: $scale12;
+        @media only screen and ($xl) {
+            font-size: $scale11;
         }
         @media only screen and ($xxl) {
-            font-size: $scale12 * 2;
-            margin-bottom: 0.15em;
+            font-size: $scale12;
         }
     }
     &__h2 {
         @include ligatures;
         font-family: $serif;
-        font-size: $scale07;
+        font-size: $scale06;
         line-height: 1.1;
         letter-spacing: $spacing-serif;
         font-weight: 400;
         margin-bottom: 0.5em;
-        max-width: 18em;
+        max-width: 14em;
         opacity: 1;
         b {
             display: block;
@@ -144,10 +179,10 @@
         transition-property: all;
         transition-timing-function: $bezier;
         @media only screen and ($md) {
-            font-size: $scale05;
+            font-size: $scale04;
         }
         @media only screen and ($xxl) {
-            font-size: $scale06;
+            font-size: $scale05;
         }
     }
     &__contact {
@@ -161,22 +196,53 @@
         align-items: center;
         &__text-container {
             width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
             @media screen and ($md) {
                 width: calc(100% / 10 * 10);
             }
             @media screen and ($xl) {
-                width: calc(100% / 12 * 8);
+                width: calc(100% / 12 * 10);
             }
             @media screen and ($xxl) {
-                width: calc(100% / 12 * 6);
+                width: calc(100% / 12 * 8);
             }
         }
-        &__body {
+        &__h1 {
+            @include ligatures;
+            font-family: $serif;
+            font-size: $scale06;
+            line-height: 1;
+            letter-spacing: $spacing-serif-tight;
+            font-weight: 700;
+            margin-bottom: 0.75em;
+            max-width: 10em;
+            @media only screen and ($md) {
+                font-size: $scale07;
+                max-width: none;
+            }
+            @media only screen and ($lg) {
+                font-size: $scale08;
+            }
+            @media only screen and ($xl) {
+                font-size: $scale09;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale10;
+            }
+        }
+        &__subhead {
             font-family: $sans;
             line-height: $title-sans;
             letter-spacing: $spacing-sans;
             margin-bottom: 2em;
             max-width: 32em;
+            opacity: 0.25;
             font-size: $scale04;
             @media only screen and ($md) {
                 font-size: $scale05;
@@ -189,21 +255,30 @@
             @include ligatures;
             font-family: $serif;
             font-style: italic;
-            font-size: $scale05;
+            font-size: $scale03;
             line-height: 1.5;
-            letter-spacing: $spacing-serif-large + 0.01em;
+            letter-spacing: $spacing-serif-large;
             font-weight: 700;
             max-width: 24em;
             color: $primary;
-            @include link--underline--animated;
+            margin-left: 1em;
+            margin-right: 1em;
+            margin-bottom: 1em;
             &:before {
                 height: 2px;
             }
             @media only screen and ($md) {
-                font-size: $scale07;
+                font-size: $scale05;
             }
             @media only screen and ($xxl) {
-                font-size: $scale08;
+                font-size: $scale06;
+            }
+            &--group {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     }
@@ -270,3 +345,86 @@
         transition-timing-function: $bezier;
     }
 }
+
+#approach__menu {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    color: $white;
+    z-index: 10;
+    @include grid-padding;
+    ul {
+        @include component-padding;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    li {
+        a {
+            color: $white;
+            text-decoration: none;
+            padding-bottom: 2em;
+            box-shadow: inset 0 0 0 0 rgba($white, 1);
+            display: inline-block;
+            font-family: $sans;
+            line-height: $title-sans;
+            letter-spacing: $spacing-sans;
+            transition: padding-bottom 0.2s 0s ease, box-shadow 0.1s 0s ease, opacity 0.1s 0s ease;
+            opacity: 0.5;
+            cursor: pointer;
+            cursor: hand;
+            font-size: $scale03;
+            @media only screen and ($md) {
+                font-size: $scale03;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale04;
+            }
+            &:hover,
+            &.active {
+                opacity: 1;
+                box-shadow: inset 0 -5px 0 0 rgba($white, 1);
+                padding-bottom: 3em;
+                transition: padding-bottom 0.2s 0s ease, box-shadow 0.1s 0.1s ease, opacity 0.1s 0.1s ease;
+            }
+        }
+    }
+}
+
+// .fp-viewing-slide1 {
+//     #approach__menu {
+//         position: fixed;
+//         bottom: auto;
+//         top: 100vh;
+//         transform: translateY(0);
+//     }
+// }
+// .fp-viewing-slide2,
+// .fp-viewing-slide3,
+// .fp-viewing-slide4,
+// .fp-viewing-slide5 {
+//     #approach__menu {
+//         position: fixed;
+//         bottom: auto;
+//         top: 100vh;
+//         transform: translateY(-100%);
+//     }
+// }
+// .fp-viewing-slide5 {
+//     #approach__menu {
+//         position: absolute;
+//         top: 500vh;
+//         bottom: auto;
+//         transform: translateY(-100%);
+//     }
+// }
+// .fp-viewing-contact {
+//     #approach__menu {
+//         position: absolute;
+//         top: 500vh;
+//         bottom: auto;
+//         transform: translateY(-100%);
+//     }
+// }
