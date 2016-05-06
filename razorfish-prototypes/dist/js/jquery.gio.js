@@ -456,7 +456,7 @@ $(function() {
             $('.office-list__area-container').css('height', x);
         }
         if ($(".office-list").hasClass("asia-pacific")) {
-            var x = $('.office-list__area:nth-child()').height();
+            var x = $('.office-list__area:nth-child(3)').height();
             $('.office-list__area-container').css('height', x);
         }
 

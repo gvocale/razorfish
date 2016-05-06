@@ -67,21 +67,12 @@
         top: 0;
         left: 0;
         z-index: -1;
-        background-image: url('./../images/contact-promo-background.jpg'), linear-gradient(90deg, $tertiary, $tertiaryDarker);
-        &:before {
-            content: "";
-            background-image: linear-gradient(90deg, $tertiary, $tertiaryDarker);
-            background-color: rgba(0, 0, 0, 0.5);
-            background-blend-mode: darken;
-            opacity: 0.9;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-        }
         &.visible {
             animation: 20s ease-out 0.5s forwards zoom;
+        }
+        svg {
+            width: 100%;
+            height: 100%;
         }
     }
     .link--underline {

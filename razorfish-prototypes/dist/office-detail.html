@@ -62,7 +62,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link--underline" href="join-us-landing.html">Join Us<span class="note">Landing</span></a>
-                    </li>                    
+                    </li>
                     <li class="site-navigation__link-container">
                         <a class="link--underline" href="news-landing.html">News<span class="note">Landing</span></a>
                     </li>
@@ -83,7 +83,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link--underline" href="404.html">404<span class="note">Error Page</span></a>
-                    </li>                    
+                    </li>
                 </ul>
                 <ul class="site-navigation__components">
                     <li class="site-navigation__link-container">
@@ -221,7 +221,22 @@
                 <p class="body-copy__body">Like our city, Razorfish NY has grown since then, bringing in talent from all over the globe to work on the world's biggest brands. Just don't be fooled by our office with a view. We're still edgy.</p>
             </div>
         </div>
-        <div class="body-copy__background image-grading--green" style="background-image: url(images/office-contact-info-new-york.jpg)" ;></div>
+        <figure class="body-copy__background animate">
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="image-grading--green">
+                        <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray"></feColorMatrix>
+                        <feComponentTransfer color-interpolation-filters="sRGB">
+                            <feFuncR type="table" tableValues="0.1411764705882353 0.25882352941176473"></feFuncR>
+                            <feFuncG type="table" tableValues="0.1607843137254902 0.34509803921568627"></feFuncG>
+                            <feFuncB type="table" tableValues="0.14901960784313725 0.3607843137254902"></feFuncB>
+                            <feFuncA type="table" tableValues="1 1"></feFuncA>
+                        </feComponentTransfer>
+                    </filter>
+                </defs>
+                <image filter="url('#image-grading--green')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/office-contact-info-new-york.jpg"></image>
+            </svg>
+        </figure>
     </section>
     <section class="title title--red">
         <div class="title__text-container">
@@ -411,8 +426,22 @@
             <p class="contact-promo__eyebrow">Locations</p>
             <h2 class="contact-promo__description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link--underline">Get in touch.</a></h2>
         </div>
-        <div class="contact-promo__background">
-        </div>
+        <figure class="contact-promo__background animate">
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="image-grading--green">
+                        <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray"></feColorMatrix>
+                        <feComponentTransfer color-interpolation-filters="sRGB">
+                            <feFuncR type="table" tableValues="0.1411764705882353 0.25882352941176473"></feFuncR>
+                            <feFuncG type="table" tableValues="0.1607843137254902 0.34509803921568627"></feFuncG>
+                            <feFuncB type="table" tableValues="0.14901960784313725 0.3607843137254902"></feFuncB>
+                            <feFuncA type="table" tableValues="1 1"></feFuncA>
+                        </feComponentTransfer>
+                    </filter>
+                </defs>
+                <image filter="url('#image-grading--green')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/contact-promo-background.jpg"></image>
+            </svg>
+        </figure>
     </section>
     <footer class="footer">
         <div class="footer__logo-razorfish">
@@ -441,7 +470,6 @@
     <script src="js/show-hide-header.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="js/jquery.gio.js"></script>
-
 </body>
 
 </html>

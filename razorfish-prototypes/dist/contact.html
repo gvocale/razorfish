@@ -83,7 +83,7 @@
                     </li>
                     <li class="site-navigation__link-container">
                         <a class="link--underline" href="404.html">404<span class="note">Error Page</span></a>
-                    </li>                    
+                    </li>
                 </ul>
                 <ul class="site-navigation__components">
                     <li class="site-navigation__link-container">
@@ -184,7 +184,22 @@
                 <li class=""><a class="contact-form__link link--underline" id="contact-form__link-4">Publishing</a></li>
             </ul>
         </div>
-        <div class="hero__background image-grading--green animate" style="background-image: url(images/hero-contact-form.jpg)"></div>
+        <figure class="hero__background animate">
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="image-grading--green">
+                        <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray"></feColorMatrix>
+                        <feComponentTransfer color-interpolation-filters="sRGB">
+                            <feFuncR type="table" tableValues="0.1411764705882353 0.25882352941176473"></feFuncR>
+                            <feFuncG type="table" tableValues="0.1607843137254902 0.34509803921568627"></feFuncG>
+                            <feFuncB type="table" tableValues="0.14901960784313725 0.3607843137254902"></feFuncB>
+                            <feFuncA type="table" tableValues="1 1"></feFuncA>
+                        </feComponentTransfer>
+                    </filter>
+                </defs>
+                <image filter="url('#image-grading--green')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/hero-contact-form.jpg"></image>
+            </svg>
+        </figure>
     </section>
     <section class="contact-form__overlay close">
         <div class="contact-form__scroll">
@@ -307,7 +322,23 @@
                 <p class="contact-form__subhead">We'll contact you shortly!</p>
             </div>
         </div>
-        <div class="contact-form__background-image image-grading--green" style="background-image: url(images/hero-contact-form.jpg)"></div>
+        <figure class="contact-form__background-image animate">
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="image-grading--green">
+                        <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray"></feColorMatrix>
+                        <feComponentTransfer color-interpolation-filters="sRGB">
+                            <feFuncR type="table" tableValues="0.1411764705882353 0.25882352941176473"></feFuncR>
+                            <feFuncG type="table" tableValues="0.1607843137254902 0.34509803921568627"></feFuncG>
+                            <feFuncB type="table" tableValues="0.14901960784313725 0.3607843137254902"></feFuncB>
+                            <feFuncA type="table" tableValues="1 1"></feFuncA>
+                        </feComponentTransfer>
+                    </filter>
+                </defs>
+                <image filter="url('#image-grading--green')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/hero-contact-form.jpg"></image>
+            </svg>
+        </figure>
+        
     </section>
     <section class="title title--dark">
         <div class="title__text-container">
@@ -315,7 +346,7 @@
             <h3 class="title__headline">Find an office</h3>
         </div>
         <ul class="title__tab-group">
-            <li id="office-list__tab__north-america" class="title__tab">
+            <li id="office-list__tab__north-america" class="title__tab active">
                 <a class="">North America</a>
             </li>
             <li id="office-list__tab__europe" class="title__tab">
@@ -326,7 +357,7 @@
             </li>
         </ul>
     </section>
-    <section class="office-list">
+    <section class="office-list north-america">
         <div class="office-list__area-container">
             <div class="office-list__area">
                 <div class="office-list__item">
@@ -633,8 +664,22 @@
             <p class="contact-promo__eyebrow">Locations</p>
             <h2 class="contact-promo__description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link--underline">Get in touch.</a></h2>
         </div>
-        <div class="contact-promo__background">
-        </div>
+        <figure class="contact-promo__background animate">
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="image-grading--green">
+                        <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray"></feColorMatrix>
+                        <feComponentTransfer color-interpolation-filters="sRGB">
+                            <feFuncR type="table" tableValues="0.1411764705882353 0.25882352941176473"></feFuncR>
+                            <feFuncG type="table" tableValues="0.1607843137254902 0.34509803921568627"></feFuncG>
+                            <feFuncB type="table" tableValues="0.14901960784313725 0.3607843137254902"></feFuncB>
+                            <feFuncA type="table" tableValues="1 1"></feFuncA>
+                        </feComponentTransfer>
+                    </filter>
+                </defs>
+                <image filter="url('#image-grading--green')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/contact-promo-background.jpg"></image>
+            </svg>
+        </figure>
     </section>
     <footer class="footer">
         <div class="footer__logo-razorfish">

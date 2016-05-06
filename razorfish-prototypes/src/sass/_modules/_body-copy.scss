@@ -72,6 +72,7 @@
         columns: 1;
         margin-left: auto;
         margin-right: auto;
+        column-fill: balance;
         @include padding-top(0.25);
         @include padding-bottom(0.25);
         @media screen and ($md) {
@@ -85,7 +86,14 @@
             padding-bottom: 0;
         }
         &__group {
-            @include two-column--group;
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid-column;
+            padding-bottom: 1.5em;
+            margin-bottom: 0;
+            &:last-child {
+                padding-bottom: 0;
+            }
             padding-bottom: 2em;
             .body-copy__inline-pull-quote__quote {
                 font-size: $scale05;
@@ -261,9 +269,6 @@
         line-height: $prose-sans;
         letter-spacing: $spacing-sans;
         padding-bottom: 1em;
-        -webkit-column-break-inside: avoid;
-        page-break-inside: avoid;
-        break-inside: avoid-column;
         font-size: $scale04;
         @media only screen and ($md) {
             font-size: $scale04;
@@ -333,17 +338,20 @@
         }
     }
     &__background {
-        width: 100vw;
         min-height: 80vh;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
         z-index: -1;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
     }
     &__inline-pull-quote {
         border-left: solid 0.2rem $primary;
