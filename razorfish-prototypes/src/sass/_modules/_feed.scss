@@ -180,24 +180,24 @@
                 justify-content: center;
                 position: relative;
             }
-            .feed__item__text-container:before {
-                right: 100%;
-                top: 50%;
-                border: solid transparent;
-                content: " ";
-                height: 0;
-                width: 0;
-                position: absolute;
-                pointer-events: none;
-                border-right-color: $white;
-                border-width: 0.75rem;
-                margin-top: -0.75rem;
-                transform: translateX(20%);
-                @media screen and ($md) {
-                    border-width: 2rem;
-                    margin-top: -2rem;
-                }
-            }
+            // .feed__item__text-container:before {  // White arrow pointing left in split tiles
+            //     right: 100%;
+            //     top: 50%;
+            //     border: solid transparent;
+            //     content: " ";
+            //     height: 0;
+            //     width: 0;
+            //     position: absolute;
+            //     pointer-events: none;
+            //     border-right-color: $white;
+            //     border-width: 0.75rem;
+            //     margin-top: -0.75rem;
+            //     transform: translateX(20%);
+            //     @media screen and ($md) {
+            //         border-width: 2rem;
+            //         margin-top: -2rem;
+            //     }
+            // }
             .feed__item__headline {
                 max-width: 8em;
                 font-size: $scale04;
@@ -211,18 +211,21 @@
                     font-size: $scale07;
                 }
             }
-            @media (hover) {
-                &:hover {
-                    .feed__item__text-container:before {
-                        transform: translateX(1%);
-                    }
-                }
-            }
+            // @media (hover) {
+            //     &:hover {
+            //         .feed__item__text-container:before {
+            //             transform: translateX(1%);
+            //         }
+            //     }
+            // }
             .feed__item__background {
                 width: 50%;
                 position: absolute;
                 top: 0;
                 left: 0;
+            }
+            .feed__arrow--container {
+                    transform: translateX(-35%); // translate arrow so that left align with copy into split tiles (which are left aligned)
             }
         }
     }
