@@ -332,15 +332,20 @@ $(function() {
         console.log('#video does not exist on the page');
     }
 
-    // Resize clip-path of simple title based on viewport height
+    // Simple-title clip path on load resize and scroll
 
-    var $simpleTitle = $('.simple-title'); //record the elem so you don't crawl the DOM everytime
+    var simpleTitle = $('.simple-title'); //record the elem so you don't crawl the DOM everytime
 
-    $(window).bind("load resize", function(e) { // refresh on load and resize
+    $(window).bind("load resize scroll", function(e) { // refresh on load and resize
 
-        var bottom = $simpleTitle.outerHeight(true); // find height of .simple-title
-        $(".simple-title").css({ "-webkit-clip-path": "polygon(0 0, 100% 0, 100% " + bottom + "px, 0 " + bottom + "px)" });
+        var height = simpleTitle.outerHeight(true); // find height of .simple-title
 
+        var difference = (height - $(window).scrollTop());
+        
+        if (difference >= 0) {
+            console.log("simple title clip path " + difference);
+            $(".simple-title__text-container").css({ "-webkit-clip-path": "polygon(0 0, 100% 0, 100% " + difference + "px, 0 " + difference + "px)" });
+        }
     });
 
 
@@ -589,7 +594,7 @@ $(function() {
 
 
     // Code used to generate Gradient Map
-    
+
     // var target = document.getElementById('myimage');
     // var gradientMap = "#242926, #42585c";
 
