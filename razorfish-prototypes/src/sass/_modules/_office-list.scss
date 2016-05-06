@@ -160,57 +160,38 @@
             }
             position: relative;
             margin-top: 1em;
-            width: 6em;
-            height: 1em;
+            width: 4.5em;
+            height: 0.75em;
             overflow: hidden;
             // border: 1px solid red; 
-            &:before,
             &:after {
                 content: "";
                 background-image: url("../images/icon-arrow-white.svg");
                 background-position: center center;
                 background-size: 100% 100%, contain;
                 background-repeat: no-repeat;
-                width: 2em;
-                height: 1em;
+                width: 1.5em;
+                height: 0.75em;
                 display: block;
                 position: absolute;
                 top: 0;
                 transition: all 0.2s 0s $bezier;
             }
-            &:before {
-                animation-name: arrow_out_before;
-                animation-duration: 0.2s;
-                animation-timing-function: $bezier;
-                animation-iteration-count: 1;
-                animation-direction: normal;
-                animation-fill-mode: forwards;
-                animation-play-state: running;
-                @keyframes arrow_out_before {
-                    0% {
-                        left: 6em;
-                    }
-                    100% {
-                        left: 6em;
-                    }
-                }
-                left: -2em;
-            }
             &:after {
                 left: -4em;
-                animation-name: arrow_out_after;
+                animation-name: arrow_out;
                 animation-duration: 0.2s;
                 animation-timing-function: $bezier;
                 animation-iteration-count: 1;
                 animation-direction: normal;
                 animation-fill-mode: forwards;
                 animation-play-state: running;
-                @keyframes arrow_out_after {
+                @keyframes arrow_out {
                     0% {
                         left: 2em;
                     }
                     100% {
-                        left: -4em;
+                        left: 6em;
                     }
                 }
             }
@@ -219,32 +200,15 @@
     @media (hover) {
         &__item:hover {
             .office-list__arrow {
-                &:before {
-                    animation-name: arrow_in_before;
-                    animation-duration: 0.2s;
-                    animation-timing-function: $bezier;
-                    animation-iteration-count: 1;
-                    animation-direction: normal;
-                    animation-fill-mode: forwards;
-                    animation-play-state: running;
-                    @keyframes arrow_in_before {
-                        0% {
-                            left: -2em;
-                        }
-                        100% {
-                            left: 6em;
-                        }
-                    }
-                }
                 &:after {
-                    animation-name: arrow_in_after;
+                    animation-name: arrow_in;
                     animation-duration: 0.2s;
                     animation-timing-function: $bezier;
                     animation-iteration-count: 1;
                     animation-direction: normal;
                     animation-fill-mode: forwards;
                     animation-play-state: running;
-                    @keyframes arrow_in_after {
+                    @keyframes arrow_in {
                         0% {
                             left: -4em;
                         }
