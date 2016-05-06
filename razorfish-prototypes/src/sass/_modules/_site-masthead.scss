@@ -4,10 +4,7 @@
 }
 
 .site-masthead {
-    padding-top: 0%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 0%;
+    @include grid-padding;
     height: 5rem;
     width: 100%;
     display: flex;
@@ -71,8 +68,10 @@
         }
     }
     &__hamburger {
-        width: 3rem;
-        height: 3rem;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        @include component-padding;
+        height: 54px;
         display: inline-block;
         cursor: pointer;
         cursor: hand;
