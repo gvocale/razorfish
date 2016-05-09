@@ -225,7 +225,7 @@
                 left: 0;
             }
             .feed__arrow--container {
-                    transform: translateX(-35%); // translate arrow so that left align with copy into split tiles (which are left aligned)
+                transform: translateX(-35%); // translate arrow so that left align with copy into split tiles (which are left aligned)
             }
         }
     }
@@ -426,30 +426,6 @@
         text-decoration: none;
     }
     &__arrow {
-        &--container {
-            display: none;
-            height: 1em;
-            width: 6em;
-            font-size: $scale03;
-            @media screen and ($lg) {
-                font-size: $scale04;
-            }
-            @media screen and ($xxl) {
-                font-size: $scale05;
-            }
-            @media (hover) {
-                display: block;
-                font-size: $scale03;
-                @media screen and ($xxl) {
-                    font-size: $scale04;
-                }
-                position: relative;
-                overflow: hidden;
-                // border: 1px solid red;
-            }
-        }
-    }
-    &__arrow {
         display: block;
         position: absolute;
         height: 100%;
@@ -470,6 +446,24 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(200%, -50%);
+            }
+        }
+        &--container {
+            display: none;
+            height: 1em;
+            width: 6em;
+            font-size: $scale03;
+            @media screen and ($lg) {
+                font-size: $scale04;
+            }
+            @media screen and ($xxl) {
+                font-size: $scale05;
+            }
+            @media (hover) {
+                display: block;
+                position: relative;
+                overflow: hidden;
+                // border: 1px solid red;
             }
         }
     }
