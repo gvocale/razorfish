@@ -5,7 +5,6 @@
 
 .site-masthead {
     @include grid-padding;
-    height: 5rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -13,7 +12,17 @@
     justify-content: space-between;
     position: fixed;
     z-index: 1000;
-    transition: all 0.1s 0s $bezier;
+    transition: transform 0.1s 0s ease, background-color 0.2s 0.0s ease;
+    background-color: rgba($white, 0);
+    padding-top: 1em;
+    padding-bottom: 2em;
+    &.opaque {
+        background-color: rgba($white, 1);
+    }
+    &.hiding {
+        transform: translateY(-100%);
+        transition: transform 0.3s ease 0.1s, background-color 0.2s 0.1s ease;
+    }
     &_before {
         content: "";
         position: absolute;
@@ -138,11 +147,6 @@
             }
         }
     }
-}
-
-.site-masthead.hiding {
-    transform: translateY(-100%);
-    transition: all 0.3s $bezier 0.1s;
 }
 
 #site-masthead__checkbox:checked ~ .site-masthead {

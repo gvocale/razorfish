@@ -128,7 +128,6 @@
         font-family: $sans;
         line-height: 1.3;
         letter-spacing: $spacing-sans-mega;
-        margin-bottom: 1.5em;
         font-weight: 400;
         text-transform: uppercase;
         font-size: $scale02;
@@ -137,9 +136,6 @@
         }
         @media screen and ($xxl) {
             font-size: $scale04;
-        }
-        &:last-child {
-            margin-bottom: 0;
         }
     }
     &__cta {
@@ -181,6 +177,10 @@
         }
         &--container {
             display: none;
+            position: absolute;
+            margin-top: 1.5em;
+            left: 50%;
+            transform: translateX(-50%);
             height: 1em;
             width: 6em;
             font-size: $scale02;
@@ -192,7 +192,6 @@
             }
             @media (hover) {
                 display: block;
-                position: relative;
                 overflow: hidden;
                 // border: 1px solid red;
             }

@@ -101,7 +101,6 @@
             line-height: 1.2;
             letter-spacing: $spacing-serif;
             font-weight: 700;
-            margin-bottom: 0.5em;
             max-width: 14em;
             font-size: $scale05;
             @media screen and ($xl) {
@@ -109,9 +108,6 @@
             }
             @media screen and ($xxl) {
                 font-size: $scale08;
-            }
-            &:last-child {
-                margin-bottom: 0;
             }
         }
         &__subheadline {
@@ -138,7 +134,10 @@
         }
         &__text-container {
             width: 100%;
-            padding: 0 10%;
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 10%;
+            padding-right: 10%;
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
@@ -168,7 +167,8 @@
             background-position: 50% center;
             .feed__item__text-container {
                 margin-left: 50%;
-                padding: 7.5%;
+                padding-left: 7.5%;
+                padding-right: 7.5%;
                 width: 50%;
                 background-color: $white;
                 height: 100%;
@@ -225,7 +225,9 @@
                 left: 0;
             }
             .feed__arrow--container {
-                transform: translateX(-35%); // translate arrow so that left align with copy into split tiles (which are left aligned)
+                left: 0;
+                transform: translateX(0); // translate arrow so that left align with copy into split tiles (which are left aligned)
+                margin-left: calc(3.75vw - 1.6em);
             }
         }
     }
@@ -450,8 +452,12 @@
         }
         &--container {
             display: none;
-            height: 1em;
-            width: 6em;
+            position: absolute;
+            margin-top: 1em;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 0.8em;
+            width: 4.8em;
             font-size: $scale03;
             @media screen and ($lg) {
                 font-size: $scale04;
@@ -461,7 +467,6 @@
             }
             @media (hover) {
                 display: block;
-                position: relative;
                 overflow: hidden;
                 // border: 1px solid red;
             }

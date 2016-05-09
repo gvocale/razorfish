@@ -341,7 +341,7 @@ $(function() {
         var height = simpleTitle.outerHeight(true); // find height of .simple-title
 
         var difference = (height - $(window).scrollTop());
-        
+
         if (difference >= 0) {
             console.log("simple title clip path " + difference);
             $(".simple-title__text-container").css({ "-webkit-clip-path": "polygon(0 0, 100% 0, 100% " + difference + "px, 0 " + difference + "px)" });
@@ -601,6 +601,14 @@ $(function() {
     // GradientMaps.applyGradientMap(target, gradientMap);
 
 
+    // Navigation opacity
 
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= $(window).height()) { // If browser scrolled more then viewport then add white background to navigation
+            $(".site-masthead").addClass("opaque");
+        } else {
+            $(".site-masthead").removeClass("opaque");
+        }
+    });
 
 })
