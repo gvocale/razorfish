@@ -1,15 +1,15 @@
 .social-feed--instagram {
     width: 100%;
+    @include grid-padding;
     background-color: $gray;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-bottom: 20%;
-    @media screen and ($md) {
-        padding-bottom: 10%;
-    }
+    @include padding-bottom(1);
     &__feed {
-        width: calc(80vw + 1rem);
+        width: 100%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
         height: auto;
         margin-left: auto;
         margin-right: auto;
@@ -18,7 +18,7 @@
         flex-wrap: wrap;
         overflow: hidden;
         @media screen and ($lg) {
-            height: calc((80vw + 1rem) / 4 * 5);
+            height: calc((80vw / 4 * 5) + 2rem);
         }
         &__cluster {
             display: flex;
@@ -34,11 +34,15 @@
         }
         &__item {
             box-sizing: border-box;
-            padding: 0.5rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
             width: 100%;
             position: relative;
             cursor: pointer;
             cursor: hand;
+            background-clip: content-box;
             @media screen and ($lg) {
                 width: 50%;
             }
@@ -51,8 +55,8 @@
             @media (hover) {
                 &:hover {
                     .social-feed--instagram__feed__image {
-                        transition: transform 0.2s 0s $bezier;
-                        transform: scale(1.025);
+                        transform: translate3d(0, 0, 0) scale(1.05);
+                        transition: transform 0.5s 0s ease-out;
                     }
                 }
             }
@@ -65,13 +69,17 @@
             width: calc(100% - 1rem);
             height: calc(100% - 1rem);
             position: absolute;
-            padding: 0.5rem;
             background-position: center;
             background-repeat: no-repeat;
             background-size: 100% 100%, cover;
             background-clip: content-box;
             transition: all 0.5s 0.1s $bezier;
             transform: scale(1);
+            background-clip: content-box;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
         }
         &__image {
             position: absolute;
@@ -84,7 +92,7 @@
             background-repeat: no-repeat;
             background-size: 100% 100%, cover;
             background-clip: content-box;
-            transition: all 0.5s 0.1s $bezier;
+            transition: transform 0.5s 0s ease-out;
             transform: scale(1);
         }
     }

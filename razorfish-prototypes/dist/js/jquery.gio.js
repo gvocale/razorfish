@@ -604,11 +604,96 @@ $(function() {
     // Navigation opacity
 
     $(window).scroll(function() {
-        if ($(this).scrollTop() >= $(window).height()) { // If browser scrolled more then viewport then add white background to navigation
+        if (($(this).scrollTop() >= $(window).height()) && (!$("body").hasClass("approach"))) { // If browser scrolled more then viewport then add white background to navigation, only if body does not have class approach
             $(".site-masthead").addClass("opaque");
         } else {
             $(".site-masthead").removeClass("opaque");
         }
     });
 
-})
+
+    // Approach page
+
+    if ($("body").hasClass("approach")) {
+        var pillar1 = document.getElementById('approach__pillar1');
+        var pillar2 = document.getElementById('approach__pillar2');
+        var pillar3 = document.getElementById('approach__pillar3');
+        var pillar4 = document.getElementById('approach__pillar4');
+        var pillar5 = document.getElementById('approach__pillar5');
+        var approachLinks = document.getElementById('approach__links');
+        var approachFooter = document.getElementById('approach__footer');
+
+        $(window).bind("load resize scroll", function(e) { // refresh on load and resize
+
+            // Show  approach__menu when pillar1 comes in viewport
+
+            var distanceToTop = pillar1.getBoundingClientRect().top;
+            if (distanceToTop <= ($(window).height() / 2)) {
+                $("#approach__menu").removeClass("hide");
+            } else {
+                $("#approach__menu").addClass("hide");
+            }
+
+
+            // If approach__link is in viewport, menu is position absolute
+
+            var distanceLinkFromTop = approachLinks.getBoundingClientRect().top;
+            if (distanceLinkFromTop <= ($(window).height())) {
+                $("#approach__menu").addClass("absolute");
+            } else {
+                $("#approach__menu").removeClass("absolute");
+            }
+
+            // If approach__footer is in viewport, shrink page above
+
+            var distanceFooterFromTop = approachFooter.getBoundingClientRect().top;
+            if (distanceFooterFromTop <= ($(window).height())) {
+                $(".approach__shrinking-area").addClass("shrink");
+            } else {
+                $(".approach__shrinking-area").removeClass("shrink");
+            }
+
+            // Check which pillar is in viewport and activate navigation link
+
+            var pillar1inViewport = pillar1.getBoundingClientRect().top;
+            console.log(pillar1inViewport);
+            if (pillar1inViewport <= ($(window).height() / 2) && (pillar1inViewport > ($(window).height() * -1 / 2))) {
+                $('[data-menuanchor="pillar1"]').addClass("active");
+            } else {
+                $('[data-menuanchor="pillar1"]').removeClass("active");
+            }
+
+            var pillar2inViewport = pillar2.getBoundingClientRect().top;
+            if (pillar2inViewport <= ($(window).height() / 2) && (pillar2inViewport > ($(window).height() * -1 / 2))) {
+                $('[data-menuanchor="pillar2"]').addClass("active");
+            } else {
+                $('[data-menuanchor="pillar2"]').removeClass("active");
+            }
+
+            var pillar3inViewport = pillar3.getBoundingClientRect().top;
+            if (pillar3inViewport <= ($(window).height() / 2) && (pillar3inViewport > ($(window).height() * -1 / 2))) {
+                $('[data-menuanchor="pillar3"]').addClass("active");
+            } else {
+                $('[data-menuanchor="pillar3"]').removeClass("active");
+            }
+
+            var pillar4inViewport = pillar4.getBoundingClientRect().top;
+            if (pillar4inViewport <= ($(window).height() / 2) && (pillar4inViewport > ($(window).height() * -1 / 2))) {
+                $('[data-menuanchor="pillar4"]').addClass("active");
+            } else {
+                $('[data-menuanchor="pillar4"]').removeClass("active");
+            }
+
+            var pillar5inViewport = pillar5.getBoundingClientRect().top;
+            if (pillar5inViewport <= ($(window).height() / 2) && (pillar5inViewport > ($(window).height() * -1 / 2))) {
+                $('[data-menuanchor="pillar5"]').addClass("active");
+            } else {
+                $('[data-menuanchor="pillar5"]').removeClass("active");
+            }
+
+
+
+        });
+
+    };
+});

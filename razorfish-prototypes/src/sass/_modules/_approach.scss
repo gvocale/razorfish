@@ -1,6 +1,7 @@
 .approach {
-    background-color: darken($black, 10%);
-    color: $white;
+    &__pillars {
+        position: relative;
+    }
     &__card {
         width: 100vw;
         height: 100vh;
@@ -10,17 +11,23 @@
         flex-direction: column;
         align-items: baseline;
         justify-content: flex-end;
-        @include padding-bottom;
+        @include padding-bottom(1.5);
         @include padding-top;
         @include grid-padding;
         .divider {
             margin-bottom: 0.4em;
+            color: lighten($primary, 10%);
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+        .divider.approach__h1 {
+            margin-bottom: 0.3em;
+            width: 0.7em;
+            background-color: $white;
+            opacity: 0.5;
         }
         &:first-of-type {
-            .divider {
-                background-color: $white;
-                opacity: 0.5;
-            }
+            @include padding-bottom(1);
             &:before {
                 content: "";
                 position: absolute;
@@ -32,6 +39,7 @@
                 transform: translateY(0) rotate(-45deg);
                 transition: transform 0.1s 0s $bezier;
                 animation: 1s bounce-left infinite;
+                z-index: 1;
             }
             &:after {
                 content: "";
@@ -44,6 +52,7 @@
                 transform: translateY(0) rotate(45deg);
                 transition: transform 0.1s 0s $bezier;
                 animation: 1s bounce-right infinite;
+                z-index: 1;
             }
         }
     }
@@ -56,18 +65,11 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1;
         video {
             min-width: 100%;
             min-height: 100%;
             overflow: hidden;
         }
-    }
-    .divider {
-        margin-bottom: 0.75em;
-        transform: scaleX(0);
-        transform-origin: left;
-        color: lighten($primary, 10%);
     }
     .button {
         @include margin-top(0.5);
@@ -82,6 +84,7 @@
         color: $white;
         text-align: left;
         @include component-padding;
+        z-index: 1;
     }
     &__h1 {
         @include ligatures;
@@ -90,7 +93,7 @@
         line-height: 0.8;
         letter-spacing: $spacing-serif-tight;
         font-weight: 700;
-        margin-bottom: 0.3em;
+        margin-bottom: 0.5em;
         max-width: 8em;
         opacity: 0.5;
         b {
@@ -170,7 +173,7 @@
         line-height: $title-sans;
         letter-spacing: $spacing-sans;
         margin-bottom: 1em;
-        max-width: 32em;
+        max-width: 35em;
         font-size: $scale04;
         transform: translateY(50%);
         opacity: 0;
@@ -189,11 +192,18 @@
         @include grid-padding;
         @include padding-top;
         @include padding-bottom;
-        color: $white;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background-color: darken($black, 10%);
+        .divider {
+            margin-bottom: 0.8em;
+        }
         &__text-container {
             width: 100%;
             text-align: center;
@@ -282,27 +292,24 @@
             }
         }
     }
-}
-
-#approach__shrink {
-    transition: all 0.1s 0s $bezier;
-    transform-origin: top;
-    transform: scale(1);
-    box-shadow: 0 1em 4em darken($black, 20%);
-    &.shrink {
-        transition: all 0.2s 0s $bezier;
-        transform: scale(0.9);
-    }
-}
-
-#approach__shrink--far {
-    transition: all 0.1s 0s $bezier;
-    transform-origin: bottom;
-    transform: scale(1);
-    z-index: 1;
-    &.shrink {
-        transition: all 0.2s 0s $bezier;
-        transform: scale(0.9);
+    &__shrinking-area {
+        transition: transform 0.2s 0s ease;
+        background-color: darken($black, 10%);
+        color: $white;
+        z-index: 1;
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 90%;
+            height: 100%;
+            margin-left: 5%;
+            box-shadow: 0 0 10em 0 darken($black, 20%);
+            z-index: 0;
+        }
+        &.shrink {
+            transform: scale(0.9) translateY(5%);
+        }
     }
 }
 
@@ -353,6 +360,7 @@
     left: 0;
     color: $white;
     z-index: 10;
+    transition: transform 0.2s 0s ease;
     @include grid-padding;
     ul {
         @include component-padding;
@@ -390,6 +398,12 @@
                 transition: padding-bottom 0.2s 0s ease, box-shadow 0.1s 0.1s ease, opacity 0.1s 0.1s ease;
             }
         }
+    }
+    &.hide {
+        transform: translateY(100%);
+    }
+    &.absolute {
+        position: absolute;
     }
 }
 
