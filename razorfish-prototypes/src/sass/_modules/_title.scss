@@ -13,21 +13,14 @@
         margin-bottom: 1rem;
     }
     &__text-container {
+        @include grid-padding;
         width: 100%;
-        padding-left: 10vw;
-        padding-right: 10vw;
         height: 35vh;
         @media screen and ($md) {
             height: 30vh;
         }
         @media screen and ($lg) {
             height: 40vh;
-            padding-left: 5vw;
-            padding-right: 5vw;
-        }
-        @media screen and ($xl) {
-            padding-left: 10vw;
-            padding-right: 10vw;
         }
         position: fixed;
         display: flex;
@@ -44,6 +37,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         align-items: baseline;
+        @include component-padding;
     }
     &__title {
         @include ligatures;

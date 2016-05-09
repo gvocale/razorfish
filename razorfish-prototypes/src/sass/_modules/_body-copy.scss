@@ -20,6 +20,11 @@
         margin-left: auto;
         margin-right: auto;
         @media only screen and ($lg) {
+            width: calc(100% / 12 * 8);
+            margin-left: calc(100% / 12 * 2);
+            margin-right: calc(100% / 12 * 2);
+        }
+        @media only screen and ($xl) {
             width: calc(100% / 12 * 6);
             margin-left: calc(100% / 12 * 3);
             margin-right: calc(100% / 12 * 3);
@@ -48,7 +53,9 @@
         }
     }
     .contact-info + .body-copy__container {
-        margin-left: 0;
+        @media screen and ($xl) {
+            margin-left: 0;
+        }
     }
     &__flexible {
         width: 100%;
