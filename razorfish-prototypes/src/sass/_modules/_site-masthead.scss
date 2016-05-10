@@ -30,8 +30,13 @@
     z-index: 1000;
     transition: transform 0.1s 0s ease, background-color 0.2s 0.0s ease;
     background-color: rgba($white, 0);
-    padding-top: 1em;
-    padding-bottom: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    top: 0;
+    @media screen and ($md) {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
     &.white {
         color: $white;
     }
@@ -46,6 +51,7 @@
         transform: translateY(-100%);
         transition: transform 0.3s ease 0.1s, background-color 0.2s 0.1s ease;
     }
+    &__checkbox {}
     &_before {
         content: "";
         position: absolute;
@@ -109,6 +115,10 @@
         margin: 0;
         z-index: 1000;
         overflow: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         &:focus {
             outline: none;
         }
@@ -119,8 +129,8 @@
             height: 4px;
             display: block;
             position: relative;
-            top: 50%;
-            transform: translateY(50%);
+            // top: 50%;
+            // transform: translateY(50%);
             transition: all 0.1s 0s ease-in;
         }
         .hamburger-inner,

@@ -612,22 +612,27 @@ $(function() {
 
     // Footer: navigation hides when footer in viewport
 
-    var footer = document.getElementsByClassName('footer')[0];
-
-    $(window).bind("load resize scroll", function(e) { // refresh on load and resize
 
 
-        var footerIsInViewport = footer.getBoundingClientRect().top;
+    var footer = document.getElementsByClassName('footer');
 
-        if (footerIsInViewport <= $(window).height()) {
-            $(".site-masthead").addClass("important-hiding");
+    if (footer.length > 0) {
 
-        } else {
-            $(".site-masthead").removeClass("important-hiding");
-        }
+        $(window).bind("load resize scroll", function(e) { // refresh on load and resize
 
 
-    });
+            var footerIsInViewport = footer.getBoundingClientRect().top;
+
+            if (footerIsInViewport <= $(window).height()) {
+                $(".site-masthead").addClass("important-hiding");
+
+            } else {
+                $(".site-masthead").removeClass("important-hiding");
+            }
+
+
+        });
+    }
 
 
     // Navigation: on open give random delay to each link
@@ -662,6 +667,33 @@ $(function() {
     });
 
 
+    // Make selected option in Select uppercase
+
+    // $(".select").each(function() {
+    //     $(this).change(function() {
+    //         $(this).find("option").text(function(i, text) {
+    //             return $(this).is(":selected") ? text.toUpperCase() : text.toLowerCase()
+    //         });
+    //     }).trigger("change");
+    // });
+
+    //Function to capitalise first character for strings
+
+    // On load change already selected option to uppercase
+    $('.select').each(function() {
+        $(this).children(':selected').text($(this).children(':selected').text().toUpperCase());
+    });
+
+    // On select change selected option to uppercase, not selected to lowercase
+    $('.select').change(function() {
+        $(this).children(':selected').text($(this).children(':selected').text().toUpperCase());
+
+        $(this).children(':not(:selected)').each(function() {
+            $(this).text($(this).text().toLowerCase());
+
+        });
+
+    });
 
     // Approach page
 
