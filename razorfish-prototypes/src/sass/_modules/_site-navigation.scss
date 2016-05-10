@@ -8,8 +8,23 @@
         z-index: 200;
         visibility: hidden;
         height: 0px;
-        transition: visibility 0s 0.2s linear;
+        transition: visibility 0s 0s linear;
         color: $black;
+        &.visible {
+            visibility: visible;
+            height: 100%;
+            transition: visibility 0s 0s linear;
+        }
+        &.open {
+            .site-navigation__container {
+                opacity: 1;
+                transition: opacity 0.2s 0s ease;
+            }
+            .site-navigation__link-container {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
     }
     &__scroll {
         position: relative;
@@ -33,12 +48,15 @@
         justify-content: center;
         background-color: $white;
         opacity: 0;
-        transition: opacity 0.2s 0s ease-in-out;
+        transition: opacity 0.2s 0s ease;
     }
     &__link-container {
         opacity: 0;
         transform: translateY(-50%);
-        transition: all 0s linear 0s;
+        // transition: all 0s linear 0s;
+        transition-timing-function: ease;
+        transition-property: all;
+        transition-duration: 0.1s;
         &:after {
             display: inline;
             content: "/";
@@ -117,35 +135,5 @@
         .site-navigation__link-container {
             margin-bottom: 0.5em;
         }
-    }
-}
-
-@for $i from 1 through 20 {
-    .site-navigation__link-container:nth-of-type(#{$i}) {
-        // transition-delay: calc(0.2s + (0.025s * #{$i}));
-        transition-delay: calc(0s * (0.1 * #{random(25)}));
-        transition-duration: calc(0.05s * (0.1 * #{random(25)}));
-    }
-}
-
-#site-masthead__checkbox:checked ~ .site-navigation__overlay {
-    visibility: visible;
-    height: 100%;
-    transition: visibility 0s 0s linear;
-    .site-navigation__link-container {
-        opacity: 1;
-        transform: translateY(0%);
-        transition-timing-function: $bezier;
-        transition-property: all;
-        @for $i from 1 through 20 {
-            &:nth-of-type(#{$i}) {
-                // transition-delay: calc(0.2s + (0.025s * #{$i}));
-                transition-delay: calc(0.2s * (0.1 * #{random(25)}));
-                transition-duration: calc(0.05s * (0.1 * #{random(25)}));
-            }
-        }
-    }
-    .site-navigation__container {
-        opacity: 1;
     }
 }

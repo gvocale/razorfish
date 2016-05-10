@@ -1,6 +1,22 @@
 #site-masthead__checkbox {
     appearance: none;
     display: none;
+    &:checked ~ .site-masthead {
+        .hamburger-inner {
+            transform: rotate(225deg);
+            transition: transform 0.3s 0.14s $bezier;
+            &:before {
+                transform: translateY(0px);
+                opacity: 0;
+                transition: transform 0.3s 0.14s $bezier, opacity 0.3s 0.14s $bezier;
+                ;
+            }
+            &:after {
+                transform: translateY(0px) rotate(-90deg);
+                transition: transform 0.3s 0.14s $bezier;
+            }
+        }
+    }
 }
 
 .site-masthead {
@@ -143,23 +159,6 @@
                     transform: translateY(12px);
                 }
             }
-        }
-    }
-}
-
-#site-masthead__checkbox:checked ~ .site-masthead {
-    .hamburger-inner {
-        transform: rotate(225deg);
-        transition: transform 0.3s 0.14s $bezier;
-        &:before {
-            transform: translateY(0px);
-            opacity: 0;
-            transition: transform 0.3s 0.14s $bezier, opacity 0.3s 0.14s $bezier;
-            ;
-        }
-        &:after {
-            transform: translateY(0px) rotate(-90deg);
-            transition: transform 0.3s 0.14s $bezier;
         }
     }
 }

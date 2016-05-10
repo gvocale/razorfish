@@ -341,7 +341,7 @@ $(function() {
         var height = simpleTitle.outerHeight(true); // find height of .simple-title
 
         var difference = (height - $(window).scrollTop());
-        
+
         $(".simple-title__text-container").css({ "-webkit-clip-path": "polygon(0 0, 100% 0, 100% " + difference + "px, 0 " + difference + "px)" });
 
     });
@@ -617,17 +617,49 @@ $(function() {
     $(window).bind("load resize scroll", function(e) { // refresh on load and resize
 
 
-            var footerIsInViewport = footer.getBoundingClientRect().top;
-            
-            if (footerIsInViewport <= $(window).height()) {
-                $(".site-masthead").addClass("important-hiding");
-            } else {
-                $(".site-masthead").removeClass("important-hiding");
-            }
+        var footerIsInViewport = footer.getBoundingClientRect().top;
+
+        if (footerIsInViewport <= $(window).height()) {
+            $(".site-masthead").addClass("important-hiding");
+
+        } else {
+            $(".site-masthead").removeClass("important-hiding");
+        }
 
 
     });
 
+
+    // Navigation: on open give random delay to each link
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+
+
+    $("#site-masthead__checkbox").click(function() {
+
+        if ($(this).is(':checked')) {
+            $(".site-navigation__overlay").addClass("visible");
+            setTimeout(function() {
+                $(".site-navigation__overlay").addClass("open");
+            }, 10);
+            $('.site-navigation__link-container').each(function() {
+                $(this).css({ 'transition-delay': getRandomInt(1, 10) * 0.025 + 0.1 + "s" });
+
+            });
+            console.log("open navigation");
+
+        } else {
+            console.log("close navigation");
+            $(".site-navigation__overlay").removeClass("open");
+            setTimeout(function() {
+                $(".site-navigation__overlay").removeClass("visible");
+            }, 210);
+        }
+
+    });
 
 
 
