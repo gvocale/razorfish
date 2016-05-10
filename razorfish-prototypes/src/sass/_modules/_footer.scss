@@ -4,6 +4,107 @@
     align-items: center;
     justify-content: center;
     @include grid-padding;
+    @include padding-top();
+    @include padding-bottom();
+    font-size: $scale05;
+    @media only screen and ($md) {
+        font-size: $scale05;
+    }
+    @media only screen and ($lg) {
+        font-size: $scale06;
+    }
+    @media only screen and ($xxl) {
+        font-size: $scale07;
+    }
+    &__logo {
+        height: 1em;
+        margin-bottom: 2em;
+        fill: currentColor;
+        @media only screen and ($lg) {
+            margin-bottom: 1.8em;
+        }
+        @media only screen and ($xxl) {
+            margin-bottom: 1.5em;
+        }
+    }
+    .divider {
+        width: 1em;
+        margin-bottom: 1em;
+    }
+    .social-share__group {
+        @include component-padding;
+        margin-bottom: 1em;
+    }
+    &__copyrights {
+        @include component-padding;
+        font-family: $sans;
+        font-size: $scale03;
+        letter-spacing: $spacing-sans-large;
+        line-height: $title-sans;
+        color: currentColor;
+        opacity: 0.5;
+        text-align: center;
+        @media only screen and ($xxl) {
+            font-size: $scale04;
+        }
+        &--legal {
+            display: block;
+            margin-bottom: 1em;
+            @media screen and ($md) {
+                display: inline-block;
+                margin-bottom: 0em;
+            }
+        }
+        .link--underline {
+            margin-left: 2.2em;
+            &:hover {
+                color: currentColor;
+            }
+            &:before {
+                background-color: currentColor;
+                opacity: 0.5;
+            }
+            &:first-of-type {
+                margin-left: 0;
+                &:after {
+                    display: none;
+                }
+            }
+            &:last-of-type {
+                margin-right: 0;
+            }
+            @media only screen and ($md) {
+                margin-left: 2.2em;
+                &:first-of-type {
+                    margin-left: 2.2em;
+                    &:after {
+                        display: inline;
+                    }
+                }
+                &:last-of-type {
+                    margin-right: 2.2em;
+                }
+            }
+            &:after {
+                content: "·";
+                position: absolute;
+                display: inline-block;
+                margin-left: 1em;
+                margin-right: 1em;
+                left: -2.2em;
+                color: inherit;
+            }
+        }
+    }
+}
+
+.footer--v2 {
+    // deprecated
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include grid-padding;
     @include padding-top(0.5);
     @include padding-bottom(0.75);
     @media screen and ($lg) {
@@ -101,10 +202,10 @@
     }
     &--dark {
         color: $white;
-        .footer__logo-razorfish {
+        .footer--v2__logo-razorfish {
             @include logo-razorfish--white;
         }
-        .footer__copyrights {
+        .footer--v2__copyrights {
             opacity: 0.3;
         }
     }
