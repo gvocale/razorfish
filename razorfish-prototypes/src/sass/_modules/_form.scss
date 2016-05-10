@@ -39,6 +39,9 @@
                 .form__textarea ~ .form__placeholder {
                     opacity: 0.5;
                 }
+                .form__placeholder[for="form__textarea"] {
+                    opacity: 0.2;
+                }
             }
         }
         &.error {
@@ -93,9 +96,15 @@
         }
         &:focus ~ .form__placeholder {
             @include form-placeholder-up;
+            .form__attachment--placeholder--optional {
+                opacity: 0;
+            }
         }
         &.filled ~ .form__placeholder {
             @include form-placeholder-up;
+            .form__attachment--placeholder--optional {
+                opacity: 0;
+            }
         }
         &.filled ~ .form__border {
             opacity: 1;
@@ -321,6 +330,7 @@
             &--optional {
                 margin-left: 0.5em;
                 font-size: $scale03;
+                transition: all 0.2s 0s ease-in-out;
                 @media screen and ($xxl) {
                     font-size: $scale04;
                 }

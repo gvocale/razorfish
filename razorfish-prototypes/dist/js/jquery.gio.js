@@ -614,7 +614,7 @@ $(function() {
 
 
 
-    var footer = document.getElementsByClassName('footer');
+    var footer = document.getElementsByClassName('footer')[0];
 
     if (footer.length > 0) {
 
