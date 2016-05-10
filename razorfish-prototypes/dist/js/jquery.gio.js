@@ -341,11 +341,9 @@ $(function() {
         var height = simpleTitle.outerHeight(true); // find height of .simple-title
 
         var difference = (height - $(window).scrollTop());
+        
+        $(".simple-title__text-container").css({ "-webkit-clip-path": "polygon(0 0, 100% 0, 100% " + difference + "px, 0 " + difference + "px)" });
 
-        if (difference >= 0) {
-            console.log("simple title clip path " + difference);
-            $(".simple-title__text-container").css({ "-webkit-clip-path": "polygon(0 0, 100% 0, 100% " + difference + "px, 0 " + difference + "px)" });
-        }
     });
 
 
@@ -612,6 +610,27 @@ $(function() {
     });
 
 
+    // Footer: navigation hides when footer in viewport
+
+    // var siteMasthead = document.getElementsByClassName('site-masthead')[0];
+
+    // $(window).bind("load resize scroll", function(e) { // refresh on load and resize
+
+
+    //         var siteMastheadInViewport = siteMasthead.getBoundingClientRect().top;
+    //         // console.log(pillar1inViewport);
+    //         if (siteMastheadInViewport <= $(window).height()) {
+    //             $(".site-masthead").addClass("bla");
+    //         } else {
+    //             $(".site-masthead").removeClass("bla");
+    //         }
+
+
+    // });
+
+
+
+
     // Approach page
 
     if ($("body").hasClass("approach")) {
@@ -696,4 +715,8 @@ $(function() {
         });
 
     };
+
+
+
+
 });
