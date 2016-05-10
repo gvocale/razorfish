@@ -612,21 +612,21 @@ $(function() {
 
     // Footer: navigation hides when footer in viewport
 
-    // var siteMasthead = document.getElementsByClassName('site-masthead')[0];
+    var footer = document.getElementsByClassName('footer')[0];
 
-    // $(window).bind("load resize scroll", function(e) { // refresh on load and resize
-
-
-    //         var siteMastheadInViewport = siteMasthead.getBoundingClientRect().top;
-    //         // console.log(pillar1inViewport);
-    //         if (siteMastheadInViewport <= $(window).height()) {
-    //             $(".site-masthead").addClass("bla");
-    //         } else {
-    //             $(".site-masthead").removeClass("bla");
-    //         }
+    $(window).bind("load resize scroll", function(e) { // refresh on load and resize
 
 
-    // });
+            var footerIsInViewport = footer.getBoundingClientRect().top;
+            
+            if (footerIsInViewport <= $(window).height()) {
+                $(".site-masthead").addClass("important-hiding");
+            } else {
+                $(".site-masthead").removeClass("important-hiding");
+            }
+
+
+    });
 
 
 
