@@ -8264,8 +8264,8 @@ body {
 }
 /* line 154, ../../src/sass/_modules/_hero.scss */
 .hero__background.visible {
-  -webkit-animation: 20s ease-out 0.5s forwards zoom;
-          animation: 20s ease-out 0.5s forwards zoom;
+  -webkit-animation: 20s ease-out 0.5s forwards hero_zoom;
+          animation: 20s ease-out 0.5s forwards hero_zoom;
 }
 /* line 158, ../../src/sass/_modules/_hero.scss */
 .hero--profile {
@@ -8665,6 +8665,35 @@ body {
             transform: translateY(0) rotate(45deg);
   }
 }
+/* line 387, ../../src/sass/_modules/_hero.scss */
+.hero__text-container.away > * {
+  -webkit-transform: translate(0, 100px);
+          transform: translate(0, 100px);
+  opacity: 0;
+}
+/* line 391, ../../src/sass/_modules/_hero.scss */
+.hero__text-container.away.fly-in > * {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
+  transition: all 0.3s 0s ease-out;
+}
+/* line 395, ../../src/sass/_modules/_hero.scss */
+.hero__text-container.away.fly-in > *:nth-child(2) {
+  transition-delay: 0.3s;
+  transition-duration: 0.3s;
+}
+/* line 399, ../../src/sass/_modules/_hero.scss */
+.hero__text-container.away.fly-in > *:nth-child(3) {
+  transition-delay: 0.4s;
+  transition-duration: 0.25s;
+}
+/* line 403, ../../src/sass/_modules/_hero.scss */
+.hero__text-container.away.fly-in > *:nth-child(4) {
+  transition-delay: 0.5s;
+  transition-duration: 0.2s;
+}
+
 /* line 1, ../../src/sass/_modules/_image.scss */
 .image {
   width: 100vw;

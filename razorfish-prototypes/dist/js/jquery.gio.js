@@ -666,16 +666,11 @@ $(function() {
     });
 
 
-    // Feed: add class .animate to each .feed__item
+    // Feed: animation on fade in
 
     if (document.querySelectorAll('.feed__item')) {
 
         var feedItem = document.querySelectorAll('.feed__item');
-
-        // Add class .away to all .feed__item
-        [].forEach.call(feedItem, function(div) {
-            div.classList.add('away');
-        });
 
         // Feed: counts number of .feed__item and assign a progressive delay for each
         for (var i = 0; i < feedItem.length; ++i) {
@@ -684,7 +679,7 @@ $(function() {
         }
 
         // If .feed__item is below the viewport add class .away and remove class .fly-in
-        function feedClass() {
+        function feedItemInViewport() {
             [].forEach.call(feedItem, function(div) {
                 var rect = div.getBoundingClientRect();
                 if ((rect.top >= (window.innerHeight / 8 * -1)) && (rect.top <= window.innerHeight)) {
@@ -698,9 +693,89 @@ $(function() {
         };
 
         // Bind it on scroll, load and resize.
-        window.addEventListener('resize', feedClass);
-        window.addEventListener('scroll', feedClass);
-        window.addEventListener('load', feedClass);
+        window.addEventListener('resize', feedItemInViewport);
+        window.addEventListener('scroll', feedItemInViewport);
+        window.addEventListener('load', feedItemInViewport);
+
+    }
+
+
+    // Hero: animation on fade in
+
+    if (document.querySelectorAll('.hero')) {
+
+        var heros = document.querySelectorAll('.hero');
+
+        // If .hero is below the viewport add class .away and remove class .fly-in
+        function heroInViewport() {
+            [].forEach.call(heros, function(div) {
+                var rect = div.getBoundingClientRect();
+                if ((rect.top >= (window.innerHeight / 8 * -1)) && (rect.top <= window.innerHeight)) {
+                    div.classList.add('fly-in');
+                } else if ((rect.top > window.innerHeight) || ((rect.top - window.innerHeight) >= 0)) {
+                    div.classList.add('away');
+                    div.classList.remove("fly-in");
+                }
+            });
+        };
+
+        // Bind it on scroll, load and resize.
+        window.addEventListener('resize', heroInViewport);
+        window.addEventListener('scroll', heroInViewport);
+        window.addEventListener('load', heroInViewport);
+
+
+        // Hero background animation
+
+        var heroBackground = document.querySelectorAll('.hero__background');
+
+        // If .hero is below the viewport add class .away and remove class .fly-in
+        function heroBackgroundInViewport() {
+            [].forEach.call(heroBackground, function(div) {
+                var rect = div.getBoundingClientRect();
+                if ((rect.top > 0) && (rect.top <= window.innerHeight)) {
+                    console.log('true');
+                    percentage = (((rect.top / window.innerHeight) / 2) + 1);
+                    // If it has an image sub layer (so it is an svg with a gradient map)
+                    if (div.querySelector('image')) {
+                        div.querySelector("image").style.transform = "scale(" + percentage + ")";
+                    } else {
+                        div.style.transform = "scale(" + percentage + ")";
+                    }
+                } else {
+                    console.log('false');
+                }
+            });
+        };
+
+        // Bind it on scroll, load and resize.
+        window.addEventListener('resize', heroBackgroundInViewport);
+        window.addEventListener('scroll', heroBackgroundInViewport);
+        window.addEventListener('load', heroBackgroundInViewport);
+
+        // Hero text container animation
+
+        var heroTextContainer = document.querySelectorAll('.hero__text-container');
+
+        // If .hero is below the viewport add class .away and remove class .fly-in
+        function heroTextContainerInViewport() {
+            [].forEach.call(heroTextContainer, function(div) {
+                var rect = div.getBoundingClientRect();
+                if ((rect.top >= (window.innerHeight / 8 * -1)) && (rect.top <= window.innerHeight)) {
+                    div.classList.add('fly-in');
+                } else if ((rect.top > window.innerHeight) || ((rect.top - window.innerHeight) >= 0)) {
+                    div.classList.add('away');
+                    div.classList.remove("fly-in");
+                }
+            });
+        };
+
+        // Bind it on scroll, load and resize.
+        window.addEventListener('resize', heroTextContainerInViewport);
+        window.addEventListener('scroll', heroTextContainerInViewport);
+        window.addEventListener('load', heroTextContainerInViewport);
+
+
 
     }
 

@@ -152,7 +152,7 @@
             height: 100%;
         }
         &.visible {
-            animation: 20s ease-out 0.5s forwards zoom;
+            animation: 20s ease-out 0.5s forwards hero_zoom;
         }
     }
     &--profile {
@@ -379,5 +379,30 @@
     }
     100% {
         transform: translateY(0) rotate(45deg);
+    }
+}
+
+// Hero Animations
+.hero__text-container {
+    &.away > * {
+        transform: translate(0, 100px);
+        opacity: 0;
+    }
+    &.away.fly-in > * {
+        transform: translate(0, 0);
+        opacity: 1;
+        transition: all 0.3s 0s ease-out;
+        &:nth-child(2) {
+            transition-delay: 0.3s;
+            transition-duration: 0.3s;
+        }
+        &:nth-child(3) {
+            transition-delay: 0.4s;
+            transition-duration: 0.25s;
+        }
+        &:nth-child(4) {
+            transition-delay: 0.5s;
+            transition-duration: 0.2s;
+        }
     }
 }
