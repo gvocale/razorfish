@@ -134,9 +134,7 @@ $(function() {
 
 
 
-    // Feed: add class .animate to each .feed__item
 
-    $('.feed__item').addClass('animate');
 
 
 
@@ -610,29 +608,27 @@ $(function() {
     });
 
 
-    // Footer: navigation hides when footer in viewport
+    // Footer: navigation hides when footer is in viewport
 
+    if (document.querySelector('.footer')) {
+        var footer = document.querySelector('.footer');
+        var siteMasthead = document.querySelector('.site-masthead');
 
-    if (document.querySelector('.footer') !== null) {
-        var footer = document.getElementsByClassName('footer')[0];
+        function footerInViewport() {
+            var rect = footer.getBoundingClientRect();
+            if (rect.top <= window.innerHeight) {
+                console.log("footer in viewport");
+                siteMasthead.classList.add('important-hiding');
+            } else {
+                siteMasthead.classList.remove('important-hiding');
+            }
+        };
 
-        if (footer.length > 0) {
+        // Bind it on scroll, load and resize.
+        window.addEventListener('resize', footerInViewport);
+        window.addEventListener('scroll', footerInViewport);
+        window.addEventListener('load', footerInViewport);
 
-            $(window).bind("load resize scroll", function(e) { // refresh on load and resize
-
-
-                var footerIsInViewport = footer.getBoundingClientRect().top;
-
-                if (footerIsInViewport <= $(window).height()) {
-                    $(".site-masthead").addClass("important-hiding");
-
-                } else {
-                    $(".site-masthead").removeClass("important-hiding");
-                }
-
-
-            });
-        }
     }
 
 
@@ -670,29 +666,54 @@ $(function() {
     });
 
 
+    // Feed: add class .animate to each .feed__item
 
-    // Feed: counts number of .feed__item and assign a progressive delay for each
+    if (document.querySelectorAll('.feed__item')) {
 
-    if (document.getElementsByClassName('feed__item')) {
-        var feedItem = document.getElementsByClassName('feed__item');
+        var feedItem = document.querySelectorAll('.feed__item');
+
+        // Add class .away to all .feed__item
+        [].forEach.call(feedItem, function(div) {
+            div.classList.add('away');
+        });
+
+        // Feed: counts number of .feed__item and assign a progressive delay for each
         for (var i = 0; i < feedItem.length; ++i) {
             var item = feedItem[i];
-            item.style.animationDelay = i * 0.05 + 0.15 + "s";
+            item.style.animationDelay = i * 0.05 + 0.2 + "s";
         }
-    }
 
+        // If .feed__item is below the viewport add class .away and remove class .fly-in
+        function feedClass() {
+            [].forEach.call(feedItem, function(div) {
+                var rect = div.getBoundingClientRect();
+                if ((rect.top >= (window.innerHeight / 8 * -1)) && (rect.top <= window.innerHeight)) {
+                    console.log("adding class");
+                    div.classList.add('fly-in');
+                } else if (rect.top > window.innerHeight) {
+                    div.classList.add('away');
+                    div.classList.remove("fly-in");
+                }
+            });
+        };
+
+        // Bind it on scroll, load and resize.
+        window.addEventListener('resize', feedClass);
+        window.addEventListener('scroll', feedClass);
+        window.addEventListener('load', feedClass);
+
+    }
 
 
     // Hero:first-of-type: if scrolled more then 1/6 of viewport it hides the bouncy arrow
 
-    if (document.getElementsByClassName('hero')) {
+    if (document.getElementsByClassName('hero')[0]) {
         var hero = document.getElementsByClassName('hero')[0];
         document.addEventListener(
             'scroll',
             function(event) {
                 // console.log("scrolling");
                 var heroTop = hero.getBoundingClientRect().top;
-                var heroBottom = hero.getBoundingClientRect().bottom;
                 if ((heroTop >= (window.innerHeight / 6 * -1)) && (heroTop <= window.innerHeight)) {
                     // console.log("half in viewport");
                     hero.classList.remove('hide-arrow');
@@ -707,13 +728,12 @@ $(function() {
 
     // solutions__card:first-of-type: if scrolled more then 1/6 of viewport it hides the bouncy arrow
 
-    if (document.getElementsByClassName('solutions__card')) {
+    if (document.getElementsByClassName('solutions__card')[0]) {
         var solutionsCard = document.getElementsByClassName('solutions__card')[0];
         document.addEventListener(
             'scroll',
             function(event) {
                 var solutionsCardTop = solutionsCard.getBoundingClientRect().top;
-                var solutionsCardoBottom = solutionsCard.getBoundingClientRect().bottom;
                 if ((solutionsCardTop >= (window.innerHeight / 6 * -1)) && (solutionsCardTop <= window.innerHeight)) {
                     solutionsCard.classList.remove('hide-arrow');
                 } else {
@@ -723,6 +743,9 @@ $(function() {
             true // Capture event
         );
     }
+
+
+
 
 
     // Make selected option in Select uppercase
