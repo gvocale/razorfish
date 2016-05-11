@@ -193,7 +193,7 @@
         @include padding-top;
         @include padding-bottom;
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
         overflow: hidden;
         position: relative;
         display: flex;
@@ -265,7 +265,6 @@
             @include ligatures;
             font-family: $serif;
             font-style: italic;
-            font-size: $scale04;
             line-height: 1.5;
             letter-spacing: $spacing-serif-large;
             font-weight: 700;
@@ -278,16 +277,13 @@
                     color: $white;
                 }
             }
-            @media only screen and ($md) {
-                font-size: $scale05;
-            }
-            @media only screen and ($xxl) {
-                font-size: $scale06;
-            }
             &--container {
                 margin-bottom: 2em;
                 margin-left: 1em;
                 margin-right: 1em;
+                @media screen and ($md) {
+                    margin-bottom: 1em;
+                }
             }
             &--group {
                 width: 100%;
@@ -295,9 +291,15 @@
                 flex-direction: column;
                 flex-wrap: nowrap;
                 justify-content: center;
-                @media screen and ($md) {
+                max-width: 40em;
+                font-size: $scale04;
+                @media only screen and ($md) {
+                    font-size: $scale05;
                     flex-direction: row;
                     flex-wrap: wrap;
+                }
+                @media only screen and ($xxl) {
+                    font-size: $scale06;
                 }
             }
         }
