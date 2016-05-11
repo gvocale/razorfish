@@ -1,4 +1,4 @@
-.approach {
+.solutions {
     &__pillars {
         position: relative;
     }
@@ -20,7 +20,7 @@
             transform: scaleX(0);
             transform-origin: left;
         }
-        .divider.approach__h1 {
+        .divider.solutions__h1 {
             margin-bottom: 0.3em;
             width: 0.7em;
             background-color: $white;
@@ -37,7 +37,7 @@
                 bottom: 3vmin;
                 right: calc(50% + 0.2rem);
                 transform: translateY(0) rotate(-45deg);
-                transition: transform 0.1s 0s $bezier;
+                transition: all 0.3s 0s ease;
                 animation: 1s bounce-left infinite;
                 z-index: 1;
             }
@@ -50,9 +50,19 @@
                 bottom: 3vmin;
                 left: calc(50% + 0.2rem);
                 transform: translateY(0) rotate(45deg);
-                transition: transform 0.1s 0s $bezier;
+                transition: all 0.3s 0s ease;
                 animation: 1s bounce-right infinite;
                 z-index: 1;
+            }
+        }
+        &.hide-arrow {
+            &:first-of-type:not(:last-child) {
+                &:before {
+                    bottom: -3vmin;
+                }
+                &:after {
+                    bottom: -3vmin;
+                }
             }
         }
     }
@@ -326,7 +336,7 @@
     }
 }
 
-.approach__text-container.visible {
+.solutions__text-container.visible {
     b {
         transform: translateY(0%);
         opacity: 1;
@@ -341,7 +351,7 @@
             // transition-duration: calc(0.05s * (0.1 * #{random(25)}));
         }
     }
-    .approach__subheadline {
+    .solutions__subheadline {
         transform: translateY(0%);
         opacity: 1;
         transition-duration: 0.2s;
@@ -349,7 +359,7 @@
         transition-property: all;
         transition-timing-function: $bezier;
     }
-    .approach__link {
+    .solutions__link {
         transform: translateY(0%);
         opacity: 1;
         transition-duration: 0.2s;
@@ -366,7 +376,7 @@
     }
 }
 
-#approach__menu {
+#solutions__menu {
     position: fixed;
     right: 0;
     top: 50%;

@@ -406,13 +406,13 @@ $(function() {
     // Approach page - Bottom module (contact0=)
 
     $(window).scroll(function() {
-        if ($(".approach__contact").is(".visible")) {
-            $("#approach__shrink").addClass("shrink");
-            $("#approach__shrink--far").addClass("shrink");
+        if ($(".solutions__contact").is(".visible")) {
+            $("#solutions__shrink").addClass("shrink");
+            $("#solutions__shrink--far").addClass("shrink");
         }
-        if (!$(".approach__contact").is(".visible")) {
-            $("#approach__shrink").removeClass("shrink");
-            $("#approach__shrink--far").removeClass("shrink");
+        if (!$(".solutions__contact").is(".visible")) {
+            $("#solutions__shrink").removeClass("shrink");
+            $("#solutions__shrink--far").removeClass("shrink");
         }
     });
 
@@ -564,7 +564,7 @@ $(function() {
     // if (document.getElementById("fullpage")) {
     //     $('#fullpage').fullpage({
     //         scrollBar: true,
-    //         // menu: '#approach__menu',
+    //         // menu: '#solutions__menu',
     //         verticalCentered: false,
     //         scrollingSpeed: 500,
     //         autoScrolling: true,
@@ -574,11 +574,11 @@ $(function() {
     //         //     console.log("sliding");
     //         //     if ($('body').hasClass("fp-viewing-slide5")) {
     //         //         setTimeout(function() {
-    //         //             $(".approach__menu").addClass("fixed");
+    //         //             $(".solutions__menu").addClass("fixed");
     //         //             console.log("fixed");
     //         //         }, 500);
     //         //     } else {
-    //         //         $(".approach__menu").removeClass("fixed");
+    //         //         $(".solutions__menu").removeClass("fixed");
     //         //         console.log("remove fixed");
     //         //     }
 
@@ -683,7 +683,46 @@ $(function() {
 
 
 
+    // Hero:first-of-type: if scrolled more then 1/6 of viewport it hides the bouncy arrow
 
+    if (document.getElementsByClassName('hero')) {
+        var hero = document.getElementsByClassName('hero')[0];
+        document.addEventListener(
+            'scroll',
+            function(event) {
+                // console.log("scrolling");
+                var heroTop = hero.getBoundingClientRect().top;
+                var heroBottom = hero.getBoundingClientRect().bottom;
+                if ((heroTop >= (window.innerHeight / 6 * -1)) && (heroTop <= window.innerHeight)) {
+                    // console.log("half in viewport");
+                    hero.classList.remove('hide-arrow');
+                } else {
+                    // console.log("half not in viewport");
+                    hero.classList.add('hide-arrow');
+                }
+            },
+            true // Capture event
+        );
+    }
+
+    // solutions__card:first-of-type: if scrolled more then 1/6 of viewport it hides the bouncy arrow
+
+    if (document.getElementsByClassName('solutions__card')) {
+        var solutionsCard = document.getElementsByClassName('solutions__card')[0];
+        document.addEventListener(
+            'scroll',
+            function(event) {
+                var solutionsCardTop = solutionsCard.getBoundingClientRect().top;
+                var solutionsCardoBottom = solutionsCard.getBoundingClientRect().bottom;
+                if ((solutionsCardTop >= (window.innerHeight / 6 * -1)) && (solutionsCardTop <= window.innerHeight)) {
+                    solutionsCard.classList.remove('hide-arrow');
+                } else {
+                    solutionsCard.classList.add('hide-arrow');
+                }
+            },
+            true // Capture event
+        );
+    }
 
 
     // Make selected option in Select uppercase
@@ -717,42 +756,42 @@ $(function() {
     // Approach page
 
     if ($("body").hasClass("approach")) {
-        var pillar1 = document.getElementById('approach__pillar1');
-        var pillar2 = document.getElementById('approach__pillar2');
-        var pillar3 = document.getElementById('approach__pillar3');
-        var pillar4 = document.getElementById('approach__pillar4');
-        var pillar5 = document.getElementById('approach__pillar5');
-        var approachLinks = document.getElementById('approach__links');
-        var approachFooter = document.getElementById('approach__footer');
+        var pillar1 = document.getElementById('solutions__pillar1');
+        var pillar2 = document.getElementById('solutions__pillar2');
+        var pillar3 = document.getElementById('solutions__pillar3');
+        var pillar4 = document.getElementById('solutions__pillar4');
+        var pillar5 = document.getElementById('solutions__pillar5');
+        var approachLinks = document.getElementById('solutions__links');
+        var approachFooter = document.getElementById('solutions__footer');
 
         $(window).bind("load resize scroll", function(e) { // refresh on load and resize
 
-            // Show  approach__menu when pillar1 comes in viewport
+            // Show  solutions__menu when pillar1 comes in viewport
 
             var distanceToTop = pillar1.getBoundingClientRect().top;
             if (distanceToTop <= ($(window).height() / 2)) {
-                $("#approach__menu").removeClass("hide");
+                $("#solutions__menu").removeClass("hide");
             } else {
-                $("#approach__menu").addClass("hide");
+                $("#solutions__menu").addClass("hide");
             }
 
 
-            // If approach__link is in viewport, menu is position absolute
+            // If solutions__link is in viewport, menu is position absolute
 
             var distanceLinkFromTop = approachLinks.getBoundingClientRect().top;
             if (distanceLinkFromTop <= ($(window).height())) {
-                $("#approach__menu").addClass("absolute");
+                $("#solutions__menu").addClass("absolute");
             } else {
-                $("#approach__menu").removeClass("absolute");
+                $("#solutions__menu").removeClass("absolute");
             }
 
-            // If approach__footer is in viewport, shrink page above
+            // If solutions__footer is in viewport, shrink page above
 
             var distanceFooterFromTop = approachFooter.getBoundingClientRect().top;
             if (distanceFooterFromTop <= ($(window).height())) {
-                $(".approach__shrinking-area").addClass("shrink");
+                $(".solutions__shrinking-area").addClass("shrink");
             } else {
-                $(".approach__shrinking-area").removeClass("shrink");
+                $(".solutions__shrinking-area").removeClass("shrink");
             }
 
             // Check which pillar is in viewport and activate navigation link
