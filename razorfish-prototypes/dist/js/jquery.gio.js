@@ -613,26 +613,29 @@ $(function() {
     // Footer: navigation hides when footer in viewport
 
 
+    if (document.querySelector('.footer') !== null) {
+        var footer = document.getElementsByClassName('footer')[0];
 
-    var footer = document.getElementsByClassName('footer')[0];
+        if (footer.length > 0) {
 
-    if (footer.length > 0) {
-
-        $(window).bind("load resize scroll", function(e) { // refresh on load and resize
-
-
-            var footerIsInViewport = footer.getBoundingClientRect().top;
-
-            if (footerIsInViewport <= $(window).height()) {
-                $(".site-masthead").addClass("important-hiding");
-
-            } else {
-                $(".site-masthead").removeClass("important-hiding");
-            }
+            $(window).bind("load resize scroll", function(e) { // refresh on load and resize
 
 
-        });
+                var footerIsInViewport = footer.getBoundingClientRect().top;
+
+                if (footerIsInViewport <= $(window).height()) {
+                    $(".site-masthead").addClass("important-hiding");
+
+                } else {
+                    $(".site-masthead").removeClass("important-hiding");
+                }
+
+
+            });
+        }
     }
+
+
 
 
     // Navigation: on open give random delay to each link
@@ -665,6 +668,22 @@ $(function() {
         }
 
     });
+
+
+
+    // Feed: counts number of .feed__item and assign a progressive delay for each
+
+    if (document.getElementsByClassName('feed__item')) {
+        var feedItem = document.getElementsByClassName('feed__item');
+        for (var i = 0; i < feedItem.length; ++i) {
+            var item = feedItem[i];
+            item.style.animationDelay = i * 0.05 + 0.15 + "s";
+        }
+    }
+
+
+
+
 
 
     // Make selected option in Select uppercase

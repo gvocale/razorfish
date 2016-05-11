@@ -2127,805 +2127,6 @@ body {
   z-index: 1;
 }
 
-/* line 2, ../../src/sass/_modules/_approach.scss */
-.approach__pillars {
-  position: relative;
-}
-/* line 5, ../../src/sass/_modules/_approach.scss */
-.approach__card {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-align-items: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding-bottom: 22.5vmax;
-  padding-top: 15vmax;
-  padding-left: calc(10vw - 1rem);
-  padding-right: calc(10vw - 1rem);
-}
-@media screen and (min-width: 768px) {
-  /* line 5, ../../src/sass/_modules/_approach.scss */
-  .approach__card {
-    padding-bottom: 22.5vmin;
-  }
-}
-@media screen and (min-width: 768px) {
-  /* line 5, ../../src/sass/_modules/_approach.scss */
-  .approach__card {
-    padding-top: 15vmin;
-  }
-}
-/* line 17, ../../src/sass/_modules/_approach.scss */
-.approach__card .divider {
-  margin-bottom: 0.4em;
-  color: #d6f300;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-}
-/* line 23, ../../src/sass/_modules/_approach.scss */
-.approach__card .divider.approach__h1 {
-  margin-bottom: 0.3em;
-  width: 0.7em;
-  background-color: #FFFFFF;
-  opacity: 0.5;
-}
-/* line 29, ../../src/sass/_modules/_approach.scss */
-.approach__card:first-of-type {
-  padding-bottom: 15vmax;
-}
-@media screen and (min-width: 768px) {
-  /* line 29, ../../src/sass/_modules/_approach.scss */
-  .approach__card:first-of-type {
-    padding-bottom: 15vmin;
-  }
-}
-/* line 31, ../../src/sass/_modules/_approach.scss */
-.approach__card:first-of-type:before {
-  content: "";
-  position: absolute;
-  width: 0.1rem;
-  height: 0.75rem;
-  background-color: currentColor;
-  bottom: 3vmin;
-  right: calc(50% + 0.2rem);
-  -webkit-transform: translateY(0) rotate(-45deg);
-          transform: translateY(0) rotate(-45deg);
-  transition: -webkit-transform 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition: transform 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-animation: 1s bounce-left infinite;
-          animation: 1s bounce-left infinite;
-  z-index: 1;
-}
-/* line 44, ../../src/sass/_modules/_approach.scss */
-.approach__card:first-of-type:after {
-  content: "";
-  position: absolute;
-  width: 0.1rem;
-  height: 0.75rem;
-  background-color: currentColor;
-  bottom: 3vmin;
-  left: calc(50% + 0.2rem);
-  -webkit-transform: translateY(0) rotate(45deg);
-          transform: translateY(0) rotate(45deg);
-  transition: -webkit-transform 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition: transform 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -webkit-animation: 1s bounce-right infinite;
-          animation: 1s bounce-right infinite;
-  z-index: 1;
-}
-/* line 59, ../../src/sass/_modules/_approach.scss */
-.approach__video {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-/* line 68, ../../src/sass/_modules/_approach.scss */
-.approach__video video {
-  min-width: 100%;
-  min-height: 100%;
-  overflow: hidden;
-}
-/* line 74, ../../src/sass/_modules/_approach.scss */
-.approach .button {
-  margin-top: 7.5vmax;
-  margin-bottom: 7.5vmax;
-}
-@media screen and (min-width: 768px) {
-  /* line 74, ../../src/sass/_modules/_approach.scss */
-  .approach .button {
-    margin-top: 7.5vmin;
-  }
-}
-@media screen and (min-width: 768px) {
-  /* line 74, ../../src/sass/_modules/_approach.scss */
-  .approach .button {
-    margin-bottom: 7.5vmin;
-  }
-}
-/* line 78, ../../src/sass/_modules/_approach.scss */
-.approach__text-container {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
-  -webkit-align-items: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  color: #FFFFFF;
-  text-align: left;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  z-index: 1;
-}
-/* line 89, ../../src/sass/_modules/_approach.scss */
-.approach__h1 {
-  text-rendering: optimizeLegibility;
-  -webkit-font-variant-ligatures: common-ligatures;
-          font-variant-ligatures: common-ligatures;
-  -webkit-font-feature-settings: "kern";
-          font-feature-settings: "kern";
-  -webkit-font-kerning: normal;
-          font-kerning: normal;
-  font-family: "MillerDisplay", Times, Georgia, serif;
-  font-size: 2.6154rem;
-  line-height: 0.8;
-  letter-spacing: 0;
-  font-weight: 700;
-  margin-bottom: 0.5em;
-  max-width: 8em;
-  opacity: 0.5;
-}
-/* line 99, ../../src/sass/_modules/_approach.scss */
-.approach__h1 b {
-  display: block;
-  -webkit-transform: translateY(50%);
-          transform: translateY(50%);
-  opacity: 0;
-  transition-duration: 0.1s;
-  transition-delay: 0;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-@media only screen and (min-width: 768px) {
-  /* line 89, ../../src/sass/_modules/_approach.scss */
-  .approach__h1 {
-    font-size: 4.2308rem;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  /* line 89, ../../src/sass/_modules/_approach.scss */
-  .approach__h1 {
-    font-size: 5.5385rem;
-  }
-}
-@media only screen and (min-width: 1600px) {
-  /* line 89, ../../src/sass/_modules/_approach.scss */
-  .approach__h1 {
-    font-size: 6.8462rem;
-  }
-}
-/* line 118, ../../src/sass/_modules/_approach.scss */
-.approach__h2 {
-  text-rendering: optimizeLegibility;
-  -webkit-font-variant-ligatures: common-ligatures;
-          font-variant-ligatures: common-ligatures;
-  -webkit-font-feature-settings: "kern";
-          font-feature-settings: "kern";
-  -webkit-font-kerning: normal;
-          font-kerning: normal;
-  font-family: "MillerDisplay", Times, Georgia, serif;
-  font-size: 1.6154rem;
-  line-height: 1.1;
-  letter-spacing: 0;
-  font-weight: 400;
-  margin-bottom: 0.5em;
-  max-width: 14em;
-  opacity: 1;
-}
-/* line 128, ../../src/sass/_modules/_approach.scss */
-.approach__h2 b {
-  display: block;
-  -webkit-transform: translateY(50%);
-          transform: translateY(50%);
-  opacity: 0;
-  transition-duration: 0.1s;
-  transition-delay: 0;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-@media only screen and (min-width: 768px) {
-  /* line 118, ../../src/sass/_modules/_approach.scss */
-  .approach__h2 {
-    font-size: 2.6154rem;
-  }
-}
-@media only screen and (min-width: 992px) {
-  /* line 118, ../../src/sass/_modules/_approach.scss */
-  .approach__h2 {
-    font-size: 2.6154rem;
-  }
-}
-@media only screen and (min-width: 1600px) {
-  /* line 118, ../../src/sass/_modules/_approach.scss */
-  .approach__h2 {
-    font-size: 4.2308rem;
-  }
-}
-/* line 147, ../../src/sass/_modules/_approach.scss */
-.approach__link {
-  text-rendering: optimizeLegibility;
-  -webkit-font-variant-ligatures: common-ligatures;
-          font-variant-ligatures: common-ligatures;
-  -webkit-font-feature-settings: "kern";
-          font-feature-settings: "kern";
-  -webkit-font-kerning: normal;
-          font-kerning: normal;
-  position: relative;
-  padding-right: 0.5em;
-  font-family: "MillerDisplay", Times, Georgia, serif;
-  font-style: italic;
-  font-size: 1rem;
-  line-height: 1.2;
-  letter-spacing: 0.015em;
-  color: #d6f300;
-  font-weight: 700;
-  max-width: 24em;
-  -webkit-transform: translateY(50%);
-          transform: translateY(50%);
-  opacity: 0;
-  transition-duration: 0.1s;
-  transition-delay: 0;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-/* line 51, ../../src/sass/_modules/_mixin.scss */
-.approach__link:before {
-  content: "";
-  width: 11px;
-  height: 2px;
-  display: block;
-  background-color: currentColor;
-  position: absolute;
-  top: 55%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  left: 100%;
-  transition: width 0.1s 0s ease-in-out;
-}
-/* line 64, ../../src/sass/_modules/_mixin.scss */
-.approach__link:after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-style: solid;
-  width: 0;
-  height: 0;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-left: 4px solid currentColor;
-  border-right: 0 solid transparent;
-  position: absolute;
-  display: block;
-  top: 55%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  left: calc(100% + 11px);
-  transition: left 0.1s 0s ease-in-out;
-}
-@media (hover) {
-  /* line 83, ../../src/sass/_modules/_mixin.scss */
-  .approach__link:hover:before {
-    width: 16px;
-  }
-  /* line 86, ../../src/sass/_modules/_mixin.scss */
-  .approach__link:hover:after {
-    left: calc(100% + 16px);
-  }
-}
-@media only screen and (min-width: 768px) {
-  /* line 147, ../../src/sass/_modules/_approach.scss */
-  .approach__link {
-    font-size: 1.3077rem;
-  }
-}
-@media only screen and (min-width: 1600px) {
-  /* line 147, ../../src/sass/_modules/_approach.scss */
-  .approach__link {
-    font-size: 1.6154rem;
-  }
-}
-/* line 171, ../../src/sass/_modules/_approach.scss */
-.approach__subheadline {
-  font-family: "Gotham A", Helvetica, Arial, sans-serif;
-  line-height: 1.4;
-  letter-spacing: 0em;
-  margin-bottom: 1em;
-  max-width: 35em;
-  font-size: 1rem;
-  -webkit-transform: translateY(50%);
-          transform: translateY(50%);
-  opacity: 0;
-  transition-duration: 0.1s;
-  transition-delay: 0;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-@media only screen and (min-width: 768px) {
-  /* line 171, ../../src/sass/_modules/_approach.scss */
-  .approach__subheadline {
-    font-size: 1rem;
-  }
-}
-@media only screen and (min-width: 1600px) {
-  /* line 171, ../../src/sass/_modules/_approach.scss */
-  .approach__subheadline {
-    font-size: 1.3077rem;
-  }
-}
-/* line 191, ../../src/sass/_modules/_approach.scss */
-.approach__contact {
-  padding-left: calc(10vw - 1rem);
-  padding-right: calc(10vw - 1rem);
-  padding-top: 15vmax;
-  padding-bottom: 15vmax;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #1e1e1e;
-}
-@media screen and (min-width: 768px) {
-  /* line 191, ../../src/sass/_modules/_approach.scss */
-  .approach__contact {
-    padding-top: 15vmin;
-  }
-}
-@media screen and (min-width: 768px) {
-  /* line 191, ../../src/sass/_modules/_approach.scss */
-  .approach__contact {
-    padding-bottom: 15vmin;
-  }
-}
-/* line 204, ../../src/sass/_modules/_approach.scss */
-.approach__contact .divider {
-  margin-bottom: 0.8em;
-}
-/* line 207, ../../src/sass/_modules/_approach.scss */
-.approach__contact__text-container {
-  width: 100%;
-  text-align: center;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media screen and (min-width: 768px) {
-  /* line 207, ../../src/sass/_modules/_approach.scss */
-  .approach__contact__text-container {
-    width: calc(100% / 10 * 10);
-  }
-}
-@media screen and (min-width: 1200px) {
-  /* line 207, ../../src/sass/_modules/_approach.scss */
-  .approach__contact__text-container {
-    width: calc(100% / 12 * 10);
-  }
-}
-@media screen and (min-width: 1600px) {
-  /* line 207, ../../src/sass/_modules/_approach.scss */
-  .approach__contact__text-container {
-    width: calc(100% / 12 * 8);
-  }
-}
-/* line 226, ../../src/sass/_modules/_approach.scss */
-.approach__contact__h1 {
-  text-rendering: optimizeLegibility;
-  -webkit-font-variant-ligatures: common-ligatures;
-          font-variant-ligatures: common-ligatures;
-  -webkit-font-feature-settings: "kern";
-          font-feature-settings: "kern";
-  -webkit-font-kerning: normal;
-          font-kerning: normal;
-  font-family: "MillerDisplay", Times, Georgia, serif;
-  font-size: 1.6154rem;
-  line-height: 1;
-  letter-spacing: 0;
-  font-weight: 700;
-  margin-bottom: 0.75em;
-  max-width: 10em;
-}
-@media only screen and (min-width: 768px) {
-  /* line 226, ../../src/sass/_modules/_approach.scss */
-  .approach__contact__h1 {
-    font-size: 2.1154rem;
-    max-width: none;
-  }
-}
-@media only screen and (min-width: 992px) {
-  /* line 226, ../../src/sass/_modules/_approach.scss */
-  .approach__contact__h1 {
-    font-size: 2.6154rem;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  /* line 226, ../../src/sass/_modules/_approach.scss */
-  .approach__contact__h1 {
-    font-size: 3.4231rem;
-  }
-}
-@media only screen and (min-width: 1600px) {
-  /* line 226, ../../src/sass/_modules/_approach.scss */
-  .approach__contact__h1 {
-    font-size: 4.2308rem;
-  }
-}
-/* line 249, ../../src/sass/_modules/_approach.scss */
-.approach__contact__subhead {
-  font-family: "Gotham A", Helvetica, Arial, sans-serif;
-  line-height: 1.4;
-  letter-spacing: 0em;
-  margin-bottom: 2em;
-  max-width: 32em;
-  opacity: 0.25;
-  font-size: 1rem;
-}
-@media only screen and (min-width: 768px) {
-  /* line 249, ../../src/sass/_modules/_approach.scss */
-  .approach__contact__subhead {
-    font-size: 1.3077rem;
-  }
-}
-@media only screen and (min-width: 1600px) {
-  /* line 249, ../../src/sass/_modules/_approach.scss */
-  .approach__contact__subhead {
-    font-size: 1.6154rem;
-  }
-}
-/* line 264, ../../src/sass/_modules/_approach.scss */
-.approach__contact__link {
-  text-rendering: optimizeLegibility;
-  -webkit-font-variant-ligatures: common-ligatures;
-          font-variant-ligatures: common-ligatures;
-  -webkit-font-feature-settings: "kern";
-          font-feature-settings: "kern";
-  -webkit-font-kerning: normal;
-          font-kerning: normal;
-  font-family: "MillerDisplay", Times, Georgia, serif;
-  font-style: italic;
-  font-size: 0.8077rem;
-  line-height: 1.5;
-  letter-spacing: 0.015em;
-  font-weight: 700;
-  max-width: 24em;
-  color: #a9c000;
-  margin-left: 1em;
-  margin-right: 1em;
-  margin-bottom: 1em;
-}
-/* line 277, ../../src/sass/_modules/_approach.scss */
-.approach__contact__link:before {
-  height: 2px;
-}
-@media only screen and (min-width: 768px) {
-  /* line 264, ../../src/sass/_modules/_approach.scss */
-  .approach__contact__link {
-    font-size: 1.3077rem;
-  }
-}
-@media only screen and (min-width: 1600px) {
-  /* line 264, ../../src/sass/_modules/_approach.scss */
-  .approach__contact__link {
-    font-size: 1.6154rem;
-  }
-}
-/* line 286, ../../src/sass/_modules/_approach.scss */
-.approach__contact__link--group {
-  width: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-/* line 295, ../../src/sass/_modules/_approach.scss */
-.approach__shrinking-area {
-  transition: -webkit-transform 0.2s 0s ease;
-  transition: transform 0.2s 0s ease;
-  background-color: #1e1e1e;
-  color: #FFFFFF;
-  z-index: 1;
-}
-/* line 300, ../../src/sass/_modules/_approach.scss */
-.approach__shrinking-area:before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 90%;
-  height: 100vh;
-  bottom: 0;
-  margin-left: 5%;
-  box-shadow: 0 0 100px 0 #040404;
-  z-index: 0;
-}
-/* line 311, ../../src/sass/_modules/_approach.scss */
-.approach__shrinking-area.shrink {
-  -webkit-transform: scale(0.9) translateY(5%);
-          transform: scale(0.9) translateY(5%);
-}
-
-/* line 318, ../../src/sass/_modules/_approach.scss */
-.approach__text-container.visible b {
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
-  opacity: 1;
-  transition-duration: 0.1s;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-/* line 326, ../../src/sass/_modules/_approach.scss */
-.approach__text-container.visible b:nth-of-type(1) {
-  transition-delay: calc(0.4s + (0.05s * 1));
-}
-/* line 326, ../../src/sass/_modules/_approach.scss */
-.approach__text-container.visible b:nth-of-type(2) {
-  transition-delay: calc(0.4s + (0.05s * 2));
-}
-/* line 326, ../../src/sass/_modules/_approach.scss */
-.approach__text-container.visible b:nth-of-type(3) {
-  transition-delay: calc(0.4s + (0.05s * 3));
-}
-/* line 326, ../../src/sass/_modules/_approach.scss */
-.approach__text-container.visible b:nth-of-type(4) {
-  transition-delay: calc(0.4s + (0.05s * 4));
-}
-/* line 326, ../../src/sass/_modules/_approach.scss */
-.approach__text-container.visible b:nth-of-type(5) {
-  transition-delay: calc(0.4s + (0.05s * 5));
-}
-/* line 332, ../../src/sass/_modules/_approach.scss */
-.approach__text-container.visible .approach__subheadline {
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
-  opacity: 1;
-  transition-duration: 0.2s;
-  transition-delay: 0.7s;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-/* line 340, ../../src/sass/_modules/_approach.scss */
-.approach__text-container.visible .approach__link {
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
-  opacity: 1;
-  transition-duration: 0.2s;
-  transition-delay: 0.7s;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-/* line 348, ../../src/sass/_modules/_approach.scss */
-.approach__text-container.visible .divider {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  transition-duration: 0.1s;
-  transition-delay: 0.7s;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* line 357, ../../src/sass/_modules/_approach.scss */
-#approach__menu {
-  position: fixed;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  width: 6px;
-  color: #FFFFFF;
-  z-index: 10;
-  transition: -webkit-transform 0.2s 0s ease;
-  transition: transform 0.2s 0s ease;
-}
-@media screen and (min-width: 992px) {
-  /* line 357, ../../src/sass/_modules/_approach.scss */
-  #approach__menu {
-    right: auto;
-    top: auto;
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    padding-left: calc(10vw - 1rem);
-    padding-right: calc(10vw - 1rem);
-  }
-}
-/* line 375, ../../src/sass/_modules/_approach.scss */
-#approach__menu.hide {
-  -webkit-transform: translate(100%, -50%);
-          transform: translate(100%, -50%);
-}
-@media screen and (min-width: 992px) {
-  /* line 375, ../../src/sass/_modules/_approach.scss */
-  #approach__menu.hide {
-    -webkit-transform: translate(0%, 100%);
-            transform: translate(0%, 100%);
-  }
-}
-/* line 381, ../../src/sass/_modules/_approach.scss */
-#approach__menu.absolute {
-  position: absolute;
-}
-/* line 384, ../../src/sass/_modules/_approach.scss */
-#approach__menu ul {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
-  height: 50vh;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-@media screen and (min-width: 992px) {
-  /* line 384, ../../src/sass/_modules/_approach.scss */
-  #approach__menu ul {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-align-items: flex-end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-  }
-}
-/* line 397, ../../src/sass/_modules/_approach.scss */
-#approach__menu li {
-  margin-bottom: 4px;
-}
-/* line 399, ../../src/sass/_modules/_approach.scss */
-#approach__menu li:last-child {
-  margin-bottom: 0;
-}
-@media screen and (min-width: 992px) {
-  /* line 397, ../../src/sass/_modules/_approach.scss */
-  #approach__menu li {
-    width: auto;
-    height: auto;
-    margin-bottom: 0;
-  }
-}
-/* line 407, ../../src/sass/_modules/_approach.scss */
-#approach__menu li a {
-  width: 100%;
-  color: #FFFFFF;
-  text-decoration: none;
-  box-shadow: inset -4px 0 0 0 rgba(255, 255, 255, 0.2);
-  display: inline-block;
-  font-family: "Gotham A", Helvetica, Arial, sans-serif;
-  line-height: 1.4;
-  letter-spacing: 0em;
-  transition: height 0.2s 0s ease, padding-bottom 0.2s 0s ease, box-shadow 0.1s 0s ease, opacity 0.1s 0s ease;
-  cursor: pointer;
-  cursor: hand;
-  font-size: 0.8077rem;
-  height: 3em;
-}
-@media screen and (min-width: 768px) {
-  /* line 407, ../../src/sass/_modules/_approach.scss */
-  #approach__menu li a {
-    font-size: 0.8077rem;
-  }
-}
-@media screen and (min-width: 992px) {
-  /* line 407, ../../src/sass/_modules/_approach.scss */
-  #approach__menu li a {
-    box-shadow: inset 0 0 0 0 white;
-    padding-bottom: 2em;
-    opacity: 0.5;
-    height: auto;
-  }
-}
-@media screen and (min-width: 1600px) {
-  /* line 407, ../../src/sass/_modules/_approach.scss */
-  #approach__menu li a {
-    font-size: 1rem;
-  }
-}
-/* line 433, ../../src/sass/_modules/_approach.scss */
-#approach__menu li a:hover, #approach__menu li a.active {
-  box-shadow: inset -6px 0px 0 0 white;
-  height: 4em;
-  transition: height 0.2s 0s ease, padding-bottom 0.2s 0s ease, box-shadow 0.1s 0.1s ease, opacity 0.1s 0.1s ease;
-  opacity: 1;
-}
-@media screen and (min-width: 992px) {
-  /* line 433, ../../src/sass/_modules/_approach.scss */
-  #approach__menu li a:hover, #approach__menu li a.active {
-    box-shadow: inset 0 -5px 0 0 white;
-    padding-bottom: 3em;
-    height: auto;
-  }
-}
-/* line 445, ../../src/sass/_modules/_approach.scss */
-#approach__menu li a:focus {
-  outline: none;
-}
-/* line 448, ../../src/sass/_modules/_approach.scss */
-#approach__menu li a span {
-  display: none;
-}
-@media screen and (min-width: 992px) {
-  /* line 448, ../../src/sass/_modules/_approach.scss */
-  #approach__menu li a span {
-    display: inline-block;
-  }
-}
-
 /* line 1, ../../src/sass/_modules/_body-copy.scss */
 .body-copy {
   width: 100%;
@@ -14467,6 +13668,825 @@ body {
           transform: translateY(-500%);
   transition-delay: 0s;
   transition-duration: 0.5s;
+}
+
+/* line 2, ../../src/sass/_modules/_solutions.scss */
+.approach__pillars {
+  position: relative;
+}
+/* line 5, ../../src/sass/_modules/_solutions.scss */
+.approach__card {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-bottom: 22.5vmax;
+  padding-top: 15vmax;
+  padding-left: calc(10vw - 1rem);
+  padding-right: calc(10vw - 1rem);
+}
+@media screen and (min-width: 768px) {
+  /* line 5, ../../src/sass/_modules/_solutions.scss */
+  .approach__card {
+    padding-bottom: 22.5vmin;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 5, ../../src/sass/_modules/_solutions.scss */
+  .approach__card {
+    padding-top: 15vmin;
+  }
+}
+/* line 17, ../../src/sass/_modules/_solutions.scss */
+.approach__card .divider {
+  margin-bottom: 0.4em;
+  color: #d6f300;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+/* line 23, ../../src/sass/_modules/_solutions.scss */
+.approach__card .divider.approach__h1 {
+  margin-bottom: 0.3em;
+  width: 0.7em;
+  background-color: #FFFFFF;
+  opacity: 0.5;
+}
+/* line 29, ../../src/sass/_modules/_solutions.scss */
+.approach__card:first-of-type {
+  padding-bottom: 15vmax;
+}
+@media screen and (min-width: 768px) {
+  /* line 29, ../../src/sass/_modules/_solutions.scss */
+  .approach__card:first-of-type {
+    padding-bottom: 15vmin;
+  }
+}
+/* line 31, ../../src/sass/_modules/_solutions.scss */
+.approach__card:first-of-type:before {
+  content: "";
+  position: absolute;
+  width: 0.1rem;
+  height: 0.75rem;
+  background-color: currentColor;
+  bottom: 3vmin;
+  right: calc(50% + 0.2rem);
+  -webkit-transform: translateY(0) rotate(-45deg);
+          transform: translateY(0) rotate(-45deg);
+  transition: -webkit-transform 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-animation: 1s bounce-left infinite;
+          animation: 1s bounce-left infinite;
+  z-index: 1;
+}
+/* line 44, ../../src/sass/_modules/_solutions.scss */
+.approach__card:first-of-type:after {
+  content: "";
+  position: absolute;
+  width: 0.1rem;
+  height: 0.75rem;
+  background-color: currentColor;
+  bottom: 3vmin;
+  left: calc(50% + 0.2rem);
+  -webkit-transform: translateY(0) rotate(45deg);
+          transform: translateY(0) rotate(45deg);
+  transition: -webkit-transform 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.1s 0s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-animation: 1s bounce-right infinite;
+          animation: 1s bounce-right infinite;
+  z-index: 1;
+}
+/* line 59, ../../src/sass/_modules/_solutions.scss */
+.approach__video {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 68, ../../src/sass/_modules/_solutions.scss */
+.approach__video video {
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+/* line 74, ../../src/sass/_modules/_solutions.scss */
+.approach .button {
+  margin-top: 7.5vmax;
+  margin-bottom: 7.5vmax;
+}
+@media screen and (min-width: 768px) {
+  /* line 74, ../../src/sass/_modules/_solutions.scss */
+  .approach .button {
+    margin-top: 7.5vmin;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 74, ../../src/sass/_modules/_solutions.scss */
+  .approach .button {
+    margin-bottom: 7.5vmin;
+  }
+}
+/* line 78, ../../src/sass/_modules/_solutions.scss */
+.approach__text-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #FFFFFF;
+  text-align: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  z-index: 1;
+}
+/* line 89, ../../src/sass/_modules/_solutions.scss */
+.approach__h1 {
+  text-rendering: optimizeLegibility;
+  -webkit-font-variant-ligatures: common-ligatures;
+          font-variant-ligatures: common-ligatures;
+  -webkit-font-feature-settings: "kern";
+          font-feature-settings: "kern";
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+  font-family: "MillerDisplay", Times, Georgia, serif;
+  font-size: 2.6154rem;
+  line-height: 0.8;
+  letter-spacing: 0;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  max-width: 8em;
+  opacity: 0.5;
+}
+/* line 99, ../../src/sass/_modules/_solutions.scss */
+.approach__h1 b {
+  display: block;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  opacity: 0;
+  transition-duration: 0.1s;
+  transition-delay: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@media only screen and (min-width: 768px) {
+  /* line 89, ../../src/sass/_modules/_solutions.scss */
+  .approach__h1 {
+    font-size: 4.2308rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  /* line 89, ../../src/sass/_modules/_solutions.scss */
+  .approach__h1 {
+    font-size: 5.5385rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  /* line 89, ../../src/sass/_modules/_solutions.scss */
+  .approach__h1 {
+    font-size: 6.8462rem;
+  }
+}
+/* line 118, ../../src/sass/_modules/_solutions.scss */
+.approach__h2 {
+  text-rendering: optimizeLegibility;
+  -webkit-font-variant-ligatures: common-ligatures;
+          font-variant-ligatures: common-ligatures;
+  -webkit-font-feature-settings: "kern";
+          font-feature-settings: "kern";
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+  font-family: "MillerDisplay", Times, Georgia, serif;
+  font-size: 1.6154rem;
+  line-height: 1.1;
+  letter-spacing: 0;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  max-width: 14em;
+  opacity: 1;
+}
+/* line 128, ../../src/sass/_modules/_solutions.scss */
+.approach__h2 b {
+  display: block;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  opacity: 0;
+  transition-duration: 0.1s;
+  transition-delay: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@media only screen and (min-width: 768px) {
+  /* line 118, ../../src/sass/_modules/_solutions.scss */
+  .approach__h2 {
+    font-size: 2.6154rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* line 118, ../../src/sass/_modules/_solutions.scss */
+  .approach__h2 {
+    font-size: 2.6154rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  /* line 118, ../../src/sass/_modules/_solutions.scss */
+  .approach__h2 {
+    font-size: 4.2308rem;
+  }
+}
+/* line 147, ../../src/sass/_modules/_solutions.scss */
+.approach__link {
+  text-rendering: optimizeLegibility;
+  -webkit-font-variant-ligatures: common-ligatures;
+          font-variant-ligatures: common-ligatures;
+  -webkit-font-feature-settings: "kern";
+          font-feature-settings: "kern";
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+  position: relative;
+  padding-right: 0.5em;
+  font-family: "MillerDisplay", Times, Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0.015em;
+  color: #d6f300;
+  font-weight: 700;
+  max-width: 24em;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  opacity: 0;
+  transition-duration: 0.1s;
+  transition-delay: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 51, ../../src/sass/_modules/_mixin.scss */
+.approach__link:before {
+  content: "";
+  width: 11px;
+  height: 2px;
+  display: block;
+  background-color: currentColor;
+  position: absolute;
+  top: 55%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 100%;
+  transition: width 0.1s 0s ease-in-out;
+}
+/* line 64, ../../src/sass/_modules/_mixin.scss */
+.approach__link:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid currentColor;
+  border-right: 0 solid transparent;
+  position: absolute;
+  display: block;
+  top: 55%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: calc(100% + 11px);
+  transition: left 0.1s 0s ease-in-out;
+}
+@media (hover) {
+  /* line 83, ../../src/sass/_modules/_mixin.scss */
+  .approach__link:hover:before {
+    width: 16px;
+  }
+  /* line 86, ../../src/sass/_modules/_mixin.scss */
+  .approach__link:hover:after {
+    left: calc(100% + 16px);
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 147, ../../src/sass/_modules/_solutions.scss */
+  .approach__link {
+    font-size: 1.3077rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  /* line 147, ../../src/sass/_modules/_solutions.scss */
+  .approach__link {
+    font-size: 1.6154rem;
+  }
+}
+/* line 171, ../../src/sass/_modules/_solutions.scss */
+.approach__subheadline {
+  font-family: "Gotham A", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  letter-spacing: 0em;
+  margin-bottom: 1em;
+  max-width: 35em;
+  font-size: 1rem;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  opacity: 0;
+  transition-duration: 0.1s;
+  transition-delay: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@media only screen and (min-width: 768px) {
+  /* line 171, ../../src/sass/_modules/_solutions.scss */
+  .approach__subheadline {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  /* line 171, ../../src/sass/_modules/_solutions.scss */
+  .approach__subheadline {
+    font-size: 1.3077rem;
+  }
+}
+/* line 191, ../../src/sass/_modules/_solutions.scss */
+.approach__contact {
+  padding-left: calc(10vw - 1rem);
+  padding-right: calc(10vw - 1rem);
+  padding-top: 15vmax;
+  padding-bottom: 15vmax;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1e1e1e;
+}
+@media screen and (min-width: 768px) {
+  /* line 191, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact {
+    padding-top: 15vmin;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 191, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact {
+    padding-bottom: 15vmin;
+  }
+}
+/* line 204, ../../src/sass/_modules/_solutions.scss */
+.approach__contact .divider {
+  margin-bottom: 0.8em;
+}
+/* line 207, ../../src/sass/_modules/_solutions.scss */
+.approach__contact__text-container {
+  width: 100%;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  /* line 207, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact__text-container {
+    width: calc(100% / 10 * 10);
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 207, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact__text-container {
+    width: calc(100% / 12 * 10);
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* line 207, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact__text-container {
+    width: calc(100% / 12 * 8);
+  }
+}
+/* line 226, ../../src/sass/_modules/_solutions.scss */
+.approach__contact__h1 {
+  text-rendering: optimizeLegibility;
+  -webkit-font-variant-ligatures: common-ligatures;
+          font-variant-ligatures: common-ligatures;
+  -webkit-font-feature-settings: "kern";
+          font-feature-settings: "kern";
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+  font-family: "MillerDisplay", Times, Georgia, serif;
+  font-size: 1.6154rem;
+  line-height: 1;
+  letter-spacing: 0;
+  font-weight: 700;
+  margin-bottom: 0.75em;
+  max-width: 10em;
+}
+@media only screen and (min-width: 768px) {
+  /* line 226, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact__h1 {
+    font-size: 2.1154rem;
+    max-width: none;
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* line 226, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact__h1 {
+    font-size: 2.6154rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  /* line 226, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact__h1 {
+    font-size: 3.4231rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  /* line 226, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact__h1 {
+    font-size: 4.2308rem;
+  }
+}
+/* line 249, ../../src/sass/_modules/_solutions.scss */
+.approach__contact__subhead {
+  font-family: "Gotham A", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  letter-spacing: 0em;
+  margin-bottom: 2em;
+  max-width: 32em;
+  opacity: 0.25;
+  font-size: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  /* line 249, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact__subhead {
+    font-size: 1.3077rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  /* line 249, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact__subhead {
+    font-size: 1.6154rem;
+  }
+}
+/* line 264, ../../src/sass/_modules/_solutions.scss */
+.approach__contact__link {
+  text-rendering: optimizeLegibility;
+  -webkit-font-variant-ligatures: common-ligatures;
+          font-variant-ligatures: common-ligatures;
+  -webkit-font-feature-settings: "kern";
+          font-feature-settings: "kern";
+  -webkit-font-kerning: normal;
+          font-kerning: normal;
+  font-family: "MillerDisplay", Times, Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.015em;
+  font-weight: 700;
+  max-width: 24em;
+  color: #a9c000;
+  text-decoration: none;
+}
+@media (hover) {
+  /* line 276, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact__link:hover, .approach__contact__link:focus {
+    color: #FFFFFF;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 264, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact__link {
+    font-size: 1.3077rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  /* line 264, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact__link {
+    font-size: 1.6154rem;
+  }
+}
+/* line 287, ../../src/sass/_modules/_solutions.scss */
+.approach__contact__link--container {
+  margin-bottom: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+/* line 292, ../../src/sass/_modules/_solutions.scss */
+.approach__contact__link--group {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  /* line 292, ../../src/sass/_modules/_solutions.scss */
+  .approach__contact__link--group {
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+}
+/* line 305, ../../src/sass/_modules/_solutions.scss */
+.approach__shrinking-area {
+  transition: -webkit-transform 0.2s 0s ease;
+  transition: transform 0.2s 0s ease;
+  background-color: #1e1e1e;
+  color: #FFFFFF;
+  z-index: 1;
+}
+/* line 310, ../../src/sass/_modules/_solutions.scss */
+.approach__shrinking-area:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 90%;
+  height: 100vh;
+  bottom: 0;
+  margin-left: 5%;
+  box-shadow: 0 0 100px 0 #040404;
+  z-index: 0;
+}
+/* line 321, ../../src/sass/_modules/_solutions.scss */
+.approach__shrinking-area.shrink {
+  -webkit-transform: scale(0.9) translateY(5%);
+          transform: scale(0.9) translateY(5%);
+}
+
+/* line 328, ../../src/sass/_modules/_solutions.scss */
+.approach__text-container.visible b {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  opacity: 1;
+  transition-duration: 0.1s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 336, ../../src/sass/_modules/_solutions.scss */
+.approach__text-container.visible b:nth-of-type(1) {
+  transition-delay: calc(0.4s + (0.05s * 1));
+}
+/* line 336, ../../src/sass/_modules/_solutions.scss */
+.approach__text-container.visible b:nth-of-type(2) {
+  transition-delay: calc(0.4s + (0.05s * 2));
+}
+/* line 336, ../../src/sass/_modules/_solutions.scss */
+.approach__text-container.visible b:nth-of-type(3) {
+  transition-delay: calc(0.4s + (0.05s * 3));
+}
+/* line 336, ../../src/sass/_modules/_solutions.scss */
+.approach__text-container.visible b:nth-of-type(4) {
+  transition-delay: calc(0.4s + (0.05s * 4));
+}
+/* line 336, ../../src/sass/_modules/_solutions.scss */
+.approach__text-container.visible b:nth-of-type(5) {
+  transition-delay: calc(0.4s + (0.05s * 5));
+}
+/* line 342, ../../src/sass/_modules/_solutions.scss */
+.approach__text-container.visible .approach__subheadline {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  opacity: 1;
+  transition-duration: 0.2s;
+  transition-delay: 0.7s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 350, ../../src/sass/_modules/_solutions.scss */
+.approach__text-container.visible .approach__link {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  opacity: 1;
+  transition-duration: 0.2s;
+  transition-delay: 0.7s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+/* line 358, ../../src/sass/_modules/_solutions.scss */
+.approach__text-container.visible .divider {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  transition-duration: 0.1s;
+  transition-delay: 0.7s;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* line 367, ../../src/sass/_modules/_solutions.scss */
+#approach__menu {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  width: 6px;
+  color: #FFFFFF;
+  z-index: 10;
+  transition: -webkit-transform 0.2s 0s ease;
+  transition: transform 0.2s 0s ease;
+}
+@media screen and (min-width: 992px) {
+  /* line 367, ../../src/sass/_modules/_solutions.scss */
+  #approach__menu {
+    right: auto;
+    top: auto;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding-left: calc(10vw - 1rem);
+    padding-right: calc(10vw - 1rem);
+  }
+}
+/* line 385, ../../src/sass/_modules/_solutions.scss */
+#approach__menu.hide {
+  -webkit-transform: translate(100%, -50%);
+          transform: translate(100%, -50%);
+}
+@media screen and (min-width: 992px) {
+  /* line 385, ../../src/sass/_modules/_solutions.scss */
+  #approach__menu.hide {
+    -webkit-transform: translate(0%, 100%);
+            transform: translate(0%, 100%);
+  }
+}
+/* line 391, ../../src/sass/_modules/_solutions.scss */
+#approach__menu.absolute {
+  position: absolute;
+}
+/* line 394, ../../src/sass/_modules/_solutions.scss */
+#approach__menu ul {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  height: 50vh;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media screen and (min-width: 992px) {
+  /* line 394, ../../src/sass/_modules/_solutions.scss */
+  #approach__menu ul {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+}
+/* line 407, ../../src/sass/_modules/_solutions.scss */
+#approach__menu li {
+  margin-bottom: 4px;
+}
+/* line 409, ../../src/sass/_modules/_solutions.scss */
+#approach__menu li:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 992px) {
+  /* line 407, ../../src/sass/_modules/_solutions.scss */
+  #approach__menu li {
+    width: auto;
+    height: auto;
+    margin-bottom: 0;
+  }
+}
+/* line 417, ../../src/sass/_modules/_solutions.scss */
+#approach__menu li a {
+  width: 100%;
+  color: #FFFFFF;
+  text-decoration: none;
+  box-shadow: inset -4px 0 0 0 rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  font-family: "Gotham A", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  letter-spacing: 0em;
+  transition: height 0.2s 0s ease, padding-bottom 0.2s 0s ease, box-shadow 0.1s 0s ease, opacity 0.1s 0s ease;
+  cursor: pointer;
+  cursor: hand;
+  font-size: 0.8077rem;
+  height: 3em;
+}
+@media screen and (min-width: 768px) {
+  /* line 417, ../../src/sass/_modules/_solutions.scss */
+  #approach__menu li a {
+    font-size: 0.8077rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 417, ../../src/sass/_modules/_solutions.scss */
+  #approach__menu li a {
+    box-shadow: inset 0 0 0 0 white;
+    padding-bottom: 2em;
+    opacity: 0.5;
+    height: auto;
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* line 417, ../../src/sass/_modules/_solutions.scss */
+  #approach__menu li a {
+    font-size: 1rem;
+  }
+}
+@media (hover) {
+  /* line 444, ../../src/sass/_modules/_solutions.scss */
+  #approach__menu li a:hover, #approach__menu li a.active {
+    box-shadow: inset -6px 0px 0 0 white;
+    height: 4em;
+    transition: height 0.2s 0s ease, padding-bottom 0.2s 0s ease, box-shadow 0.1s 0.1s ease, opacity 0.1s 0.1s ease;
+    opacity: 1;
+  }
+}
+@media screen and (hover) and (min-width: 992px) {
+  /* line 444, ../../src/sass/_modules/_solutions.scss */
+  #approach__menu li a:hover, #approach__menu li a.active {
+    box-shadow: inset 0 -5px 0 0 white;
+    padding-bottom: 3em;
+    height: auto;
+  }
+}
+
+/* line 457, ../../src/sass/_modules/_solutions.scss */
+#approach__menu li a:focus {
+  outline: none;
+}
+/* line 460, ../../src/sass/_modules/_solutions.scss */
+#approach__menu li a span {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  /* line 460, ../../src/sass/_modules/_solutions.scss */
+  #approach__menu li a span {
+    display: inline-block;
+  }
 }
 
 /* line 1, ../../src/sass/_modules/_title.scss */
