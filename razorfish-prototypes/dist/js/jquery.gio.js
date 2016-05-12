@@ -542,13 +542,13 @@ $(function() {
 
         $(window).bind("load resize scroll", function(e) { // refresh on load, resize and scroll
 
-            if (($('.social-share--folded__footer')[0].getBoundingClientRect().bottom <= $(window).height()) && ($('.social-share--folded__footer').parent()[0].getBoundingClientRect().top <= $('.social-share--folded__footer')[0].getBoundingClientRect().top)) {
+            if (($('.social-share--folded__footer')[0].getBoundingClientRect().bottom <= window.innerHeight) && ($('.social-share--folded__footer').parent()[0].getBoundingClientRect().top <= $('.social-share--folded__footer')[0].getBoundingClientRect().top)) {
                 $('.social-share--folded__footer').addClass("fixed");
             } else {
                 $('.social-share--folded__footer').removeClass("fixed");
             };
 
-            if ($('.social-share--folded__footer').parent()[0].getBoundingClientRect().bottom <= $(window).height()) {
+            if ($('.social-share--folded__footer').parent()[0].getBoundingClientRect().bottom <= window.innerHeight) {
                 $('.social-share--folded__footer').addClass("bottom");
             } else {
                 $('.social-share--folded__footer').removeClass("bottom");
@@ -600,7 +600,7 @@ $(function() {
     // Navigation opacity
 
     $(window).scroll(function() {
-        if (($(this).scrollTop() >= $(window).height()) && (!$("body").hasClass("approach"))) { // If browser scrolled more then viewport then add white background to navigation, only if body does not have class approach
+        if (($(this).scrollTop() >= window.innerHeight) && (!$("body").hasClass("approach"))) { // If browser scrolled more then viewport then add white background to navigation, only if body does not have class approach
             $(".site-masthead").addClass("opaque");
         } else {
             $(".site-masthead").removeClass("opaque");
@@ -700,21 +700,43 @@ $(function() {
     }
 
 
-    // Hero: animation on fade in
+    // Hero: animations
 
     if (document.querySelectorAll('.hero')) {
 
-        var heros = document.querySelectorAll('.hero');
 
-        // If .hero is below the viewport add class .away and remove class .fly-in
+        // Hero:first-of-type: if scrolled more then 1/6 of viewport it hides the bouncy arrow
+
+
+        var heroFirstOfType = document.querySelector('.hero');
+        document.addEventListener(
+            'scroll',
+            function(event) {
+                var heroTop = heroFirstOfType.getBoundingClientRect().top;
+                if ((heroTop >= (window.innerHeight / 6 * -1)) && (heroTop <= window.innerHeight)) {
+                    // console.log("half in viewport");
+                    heroFirstOfType.classList.remove('hide-arrow');
+                } else {
+                    // console.log("half not in viewport");
+                    heroFirstOfType.classList.add('hide-arrow');
+                }
+            },
+            true // Capture event
+        );
+
+
+        var hero = document.querySelectorAll('.hero');
+
+        // If .hero is not in the viewport add class .away and remove class .fly-in
         function heroInViewport() {
-            [].forEach.call(heros, function(div) {
+            [].forEach.call(hero, function(div) {
                 var rect = div.getBoundingClientRect();
-                if ((rect.top >= (window.innerHeight / 8 * -1)) && (rect.top <= window.innerHeight)) {
-                    div.classList.add('fly-in');
-                } else if ((rect.top > window.innerHeight) || ((rect.top - window.innerHeight) >= 0)) {
-                    div.classList.add('away');
+                div.classList.add('away');
+                // If the hero is out of viewport, remove class .fly-in
+                if ((rect.top > window.innerHeight) || (rect.top < (window.innerHeight * -1))) {
                     div.classList.remove("fly-in");
+                } else {
+                    div.classList.add('fly-in');
                 }
             });
         };
@@ -725,45 +747,19 @@ $(function() {
         window.addEventListener('load', heroInViewport);
 
 
-        // Hero background animation
-
-        var heroBackground = document.querySelectorAll('.hero__background');
-
-        // If .hero is below the viewport add class .away and remove class .fly-in
-        function heroBackgroundInViewport() {
-            [].forEach.call(heroBackground, function(div) {
-                var rect = div.getBoundingClientRect();
-                if ((rect.top > 0) && (rect.top <= window.innerHeight)) {
-                    console.log('true');
-                    percentage = (((rect.top / window.innerHeight) / 2) + 1);
-                    // If it has an image sub layer (so it is an svg with a gradient map)
-                    if (div.querySelector('image')) {
-                        div.querySelector("image").style.transform = "scale(" + percentage + ")";
-                    } else {
-                        div.style.transform = "scale(" + percentage + ")";
-                    }
-                } else {
-                    console.log('false');
-                }
-            });
-        };
-
-        // Bind it on scroll, load and resize.
-        window.addEventListener('resize', heroBackgroundInViewport);
-        window.addEventListener('scroll', heroBackgroundInViewport);
-        window.addEventListener('load', heroBackgroundInViewport);
 
         // Hero text container animation
 
         var heroTextContainer = document.querySelectorAll('.hero__text-container');
 
-        // If .hero is below the viewport add class .away and remove class .fly-in
+        // If .hero__text-container is below the viewport add class .away and remove class .fly-in
         function heroTextContainerInViewport() {
             [].forEach.call(heroTextContainer, function(div) {
                 var rect = div.getBoundingClientRect();
-                if ((rect.top >= (window.innerHeight / 8 * -1)) && (rect.top <= window.innerHeight)) {
+                // If .hero__text-container is past half of the viewport then...
+                if (rect.top <= (window.innerHeight)) {
                     div.classList.add('fly-in');
-                } else if ((rect.top > window.innerHeight) || ((rect.top - window.innerHeight) >= 0)) {
+                } else if (rect.top > window.innerHeight) {
                     div.classList.add('away');
                     div.classList.remove("fly-in");
                 }
@@ -780,26 +776,36 @@ $(function() {
     }
 
 
-    // Hero:first-of-type: if scrolled more then 1/6 of viewport it hides the bouncy arrow
+    // Divider: animations
 
-    if (document.getElementsByClassName('hero')[0]) {
-        var hero = document.getElementsByClassName('hero')[0];
-        document.addEventListener(
-            'scroll',
-            function(event) {
-                // console.log("scrolling");
-                var heroTop = hero.getBoundingClientRect().top;
-                if ((heroTop >= (window.innerHeight / 6 * -1)) && (heroTop <= window.innerHeight)) {
-                    // console.log("half in viewport");
-                    hero.classList.remove('hide-arrow');
+    if (document.querySelectorAll('.divider')) {
+
+        var divider = document.querySelectorAll('.divider');
+
+        
+        function dividerInViewport() {
+            [].forEach.call(divider, function(div) {
+                var rect = div.getBoundingClientRect();
+
+                // Add class .not-in-viewport to all .divider on the page
+                div.classList.add('not-in-viewport');
+
+                // If .divider is not of viewport, remove class .in-viewport
+                if ((rect.top > window.innerHeight) || (rect.top < (window.innerHeight * -1))) {
+                    div.classList.remove("in-viewport");
                 } else {
-                    // console.log("half not in viewport");
-                    hero.classList.add('hide-arrow');
+                    div.classList.add('in-viewport');
                 }
-            },
-            true // Capture event
-        );
+            });
+        };
+
+        // Bind it on scroll, load and resize.
+        window.addEventListener('resize', dividerInViewport);
+        window.addEventListener('scroll', dividerInViewport);
+        window.addEventListener('load', dividerInViewport);
+        
     }
+
 
     // solutions__card:first-of-type: if scrolled more then 1/6 of viewport it hides the bouncy arrow
 
@@ -853,40 +859,43 @@ $(function() {
 
     // Approach page
 
-    if ($("body").hasClass("approach")) {
+    if (document.querySelector('.solutions')) {
         var pillar1 = document.getElementById('solutions__pillar1');
         var pillar2 = document.getElementById('solutions__pillar2');
         var pillar3 = document.getElementById('solutions__pillar3');
         var pillar4 = document.getElementById('solutions__pillar4');
         var pillar5 = document.getElementById('solutions__pillar5');
-        var approachLinks = document.getElementById('solutions__links');
-        var approachFooter = document.getElementById('solutions__footer');
+        var solutionsMenu = document.getElementById('solutions__menu');
+        var solutionsPractices = document.getElementById('solutions__practices');
+        var solutionsFooter = document.getElementById('solutions__footer');
 
         $(window).bind("load resize scroll", function(e) { // refresh on load and resize
 
             // Show  solutions__menu when pillar1 comes in viewport
 
             var distanceToTop = pillar1.getBoundingClientRect().top;
-            if (distanceToTop <= ($(window).height() / 2)) {
+            if (distanceToTop <= (window.innerHeight / 2)) {
                 $("#solutions__menu").removeClass("hide");
             } else {
                 $("#solutions__menu").addClass("hide");
             }
 
 
-            // If solutions__link is in viewport, menu is position absolute
+            // If solutions__footer is in viewport, menu is position absolute, add class .hide
 
-            var distanceLinkFromTop = approachLinks.getBoundingClientRect().top;
-            if (distanceLinkFromTop <= ($(window).height())) {
+            var distanceLinkFromTop = solutionsFooter.getBoundingClientRect().top;
+            if (distanceLinkFromTop <= (window.innerHeight)) {
                 $("#solutions__menu").addClass("absolute");
+                $("#solutions__menu").addClass("hide");
             } else {
                 $("#solutions__menu").removeClass("absolute");
+                $("#solutions__menu").removeClass("hide");
             }
 
             // If solutions__footer is in viewport, shrink page above
 
-            var distanceFooterFromTop = approachFooter.getBoundingClientRect().top;
-            if (distanceFooterFromTop <= ($(window).height())) {
+            var distanceFooterFromTop = solutionsFooter.getBoundingClientRect().top;
+            if (distanceFooterFromTop <= (window.innerHeight)) {
                 $(".solutions__shrinking-area").addClass("shrink");
             } else {
                 $(".solutions__shrinking-area").removeClass("shrink");
@@ -896,35 +905,35 @@ $(function() {
 
             var pillar1inViewport = pillar1.getBoundingClientRect().top;
             console.log(pillar1inViewport);
-            if (pillar1inViewport <= ($(window).height() / 2) && (pillar1inViewport > ($(window).height() * -1 / 2))) {
+            if (pillar1inViewport <= (window.innerHeight / 2) && (pillar1inViewport > (window.innerHeight * -1 / 2))) {
                 $('[data-menuanchor="pillar1"]').addClass("active");
             } else {
                 $('[data-menuanchor="pillar1"]').removeClass("active");
             }
 
             var pillar2inViewport = pillar2.getBoundingClientRect().top;
-            if (pillar2inViewport <= ($(window).height() / 2) && (pillar2inViewport > ($(window).height() * -1 / 2))) {
+            if (pillar2inViewport <= (window.innerHeight / 2) && (pillar2inViewport > (window.innerHeight * -1 / 2))) {
                 $('[data-menuanchor="pillar2"]').addClass("active");
             } else {
                 $('[data-menuanchor="pillar2"]').removeClass("active");
             }
 
             var pillar3inViewport = pillar3.getBoundingClientRect().top;
-            if (pillar3inViewport <= ($(window).height() / 2) && (pillar3inViewport > ($(window).height() * -1 / 2))) {
+            if (pillar3inViewport <= (window.innerHeight / 2) && (pillar3inViewport > (window.innerHeight * -1 / 2))) {
                 $('[data-menuanchor="pillar3"]').addClass("active");
             } else {
                 $('[data-menuanchor="pillar3"]').removeClass("active");
             }
 
             var pillar4inViewport = pillar4.getBoundingClientRect().top;
-            if (pillar4inViewport <= ($(window).height() / 2) && (pillar4inViewport > ($(window).height() * -1 / 2))) {
+            if (pillar4inViewport <= (window.innerHeight / 2) && (pillar4inViewport > (window.innerHeight * -1 / 2))) {
                 $('[data-menuanchor="pillar4"]').addClass("active");
             } else {
                 $('[data-menuanchor="pillar4"]').removeClass("active");
             }
 
             var pillar5inViewport = pillar5.getBoundingClientRect().top;
-            if (pillar5inViewport <= ($(window).height() / 2) && (pillar5inViewport > ($(window).height() * -1 / 2))) {
+            if (pillar5inViewport <= (window.innerHeight / 2) && (pillar5inViewport > (window.innerHeight * -1 / 2))) {
                 $('[data-menuanchor="pillar5"]').addClass("active");
             } else {
                 $('[data-menuanchor="pillar5"]').removeClass("active");
