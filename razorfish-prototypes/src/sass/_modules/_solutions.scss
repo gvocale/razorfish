@@ -334,6 +334,85 @@
             transform: scale(0.9) translateY(5%);
         }
     }
+    &__menu {
+        &__link {
+            width: 100%;
+            color: $white;
+            text-decoration: none;
+            box-shadow: inset -4px 0 0 0 rgba($white, 0.2);
+            display: inline-block;
+            font-family: $sans;
+            line-height: $title-sans;
+            letter-spacing: $spacing-sans;
+            transition: height 0.2s 0s ease, padding-bottom 0.2s 0s ease, box-shadow 0.1s 0s ease, opacity 0.1s 0s ease;
+            cursor: pointer;
+            cursor: hand;
+            font-size: $scale03;
+            height: 3em;
+            @media screen and ($md) {
+                font-size: $scale03;
+            }
+            @media screen and ($lg) {
+                box-shadow: inset 0 0 0 0 rgba($white, 1);
+                padding-bottom: 2em;
+                opacity: 0.5;
+                height: auto;
+            }
+            @media screen and ($xxl) {
+                font-size: $scale04;
+            }
+            @media (hover) {
+                &:hover,
+                &.active {
+                    box-shadow: inset -6px 0px 0 0 rgba($white, 1);
+                    height: 4em;
+                    transition: height 0.2s 0s ease, padding-bottom 0.2s 0s ease, box-shadow 0.1s 0.1s ease, opacity 0.1s 0.1s ease;
+                    @media screen and ($lg) {
+                        box-shadow: inset 0 -5px 0 0 currentColor;
+                        padding-bottom: 3em;
+                        height: auto;
+                    }
+                    opacity: 1;
+                }
+            }
+            &:focus {
+                outline: none;
+            }
+            &[data-menuanchor="practices"] {
+                color: $primary;
+            }
+            span {
+                display: none;
+                @media screen and ($lg) {
+                    display: inline-block;
+                }
+            }
+            &_group {
+                display: flex;
+                flex-wrap: nowrap;
+                height: 50vh;
+                flex-direction: column;
+                justify-content: center;
+                @media screen and ($lg) {
+                    @include component-padding;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                }
+                &_container {
+                    margin-bottom: 4px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    @media screen and ($lg) {
+                        width: auto;
+                        height: auto;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .solutions__text-container.visible {
@@ -384,7 +463,7 @@
     width: 6px;
     color: $white;
     z-index: 10;
-    transition: transform 0.2s 0s ease;
+    transition: all 0.2s 0s ease;
     @media screen and ($lg) {
         right: auto;
         top: auto;
@@ -400,81 +479,10 @@
             transform: translate(0%, 100%);
         }
     }
+    &.hide-bottom {
+        opacity: 0;
+    }
     &.absolute {
         position: absolute;
-    }
-    ul {
-        display: flex;
-        flex-wrap: nowrap;
-        height: 50vh;
-        flex-direction: column;
-        justify-content: center;
-        @media screen and ($lg) {
-            @include component-padding;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-    }
-    li {
-        margin-bottom: 4px;
-        &:last-child {
-            margin-bottom: 0;
-        }
-        @media screen and ($lg) {
-            width: auto;
-            height: auto;
-            margin-bottom: 0;
-        }
-        a {
-            width: 100%;
-            color: $white;
-            text-decoration: none;
-            box-shadow: inset -4px 0 0 0 rgba($white, 0.2);
-            display: inline-block;
-            font-family: $sans;
-            line-height: $title-sans;
-            letter-spacing: $spacing-sans;
-            transition: height 0.2s 0s ease, padding-bottom 0.2s 0s ease, box-shadow 0.1s 0s ease, opacity 0.1s 0s ease;
-            cursor: pointer;
-            cursor: hand;
-            font-size: $scale03;
-            height: 3em;
-            @media screen and ($md) {
-                font-size: $scale03;
-            }
-            @media screen and ($lg) {
-                box-shadow: inset 0 0 0 0 rgba($white, 1);
-                padding-bottom: 2em;
-                opacity: 0.5;
-                height: auto;
-            }
-            @media screen and ($xxl) {
-                font-size: $scale04;
-            }
-            @media (hover) {
-                &:hover,
-                &.active {
-                    box-shadow: inset -6px 0px 0 0 rgba($white, 1);
-                    height: 4em;
-                    transition: height 0.2s 0s ease, padding-bottom 0.2s 0s ease, box-shadow 0.1s 0.1s ease, opacity 0.1s 0.1s ease;
-                    @media screen and ($lg) {
-                        box-shadow: inset 0 -5px 0 0 rgba($white, 1);
-                        padding-bottom: 3em;
-                        height: auto;
-                    }
-                    opacity: 1;
-                }
-            }
-            &:focus {
-                outline: none;
-            }
-            span {
-                display: none;
-                @media screen and ($lg) {
-                    display: inline-block;
-                }
-            }
-        }
     }
 }

@@ -599,13 +599,31 @@ $(function() {
 
     // Navigation opacity
 
-    $(window).scroll(function() {
-        if (($(this).scrollTop() >= window.innerHeight) && (!$("body").hasClass("approach"))) { // If browser scrolled more then viewport then add white background to navigation, only if body does not have class approach
-            $(".site-masthead").addClass("opaque");
+    // $(window).scroll(function() {
+    //     if (($(this).scrollTop() >= window.innerHeight) && (!$("body").hasClass("approach"))) { // If browser scrolled more then viewport then add white background to navigation, only if body does not have class approach
+    //         $(".site-masthead").addClass("opaque");
+    //     } else {
+    //         $(".site-masthead").removeClass("opaque");
+    //     }
+    // });
+
+    // Vanilla JS version
+
+    var siteMasthead = document.querySelector('.site-masthead');
+
+    function siteMastheadTransparencyCheck() {
+        var rect = siteMasthead.getBoundingClientRect();
+        if (document.body.scrollTop >= window.innerHeight) {
+            siteMasthead.classList.add('opaque');
         } else {
-            $(".site-masthead").removeClass("opaque");
+            siteMasthead.classList.remove('opaque');
         }
-    });
+    };
+
+    window.addEventListener('resize', siteMastheadTransparencyCheck);
+    window.addEventListener('scroll', siteMastheadTransparencyCheck);
+    window.addEventListener('load', siteMastheadTransparencyCheck);
+
 
 
     // Footer: navigation hides when footer is in viewport
@@ -702,7 +720,7 @@ $(function() {
 
     // Hero: animations
 
-    if (document.querySelectorAll('.hero')) {
+    if (document.querySelector('.hero')) {
 
 
         // Hero:first-of-type: if scrolled more then 1/6 of viewport it hides the bouncy arrow
@@ -782,7 +800,7 @@ $(function() {
 
         var divider = document.querySelectorAll('.divider');
 
-        
+
         function dividerInViewport() {
             [].forEach.call(divider, function(div) {
                 var rect = div.getBoundingClientRect();
@@ -803,14 +821,14 @@ $(function() {
         window.addEventListener('resize', dividerInViewport);
         window.addEventListener('scroll', dividerInViewport);
         window.addEventListener('load', dividerInViewport);
-        
+
     }
 
 
     // solutions__card:first-of-type: if scrolled more then 1/6 of viewport it hides the bouncy arrow
 
-    if (document.getElementsByClassName('solutions__card')[0]) {
-        var solutionsCard = document.getElementsByClassName('solutions__card')[0];
+    if (document.querySelector('.solutions__card')) {
+        var solutionsCard = document.querySelector('.solutions__card');
         document.addEventListener(
             'scroll',
             function(event) {
@@ -866,7 +884,7 @@ $(function() {
         var pillar4 = document.getElementById('solutions__pillar4');
         var pillar5 = document.getElementById('solutions__pillar5');
         var solutionsMenu = document.getElementById('solutions__menu');
-        var solutionsPractices = document.getElementById('solutions__practices');
+        var practices = document.getElementById('solutions__practices');
         var solutionsFooter = document.getElementById('solutions__footer');
 
         $(window).bind("load resize scroll", function(e) { // refresh on load and resize
@@ -886,10 +904,10 @@ $(function() {
             var distanceLinkFromTop = solutionsFooter.getBoundingClientRect().top;
             if (distanceLinkFromTop <= (window.innerHeight)) {
                 $("#solutions__menu").addClass("absolute");
-                $("#solutions__menu").addClass("hide");
+                $("#solutions__menu").addClass("hide-bottom");
             } else {
                 $("#solutions__menu").removeClass("absolute");
-                $("#solutions__menu").removeClass("hide");
+                $("#solutions__menu").removeClass("hide-bottom");
             }
 
             // If solutions__footer is in viewport, shrink page above
@@ -937,6 +955,13 @@ $(function() {
                 $('[data-menuanchor="pillar5"]').addClass("active");
             } else {
                 $('[data-menuanchor="pillar5"]').removeClass("active");
+            }
+
+            var practicesInViewport = practices.getBoundingClientRect().top;
+            if (practicesInViewport <= (window.innerHeight / 2) && (practicesInViewport > (window.innerHeight * -1 / 2))) {
+                $('[data-menuanchor="practices"]').addClass("active");
+            } else {
+                $('[data-menuanchor="practices"]').removeClass("active");
             }
 
 
