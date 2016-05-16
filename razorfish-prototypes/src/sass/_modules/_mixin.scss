@@ -34,14 +34,15 @@
         transition: width 0.1s 0s ease-in-out;
     }
     @media (hover) {
-    &:hover {
-        &:before {
-            right: calc(100% + 16px);
+        &:hover {
+            &:before {
+                right: calc(100% + 16px);
+            }
+            &:after {
+                width: 16px;
+            }
         }
-        &:after {
-            width: 16px;
-        }
-    }}
+    }
 }
 
 @mixin link--arrow--right {
@@ -78,15 +79,17 @@
         transform: translateY(-50%);
         left: calc(100% + 11px);
         transition: left 0.1s 0s ease-in-out;
-    }@media (hover) {
-    &:hover {
-        &:before {
-            width: 16px;
+    }
+    @media (hover) {
+        &:hover {
+            &:before {
+                width: 16px;
+            }
+            &:after {
+                left: calc(100% + 16px);
+            }
         }
-        &:after {
-            left: calc(100% + 16px);
-        }
-    }}
+    }
 }
 
 @mixin link--underline--animated($multiplier: 1) {
@@ -94,7 +97,7 @@
     &:before {
         content: "";
         width: 100%;
-        @if unit($multiplier) == "px" {
+        @if unit($multiplier)=="px" {
             height: $multiplier;
         }
         @else {
@@ -114,15 +117,16 @@
         animation-play-state: running;
     }
     @media (hover) {
-    &:hover:before {
-        animation-name: underline_in;
-        animation-duration: 0.2s;
-        animation-timing-function: ease;
-        animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-    }}
+        &:hover:before {
+            animation-name: underline_in;
+            animation-duration: 0.2s;
+            animation-timing-function: ease;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+            animation-play-state: running;
+        }
+    }
     @keyframes underline_in {
         0% {
             width: 0%;
@@ -152,103 +156,75 @@
 @mixin grid-padding {
     padding-left: calc(10vw - 1rem);
     padding-right: calc(10vw - 1rem);
-    // @media screen and ($lg) {
-    //     padding-left: calc(5vw - 1rem);
-    //     padding-right: calc(5vw - 1rem);
-    // }
-    // @media screen and ($xl) {
-    //     padding-left: calc(10vw - 1rem);
-    //     padding-right: calc(10vw - 1rem);
-    // }
 }
 
 @mixin grid-margin {
     margin-left: calc(10vw - 1rem);
     margin-right: calc(10vw - 1rem);
-    // @media screen and ($lg) {
-    //     margin-left: calc(5vw - 1rem);
-    //     margin-right: calc(5vw - 1rem);
-    // }
-    // @media screen and ($xl) {
-    //     margin-left: calc(10vw - 1rem);
-    //     margin-right: calc(10vw - 1rem);
-    // }
 }
 
 @mixin grid-margin-left {
     margin-left: calc(10vw - 1rem);
-    // @media screen and ($lg) {
-    //     margin-left: calc(5vw - 1rem);
-    // }
-    // @media screen and ($xl) {
-    //     margin-left: calc(10vw - 1rem);
-    // }
 }
 
 @mixin grid-margin-right {
     margin-right: calc(10vw - 1rem);
-    // @media screen and ($lg) {
-    //     margin-right: calc(5vw - 1rem);
-    // }
-    // @media screen and ($xl) {
-    //     margin-right: calc(10vw - 1rem);
-    // }
 }
 
 @mixin padding-top($multiplier: 1) {
-    padding-top: 15vmax * $multiplier;
+    padding-top: 20vw * $multiplier;
     @media screen and ($md) {
-        padding-top: 15vmin * $multiplier;
+        padding-top: 15vw * $multiplier;
+    }
+    @media screen and ($lg) {
+        padding-top: 10vw * $multiplier;
     }
 }
 
 @mixin padding-bottom($multiplier: 1) {
-    padding-bottom: 15vmax * $multiplier;
+    padding-bottom: 20vw * $multiplier;
     @media screen and ($md) {
-        padding-bottom: 15vmin * $multiplier;
+        padding-bottom: 15vw * $multiplier;
     }
-}
-
-@mixin padding-left($multiplier: 1) {
-    padding-left: 15vmax * $multiplier;
-    @media screen and ($md) {
-        padding-left: 15vmin * $multiplier;
-    }
-}
-
-@mixin padding-right($multiplier: 1) {
-    padding-right: 15vmax * $multiplier;
-    @media screen and ($md) {
-        padding-right: 15vmin * $multiplier;
+    @media screen and ($lg) {
+        padding-bottom: 10vw * $multiplier;
     }
 }
 
 @mixin margin-top($multiplier: 1) {
-    margin-top: 15vmax * $multiplier;
+    margin-top: 20vw * $multiplier;
     @media screen and ($md) {
-        margin-top: 15vmin * $multiplier;
+        margin-top: 15vw * $multiplier;
+    }
+    @media screen and ($lg) {
+        margin-top: 10vw * $multiplier;
     }
 }
 
 @mixin margin-bottom($multiplier: 1) {
-    margin-bottom: 15vmax * $multiplier;
+    margin-bottom: 20vw * $multiplier;
     @media screen and ($md) {
-        margin-bottom: 15vmin * $multiplier;
+        margin-bottom: 15vw * $multiplier;
+    }
+    @media screen and ($lg) {
+        margin-bottom: 10vw * $multiplier;
     }
 }
 
 @mixin margin-left($multiplier: 1) {
-    margin-left: 15vmax * $multiplier;
-    @media screen and ($md) {
-        margin-left: 15vmin * $multiplier;
-    }
+    margin-left: 10vw * $multiplier;
 }
 
 @mixin margin-right($multiplier: 1) {
-    margin-right: 15vmax * $multiplier;
-    @media screen and ($md) {
-        margin-right: 15vmin * $multiplier;
-    }
+    margin-right: 10vw * $multiplier;
+}
+
+@mixin padding-left($multiplier: 1) {
+    padding-left: 10vw * $multiplier;
+}
+
+@mixin padding-right($multiplier: 1) {
+    padding-right: 10vw * $multiplier;
 }
 
 @mixin component-padding {
@@ -278,7 +254,6 @@
     width: 100%;
     z-index: 5;
 }
-
 
 @mixin background-dark {
     content: "";
