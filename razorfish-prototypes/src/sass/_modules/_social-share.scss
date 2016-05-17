@@ -295,8 +295,14 @@
         background-repeat: no-repeat;
         overflow: hidden;
         background-color: $gray;
-        &:hover {
-            background-color: $primary;
+        @media (hover) {
+            &:hover {
+                background-color: $primary;
+            }
+        }
+        &:active,
+        &:target {
+            background-color: darken($primary, 5%);
         }
         &:before {
             content: "";

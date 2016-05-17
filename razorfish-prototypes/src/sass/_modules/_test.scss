@@ -1,20 +1,37 @@
-.contact-promo .eyebrow {
-    font-family: $sans;
-    line-height: 1;
-    letter-spacing: 0;
-    margin-bottom: 0em;
-    max-width: 24em;
-    color: $primary;
-    margin-bottom: 0.25em;
-    font-size: $scale04;
-    text-transform: uppercase;
-    @media only screen and ($md) {
-        font-size: $scale05;
-    }
-    @media only screen and ($xxl) {
-        font-size: $scale06;
+.newsletter-signup {
+    @include padding-top(0.75);
+    @include padding-bottom(0.75);
+    @media screen and ($xl) {
+        @include padding-top(0.5);
+        @include padding-bottom(0.5);
     }
 }
+
+@mixin padding-top($multiplier: 1) {
+    padding-top: 20vw * $multiplier;
+    @media screen and ($md) {
+        padding-top: 15vw * $multiplier;
+    }
+    @media screen and ($lg) {
+        padding-top: 10vw * $multiplier;
+    }
+}
+
+@mixin padding-bottom($multiplier: 1) {
+    padding-bottom: 20vw * $multiplier;
+    @media screen and ($md) {
+        padding-bottom: 15vw * $multiplier;
+    }
+    @media screen and ($lg) {
+        padding-bottom: 10vw * $multiplier;
+    }
+}
+
+@mixin grid-padding {
+    padding-left: calc(10vw - 1rem);
+    padding-right: calc(10vw - 1rem);
+}
+
 
 $scale01: 0.5rem;
 $scale02: 0.6154rem;
