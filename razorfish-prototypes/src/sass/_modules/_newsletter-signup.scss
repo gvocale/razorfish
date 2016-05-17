@@ -4,8 +4,12 @@
     justify-content: center;
     align-items: center;
     @include grid-padding;
-    @include padding-top;
-    @include padding-bottom;
+    @include padding-top(0.75);
+    @include padding-bottom(0.75);
+    @media screen and ($xl) {
+        @include padding-top(0.5);
+        @include padding-bottom(0.5);
+    }
     .divider {
         margin-bottom: 1rem;
     }
