@@ -700,11 +700,11 @@ $(function() {
         function feedItemInViewport() {
             [].forEach.call(feedItem, function(div) {
                 var rect = div.getBoundingClientRect();
+                div.classList.add('away');
                 if ((rect.top >= (window.innerHeight / 8 * -1)) && (rect.top <= window.innerHeight)) {
                     console.log("adding class");
                     div.classList.add('fly-in');
                 } else if (rect.top > window.innerHeight) {
-                    div.classList.add('away');
                     div.classList.remove("fly-in");
                 }
             });

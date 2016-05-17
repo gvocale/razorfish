@@ -150,9 +150,6 @@
             }
         }
         &__background {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             position: absolute;
             top: 0;
             left: 0;
@@ -160,9 +157,29 @@
             height: 100%;
             z-index: -1;
         }
+        &__image {
+            width: 100%;
+            height: auto;
+            &_container {
+                transition: transform 0.5s 0s ease-out;
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $black;
+                    opacity: 0;
+                    mix-blend-mode: darken;
+                    transition: opacity 0.5s 0s ease-out;
+                }
+            }
+        }
         &:target,
         &:active {
-            filter: brightness(110%);
+            filter: brightness(95%);
         }
         &.split {
             background-position: 50% center;
@@ -227,7 +244,7 @@
             }
             .feed__arrow--container {
                 left: 0;
-                transform: translateX(0); // translate arrow so that left align with copy into split tiles (which are left aligned)
+                transform: translate(0, 0); // translate arrow so that left align with copy into split tiles (which are left aligned)
                 margin-left: calc(3.75vw - 1.6em);
             }
         }
@@ -444,11 +461,13 @@
         animation-play-state: running;
         @keyframes arrow_out {
             0% {
+                opacity: 1;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
             100% {
+                opacity: 0;
                 top: 50%;
                 left: 50%;
                 transform: translate(200%, -50%);
@@ -488,11 +507,13 @@
                 animation-play-state: running;
                 @keyframes arrow_in {
                     0% {
+                        opacity: 0;
                         top: 50%;
                         left: 50%;
                         transform: translate(-300%, -50%);
                     }
                     100% {
+                        opacity: 1;
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
@@ -511,6 +532,14 @@
         transform: translate(0, 50%);
         opacity: 0;
     }
+    .feed__item__text-container .feed__arrow--container {
+        transform: translate(-50%, 50%);
+    }
+    &.split {
+        .feed__item__text-container .feed__arrow--container {
+            transform: translate(0%, 50%);
+        }
+    }
 }
 
 .feed__item.away.fly-in {
@@ -526,31 +555,30 @@
             transition-duration: 0.4s;
         }
     }
-
-    .feed__item__background {
-        transition: transform 0.5s 0s ease-out;
-        &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: $black;
-            opacity: 0;
-            mix-blend-mode: darken;
-            transition: opacity 0.5s 0s ease-out;
+    .feed__item__text-container .feed__arrow--container {
+        transform: translate(-50%, 50%) scale(1);
+    }
+    &.split {
+        .feed__item__text-container .feed__arrow--container {
+            transform: translate(0%, 50%) scale(1);
         }
     }
+}
+
+.feed__item {
     @media (hover) {
         &:hover {
-            .feed__item__background {
+            .feed__item__image_container {
                 transform: translate3d(0, 0, 0) scale(1.05);
                 transition: transform 0.5s 0s ease-out;
                 &:before {
                     opacity: 0.2;
                     transition: opacity 0.5s 0s ease-out;
+                }
+            }
+            &.split {
+                .feed__item__image_container {
+                    transform: translate3d(0, 0, 0) scale(1.075);
                 }
             }
         }
