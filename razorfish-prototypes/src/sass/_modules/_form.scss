@@ -603,41 +603,103 @@
     pointer-events: none;
 }
 
-#form__submit {
-    overflow: auto;
-    transition: all 0.2s 0s ease;
-    width: 10em;
-    border: 0;
-    box-shadow: inset 0 0 0 2px rgba($white, 0.2);
-    span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        transition: all 0.2s 0s ease;
+.form__submit-button {
+    overflow: hidden;
+    &.shrinking {
+        border-radius: 50%;
+        max-width: 4em;
+        height: 4em;
+        animation-name: shrinkingExample;
+        animation-duration: 1s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        @keyframes shrinkingExample {
+            0% {
+                max-width: 20em;
+                border-radius: 0;
+                padding-top: 1.5em;
+                padding-bottom: 1.5em;
+                padding-left: 3em;
+                padding-right: 3em;
+            }
+            20% {
+                max-width: 20em;
+                border-radius: 0;
+                padding-top: 1.5em;
+                padding-bottom: 1.5em;
+                padding-left: 3em;
+                padding-right: 3em;
+            }
+            80% {
+                max-width: 4em;
+                border-radius: 50%;
+                padding-top: 1.2em;
+                padding-bottom: 1.2em;
+                padding-left: 1.2em;
+                padding-right: 1.2em;
+                width: 3em;
+            }
+            100% {
+                max-width: 4em;
+                border-radius: 50%;
+                padding-top: 1.2em;
+                padding-bottom: 1.2em;
+                padding-left: 1.2em;
+                padding-right: 1.2em;
+                width: 3em;
+            }
+        }
+        span {
+            animation-name: shrinkingExampleSpan;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            @keyframes shrinkingExampleSpan {
+                0% {
+                    opacity: 1;
+                }
+                20% {
+                    opacity: 1;
+                }
+                80% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+        }
     }
-    &.loading {
+}
+
+#form__submit {
+    overflow: hidden;
+    transition: border-radius 0.3s 0s ease, width 0.5s 0s ease, height 0.5s 0s ease, box-shadow 0.2s 0s ease-in;
+    &.loading,
+    &.loading:hover {
         border-radius: 50%;
         padding: 1.2em;
         width: 4em;
         height: 4em;
         box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0px $primary;
+        transition: all 0.3s 0s ease;
+        cursor: auto;
         span {
             opacity: 0;
-            transform: translate(-50%, -200%);
         }
-    }
-    &.filling {
-        box-shadow: inset 0 0 0 0px rgba($white, 0), inset 0 0 0 100px $primary;
-        transition: box-shadow 1s 0s ease;
-    }
-    &.spin {
-        .preloader {
-            display: inline-block;
+        &.filling,
+        &.filling:hover {
+            box-shadow: inset 0 0 0 0px rgba($white, 0), inset 0 0 0 2em $primary;
         }
     }
     .preloader {
-        display: none;
+        opacity: 0;
+        transition: all 0.3s 0s ease;
+    }
+    &.spin {
+        .preloader {
+            opacity: 1;
+        }
     }
     #tick {
         display: none;
@@ -664,6 +726,104 @@
         to {
             stroke-dashoffset: 0;
         }
+    }
+}
+
+.tick__example {
+    position: relative;
+    width: 3em;
+    height: 3em;
+    font-size: $scale03;
+    @media screen and ($xxl) {
+        font-size: $scale04;
+    }
+    #tick {
+        polyline {
+            animation: tickExample 1s ease infinite forwards;
+            @keyframes tickExample {
+                0% {
+                    stroke-dashoffset: 100;
+                }
+                30% {
+                    stroke-dashoffset: 100;
+                }
+                100% {
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+    }
+}
+
+.form__button {
+    transform-origin: center;
+    overflow: hidden;
+    &.shrinking__example {
+        animation-name: shrinkingExample;
+        animation-duration: 1s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        @keyframes shrinkingExample {
+            0% {
+                max-width: 10em;
+                border-radius: 0;
+            }
+            20% {
+                max-width: 10em;
+                border-radius: 0;
+            }
+            80% {
+                max-width: 4em;
+                border-radius: 50%;
+            }
+            100% {
+                max-width: 4em;
+                border-radius: 50%;
+            }
+        }
+    }
+    &.filling__example {
+        animation-name: fillingExample;
+        animation-duration: 1s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        width: 4em;
+        height: 4em;
+        @keyframes fillingExample {
+            0% {
+                box-shadow: inset 0 0 0 0px rgba($white, 0), inset 0 0 0 2px $primary;
+            }
+            20% {
+                box-shadow: inset 0 0 0 0px rgba($white, 0), inset 0 0 0 2px $primary;
+            }
+            80% {
+                box-shadow: inset 0 0 0 0px rgba($white, 0), inset 0 0 0 2em $primary;
+            }
+            100% {
+                box-shadow: inset 0 0 0 0px rgba($white, 0), inset 0 0 0 2em $primary;
+            }
+        }
+        border-radius: 50%;
+        overflow: hidden;
+        span {
+            opacity: 0;
+        }
+    }
+    &.preloader__example {}
+}
+
+.form-animation {
+    display: flex;
+    flex-direction: row;
+    @include grid-padding;
+    @include padding-top;
+    @include padding-bottom;
+    &__container {
+        width: calc(100% / 5);
+        @include component-padding;
+        justify-content: center;
+        align-items: center;
+        display: flex;
     }
 }
 

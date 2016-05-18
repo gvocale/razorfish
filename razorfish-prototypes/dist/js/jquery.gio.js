@@ -11,103 +11,161 @@
 
 
 
-$(function() {
-    console.log('jquery works');
+window.onload = (function() {
 
+    console.log('javascript file loaded');
 
-    // If site-masthead__checkbox is checked, then toggle overflow:hidden to body, so that the rest of tha page doesn't scroll
+    var siteMastheadCheckbox = document.getElementById('site-masthead__checkbox');
+    var siteNavigationOverlay = document.getElementsByClassName('site-navigation__overlay')[0];
+    var siteNavigationLinkContainers = document.getElementsByClassName('site-navigation__link-container');
 
-    $('#site-masthead__checkbox').change(function() {
+    // Function to get random numbers to use for delay in navigation links
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    siteMastheadCheckbox.onclick = function() {
+
+        // If navigation checkbox is checked
         if (this.checked) {
-            console.log('open navigation');
-            $('html,body').css('overflow-y', 'hidden');
+
+            // Toggle scroll from body and html so that the rest of the page doesn't scroll
+            document.body.style.overflowY = "hidden";
+            document.documentElement.style.overflowY = "hidden";
+
+            // Navigation: on open give random delay to each link
+            siteNavigationOverlay.classList.add('visible');
+            setTimeout(function() {
+                siteNavigationOverlay.classList.add('open');
+            }, 10);
+
+            // For each .site-navigation__link-container add a random transition-delay number
+            for (var i = 0; i < siteNavigationLinkContainers.length; i++) {
+                //do something to each div like
+                siteNavigationLinkContainers[i].style.transitionDelay = getRandomInt(1, 10) * 0.025 + 0.1 + "s";
+            }
+
+
         } else {
-            $('html,body').css('overflow-y', 'auto');
+
+            // Bring back scroll to body and html
+            document.body.style.overflowY = "auto";
+            document.documentElement.style.overflowY = "auto";
+
+            // Remove class open and visible from all links into navigation
+            siteNavigationOverlay.classList.remove('open');
+            setTimeout(function() {
+                siteNavigationOverlay.classList.remove('visible');
+            }, 210);
         }
-    });
+
+    };
 
 
     // Contact-form, toggling classes when overlay is open
 
-    $(".contact-form__link").click(function() {
-        console.log('open form');
+    contactFormLink = document.getElementsByClassName('contact-form__link');
+    contactFormOverlay = document.getElementsByClassName('contact-form__overlay')[0];
+    contactFormBackgroundImage = document.getElementsByClassName('contact-form__background-image')[0];
+    contactFormFormGroup = document.getElementsByClassName('contact-form__form-group')[0];
+    contactFormHero = document.getElementById('contact-form__hero');
+    contactFormSubmit = document.getElementById('form__submit');
+    contactFormConfirmationGroup = document.getElementsByClassName('contact-form__confirmation-group')[0];
+    contactFormBack = document.getElementsByClassName('contact-form__back')[0];
 
-        // Scroll page so that the form hero alignes with viewport
-        $.fn.scrollView = function() {
-            return this.each(function() {
-                $('html, body').animate({
-                    scrollTop: $(this).offset().top
-                }, 400);
-            });
+
+    for (var i = 0; i < contactFormLink.length; i++) {
+        contactFormLink[i].onclick = function() {
+
+            // Scroll body so that #contact-form__hero fits fully into view
+            $('html, body').animate({
+                scrollTop: $('#contact-form__hero').offset().top
+            }, 400);
+
+            document.body.style.overflowY = "hidden";
+            document.documentElement.style.overflowY = "hidden";
+
+            setTimeout(function() {
+                contactFormOverlay.classList.add("display");
+            }, 405);
+
+            setTimeout(function() {
+                contactFormBackgroundImage.classList.add('visible', 'blur', 'scale');
+            }, 410);
+
+            setTimeout(function() {
+                contactFormFormGroup.classList.add('display', 'open');
+            }, 500);
         }
-        $('#contact-form__hero').scrollView();
-        $("html,body").css("overflow-y", "hidden");
+    }
+
+
+    contactFormBack.onclick = function() { // On click on Back button
+        contactFormFormGroup.classList.remove("open");
+        contactFormFormGroup.classList.add("hide");
 
         setTimeout(function() {
-            $(".contact-form__overlay").addClass("display");
-
-        }, 405);
-        setTimeout(function() {
-
-            $(".contact-form__background-image").addClass("visible blur scale");
-        }, 410);
-        setTimeout(function() {
-            $(".contact-form__form-group").addClass("display");
-            $(".contact-form__form-group").addClass("open");
-        }, 500);
-    });
-
-    $(".contact-form__back").click(function() { // On click on Back button
-        $(".contact-form__form-group").removeClass("open").addClass("hide");
-        setTimeout(function() {
-            $(".contact-form__background-image").removeClass("visible blur scale");
+            contactFormBackgroundImage.classList.remove('visible', 'blur', 'scale');
         }, 100);
+
         setTimeout(function() {
-            $(".contact-form__overlay").removeClass("display");
-            $(".contact-form__form-group").removeClass("display");
-            $('html,body').css('overflow-y', 'auto');
+            contactFormOverlay.classList.remove('display');
+            contactFormFormGroup.classList.remove('display');
+            document.body.style.overflowY = "auto";
+            document.documentElement.style.overflowY = "auto";
         }, 510);
-    });
+    };
 
 
-    $('#form__submit').click(function() { // On click on Sumbit button
-        $(this).addClass("loading");
-        setTimeout(function() {
-            $('#form__submit').addClass("spin");
-        }, 300);
-        setTimeout(function() {
-            $('#form__submit').addClass("filling");
-            $('#form__submit').removeClass("spin");
-        }, 3300);
-        setTimeout(function() {
-            $('#form__submit').addClass("tick");
-        }, 3600);
-        setTimeout(function() {
-            $(".contact-form__form-group").removeClass("open").addClass("hide");
-        }, 5600);
-        setTimeout(function() {
-            $(".contact-form__background-image").removeClass("blur scale");
-        }, 5700);
-        setTimeout(function() {
-            $(".contact-form__form-group").removeClass("display");
-            $('#form__submit').removeClass("loading filling tick");
-            $(".contact-form__confirmation-group").addClass("display");
-        }, 5810);
-        setTimeout(function() {
-            $(".contact-form__confirmation-group").addClass("open");
-        }, 5900);
-        setTimeout(function() {
-            $(".contact-form__confirmation-group").removeClass("open").addClass("hide");
-        }, 8900);
-        setTimeout(function() {
-            $(".contact-form__confirmation-group").removeClass("display");
-            $(".contact-form__background-image").removeClass("visible");
-            $('html,body').css('overflow-y', 'auto');
-        }, 9110);
-        setTimeout(function() {
-            $(".contact-form__overlay").removeClass("close display");
-        }, 9320);
-    });
+    // If button submit is clicked
+    contactFormSubmit.onclick = function() {
+        if (!this.classList.contains("clicked")) { // check if it has already clicked, to avoid initiating the same animation twice or more
+            contactFormSubmit.classList.add("clicked");
+            setTimeout(function() {
+                contactFormSubmit.classList.add("loading");
+            }, 200);
+            setTimeout(function() {
+                contactFormSubmit.classList.add("spin");
+            }, 500);
+            setTimeout(function() {
+                contactFormSubmit.classList.remove("spin");
+                contactFormSubmit.classList.add("filling");
+            }, 3500);
+            setTimeout(function() {
+                contactFormSubmit.classList.add("tick");
+            }, 4250);
+            setTimeout(function() {
+                contactFormFormGroup.classList.remove("open");
+                contactFormFormGroup.classList.add("hide");
+            }, 6500);
+            setTimeout(function() {
+                contactFormBackgroundImage.classList.remove("blur", "scale");
+            }, 6700);
+            setTimeout(function() {
+                contactFormFormGroup.classList.remove("display");
+                contactFormSubmit.classList.remove("loading", "filling", "tick");
+                contactFormConfirmationGroup.classList.remove("hide");
+                contactFormConfirmationGroup.classList.add("display");
+            }, 7000);
+            setTimeout(function() {
+                contactFormConfirmationGroup.classList.add("open");
+            }, 7010);
+            setTimeout(function() {
+                contactFormConfirmationGroup.classList.remove("open");
+                contactFormConfirmationGroup.classList.add("hide");
+            }, 9000);
+            setTimeout(function() {
+                contactFormConfirmationGroup.classList.remove("display");
+                contactFormBackgroundImage.classList.remove("visible");
+                document.body.style.overflowY = "auto";
+                document.documentElement.style.overflowY = "auto";
+            }, 9200);
+            setTimeout(function() {
+                contactFormOverlay.classList.remove("close");
+            }, 9410);
+        }
+
+    };
 
 
     // Form: if in select.form__select an option is selected, add class .selected
@@ -314,7 +372,7 @@ $(function() {
     });
 
 
-    // // Fade out video poster frame and plays video on click
+    // Fade out video poster frame and plays video on click
 
     if (document.getElementById("vimeo-video")) {
         console.log('#video exist on the page');
@@ -330,25 +388,39 @@ $(function() {
         console.log('#video does not exist on the page');
     }
 
+
+
     // Simple-title clip path on load resize and scroll
 
-    var simpleTitle = $('.simple-title'); //record the elem so you don't crawl the DOM everytime
+    if (document.getElementsByClassName("simple-title")[0]) {
 
-    $(window).bind("load resize scroll", function(e) { // refresh on load and resize
+        var simpleTitle = document.getElementsByClassName("simple-title")[0];
+        var simpleTitleTextContainer = document.getElementsByClassName("simple-title__text-container")[0];
 
-        var height = simpleTitle.outerHeight(true); // find height of .simple-title
+        function simpleTitleClipPath() {
 
-        var difference = (height - $(window).scrollTop());
+            var height = simpleTitle.clientHeight; // find height of .simple-title
 
-        $(".simple-title__text-container").css({ "-webkit-clip-path": "polygon(0 0, 100% 0, 100% " + difference + "px, 0 " + difference + "px)" });
+            var difference = (height + simpleTitle.getBoundingClientRect().top); // get difference between height and how much it has scrolled away
 
-    });
+            simpleTitleTextContainer.style["-webkit-clip-path"] = "polygon(0 0, 100% 0, 100% " + difference + "px, 0 " + difference + "px)";
+
+        };
+
+        // Bind it on scroll, load and resize.
+        window.addEventListener('resize', simpleTitleClipPath);
+        window.addEventListener('scroll', simpleTitleClipPath);
+        window.addEventListener('load', simpleTitleClipPath);
+    }
+
+
 
 
     // Owl carousel configuration
 
-    var isOwlCarousel = document.getElementsByClassName('owl-carousel');
-    if (isOwlCarousel.length > 0) {
+
+    if (document.getElementsByClassName('owl-carousel')[0]) {
+        var isOwlCarousel = document.getElementsByClassName('owl-carousel')[0];
         console.log('.owl-carousel exists on the page');
         $(".owl-carousel").owlCarousel({
             margin: 10,
@@ -536,9 +608,8 @@ $(function() {
     })
 
 
-    // Make share button position:fixed on case study pages
-    var isSocialShareFolded = document.getElementsByClassName('social-share--folded__footer');
-    if (isSocialShareFolded.length > 0) {
+    // Make share button position:fixed on case study page
+    if (document.getElementsByClassName('social-share--folded__footer')[0]) {
 
         $(window).bind("load resize scroll", function(e) { // refresh on load, resize and scroll
 
@@ -599,17 +670,7 @@ $(function() {
 
     // Navigation opacity
 
-    // $(window).scroll(function() {
-    //     if (($(this).scrollTop() >= window.innerHeight) && (!$("body").hasClass("approach"))) { // If browser scrolled more then viewport then add white background to navigation, only if body does not have class approach
-    //         $(".site-masthead").addClass("opaque");
-    //     } else {
-    //         $(".site-masthead").removeClass("opaque");
-    //     }
-    // });
-
-    // Vanilla JS version
-
-    var siteMasthead = document.querySelector('.site-masthead');
+    var siteMasthead = document.getElementsByClassName('site-masthead');
 
     function siteMastheadTransparencyCheck() {
         var rect = siteMasthead.getBoundingClientRect();
@@ -628,9 +689,9 @@ $(function() {
 
     // Footer: navigation hides when footer is in viewport
 
-    if (document.querySelector('.footer')) {
-        var footer = document.querySelector('.footer');
-        var siteMasthead = document.querySelector('.site-masthead');
+    if (document.getElementsByClassName('footer')) {
+        var footer = document.getElementsByClassName('footer')[0];
+        var siteMasthead = document.getElementsByClassName('site-masthead')[0];
 
         function footerInViewport() {
             var rect = footer.getBoundingClientRect();
@@ -652,43 +713,14 @@ $(function() {
 
 
 
-    // Navigation: on open give random delay to each link
 
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-
-
-
-    $("#site-masthead__checkbox").click(function() {
-
-        if ($(this).is(':checked')) {
-            $(".site-navigation__overlay").addClass("visible");
-            setTimeout(function() {
-                $(".site-navigation__overlay").addClass("open");
-            }, 10);
-            $('.site-navigation__link-container').each(function() {
-                $(this).css({ 'transition-delay': getRandomInt(1, 10) * 0.025 + 0.1 + "s" });
-
-            });
-            console.log("open navigation");
-
-        } else {
-            console.log("close navigation");
-            $(".site-navigation__overlay").removeClass("open");
-            setTimeout(function() {
-                $(".site-navigation__overlay").removeClass("visible");
-            }, 210);
-        }
-
-    });
 
 
     // Feed: animation on fade in
 
-    if (document.querySelectorAll('.feed__item')) {
+    if (document.getElementsByClassName('feed__item')) {
 
-        var feedItem = document.querySelectorAll('.feed__item');
+        var feedItem = document.getElementsByClassName('feed__item');
 
         // Feed: counts number of .feed__item and assign a progressive delay for each
         for (var i = 0; i < feedItem.length; ++i) {
@@ -720,13 +752,13 @@ $(function() {
 
     // Hero: animations
 
-    if (document.querySelector('.hero')) {
+    if (document.getElementsByClassName('hero')[0]) {
 
 
         // Hero:first-of-type: if scrolled more then 1/6 of viewport it hides the bouncy arrow
 
 
-        var heroFirstOfType = document.querySelector('.hero');
+        var heroFirstOfType = document.getElementsByClassName('hero')[0];
         document.addEventListener(
             'scroll',
             function(event) {
@@ -743,7 +775,7 @@ $(function() {
         );
 
 
-        var hero = document.querySelectorAll('.hero');
+        var hero = document.getElementsByClassName('hero');
 
         // If .hero is not in the viewport add class .away and remove class .fly-in
         function heroInViewport() {
@@ -768,7 +800,7 @@ $(function() {
 
         // Hero text container animation
 
-        var heroTextContainer = document.querySelectorAll('.hero__text-container');
+        var heroTextContainer = document.getElementsByClassName('hero__text-container');
 
         // If .hero__text-container is below the viewport add class .away and remove class .fly-in
         function heroTextContainerInViewport() {
@@ -796,9 +828,9 @@ $(function() {
 
     // Divider: animations
 
-    if (document.querySelectorAll('.divider')) {
+    if (document.getElementsByClassName('divider')) {
 
-        var divider = document.querySelectorAll('.divider');
+        var divider = document.getElementsByClassName('divider');
 
 
         function dividerInViewport() {
@@ -827,8 +859,8 @@ $(function() {
 
     // solutions__card:first-of-type: if scrolled more then 1/6 of viewport it hides the bouncy arrow
 
-    if (document.querySelector('.solutions__card')) {
-        var solutionsCard = document.querySelector('.solutions__card');
+    if (document.getElementsByClassName('solutions__card')[0]) {
+        var solutionsCard = document.getElementsByClassName('solutions__card')[0];
         document.addEventListener(
             'scroll',
             function(event) {
@@ -875,15 +907,16 @@ $(function() {
 
     });
 
-    // Approach page
+    // Solutions page
 
-    if (document.querySelector('.solutions')) {
+    if (document.getElementsByClassName('solutions')[0]) {
         var pillar1 = document.getElementById('solutions__pillar1');
         var pillar2 = document.getElementById('solutions__pillar2');
         var pillar3 = document.getElementById('solutions__pillar3');
         var pillar4 = document.getElementById('solutions__pillar4');
         var pillar5 = document.getElementById('solutions__pillar5');
         var solutionsMenu = document.getElementById('solutions__menu');
+        var solutionsShrinkingArea = document.getElementsByClassName('solutions__shrinking-area')[0];
         var practices = document.getElementById('solutions__practices');
         var solutionsFooter = document.getElementById('solutions__footer');
 
@@ -893,9 +926,9 @@ $(function() {
 
             var distanceToTop = pillar1.getBoundingClientRect().top;
             if (distanceToTop <= (window.innerHeight / 2)) {
-                $("#solutions__menu").removeClass("hide");
+                solutionsMenu.classList.remove('hide');
             } else {
-                $("#solutions__menu").addClass("hide");
+                solutionsMenu.classList.add('hide');
             }
 
 
@@ -903,71 +936,64 @@ $(function() {
 
             var distanceLinkFromTop = solutionsFooter.getBoundingClientRect().top;
             if (distanceLinkFromTop <= (window.innerHeight)) {
-                $("#solutions__menu").addClass("absolute");
-                $("#solutions__menu").addClass("hide-bottom");
+                solutionsMenu.classList.add('absolute', 'hide-bottom');
             } else {
-                $("#solutions__menu").removeClass("absolute");
-                $("#solutions__menu").removeClass("hide-bottom");
+                solutionsMenu.classList.remove('absolute', 'hide-bottom');
             }
 
             // If solutions__footer is in viewport, shrink page above
 
             var distanceFooterFromTop = solutionsFooter.getBoundingClientRect().top;
             if (distanceFooterFromTop <= (window.innerHeight)) {
-                $(".solutions__shrinking-area").addClass("shrink");
+                solutionsShrinkingArea.classList.add('shrink');
             } else {
-                $(".solutions__shrinking-area").removeClass("shrink");
+                solutionsShrinkingArea.classList.remove('shrink');
             }
 
             // Check which pillar is in viewport and activate navigation link
 
             var pillar1inViewport = pillar1.getBoundingClientRect().top;
-            console.log(pillar1inViewport);
             if (pillar1inViewport <= (window.innerHeight / 2) && (pillar1inViewport > (window.innerHeight * -1 / 2))) {
-                $('[data-menuanchor="pillar1"]').addClass("active");
+                document.querySelector('[data-menuanchor="pillar1"]').classList.add("active");
             } else {
-                $('[data-menuanchor="pillar1"]').removeClass("active");
+                document.querySelector('[data-menuanchor="pillar1"]').classList.remove("active");
             }
 
             var pillar2inViewport = pillar2.getBoundingClientRect().top;
             if (pillar2inViewport <= (window.innerHeight / 2) && (pillar2inViewport > (window.innerHeight * -1 / 2))) {
-                $('[data-menuanchor="pillar2"]').addClass("active");
+                document.querySelector('[data-menuanchor="pillar2"]').classList.add("active");
             } else {
-                $('[data-menuanchor="pillar2"]').removeClass("active");
+                document.querySelector('[data-menuanchor="pillar2"]').classList.remove("active");
             }
 
             var pillar3inViewport = pillar3.getBoundingClientRect().top;
             if (pillar3inViewport <= (window.innerHeight / 2) && (pillar3inViewport > (window.innerHeight * -1 / 2))) {
-                $('[data-menuanchor="pillar3"]').addClass("active");
+                document.querySelector('[data-menuanchor="pillar3"]').classList.add("active");
             } else {
-                $('[data-menuanchor="pillar3"]').removeClass("active");
+                document.querySelector('[data-menuanchor="pillar3"]').classList.remove("active");
             }
 
             var pillar4inViewport = pillar4.getBoundingClientRect().top;
             if (pillar4inViewport <= (window.innerHeight / 2) && (pillar4inViewport > (window.innerHeight * -1 / 2))) {
-                $('[data-menuanchor="pillar4"]').addClass("active");
+                document.querySelector('[data-menuanchor="pillar4"]').classList.add("active");
             } else {
-                $('[data-menuanchor="pillar4"]').removeClass("active");
+                document.querySelector('[data-menuanchor="pillar4"]').classList.remove("active");
             }
 
             var pillar5inViewport = pillar5.getBoundingClientRect().top;
             if (pillar5inViewport <= (window.innerHeight / 2) && (pillar5inViewport > (window.innerHeight * -1 / 2))) {
-                $('[data-menuanchor="pillar5"]').addClass("active");
+                document.querySelector('[data-menuanchor="pillar5"]').classList.add("active");
             } else {
-                $('[data-menuanchor="pillar5"]').removeClass("active");
+                document.querySelector('[data-menuanchor="pillar5"]').classList.remove("active");
             }
 
             var practicesInViewport = practices.getBoundingClientRect().top;
             if (practicesInViewport <= (window.innerHeight / 2) && (practicesInViewport > (window.innerHeight * -1 / 2))) {
-                $('[data-menuanchor="practices"]').addClass("active");
+                document.querySelector('[data-menuanchor="practices"]').classList.add("active");
             } else {
-                $('[data-menuanchor="practices"]').removeClass("active");
+                document.querySelector('[data-menuanchor="practices"]').classList.remove("active");
             }
-
-
-
         });
-
     };
 
 

@@ -1221,8 +1221,8 @@ p {
   content: "■";
   color: #a9c000;
   font-size: 0.6em;
-  -webkit-transform: translateY(-0.3em);
-          transform: translateY(-0.3em);
+  -webkit-transform: translateY(-0.2em);
+          transform: translateY(-0.2em);
   display: table-cell;
   width: 1.8em;
 }
@@ -8018,59 +8018,176 @@ body {
 }
 
 /* line 606, ../../src/sass/_modules/_form.scss */
+.form__submit-button {
+  overflow: hidden;
+}
+/* line 608, ../../src/sass/_modules/_form.scss */
+.form__submit-button.shrinking {
+  border-radius: 50%;
+  max-width: 4em;
+  height: 4em;
+  -webkit-animation-name: shrinkingExample;
+          animation-name: shrinkingExample;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+@-webkit-keyframes shrinkingExample {
+  0% {
+    max-width: 20em;
+    border-radius: 0;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  20% {
+    max-width: 20em;
+    border-radius: 0;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  80% {
+    max-width: 4em;
+    border-radius: 50%;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    width: 3em;
+  }
+  100% {
+    max-width: 4em;
+    border-radius: 50%;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    width: 3em;
+  }
+}
+@keyframes shrinkingExample {
+  0% {
+    max-width: 20em;
+    border-radius: 0;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  20% {
+    max-width: 20em;
+    border-radius: 0;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  80% {
+    max-width: 4em;
+    border-radius: 50%;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    width: 3em;
+  }
+  100% {
+    max-width: 4em;
+    border-radius: 50%;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    width: 3em;
+  }
+}
+/* line 652, ../../src/sass/_modules/_form.scss */
+.form__submit-button.shrinking span {
+  -webkit-animation-name: shrinkingExampleSpan;
+          animation-name: shrinkingExampleSpan;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+@-webkit-keyframes shrinkingExampleSpan {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes shrinkingExampleSpan {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* line 675, ../../src/sass/_modules/_form.scss */
 #form__submit {
-  overflow: auto;
-  transition: all 0.2s 0s ease;
-  width: 10em;
-  border: 0;
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transition: border-radius 0.3s 0s ease, width 0.5s 0s ease, height 0.5s 0s ease, box-shadow 0.2s 0s ease-in;
 }
-/* line 612, ../../src/sass/_modules/_form.scss */
-#form__submit span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  transition: all 0.2s 0s ease;
-}
-/* line 619, ../../src/sass/_modules/_form.scss */
-#form__submit.loading {
+/* line 678, ../../src/sass/_modules/_form.scss */
+#form__submit.loading, #form__submit.loading:hover {
   border-radius: 50%;
   padding: 1.2em;
   width: 4em;
   height: 4em;
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 0px #a9c000;
+  transition: all 0.3s 0s ease;
+  cursor: auto;
 }
-/* line 625, ../../src/sass/_modules/_form.scss */
-#form__submit.loading span {
+/* line 687, ../../src/sass/_modules/_form.scss */
+#form__submit.loading span, #form__submit.loading:hover span {
   opacity: 0;
-  -webkit-transform: translate(-50%, -200%);
-          transform: translate(-50%, -200%);
 }
-/* line 630, ../../src/sass/_modules/_form.scss */
-#form__submit.filling {
-  box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 100px #a9c000;
-  transition: box-shadow 1s 0s ease;
+/* line 690, ../../src/sass/_modules/_form.scss */
+#form__submit.loading.filling, #form__submit.loading.filling:hover, #form__submit.loading:hover.filling, #form__submit.loading:hover.filling:hover {
+  box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2em #a9c000;
 }
-/* line 635, ../../src/sass/_modules/_form.scss */
-#form__submit.spin .preloader {
-  display: inline-block;
-}
-/* line 639, ../../src/sass/_modules/_form.scss */
+/* line 695, ../../src/sass/_modules/_form.scss */
 #form__submit .preloader {
-  display: none;
+  opacity: 0;
+  transition: all 0.3s 0s ease;
 }
-/* line 642, ../../src/sass/_modules/_form.scss */
+/* line 700, ../../src/sass/_modules/_form.scss */
+#form__submit.spin .preloader {
+  opacity: 1;
+}
+/* line 704, ../../src/sass/_modules/_form.scss */
 #form__submit #tick {
   display: none;
 }
-/* line 646, ../../src/sass/_modules/_form.scss */
+/* line 708, ../../src/sass/_modules/_form.scss */
 #form__submit.tick #tick {
   display: block;
 }
 
-/* line 652, ../../src/sass/_modules/_form.scss */
+/* line 714, ../../src/sass/_modules/_form.scss */
 #tick {
   position: absolute;
   top: 45%;
@@ -8078,7 +8195,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-/* line 657, ../../src/sass/_modules/_form.scss */
+/* line 719, ../../src/sass/_modules/_form.scss */
 #tick polyline {
   stroke: #FFFFFF;
   stroke-dasharray: 100;
@@ -8096,7 +8213,183 @@ body {
     stroke-dashoffset: 0;
   }
 }
-/* line 670, ../../src/sass/_modules/_form.scss */
+/* line 732, ../../src/sass/_modules/_form.scss */
+.tick__example {
+  position: relative;
+  width: 3em;
+  height: 3em;
+  font-size: 0.8077rem;
+}
+@media screen and (min-width: 1600px) {
+  /* line 732, ../../src/sass/_modules/_form.scss */
+  .tick__example {
+    font-size: 1rem;
+  }
+}
+/* line 741, ../../src/sass/_modules/_form.scss */
+.tick__example #tick polyline {
+  -webkit-animation: tickExample 1s ease infinite forwards;
+          animation: tickExample 1s ease infinite forwards;
+}
+@-webkit-keyframes tickExample {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  30% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes tickExample {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  30% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+/* line 758, ../../src/sass/_modules/_form.scss */
+.form__button {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  overflow: hidden;
+}
+/* line 761, ../../src/sass/_modules/_form.scss */
+.form__button.shrinking__example {
+  -webkit-animation-name: shrinkingExample;
+          animation-name: shrinkingExample;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+@keyframes shrinkingExample {
+  0% {
+    max-width: 10em;
+    border-radius: 0;
+  }
+  20% {
+    max-width: 10em;
+    border-radius: 0;
+  }
+  80% {
+    max-width: 4em;
+    border-radius: 50%;
+  }
+  100% {
+    max-width: 4em;
+    border-radius: 50%;
+  }
+}
+/* line 785, ../../src/sass/_modules/_form.scss */
+.form__button.filling__example {
+  -webkit-animation-name: fillingExample;
+          animation-name: fillingExample;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  overflow: hidden;
+}
+@-webkit-keyframes fillingExample {
+  0% {
+    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2px #a9c000;
+  }
+  20% {
+    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2px #a9c000;
+  }
+  80% {
+    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2em #a9c000;
+  }
+  100% {
+    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2em #a9c000;
+  }
+}
+@keyframes fillingExample {
+  0% {
+    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2px #a9c000;
+  }
+  20% {
+    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2px #a9c000;
+  }
+  80% {
+    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2em #a9c000;
+  }
+  100% {
+    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2em #a9c000;
+  }
+}
+/* line 808, ../../src/sass/_modules/_form.scss */
+.form__button.filling__example span {
+  opacity: 0;
+}
+
+/* line 815, ../../src/sass/_modules/_form.scss */
+.form-animation {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-left: calc(10vw - 1rem);
+  padding-right: calc(10vw - 1rem);
+  padding-top: 20vw;
+  padding-bottom: 20vw;
+}
+@media screen and (min-width: 768px) {
+  /* line 815, ../../src/sass/_modules/_form.scss */
+  .form-animation {
+    padding-top: 15vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 815, ../../src/sass/_modules/_form.scss */
+  .form-animation {
+    padding-top: 10vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 815, ../../src/sass/_modules/_form.scss */
+  .form-animation {
+    padding-bottom: 15vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 815, ../../src/sass/_modules/_form.scss */
+  .form-animation {
+    padding-bottom: 10vw;
+  }
+}
+/* line 821, ../../src/sass/_modules/_form.scss */
+.form-animation__container {
+  width: calc(100% / 5);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 830, ../../src/sass/_modules/_form.scss */
 .preloader {
   position: absolute;
   top: -3px;
@@ -8107,16 +8400,16 @@ body {
   -webkit-animation: outer 6600ms linear infinite;
           animation: outer 6600ms linear infinite;
 }
-/* line 675, ../../src/sass/_modules/_form.scss */
+/* line 835, ../../src/sass/_modules/_form.scss */
 .preloader:before, .preloader:after {
   white-space-collapse: collapse;
 }
-/* line 689, ../../src/sass/_modules/_form.scss */
+/* line 849, ../../src/sass/_modules/_form.scss */
 .preloader svg {
   -webkit-animation: inner 1320ms linear infinite;
           animation: inner 1320ms linear infinite;
 }
-/* line 691, ../../src/sass/_modules/_form.scss */
+/* line 851, ../../src/sass/_modules/_form.scss */
 .preloader svg circle {
   fill: none;
   stroke: #a9c000;
