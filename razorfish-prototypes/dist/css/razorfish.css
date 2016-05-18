@@ -1214,60 +1214,40 @@ p {
 .ul li {
   padding-bottom: 1em;
   position: relative;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-align-items: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  display: table;
 }
-/* line 360, ../../src/sass/_modules/_typography.scss */
+/* line 358, ../../src/sass/_modules/_typography.scss */
 .ul li:before {
-  content: "";
-  width: 0.3em;
-  height: 0.3em;
-  background-color: #a9c000;
-  margin-right: 0.7em;
-  display: block;
-  -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
-  -webkit-transform: translateY(-0.2em);
-          transform: translateY(-0.2em);
+  content: "■";
+  color: #a9c000;
+  font-size: 0.6em;
+  -webkit-transform: translateY(-0.3em);
+          transform: translateY(-0.3em);
+  display: table-cell;
+  width: 1.8em;
 }
-/* line 370, ../../src/sass/_modules/_typography.scss */
+/* line 366, ../../src/sass/_modules/_typography.scss */
 .ul li:last-of-type {
   margin-bottom: 0;
 }
-/* line 374, ../../src/sass/_modules/_typography.scss */
+/* line 370, ../../src/sass/_modules/_typography.scss */
 .ul.body-copy__body {
   line-height: 1.4;
 }
 
-/* line 379, ../../src/sass/_modules/_typography.scss */
+/* line 375, ../../src/sass/_modules/_typography.scss */
 .ol {
   list-style-type: none;
   counter-reset: li;
   line-height: 1.4;
 }
-/* line 383, ../../src/sass/_modules/_typography.scss */
+/* line 379, ../../src/sass/_modules/_typography.scss */
 .ol li {
   padding-bottom: 1em;
   position: relative;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-align-items: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  display: table;
 }
-/* line 389, ../../src/sass/_modules/_typography.scss */
+/* line 383, ../../src/sass/_modules/_typography.scss */
 .ol li:before {
   content: counter(li);
   counter-increment: li;
@@ -1275,21 +1255,18 @@ p {
   font-size: 0.8077em;
   font-weight: 700;
   width: 1.8em;
-  display: block;
-  -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
+  display: table-cell;
 }
-/* line 399, ../../src/sass/_modules/_typography.scss */
+/* line 392, ../../src/sass/_modules/_typography.scss */
 .ol li:last-of-type {
   margin-bottom: 0;
 }
-/* line 403, ../../src/sass/_modules/_typography.scss */
+/* line 396, ../../src/sass/_modules/_typography.scss */
 .ol.body-copy__body {
   line-height: 1.4;
 }
 
-/* line 409, ../../src/sass/_modules/_typography.scss */
+/* line 402, ../../src/sass/_modules/_typography.scss */
 .link--primary, .link--secondary, .link--arrow--left, .link--arrow--right, .link--muted, .link--underline {
   text-decoration: none;
   position: relative;
@@ -1306,38 +1283,38 @@ p {
           hyphens: auto;
   -webkit-appearance: none;
 }
-/* line 427, ../../src/sass/_modules/_typography.scss */
+/* line 420, ../../src/sass/_modules/_typography.scss */
 .link--primary:active, .link--primary:target, .link--secondary:active, .link--secondary:target, .link--arrow--left:active, .link--arrow--left:target, .link--arrow--right:active, .link--arrow--right:target, .link--muted:active, .link--muted:target, .link--underline:active, .link--underline:target {
   background-color: rgba(55, 55, 55, 0.03);
   transition: background-color 0s 0s;
 }
-/* line 432, ../../src/sass/_modules/_typography.scss */
+/* line 425, ../../src/sass/_modules/_typography.scss */
 .link--primary:focus, .link--secondary:focus, .link--arrow--left:focus, .link--arrow--right:focus, .link--muted:focus, .link--underline:focus {
   outline: none;
 }
-/* line 436, ../../src/sass/_modules/_typography.scss */
+/* line 429, ../../src/sass/_modules/_typography.scss */
 .link--primary {
   font-weight: 800;
 }
-/* line 438, ../../src/sass/_modules/_typography.scss */
+/* line 431, ../../src/sass/_modules/_typography.scss */
 .link--primary:hover {
   color: #a9c000;
 }
-/* line 443, ../../src/sass/_modules/_typography.scss */
+/* line 436, ../../src/sass/_modules/_typography.scss */
 .link--arrow--left, .link--arrow--right {
   position: relative;
   font-weight: 700;
   transition: all 0.1s ease 0s;
 }
-/* line 448, ../../src/sass/_modules/_typography.scss */
+/* line 441, ../../src/sass/_modules/_typography.scss */
 .link--arrow--left:hover, .link--arrow--right:hover {
   color: #a9c000;
 }
-/* line 452, ../../src/sass/_modules/_typography.scss */
+/* line 445, ../../src/sass/_modules/_typography.scss */
 .link--arrow--left {
   padding-left: 0.5em;
 }
-/* line 455, ../../src/sass/_modules/_typography.scss */
+/* line 448, ../../src/sass/_modules/_typography.scss */
 .link--arrow--left:before {
   content: "";
   width: 0;
@@ -1357,7 +1334,7 @@ p {
   right: calc(100% + 11px);
   transition: right 0.1s 0s ease-in-out;
 }
-/* line 474, ../../src/sass/_modules/_typography.scss */
+/* line 467, ../../src/sass/_modules/_typography.scss */
 .link--arrow--left:after {
   content: "";
   width: 11px;
@@ -1372,20 +1349,20 @@ p {
   transition: width 0.1s 0s ease-in-out;
 }
 @media (hover) {
-  /* line 488, ../../src/sass/_modules/_typography.scss */
+  /* line 481, ../../src/sass/_modules/_typography.scss */
   .link--arrow--left:hover:before {
     right: calc(100% + 16px);
   }
-  /* line 491, ../../src/sass/_modules/_typography.scss */
+  /* line 484, ../../src/sass/_modules/_typography.scss */
   .link--arrow--left:hover:after {
     width: 16px;
   }
 }
-/* line 497, ../../src/sass/_modules/_typography.scss */
+/* line 490, ../../src/sass/_modules/_typography.scss */
 .link--arrow--right {
   padding-right: 0.5em;
 }
-/* line 500, ../../src/sass/_modules/_typography.scss */
+/* line 493, ../../src/sass/_modules/_typography.scss */
 .link--arrow--right:before {
   content: "";
   width: 11px;
@@ -1399,7 +1376,7 @@ p {
   left: 100%;
   transition: width 0.1s 0s ease-in-out;
 }
-/* line 513, ../../src/sass/_modules/_typography.scss */
+/* line 506, ../../src/sass/_modules/_typography.scss */
 .link--arrow--right:after {
   content: "";
   width: 0;
@@ -1420,20 +1397,20 @@ p {
   transition: left 0.1s 0s ease-in-out;
 }
 @media (hover) {
-  /* line 533, ../../src/sass/_modules/_typography.scss */
+  /* line 526, ../../src/sass/_modules/_typography.scss */
   .link--arrow--right:hover:before {
     width: 16px;
   }
-  /* line 536, ../../src/sass/_modules/_typography.scss */
+  /* line 529, ../../src/sass/_modules/_typography.scss */
   .link--arrow--right:hover:after {
     left: calc(100% + 16px);
   }
 }
-/* line 543, ../../src/sass/_modules/_typography.scss */
+/* line 536, ../../src/sass/_modules/_typography.scss */
 .link--underline {
   transition: all 0.1s ease 0.1s;
 }
-/* line 545, ../../src/sass/_modules/_typography.scss */
+/* line 538, ../../src/sass/_modules/_typography.scss */
 .link--underline:before {
   content: "";
   width: 100%;
@@ -1458,7 +1435,7 @@ p {
           animation-play-state: running;
 }
 @media (hover) {
-  /* line 562, ../../src/sass/_modules/_typography.scss */
+  /* line 555, ../../src/sass/_modules/_typography.scss */
   .link--underline:hover:before {
     -webkit-animation-name: underline_in;
             animation-name: underline_in;
@@ -1517,14 +1494,14 @@ p {
   }
 }
 @media (hover) {
-  /* line 593, ../../src/sass/_modules/_typography.scss */
+  /* line 586, ../../src/sass/_modules/_typography.scss */
   .link--underline:hover {
     transition: color 0.1s ease 0s;
     color: #a9c000;
   }
 }
 
-/* line 601, ../../src/sass/_modules/_typography.scss */
+/* line 594, ../../src/sass/_modules/_typography.scss */
 .link {
   text-decoration: none;
   position: relative;
@@ -1542,21 +1519,21 @@ p {
   -webkit-appearance: none;
   color: #a9c000;
 }
-/* line 615, ../../src/sass/_modules/_typography.scss */
+/* line 608, ../../src/sass/_modules/_typography.scss */
 .link:hover {
   text-decoration: underline;
 }
-/* line 618, ../../src/sass/_modules/_typography.scss */
+/* line 611, ../../src/sass/_modules/_typography.scss */
 .link:active, .link:target {
   background-color: rgba(55, 55, 55, 0.03);
   transition: background-color 0s 0s;
 }
-/* line 623, ../../src/sass/_modules/_typography.scss */
+/* line 616, ../../src/sass/_modules/_typography.scss */
 .link strong {
   font-weight: 700;
 }
 
-/* line 628, ../../src/sass/_modules/_typography.scss */
+/* line 621, ../../src/sass/_modules/_typography.scss */
 .h1-sans::-moz-selection,
 .h1-serif::-moz-selection,
 .h2-sans::-moz-selection,
@@ -1586,17 +1563,17 @@ p {
   background-color: #ebe7e6;
 }
 
-/* line 643, ../../src/sass/_modules/_typography.scss */
+/* line 636, ../../src/sass/_modules/_typography.scss */
 a[href^="tel"] {
   color: inherit;
   text-decoration: none;
 }
 
-/* line 651, ../../src/sass/_modules/_typography.scss */
+/* line 644, ../../src/sass/_modules/_typography.scss */
 .typography__body .row div {
   margin-bottom: 4em;
 }
-/* line 653, ../../src/sass/_modules/_typography.scss */
+/* line 646, ../../src/sass/_modules/_typography.scss */
 .typography__body .row div:last-of-type {
   margin-bottom: 0;
 }
