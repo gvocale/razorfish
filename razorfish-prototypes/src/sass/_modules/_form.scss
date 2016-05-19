@@ -605,108 +605,207 @@
 
 .form__submit-button {
     overflow: hidden;
-    &.shrinking {
-        border-radius: 50%;
-        max-width: 4em;
-        height: 4em;
-        animation-name: shrinkingExample;
-        animation-duration: 1s;
-        animation-direction: alternate;
-        animation-iteration-count: infinite;
-        @keyframes shrinkingExample {
-            0% {
-                max-width: 20em;
-                border-radius: 0;
-                padding-top: 1.5em;
-                padding-bottom: 1.5em;
-                padding-left: 3em;
-                padding-right: 3em;
-            }
-            20% {
-                max-width: 20em;
-                border-radius: 0;
-                padding-top: 1.5em;
-                padding-bottom: 1.5em;
-                padding-left: 3em;
-                padding-right: 3em;
-            }
-            80% {
-                max-width: 4em;
-                border-radius: 50%;
-                padding-top: 1.2em;
-                padding-bottom: 1.2em;
-                padding-left: 1.2em;
-                padding-right: 1.2em;
-                width: 3em;
-            }
-            100% {
-                max-width: 4em;
-                border-radius: 50%;
-                padding-top: 1.2em;
-                padding-bottom: 1.2em;
-                padding-left: 1.2em;
-                padding-right: 1.2em;
-                width: 3em;
-            }
-        }
-        span {
-            animation-name: shrinkingExampleSpan;
-            animation-duration: 1s;
-            animation-direction: alternate;
-            animation-iteration-count: infinite;
-            @keyframes shrinkingExampleSpan {
-                0% {
-                    opacity: 1;
-                }
-                20% {
-                    opacity: 1;
-                }
-                80% {
-                    opacity: 0;
+    position: relative;
+    box-shadow: inset 0 0 0 2px rgba($white, 0.2);
+    &.demo {
+        &.shrink {
+            animation: 1s alternate infinite shrinkDemo;
+            height: 4rem;
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            width: 10rem;
+            @keyframes shrinkDemo {
+                100% {
+                    width: 10rem;
+                    border-radius: 0%;
                 }
                 100% {
-                    opacity: 0;
+                    width: 4rem;
+                    border-radius: 50%;
+                }
+            }
+            span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                opacity: 1;
+                transform: translate(-50%, -50%);
+                animation: 1s alternate infinite shrinkDemoSpan;
+                @keyframes shrinkDemoSpan {
+                    50% {
+                        opacity: 0;
+                        transform: translate(-50%, 250%);
+                    }
+                }
+            }
+            &:hover,
+            &:active,
+            &:focus {
+                cursor: auto;
+                box-shadow: inset 0 0 0 2px rgba($white, 0.2);
+            }
+            &:active:after,
+            &:target:after {
+                display: none;
+            }
+        }
+        &.load {
+            animation: 1s normal 1 forwards shrinkDemo;
+            span {
+                animation: 1s normal 1 forwards shrinkDemoSpan;
+            }
+            .preloader {
+                display: block;
+                opacity: 1;
+                transition: all 0.2s 0s ease;
+            }
+        }
+        &.fill {
+            animation: 1s alternate infinite fillDemo;
+            @keyframes fillDemo {
+                0% {
+                    width: 4rem;
+                    border-radius: 50%;
+                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0 $primary;
+                }
+                25% {
+                    width: 4rem;
+                    border-radius: 50%;
+                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0 $primary;
+                }
+                75% {
+                    width: 4rem;
+                    border-radius: 50%;
+                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2em $primary;
+                }
+                100% {
+                    width: 4rem;
+                    border-radius: 50%;
+                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2em $primary;
+                }
+            }
+        }
+        &.tick {
+            width: 4rem;
+            border-radius: 50%;
+            animation: 1s forwards 1 fillDemo;
+            #tick {
+                display: block;
+                polyline {
+                    animation: tick 2s ease infinite normal forwards;
+                }
+                @keyframes tick {
+                    0% {
+                        stroke-dashoffset: 100;
+                    }
+                    50% {
+                        stroke-dashoffset: 100;
+                    }
+                    100% {
+                        stroke-dashoffset: 0;
+                    }
                 }
             }
         }
     }
-}
-
-#form__submit {
-    overflow: hidden;
-    transition: border-radius 0.3s 0s ease, width 0.5s 0s ease, height 0.5s 0s ease, box-shadow 0.2s 0s ease-in;
-    &.loading,
-    &.loading:hover {
-        border-radius: 50%;
-        padding: 1.2em;
-        width: 4em;
-        height: 4em;
-        box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0px $primary;
-        transition: all 0.3s 0s ease;
-        cursor: auto;
+    &.shrink {
+        animation: 0.6s 0s normal 1 forwards shrinkDemo;
+        height: 4rem;
+        width: 10rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        @keyframes shrinkDemo {
+            to {
+                width: 4rem;
+                border-radius: 50%;
+            }
+        }
         span {
-            opacity: 0;
-        }
-        &.filling,
-        &.filling:hover {
-            box-shadow: inset 0 0 0 0px rgba($white, 0), inset 0 0 0 2em $primary;
-        }
-    }
-    .preloader {
-        opacity: 0;
-        transition: all 0.3s 0s ease;
-    }
-    &.spin {
-        .preloader {
+            animation: 0.3s 0s normal 1 forwards shrinkDemoSpan;
             opacity: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @keyframes shrinkDemoSpan {
+                to {
+                    opacity: 0;
+                    transform: translate(-50%, 250%);
+                }
+            }
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            cursor: auto;
+            box-shadow: inset 0 0 0 2px rgba($white, 0.2);
+        }
+        &:active:after,
+        &:target:after {
+            display: none;
         }
     }
-    #tick {
-        display: none;
+    &.load {
+        .preloader {
+            display: block;
+            opacity: 0;
+            animation: 0.2s normal 1 forwards load;
+            @keyframes load {
+                to {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &.fill {
+        animation: 0.5s normal 1 forwards fillDemo;
+        @keyframes fillDemo {
+            0% {
+                width: 4rem;
+                border-radius: 50%;
+                box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0 $primary;
+            }
+            100% {
+                width: 4rem;
+                border-radius: 50%;
+                box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2em $primary;
+            }
+        }
     }
     &.tick {
         #tick {
             display: block;
+            polyline {
+                animation: 1s normal 1 forwards tick;
+            }
+            @keyframes tick {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+        }
+    }
+    &.destroy {
+        animation: 0.5s normal forwards 1 destroyDemo;
+        @keyframes destroyDemo {
+            0% {
+                width: 4rem;
+                border-radius: 50%;
+                box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2em $primary;
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                width: 4rem;
+                border-radius: 50%;
+                box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2em $primary;
+                transform: translateY(100%);
+                opacity: 0;
+            }
         }
     }
 }
@@ -716,6 +815,7 @@
     top: 45%;
     left: 51%;
     transform: translate(-50%, -50%);
+    display: none;
     polyline {
         stroke: $white;
         stroke-dasharray: 100;
@@ -727,89 +827,6 @@
             stroke-dashoffset: 0;
         }
     }
-}
-
-.tick__example {
-    position: relative;
-    width: 3em;
-    height: 3em;
-    font-size: $scale03;
-    @media screen and ($xxl) {
-        font-size: $scale04;
-    }
-    #tick {
-        polyline {
-            animation: tickExample 1s ease infinite forwards;
-            @keyframes tickExample {
-                0% {
-                    stroke-dashoffset: 100;
-                }
-                30% {
-                    stroke-dashoffset: 100;
-                }
-                100% {
-                    stroke-dashoffset: 0;
-                }
-            }
-        }
-    }
-}
-
-.form__button {
-    transform-origin: center;
-    overflow: hidden;
-    &.shrinking__example {
-        animation-name: shrinkingExample;
-        animation-duration: 1s;
-        animation-direction: alternate;
-        animation-iteration-count: infinite;
-        @keyframes shrinkingExample {
-            0% {
-                max-width: 10em;
-                border-radius: 0;
-            }
-            20% {
-                max-width: 10em;
-                border-radius: 0;
-            }
-            80% {
-                max-width: 4em;
-                border-radius: 50%;
-            }
-            100% {
-                max-width: 4em;
-                border-radius: 50%;
-            }
-        }
-    }
-    &.filling__example {
-        animation-name: fillingExample;
-        animation-duration: 1s;
-        animation-direction: alternate;
-        animation-iteration-count: infinite;
-        width: 4em;
-        height: 4em;
-        @keyframes fillingExample {
-            0% {
-                box-shadow: inset 0 0 0 0px rgba($white, 0), inset 0 0 0 2px $primary;
-            }
-            20% {
-                box-shadow: inset 0 0 0 0px rgba($white, 0), inset 0 0 0 2px $primary;
-            }
-            80% {
-                box-shadow: inset 0 0 0 0px rgba($white, 0), inset 0 0 0 2em $primary;
-            }
-            100% {
-                box-shadow: inset 0 0 0 0px rgba($white, 0), inset 0 0 0 2em $primary;
-            }
-        }
-        border-radius: 50%;
-        overflow: hidden;
-        span {
-            opacity: 0;
-        }
-    }
-    &.preloader__example {}
 }
 
 .form-animation {
@@ -828,6 +845,8 @@
 }
 
 .preloader {
+    display: none;
+    opacity: 1;
     position: absolute;
     top: -3px;
     left: -3px;
@@ -844,7 +863,6 @@
     $perimeter: 67px * pi(); // circumference of the raw svg inner cricle
     // measure to prevent inline block spacing from affecting the outer rotation
     font-size: 0;
-    display: inline-block;
     animation: outer ($speed * $loops) linear infinite;
     svg {
         animation: inner $speed linear infinite;

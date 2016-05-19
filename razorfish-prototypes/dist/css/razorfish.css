@@ -8020,182 +8020,320 @@ body {
 /* line 606, ../../src/sass/_modules/_form.scss */
 .form__submit-button {
   overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
 }
-/* line 608, ../../src/sass/_modules/_form.scss */
-.form__submit-button.shrinking {
-  border-radius: 50%;
-  max-width: 4em;
-  height: 4em;
-  -webkit-animation-name: shrinkingExample;
-          animation-name: shrinkingExample;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+/* line 611, ../../src/sass/_modules/_form.scss */
+.form__submit-button.demo.shrink {
+  -webkit-animation: 1s alternate infinite shrinkDemo;
+          animation: 1s alternate infinite shrinkDemo;
+  height: 4rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 10rem;
 }
-@-webkit-keyframes shrinkingExample {
-  0% {
-    max-width: 20em;
-    border-radius: 0;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    padding-left: 3em;
-    padding-right: 3em;
-  }
-  20% {
-    max-width: 20em;
-    border-radius: 0;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    padding-left: 3em;
-    padding-right: 3em;
-  }
-  80% {
-    max-width: 4em;
-    border-radius: 50%;
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
-    padding-left: 1.2em;
-    padding-right: 1.2em;
-    width: 3em;
+@-webkit-keyframes shrinkDemo {
+  100% {
+    width: 10rem;
+    border-radius: 0%;
   }
   100% {
-    max-width: 4em;
+    width: 4rem;
     border-radius: 50%;
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
-    padding-left: 1.2em;
-    padding-right: 1.2em;
-    width: 3em;
   }
 }
-@keyframes shrinkingExample {
-  0% {
-    max-width: 20em;
-    border-radius: 0;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    padding-left: 3em;
-    padding-right: 3em;
-  }
-  20% {
-    max-width: 20em;
-    border-radius: 0;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    padding-left: 3em;
-    padding-right: 3em;
-  }
-  80% {
-    max-width: 4em;
-    border-radius: 50%;
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
-    padding-left: 1.2em;
-    padding-right: 1.2em;
-    width: 3em;
+@keyframes shrinkDemo {
+  100% {
+    width: 10rem;
+    border-radius: 0%;
   }
   100% {
-    max-width: 4em;
+    width: 4rem;
     border-radius: 50%;
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
-    padding-left: 1.2em;
-    padding-right: 1.2em;
-    width: 3em;
   }
 }
-/* line 652, ../../src/sass/_modules/_form.scss */
-.form__submit-button.shrinking span {
-  -webkit-animation-name: shrinkingExampleSpan;
-          animation-name: shrinkingExampleSpan;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-@-webkit-keyframes shrinkingExampleSpan {
-  0% {
-    opacity: 1;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes shrinkingExampleSpan {
-  0% {
-    opacity: 1;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-/* line 675, ../../src/sass/_modules/_form.scss */
-#form__submit {
-  overflow: hidden;
-  transition: border-radius 0.3s 0s ease, width 0.5s 0s ease, height 0.5s 0s ease, box-shadow 0.2s 0s ease-in;
-}
-/* line 678, ../../src/sass/_modules/_form.scss */
-#form__submit.loading, #form__submit.loading:hover {
-  border-radius: 50%;
-  padding: 1.2em;
-  width: 4em;
-  height: 4em;
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 0px #a9c000;
-  transition: all 0.3s 0s ease;
-  cursor: auto;
-}
-/* line 687, ../../src/sass/_modules/_form.scss */
-#form__submit.loading span, #form__submit.loading:hover span {
-  opacity: 0;
-}
-/* line 690, ../../src/sass/_modules/_form.scss */
-#form__submit.loading.filling, #form__submit.loading.filling:hover, #form__submit.loading:hover.filling, #form__submit.loading:hover.filling:hover {
-  box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2em #a9c000;
-}
-/* line 695, ../../src/sass/_modules/_form.scss */
-#form__submit .preloader {
-  opacity: 0;
-  transition: all 0.3s 0s ease;
-}
-/* line 700, ../../src/sass/_modules/_form.scss */
-#form__submit.spin .preloader {
+/* line 629, ../../src/sass/_modules/_form.scss */
+.form__submit-button.demo.shrink span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: 1s alternate infinite shrinkDemoSpan;
+          animation: 1s alternate infinite shrinkDemoSpan;
 }
-/* line 704, ../../src/sass/_modules/_form.scss */
-#form__submit #tick {
+@-webkit-keyframes shrinkDemoSpan {
+  50% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 250%);
+            transform: translate(-50%, 250%);
+  }
+}
+@keyframes shrinkDemoSpan {
+  50% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 250%);
+            transform: translate(-50%, 250%);
+  }
+}
+/* line 643, ../../src/sass/_modules/_form.scss */
+.form__submit-button.demo.shrink:hover, .form__submit-button.demo.shrink:active, .form__submit-button.demo.shrink:focus {
+  cursor: auto;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+/* line 649, ../../src/sass/_modules/_form.scss */
+.form__submit-button.demo.shrink:active:after, .form__submit-button.demo.shrink:target:after {
   display: none;
 }
-/* line 708, ../../src/sass/_modules/_form.scss */
-#form__submit.tick #tick {
+/* line 654, ../../src/sass/_modules/_form.scss */
+.form__submit-button.demo.load {
+  -webkit-animation: 1s normal 1 forwards shrinkDemo;
+          animation: 1s normal 1 forwards shrinkDemo;
+}
+/* line 656, ../../src/sass/_modules/_form.scss */
+.form__submit-button.demo.load span {
+  -webkit-animation: 1s normal 1 forwards shrinkDemoSpan;
+          animation: 1s normal 1 forwards shrinkDemoSpan;
+}
+/* line 659, ../../src/sass/_modules/_form.scss */
+.form__submit-button.demo.load .preloader {
+  display: block;
+  opacity: 1;
+  transition: all 0.2s 0s ease;
+}
+/* line 665, ../../src/sass/_modules/_form.scss */
+.form__submit-button.demo.fill {
+  -webkit-animation: 1s alternate infinite fillDemo;
+          animation: 1s alternate infinite fillDemo;
+}
+@-webkit-keyframes fillDemo {
+  0% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 0 #a9c000;
+  }
+  25% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 0 #a9c000;
+  }
+  75% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 2em #a9c000;
+  }
+  100% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 2em #a9c000;
+  }
+}
+@keyframes fillDemo {
+  0% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 0 #a9c000;
+  }
+  25% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 0 #a9c000;
+  }
+  75% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 2em #a9c000;
+  }
+  100% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 2em #a9c000;
+  }
+}
+/* line 690, ../../src/sass/_modules/_form.scss */
+.form__submit-button.demo.tick {
+  width: 4rem;
+  border-radius: 50%;
+  -webkit-animation: 1s forwards 1 fillDemo;
+          animation: 1s forwards 1 fillDemo;
+}
+/* line 694, ../../src/sass/_modules/_form.scss */
+.form__submit-button.demo.tick #tick {
   display: block;
 }
-
-/* line 714, ../../src/sass/_modules/_form.scss */
+/* line 696, ../../src/sass/_modules/_form.scss */
+.form__submit-button.demo.tick #tick polyline {
+  -webkit-animation: tick 2s ease infinite normal forwards;
+          animation: tick 2s ease infinite normal forwards;
+}
+@-webkit-keyframes tick {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  50% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes tick {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  50% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+/* line 713, ../../src/sass/_modules/_form.scss */
+.form__submit-button.shrink {
+  -webkit-animation: 0.6s 0s normal 1 forwards shrinkDemo;
+          animation: 0.6s 0s normal 1 forwards shrinkDemo;
+  height: 4rem;
+  width: 10rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+@keyframes shrinkDemo {
+  to {
+    width: 4rem;
+    border-radius: 50%;
+  }
+}
+/* line 727, ../../src/sass/_modules/_form.scss */
+.form__submit-button.shrink span {
+  -webkit-animation: 0.3s 0s normal 1 forwards shrinkDemoSpan;
+          animation: 0.3s 0s normal 1 forwards shrinkDemoSpan;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+@keyframes shrinkDemoSpan {
+  to {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 250%);
+            transform: translate(-50%, 250%);
+  }
+}
+/* line 741, ../../src/sass/_modules/_form.scss */
+.form__submit-button.shrink:hover, .form__submit-button.shrink:active, .form__submit-button.shrink:focus {
+  cursor: auto;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+/* line 747, ../../src/sass/_modules/_form.scss */
+.form__submit-button.shrink:active:after, .form__submit-button.shrink:target:after {
+  display: none;
+}
+/* line 753, ../../src/sass/_modules/_form.scss */
+.form__submit-button.load .preloader {
+  display: block;
+  opacity: 0;
+  -webkit-animation: 0.2s normal 1 forwards load;
+          animation: 0.2s normal 1 forwards load;
+}
+@-webkit-keyframes load {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes load {
+  to {
+    opacity: 1;
+  }
+}
+/* line 764, ../../src/sass/_modules/_form.scss */
+.form__submit-button.fill {
+  -webkit-animation: 0.5s normal 1 forwards fillDemo;
+          animation: 0.5s normal 1 forwards fillDemo;
+}
+@keyframes fillDemo {
+  0% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 0 #a9c000;
+  }
+  100% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 2em #a9c000;
+  }
+}
+/* line 780, ../../src/sass/_modules/_form.scss */
+.form__submit-button.tick #tick {
+  display: block;
+}
+/* line 782, ../../src/sass/_modules/_form.scss */
+.form__submit-button.tick #tick polyline {
+  -webkit-animation: 1s normal 1 forwards tick;
+          animation: 1s normal 1 forwards tick;
+}
+@keyframes tick {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* line 792, ../../src/sass/_modules/_form.scss */
+.form__submit-button.destroy {
+  -webkit-animation: 0.5s normal forwards 1 destroyDemo;
+          animation: 0.5s normal forwards 1 destroyDemo;
+}
+@-webkit-keyframes destroyDemo {
+  0% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 2em #a9c000;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 2em #a9c000;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+}
+@keyframes destroyDemo {
+  0% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 2em #a9c000;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), inset 0 0 0 2em #a9c000;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+}
+/* line 813, ../../src/sass/_modules/_form.scss */
 #tick {
   position: absolute;
   top: 45%;
   left: 51%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  display: none;
 }
-/* line 719, ../../src/sass/_modules/_form.scss */
+/* line 819, ../../src/sass/_modules/_form.scss */
 #tick polyline {
   stroke: #FFFFFF;
   stroke-dasharray: 100;
@@ -8203,140 +8341,12 @@ body {
   -webkit-animation: tick 1s ease 1 forwards;
           animation: tick 1s ease 1 forwards;
 }
-@-webkit-keyframes tick {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 @keyframes tick {
   to {
     stroke-dashoffset: 0;
   }
 }
-/* line 732, ../../src/sass/_modules/_form.scss */
-.tick__example {
-  position: relative;
-  width: 3em;
-  height: 3em;
-  font-size: 0.8077rem;
-}
-@media screen and (min-width: 1600px) {
-  /* line 732, ../../src/sass/_modules/_form.scss */
-  .tick__example {
-    font-size: 1rem;
-  }
-}
-/* line 741, ../../src/sass/_modules/_form.scss */
-.tick__example #tick polyline {
-  -webkit-animation: tickExample 1s ease infinite forwards;
-          animation: tickExample 1s ease infinite forwards;
-}
-@-webkit-keyframes tickExample {
-  0% {
-    stroke-dashoffset: 100;
-  }
-  30% {
-    stroke-dashoffset: 100;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes tickExample {
-  0% {
-    stroke-dashoffset: 100;
-  }
-  30% {
-    stroke-dashoffset: 100;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-/* line 758, ../../src/sass/_modules/_form.scss */
-.form__button {
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  overflow: hidden;
-}
-/* line 761, ../../src/sass/_modules/_form.scss */
-.form__button.shrinking__example {
-  -webkit-animation-name: shrinkingExample;
-          animation-name: shrinkingExample;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-@keyframes shrinkingExample {
-  0% {
-    max-width: 10em;
-    border-radius: 0;
-  }
-  20% {
-    max-width: 10em;
-    border-radius: 0;
-  }
-  80% {
-    max-width: 4em;
-    border-radius: 50%;
-  }
-  100% {
-    max-width: 4em;
-    border-radius: 50%;
-  }
-}
-/* line 785, ../../src/sass/_modules/_form.scss */
-.form__button.filling__example {
-  -webkit-animation-name: fillingExample;
-          animation-name: fillingExample;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  width: 4em;
-  height: 4em;
-  border-radius: 50%;
-  overflow: hidden;
-}
-@-webkit-keyframes fillingExample {
-  0% {
-    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2px #a9c000;
-  }
-  20% {
-    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2px #a9c000;
-  }
-  80% {
-    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2em #a9c000;
-  }
-  100% {
-    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2em #a9c000;
-  }
-}
-@keyframes fillingExample {
-  0% {
-    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2px #a9c000;
-  }
-  20% {
-    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2px #a9c000;
-  }
-  80% {
-    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2em #a9c000;
-  }
-  100% {
-    box-shadow: inset 0 0 0 0px rgba(255, 255, 255, 0), inset 0 0 0 2em #a9c000;
-  }
-}
-/* line 808, ../../src/sass/_modules/_form.scss */
-.form__button.filling__example span {
-  opacity: 0;
-}
-
-/* line 815, ../../src/sass/_modules/_form.scss */
+/* line 832, ../../src/sass/_modules/_form.scss */
 .form-animation {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8350,30 +8360,30 @@ body {
   padding-bottom: 20vw;
 }
 @media screen and (min-width: 768px) {
-  /* line 815, ../../src/sass/_modules/_form.scss */
+  /* line 832, ../../src/sass/_modules/_form.scss */
   .form-animation {
     padding-top: 15vw;
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 815, ../../src/sass/_modules/_form.scss */
+  /* line 832, ../../src/sass/_modules/_form.scss */
   .form-animation {
     padding-top: 10vw;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 815, ../../src/sass/_modules/_form.scss */
+  /* line 832, ../../src/sass/_modules/_form.scss */
   .form-animation {
     padding-bottom: 15vw;
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 815, ../../src/sass/_modules/_form.scss */
+  /* line 832, ../../src/sass/_modules/_form.scss */
   .form-animation {
     padding-bottom: 10vw;
   }
 }
-/* line 821, ../../src/sass/_modules/_form.scss */
+/* line 838, ../../src/sass/_modules/_form.scss */
 .form-animation__container {
   width: calc(100% / 5);
   padding-left: 1rem;
@@ -8389,27 +8399,28 @@ body {
   display: flex;
 }
 
-/* line 830, ../../src/sass/_modules/_form.scss */
+/* line 847, ../../src/sass/_modules/_form.scss */
 .preloader {
+  display: none;
+  opacity: 1;
   position: absolute;
   top: -3px;
   left: -3px;
   width: calc(100% + 6px);
   font-size: 0;
-  display: inline-block;
   -webkit-animation: outer 6600ms linear infinite;
           animation: outer 6600ms linear infinite;
 }
-/* line 835, ../../src/sass/_modules/_form.scss */
+/* line 854, ../../src/sass/_modules/_form.scss */
 .preloader:before, .preloader:after {
   white-space-collapse: collapse;
 }
-/* line 849, ../../src/sass/_modules/_form.scss */
+/* line 867, ../../src/sass/_modules/_form.scss */
 .preloader svg {
   -webkit-animation: inner 1320ms linear infinite;
           animation: inner 1320ms linear infinite;
 }
-/* line 851, ../../src/sass/_modules/_form.scss */
+/* line 869, ../../src/sass/_modules/_form.scss */
 .preloader svg circle {
   fill: none;
   stroke: #a9c000;

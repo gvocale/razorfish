@@ -64,108 +64,172 @@ window.onload = (function() {
 
     // Contact-form, toggling classes when overlay is open
 
-    contactFormLink = document.getElementsByClassName('contact-form__link');
-    contactFormOverlay = document.getElementsByClassName('contact-form__overlay')[0];
-    contactFormBackgroundImage = document.getElementsByClassName('contact-form__background-image')[0];
-    contactFormFormGroup = document.getElementsByClassName('contact-form__form-group')[0];
-    contactFormHero = document.getElementById('contact-form__hero');
-    contactFormSubmit = document.getElementById('form__submit');
-    contactFormConfirmationGroup = document.getElementsByClassName('contact-form__confirmation-group')[0];
-    contactFormBack = document.getElementsByClassName('contact-form__back')[0];
+    if (document.getElementById('contact-form__hero')) {
+
+        contactFormLink = document.getElementsByClassName('contact-form__link');
+        contactFormOverlay = document.getElementsByClassName('contact-form__overlay')[0];
+        contactFormBackgroundImage = document.getElementsByClassName('contact-form__background-image')[0];
+        contactFormFormGroup = document.getElementsByClassName('contact-form__form-group')[0];
+        contactFormHero = document.getElementById('contact-form__hero');
+        contactFormSubmitButton = document.getElementsByClassName('form__submit-button')[0];
+        contactFormConfirmationGroup = document.getElementsByClassName('contact-form__confirmation-group')[0];
+        contactFormBack = document.getElementsByClassName('contact-form__back')[0];
 
 
-    for (var i = 0; i < contactFormLink.length; i++) {
-        contactFormLink[i].onclick = function() {
+        for (var i = 0; i < contactFormLink.length; i++) {
+            contactFormLink[i].onclick = function() {
 
-            // Scroll body so that #contact-form__hero fits fully into view
-            $('html, body').animate({
-                scrollTop: $('#contact-form__hero').offset().top
-            }, 400);
+                // Scroll body so that #contact-form__hero fits fully into view
+                $('html, body').animate({
+                    scrollTop: $('#contact-form__hero').offset().top
+                }, 400);
 
-            document.body.style.overflowY = "hidden";
-            document.documentElement.style.overflowY = "hidden";
+                document.body.style.overflowY = "hidden";
+                document.documentElement.style.overflowY = "hidden";
 
-            setTimeout(function() {
-                contactFormOverlay.classList.add("display");
-            }, 405);
+                setTimeout(function() {
+                    contactFormOverlay.classList.add("display");
+                }, 405);
 
-            setTimeout(function() {
-                contactFormBackgroundImage.classList.add('visible', 'blur', 'scale');
-            }, 410);
+                setTimeout(function() {
+                    contactFormBackgroundImage.classList.add('visible', 'blur', 'scale');
+                }, 410);
 
-            setTimeout(function() {
-                contactFormFormGroup.classList.add('display', 'open');
-            }, 500);
+                setTimeout(function() {
+                    contactFormFormGroup.classList.add('display', 'open');
+                }, 500);
+            }
         }
+
+
+        contactFormBack.onclick = function() { // On click on Back button
+            contactFormFormGroup.classList.remove("open");
+            contactFormFormGroup.classList.add("hide");
+
+            setTimeout(function() {
+                contactFormBackgroundImage.classList.remove('visible', 'blur', 'scale');
+            }, 100);
+
+            setTimeout(function() {
+                contactFormOverlay.classList.remove('display');
+                contactFormFormGroup.classList.remove('display');
+                document.body.style.overflowY = "auto";
+                document.documentElement.style.overflowY = "auto";
+            }, 510);
+        };
+
+
+        // Button Animation
+
+        function formSubmitButtonAnimation() {
+            setTimeout(function() {
+                contactFormSubmitButton.classList.add("shrink");
+                console.log("1000 shrinking");
+            }, 200);
+            setTimeout(function() {
+                contactFormSubmitButton.classList.add("load");
+                console.log("2000 loading");
+            }, 1000);
+            setTimeout(function() {
+                contactFormSubmitButton.classList.add("fill");
+                console.log("3000 filling");
+            }, 4000);
+            setTimeout(function() {
+                contactFormSubmitButton.classList.add("tick");
+                console.log("4000 tick");
+            }, 5000);
+            setTimeout(function() {
+                contactFormSubmitButton.classList.remove("shrink", "load", "fill", "tick", "destroy");
+                console.log("6000 remove classes");
+            }, 20000);
+
+        }
+
+        
+
+        // If form__submit-button submit is clicked
+        contactFormSubmitButton.onclick = function() {
+            if (!this.classList.contains("clicked")) { // check if it has already clicked, to avoid initiating the same animation twice or more
+                contactFormSubmitButton.classList.add("clicked");
+
+                formSubmitButtonAnimation(); // Fire button animation 
+                
+                setTimeout(function() {
+                    contactFormBackgroundImage.classList.remove("blur", "scale");
+                }, 12000);
+                setTimeout(function() {
+                    contactFormFormGroup.classList.remove("display");
+                    contactFormSubmit.classList.remove("loading", "filling", "tick");
+                    contactFormConfirmationGroup.classList.remove("hide");
+                    contactFormConfirmationGroup.classList.add("display");
+                }, 13000);
+                setTimeout(function() {
+                    contactFormConfirmationGroup.classList.add("open");
+                }, 13050);
+                setTimeout(function() {
+                    contactFormConfirmationGroup.classList.remove("open");
+                    contactFormConfirmationGroup.classList.add("hide");
+                }, 16000);
+                setTimeout(function() {
+                    contactFormConfirmationGroup.classList.remove("display");
+                    contactFormBackgroundImage.classList.remove("visible");
+                    document.body.style.overflowY = "auto";
+                    document.documentElement.style.overflowY = "auto";
+                }, 16200);
+                setTimeout(function() {
+                    contactFormOverlay.classList.remove("close");
+                }, 17000);
+            }
+
+        };
+
     }
 
 
-    contactFormBack.onclick = function() { // On click on Back button
-        contactFormFormGroup.classList.remove("open");
-        contactFormFormGroup.classList.add("hide");
+    // Demo Form Submit Button Animation
 
-        setTimeout(function() {
-            contactFormBackgroundImage.classList.remove('visible', 'blur', 'scale');
-        }, 100);
+    if (document.getElementsByClassName('demo_loop')[0]) {
 
-        setTimeout(function() {
-            contactFormOverlay.classList.remove('display');
-            contactFormFormGroup.classList.remove('display');
-            document.body.style.overflowY = "auto";
-            document.documentElement.style.overflowY = "auto";
-        }, 510);
-    };
+        var formSubmitButtonDemo = document.getElementsByClassName('demo_loop')[0];
 
+        console.log("yes");
 
-    // If button submit is clicked
-    contactFormSubmit.onclick = function() {
-        if (!this.classList.contains("clicked")) { // check if it has already clicked, to avoid initiating the same animation twice or more
-            contactFormSubmit.classList.add("clicked");
+        function formSubmitButtonDemoLoop() {
+            console.log("fire");
             setTimeout(function() {
-                contactFormSubmit.classList.add("loading");
-            }, 200);
+                formSubmitButtonDemo.classList.add("shrink");
+                console.log("1000 shrinking");
+            }, 2000);
             setTimeout(function() {
-                contactFormSubmit.classList.add("spin");
-            }, 500);
+                formSubmitButtonDemo.classList.add("load");
+                console.log("2000 loading");
+            }, 3000);
             setTimeout(function() {
-                contactFormSubmit.classList.remove("spin");
-                contactFormSubmit.classList.add("filling");
-            }, 3500);
+                formSubmitButtonDemo.classList.add("fill");
+                console.log("3000 filling");
+            }, 6000);
             setTimeout(function() {
-                contactFormSubmit.classList.add("tick");
-            }, 4250);
-            setTimeout(function() {
-                contactFormFormGroup.classList.remove("open");
-                contactFormFormGroup.classList.add("hide");
-            }, 6500);
-            setTimeout(function() {
-                contactFormBackgroundImage.classList.remove("blur", "scale");
-            }, 6700);
-            setTimeout(function() {
-                contactFormFormGroup.classList.remove("display");
-                contactFormSubmit.classList.remove("loading", "filling", "tick");
-                contactFormConfirmationGroup.classList.remove("hide");
-                contactFormConfirmationGroup.classList.add("display");
+                formSubmitButtonDemo.classList.add("tick");
+                console.log("4000 tick");
             }, 7000);
             setTimeout(function() {
-                contactFormConfirmationGroup.classList.add("open");
-            }, 7010);
+                formSubmitButtonDemo.classList.add("destroy");
+                console.log("5000 destroy");
+            }, 10000);
             setTimeout(function() {
-                contactFormConfirmationGroup.classList.remove("open");
-                contactFormConfirmationGroup.classList.add("hide");
-            }, 9000);
-            setTimeout(function() {
-                contactFormConfirmationGroup.classList.remove("display");
-                contactFormBackgroundImage.classList.remove("visible");
-                document.body.style.overflowY = "auto";
-                document.documentElement.style.overflowY = "auto";
-            }, 9200);
-            setTimeout(function() {
-                contactFormOverlay.classList.remove("close");
-            }, 9410);
+                formSubmitButtonDemo.classList.remove("shrink", "load", "fill", "tick", "destroy");
+                console.log("6000 remove classes");
+            }, 12000);
+
         }
 
+        formSubmitButtonDemoLoop(); // Fire function a first time
+
+        window.setInterval(formSubmitButtonDemoLoop, 14000); // repeat function every 9 seconds
     };
+
+
+
 
 
     // Form: if in select.form__select an option is selected, add class .selected
@@ -670,7 +734,7 @@ window.onload = (function() {
 
     // Navigation opacity
 
-    var siteMasthead = document.getElementsByClassName('site-masthead');
+    var siteMasthead = document.getElementsByClassName('site-masthead')[0];
 
     function siteMastheadTransparencyCheck() {
         var rect = siteMasthead.getBoundingClientRect();
@@ -689,7 +753,7 @@ window.onload = (function() {
 
     // Footer: navigation hides when footer is in viewport
 
-    if (document.getElementsByClassName('footer')) {
+    if (document.getElementsByClassName('footer')[0]) {
         var footer = document.getElementsByClassName('footer')[0];
         var siteMasthead = document.getElementsByClassName('site-masthead')[0];
 
