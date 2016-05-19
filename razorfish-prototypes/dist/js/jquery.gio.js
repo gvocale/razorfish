@@ -145,7 +145,7 @@ window.onload = (function() {
 
         }
 
-        
+
 
         // If form__submit-button submit is clicked
         contactFormSubmitButton.onclick = function() {
@@ -153,7 +153,7 @@ window.onload = (function() {
                 contactFormSubmitButton.classList.add("clicked");
 
                 formSubmitButtonAnimation(); // Fire button animation 
-                
+
                 setTimeout(function() {
                     contactFormBackgroundImage.classList.remove("blur", "scale");
                 }, 12000);
@@ -553,51 +553,38 @@ window.onload = (function() {
 
     // Office-list Tab shifting between North America / Europe / Asia PAcific
 
+    if (document.getElementsByClassName('office-list__area')[0]) {
 
-    var x = $('.office-list__area:nth-child(1)').height();
-    $('.office-list__area-container').css('height', x);
+        var officeList = document.getElementsByClassName('office-list')[0];
+        var officeListTabNorthAmerica = document.getElementById('office-list__tab__north-america');
+        var officeListTabEurope = document.getElementById('office-list__tab__europe');
+        var officeListTabAsiaPacific = document.getElementById('office-list__tab__asia-pacific');
 
-    $('#office-list__tab__north-america').click(function() {
-        var x = $('.office-list__area:nth-child(1)').height();
-        $('.office-list__area-container').css('height', x);
-        $("#office-list__tab__europe").removeClass("active");
-        $("#office-list__tab__asia-pacific").removeClass("active");
-        $(this).addClass("active");
-        $(".office-list").removeClass("europe asia-pacific").addClass("north-america");
-    });
-    $('#office-list__tab__europe').click(function() {
-        var x = $('.office-list__area:nth-child(2)').height();
-        $('.office-list__area-container').css('height', x);
-        $("#office-list__tab__north-america").removeClass("active");
-        $("#office-list__tab__asia-pacific").removeClass("active");
-        $(this).addClass("active");
-        $(".office-list").removeClass("north-america asia-pacific").addClass("europe");
-    });
-    $('#office-list__tab__asia-pacific').click(function() {
-        var x = $('.office-list__area:nth-child(3)').height();
-        $('.office-list__area-container').css('height', x);
-        $("#office-list__tab__north-america").removeClass("active");
-        $("#office-list__tab__europe").removeClass("active");
-        $(this).addClass("active");
-        $(".office-list").removeClass("north-america europe").addClass("asia-pacific");
-    });
-
-    $(window).bind("load resize", function(e) { // refresh on load and resize
-
-        if ($(".office-list").hasClass("north-america")) {
-            var x = $('.office-list__area:nth-child(1)').height();
-            $('.office-list__area-container').css('height', x);
-        }
-        if ($(".office-list").hasClass("europe")) {
-            var x = $('.office-list__area:nth-child(2)').height();
-            $('.office-list__area-container').css('height', x);
-        }
-        if ($(".office-list").hasClass("asia-pacific")) {
-            var x = $('.office-list__area:nth-child(3)').height();
-            $('.office-list__area-container').css('height', x);
+        officeListTabNorthAmerica.onclick = function() {
+            officeList.classList.add("north-america");
+            officeList.classList.remove("europe", "asia-pacific");
+            officeListTabNorthAmerica.classList.add("active");
+            officeListTabEurope.classList.remove("active");
+            officeListTabAsiaPacific.classList.remove("active");
         }
 
-    });
+        officeListTabEurope.onclick = function() {
+            officeList.classList.add("europe");
+            officeList.classList.remove("north-america", "asia-pacific");
+            officeListTabNorthAmerica.classList.remove("active");
+            officeListTabEurope.classList.add("active");
+            officeListTabAsiaPacific.classList.remove("active");
+        }
+
+        officeListTabAsiaPacific.onclick = function() {
+            officeList.classList.add("asia-pacific");
+            officeList.classList.remove("north-america", "europe");
+            officeListTabNorthAmerica.classList.remove("active");
+            officeListTabEurope.classList.remove("active");
+            officeListTabAsiaPacific.classList.add("active");
+        }
+
+    }
 
     $(".input-select").change(function() {
         if ($(".input-select option[value='none']").attr('select')) {

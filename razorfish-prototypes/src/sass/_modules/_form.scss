@@ -610,7 +610,10 @@
     &.demo {
         &.shrink {
             animation: 1s alternate infinite shrinkDemo;
-            height: 4rem;
+            height: 3rem;
+            @media screen and ($xxl) {
+                height: 4rem;
+            }
             padding-top: 0;
             padding-bottom: 0;
             padding-left: 0;
@@ -622,7 +625,10 @@
                     border-radius: 0%;
                 }
                 100% {
-                    width: 4rem;
+                    width: 3rem;
+                    @media screen and ($xxl) {
+                        width: 4rem;
+                    }
                     border-radius: 50%;
                 }
             }
@@ -666,29 +672,48 @@
             animation: 1s alternate infinite fillDemo;
             @keyframes fillDemo {
                 0% {
-                    width: 4rem;
+                    width: 3rem;
+                    @media screen and ($xxl) {
+                        width: 4rem;
+                    }
                     border-radius: 50%;
-                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0 $primary;
+                    box-shadow: inset 0 0 0 2px rgba($white, 0.2),
+                    inset 0 0 0 0 $primary;
                 }
                 25% {
-                    width: 4rem;
+                    width: 3rem;
+                    @media screen and ($xxl) {
+                        width: 4rem;
+                    }
                     border-radius: 50%;
-                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0 $primary;
+                    box-shadow: inset 0 0 0 2px rgba($white, 0.2),
+                    inset 0 0 0 0 $primary;
                 }
                 75% {
-                    width: 4rem;
+                    width: 3rem;
+                    @media screen and ($xxl) {
+                        width: 4rem;
+                    }
                     border-radius: 50%;
-                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2em $primary;
+                    box-shadow: inset 0 0 0 2px rgba($white, 0.2),
+                    inset 0 0 0 2rem $primary;
                 }
                 100% {
-                    width: 4rem;
+                    width: 3rem;
+                    @media screen and ($xxl) {
+                        width: 4rem;
+                    }
                     border-radius: 50%;
-                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2em $primary;
+                    box-shadow: inset 0 0 0 2px rgba($white, 0.2),
+                    inset 0 0 0 2rem $primary;
                 }
             }
         }
         &.tick {
-            width: 4rem;
+            width: 3rem;
+            @media screen and ($xxl) {
+                width: 4rem;
+            }
             border-radius: 50%;
             animation: 1s forwards 1 fillDemo;
             #tick {
@@ -712,7 +737,10 @@
     }
     &.shrink {
         animation: 0.6s 0s normal 1 forwards shrinkDemo;
-        height: 4rem;
+        height: 3rem;
+        @media screen and ($xxl) {
+            height: 4rem;
+        }
         width: 10rem;
         padding-top: 0;
         padding-bottom: 0;
@@ -765,14 +793,22 @@
         animation: 0.5s normal 1 forwards fillDemo;
         @keyframes fillDemo {
             0% {
-                width: 4rem;
+                width: 3rem;
+                @media screen and ($xxl) {
+                    width: 4rem;
+                }
                 border-radius: 50%;
-                box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0 $primary;
+                box-shadow: inset 0 0 0 2px rgba($white, 0.2),
+                inset 0 0 0 0 $primary;
             }
             100% {
-                width: 4rem;
+                width: 3rem;
+                @media screen and ($xxl) {
+                    width: 4rem;
+                }
                 border-radius: 50%;
-                box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2em $primary;
+                box-shadow: inset 0 0 0 2px rgba($white, 0.2),
+                inset 0 0 0 2rem $primary;
             }
         }
     }
@@ -793,16 +829,24 @@
         animation: 0.5s normal forwards 1 destroyDemo;
         @keyframes destroyDemo {
             0% {
-                width: 4rem;
+                width: 3rem;
+                @media screen and ($xxl) {
+                    width: 4rem;
+                }
                 border-radius: 50%;
-                box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2em $primary;
+                box-shadow: inset 0 0 0 2px rgba($white, 0.2),
+                inset 0 0 0 2rem $primary;
                 transform: translateY(0);
                 opacity: 1;
             }
             100% {
-                width: 4rem;
+                width: 3rem;
+                @media screen and ($xxl) {
+                    width: 4rem;
+                }
                 border-radius: 50%;
-                box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2em $primary;
+                box-shadow: inset 0 0 0 2px rgba($white, 0.2),
+                inset 0 0 0 2rem $primary;
                 transform: translateY(100%);
                 opacity: 0;
             }
