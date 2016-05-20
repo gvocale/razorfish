@@ -611,9 +611,6 @@
         &.shrink {
             animation: 1s alternate infinite shrinkDemo;
             height: 3rem;
-            @media screen and ($xxl) {
-                height: 4rem;
-            }
             padding-top: 0;
             padding-bottom: 0;
             padding-left: 0;
@@ -626,10 +623,17 @@
                 }
                 100% {
                     width: 3rem;
-                    @media screen and ($xxl) {
-                        width: 4rem;
-                    }
                     border-radius: 50%;
+                }
+            }
+            @media screen and ($xxl) {
+                animation: 1s alternate infinite shrinkDemoXXL;
+                height: 4rem;
+                @keyframes shrinkDemoXXL {
+                    to {
+                        width: 4rem;
+                        border-radius: 50%;
+                    }
                 }
             }
             span {
@@ -658,7 +662,9 @@
             }
         }
         &.load {
-            animation: 1s normal 1 forwards shrinkDemo;
+            // animation: 1s normal 1 forwards shrinkDemo;
+            animation-direction: normal;
+            animation-iteration-count: 1;
             span {
                 animation: 1s normal 1 forwards shrinkDemoSpan;
             }

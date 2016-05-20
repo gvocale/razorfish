@@ -1,10 +1,10 @@
-$office-list-bezier: cubic-bezier(.58, .27, .18, .99);
-
 .office-list {
     background-color: $gray;
     @include grid-padding;
     @include padding-bottom;
-    transition: all 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
+    transition: all 1s 0s $bezier;
+    float: left;
+    width: 100%;
     &__item {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
@@ -16,7 +16,7 @@ $office-list-bezier: cubic-bezier(.58, .27, .18, .99);
         cursor: hand;
         overflow: hidden;
         float: left;
-        transition: all 1s 0s $office-list-bezier;
+        transition: all 1s 0s $bezier;
         &:last-child {
             margin-bottom: 0;
         }
@@ -84,7 +84,7 @@ $office-list-bezier: cubic-bezier(.58, .27, .18, .99);
         height: 100%;
         color: $white;
         z-index: 1;
-        transition: all 1s 0.1s $office-list-bezier;
+        transition: all 1s 0.2s $bezier;
     }
     &__country-eyebrow {
         font-family: $sans;
@@ -235,15 +235,17 @@ $office-list-bezier: cubic-bezier(.58, .27, .18, .99);
     &__area-container {
         position: relative;
         @include component-margin;
-        transition: all 1s 0s $office-list-bezier;
-        overflow: hidden;
+        // transition: all 1s 0s $bezier;
+        // overflow: hidden;
+        width: calc(100% - 2rem);
+        float: left;
     }
     &__area {
         position: absolute;
         top: 0;
         left: 0;
         width: calc(100% + 1rem);
-        transition: all 1s 0s $office-list-bezier;
+        transition: all 1s 0s $bezier;
         margin-top: -0.5rem;
         margin-left: -0.5rem;
         float: left;
@@ -254,13 +256,13 @@ $office-list-bezier: cubic-bezier(.58, .27, .18, .99);
                 position: relative;
                 z-index: 1;
                 opacity: 1;
-                transition: opacity 0s 0s linear, transform 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
+                transition: all 1s 0s $bezier;
                 .office-list__item {
                     transform: translateX(0%);
                 }
             }
             &:nth-child(2) {
-                opacity: 0.2;
+                opacity: 0;
                 .office-list__item {
                     transform: translateX(calc(220% + 2rem));
                     .office-list__description {
@@ -269,12 +271,12 @@ $office-list-bezier: cubic-bezier(.58, .27, .18, .99);
                 }
             }
             &:nth-child(3) {
-                opacity: 0.2;
+                opacity: 0;
                 .office-list__item {
-                    transform: translateX(calc(420% + 4rem));
+                    transform: translateX(calc(220% + 2rem));
                 }
                 .office-list__description {
-                    transform: translateX(200px);
+                    transform: translateX(100px);
                 }
             }
         }
@@ -282,7 +284,7 @@ $office-list-bezier: cubic-bezier(.58, .27, .18, .99);
     &.europe {
         .office-list__area {
             &:nth-child(1) {
-                opacity: 0.2;
+                opacity: 0;
                 .office-list__item {
                     transform: translateX(calc(-220% - 2rem));
                     .office-list__description {
@@ -293,14 +295,14 @@ $office-list-bezier: cubic-bezier(.58, .27, .18, .99);
             &:nth-child(2) {
                 position: relative;
                 z-index: 1;
-                transition: opacity 0s 0s linear, transform 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
+                transition: all 1s 0s $bezier;
                 opacity: 1;
                 .office-list__item {
                     transform: translateX(0%);
                 }
             }
             &:nth-child(3) {
-                opacity: 0.2;
+                opacity: 0;
                 .office-list__item {
                     transform: translateX(calc(220% + 2rem));
                     .office-list__description {
@@ -313,16 +315,16 @@ $office-list-bezier: cubic-bezier(.58, .27, .18, .99);
     &.asia-pacific {
         .office-list__area {
             &:nth-child(1) {
-                opacity: 0.2;
+                opacity: 0;
                 .office-list__item {
-                    transform: translateX(calc(-420% - 4rem));
+                    transform: translateX(calc(-220% - 2rem));
                     .office-list__description {
-                        transform: translateX(-200px);
+                        transform: translateX(-100px);
                     }
                 }
             }
             &:nth-child(2) {
-                opacity: 0.2;
+                opacity: 0;
                 .office-list__item {
                     transform: translateX(calc(-220% - 2rem));
                     .office-list__description {
@@ -331,7 +333,7 @@ $office-list-bezier: cubic-bezier(.58, .27, .18, .99);
                 }
             }
             &:nth-child(3) {
-                transition: opacity 0s 0s linear, transform 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
+                transition: all 1s 0s $bezier;
                 opacity: 1;
                 position: relative;
                 z-index: 1;
@@ -341,44 +343,44 @@ $office-list-bezier: cubic-bezier(.58, .27, .18, .99);
             }
         }
     }
-    &.transition-to-north-america {
-        .office-list__item {
-            transition: all 1.2s 0s $office-list-bezier;
-        }
-        .office-list__area {
-            &:nth-child(1) {
-                .office-list__description {
-                    transition: all 1s 0.2s $office-list-bezier;
-                }
-            }
-            &:nth-child(2) {
-                transition: opacity 0s 0s linear, transform 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
-                opacity: 1;
-            }
-            &:nth-child(3) {
-                transition: all 0.75s 0s $office-list-bezier;
-                opacity: 0.2;
-            }
-        }
-    }
-    &.transition-to-asia-pacific {
-        .office-list__item {
-            transition: all 1.2s 0s $office-list-bezier;
-        }
-        .office-list__area {
-            &:nth-child(1) {
-                transition: all 0.75s 0s $office-list-bezier;
-                opacity: 0.2;
-            }
-            &:nth-child(2) {
-                transition: opacity 0s 0s linear, transform 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
-                opacity: 1;
-            }
-            &:nth-child(3) {
-                .office-list__description {
-                    transition: all 1s 0.2s $office-list-bezier;
-                }
-            }
-        }
-    }
+    // &.transition-to-north-america {
+    //     .office-list__item {
+    //         transition: all 1.2s 0s $bezier;
+    //     }
+    //     .office-list__area {
+    //         &:nth-child(1) {
+    //             .office-list__description {
+    //                 transition: all 1s 0.2s $bezier;
+    //             }
+    //         }
+    //         &:nth-child(2) {
+    //             transition: all 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
+    //             opacity: 1;
+    //         }
+    //         &:nth-child(3) {
+    //             transition: all 0.75s 0s $bezier;
+    //             opacity: 0;
+    //         }
+    //     }
+    // }
+    // &.transition-to-asia-pacific {
+    //     .office-list__item {
+    //         transition: all 1.2s 0s $bezier;
+    //     }
+    //     .office-list__area {
+    //         &:nth-child(1) {
+    //             transition: all 0.75s 0s $bezier;
+    //             opacity: 0;
+    //         }
+    //         &:nth-child(2) {
+    //             transition: all 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
+    //             opacity: 1;
+    //         }
+    //         &:nth-child(3) {
+    //             .office-list__description {
+    //                 transition: all 1s 0.2s $bezier;
+    //             }
+    //         }
+    //     }
+    // }
 }

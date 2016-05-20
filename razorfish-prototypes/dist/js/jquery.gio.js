@@ -74,6 +74,8 @@ window.onload = (function() {
         contactFormSubmitButton = document.getElementsByClassName('form__submit-button')[0];
         contactFormConfirmationGroup = document.getElementsByClassName('contact-form__confirmation-group')[0];
         contactFormBack = document.getElementsByClassName('contact-form__back')[0];
+        contactFormBackContainer = document.getElementsByClassName('contact-form__back-container')[0];
+
 
 
         for (var i = 0; i < contactFormLink.length; i++) {
@@ -88,35 +90,49 @@ window.onload = (function() {
                 document.documentElement.style.overflowY = "hidden";
 
                 setTimeout(function() {
-                    contactFormOverlay.classList.add("display");
+                    contactFormOverlay.classList.add("display", "content");
                 }, 405);
 
-                setTimeout(function() {
-                    contactFormBackgroundImage.classList.add('visible', 'blur', 'scale');
-                }, 410);
+                // setTimeout(function() {
+                //     contactFormBackgroundImage.classList.add('visible', 'blur', 'scale');
+                // }, 410);
 
-                setTimeout(function() {
-                    contactFormFormGroup.classList.add('display', 'open');
-                }, 500);
+                // setTimeout(function() {
+                //     contactFormFormGroup.classList.add('display', 'open');
+                // }, 500);
             }
         }
 
 
         contactFormBack.onclick = function() { // On click on Back button
-            contactFormFormGroup.classList.remove("open");
-            contactFormFormGroup.classList.add("hide");
 
-            setTimeout(function() {
-                contactFormBackgroundImage.classList.remove('visible', 'blur', 'scale');
-            }, 100);
+            if (contactFormOverlay.classList.contains("display")) {
+                contactFormOverlay.classList.remove("content");
 
-            setTimeout(function() {
-                contactFormOverlay.classList.remove('display');
-                contactFormFormGroup.classList.remove('display');
-                document.body.style.overflowY = "auto";
-                document.documentElement.style.overflowY = "auto";
-            }, 510);
-        };
+                // Function to remove class .display after all fields have faded away
+                function removeTransition() {
+                    contactFormOverlay.classList.remove("display");
+                }
+
+                contactFormBackContainer.addEventListener("animationend", removeTransition, false);
+            }
+            // contactFormFormGroup.classList.remove("open");
+            // contactFormFormGroup.classList.add("hide");
+
+            // setTimeout(function() {
+            //     contactFormBackgroundImage.classList.remove('visible', 'blur', 'scale');
+            // }, 100);
+
+            // setTimeout(function() {
+            //     contactFormOverlay.classList.remove('display');
+            //     contactFormFormGroup.classList.remove('display');
+            //     document.body.style.overflowY = "auto";
+            //     document.documentElement.style.overflowY = "auto";
+            // }, 510);
+        }
+
+
+
 
 
         // Button Animation
@@ -567,11 +583,11 @@ window.onload = (function() {
         var officeListTabAsiaPacific = document.getElementById('office-list__tab__asia-pacific');
 
         officeListTabNorthAmerica.onclick = function() {
-            // If moving from one extreme to the other, add class transition while the transition is happening, to control opacity of middle bucket
-            if (officeList.classList.contains("asia-pacific")) {
-                officeList.classList.add("transition-to-north-america");
-                officeList.addEventListener("transitionend", removeTransition, false);
-            }
+            // // If moving from one extreme to the other, add class transition while the transition is happening, to control opacity of middle bucket
+            // if (officeList.classList.contains("asia-pacific")) {
+            //     officeList.classList.add("transition-to-north-america");
+            //     officeList.addEventListener("transitionend", removeTransition, false);
+            // }
             officeList.classList.add("north-america");
             officeList.classList.remove("europe", "asia-pacific");
             officeListTabNorthAmerica.classList.add("active");
@@ -588,11 +604,11 @@ window.onload = (function() {
         }
 
         officeListTabAsiaPacific.onclick = function() {
-            // If moving from one extreme to the other, add class transition while the transition is happening, to control opacity of middle bucket
-            if (officeList.classList.contains("north-america")) {
-                officeList.classList.add("transition-to-asia-pacific");
-                officeList.addEventListener("transitionend", removeTransition, false);
-            }
+            // // If moving from one extreme to the other, add class transition while the transition is happening, to control opacity of middle bucket
+            // if (officeList.classList.contains("north-america")) {
+            //     officeList.classList.add("transition-to-asia-pacific");
+            //     officeList.addEventListener("transitionend", removeTransition, false);
+            // }
             officeList.classList.add("asia-pacific");
             officeList.classList.remove("north-america", "europe");
             officeListTabNorthAmerica.classList.remove("active");
