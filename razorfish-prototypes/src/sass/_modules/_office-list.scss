@@ -1,7 +1,10 @@
+$office-list-bezier: cubic-bezier(.58, .27, .18, .99);
+
 .office-list {
     background-color: $gray;
     @include grid-padding;
     @include padding-bottom;
+    transition: all 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
     &__item {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
@@ -13,12 +16,7 @@
         cursor: hand;
         overflow: hidden;
         float: left;
-        transition: all 0.6s 0s ease;
-        // @for $i from 1 through 15 {
-        //     &:nth-of-type(#{$i}) {
-        //         transition-delay: (0.05s * $i) + 0.05s;
-        //     }
-        // }
+        transition: all 1s 0s $office-list-bezier;
         &:last-child {
             margin-bottom: 0;
         }
@@ -86,6 +84,7 @@
         height: 100%;
         color: $white;
         z-index: 1;
+        transition: all 1s 0.1s $office-list-bezier;
     }
     &__country-eyebrow {
         font-family: $sans;
@@ -236,7 +235,7 @@
     &__area-container {
         position: relative;
         @include component-margin;
-        transition: all 0.6s 0.3s ease;
+        transition: all 1s 0s $office-list-bezier;
         overflow: hidden;
     }
     &__area {
@@ -244,31 +243,38 @@
         top: 0;
         left: 0;
         width: calc(100% + 1rem);
-        transition: transform 0.4s 0s $bezier;
+        transition: all 1s 0s $office-list-bezier;
         margin-top: -0.5rem;
         margin-left: -0.5rem;
-        // &.display-none {
-        //     display: none;
-        // }
+        float: left;
     }
     &.north-america {
         .office-list__area {
-            
             &:nth-child(1) {
                 position: relative;
                 z-index: 1;
+                opacity: 1;
+                transition: opacity 0s 0s linear, transform 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
                 .office-list__item {
                     transform: translateX(0%);
                 }
             }
             &:nth-child(2) {
+                opacity: 0.2;
                 .office-list__item {
-                    transform: translateX(calc(200% + 2rem));
+                    transform: translateX(calc(220% + 2rem));
+                    .office-list__description {
+                        transform: translateX(100px);
+                    }
                 }
             }
             &:nth-child(3) {
+                opacity: 0.2;
                 .office-list__item {
-                    transform: translateX(calc(400% + 4rem));
+                    transform: translateX(calc(420% + 4rem));
+                }
+                .office-list__description {
+                    transform: translateX(200px);
                 }
             }
         }
@@ -276,20 +282,30 @@
     &.europe {
         .office-list__area {
             &:nth-child(1) {
+                opacity: 0.2;
                 .office-list__item {
-                    transform: translateX(calc(-200% - 2rem));
+                    transform: translateX(calc(-220% - 2rem));
+                    .office-list__description {
+                        transform: translateX(-100px);
+                    }
                 }
             }
             &:nth-child(2) {
                 position: relative;
                 z-index: 1;
+                transition: opacity 0s 0s linear, transform 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
+                opacity: 1;
                 .office-list__item {
                     transform: translateX(0%);
                 }
             }
             &:nth-child(3) {
+                opacity: 0.2;
                 .office-list__item {
-                    transform: translateX(calc(200% + 2rem));
+                    transform: translateX(calc(220% + 2rem));
+                    .office-list__description {
+                        transform: translateX(100px);
+                    }
                 }
             }
         }
@@ -297,20 +313,70 @@
     &.asia-pacific {
         .office-list__area {
             &:nth-child(1) {
+                opacity: 0.2;
                 .office-list__item {
-                    transform: translateX(calc(-400% - 4rem));
+                    transform: translateX(calc(-420% - 4rem));
+                    .office-list__description {
+                        transform: translateX(-200px);
+                    }
                 }
             }
             &:nth-child(2) {
+                opacity: 0.2;
                 .office-list__item {
-                    transform: translateX(calc(-200% - 2rem));
+                    transform: translateX(calc(-220% - 2rem));
+                    .office-list__description {
+                        transform: translateX(-100px);
+                    }
                 }
             }
             &:nth-child(3) {
+                transition: opacity 0s 0s linear, transform 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
+                opacity: 1;
                 position: relative;
                 z-index: 1;
                 .office-list__item {
                     transform: translateX(0%);
+                }
+            }
+        }
+    }
+    &.transition-to-north-america {
+        .office-list__item {
+            transition: all 1.2s 0s $office-list-bezier;
+        }
+        .office-list__area {
+            &:nth-child(1) {
+                .office-list__description {
+                    transition: all 1s 0.2s $office-list-bezier;
+                }
+            }
+            &:nth-child(2) {
+                transition: opacity 0s 0s linear, transform 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
+                opacity: 1;
+            }
+            &:nth-child(3) {
+                transition: all 0.75s 0s $office-list-bezier;
+                opacity: 0.2;
+            }
+        }
+    }
+    &.transition-to-asia-pacific {
+        .office-list__item {
+            transition: all 1.2s 0s $office-list-bezier;
+        }
+        .office-list__area {
+            &:nth-child(1) {
+                transition: all 0.75s 0s $office-list-bezier;
+                opacity: 0.2;
+            }
+            &:nth-child(2) {
+                transition: opacity 0s 0s linear, transform 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
+                opacity: 1;
+            }
+            &:nth-child(3) {
+                .office-list__description {
+                    transition: all 1s 0.2s $office-list-bezier;
                 }
             }
         }

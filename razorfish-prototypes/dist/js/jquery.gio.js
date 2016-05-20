@@ -551,9 +551,15 @@ window.onload = (function() {
     });
 
 
+
     // Office-list Tab shifting between North America / Europe / Asia PAcific
 
     if (document.getElementsByClassName('office-list__area')[0]) {
+
+        // Function to remove class .transition after moving between two far bucket is over
+        function removeTransition() {
+            officeList.classList.remove("transition-to-north-america", "transition-to-asia-pacific")
+        }
 
         var officeList = document.getElementsByClassName('office-list')[0];
         var officeListTabNorthAmerica = document.getElementById('office-list__tab__north-america');
@@ -561,6 +567,11 @@ window.onload = (function() {
         var officeListTabAsiaPacific = document.getElementById('office-list__tab__asia-pacific');
 
         officeListTabNorthAmerica.onclick = function() {
+            // If moving from one extreme to the other, add class transition while the transition is happening, to control opacity of middle bucket
+            if (officeList.classList.contains("asia-pacific")) {
+                officeList.classList.add("transition-to-north-america");
+                officeList.addEventListener("transitionend", removeTransition, false);
+            }
             officeList.classList.add("north-america");
             officeList.classList.remove("europe", "asia-pacific");
             officeListTabNorthAmerica.classList.add("active");
@@ -577,6 +588,11 @@ window.onload = (function() {
         }
 
         officeListTabAsiaPacific.onclick = function() {
+            // If moving from one extreme to the other, add class transition while the transition is happening, to control opacity of middle bucket
+            if (officeList.classList.contains("north-america")) {
+                officeList.classList.add("transition-to-asia-pacific");
+                officeList.addEventListener("transitionend", removeTransition, false);
+            }
             officeList.classList.add("asia-pacific");
             officeList.classList.remove("north-america", "europe");
             officeListTabNorthAmerica.classList.remove("active");
