@@ -1,4 +1,3 @@
-$contact-form-bezier: cubic-bezier(.58, .27, .18, .99);
 // Animation mixins
 @mixin fields-visible {
     animation-name: fields_visible;
@@ -100,9 +99,21 @@ $contact-form-bezier: cubic-bezier(.58, .27, .18, .99);
         top: 0;
         left: 0;
         color: $white;
-        z-index: -200;
-        // display: none;
+        display: none;
+        &.display {
+            display: block;
+        }
         .contact-form__form-group {
+            transform: translateY(-100%);
+            transition: all 0s 0.20s linear;
+            .contact-form__back-container,
+            .contact-form__headline,
+            .divider,
+            .contact-form__form > *,
+            .contact-form__button-group {
+                opacity: 0;
+                transition: opacity 1s ease-in 0s;
+            }
             .contact-form__back-container,
             .contact-form__headline,
             .divider,
@@ -111,76 +122,94 @@ $contact-form-bezier: cubic-bezier(.58, .27, .18, .99);
                 @include fields-hide;
             }
         }
-        &.content {
-            .contact-form__background-image {
-                animation: 0.5s $contact-form-bezier 0s 1 normal forwards backgroundAnimOpen;
-                opacity: 0;
-                transform: scale(1) translate3d(0, 0, 0);
-                filter: blur(0);
-                @keyframes backgroundAnimOpen {
-                    to {
-                        opacity: 1;
-                        transform: scale(1.3) translate3d(0, 5%, 0);
-                        filter: blur(20px);
-                    }
-                }
-            }
+        &.form {
             .contact-form__form-group {
+                z-index: 1;
+                transform: translateY(0);
+                transition: all 0s 0s linear;
                 .contact-form__back-container {
                     @include fields-visible;
-                    animation-delay: 0s;
+                    animation-delay: 0.2s;
                 }
                 .contact-form__headline {
                     @include fields-visible;
-                    animation-delay: 0.025s;
+                    animation-delay: 0.225s;
                 }
                 .divider {
                     @include fields-visible;
-                    animation-delay: 0.05s;
+                    animation-delay: 0.25s;
                 }
                 .contact-form__form > * {
                     @include fields-visible;
                     @for $i from 1 through 15 {
                         &:nth-of-type(#{$i}) {
-                            animation-delay: (0.025s * $i) + 0.05s;
+                            animation-delay: (0.025s * $i) + 0.25s;
                         }
                     }
                 }
                 .contact-form__button-group {
                     @include fields-visible;
-                    animation-delay: 0.40s;
+                    animation-delay: 0.60s;
+                }
+            }
+            .contact-form__background-image {
+                transition: all 1s 0s $bezier;
+                opacity: 1;
+                transform: scale(1.3) translate3d(0, 5%, 0);
+            }
+        }
+        .contact-form__confirmation-group {
+            transform: translateY(100%);
+            transition: all 0s 0.2s linear;
+            .contact-form__headline,
+            .divider,
+            .contact-form__subhead {
+                transform: translateY(100px);
+                opacity: 0;
+                transition: transform 0s 0.21s linear, opacity 0.2s 0s ease;
+            }
+            .contact-form__headline,
+            .divider,
+            .contact-form__subhead {
+                @include fields-hide;
+                animation-delay: 0s;
+            }
+        }
+        &.confirmation {
+            .contact-form__confirmation-group {
+                z-index: 1;
+                transform: translateY(0);
+                transition: all 0s 0s linear;
+                .contact-form__headline {
+                    @include fields-visible;
+                    animation-delay: 0.6s;
+                }
+                .divider {
+                    @include fields-visible;
+                    animation-delay: 0.625s;
+                }
+                .contact-form__subhead {
+                    @include fields-visible;
+                    animation-delay: 0.65s;
+                }
+            }
+            .contact-form__background-image {
+                transition: all 1s 0s $bezier;
+                opacity: 1;
+                .image-blurred {
+                    opacity: 0;
+                    transition: all 1s 0s $bezier;
                 }
             }
         }
-        &.display {
-            // display: block;
-            z-index: 100;
-            // .contact-form__confirmation-group {
-            //     .contact-form__headline {
-            //         @include fields-visible;
-            //         animation-delay: 0s;
-            //     }
-            //     .divider {
-            //         @include fields-visible;
-            //         animation-delay: 0.025s;
-            //     }
-            //     .contact-form__subhead {
-            //         @include fields-visible;
-            //         animation-delay: 0.05s;
-            //     }
-            // }
-        }
         .contact-form__background-image {
-            animation: 0.5s $contact-form-bezier 0s 1 normal forwards backgroundAnimClose;
-            opacity: 1;
-            transform: scale(1.3) translate3d(0, 5%, 0);
-            filter: blur(20px);
-            @keyframes backgroundAnim {
-                to {
-                    opacity: 0;
-                    transform: scale(1) translate3d(0, 0, 0);
-                    filter: blur(0);
-                }
+            transition: all 1s 0.2s $bezier;
+            opacity: 0;
+            transform: scale(1) translate3d(0, 0, 0);
+            .image-blurred {
+                opacity: 1;
+                transition: all 0s 1s linear;
+                
             }
         }
     }
@@ -192,13 +221,13 @@ $contact-form-bezier: cubic-bezier(.58, .27, .18, .99);
         -webkit-overflow-scrolling: touch;
     }
     &__form-group {
-        display: block;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
         overflow: hidden;
         width: 100%;
         min-height: 100%;
-        top: 0;
-        left: 0;
         @include grid-padding;
         @include padding-top;
         @include padding-bottom;
@@ -206,54 +235,6 @@ $contact-form-bezier: cubic-bezier(.58, .27, .18, .99);
         flex-wrap: nowrap;
         align-items: center;
         justify-content: center;
-        // display: none;
-        .contact-form__back-container,
-        .contact-form__headline,
-        .divider,
-        .contact-form__form > *,
-        .contact-form__button-group {
-            opacity: 0;
-            transition: opacity 1s ease-in 0s;
-        }
-        &.display {
-            display: flex;
-        }
-        // &.hide {
-        //     .contact-form__back-container,
-        //     .contact-form__headline,
-        //     .divider,
-        //     .contact-form__form > *,
-        //     .contact-form__button-group {
-        //         @include fields-hide;
-        //         animation-delay: 0s;
-        //     }
-        // }
-        // &.open {
-        //     .contact-form__back-container {
-        //         @include fields-visible;
-        //         animation-delay: 0s;
-        //     }
-        //     .contact-form__headline {
-        //         @include fields-visible;
-        //         animation-delay: 0.025s;
-        //     }
-        //     .divider {
-        //         @include fields-visible;
-        //         animation-delay: 0.05s;
-        //     }
-        //     .contact-form__form > * {
-        //         @include fields-visible;
-        //         @for $i from 1 through 15 {
-        //             &:nth-of-type(#{$i}) {
-        //                 animation-delay: (0.025s * $i) + 0.05s;
-        //             }
-        //         }
-        //     }
-        //     .contact-form__button-group {
-        //         @include fields-visible;
-        //         animation-delay: 0.40s;
-        //     }
-        // }
         .divider {
             margin-bottom: 0.8em;
             font-size: $scale06;
@@ -270,11 +251,11 @@ $contact-form-bezier: cubic-bezier(.58, .27, .18, .99);
     }
     &__confirmation-group {
         position: absolute;
+        top: 0;
+        left: 0;
         overflow: hidden;
         width: 100%;
         min-height: 100%;
-        top: 0;
-        left: 0;
         @include grid-padding;
         @include padding-top;
         @include padding-bottom;
@@ -282,10 +263,7 @@ $contact-form-bezier: cubic-bezier(.58, .27, .18, .99);
         flex-wrap: nowrap;
         align-items: center;
         justify-content: center;
-        display: none;
-        &.display {
-            display: flex;
-        }
+        display: flex;
         .divider {
             margin-bottom: 0.8em;
             font-size: $scale06;
@@ -299,36 +277,6 @@ $contact-form-bezier: cubic-bezier(.58, .27, .18, .99);
                 font-size: $scale09;
             }
         }
-        // Closed state
-        .contact-form__headline,
-        .divider,
-        .contact-form__subhead {
-            transform: translateY(100px);
-            opacity: 0;
-            transition: transform 0s 0.21s linear, opacity 0.2s 0s ease;
-        }
-        &.hide {
-            .contact-form__headline,
-            .divider,
-            .contact-form__subhead {
-                @include fields-hide;
-                animation-delay: 0s;
-            }
-        }
-        // &.open {
-        //     .contact-form__headline {
-        //         @include fields-visible;
-        //         animation-delay: 0s;
-        //     }
-        //     .divider {
-        //         @include fields-visible;
-        //         animation-delay: 0.025s;
-        //     }
-        //     .contact-form__subhead {
-        //         @include fields-visible;
-        //         animation-delay: 0.05s;
-        //     }
-        // }
     }
     &__back {
         font-family: $sans;

@@ -818,7 +818,7 @@
             }
         }
         @media screen and ($xxl) {
-            animation: 0.5s  $bezier normal 1 forwards submit_fill_xxl;
+            animation: 0.5s $bezier normal 1 forwards submit_fill_xxl;
             width: 4rem;
             @keyframes submit_fill_xxl {
                 to {
@@ -838,6 +838,9 @@
                     stroke-dashoffset: 0;
                 }
             }
+        }
+        .preloader {
+            opacity: 0;
         }
     }
     &.destroy {
@@ -886,6 +889,7 @@
     left: 51%;
     transform: translate(-50%, -50%);
     display: none;
+    width: 50%;
     polyline {
         stroke: $white;
         stroke-dasharray: 100;
@@ -912,9 +916,14 @@
     display: none;
     opacity: 1;
     position: absolute;
-    top: -3px;
-    left: -3px;
-    width: calc(100% + 6px);
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    @media screen and ($xxl) {
+        top: -3px;
+        left: -3px;
+        width: calc(100% + 6px);
+    }
     &:before,
     &:after {
         white-space-collapse: collapse;
