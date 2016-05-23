@@ -1,0 +1,18 @@
+.body-wrapper {
+    transition: transform 0.5s 0s $bezier;
+    position: relative;
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 90%;
+        height: 50vh;
+        bottom: 0;
+        margin-left: 5%;
+        box-shadow: 0 0 100px 0 darken($black, 20%);
+        z-index: -1;
+    }
+    &.shrink {
+        transform: scale(0.9) translateY(5%);
+    }
+}

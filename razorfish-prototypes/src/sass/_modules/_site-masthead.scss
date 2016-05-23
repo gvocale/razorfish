@@ -28,7 +28,7 @@
     justify-content: space-between;
     position: fixed;
     z-index: 1000;
-    transition: transform 0.1s 0s ease, background-color 0.2s 0.0s ease;
+    transition: transform 0.1s 0s ease, background-color 0.2s 0.0s ease, color 0.2s 0s ease;
     background-color: rgba($white, 0);
     padding-top: 0.5em;
     padding-bottom: 0.5em;
@@ -42,6 +42,7 @@
     }
     &.opaque {
         background-color: rgba($white, 1);
+        color: $black;
     }
     &.hiding {
         transform: translateY(-100%);

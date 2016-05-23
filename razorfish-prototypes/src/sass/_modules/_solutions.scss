@@ -314,26 +314,6 @@
             }
         }
     }
-    &__shrinking-area {
-        transition: transform 0.2s 0s ease;
-        background-color: darken($black, 10%);
-        color: $white;
-        z-index: 1;
-        &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 90%;
-            height: 100vh;
-            bottom: 0;
-            margin-left: 5%;
-            box-shadow: 0 0 100px 0 darken($black, 20%);
-            z-index: 0;
-        }
-        &.shrink {
-            transform: scale(0.9) translateY(5%);
-        }
-    }
     &__menu {
         &__link {
             width: 100%;

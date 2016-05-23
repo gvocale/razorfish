@@ -158,9 +158,6 @@ window.onload = (function() {
                     contactFormDisplayOff();
                 }, 12500);
 
-
-
-
             }
         };
     }
@@ -715,10 +712,23 @@ window.onload = (function() {
 
     // GradientMaps.applyGradientMap(target, gradientMap);
 
+    // Site Masthead color 
+
+    var siteMasthead = document.getElementsByClassName('site-masthead')[0];
+
+    if (document.getElementsByClassName('hero')[0]) {
+
+        var heroFirst = document.getElementsByClassName('hero')[0];
+
+        if ((heroFirst.classList.contains("hero--text-white-accent")) || (heroFirst.classList.contains("hero--text-white"))) {
+            siteMasthead.classList.add("white");
+        }
+
+    }
 
     // Navigation opacity
 
-    var siteMasthead = document.getElementsByClassName('site-masthead')[0];
+    
 
     function siteMastheadTransparencyCheck() {
         var rect = siteMasthead.getBoundingClientRect();
@@ -732,35 +742,6 @@ window.onload = (function() {
     window.addEventListener('resize', siteMastheadTransparencyCheck);
     window.addEventListener('scroll', siteMastheadTransparencyCheck);
     window.addEventListener('load', siteMastheadTransparencyCheck);
-
-
-
-    // Footer: navigation hides when footer is in viewport
-
-    if (document.getElementsByClassName('footer')[0]) {
-        var footer = document.getElementsByClassName('footer')[0];
-        var siteMasthead = document.getElementsByClassName('site-masthead')[0];
-
-        function footerInViewport() {
-            var rect = footer.getBoundingClientRect();
-            if (rect.top <= window.innerHeight) {
-                console.log("footer in viewport");
-                siteMasthead.classList.add('important-hiding');
-            } else {
-                siteMasthead.classList.remove('important-hiding');
-            }
-        };
-
-        // Bind it on scroll, load and resize.
-        window.addEventListener('resize', footerInViewport);
-        window.addEventListener('scroll', footerInViewport);
-        window.addEventListener('load', footerInViewport);
-
-    }
-
-
-
-
 
 
 
@@ -1044,6 +1025,33 @@ window.onload = (function() {
         });
     };
 
+    //  Footer: Shrink body of page when the footer is rearched and hide navigation
+
+    if (document.getElementsByClassName('footer')[0]) {
+
+
+        var footer = document.getElementsByClassName('footer')[0];
+        var siteMasthead = document.getElementsByClassName('site-masthead')[0];
+
+        if (document.getElementsByClassName('body-wrapper')[0]) {
+            var bodyWrapper = document.getElementsByClassName('body-wrapper')[0];
+        }
+
+        function footerInViewport() {
+            var footerTop = footer.getBoundingClientRect().top;
+            if (footerTop <= (window.innerHeight / 3 * 2)) {
+                bodyWrapper.classList.add('shrink'); // Shrink body of page
+                siteMasthead.classList.add('important-hiding'); // Hide navigation
+            } else {
+                bodyWrapper.classList.remove('shrink');
+                siteMasthead.classList.remove('important-hiding');
+            }
+        }
+        // Bind it on scroll, load and resize.
+        window.addEventListener('resize', footerInViewport);
+        window.addEventListener('scroll', footerInViewport);
+        window.addEventListener('load', footerInViewport);
+    }
 
 
 
