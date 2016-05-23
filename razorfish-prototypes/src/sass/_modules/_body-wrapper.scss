@@ -1,6 +1,18 @@
 .body-wrapper {
-    transition: transform 0.5s 0s $bezier;
     position: relative;
+    transform-origin: top;
+    transition: 0.5s all 0s $bezier;
+    opacity: 1;
+    &.fade {
+        transform: scale(0.9) translateY(5vw);
+        opacity: 0;
+        .site-navigation__container {
+            opacity: 0;
+            transform: scale(0.9) translateY(5vw);
+            transition: 0.5s all 0s $bezier;
+            transform-origin: top;
+        }
+    }
     &:before {
         content: "";
         display: block;
@@ -12,7 +24,12 @@
         box-shadow: 0 0 100px 0 darken($black, 20%);
         z-index: -1;
     }
+    &.pre-shrink {
+        transform-origin: center;
+    }
     &.shrink {
+        opacity: 1;
         transform: scale(0.9) translateY(5%);
+        transform-origin: center;
     }
 }

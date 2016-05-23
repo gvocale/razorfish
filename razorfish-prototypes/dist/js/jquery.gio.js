@@ -15,6 +15,50 @@ window.onload = (function() {
 
     console.log('javascript file loaded');
 
+    // On page load remove fade class
+
+    if (document.getElementsByClassName('body-wrapper')[0]) {
+
+        var bodyWrapper = document.getElementsByClassName('body-wrapper')[0];
+
+        setTimeout(function() {
+            bodyWrapper.classList.remove('fade');
+        }, 10);
+
+
+    }
+
+
+    // Intercept links away from page
+
+    function interceptClickEvent(e) {
+        var href;
+        var target = e.target || e.srcElement;
+        if (target.tagName === 'A') {
+            href = target.getAttribute('href');
+
+            if (true) {
+                bodyWrapper.classList.add('fade');
+                //tell the browser not to respond to the link click
+                e.preventDefault();
+                // navigate to the link after the transion has ended
+                bodyWrapper.addEventListener("transitionend", function(e) { window.location.href = href; });
+            }
+        }
+    }
+
+
+    //listen for link click events at the document level
+    if (document.addEventListener) {
+        document.addEventListener('click', interceptClickEvent);
+    } else if (document.attachEvent) {
+        document.attachEvent('onclick', interceptClickEvent);
+    }
+
+
+
+
+    var siteMasthead = document.getElementsByClassName('site-masthead')[0];
     var siteMastheadCheckbox = document.getElementById('site-masthead__checkbox');
     var siteNavigationOverlay = document.getElementsByClassName('site-navigation__overlay')[0];
     var siteNavigationLinkContainers = document.getElementsByClassName('site-navigation__link-container');
@@ -35,6 +79,7 @@ window.onload = (function() {
 
             // Navigation: on open give random delay to each link
             siteNavigationOverlay.classList.add('visible');
+            siteMasthead.classList.add('navigation-open'); // So that if the navigation has white text (ex: solution landing page), the razorfish logo and hamburger are still black
             setTimeout(function() {
                 siteNavigationOverlay.classList.add('open');
             }, 10);
@@ -53,7 +98,9 @@ window.onload = (function() {
             document.documentElement.style.overflowY = "auto";
 
             // Remove class open and visible from all links into navigation
+
             siteNavigationOverlay.classList.remove('open');
+            siteMasthead.classList.remove('navigation-open');
             setTimeout(function() {
                 siteNavigationOverlay.classList.remove('visible');
             }, 210);
@@ -716,7 +763,7 @@ window.onload = (function() {
 
     var siteMasthead = document.getElementsByClassName('site-masthead')[0];
 
-    if (document.getElementsByClassName('hero')[0]) {
+    if ((document.getElementsByClassName('hero')[0]) && (!document.getElementsByClassName('simple-title')[0])) {
 
         var heroFirst = document.getElementsByClassName('hero')[0];
 
@@ -728,7 +775,7 @@ window.onload = (function() {
 
     // Navigation opacity
 
-    
+
 
     function siteMastheadTransparencyCheck() {
         var rect = siteMasthead.getBoundingClientRect();
@@ -945,7 +992,6 @@ window.onload = (function() {
         var pillar4 = document.getElementById('solutions__pillar4');
         var pillar5 = document.getElementById('solutions__pillar5');
         var solutionsMenu = document.getElementById('solutions__menu');
-        var solutionsShrinkingArea = document.getElementsByClassName('solutions__shrinking-area')[0];
         var practices = document.getElementById('solutions__practices');
         var solutionsFooter = document.getElementById('solutions__footer');
 
@@ -960,24 +1006,6 @@ window.onload = (function() {
                 solutionsMenu.classList.add('hide');
             }
 
-
-            // If solutions__footer is in viewport, menu is position absolute, add class .hide
-
-            var distanceLinkFromTop = solutionsFooter.getBoundingClientRect().top;
-            if (distanceLinkFromTop <= (window.innerHeight)) {
-                solutionsMenu.classList.add('absolute', 'hide-bottom');
-            } else {
-                solutionsMenu.classList.remove('absolute', 'hide-bottom');
-            }
-
-            // If solutions__footer is in viewport, shrink page above
-
-            var distanceFooterFromTop = solutionsFooter.getBoundingClientRect().top;
-            if (distanceFooterFromTop <= (window.innerHeight)) {
-                solutionsShrinkingArea.classList.add('shrink');
-            } else {
-                solutionsShrinkingArea.classList.remove('shrink');
-            }
 
             // Check which pillar is in viewport and activate navigation link
 
@@ -1039,6 +1067,15 @@ window.onload = (function() {
 
         function footerInViewport() {
             var footerTop = footer.getBoundingClientRect().top;
+
+
+            if (footerTop <= (window.innerHeight * 2)) {
+                bodyWrapper.classList.add('pre-shrink'); // Add class pre-shrink to reset some fade-in styling
+            } else {
+                bodyWrapper.classList.remove('pre-shrink'); //
+
+            }
+
             if (footerTop <= (window.innerHeight / 3 * 2)) {
                 bodyWrapper.classList.add('shrink'); // Shrink body of page
                 siteMasthead.classList.add('important-hiding'); // Hide navigation
@@ -1055,4 +1092,4 @@ window.onload = (function() {
 
 
 
-});
+});;
