@@ -147,6 +147,8 @@
         top: 0;
         left: 0;
         z-index: -1;
+        transform: scale(1);
+        transition: all 0.05s ease 0s;
         svg {
             width: 100%;
             height: 100%;
@@ -379,31 +381,31 @@
     }
 }
 
-.hero {
-    &.away {
-        .hero__background {
-            transform: scale(1.1);
-        }
-    }
-    &.fly-in,
-    &.away.fly-in {
-        .hero__background {
-            animation: 0.8s ease-out 0s forwards backgroundZoomOut;
-        }
-    }
-}
+// .hero {
+//     &.away {
+//         .hero__background {
+//             transform: scale(1.1);
+//         }
+//     }
+//     &.fly-in,
+//     &.away.fly-in {
+//         .hero__background {
+//             animation: 0.8s ease-out 0s forwards backgroundZoomOut;
+//         }
+//     }
+// }
 
-@keyframes backgroundZoomOut {
-    0% {
-        transform: scale(1.2);
-    }
-    20% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+// @keyframes backgroundZoomOut {
+//     0% {
+//         transform: scale(1.2);
+//     }
+//     20% {
+//         transform: scale(1.1);
+//     }
+//     100% {
+//         transform: scale(1);
+//     }
+// }
 
 .hero__text-container {
     &.away > * {

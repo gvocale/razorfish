@@ -3,7 +3,6 @@
     @include grid-padding;
     @include padding-bottom;
     transition: all 1s 0s $bezier;
-    float: left;
     width: 100%;
     &__item {
         margin-left: 0.5rem;
@@ -235,10 +234,12 @@
     &__area-container {
         position: relative;
         @include component-margin;
-        // transition: all 1s 0s $bezier;
-        // overflow: hidden;
         width: calc(100% - 2rem);
-        float: left;
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
     }
     &__area {
         position: absolute;

@@ -82,6 +82,15 @@
         &:last-of-type:after {
             display: none;
         }
+        .link--underline.active {
+            &:before,
+            &:after {
+                display: none;
+                animation: none;
+            }
+            pointer-events: none;
+            color: $primary;
+        }
     }
     &__pages {
         @include component-padding;
