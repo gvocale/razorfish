@@ -20,41 +20,44 @@ window.onload = (function() {
     if (document.getElementsByClassName('body-wrapper')[0]) {
 
         var bodyWrapper = document.getElementsByClassName('body-wrapper')[0];
+        var siteMasthead = document.getElementsByClassName('site-masthead')[0];
+        var siteNavigationOverlay = document.getElementsByClassName('site-navigation__scroll')[0];
 
         setTimeout(function() {
             bodyWrapper.classList.remove('fade');
+            siteMasthead.classList.remove('fade');
         }, 10);
 
+        // Intercept links away from page
 
-    }
+        function interceptClickEvent(e) {
+            var href;
+            var target = e.target || e.srcElement;
+            if (target.tagName === 'A') {
+                href = target.getAttribute('href');
 
-
-    // Intercept links away from page
-
-    function interceptClickEvent(e) {
-        var href;
-        var target = e.target || e.srcElement;
-        if (target.tagName === 'A') {
-            href = target.getAttribute('href');
-
-            if (true) {
-                bodyWrapper.classList.add('fade');
-                //tell the browser not to respond to the link click
-                e.preventDefault();
-                // navigate to the link after the transion has ended
-                bodyWrapper.addEventListener("transitionend", function(e) { window.location.href = href; });
+                if (true) {
+                    bodyWrapper.classList.add('fade');
+                    siteMasthead.classList.add('fade');
+                    siteNavigationOverlay.classList.add('fade');
+                    //tell the browser not to respond to the link click
+                    e.preventDefault();
+                    // navigate to the link after the transion has ended
+                    bodyWrapper.addEventListener("transitionend", function(e) { window.location.href = href; });
+                }
             }
         }
+
+
+        //listen for link click events at the document level
+        if (document.addEventListener) {
+            document.addEventListener('click', interceptClickEvent);
+        } else if (document.attachEvent) {
+            document.attachEvent('onclick', interceptClickEvent);
+        }
+
+
     }
-
-
-    //listen for link click events at the document level
-    if (document.addEventListener) {
-        document.addEventListener('click', interceptClickEvent);
-    } else if (document.attachEvent) {
-        document.attachEvent('onclick', interceptClickEvent);
-    }
-
 
 
 
@@ -1088,7 +1091,26 @@ window.onload = (function() {
         window.addEventListener('resize', footerInViewport);
         window.addEventListener('scroll', footerInViewport);
         window.addEventListener('load', footerInViewport);
+
     }
+
+    // Scroll to the top of the page, in case form__input has attribute autofocus. Otherwise it would scroll half page to the autofocusing input
+
+    if (document.getElementsByClassName('form__input')[0]) {
+
+        var formInputAutofocus = document.querySelectorAll('.form__field:first-of-type .form__input');
+
+        for (var i = 0; i < formInputAutofocus.length; i++) {
+            if (formInputAutofocus[i].hasAttribute("autofocus")) {
+                console.log("there's an autofocus on the page");
+                setTimeout(function() {
+                    window.scrollTo(0, 0);
+                }, 100);
+            }
+        }
+    }
+
+
 
 
 

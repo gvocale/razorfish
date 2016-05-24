@@ -8,6 +8,15 @@
         z-index: 200;
         visibility: hidden;
         color: $black;
+        background-color: $white;
+        &.fade,
+        &.open.fade {
+            .site-navigation__container {
+                transition: transform 0.5s 0s $bezier, opacity 0.5s 0s $bezier;
+                transform: scale(0.9);
+                opacity: 0;
+            }
+        }
         &.visible {
             visibility: visible;
             height: 100%;
