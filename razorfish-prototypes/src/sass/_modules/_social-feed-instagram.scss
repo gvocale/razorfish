@@ -56,7 +56,7 @@
                 &:hover {
                     .social-feed--instagram__feed__image {
                         transform: translate3d(0, 0, 0) scale(1.05);
-                        transition: transform 0.5s 0s ease-out;
+                        transition: transform 0.5s 0s $bezier;
                     }
                 }
             }
@@ -92,7 +92,7 @@
             background-repeat: no-repeat;
             background-size: 100% 100%, cover;
             background-clip: content-box;
-            transition: transform 0.5s 0s ease-out;
+            transition: transform 0.5s 0s $bezier;
             transform: scale(1);
         }
     }

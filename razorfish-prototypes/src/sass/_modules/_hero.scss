@@ -23,6 +23,7 @@
             transform: translateY(0) rotate(-45deg);
             transition: all 0.3s 0s ease;
             animation: 1s bounce-left infinite;
+            z-index: 1;
         }
         &:after {
             content: "";
@@ -35,6 +36,7 @@
             transform: translateY(0) rotate(45deg);
             transition: all 0.3s 0s ease;
             animation: 1s bounce-right infinite;
+            z-index: 1;
         }
     }
     &.hide-arrow {
@@ -55,6 +57,7 @@
         outline: none;
         cursor: pointer;
         cursor: hand;
+
         &:focus {
             outline: none;
         }
@@ -67,6 +70,7 @@
         align-items: baseline;
         justify-content: center;
         text-align: left;
+        z-index: 1;
     }
     &__eyebrow {
         font-family: $sans;
@@ -146,9 +150,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1;
-        transform: scale(1);
-        transition: all 0.05s ease 0s;
+        transform: scale(1) translate3d(0,0,0);
+        // transition: all 0.05s ease 0s;
         svg {
             width: 100%;
             height: 100%;

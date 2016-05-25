@@ -544,8 +544,8 @@ p {
             position: absolute;
             bottom: 0;
             animation-name: underline_out;
-            animation-duration: 0.2s;
-            animation-timing-function: ease;
+            animation-duration: 0.3s;
+            animation-timing-function: $bezier;
             animation-iteration-count: 1;
             animation-direction: normal;
             animation-fill-mode: forwards;
@@ -554,8 +554,8 @@ p {
         @media (hover) {
             &:hover:before {
                 animation-name: underline_in;
-                animation-duration: 0.2s;
-                animation-timing-function: ease;
+                animation-duration: 0.3s;
+                animation-timing-function: $bezier;
                 animation-iteration-count: 1;
                 animation-direction: normal;
                 animation-fill-mode: forwards;
@@ -584,7 +584,7 @@ p {
         }
         @media (hover) {
             &:hover {
-                transition: color 0.1s ease 0s;
+                transition: color 0.05s $bezier 0.05s;
                 color: $primary;
             }
         }
