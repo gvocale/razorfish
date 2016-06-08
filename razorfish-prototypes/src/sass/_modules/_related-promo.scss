@@ -137,26 +137,35 @@
             margin-bottom: 0;
         }
     }
-    &__eyebrow {
+    .eyebrow {
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans-large;
         max-width: 24em;
+        margin-bottom: 1em;
         font-size: $scale04;
         font-weight: 400;
         text-transform: uppercase;
         @media only screen and ($xxl) {
             font-size: $scale05;
         }
-        &--margin {
-            @include related-promo__headline;
-            margin-bottom: 0.1em;
-            &:last-child {
-                margin-bottom: 0;
+        &:before {
+            content: "";
+            margin-bottom: 1em;
+            display: block;
+            background-color: currentColor;
+            position: relative;
+            width: 2em;
+            height: 4px;
+            @media screen and ($lg) {
+                height: 5px;
+            }
+            @media screen and ($xxl) {
+                height: 6px;
             }
         }
     }
-    &__headline {
+    .headline {
         @include related-promo__headline;
         @include ligatures;
         font-family: $serif;
@@ -172,6 +181,7 @@
         &:last-child {
             margin-bottom: 0;
         }
+
     }
     &__subhead {
         font-family: $sans;

@@ -126,9 +126,12 @@
                 }
             }
         }
+        &:target,
+        &:focus {
+            outline: none;
+        }
         @media (hover) {
             &:hover:not(.no-hover) {
-                outline: none;
                 &:after {
                     animation-name: heroArrowIn;
                     animation-duration: 0.2s;
@@ -161,10 +164,10 @@
             }
         }
     }
-    &__eyebrow {
+    .eyebrow {
         font-family: $sans;
-        line-height: $title-sans;
-        letter-spacing: $spacing-sans-large;
+        line-height: 1.1;
+        letter-spacing: 0.04em;
         max-width: 30em;
         font-size: $scale04;
         font-weight: 400;
@@ -175,8 +178,22 @@
         &:not(:last-child) {
             margin-bottom: 0.75em;
         }
+        &:first-child:before {
+            content: "";
+            display: block;
+            position: relative;
+            width: 3em;
+            box-shadow: 0px -4px 0 0em currentColor;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em currentColor;
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em currentColor;
+            }
+            padding-top: 1.2em;
+        }
     }
-    &__headline {
+    .headline {
         @include ligatures;
         font-family: $serif;
         line-height: 1.1;
@@ -194,8 +211,18 @@
         &:not(:last-child) {
             margin-bottom: 0.3em;
         }
+        &:first-child:first-letter {
+            box-shadow: 0px -4px 0 0em currentColor;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em currentColor;
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em currentColor;
+            }
+            padding-top: 0.3em;
+        }
     }
-    &__subhead {
+    .subhead {
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans;
@@ -274,11 +301,15 @@
             @media only screen and ($xxl) {
                 font-size: $scale11;
             }
-            &:last-child {
-                margin-bottom: 0;
-            }
-            &.divider {
-                margin-bottom: 0.25em;
+            &:first-child:first-letter {
+                box-shadow: 0px -4px 0 0em lighten($primary, 5%);
+                @media screen and ($lg) {
+                    box-shadow: 0px -5px 0 0em lighten($primary, 5%);
+                }
+                @media screen and ($xxl) {
+                    box-shadow: 0px -6px 0 0em lighten($primary, 5%);
+                }
+                padding-top: 0.3em;
             }
         }
         &__title,
@@ -389,7 +420,7 @@
     }
     &--approach {
         color: $white;
-        .hero__headline {
+        .headline {
             opacity: 0.5;
         }
         .divider {
@@ -473,31 +504,39 @@
     }
 }
 
-.hero__text-container {
-    &.away > * {
-        opacity: 0;
-        transform: translateY(100px);
+.hero {
+    .module-content {
         transition-property: all;
-        transition-timing-function: ease-out;
-        &:nth-child(1) {
-            transition-delay: 0.2s;
-            transition-duration: 0.3s;
+        &.below-the-fold > * {
+            opacity: 0;
+            transform: translateY(100px);
         }
-        &:nth-child(2) {
-            transition-delay: 0.2s;
-            transition-duration: 0.3s;
+        &.above-the-fold > * {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0s;
+            transition-duration: 0s;
         }
-        &:nth-child(3) {
-            transition-delay: 0.2s;
-            transition-duration: 0.35s;
+        &.in-viewport > * {
+            opacity: 1;
+            transform: translateY(0);
+            transition-timing-function: $bezier;
+            &:nth-child(1) {
+                transition-delay: 0s;
+                transition-duration: 1s;
+            }
+            &:nth-child(2) {
+                transition-delay: 0.1s;
+                transition-duration: 1s;
+            }
+            &:nth-child(3) {
+                transition-delay: 0.2s;
+                transition-duration: 1s;
+            }
+            &:nth-child(4) {
+                transition-delay: 0.3s;
+                transition-duration: 1s;
+            }
         }
-        &:nth-child(4) {
-            transition-delay: 0.2s;
-            transition-duration: 0.45s;
-        }
-    }
-    &.away.fly-in > * {
-        opacity: 1;
-        transform: translateY(0);
     }
 }

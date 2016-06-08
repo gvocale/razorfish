@@ -1,11 +1,18 @@
-.hero--text {
+.hero.hero--text {
     &-a {
         color: $white;
         .hero__background {
             background-color: $color-theme-a;
         }
-        .divider {
-            background-color: $black-divider;
+        .eyebrow:first-child:before,
+        .headline:first-child:first-letter {
+            box-shadow: 0px -4px 0 0em $black-divider;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em $black-divider;
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em $black-divider;
+            }
         }
     }
     &-b {
@@ -13,8 +20,15 @@
         .hero__background {
             background-color: $color-theme-b;
         }
-        .divider {
-            background-color: $black-divider;
+        .eyebrow:first-child:before,
+        .headline:first-child:first-letter {
+            box-shadow: 0px -4px 0 0em $black-divider;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em $black-divider;
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em $black-divider;
+            }
         }
     }
     &-c {
@@ -22,8 +36,15 @@
         .hero__background {
             background-color: $color-theme-c;
         }
-        .divider {
-            background-color: $black-divider;
+        .eyebrow:first-child:before,
+        .headline:first-child:first-letter {
+            box-shadow: 0px -4px 0 0em $primary;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em $primary;
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em $primary;
+            }
         }
     }
     &-d {
@@ -31,8 +52,15 @@
         .hero__background {
             background-color: $color-theme-d;
         }
-        .divider {
-            background-color: $primary;
+        .eyebrow:first-child:before,
+        .headline:first-child:first-letter {
+            box-shadow: 0px -4px 0 0em $black-divider;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em $black-divider;
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em $black-divider;
+            }
         }
     }
     &-e {
@@ -40,8 +68,15 @@
         .hero__background {
             background-color: $color-theme-e;
         }
-        .divider {
-            background-color: $black-divider;
+        .eyebrow:first-child:before,
+        .headline:first-child:first-letter {
+            box-shadow: 0px -4px 0 0em $black-divider;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em $black-divider;
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em $black-divider;
+            }
         }
     }
     &-f {
@@ -49,14 +84,21 @@
         .hero__background {
             background-color: $color-theme-f;
         }
-        .divider {
-            background-color: $black-divider;
+        .eyebrow:first-child:before,
+        .headline:first-child:first-letter {
+            box-shadow: 0px -4px 0 0em $black-divider;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em $black-divider;
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em $black-divider;
+            }
         }
     }
 }
 
 .theme-,
-.hero--text {
+.hero.hero--text {
     &-white {
         color: $white;
         div[class*="background"] {
@@ -72,15 +114,19 @@
                 left: 0;
             }
         }
-        .divider {
-            background-color: $white;
+        .eyebrow:first-child:before,
+        .headline:first-child:first-letter {
+            box-shadow: 0px -4px 0 0em $white;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em $white;
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em $white;
+            }
         }
     }
     &-white-accent {
         color: $white;
-        p[class*="eyebrow"]:first-child {
-            color: lighten($primary, 10%);
-        }
         div[class*="background"] {
             background-color: $black-divider;
             &:before {
@@ -94,8 +140,15 @@
                 left: 0;
             }
         }
-        .divider {
-            background-color: lighten($primary, 10%);
+        .eyebrow:first-child:before,
+        .headline:first-child:first-letter {
+            box-shadow: 0px -4px 0 0em lighten($primary, 10%);
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em lighten($primary, 10%);
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em lighten($primary, 10%);
+            }
         }
     }
     &-black {
@@ -109,14 +162,18 @@
     }
     &-black-accent {
         color: $black-divider;
-        p[class*="eyebrow"]:first-child {
-            color: lighten($primary, 10%);
-        }
         div[class*="background"] {
             background-color: $off-white;
         }
-        .divider {
-            background-color: lighten($primary, 10%);
+        .eyebrow:first-child:before,
+        .headline:first-child:first-letter {
+            box-shadow: 0px -4px 0 0em lighten($primary, 10%);
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em lighten($primary, 10%);
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em lighten($primary, 10%);
+            }
         }
     }
 }
@@ -141,8 +198,15 @@
         $black-smart: #222424;
         $gray-smart: #3d3d3d;
         $off-white-smart: #f3f3f3;
-        p[class*="eyebrow"]:first-child {
-            color: $primary-smart;
+        .eyebrow:first-child:before,
+        .headline:first-child:first-letter {
+            box-shadow: 0px -4px 0 0em $primary-smart;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em $primary-smart;
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em $primary-smart;
+            }
         }
         .divider {
             background-color: $primary-smart !important;
@@ -206,8 +270,15 @@
         $black-heforshe: #222424;
         $gray-heforshe: #3d3d3d;
         $off-white-heforshe: #f3f3f3;
-        p[class*="eyebrow"]:first-child {
-            color: $primary-heforshe;
+        .eyebrow:first-child:before,
+        .headline:first-child:first-letter {
+            box-shadow: 0px -4px 0 0em $primary-heforshe;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em $primary-heforshe;
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em $primary-heforshe;
+            }
         }
         &.hero {
             color: $white;

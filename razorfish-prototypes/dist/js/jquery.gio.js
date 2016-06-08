@@ -472,7 +472,7 @@ window.onload = (function() {
     // Fade out video poster frame and plays video on click
 
     if (document.getElementById("vimeo-video")) {
-        console.log('#video exist on the page');
+        // console.log('#video exist on the page');
         var player = $("#vimeo-video");
         froogaloop = $f(player[0].id);
 
@@ -794,26 +794,33 @@ window.onload = (function() {
         );
 
 
-        var hero = document.getElementsByClassName('hero');
+        // .module-content toggle visibility classes
+        var heroModuleContent = document.getElementsByClassName('module-content');
 
-        // If .hero is not in the viewport add class .away and remove class .fly-in
-        function heroInViewport() {
-            [].forEach.call(hero, function(div) {
+        // If .module-content is not in the viewport add class .below-the-fold or .above-the-fold
+        function heroModuleContentInViewport() {
+            [].forEach.call(heroModuleContent, function(div) {
                 var rect = div.getBoundingClientRect();
-                div.classList.add('away');
-                // If the hero is out of viewport, remove class .fly-in
-                if ((rect.top > window.innerHeight) || (rect.top < (window.innerHeight * -1))) {
-                    div.classList.remove("fly-in");
+                if (rect.bottom < 0) {
+                    div.classList.add('above-the-fold');
+                    div.classList.remove('below-the-fold');
+                    div.classList.remove('in-viewport');
+                } else if (rect.top > window.innerHeight) {
+                    div.classList.add('below-the-fold');
+                    div.classList.remove('above-the-fold');
+                    div.classList.remove('in-viewport');
                 } else {
-                    div.classList.add('fly-in');
+                    div.classList.add('in-viewport');
+                    div.classList.remove('above-the-fold');
+                    div.classList.remove('below-the-fold');
                 }
             });
         };
 
         // Bind it on scroll, load and resize.
-        window.addEventListener('resize', heroInViewport);
-        window.addEventListener('scroll', heroInViewport);
-        window.addEventListener('load', heroInViewport);
+        window.addEventListener('resize', heroModuleContentInViewport);
+        window.addEventListener('scroll', heroModuleContentInViewport);
+        window.addEventListener('load', heroModuleContentInViewport);
 
 
 
@@ -1219,28 +1226,28 @@ window.onload = (function() {
                 var rect = image.parentElement.getBoundingClientRect();
 
                 parentHeight = image.parentElement.clientHeight;
-                console.log("parentHeight " + parentHeight);
+                // console.log("parentHeight " + parentHeight);
 
                 divExcursion = parentHeight + window.innerHeight;
-                console.log("divExcursion " + divExcursion);
+                // console.log("divExcursion " + divExcursion);
 
                 imagePosition = rect.top + parentHeight;
-                console.log("imagePosition " + imagePosition);
+                // console.log("imagePosition " + imagePosition);
 
                 imagePercentage = imagePosition / divExcursion * 100;
-                console.log("imagePercentage " + imagePercentage);
+                // console.log("imagePercentage " + imagePercentage);
 
                 imageTranslateMax = 20 // This number is how much % the image will be translated maximum
 
                 imageTranslate = (imageTranslateMax - (imageTranslateMax * 2 / 100 * imagePercentage)).toFixed(4);
-                console.log("imageTranslate " + imageTranslate);
+                // console.log("imageTranslate " + imageTranslate);
 
 
                 imageZoomMax = 10 // This is the maximum percentage the image will be zoomed when below the fold
                 imageZoomMin = 0 // This is the minimum percentage the image will be zoomed when above the fold
 
                 imageZoom = ((imageZoomMax / 100) * imagePercentage / 100) + 1;
-                console.log("imageZoom " + imageZoom);
+                // console.log("imageZoom " + imageZoom);
 
                 image.style.webkitTransform = "scale(" + imageZoom + ") translate3d(0," + imageTranslate + "%,0)";
                 image.style.transform = "scale(" + imageZoom + ") translate3d(0," + imageTranslate + "%,0)";

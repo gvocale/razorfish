@@ -16,16 +16,15 @@
     @media only screen and ($xxl) {
         font-size: $scale07;
     }
-    &__logo {
-        height: 1em;
-        margin-bottom: 2em;
-        fill: currentColor;
-        @media only screen and ($lg) {
-            margin-bottom: 1.8em;
+    .icon__razorfish {
+        font-size: $scale05;
+        @media only screen and ($md) {
+            font-size: $scale06;
         }
         @media only screen and ($xxl) {
-            margin-bottom: 1.5em;
+            font-size: $scale07;
         }
+        margin-bottom: 2em;
     }
     .divider {
         width: 1em;
@@ -112,21 +111,15 @@
         justify-content: space-between;
         align-items: baseline;
     }
-    &__logo-razorfish {
+    .icon__razorfish {
         @include component-margin;
-        @include logo-razorfish;
-        background-position: bottom;
-        background-repeat: no-repeat;
-        background-size: contain;
-        height: 3em;
-        width: 8em;
+        font-size: $scale05;
         margin-bottom: 2.5rem;
-        @media only screen and ($lg) {
-            margin-bottom: 0;
+        @media only screen and ($md) {
+            font-size: $scale06;
         }
-        @media only screen and ($xl) {
-            height: 3em;
-            width: 11em;
+        @media only screen and ($xxl) {
+            font-size: $scale06 * 1.1;
         }
     }
     &__copyrights {
@@ -202,9 +195,6 @@
     }
     &--dark {
         color: $white;
-        .footer--v2__logo-razorfish {
-            @include logo-razorfish--white;
-        }
         .footer--v2__copyrights {
             opacity: 0.3;
         }
