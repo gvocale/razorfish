@@ -1,16 +1,5 @@
 // This is the jQuery I am using on the various pages
 
-
-
-
-
-
-// Video
-
-
-
-
-
 window.onload = (function() {
 
     console.log('javascript file loaded');
@@ -1220,16 +1209,15 @@ window.onload = (function() {
     // Add parallax effect to background-images
 
     if (document.getElementsByClassName("image__parallax")[0]) {
-        
 
         imageParallax = document.getElementsByClassName("image__parallax");
 
         [].forEach.call(imageParallax, function(image) {
 
             imageParallaxFn = function() {
-                
+
                 var rect = image.parentElement.getBoundingClientRect();
-                
+
                 parentHeight = image.parentElement.clientHeight;
                 console.log("parentHeight " + parentHeight);
 

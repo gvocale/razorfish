@@ -31,14 +31,105 @@
             font-size: $scale10;
         }
     }
-    &__text-container {
+    .module-background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.5s 0s $bezier;
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $black;
+            opacity: 0;
+            transition: opacity 0.5s 0s ease-out;
+            mix-blend-mode: multiply;
+            z-index: 1;
+        }
+    }
+    .module-content {
+        @include component-padding;
+        width: calc(100% / 12 * 6);
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         align-items: baseline;
         justify-content: center;
         text-align: left;
-        z-index: 1;
+        z-index: 2;
+        position: relative;
+    }
+    a.module-content {
+        &:after {
+            content: "\E800";
+            font-size: 1em;
+            color: currentColor;
+            font-family: $icons;
+            display: block;
+            position: relative;
+            animation-name: heroArrowOut;
+            animation-duration: 0.2s;
+            animation-timing-function: $bezier;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+            animation-play-state: running;
+            bottom: 0;
+            left: 0;
+            margin-top: 2em;
+            @keyframes heroArrowOut {
+                0% {
+                    opacity: 1;
+                    transform: translateX(0%);
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateX(300%);
+                    clip-path: polygon(0 0, 0% 0, 0% 100%, 0% 100%);
+                }
+            }
+        }
+        @media (hover) {
+            &:hover {
+                outline: none;
+                &:after {
+                    animation-name: heroArrowIn;
+                    animation-duration: 0.2s;
+                    animation-timing-function: $bezier;
+                    animation-iteration-count: 1;
+                    animation-direction: normal;
+                    animation-fill-mode: forwards;
+                    animation-play-state: running;
+                    @keyframes heroArrowIn {
+                        0% {
+                            opacity: 1;
+                            transform: translateX(-300%);
+                            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+                        }
+                        100% {
+                            opacity: 1;
+                            transform: translateX(0%);
+                            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                        }
+                    }
+                }
+            }
+            &:hover ~ .module-background {
+                transform: translate3d(0, 0, 0) scale(1.05);
+                transition: transform 0.5s 0s $bezier;
+                &:before {
+                    opacity: 0.2;
+                    transition: opacity 0.5s 0s $bezier;
+                }
+            }
+        }
     }
     .divider {
         margin-bottom: 0.25em;

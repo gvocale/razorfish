@@ -169,11 +169,13 @@
     </nav>
     <div class="body-wrapper fade">
         <section class="hero hero--story hero--text-white-accent">
-            <div class="hero__text-container">
+            <div class="module-content">
                 <div class="divider hero__headline"></div>
                 <h2 class="hero__headline">New York City</h2>
             </div>
-            <div class="hero__background image__parallax" style="background-image: url(images/office-new-york.jpg)"></div>
+            <div class="module-background">
+                <div class="hero__background image__parallax" style="background-image: url(images/office-new-york.jpg)"></div>
+            </div>
         </section>
         <section class="office-contact-info">
             <div class="office-contact-info__item white">
@@ -425,12 +427,12 @@
             </div>
         </section>
         <section class="contact-promo" style="">
-            <div class="contact-promo__text-container">
+            <div class="module-content">
                 <p class="contact-promo__eyebrow">Locations</p>
                 <h2 class="contact-promo__description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link--underline">Get in touch.</a></h2>
             </div>
-            <figure class="contact-promo__background image__parallax">
-                <svg xmlns="http://www.w3.org/2000/svg">
+            <div class="module-background">
+                <svg class="contact-promo__background image__parallax" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <filter id="image-grading--green">
                             <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray"></feColorMatrix>
@@ -444,7 +446,7 @@
                     </defs>
                     <image filter="url('#image-grading--green')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/contact-promo-background.jpg"></image>
                 </svg>
-            </figure>
+            </div>
         </section>
     </div>
     <footer class="footer">
@@ -476,7 +478,6 @@
     <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
     <script src="js/show-hide-header.js"></script>
     <script src="js/jquery.gio.js"></script>
-   
 </body>
 
 </html>
