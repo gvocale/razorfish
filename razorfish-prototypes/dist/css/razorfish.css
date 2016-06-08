@@ -435,7 +435,7 @@ body {
   background-color: #f3f3f3;
   color: #373737; }
 
-.theme--smart .body-copy__inline-pull-quote__author {
+.theme--smart .inline-pull-quote__author {
   color: #f4ac00; }
 
 .theme--he-for-she .eyebrow:first-child:before,
@@ -1780,19 +1780,19 @@ body {
       padding-bottom: 2em; }
       .body-copy__two-column__group:last-child {
         padding-bottom: 0; }
-      .body-copy__two-column__group .body-copy__inline-pull-quote__quote {
+      .body-copy__two-column__group .inline-pull-quote__quote {
         font-size: 1.3077rem; }
         @media only screen and (min-width: 768px) {
-          .body-copy__two-column__group .body-copy__inline-pull-quote__quote {
+          .body-copy__two-column__group .inline-pull-quote__quote {
             font-size: 1.3077rem; } }
         @media only screen and (min-width: 992px) {
-          .body-copy__two-column__group .body-copy__inline-pull-quote__quote {
+          .body-copy__two-column__group .inline-pull-quote__quote {
             font-size: 1rem; } }
         @media only screen and (min-width: 1200px) {
-          .body-copy__two-column__group .body-copy__inline-pull-quote__quote {
+          .body-copy__two-column__group .inline-pull-quote__quote {
             font-size: 1.3077rem; } }
         @media only screen and (min-width: 1600px) {
-          .body-copy__two-column__group .body-copy__inline-pull-quote__quote {
+          .body-copy__two-column__group .inline-pull-quote__quote {
             font-size: 1.6154rem; } }
     @media screen and (min-width: 768px) {
       .body-copy__two-column--award {
@@ -2110,79 +2110,6 @@ body {
     .body-copy__background svg {
       width: 100%;
       height: 100%; }
-  .body-copy__inline-pull-quote {
-    border-left: solid 0.2rem #a9c000;
-    width: 100%;
-    padding-left: 1em;
-    margin-top: 3em;
-    margin-bottom: 4em; }
-    @media only screen and (min-width: 768px) {
-      .body-copy__inline-pull-quote {
-        border-left: solid calc(0.2rem * 1.5) #a9c000;
-        padding-left: 2em; } }
-    .body-copy__inline-pull-quote__quote {
-      text-rendering: optimizeLegibility;
-      -webkit-font-variant-ligatures: common-ligatures;
-      font-variant-ligatures: common-ligatures;
-      -webkit-font-feature-settings: "kern";
-      font-feature-settings: "kern";
-      -webkit-font-kerning: normal;
-      font-kerning: normal;
-      font-family: "MillerDisplay", Times, Georgia, serif;
-      line-height: 1.5;
-      font-style: italic;
-      color: #515151;
-      letter-spacing: 0.015em;
-      margin-bottom: 0.5em;
-      font-size: 1.3077rem; }
-      @media only screen and (min-width: 768px) {
-        .body-copy__inline-pull-quote__quote {
-          font-size: 1.6154rem; } }
-      @media only screen and (min-width: 992px) {
-        .body-copy__inline-pull-quote__quote {
-          font-size: 1.3077rem; } }
-      @media only screen and (min-width: 1200px) {
-        .body-copy__inline-pull-quote__quote {
-          font-size: 1.6154rem; } }
-      @media only screen and (min-width: 1600px) {
-        .body-copy__inline-pull-quote__quote {
-          font-size: 2.1154rem; } }
-      .body-copy__inline-pull-quote__quote:last-child {
-        margin-bottom: 0; }
-    .body-copy__inline-pull-quote__author {
-      font-family: "Gotham A", Helvetica, Arial, sans-serif;
-      line-height: 1.4;
-      letter-spacing: 0em;
-      font-size: 0.8077rem; }
-      @media only screen and (min-width: 768px) {
-        .body-copy__inline-pull-quote__author {
-          font-size: 1rem; } }
-      @media only screen and (min-width: 992px) {
-        .body-copy__inline-pull-quote__author {
-          font-size: 0.8077rem; } }
-      @media only screen and (min-width: 1600px) {
-        .body-copy__inline-pull-quote__author {
-          font-size: 1rem; } }
-      .body-copy__inline-pull-quote__author strong {
-        font-weight: 700; }
-    .body-copy__inline-pull-quote--simple {
-      border-left: 0;
-      padding-left: 0;
-      margin-top: 0;
-      margin-bottom: 0.5em; }
-      .body-copy__inline-pull-quote--simple .body-copy__inline-pull-quote__quote {
-        position: relative; }
-        .body-copy__inline-pull-quote--simple .body-copy__inline-pull-quote__quote:before {
-          content: "“";
-          position: absolute;
-          margin-left: -0.5em;
-          margin-right: 0.1em; }
-        .body-copy__inline-pull-quote--simple .body-copy__inline-pull-quote__quote:after {
-          content: "”";
-          position: relative;
-          margin-left: 0.1em; }
-        .body-copy__inline-pull-quote--simple .body-copy__inline-pull-quote__quote:last-child {
-          margin-bottom: 0; }
   .body-copy--zero-padding-top {
     padding-top: 0; }
   .body-copy__hr {
@@ -2194,6 +2121,80 @@ body {
     margin-bottom: 4em; }
     .body-copy__hr:last-child {
       margin-bottom: 0; }
+
+.inline-pull-quote {
+  border-left: solid 0.2rem #a9c000;
+  width: 100%;
+  padding-left: 1em;
+  margin-top: 3em;
+  margin-bottom: 4em; }
+  @media only screen and (min-width: 768px) {
+    .inline-pull-quote {
+      border-left: solid calc(0.2rem * 1.5) #a9c000;
+      padding-left: 2em; } }
+  .inline-pull-quote__quote {
+    text-rendering: optimizeLegibility;
+    -webkit-font-variant-ligatures: common-ligatures;
+    font-variant-ligatures: common-ligatures;
+    -webkit-font-feature-settings: "kern";
+    font-feature-settings: "kern";
+    -webkit-font-kerning: normal;
+    font-kerning: normal;
+    font-family: "MillerDisplay", Times, Georgia, serif;
+    line-height: 1.5;
+    font-style: italic;
+    color: #515151;
+    letter-spacing: 0.015em;
+    margin-bottom: 0.5em;
+    font-size: 1.3077rem; }
+    @media only screen and (min-width: 768px) {
+      .inline-pull-quote__quote {
+        font-size: 1.6154rem; } }
+    @media only screen and (min-width: 992px) {
+      .inline-pull-quote__quote {
+        font-size: 1.3077rem; } }
+    @media only screen and (min-width: 1200px) {
+      .inline-pull-quote__quote {
+        font-size: 1.6154rem; } }
+    @media only screen and (min-width: 1600px) {
+      .inline-pull-quote__quote {
+        font-size: 2.1154rem; } }
+    .inline-pull-quote__quote:last-child {
+      margin-bottom: 0; }
+  .inline-pull-quote__author {
+    font-family: "Gotham A", Helvetica, Arial, sans-serif;
+    line-height: 1.4;
+    letter-spacing: 0em;
+    font-size: 0.8077rem; }
+    @media only screen and (min-width: 768px) {
+      .inline-pull-quote__author {
+        font-size: 1rem; } }
+    @media only screen and (min-width: 992px) {
+      .inline-pull-quote__author {
+        font-size: 0.8077rem; } }
+    @media only screen and (min-width: 1600px) {
+      .inline-pull-quote__author {
+        font-size: 1rem; } }
+    .inline-pull-quote__author strong {
+      font-weight: 700; }
+  .inline-pull-quote--simple {
+    border-left: 0;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0.5em; }
+    .inline-pull-quote--simple .inline-pull-quote__quote {
+      position: relative; }
+      .inline-pull-quote--simple .inline-pull-quote__quote:before {
+        content: "“";
+        position: absolute;
+        margin-left: -0.5em;
+        margin-right: 0.1em; }
+      .inline-pull-quote--simple .inline-pull-quote__quote:after {
+        content: "”";
+        position: relative;
+        margin-left: 0.1em; }
+      .inline-pull-quote--simple .inline-pull-quote__quote:last-child {
+        margin-bottom: 0; }
 
 .pull-quote + .body-copy__container {
   padding-top: 20vw; }

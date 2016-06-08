@@ -103,7 +103,7 @@
                 padding-bottom: 0;
             }
             padding-bottom: 2em;
-            .body-copy__inline-pull-quote__quote {
+            .inline-pull-quote__quote {
                 font-size: $scale05;
                 @media only screen and ($md) {
                     font-size: $scale05;
@@ -434,83 +434,6 @@
             height: 100%;
         }
     }
-    &__inline-pull-quote {
-        border-left: solid 0.2rem $primary;
-        width: 100%;
-        padding-left: 1em;
-        margin-top: 3em;
-        margin-bottom: 4em;
-        @media only screen and ($md) {
-            border-left: solid calc(0.2rem * 1.5) $primary;
-            padding-left: 2em;
-        }
-        &__quote {
-            @include ligatures;
-            font-family: $serif;
-            line-height: 1.5;
-            font-style: italic;
-            color: $blackLighter;
-            letter-spacing: $spacing-serif-large;
-            margin-bottom: 0.5em;
-            font-size: $scale05;
-            @media only screen and ($md) {
-                font-size: $scale06;
-            }
-            @media only screen and ($lg) {
-                font-size: $scale05;
-            }
-            @media only screen and ($xl) {
-                font-size: $scale06;
-            }
-            @media only screen and ($xxl) {
-                font-size: $scale07;
-            }
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-        &__author {
-            font-family: $sans;
-            line-height: $title-sans;
-            letter-spacing: $spacing-sans;
-            font-size: $scale03;
-            @media only screen and ($md) {
-                font-size: $scale04;
-            }
-            @media only screen and ($lg) {
-                font-size: $scale03;
-            }
-            @media only screen and ($xxl) {
-                font-size: $scale04;
-            }
-            strong {
-                font-weight: 700;
-            }
-        }
-        &--simple {
-            border-left: 0;
-            padding-left: 0;
-            margin-top: 0;
-            margin-bottom: 0.5em;
-            .body-copy__inline-pull-quote__quote {
-                position: relative;
-                &:before {
-                    content: "“";
-                    position: absolute;
-                    margin-left: -0.5em;
-                    margin-right: 0.1em;
-                }
-                &:after {
-                    content: "”";
-                    position: relative;
-                    margin-left: 0.1em;
-                }
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
     &--zero-padding-top {
         padding-top: 0;
     }
@@ -523,6 +446,84 @@
         margin-bottom: 4em;
         &:last-child {
             margin-bottom: 0;
+        }
+    }
+}
+
+.inline-pull-quote {
+    border-left: solid 0.2rem $primary;
+    width: 100%;
+    padding-left: 1em;
+    margin-top: 3em;
+    margin-bottom: 4em;
+    @media only screen and ($md) {
+        border-left: solid calc(0.2rem * 1.5) $primary;
+        padding-left: 2em;
+    }
+    &__quote {
+        @include ligatures;
+        font-family: $serif;
+        line-height: 1.5;
+        font-style: italic;
+        color: $blackLighter;
+        letter-spacing: $spacing-serif-large;
+        margin-bottom: 0.5em;
+        font-size: $scale05;
+        @media only screen and ($md) {
+            font-size: $scale06;
+        }
+        @media only screen and ($lg) {
+            font-size: $scale05;
+        }
+        @media only screen and ($xl) {
+            font-size: $scale06;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale07;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__author {
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans;
+        font-size: $scale03;
+        @media only screen and ($md) {
+            font-size: $scale04;
+        }
+        @media only screen and ($lg) {
+            font-size: $scale03;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale04;
+        }
+        strong {
+            font-weight: 700;
+        }
+    }
+    &--simple {
+        border-left: 0;
+        padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 0.5em;
+        .inline-pull-quote__quote {
+            position: relative;
+            &:before {
+                content: "“";
+                position: absolute;
+                margin-left: -0.5em;
+                margin-right: 0.1em;
+            }
+            &:after {
+                content: "”";
+                position: relative;
+                margin-left: 0.1em;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 }
