@@ -93,7 +93,11 @@
         justify-content: center;
         text-align: left;
         z-index: 2;
-        position: relative;
+        position: relative;        
+    }
+    a {
+        text-decoration: none;
+        color: currentColor;
     }
     a.module-content {
         &:after {
@@ -413,10 +417,6 @@
         .divider {
             filter: brightness(110%);
         }
-    }
-    a {
-        color: currentColor;
-        text-decoration: none;
     }
     &--approach {
         color: $white;

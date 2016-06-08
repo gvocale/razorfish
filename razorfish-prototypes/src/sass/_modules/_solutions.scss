@@ -2,7 +2,7 @@
     &__pillars {
         position: relative;
     }
-    &__card {
+    .hero__solution {
         width: 100vw;
         height: 100vh;
         overflow: hidden;
@@ -14,18 +14,6 @@
         @include padding-bottom(1.5);
         @include padding-top;
         @include grid-padding;
-        .divider {
-            margin-bottom: 0.4em;
-            color: lighten($primary, 10%);
-            transform: scaleX(0);
-            transform-origin: left;
-        }
-        .divider.solutions__h1 {
-            margin-bottom: 0.3em;
-            width: 0.7em;
-            background-color: $white;
-            opacity: 0.5;
-        }
         &:first-of-type {
             @include padding-bottom(1);
             &:before {
@@ -65,8 +53,75 @@
                 }
             }
         }
+        .h1 {
+            @include ligatures;
+            font-family: $serif;
+            font-size: $scale08;
+            line-height: 0.8;
+            letter-spacing: $spacing-serif-tight;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+            max-width: 8em;
+            opacity: 0.5;
+            @media only screen and ($md) {
+                font-size: $scale10;
+            }
+            @media only screen and ($xl) {
+                font-size: $scale11;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale12;
+            }
+            &:first-child:first-letter {
+                box-shadow: 0px -4px 0 0em currentColor;
+                @media screen and ($lg) {
+                    box-shadow: 0px -5px 0 0em currentColor;
+                }
+                @media screen and ($xxl) {
+                    box-shadow: 0px -6px 0 0em currentColor;
+                }
+                padding-top: 0.3em;
+            }
+        }
+        .h2 {
+            @include ligatures;
+            font-family: $serif;
+            font-size: $scale06;
+            line-height: 1.1;
+            letter-spacing: $spacing-serif;
+            font-weight: 400;
+            margin-bottom: 0.5em;
+            max-width: 14em;
+            opacity: 1;
+            @media only screen and ($md) {
+                font-size: $scale08;
+            }
+            @media only screen and ($lg) {
+                font-size: $scale08;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale10;
+            }
+            &:first-child:first-letter {
+                box-shadow: 0px -4px 0 0em lighten($primary, 10%);
+                @media screen and ($lg) {
+                    box-shadow: 0px -5px 0 0em lighten($primary, 10%);
+                }
+                @media screen and ($xxl) {
+                    box-shadow: 0px -6px 0 0em lighten($primary, 10%);
+                }
+                padding-top: 0.3em;
+            }
+        }
+        a {
+            color: lighten($primary, 10%);
+        }
     }
-    &__video {
+    .button {
+        @include margin-top(0.5);
+        @include margin-bottom(0.5);
+    }
+    .module-background {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -75,17 +130,14 @@
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 0;
         video {
             min-width: 100%;
             min-height: 100%;
             overflow: hidden;
         }
     }
-    .button {
-        @include margin-top(0.5);
-        @include margin-bottom(0.5);
-    }
-    &__text-container {
+    .module-content {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -95,64 +147,6 @@
         text-align: left;
         @include component-padding;
         z-index: 1;
-    }
-    &__h1 {
-        @include ligatures;
-        font-family: $serif;
-        font-size: $scale08;
-        line-height: 0.8;
-        letter-spacing: $spacing-serif-tight;
-        font-weight: 700;
-        margin-bottom: 0.5em;
-        max-width: 8em;
-        opacity: 0.5;
-        b {
-            display: block;
-            transform: translateY(50%);
-            opacity: 0;
-            transition-duration: 0.1s;
-            transition-delay: 0;
-            transition-property: all;
-            transition-timing-function: $bezier;
-        }
-        @media only screen and ($md) {
-            font-size: $scale10;
-        }
-        @media only screen and ($xl) {
-            font-size: $scale11;
-        }
-        @media only screen and ($xxl) {
-            font-size: $scale12;
-        }
-    }
-    &__h2 {
-        @include ligatures;
-        font-family: $serif;
-        font-size: $scale06;
-        line-height: 1.1;
-        letter-spacing: $spacing-serif;
-        font-weight: 400;
-        margin-bottom: 0.5em;
-        max-width: 14em;
-        opacity: 1;
-        b {
-            display: block;
-            transform: translateY(50%);
-            opacity: 0;
-            transition-duration: 0.1s;
-            transition-delay: 0;
-            transition-property: all;
-            transition-timing-function: $bezier;
-        }
-        @media only screen and ($md) {
-            font-size: $scale08;
-        }
-        @media only screen and ($lg) {
-            font-size: $scale08;
-        }
-        @media only screen and ($xxl) {
-            font-size: $scale10;
-        }
     }
     &__link {
         @include ligatures;
@@ -178,14 +172,13 @@
             font-size: $scale06;
         }
     }
-    &__subheadline {
+    .subhead {
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans;
         margin-bottom: 1em;
         max-width: 35em;
         font-size: $scale04;
-        transform: translateY(50%);
         opacity: 0;
         transition-duration: 0.1s;
         transition-delay: 0;
@@ -212,10 +205,11 @@
         justify-content: center;
         align-items: center;
         background-color: darken($black, 10%);
-        .divider {
-            margin-bottom: 0.8em;
+        .divider.headline {
+            opacity: 1;
+            transform-origin: center;
         }
-        &__text-container {
+        .module-content {
             width: 100%;
             text-align: center;
             display: flex;
@@ -234,7 +228,7 @@
                 width: calc(100% / 12 * 8);
             }
         }
-        &__h1 {
+        .headline {
             @include ligatures;
             font-family: $serif;
             font-size: $scale06;
@@ -243,6 +237,7 @@
             font-weight: 700;
             margin-bottom: 0.75em;
             max-width: 10em;
+            opacity: 0.5;
             @media only screen and ($md) {
                 font-size: $scale07;
                 max-width: none;
@@ -257,7 +252,7 @@
                 font-size: $scale10;
             }
         }
-        &__subhead {
+        .subhead {
             font-family: $sans;
             line-height: $title-sans;
             letter-spacing: $spacing-sans;
@@ -272,7 +267,7 @@
                 font-size: $scale06;
             }
         }
-        &__link {
+        .link {
             @include ligatures;
             font-family: $serif;
             font-style: italic;
@@ -379,6 +374,7 @@
                     flex-direction: row;
                     justify-content: space-between;
                     align-items: flex-end;
+                    height: auto;
                 }
                 &_container {
                     margin-bottom: 4px;
@@ -396,45 +392,6 @@
     }
 }
 
-.solutions__text-container.visible {
-    b {
-        transform: translateY(0%);
-        opacity: 1;
-        transition-duration: 0.1s;
-        transition-property: all;
-        transition-timing-function: $bezier;
-    }
-    @for $i from 1 through 5 {
-        b:nth-of-type(#{$i}) {
-            transition-delay: calc(0.4s + (0.05s * #{$i}));
-            // transition-delay: calc(0.2s * (0.1 * #{random(25)}));
-            // transition-duration: calc(0.05s * (0.1 * #{random(25)}));
-        }
-    }
-    .solutions__subheadline {
-        transform: translateY(0%);
-        opacity: 1;
-        transition-duration: 0.2s;
-        transition-delay: 0.7s;
-        transition-property: all;
-        transition-timing-function: $bezier;
-    }
-    .solutions__link {
-        transform: translateY(0%);
-        opacity: 1;
-        transition-duration: 0.2s;
-        transition-delay: 0.7s;
-        transition-property: all;
-        transition-timing-function: $bezier;
-    }
-    .divider {
-        transform: scaleX(1);
-        transition-duration: 0.1s;
-        transition-delay: 0.7s;
-        transition-property: transform;
-        transition-timing-function: $bezier;
-    }
-}
 
 #solutions__menu {
     position: fixed;
@@ -443,7 +400,6 @@
     transform: translate(0, -50%);
     width: 6px;
     color: $white;
-    z-index: 10;
     transition: all 0.2s 0s ease;
     @media screen and ($lg) {
         right: auto;
@@ -465,5 +421,48 @@
     }
     &.absolute {
         position: absolute;
+    }
+}
+
+.hero__solution {
+    .module-content {
+        transition-property: all;
+        &.below-the-fold > * {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        &.above-the-fold > * {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0s;
+            transition-duration: 0s;
+            &.h1 {
+                opacity: 0.5;
+            }
+        }
+        &.in-viewport > * {
+            opacity: 1;
+            transform: translateY(0);
+            transition-timing-function: $bezier;
+            &:nth-child(1) {
+                transition-delay: 0s;
+                transition-duration: 1s;
+                &.h1 {
+                    opacity: 0.5;
+                }
+            }
+            &:nth-child(2) {
+                transition-delay: 0.1s;
+                transition-duration: 1s;
+            }
+            &:nth-child(3) {
+                transition-delay: 0.2s;
+                transition-duration: 1s;
+            }
+            &:nth-child(4) {
+                transition-delay: 0.3s;
+                transition-duration: 1s;
+            }
+        }
     }
 }

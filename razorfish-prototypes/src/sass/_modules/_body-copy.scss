@@ -47,8 +47,8 @@
         }
         &--centered {
             align-items: center;
-            .body-copy__h2,
-            .body-copy__subhead {
+            .h2,
+            .subhead {
                 text-align: center;
             }
         }
@@ -63,7 +63,7 @@
         .divider {
             margin-bottom: 1.25rem;
         }
-        .body-copy__body + .body-copy__h3 {
+        .p + .h3 {
             margin-top: 3em;
         }
         @include padding-top(0.25);
@@ -130,6 +130,7 @@
         }
     }
     &__image {
+        color: $white;
         overflow: hidden;
         width: 100%;
         min-height: 40vw;
@@ -141,6 +142,37 @@
         .body-copy__container {
             margin-bottom: 0;
         }
+        .body-copy__container.body-copy__container--centered {
+            .h2 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &:first-child {
+                    margin-top: 0;
+                    &:first-letter {
+                        box-shadow: 0;
+                        padding-top: 0;
+                    }
+                    &:before {
+                        content: "";
+                        display: block;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 1em;
+                        box-shadow: 0px -4px 0 0em $primary;
+                        @media screen and ($lg) {
+                            box-shadow: 0px -5px 0 0em $primary;
+                        }
+                        @media screen and ($xxl) {
+                            box-shadow: 0px -6px 0 0em $primary;
+                        }
+                        padding-top: 1.2em;
+                    }
+                }
+            }
+        }
     }
     &__headline-container.center {
         text-align: center;
@@ -149,7 +181,7 @@
             margin-right: auto;
         }
     }
-    &__eyebrow {
+    .eyebrow {
         text-transform: uppercase;
         font-family: $sans;
         line-height: $title-sans;
@@ -162,8 +194,22 @@
         @media only screen and ($xxl) {
             font-size: $scale05;
         }
+        &:first-child:before {
+            content: "";
+            display: block;
+            position: relative;
+            width: 3em;
+            box-shadow: 0px -4px 0 0em $primary;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em $primary;
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em $primary;
+            }
+            padding-top: 1.2em;
+        }
     }
-    &__h2 {
+    .h2 {
         @include ligatures;
         font-family: $serif;
         line-height: 1.1;
@@ -178,14 +224,27 @@
             font-size: $scale09;
         }
         margin-bottom: 1em;
-        &.divider {
-            margin-bottom: 0.4em;
-            &:last-child {
-                margin-bottom: 0;
+        &:first-child {
+            margin-top: calc(0.3em + 4px);
+            @media screen and ($lg) {
+                margin-top: calc(0.3em + 5px);
+            }
+            @media screen and ($xxl) {
+                margin-top: calc(0.3em + 6px);
+            }
+            &:first-letter {
+                box-shadow: 0px -4px 0 0em $primary;
+                @media screen and ($lg) {
+                    box-shadow: 0px -5px 0 0em $primary;
+                }
+                @media screen and ($xxl) {
+                    box-shadow: 0px -6px 0 0em $primary;
+                }
+                padding-top: 0.3em;
             }
         }
     }
-    &__h3 {
+    .h3 {
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans;
@@ -203,14 +262,27 @@
         &:last-child {
             margin-bottom: 0;
         }
-        &.divider {
-            margin-bottom: 0.5em;
-            &:last-child {
-                margin-bottom: 0;
+        &:first-child {
+            margin-top: calc(0.3em + 4px);
+            @media screen and ($lg) {
+                margin-top: calc(0.3em + 5px);
+            }
+            @media screen and ($xxl) {
+                margin-top: calc(0.3em + 6px);
+            }
+            &:first-letter {
+                box-shadow: 0px -4px 0 0em $primary;
+                @media screen and ($lg) {
+                    box-shadow: 0px -5px 0 0em $primary;
+                }
+                @media screen and ($xxl) {
+                    box-shadow: 0px -6px 0 0em $primary;
+                }
+                padding-top: 0.5em;
             }
         }
     }
-    &__h4 {
+    .h4 {
         @include ligatures;
         font-family: $serif;
         line-height: 1.1;
@@ -225,14 +297,18 @@
             font-size: $scale08;
         }
         margin-bottom: 1em;
-        &.divider {
-            margin-bottom: 0.4em;
-            &:last-child {
-                margin-bottom: 0;
+        &:first-child:first-letter {
+            box-shadow: 0px -4px 0 0em $primary;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em $primary;
             }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em $primary;
+            }
+            padding-top: 0.3em;
         }
     }
-    &__subhead {
+    .subhead {
         @include ligatures;
         font-family: $serif;
         font-style: italic;
@@ -248,7 +324,7 @@
             margin-bottom: 0;
         }
     }
-    &__label {
+    .label {
         font-family: $sans;
         font-size: $scale03;
         font-weight: 400;
@@ -272,7 +348,7 @@
             margin-bottom: 0;
         }
     }
-    &__body {
+    .p {
         font-family: $sans;
         line-height: $prose-sans;
         letter-spacing: $spacing-sans;
@@ -435,81 +511,6 @@
             }
         }
     }
-    &__foot-note {
-        margin-top: 4em;
-        &__group {
-            margin-bottom: 1.5em;
-            font-size: $scale05;
-            @media only screen and ($xxl) {
-                font-size: $scale06;
-            }
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-        &__eyebrow {
-            text-transform: uppercase;
-            font-family: $sans;
-            line-height: $title-sans;
-            letter-spacing: $spacing-sans-large;
-            margin-bottom: 0.75em;
-            color: $gray-label;
-            font-size: $scale03;
-            @media only screen and ($md) {
-                font-size: $scale03;
-            }
-            @media only screen and ($xxl) {
-                font-size: $scale04;
-            }
-            &:last-child {
-                margin-bottom: 0;
-            }
-            &.divider {
-                width: 1.6em;
-                height: 4px;
-            }
-        }
-        &__link {
-            font-family: $sans;
-            line-height: $title-sans;
-            letter-spacing: $spacing-sans;
-            font-weight: 700;
-            font-size: $scale05;
-            margin-bottom: 0.2em;
-            @media only screen and ($xxl) {
-                font-size: $scale06;
-            }
-            &:last-child {
-                margin-bottom: 0;
-            }
-            &:after {
-                content: "\E800";
-                font-size: 0.4em;
-                margin-left: 0.8em;
-                color: currentColor;
-                font-family: $icons;
-                vertical-align: middle;
-                transition: margin-left 0.2s 0s $bezier;
-                &:hover {
-                    margin-left: 0.8em;
-                    color: currentColor;
-                }
-            }
-            &:hover:after {
-                margin-left: 1.2em;
-                color: $primary;
-            }
-            &--description {
-                font-family: $sans;
-                line-height: $prose-sans;
-                letter-spacing: $spacing-sans;
-                font-size: $scale04;
-                @media only screen and ($xxl) {
-                    font-size: $scale05;
-                }
-            }
-        }
-    }
     &--zero-padding-top {
         padding-top: 0;
     }
@@ -524,11 +525,94 @@
             margin-bottom: 0;
         }
     }
-    &--white {
-        color: $white;
-    }
 }
 
 .pull-quote + .body-copy__container {
     @include padding-top(1);
+}
+
+.foot-note {
+    margin-top: 4em;
+    &__group {
+        margin-bottom: 1.5em;
+        font-size: $scale05;
+        @media only screen and ($xxl) {
+            font-size: $scale06;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .eyebrow {
+        text-transform: uppercase;
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans-large;
+        margin-bottom: 0.75em;
+        color: $gray-label;
+        font-size: $scale03;
+        @media only screen and ($md) {
+            font-size: $scale03;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale04;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &:first-child:before {
+            content: "";
+            display: block;
+            position: relative;
+            width: 1.5em;
+            box-shadow: 0px -4px 0 0em $primary;
+            @media screen and ($lg) {
+                box-shadow: 0px -5px 0 0em $primary;
+            }
+            @media screen and ($xxl) {
+                box-shadow: 0px -6px 0 0em $primary;
+            }
+            padding-top: 1.2em;
+        }
+    }
+    &__link {
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans;
+        font-weight: 700;
+        font-size: $scale05;
+        margin-bottom: 0.2em;
+        @media only screen and ($xxl) {
+            font-size: $scale06;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &:after {
+            content: "\E800";
+            font-size: 0.4em;
+            margin-left: 0.8em;
+            color: currentColor;
+            font-family: $icons;
+            vertical-align: middle;
+            transition: margin-left 0.2s 0s $bezier;
+            &:hover {
+                margin-left: 0.8em;
+                color: currentColor;
+            }
+        }
+        &:hover:after {
+            margin-left: 1.2em;
+            color: $primary;
+        }
+        &--description {
+            font-family: $sans;
+            line-height: $prose-sans;
+            letter-spacing: $spacing-sans;
+            font-size: $scale04;
+            @media only screen and ($xxl) {
+                font-size: $scale05;
+            }
+        }
+    }
 }

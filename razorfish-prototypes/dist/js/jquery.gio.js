@@ -505,7 +505,7 @@ window.onload = (function() {
         // Bind it on scroll, load and resize.
         window.addEventListener('resize', simpleTitleClipPath);
         window.addEventListener('scroll', simpleTitleClipPath);
-        window.addEventListener('load', simpleTitleClipPath);
+        simpleTitleClipPath();
     }
 
 
@@ -732,7 +732,7 @@ window.onload = (function() {
 
     window.addEventListener('resize', siteMastheadTransparencyCheck);
     window.addEventListener('scroll', siteMastheadTransparencyCheck);
-    window.addEventListener('load', siteMastheadTransparencyCheck);
+    siteMastheadTransparencyCheck();
 
 
 
@@ -764,9 +764,44 @@ window.onload = (function() {
         // Bind it on scroll, load and resize.
         window.addEventListener('resize', feedItemInViewport);
         window.addEventListener('scroll', feedItemInViewport);
-        window.addEventListener('load', feedItemInViewport);
+        feedItemInViewport();
 
     }
+
+    // Module content vieport checker
+
+    if (document.getElementsByClassName('module-content')[0]) {
+
+        // .module-content toggle visibility classes
+        var moduleContent = document.getElementsByClassName('module-content');
+
+        // If .module-content is not in the viewport add class .below-the-fold or .above-the-fold
+        function moduleContentInViewport() {
+            [].forEach.call(moduleContent, function(div) {
+                var rect = div.getBoundingClientRect();
+                if (rect.bottom < 0) {
+                    div.classList.add('above-the-fold');
+                    div.classList.remove('below-the-fold');
+                    div.classList.remove('in-viewport');
+                } else if (rect.top > window.innerHeight) {
+                    div.classList.add('below-the-fold');
+                    div.classList.remove('above-the-fold');
+                    div.classList.remove('in-viewport');
+                } else {
+                    div.classList.add('in-viewport');
+                    div.classList.remove('above-the-fold');
+                    div.classList.remove('below-the-fold');
+                }
+            });
+        };
+
+        // Bind it on scroll, load and resize.
+        window.addEventListener('resize', moduleContentInViewport);
+        window.addEventListener('scroll', moduleContentInViewport);
+        moduleContentInViewport();
+        
+    }
+
 
 
     // Hero: animations
@@ -792,61 +827,6 @@ window.onload = (function() {
             },
             true // Capture event
         );
-
-
-        // .module-content toggle visibility classes
-        var heroModuleContent = document.getElementsByClassName('module-content');
-
-        // If .module-content is not in the viewport add class .below-the-fold or .above-the-fold
-        function heroModuleContentInViewport() {
-            [].forEach.call(heroModuleContent, function(div) {
-                var rect = div.getBoundingClientRect();
-                if (rect.bottom < 0) {
-                    div.classList.add('above-the-fold');
-                    div.classList.remove('below-the-fold');
-                    div.classList.remove('in-viewport');
-                } else if (rect.top > window.innerHeight) {
-                    div.classList.add('below-the-fold');
-                    div.classList.remove('above-the-fold');
-                    div.classList.remove('in-viewport');
-                } else {
-                    div.classList.add('in-viewport');
-                    div.classList.remove('above-the-fold');
-                    div.classList.remove('below-the-fold');
-                }
-            });
-        };
-
-        // Bind it on scroll, load and resize.
-        window.addEventListener('resize', heroModuleContentInViewport);
-        window.addEventListener('scroll', heroModuleContentInViewport);
-        window.addEventListener('load', heroModuleContentInViewport);
-
-
-
-        // Hero text container animation
-
-        var heroTextContainer = document.getElementsByClassName('hero__text-container');
-
-        // If .hero__text-container is below the viewport add class .away and remove class .fly-in
-        function heroTextContainerInViewport() {
-            [].forEach.call(heroTextContainer, function(div) {
-                var rect = div.getBoundingClientRect();
-                // If .hero__text-container is past half of the viewport then...
-                if (rect.top <= (window.innerHeight)) {
-                    div.classList.add('fly-in');
-                } else if (rect.top > window.innerHeight) {
-                    div.classList.add('away');
-                    div.classList.remove("fly-in");
-                }
-            });
-        };
-
-        // Bind it on scroll, load and resize.
-        window.addEventListener('resize', heroTextContainerInViewport);
-        window.addEventListener('scroll', heroTextContainerInViewport);
-        window.addEventListener('load', heroTextContainerInViewport);
-
 
 
     }
@@ -878,7 +858,7 @@ window.onload = (function() {
         // Bind it on scroll, load and resize.
         window.addEventListener('resize', dividerInViewport);
         window.addEventListener('scroll', dividerInViewport);
-        window.addEventListener('load', dividerInViewport);
+        dividerInViewport();
 
     }
 
@@ -1037,7 +1017,7 @@ window.onload = (function() {
         // Bind it on scroll, load and resize.
         window.addEventListener('resize', footerInViewport);
         window.addEventListener('scroll', footerInViewport);
-        window.addEventListener('load', footerInViewport);
+        footerInViewport();
 
     }
 
@@ -1112,107 +1092,6 @@ window.onload = (function() {
 
 
 
-    var el = document.querySelector(".hero__background image__parallax");
-
-    // Observe mouse scroll wheel
-    // var handleScroll = function(evt) {
-    //     if (!evt) evt = event;
-    //     // console.log(evt.wheelDeltaY / 1000);
-
-    //     var st = window.getComputedStyle(el, null);
-
-    //     var tr = st.getPropertyValue("-webkit-transform") ||
-    //         st.getPropertyValue("-moz-transform") ||
-    //         st.getPropertyValue("-ms-transform") ||
-    //         st.getPropertyValue("-o-transform") ||
-    //         st.getPropertyValue("transform") ||
-    //         "Either no transform set, or browser doesn't do getComputedStyle";
-
-    //     console.log(tr);
-
-
-    //     // heroScrollZoom.style.transform = "scale(" + (evt.wheelDeltaY / 1000) + ")";
-    //     // console.log(1 + (evt.wheelDeltaY / 1000));
-
-    // };
-    // window.addEventListener('mousewheel', handleScroll, false);
-
-
-    // if (document.getElementsByClassName("hero__background")[0]) {
-
-
-    //     heroBackground = document.getElementsByClassName("hero__background");
-
-    //     [].forEach.call(heroBackground, function(div) {
-
-    //         heroBackgroundScale = function() {
-
-    //             var rect = div.getBoundingClientRect();
-
-    //             if ((rect.top <= (window.innerHeight + 50)) && (rect.bottom >= -50)) {
-
-    //                 // Distance of div bottom from viewport bottom in percentage - This value will be between 0 when the div is above viewport (scrolled by), and 200 when the div is below viewport (not yet seen)
-    //                 var percentageInVieport = rect.bottom / window.innerHeight * 100;
-
-    //                 var imageScale = ((100 + ((percentageInVieport / 65) * (percentageInVieport / 65) * (percentageInVieport / 65))) / 100).toFixed(3); // percentage / 40 multiplied for itself, so the more far bottom the div is, the more the scale is accelerated.
-    //                 // var imageScale = ((100 + ((percentageInVieport / 40) * (percentageInVieport / 40))) / 100).toFixed(3); // percentage / 40 multiplied for itself, so the more far bottom the div is, the more the scale is accelerated.
-
-    //                 var translateY = imageScale;
-    //                 // console.log("imageScale " + imageScale);
-    //                 // console.log("translateY " + translateY);
-
-    //                 div.style.webkitTransform = "scale(" + imageScale + ") translate3d(0," + translateY + "%,0)";
-    //                 div.style.transform = "scale(" + imageScale + ") translate3d(0," + translateY + "%,0)";
-
-    //             }
-    //         }
-
-    //         // Load after page has been faded in
-    //         setTimeout(function() {
-    //             heroBackgroundScale();
-    //         }, 400);
-
-
-    //         window.addEventListener('scroll', heroBackgroundScale);
-    //         // window.addEventListener('load', heroBackgroundScale);
-    //         window.addEventListener('resize', heroBackgroundScale);
-
-
-    //     })
-
-
-    //     // Debug for just one hero
-
-    //     // heroBackgroundFirst = document.getElementsByClassName("hero__background image__parallax")[1];
-
-    //     // heroBackgroundScale = function() {
-
-    //     //     var rect = heroBackgroundFirst.getBoundingClientRect();
-
-    //     //     if ((rect.top <= (window.innerHeight + 50)) && (rect.bottom >= -50)) {
-
-    //     //         // Distance of div bottom from viewport bottom in percentage - This value will be between 0 when the div is above viewport (scrolled by), and 200 when the div is below viewport (not yet seen)
-    //     //         var percentageInVieport = rect.bottom / window.innerHeight * 100;
-
-    //     //         var imageScale = ((100 + ((percentageInVieport / 65) * (percentageInVieport / 65) * (percentageInVieport / 65))) / 100).toFixed(3); // percentage / 40 multiplied for itself, so the more far bottom the div is, the more the scale is accelerated.
-    //     //         // var imageScale = ((100 + ((percentageInVieport / 40) * (percentageInVieport / 40))) / 100).toFixed(3); // percentage / 40 multiplied for itself, so the more far bottom the div is, the more the scale is accelerated.
-
-    //     //         var translateY = imageScale * imageScale * imageScale * imageScale * 2;
-    //     //         console.log("imageScale " + imageScale);
-    //     //         console.log("translateY " + translateY);
-
-    //     //         heroBackgroundFirst.style.webkitTransform = "scale(" + imageScale + ") translate3d(0," + translateY + "%,0)";
-    //     //         heroBackgroundFirst.style.transform = "scale(" + imageScale + ") translate3d(0," + translateY + "%,0)";
-
-    //     //     }
-    //     // }
-
-    //     // window.addEventListener('scroll', heroBackgroundScale);
-    //     // window.addEventListener('load', heroBackgroundScale);
-    //     // window.addEventListener('resize', heroBackgroundScale);
-
-    // };
-
     // Add parallax effect to background-images
 
     if (document.getElementsByClassName("image__parallax")[0]) {
@@ -1255,7 +1134,7 @@ window.onload = (function() {
             }
 
             window.addEventListener('scroll', imageParallaxFn);
-            window.addEventListener('load', imageParallaxFn);
+            imageParallaxFn();
             window.addEventListener('resize', imageParallaxFn);
 
         })
