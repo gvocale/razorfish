@@ -603,7 +603,6 @@
     pointer-events: none;
 }
 
-
 .form-animation {
     display: flex;
     flex-direction: row;
@@ -618,7 +617,6 @@
         display: flex;
     }
 }
-
 
 .button__submit-form {
     box-sizing: border-box;
@@ -679,7 +677,6 @@
         bottom: 35%;
         left: 38%;
         z-index: 2000;
-        transition: border-bottom 0.2s linear, width 0.2s linear, height 0.2s 0.2s linear, border-right 0.2s 0.2s linear;
     }
     span {
         position: absolute;
@@ -689,7 +686,7 @@
         transform: translate(-50%, -50%);
     }
     &.anim-1 {
-        animation: 0.2s 0.2s $bezier forwards anim_1;
+        animation: 1s $bezier forwards anim_1;
         @keyframes anim_1 {
             to {
                 width: 4rem;
@@ -701,7 +698,7 @@
             }
         }
         span {
-            animation: 0.2s $bezier forwards anim_span_1;
+            animation: 0.5s $bezier forwards anim_span_1;
             @keyframes anim_span_1 {
                 to {
                     opacity: 0;
@@ -713,7 +710,7 @@
     &.anim-2 {
         border-top: 2px rgba($primary, 1) solid;
         $bezier-spinner: cubic-bezier(.71, .38, .31, .65);
-        animation: 1s infinite $bezier-spinner anim_2;
+        animation: 1s 3 $bezier-spinner anim_2;
         width: 4rem;
         border-radius: 50%;
         padding-top: 0;
@@ -730,8 +727,25 @@
         }
     }
     &.anim-3 {
-        border: 2rem rgba($primary, 1) solid;
-        transition: border 0.2s $bezier;
+        animation: 0.5s forwards ease-out anim_3;
+        @keyframes anim_3 {
+            0% {
+                border-top: 2px rgba($primary, 1) solid;
+                border-left: 0px rgba($primary, 1) solid;
+                border-right: 0px rgba($primary, 1) solid;
+                border-bottom: 0px rgba($primary, 1) solid;
+            }
+            99% {
+                border-top: 2rem rgba($primary, 1) solid;
+                border-left: 2rem rgba($primary, 1) solid;
+                border-right: 2rem rgba($primary, 1) solid;
+                border-bottom: 2rem rgba($primary, 1) solid;
+                background-color: transparent;
+            }
+            100% {
+                background-color: $primary;
+            }
+        }
     }
     &.anim-4 {
         animation: none;
@@ -739,10 +753,29 @@
         border: 0;
         transform: rotate(45deg);
         &:before {
-            border-bottom: 4px $white solid;
-            border-right: 4px $white solid;
-            width: 0.6em;
-            height: 1.2em;
+            animation: 0.4s 0.5s forwards linear anim_4;
+            @keyframes anim_4 {
+                0% {
+                    border-bottom: 4px $white solid;
+                    width: 0em;
+                }
+                40% {
+                    border-bottom: 4px $white solid;
+                    width: 0.6em;
+                }
+                60% {
+                    border-bottom: 4px $white solid;
+                    width: 0.6em;
+                    border-right: 4px $white solid;
+                    height: 0em;
+                }
+                100% {
+                    border-bottom: 4px $white solid;
+                    width: 0.6em;
+                    border-right: 4px $white solid;
+                    height: 1.2em;
+                }
+            }
         }
     }
 }

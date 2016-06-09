@@ -117,6 +117,54 @@ window.onload = (function() {
     };
 
 
+    // Button Submit Form Animation
+
+    if (document.getElementsByClassName('button__submit-form')[0]) {
+
+        buttonSubmitForm = document.getElementsByClassName('button__submit-form')[0];
+
+        // Button Animation
+
+        buttonSubmitForm.onclick = function() {
+
+            if (!buttonSubmitForm.classList.contains("anim-1")) {
+
+                buttonSubmitForm.classList.add("anim-1");
+
+                anim2 = function(event) {
+                    if (event.animationName === "anim_1") {
+                        buttonSubmitForm.classList.add("anim-2");
+                    }
+                }
+
+                anim3 = function(event) {
+                    if (event.animationName === "anim_2") {
+                        buttonSubmitForm.classList.add("anim-3");
+                    }
+                }
+
+                anim4 = function(event) {
+                    if (event.animationName === "anim_3") {
+                        buttonSubmitForm.classList.add("anim-4");
+                    }
+                }
+
+                buttonSubmitForm.addEventListener("animationend", anim2);
+                buttonSubmitForm.addEventListener("animationend", anim3);
+                buttonSubmitForm.addEventListener("animationend", anim4);
+                
+
+            } else {
+                buttonSubmitForm.classList.remove("anim-1", "anim-2", "anim-3", "anim-4");
+                
+                buttonSubmitForm.removeEventListener("animationend", anim2);
+                buttonSubmitForm.removeEventListener("animationend", anim3);
+                buttonSubmitForm.removeEventListener("animationend", anim4);
+            }
+        }
+
+    }
+
     // Contact-form, toggling classes when overlay is open
 
     if (document.getElementById('contact-form__hero')) {
@@ -142,30 +190,6 @@ window.onload = (function() {
             contactFormOverlay.classList.remove("display");
             document.body.style.overflowY = "auto";
             document.documentElement.style.overflowY = "auto";
-        }
-
-        // Button Animation
-        function formSubmitButtonAnimation() {
-            setTimeout(function() {
-                contactFormSubmitButton.classList.add("shrink");
-                console.log("1000 shrinking");
-            }, 200);
-            setTimeout(function() {
-                contactFormSubmitButton.classList.add("load");
-                console.log("2000 loading");
-            }, 1000);
-            setTimeout(function() {
-                contactFormSubmitButton.classList.add("fill");
-                console.log("3000 filling");
-            }, 4000);
-            setTimeout(function() {
-                contactFormSubmitButton.classList.add("tick");
-                console.log("4000 tick");
-            }, 5000);
-            setTimeout(function() {
-                contactFormSubmitButton.classList.remove("shrink", "load", "fill", "tick", "destroy", "clicked");
-                console.log("6000 remove classes");
-            }, 9000);
         }
 
         for (var i = 0; i < contactFormLink.length; i++) {
@@ -768,7 +792,7 @@ window.onload = (function() {
         window.addEventListener('resize', moduleContentInViewport);
         window.addEventListener('scroll', moduleContentInViewport);
         moduleContentInViewport();
-        
+
     }
 
 

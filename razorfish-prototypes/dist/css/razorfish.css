@@ -6039,8 +6039,7 @@ body {
     position: absolute;
     bottom: 35%;
     left: 38%;
-    z-index: 2000;
-    transition: border-bottom 0.2s linear, width 0.2s linear, height 0.2s 0.2s linear, border-right 0.2s 0.2s linear; }
+    z-index: 2000; }
   .button__submit-form span {
     position: absolute;
     top: 50%;
@@ -6049,8 +6048,8 @@ body {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
   .button__submit-form.anim-1 {
-    -webkit-animation: 0.2s 0.2s cubic-bezier(0.32, 0.01, 0, 1) forwards anim_1;
-    animation: 0.2s 0.2s cubic-bezier(0.32, 0.01, 0, 1) forwards anim_1; }
+    -webkit-animation: 1s cubic-bezier(0.32, 0.01, 0, 1) forwards anim_1;
+    animation: 1s cubic-bezier(0.32, 0.01, 0, 1) forwards anim_1; }
 
 @-webkit-keyframes anim_1 {
   to {
@@ -6070,8 +6069,8 @@ body {
     padding-left: 0;
     padding-right: 0; } }
     .button__submit-form.anim-1 span {
-      -webkit-animation: 0.2s cubic-bezier(0.32, 0.01, 0, 1) forwards anim_span_1;
-      animation: 0.2s cubic-bezier(0.32, 0.01, 0, 1) forwards anim_span_1; }
+      -webkit-animation: 0.5s cubic-bezier(0.32, 0.01, 0, 1) forwards anim_span_1;
+      animation: 0.5s cubic-bezier(0.32, 0.01, 0, 1) forwards anim_span_1; }
 
 @-webkit-keyframes anim_span_1 {
   to {
@@ -6086,8 +6085,8 @@ body {
     transform: translate(-50%, 250%); } }
   .button__submit-form.anim-2 {
     border-top: 2px #a9c000 solid;
-    -webkit-animation: 1s infinite cubic-bezier(0.71, 0.38, 0.31, 0.65) anim_2;
-    animation: 1s infinite cubic-bezier(0.71, 0.38, 0.31, 0.65) anim_2;
+    -webkit-animation: 1s 3 cubic-bezier(0.71, 0.38, 0.31, 0.65) anim_2;
+    animation: 1s 3 cubic-bezier(0.71, 0.38, 0.31, 0.65) anim_2;
     width: 4rem;
     border-radius: 50%;
     padding-top: 0;
@@ -6111,8 +6110,38 @@ body {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
   .button__submit-form.anim-3 {
-    border: 2rem #a9c000 solid;
-    transition: border 0.2s cubic-bezier(0.32, 0.01, 0, 1); }
+    -webkit-animation: 0.5s forwards ease-out anim_3;
+    animation: 0.5s forwards ease-out anim_3; }
+
+@-webkit-keyframes anim_3 {
+  0% {
+    border-top: 2px #a9c000 solid;
+    border-left: 0px #a9c000 solid;
+    border-right: 0px #a9c000 solid;
+    border-bottom: 0px #a9c000 solid; }
+  99% {
+    border-top: 2rem #a9c000 solid;
+    border-left: 2rem #a9c000 solid;
+    border-right: 2rem #a9c000 solid;
+    border-bottom: 2rem #a9c000 solid;
+    background-color: transparent; }
+  100% {
+    background-color: #a9c000; } }
+
+@keyframes anim_3 {
+  0% {
+    border-top: 2px #a9c000 solid;
+    border-left: 0px #a9c000 solid;
+    border-right: 0px #a9c000 solid;
+    border-bottom: 0px #a9c000 solid; }
+  99% {
+    border-top: 2rem #a9c000 solid;
+    border-left: 2rem #a9c000 solid;
+    border-right: 2rem #a9c000 solid;
+    border-bottom: 2rem #a9c000 solid;
+    background-color: transparent; }
+  100% {
+    background-color: #a9c000; } }
   .button__submit-form.anim-4 {
     -webkit-animation: none;
     animation: none;
@@ -6121,10 +6150,44 @@ body {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg); }
     .button__submit-form.anim-4:before {
-      border-bottom: 4px #FFFFFF solid;
-      border-right: 4px #FFFFFF solid;
-      width: 0.6em;
-      height: 1.2em; }
+      -webkit-animation: 0.4s 0.5s forwards linear anim_4;
+      animation: 0.4s 0.5s forwards linear anim_4; }
+
+@-webkit-keyframes anim_4 {
+  0% {
+    border-bottom: 4px #FFFFFF solid;
+    width: 0em; }
+  40% {
+    border-bottom: 4px #FFFFFF solid;
+    width: 0.6em; }
+  60% {
+    border-bottom: 4px #FFFFFF solid;
+    width: 0.6em;
+    border-right: 4px #FFFFFF solid;
+    height: 0em; }
+  100% {
+    border-bottom: 4px #FFFFFF solid;
+    width: 0.6em;
+    border-right: 4px #FFFFFF solid;
+    height: 1.2em; } }
+
+@keyframes anim_4 {
+  0% {
+    border-bottom: 4px #FFFFFF solid;
+    width: 0em; }
+  40% {
+    border-bottom: 4px #FFFFFF solid;
+    width: 0.6em; }
+  60% {
+    border-bottom: 4px #FFFFFF solid;
+    width: 0.6em;
+    border-right: 4px #FFFFFF solid;
+    height: 0em; }
+  100% {
+    border-bottom: 4px #FFFFFF solid;
+    width: 0.6em;
+    border-right: 4px #FFFFFF solid;
+    height: 1.2em; } }
 
 .hero {
   width: 100vw;
