@@ -6679,9 +6679,9 @@ a.hero {
     -webkit-clip-path: polygon(0 0, 0% 0, 0% 100%, 0% 100%);
     clip-path: polygon(0 0, 0% 0, 0% 100%, 0% 100%); } }
   @media (hover) {
-    a.hero:hover, a.hero:focus {
+    a.hero:hover:not(.no-hover), a.hero:focus:not(.no-hover) {
       outline: none; }
-      a.hero:hover .module-content > *:last-child:after, a.hero:focus .module-content > *:last-child:after {
+      a.hero:hover:not(.no-hover) .module-content > *:last-child:after, a.hero:focus:not(.no-hover) .module-content > *:last-child:after {
         -webkit-animation-name: heroArrowIn;
         animation-name: heroArrowIn;
         -webkit-animation-duration: 0.2s;
@@ -6722,13 +6722,13 @@ a.hero {
         transform: translateX(0%);
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); } }
-      a.hero:hover .module-background, a.hero:focus .module-background {
+      a.hero:hover:not(.no-hover) .module-background, a.hero:focus:not(.no-hover) .module-background {
         -webkit-transform: translate3d(0, 0, 0) scale(1.05);
         transform: translate3d(0, 0, 0) scale(1.05);
         transition: -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
         transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
         transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1), -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); }
-        a.hero:hover .module-background:before, a.hero:focus .module-background:before {
+        a.hero:hover:not(.no-hover) .module-background:before, a.hero:focus:not(.no-hover) .module-background:before {
           opacity: 0.2;
           transition: opacity 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); } }
 

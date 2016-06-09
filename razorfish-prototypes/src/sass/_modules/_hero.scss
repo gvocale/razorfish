@@ -471,8 +471,8 @@ a.hero {
         }
     }
     @media (hover) {
-        &:hover,
-        &:focus {
+        &:hover:not(.no-hover),
+        &:focus:not(.no-hover) {
             outline: none;
             .module-content > *:last-child:after {
                 animation-name: heroArrowIn;
