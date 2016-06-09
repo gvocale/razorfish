@@ -1,40 +1,45 @@
-.image {
-    width: 100vw;
-    height: 80vh;
-    max-height: 100vw;
-    background-attachment: scroll;
+.image__full-width {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
     position: relative;
-    overflow-y: hidden;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-    &--full-height {
-        height: auto;
-        max-height: none;
-    }
-    &--full-width {
+    img {
         width: 100%;
         height: auto;
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
+        display: block;
+    }
+    .caption {
+        &__checkbox {
+            appearance: none;
+            display: none;
+            &:checked ~ .caption__container {
+                transform: translateY(0%);
+            }
+            &:checked ~ .caption__icon {
+                .caption__icon_component:before {
+                    content: "";
+                    display: block;
+                    width: 3px;
+                    height: 15px;
+                    background-color: currentColor;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+                }
+                .caption__icon_component:after {
+                    content: "";
+                    display: block;
+                    width: 3px;
+                    height: 15px;
+                    background-color: currentColor;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+                }
+            }
         }
-    }
-    &__background {
-        width: 100vw;
-        min-height: 80vh;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    &__caption {
         &__icon {
             position: absolute;
             bottom: 0;
@@ -49,7 +54,7 @@
             cursor: hand;
             color: $primary;
             // @include icon-info-primary;
-            &--component {
+            &_component {
                 width: 2rem;
                 height: 2rem;
                 margin: 1rem;
@@ -86,14 +91,14 @@
             }
             @media (hover) {
                 &:hover {
-                    .image__caption__icon--component {
+                    .caption__icon--component {
                         border: 2px solid rgba($primary, 1);
                         transition: all 0s 0s $bezier;
                     }
                 }
             }
             &:focus {
-                .image__caption__icon--component {
+                .caption__icon--component {
                     border: 2px solid rgba($primary, 1);
                     transition: all 0s 0s $bezier;
                 }
@@ -101,14 +106,14 @@
             &:active,
             &:target {
                 ;
-                .image__caption__icon--component {
+                .caption__icon--component {
                     border: 2px solid rgba($primary, 1);
                     background-color: rgba($white, 0.2);
                     transition: all 0s 0s $bezier;
                 }
             }
         }
-        &--container {
+        &__container {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -135,7 +140,7 @@
                 z-index: 0;
             }
         }
-        &-body {
+        &__p {
             font-family: $sans;
             line-height: $title-sans;
             letter-spacing: $spacing-sans;
@@ -150,37 +155,6 @@
                 margin-right: 0.5em;
             }
         }
-    }
-    #image__caption__checkbox:checked ~ .image__caption--container {
-        transform: translateY(0%);
-    }
-    #image__caption__checkbox:checked ~ .image__caption__icon {
-        .image__caption__icon--component:before {
-            content: "";
-            display: block;
-            width: 3px;
-            height: 15px;
-            background-color: currentColor;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%) rotate(45deg);
-        }
-        .image__caption__icon--component:after {
-            content: "";
-            display: block;
-            width: 3px;
-            height: 15px;
-            background-color: currentColor;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%) rotate(-45deg);
-        }
-    }
-    #image__caption__checkbox {
-        appearance: none;
-        display: none;
     }
 }
 
@@ -243,14 +217,15 @@
             transition: all 0.1s 0s ease-in-out;
         }
         @media (hover) {
-        &:hover {
-            &:before {
-                right: 20px;
+            &:hover {
+                &:before {
+                    right: 20px;
+                }
+                &:after {
+                    width: 20px;
+                }
             }
-            &:after {
-                width: 20px;
-            }
-        }}
+        }
     }
     .owl-next {
         position: relative;
@@ -287,14 +262,15 @@
             transition: all 0.1s 0s ease-in-out;
         }
         @media (hover) {
-        &:hover {
-            &:before {
-                width: 20px;
+            &:hover {
+                &:before {
+                    width: 20px;
+                }
+                &:after {
+                    left: 20px;
+                }
             }
-            &:after {
-                left: 20px;
-            }
-        }}
+        }
     }
     .owl-nav {
         width: 8em;

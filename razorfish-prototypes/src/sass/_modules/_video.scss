@@ -16,23 +16,15 @@
             position: relative;
         }
     }
-    &__poster {
+    .poster {
         width: 100%;
         height: 100%;
         display: block;
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 2;
     }
-    &__embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-    }
-    &__image {
+    .image {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -41,6 +33,13 @@
         position: absolute;
         top: 0;
         left: 0;
+    }
+    &__embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
     }
     &__caption {
         font-family: $sans;
@@ -97,24 +96,25 @@
             }
         }
         @media (hover) {
-        &:hover {
-            background-color: rgba($white, 0.1);
-            transition: background-color 0s 0s $bezier, transform 0.1s 0s $bezier;
-            transform: translate(-50%, -50%) scale(0.95);
-        }}
+            &:hover {
+                background-color: rgba($white, 0.1);
+                transition: background-color 0s 0s $bezier, transform 0.1s 0s $bezier;
+                transform: translate(-50%, -50%) scale(0.95);
+            }
+        }
         &:active,
         &:target {
             background-color: rgba($white, 0.4);
             transition: background-color 0s 0s $bezier;
         }
     }
-    &--grid-padding {
+    &_full-screen {
         @include grid-padding;
         @include padding-bottom;
         @include component-margin;
         width: calc(100% - 2rem);
     }
-    &--inline {
+    &_inline {
         @include padding-top(0.5);
         @include padding-bottom(0.5);
     }

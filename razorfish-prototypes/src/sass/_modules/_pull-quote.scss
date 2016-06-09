@@ -7,7 +7,6 @@
     position: relative;
     padding-top: 6em;
     padding-bottom: 6em;
-    z-index: 1;
     overflow: hidden;
     @media only screen and ($xxl) {
         padding-top: 8em;
@@ -46,7 +45,7 @@
             margin-bottom: 0;
         }
     }
-    &__eyebrow {
+    .eyebrow {
         font-family: $sans;
         line-height: $title-sans;
         color: $primary;
@@ -61,10 +60,10 @@
             font-size: $scale05;
         }
     }
-    .quotation-mark--primary + .pull-quote__eyebrow {
+    .quotation-mark--primary + .eyebrow {
         color: currentColor;
     }
-    &__quote {
+    .quote {
         @include ligatures;
         font-family: $serif;
         font-style: italic;
@@ -144,7 +143,7 @@
             margin-bottom: 0;
         }
     }
-    .pull-quote__quote + .pull-quote__author-photo {
+    .quote + .pull-quote__author-photo {
         margin-top: 2rem;
     }
     &__image {

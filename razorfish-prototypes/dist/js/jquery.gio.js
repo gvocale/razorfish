@@ -477,8 +477,8 @@ window.onload = (function() {
         froogaloop = $f(player[0].id);
 
         $('.video__button--play').click(function(e) {
-            $('.video__poster').fadeOut("slow");
-            $('.hero__video__poster').fadeOut("slow");
+            $('.poster').fadeOut("slow");
+            $('.hero__poster').fadeOut("slow");
             froogaloop.api('play');
         });
     }
@@ -664,37 +664,6 @@ window.onload = (function() {
     }
 
 
-    // Approach page snappy scroll
-
-    // if (document.getElementById("fullpage")) {
-    //     $('#fullpage').fullpage({
-    //         scrollBar: true,
-    //         // menu: '#solutions__menu',
-    //         verticalCentered: false,
-    //         scrollingSpeed: 500,
-    //         autoScrolling: true,
-    //         fitToSectionDelay: 2000,
-    //         touchSensitivity: 10,
-    //         // onLeave: function(giovanni) { // Change navigation to position fixed when I'm viewing slide 5
-    //         //     console.log("sliding");
-    //         //     if ($('body').hasClass("fp-viewing-slide5")) {
-    //         //         setTimeout(function() {
-    //         //             $(".solutions__menu").addClass("fixed");
-    //         //             console.log("fixed");
-    //         //         }, 500);
-    //         //     } else {
-    //         //         $(".solutions__menu").removeClass("fixed");
-    //         //         console.log("remove fixed");
-    //         //     }
-
-    //         // }
-    //     });
-    // }
-
-    // apply gradient map
-
-
-
 
     // Code used to generate Gradient Map
 
@@ -711,7 +680,7 @@ window.onload = (function() {
 
         var heroFirst = document.getElementsByClassName('hero')[0];
 
-        if ((heroFirst.classList.contains("hero--text-white-accent")) || (heroFirst.classList.contains("hero--text-white"))) {
+        if ((heroFirst.classList.contains("theme__text-white_accent")) || (heroFirst.classList.contains("theme__text-white"))) {
             siteMasthead.classList.add("white");
         }
 

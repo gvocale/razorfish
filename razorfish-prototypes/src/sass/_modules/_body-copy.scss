@@ -103,7 +103,7 @@
                 padding-bottom: 0;
             }
             padding-bottom: 2em;
-            .inline-pull-quote__quote {
+            .inline-quote {
                 font-size: $scale05;
                 @media only screen and ($md) {
                     font-size: $scale05;
@@ -124,7 +124,7 @@
                 columns: 2;
                 column-gap: 2rem;
             }
-            .body-copy__body--title {
+            .p p--title {
                 font-weight: 700;
             }
         }
@@ -297,15 +297,24 @@
             font-size: $scale08;
         }
         margin-bottom: 1em;
-        &:first-child:first-letter {
-            box-shadow: 0px -4px 0 0em $primary;
+        &:first-child {
+            margin-top: calc(0.3em + 4px);
             @media screen and ($lg) {
-                box-shadow: 0px -5px 0 0em $primary;
+                margin-top: calc(0.3em + 5px);
             }
             @media screen and ($xxl) {
-                box-shadow: 0px -6px 0 0em $primary;
+                margin-top: calc(0.3em + 6px);
             }
-            padding-top: 0.3em;
+            &:first-letter {
+                box-shadow: 0px -4px 0 0em $primary;
+                @media screen and ($lg) {
+                    box-shadow: 0px -5px 0 0em $primary;
+                }
+                @media screen and ($xxl) {
+                    box-shadow: 0px -6px 0 0em $primary;
+                }
+                padding-top: 0.5em;
+            }
         }
     }
     .subhead {
@@ -460,7 +469,7 @@
         border-left: solid calc(0.2rem * 1.5) $primary;
         padding-left: 2em;
     }
-    &__quote {
+    .quote {
         @include ligatures;
         font-family: $serif;
         line-height: 1.5;
@@ -485,7 +494,7 @@
             margin-bottom: 0;
         }
     }
-    &__author {
+    .author {
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans;
@@ -508,17 +517,14 @@
         padding-left: 0;
         margin-top: 0;
         margin-bottom: 0.5em;
-        .inline-pull-quote__quote {
-            position: relative;
+        .quote {
             &:before {
                 content: "“";
-                position: absolute;
                 margin-left: -0.5em;
                 margin-right: 0.1em;
             }
             &:after {
                 content: "”";
-                position: relative;
                 margin-left: 0.1em;
             }
             &:last-child {

@@ -1,372 +1,415 @@
-.hero.hero--text {
-    &-a {
-        color: $white;
-        .hero__background {
-            background-color: $color-theme-a;
-        }
-        .eyebrow:first-child:before,
-        .headline:first-child:first-letter {
-            box-shadow: 0px -4px 0 0em $black-divider;
-            @media screen and ($lg) {
-                box-shadow: 0px -5px 0 0em $black-divider;
-            }
-            @media screen and ($xxl) {
-                box-shadow: 0px -6px 0 0em $black-divider;
-            }
-        }
-    }
-    &-b {
-        color: $white;
-        .hero__background {
-            background-color: $color-theme-b;
-        }
-        .eyebrow:first-child:before,
-        .headline:first-child:first-letter {
-            box-shadow: 0px -4px 0 0em $black-divider;
-            @media screen and ($lg) {
-                box-shadow: 0px -5px 0 0em $black-divider;
-            }
-            @media screen and ($xxl) {
-                box-shadow: 0px -6px 0 0em $black-divider;
-            }
-        }
-    }
-    &-c {
-        color: $white;
-        .hero__background {
-            background-color: $color-theme-c;
-        }
-        .eyebrow:first-child:before,
-        .headline:first-child:first-letter {
-            box-shadow: 0px -4px 0 0em $primary;
-            @media screen and ($lg) {
-                box-shadow: 0px -5px 0 0em $primary;
-            }
-            @media screen and ($xxl) {
-                box-shadow: 0px -6px 0 0em $primary;
-            }
-        }
-    }
-    &-d {
-        color: $white;
-        .hero__background {
-            background-color: $color-theme-d;
-        }
-        .eyebrow:first-child:before,
-        .headline:first-child:first-letter {
-            box-shadow: 0px -4px 0 0em $black-divider;
-            @media screen and ($lg) {
-                box-shadow: 0px -5px 0 0em $black-divider;
-            }
-            @media screen and ($xxl) {
-                box-shadow: 0px -6px 0 0em $black-divider;
-            }
-        }
-    }
-    &-e {
-        color: $white;
-        .hero__background {
-            background-color: $color-theme-e;
-        }
-        .eyebrow:first-child:before,
-        .headline:first-child:first-letter {
-            box-shadow: 0px -4px 0 0em $black-divider;
-            @media screen and ($lg) {
-                box-shadow: 0px -5px 0 0em $black-divider;
-            }
-            @media screen and ($xxl) {
-                box-shadow: 0px -6px 0 0em $black-divider;
-            }
-        }
-    }
-    &-f {
-        color: $white;
-        .hero__background {
-            background-color: $color-theme-f;
-        }
-        .eyebrow:first-child:before,
-        .headline:first-child:first-letter {
-            box-shadow: 0px -4px 0 0em $black-divider;
-            @media screen and ($lg) {
-                box-shadow: 0px -5px 0 0em $black-divider;
-            }
-            @media screen and ($xxl) {
-                box-shadow: 0px -6px 0 0em $black-divider;
-            }
-        }
-    }
-}
+ .theme {
+     &__text-white {
+         color: $white;
+         &.hero,
+         &.related-promo {
+             .image {
+                 background-color: $black-divider;
+                 &:before {
+                     content: "";
+                     background-color: rgba($black, 0.4);
+                     background-blend-mode: darken;
+                     position: absolute;
+                     width: 100%;
+                     height: 100%;
+                     top: 0;
+                     left: 0;
+                 }
+             }
+         }
+         &.hero {
+             .eyebrow:first-child:before,
+             .headline:first-child:first-letter {
+                 box-shadow: 0px -4px 0 0em $white;
+                 @media screen and ($lg) {
+                     box-shadow: 0px -5px 0 0em $white;
+                 }
+                 @media screen and ($xxl) {
+                     box-shadow: 0px -6px 0 0em $white;
+                 }
+             }
+         }
+         &.related-promo {
+             .eyebrow:before {
+                 background-color: $white;
+             }
+         }
+     }
+     &__text-white_accent {
+         color: $white;
+         &.hero,
+         &.related-promo {
+             .image {
+                 background-color: $black-divider;
+                 &:before {
+                     content: "";
+                     background-color: rgba($black, 0.4);
+                     background-blend-mode: darken;
+                     position: absolute;
+                     width: 100%;
+                     height: 100%;
+                     top: 0;
+                     left: 0;
+                 }
+             }
+         }
+         &.hero {
+             .eyebrow:first-child:before,
+             .headline:first-child:first-letter {
+                 box-shadow: 0px -4px 0 0em lighten($primary, 10%);
+                 @media screen and ($lg) {
+                     box-shadow: 0px -5px 0 0em lighten($primary, 10%);
+                 }
+                 @media screen and ($xxl) {
+                     box-shadow: 0px -6px 0 0em lighten($primary, 10%);
+                 }
+             }
+         }
+         &.related-promo {
+             .eyebrow:before {
+                 background-color: lighten($primary, 10%);
+             }
+         }
+     }
+     &__text-black {
+         color: $black-divider;
+         &.hero,
+         &.related-promo {
+             .image {
+                 background-color: $off-white;
+             }
+         }
+         &.hero {
+             .eyebrow:first-child:before,
+             .headline:first-child:first-letter {
+                 box-shadow: 0px -4px 0 0em $black-divider;
+                 @media screen and ($lg) {
+                     box-shadow: 0px -5px 0 0em $black-divider;
+                 }
+                 @media screen and ($xxl) {
+                     box-shadow: 0px -6px 0 0em $black-divider;
+                 }
+             }
+         }
+         &.related-promo {
+             .eyebrow:before {
+                 background-color: lighten($primary, 10%);
+             }
+         }
+     }
+     &__text-black_accent {
+         color: $black-divider;
+         &.hero,
+         &.related-promo {
+             .image {
+                 background-color: $off-white;
+             }
+         }
+         &.hero {
+             .eyebrow:first-child:before,
+             .headline:first-child:first-letter {
+                 box-shadow: 0px -4px 0 0em lighten($primary, 10%);
+                 @media screen and ($lg) {
+                     box-shadow: 0px -5px 0 0em lighten($primary, 10%);
+                 }
+                 @media screen and ($xxl) {
+                     box-shadow: 0px -6px 0 0em lighten($primary, 10%);
+                 }
+             }
+         }
+         &.related-promo {
+             .eyebrow:before {
+                 background-color: lighten($primary, 10%);
+             }
+         }
+     }
+     &__smart {
+         $primary-smart: #f4ac00;
+         $black-smart: #222424;
+         $gray-smart: #3d3d3d;
+         $off-white-smart: #f3f3f3;
+         &.hero,
+         &.case-study {
+             .eyebrow:first-child:before,
+             .headline:first-child:first-letter,
+             .h2:first-child:first-letter,
+             .h3:first-child:first-letter {
+                 box-shadow: 0px -4px 0 0em $primary-smart;
+                 @media screen and ($lg) {
+                     box-shadow: 0px -5px 0 0em $primary-smart;
+                 }
+                 @media screen and ($xxl) {
+                     box-shadow: 0px -6px 0 0em $primary-smart;
+                 }
+             }
+             .label {
+                 color: $primary-smart;
+             }
+         }
+         .pull-quote {
+             background-color: $black-smart;
+             .eyebrow {
+                 color: $primary-smart;
+             }
+         }
+         .link {
+             text-decoration: underline;
+             color: currentColor;
+         }
+         .link--arrow--right,
+         .link--primary,
+         .link {
+             @media (hover) {
+                 &:hover {
+                     color: currentColor;
+                     opacity: 0.5;
+                 }
+             }
+         }
+         .social-share--folded__icon {
+             @media (hover) {
+                 &:hover {
+                     background-color: darken($gray, 5%);
+                 }
+             }
+             &:focus {
+                 background-color: darken($gray, 5%);
+             }
+             &:active,
+             &:target {
+                 background-color: darken($gray, 10%);
+             }
+         }
+         .body-copy--dark {
+             background-color: $gray-smart;
+         }
+         .body-copy__container--dark {
+             background-color: $gray-smart;
+         }
+         .content-feed--results {
+             .content-feed__icon {
+                 fill: $primary-smart;
+             }
+             @each $n in (1 3 5) {
+                 .content-feed__item:nth-child(#{$n}) {
+                     background-color: $black-smart;
+                     color: $off-white-smart;
+                 }
+             }
+             @each $n in (2 4 6) {
+                 .content-feed__item:nth-child(#{$n}) {
+                     background-color: $off-white-smart;
+                     color: $black-smart;
+                 }
+             }
+         }
+         .theme-gray {
+             background-color: $off-white-smart;
+             color: $black;
+         }
+         .author {
+             color: $primary-smart;
+         }
+     }
+     &__heforshe {
+         $primary-heforshe: #ff1d66;
+         $black-heforshe: #222424;
+         $gray-heforshe: #3d3d3d;
+         $off-white-heforshe: #f3f3f3;
+         &.hero,
+         &.case-study {
+             .eyebrow:first-child:before,
+             .headline:first-child:first-letter,
+             .h2:first-child:first-letter,
+             .h3:first-child:first-letter {
+                 box-shadow: 0px -4px 0 0em $primary-heforshe;
+                 @media screen and ($lg) {
+                     box-shadow: 0px -5px 0 0em $primary-heforshe;
+                 }
+                 @media screen and ($xxl) {
+                     box-shadow: 0px -6px 0 0em $primary-heforshe;
+                 }
+             }
+             .label {
+                 color: $primary-heforshe;
+             }
+         }
+         .pull-quote {
+             background-color: $black-heforshe;
+             .eyebrow {
+                 color: $primary-heforshe;
+             }
+         }
+         .link {
+             color: currentColor;
+             text-decoration: underline;
+         }
+         .link--arrow--right,
+         .link--primary,
+         .link {
+             @media (hover) {
+                 &:hover {
+                     color: currentColor;
+                     opacity: 0.5;
+                 }
+             }
+         }
+         .social-share--folded__icon {
+             @media (hover) {
+                 &:hover {
+                     background-color: darken($gray, 5%);
+                 }
+             }
+             &:focus {
+                 background-color: darken($gray, 5%);
+             }
+             &:active,
+             &:target {
+                 background-color: darken($gray, 10%);
+             }
+         }
+         .body-copy--dark {
+             background-color: $gray-heforshe;
+         }
+         .body-copy__container--dark {
+             background-color: $gray-heforshe;
+         }
+         .content-feed--results {
+             .content-feed__icon {
+                 fill: $primary-heforshe;
+             }
+             @each $n in (1 3 5) {
+                 .content-feed__item:nth-child(#{$n}) {
+                     background-color: $black-heforshe;
+                     color: $off-white-heforshe;
+                 }
+             }
+             @each $n in (2 4 6) {
+                 .content-feed__item:nth-child(#{$n}) {
+                     background-color: $off-white-heforshe;
+                     color: $black-heforshe;
+                 }
+             }
+         }
+         .color-theme-1 {
+             background-color: $gray-heforshe;
+             color: $white;
+             .body-copy__body {
+                 color: darken($white, 50%);
+             }
+         }
+     }
+     &__color_a.hero {
 
-.theme-,
-.hero.hero--text {
-    &-white {
-        color: $white;
-        div[class*="background"] {
-            background-color: $black-divider;
-            &:before {
-                content: "";
-                background-color: rgba($black, 0.4);
-                background-blend-mode: darken;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-            }
-        }
-        .eyebrow:first-child:before,
-        .headline:first-child:first-letter {
-            box-shadow: 0px -4px 0 0em $white;
-            @media screen and ($lg) {
-                box-shadow: 0px -5px 0 0em $white;
-            }
-            @media screen and ($xxl) {
-                box-shadow: 0px -6px 0 0em $white;
-            }
-        }
-    }
-    &-white-accent {
-        color: $white;
-        div[class*="background"] {
-            background-color: $black-divider;
-            &:before {
-                content: "";
-                background-color: rgba($black, 0.4);
-                background-blend-mode: darken;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-            }
-        }
-        .eyebrow:first-child:before,
-        .headline:first-child:first-letter {
-            box-shadow: 0px -4px 0 0em lighten($primary, 10%);
-            @media screen and ($lg) {
-                box-shadow: 0px -5px 0 0em lighten($primary, 10%);
-            }
-            @media screen and ($xxl) {
-                box-shadow: 0px -6px 0 0em lighten($primary, 10%);
-            }
-        }
-    }
-    &-black {
-        color: $black-divider;
-        div[class*="background"] {
-            background-color: $off-white;
-        }
-        .divider {
-            background-color: $black-divider;
-        }
-    }
-    &-black-accent {
-        color: $black-divider;
-        div[class*="background"] {
-            background-color: $off-white;
-        }
-        .eyebrow:first-child:before,
-        .headline:first-child:first-letter {
-            box-shadow: 0px -4px 0 0em lighten($primary, 10%);
-            @media screen and ($lg) {
-                box-shadow: 0px -5px 0 0em lighten($primary, 10%);
-            }
-            @media screen and ($xxl) {
-                box-shadow: 0px -6px 0 0em lighten($primary, 10%);
-            }
-        }
-    }
-}
+             color: $white;
+             .image {
+                 background-color: $color-theme-a;
+             }
+             .eyebrow:first-child:before,
+             .headline:first-child:first-letter {
+                 box-shadow: 0px -4px 0 0em $black-divider;
+                 @media screen and ($lg) {
+                     box-shadow: 0px -5px 0 0em $black-divider;
+                 }
+                 @media screen and ($xxl) {
+                     box-shadow: 0px -6px 0 0em $black-divider;
+                 }
+             }
 
-.theme {
-    &--smart {
-        .link {
-            text-decoration: underline;
-            color: currentColor;
-        }
-        .link--arrow--right,
-        .link--primary,
-        .link {
-            @media (hover) {
-                &:hover {
-                    color: currentColor;
-                    opacity: 0.5;
-                }
-            }
-        }
-        $primary-smart: #f4ac00;
-        $black-smart: #222424;
-        $gray-smart: #3d3d3d;
-        $off-white-smart: #f3f3f3;
-        .eyebrow:first-child:before,
-        .headline:first-child:first-letter {
-            box-shadow: 0px -4px 0 0em $primary-smart;
-            @media screen and ($lg) {
-                box-shadow: 0px -5px 0 0em $primary-smart;
-            }
-            @media screen and ($xxl) {
-                box-shadow: 0px -6px 0 0em $primary-smart;
-            }
-        }
-        .divider {
-            background-color: $primary-smart !important;
-        }
-        .contact-info__label {
-            color: $primary-smart;
-        }
-        .social-share--folded__icon {
-            @media (hover) {
-                &:hover {
-                    background-color: darken($gray, 5%);
-                }
-            }
-            &:focus {
-                background-color: darken($gray, 5%);
-            }
-            &:active,
-            &:target {
-                background-color: darken($gray, 10%);
-            }
-        }
-        .body-copy--dark {
-            background-color: $gray-smart;
-        }
-        .body-copy__container--dark {
-            background-color: $gray-smart;
-        }
-        .pull-quote {
-            background-color: $black-smart;
-        }
-        .body-copy__label {
-            color: $primary-smart;
-        }
-        .content-feed--results {
-            .content-feed__icon {
-                fill: $primary-smart;
-            }
-            @each $n in (1 3 5) {
-                .content-feed__item:nth-child(#{$n}) {
-                    background-color: $black-smart;
-                    color: $off-white-smart;
-                }
-            }
-            @each $n in (2 4 6) {
-                .content-feed__item:nth-child(#{$n}) {
-                    background-color: $off-white-smart;
-                    color: $black-smart;
-                }
-            }
-        }
-        .theme-gray {
-            background-color: $off-white-smart;
-            color: $black;
-        }
-        .inline-pull-quote__author {
-            color: $primary-smart;
-        }
-    }
-    &--he-for-she {
-        $primary-heforshe: #ff1d66;
-        $black-heforshe: #222424;
-        $gray-heforshe: #3d3d3d;
-        $off-white-heforshe: #f3f3f3;
-        .eyebrow:first-child:before,
-        .headline:first-child:first-letter {
-            box-shadow: 0px -4px 0 0em $primary-heforshe;
-            @media screen and ($lg) {
-                box-shadow: 0px -5px 0 0em $primary-heforshe;
-            }
-            @media screen and ($xxl) {
-                box-shadow: 0px -6px 0 0em $primary-heforshe;
-            }
-        }
-        &.hero {
-            color: $white;
-        }
-        .divider {
-            background-color: $primary-heforshe !important;
-        }
-        .contact-info__label {
-            color: $primary-heforshe;
-        }
-        .link {
-            color: currentColor;
-            text-decoration: underline;
-        }
-        .link--arrow--right,
-        .link--primary,
-        .link {
-            @media (hover) {
-                &:hover {
-                    color: currentColor;
-                    opacity: 0.5;
-                }
-            }
-        }
-        .social-share--folded__icon {
-            @media (hover) {
-                &:hover {
-                    background-color: darken($gray, 5%);
-                }
-            }
-            &:focus {
-                background-color: darken($gray, 5%);
-            }
-            &:active,
-            &:target {
-                background-color: darken($gray, 10%);
-            }
-        }
-        .body-copy--dark {
-            background-color: $gray-heforshe;
-        }
-        .body-copy__container--dark {
-            background-color: $gray-heforshe;
-        }
-        .pull-quote {
-            background-color: $black-heforshe;
-        }
-        .body-copy__label {
-            color: $primary-heforshe;
-        }
-        .content-feed--results {
-            .content-feed__icon {
-                fill: $primary-heforshe;
-            }
-            @each $n in (1 3 5) {
-                .content-feed__item:nth-child(#{$n}) {
-                    background-color: $black-heforshe;
-                    color: $off-white-heforshe;
-                }
-            }
-            @each $n in (2 4 6) {
-                .content-feed__item:nth-child(#{$n}) {
-                    background-color: $off-white-heforshe;
-                    color: $black-heforshe;
-                }
-            }
-        }
-        .color-theme-1 {
-            background-color: $gray-heforshe;
-            color: $white;
-            .body-copy__body {
-                color: darken($white, 50%);
-            }
-        }
-    }
-}
-
-.image-grading {
-    &--darker {
-        &:before {
-            content: "";
-            background-color: rgba($black, 0.4);
-            background-blend-mode: darken;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-        }
-    }
-}
+     }
+     &__color_b.hero {
+         color: $white;
+         .image {
+             background-color: $color-theme-b;
+         }
+         .eyebrow:first-child:before,
+         .headline:first-child:first-letter {
+             box-shadow: 0px -4px 0 0em $black-divider;
+             @media screen and ($lg) {
+                 box-shadow: 0px -5px 0 0em $black-divider;
+             }
+             @media screen and ($xxl) {
+                 box-shadow: 0px -6px 0 0em $black-divider;
+             }
+         }
+     }
+     &__color_c.hero {
+         color: $white;
+         .image {
+             background-color: $color-theme-c;
+         }
+         .eyebrow:first-child:before,
+         .headline:first-child:first-letter {
+             box-shadow: 0px -4px 0 0em $primary;
+             @media screen and ($lg) {
+                 box-shadow: 0px -5px 0 0em $primary;
+             }
+             @media screen and ($xxl) {
+                 box-shadow: 0px -6px 0 0em $primary;
+             }
+         }
+     }
+     &__color_d.hero {
+         color: $white;
+         .image {
+             background-color: $color-theme-d;
+         }
+         .eyebrow:first-child:before,
+         .headline:first-child:first-letter {
+             box-shadow: 0px -4px 0 0em $black-divider;
+             @media screen and ($lg) {
+                 box-shadow: 0px -5px 0 0em $black-divider;
+             }
+             @media screen and ($xxl) {
+                 box-shadow: 0px -6px 0 0em $black-divider;
+             }
+         }
+     }
+     &__color_e.hero {
+         color: $white;
+         .image {
+             background-color: $color-theme-e;
+         }
+         .eyebrow:first-child:before,
+         .headline:first-child:first-letter {
+             box-shadow: 0px -4px 0 0em $black-divider;
+             @media screen and ($lg) {
+                 box-shadow: 0px -5px 0 0em $black-divider;
+             }
+             @media screen and ($xxl) {
+                 box-shadow: 0px -6px 0 0em $black-divider;
+             }
+         }
+     }
+     &__color_f.hero {
+         color: $white;
+         .image {
+             background-color: $color-theme-f;
+         }
+         .eyebrow:first-child:before,
+         .headline:first-child:first-letter {
+             box-shadow: 0px -4px 0 0em $black-divider;
+             @media screen and ($lg) {
+                 box-shadow: 0px -5px 0 0em $black-divider;
+             }
+             @media screen and ($xxl) {
+                 box-shadow: 0px -6px 0 0em $black-divider;
+             }
+         }
+     }
+ }
+ 
+ .image-grading {
+     &--darker {
+         &:before {
+             content: "";
+             background-color: rgba($black, 0.4);
+             background-blend-mode: darken;
+             position: absolute;
+             width: 100%;
+             height: 100%;
+             top: 0;
+             left: 0;
+         }
+     }
+ }

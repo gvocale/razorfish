@@ -603,299 +603,6 @@
     pointer-events: none;
 }
 
-.form__submit-button {
-    overflow: hidden;
-    position: relative;
-    box-shadow: inset 0 0 0 2px rgba($white, 0.2);
-    &.demo {
-        &.shrink {
-            animation: 1s alternate $bezier infinite forwards submit_shrink_demo;
-            height: 3rem;
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 0;
-            padding-right: 0;
-            width: 10rem;
-            border-radius: 0%;
-            @keyframes submit_shrink_demo {
-                to {
-                    width: 3rem;
-                    border-radius: 50%;
-                }
-            }
-            @media screen and ($xxl) {
-                animation: 1s alternate $bezier infinite forwards submit_shrink_demo_xxl;
-                height: 4rem;
-                @keyframes submit_shrink_demo_xxl {
-                    to {
-                        width: 4rem;
-                        border-radius: 50%;
-                    }
-                }
-            }
-            span {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                opacity: 1;
-                transform: translate(-50%, -50%);
-                animation: 1s alternate $bezier infinite forwards submit_shrink_span_demo;
-                @keyframes submit_shrink_span_demo {
-                    to {
-                        opacity: 0;
-                        transform: translate(-50%, 250%);
-                    }
-                }
-            }
-            &:hover,
-            &:active,
-            &:focus {
-                cursor: auto;
-                box-shadow: inset 0 0 0 2px rgba($white, 0.2);
-            }
-            &:active:after,
-            &:target:after {
-                display: none;
-            }
-        }
-        &.load {
-            animation-direction: normal;
-            animation-iteration-count: 1;
-            span {
-                animation-direction: normal;
-                animation-iteration-count: 1;
-            }
-            .preloader {
-                display: block;
-                opacity: 1;
-                transition: all 0.2s 0s ease;
-            }
-        }
-        &.fill {
-            animation: 1s alternate $bezier infinite forwards submit_fill_demo;
-            @keyframes submit_fill_demo {
-                0% {
-                    width: 3rem;
-                    border-radius: 50%;
-                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0 $primary;
-                }
-                25% {
-                    width: 3rem;
-                    border-radius: 50%;
-                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0 $primary;
-                }
-                75% {
-                    width: 3rem;
-                    border-radius: 50%;
-                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 1.5rem $primary;
-                }
-                100% {
-                    width: 3rem;
-                    border-radius: 50%;
-                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 1.5rem $primary;
-                }
-            }
-            @media screen and ($xxl) {
-                animation: 1s alternate $bezier infinite forwards submit_fill_demo_xxl;
-                @keyframes submit_fill_demo_xxl {
-                    0% {
-                        width: 4rem;
-                        border-radius: 50%;
-                        box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0 $primary;
-                    }
-                    25% {
-                        width: 4rem;
-                        border-radius: 50%;
-                        box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0 $primary;
-                    }
-                    75% {
-                        width: 4rem;
-                        border-radius: 50%;
-                        box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2rem $primary;
-                    }
-                    100% {
-                        width: 4rem;
-                        border-radius: 50%;
-                        box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2rem $primary;
-                    }
-                }
-            }
-        }
-        &.tick {
-            animation-direction: normal;
-            animation-iteration-count: 1;
-            #tick {
-                display: block;
-                polyline {
-                    animation: 2s $bezier infinite normal forwards submit_tick;
-                }
-                @keyframes submit_tick {
-                    0% {
-                        stroke-dashoffset: 100;
-                    }
-                    50% {
-                        stroke-dashoffset: 100;
-                    }
-                    100% {
-                        stroke-dashoffset: 0;
-                    }
-                }
-            }
-            .preloader {
-                opacity: 0;
-            }
-        }
-    }
-    &.shrink {
-        animation: 0.6s $bezier 0s normal 1 forwards submit_shrink;
-        height: 3rem;
-        width: 10rem;
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: 0;
-        padding-right: 0;
-        @keyframes submit_shrink {
-            to {
-                width: 3rem;
-                border-radius: 50%;
-            }
-        }
-        @media screen and ($xxl) {
-            height: 4rem;
-            animation: 0.6s $bezier 0s normal 1 forwards submit_shrink_xxl;
-            @keyframes submit_shrink_xxl {
-                to {
-                    width: 4rem;
-                    border-radius: 50%;
-                }
-            }
-        }
-        span {
-            animation: 0.3s $bezier 0s normal 1 forwards submit_shrink_span;
-            opacity: 1;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            @keyframes submit_shrink_span {
-                to {
-                    opacity: 0;
-                    transform: translate(-50%, 250%);
-                }
-            }
-        }
-        &:hover,
-        &:active,
-        &:focus {
-            cursor: auto;
-            box-shadow: inset 0 0 0 2px rgba($white, 0.2);
-        }
-        &:active:after,
-        &:target:after {
-            display: none;
-        }
-    }
-    &.load {
-        .preloader {
-            display: block;
-            opacity: 0;
-            animation: 0.2s $bezier normal 1 forwards submit_load;
-            @keyframes submit_load {
-                to {
-                    opacity: 1;
-                }
-            }
-        }
-    }
-    &.fill {
-        animation: 0.5s $bezier normal 1 forwards submit_fill;
-        width: 3rem;
-        border-radius: 50%;
-        box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 0 $primary;
-        @keyframes submit_fill {
-            to {
-                box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 1.5rem $primary;
-            }
-        }
-        @media screen and ($xxl) {
-            animation: 0.5s $bezier normal 1 forwards submit_fill_xxl;
-            width: 4rem;
-            @keyframes submit_fill_xxl {
-                to {
-                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2rem $primary;
-                }
-            }
-        }
-    }
-    &.tick {
-        #tick {
-            display: block;
-            polyline {
-                animation: 1s $bezier normal 1 forwards submit_tick;
-            }
-            @keyframes submit_tick {
-                to {
-                    stroke-dashoffset: 0;
-                }
-            }
-        }
-        .preloader {
-            opacity: 0;
-        }
-    }
-    &.destroy {
-        animation: 0.5s normal $bezier forwards 1 submit_destroy_demo;
-        @keyframes submit_destroy_demo {
-            0% {
-                width: 3rem;
-                border-radius: 50%;
-                box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2rem $primary;
-                transform: translateY(0);
-                opacity: 1;
-            }
-            100% {
-                width: 3rem;
-                border-radius: 50%;
-                box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 1.5rem $primary;
-                transform: translateY(100%);
-                opacity: 0;
-            }
-        }
-        @media screen and ($xxl) {
-            animation: 0.5s normal $bezier forwards 1 submit_destroy_demo_xxl;
-            @keyframes submit_destroy_demo_xxl {
-                0% {
-                    width: 4rem;
-                    border-radius: 50%;
-                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2rem $primary;
-                    transform: translateY(0);
-                    opacity: 1;
-                }
-                100% {
-                    width: 4rem;
-                    border-radius: 50%;
-                    box-shadow: inset 0 0 0 2px rgba($white, 0.2), inset 0 0 0 2rem $primary;
-                    transform: translateY(100%);
-                    opacity: 0;
-                }
-            }
-        }
-    }
-}
-
-#tick {
-    position: absolute;
-    top: 45%;
-    left: 51%;
-    transform: translate(-50%, -50%);
-    display: none;
-    width: 50%;
-    polyline {
-        stroke: $white;
-        stroke-dasharray: 100;
-        stroke-dashoffset: 100;
-    }
-}
 
 .form-animation {
     display: flex;
@@ -912,69 +619,130 @@
     }
 }
 
-.preloader {
-    display: none;
-    opacity: 1;
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: calc(100% + 4px);
+
+.button__submit-form {
+    box-sizing: border-box;
+    background-color: transparent;
+    color: $white;
+    font-family: $sans;
+    font-weight: 700;
+    letter-spacing: $spacing-sans-large;
+    line-height: 1;
+    outline: none;
+    overflow: hidden;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    padding-left: 3em;
+    padding-right: 3em;
+    position: relative;
+    font-size: $scale03;
+    transition: all 0.2s ease-in;
+    text-transform: uppercase;
+    height: 4rem;
+    width: 10rem;
+    border: 2px rgba($white, 0.2) solid;
     @media screen and ($xxl) {
-        top: -3px;
-        left: -3px;
-        width: calc(100% + 6px);
+        font-size: $scale04;
     }
-    &:before,
-    &:after {
-        white-space-collapse: collapse;
-    }
-    $easing: cubic-bezier(.8, .0, .4, .8);
-    $speed: 1320ms; // animation time for each loop
-    $linecap: square; // could be 'round', but the official one is square
-    $loops: 5; // number of points where the arc meets
-    $arc: 0.72; // fraction of the circumference that the arc grows to
-    $perimeter: 67px * 3.14159265359; // circumference of the raw svg inner cricle
-    // measure to prevent inline block spacing from affecting the outer rotation
-    font-size: 0;
-    animation: outer ($speed * $loops) linear infinite;
-    svg {
-        animation: inner $speed linear infinite;
-        circle {
-            fill: none;
-            stroke: $primary;
-            stroke-linecap: $linecap;
-            animation: arc $speed $easing infinite;
-            stroke-width: 2;
+    &:not([class*="anim"]) {
+        @media (hover) {
+            &:hover,
+            &:focus {
+                cursor: hand;
+                cursor: pointer;
+                outline: none;
+                border: 2px rgba($white, 1) solid;
+                transition: all 0s ease-out;
+            }
+        }
+        &:active:after,
+        &:target:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: currentColor;
+            opacity: 0.05;
         }
     }
-    @keyframes outer {
-        0% {
-            transform: rotate(0);
+    &:before {
+        content: "";
+        display: block;
+        background-color: transparent;
+        border-bottom: 0px $white solid;
+        border-right: 0px $white solid;
+        width: 0em;
+        height: 0em;
+        position: absolute;
+        bottom: 35%;
+        left: 38%;
+        z-index: 2000;
+        transition: border-bottom 0.2s linear, width 0.2s linear, height 0.2s 0.2s linear, border-right 0.2s 0.2s linear;
+    }
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    &.anim-1 {
+        animation: 0.2s 0.2s $bezier forwards anim_1;
+        @keyframes anim_1 {
+            to {
+                width: 4rem;
+                border-radius: 50%;
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
         }
-        100% {
-            transform: rotate(360deg);
+        span {
+            animation: 0.2s $bezier forwards anim_span_1;
+            @keyframes anim_span_1 {
+                to {
+                    opacity: 0;
+                    transform: translate(-50%, 250%);
+                }
+            }
         }
     }
-    @keyframes inner {
-        0% {
-            transform: rotate(-360deg * (1 - $arc));
-        }
-        100% {
-            transform: rotate(0);
+    &.anim-2 {
+        border-top: 2px rgba($primary, 1) solid;
+        $bezier-spinner: cubic-bezier(.71, .38, .31, .65);
+        animation: 1s infinite $bezier-spinner anim_2;
+        width: 4rem;
+        border-radius: 50%;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        @keyframes anim_2 {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(359deg);
+            }
         }
     }
-    @keyframes arc {
-        0% {
-            stroke-dasharray: 1 $perimeter;
-            stroke-dashoffset: 0;
-        }
-        40% {
-            stroke-dasharray: ($arc * $perimeter), $perimeter;
-            stroke-dashoffset: 0;
-        }
-        100% {
-            stroke-dasharray: 1 $perimeter;
-            stroke-dashoffset: (-$arc * $perimeter);
+    &.anim-3 {
+        border: 2rem rgba($primary, 1) solid;
+        transition: border 0.2s $bezier;
+    }
+    &.anim-4 {
+        animation: none;
+        background-color: $primary;
+        border: 0;
+        transform: rotate(45deg);
+        &:before {
+            border-bottom: 4px $white solid;
+            border-right: 4px $white solid;
+            width: 0.6em;
+            height: 1.2em;
         }
     }
 }
