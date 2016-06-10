@@ -153,7 +153,7 @@
                     animation-delay: 0.60s;
                 }
             }
-            .contact-form__background-image {
+            .image {
                 transition: all 1s 0s $bezier;
                 opacity: 1;
                 transform: scale(1.3) translate3d(0, 5%, 0);
@@ -194,7 +194,7 @@
                     animation-delay: 0.65s;
                 }
             }
-            .contact-form__background-image {
+            .image {
                 transition: all 1s 0s $bezier;
                 opacity: 1;
                 .image-blurred {
@@ -203,7 +203,7 @@
                 }
             }
         }
-        .contact-form__background-image {
+        .image {
             transition: all 1s 0.2s $bezier;
             opacity: 0;
             transform: scale(1) translate3d(0, 0, 0);
@@ -354,7 +354,7 @@
             margin-bottom: 0;
         }
     }
-    &__background-image {
+    .image {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -364,13 +364,8 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1;
         opacity: 0;
-        svg {
-            width: 100%;
-            height: 100%;
-            transition: all 0.5s 0.01s ease-in-out;
-        }
+        transition: all 0.5s 0.01s ease-in-out;
     }
     &__form {
         display: flex;

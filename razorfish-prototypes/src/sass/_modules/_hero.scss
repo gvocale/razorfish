@@ -1,3 +1,49 @@
+.hero__carousel {
+    position: relative;
+    &_nav {
+        position: fixed;
+        right: 0;
+        top: 50%;
+        margin-right: 3rem;
+        z-index: 5;
+        opacity: 0;
+        transition: all 0.2s 0s $bezier;
+        &.visible {
+            opacity: 1;
+        }
+        span {
+            display: block;
+            width: 1rem;
+            height: 0.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            &:hover {
+                &:after {
+                    opacity: 0.6;
+                    cursor: hand;
+                    cursor: pointer;
+                }
+            }
+            &.active {
+                opacity: 1;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 10px;
+                height: 10px;
+                background-color: $white;
+                opacity: 0.2;
+                transition: all 0.2s 0s $bezier;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
 .hero {
     width: 100vw;
     min-height: 100vh;
@@ -170,22 +216,29 @@
             margin-bottom: 0;
         }
     }
-    &__cta {
-        font-family: $sans;
-        line-height: $title-sans;
-        letter-spacing: $spacing-sans;
-        margin-bottom: 1em;
-        max-width: 30em;
-        font-size: $scale04;
-        font-weight: 700;
-        @media only screen and ($md) {
-            font-size: $scale05;
-        }
-        @media only screen and ($xxl) {
-            font-size: $scale06;
-        }
-        &:last-child {
-            margin-bottom: 0;
+    .cta {
+        &_video {
+            font-family: $sans;
+            line-height: 1.1;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            max-width: 30em;
+            font-size: $scale03;
+            font-weight: 400;
+            @media only screen and ($md) {
+                font-size: $scale04;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale05;
+            }
+            &:before {
+                content: "\E802";
+                font-size: 1.5em;
+                margin-right: 0.3em;
+                color: currentColor;
+                font-family: $icons;
+                vertical-align: middle;
+            }
         }
     }
     .image {
@@ -198,11 +251,6 @@
         top: 0;
         left: 0;
         transform: scale(1) translate3d(0, 0, 0);
-        // transition: all 0.05s ease 0s;
-        svg {
-            width: 100%;
-            height: 100%;
-        }
     }
     &_profile {
         color: $white;
@@ -433,7 +481,7 @@
 
 a.hero {
     text-decoration: none;
-    .module-content > *:last-child:after {
+    .module-content > *:last-child:not(.cta):after {
         content: "\E800";
         font-size: $scale04 / 1.5;
         @media only screen and ($md) {
@@ -474,7 +522,18 @@ a.hero {
         &:hover:not(.no-hover),
         &:focus:not(.no-hover) {
             outline: none;
-            .module-content > *:last-child:after {
+            .module-background {
+                transform: translate3d(0, 0, 0) scale(1.05);
+                transition: transform 0.5s 0s $bezier;
+                &:before {
+                    opacity: 0.2;
+                    transition: opacity 0.5s 0s $bezier;
+                }
+            }
+        }
+        &:hover:not(.no-hover),
+        &:focus:not(.no-hover) {
+            .module-content > *:last-child:not(.cta):after {
                 animation-name: heroArrowIn;
                 animation-duration: 0.2s;
                 animation-timing-function: $bezier;
@@ -495,13 +554,9 @@ a.hero {
                     }
                 }
             }
-            .module-background {
-                transform: translate3d(0, 0, 0) scale(1.05);
-                transition: transform 0.5s 0s $bezier;
-                &:before {
-                    opacity: 0.2;
-                    transition: opacity 0.5s 0s $bezier;
-                }
+            .cta_video {
+                transition: color 0.2s 0s $bezier;
+                color: $primary;
             }
         }
     }

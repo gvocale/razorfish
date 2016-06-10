@@ -4,7 +4,7 @@
     flex-direction: column;
     background-color: $white;
     @include padding-bottom(0.5);
-    &__table {
+    .table {
         width: 100%;
         text-align: left;
         z-index: 0;
@@ -14,7 +14,7 @@
             margin-bottom: 0;
         }
     }
-    &__row {
+    .row {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -64,7 +64,7 @@
                 &:before {
                     background-color: darken($white, 1.5%);
                 }
-                .filtered-job-listings__job-title {
+                .job-title {
                     color: $primary;
                 }
             }
@@ -73,7 +73,7 @@
                 &:before {
                     background-color: darken($white, 3%);
                 }
-                .filtered-job-listings__job-title {
+                .job-title {
                     color: $primary;
                 }
             }
@@ -180,7 +180,7 @@
             }
         }
     }
-    &__label {
+    .label {
         font-family: $sans;
         font-size: $scale03;
         font-weight: 400;
@@ -206,7 +206,7 @@
             margin-bottom: 0;
         }
     }
-    &__job-title {
+    .job-title {
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans;
@@ -225,7 +225,7 @@
             font-size: $scale05;
         }
     }
-    &__category {
+    .category {
         @include component-padding;
         font-family: $sans;
         line-height: $title-sans;
@@ -241,7 +241,7 @@
             font-size: $scale05;
         }
     }
-    &__location {
+    .location {
         @include component-padding;
         font-family: $sans;
         line-height: $title-sans;
@@ -257,7 +257,7 @@
             font-size: $scale05;
         }
     }
-    &__id {
+    .id {
         @include component-padding;
         font-family: $sans;
         line-height: $title-sans;
@@ -275,7 +275,7 @@
             font-size: $scale05;
         }
     }
-    &__button-group {
+    .button-group {
         @include component-padding;
         align-self: center;
     }

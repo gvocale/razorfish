@@ -10,7 +10,7 @@ window.onload = (function() {
 
         var bodyWrapper = document.getElementsByClassName('body-wrapper')[0];
         var siteMasthead = document.getElementsByClassName('site-masthead')[0];
-        var siteNavigationOverlay = document.getElementsByClassName('site-navigation__scroll')[0];
+        var siteNavigationOverlay = document.getElementsByClassName('scroll')[0];
 
         setTimeout(function() {
             bodyWrapper.classList.remove('fade');
@@ -52,14 +52,14 @@ window.onload = (function() {
 
     var siteMasthead = document.getElementsByClassName('site-masthead')[0];
     var siteMastheadCheckbox = document.getElementById('site-masthead__checkbox');
-    var siteNavigationOverlay = document.getElementsByClassName('site-navigation__overlay')[0];
-    var siteNavigationLinkContainers = document.getElementsByClassName('site-navigation__link-container');
+    var siteNavigationOverlay = document.getElementsByClassName('site-navigation')[0];
+    var siteNavigationLinkContainers = document.getElementsByClassName('link-container');
 
     // Navigation: add .active class to link of current page
 
 
-    var siteNavigationScroll = document.getElementsByClassName('site-navigation__scroll')[0],
-        anchor = siteNavigationScroll.getElementsByClassName('link--underline'),
+    var siteNavigatioContainer = document.getElementsByClassName('container')[0],
+        anchor = siteNavigatioContainer.getElementsByClassName('link--underline'),
         current = window.location.pathname.split('/')[1];
 
     for (var i = 0; i < anchor.length; i++) {
@@ -92,7 +92,7 @@ window.onload = (function() {
                 siteNavigationOverlay.classList.add('open');
             }, 10);
 
-            // For each .site-navigation__link-container add a random transition-delay number
+            // For each .link-container add a random transition-delay number
             for (var i = 0; i < siteNavigationLinkContainers.length; i++) {
                 //do something to each div like
                 siteNavigationLinkContainers[i].style.transitionDelay = getRandomInt(1, 10) * 0.025 + 0.1 + "s";
@@ -165,10 +165,10 @@ window.onload = (function() {
                 setTimeout(function() {
                     contactFormDisplayOff();
                     buttonSubmitForm.classList.remove("anim-1", "anim-2", "anim-3", "anim-4");
-                    
-                buttonSubmitForm.removeEventListener("animationend", anim2);
-                buttonSubmitForm.removeEventListener("animationend", anim3);
-                buttonSubmitForm.removeEventListener("animationend", anim4);
+
+                    buttonSubmitForm.removeEventListener("animationend", anim2);
+                    buttonSubmitForm.removeEventListener("animationend", anim3);
+                    buttonSubmitForm.removeEventListener("animationend", anim4);
                 }, 12500);
 
 
@@ -195,8 +195,8 @@ window.onload = (function() {
         contactFormConfirmationGroup = document.getElementsByClassName('contact-form__confirmation-group')[0];
         contactFormBack = document.getElementsByClassName('contact-form__back')[0];
         contactFormBackContainer = document.getElementsByClassName('contact-form__back-container')[0];
-        contactFormBackgroundImage = document.querySelector('.contact-form__background-image svg');
-        contactFormBackgroundImageBlur = document.querySelector('.contact-form__background-image svg feGaussianBlur');
+        contactFormBackgroundImage = document.querySelector('.image svg');
+        contactFormBackgroundImageBlur = document.querySelector('.image svg feGaussianBlur');
 
         function contactFormDisplayOn() {
             contactFormOverlay.classList.add("display");
@@ -509,7 +509,7 @@ window.onload = (function() {
     if (document.getElementsByClassName("simple-title")[0]) {
 
         var simpleTitle = document.getElementsByClassName("simple-title")[0];
-        var simpleTitleTextContainer = document.getElementsByClassName("simple-title__text-container")[0];
+        var simpleTitleTextContainer = document.getElementsByClassName("module-content")[0];
 
         function simpleTitleClipPath() {
 
@@ -567,22 +567,6 @@ window.onload = (function() {
             }
         });
     }
-
-
-    // Toggle class .visible .full-visible when in viewport
-
-
-    $('.animate').viewportChecker({
-        classToAdd: 'visible', // Class to add to the elements when they are visible,
-        classToAddForFullView: 'full-visible', // Class to add when an item is completely visible in the viewport
-        // classToRemove: 'invisible', // Class to remove before adding 'classToAdd' to the elements
-        // removeClassAfterAnimation: false, // Remove added classes after animation has finished
-        // offset: [100 OR 10 % ], // The offset of the elements (let them appear earlier or later). This can also be percentage based by adding a '%' at the end
-        // invertBottomOffset: true, // Add the offset as a negative number to the element's bottom
-        repeat: true, // Add the possibility to remove the class if the elements are not visible
-        // callbackFunction: function(elem, action) {}, // Callback to do after a class was added to an element. Action will return "add" or "remove", depending if the class was added or removed
-        // scrollHorizontal: false // Set to true if your website scrolls horizontal instead of vertical.
-    });
 
 
     // Approach page - Bottom module (contact0=)
@@ -790,6 +774,61 @@ window.onload = (function() {
 
     }
 
+
+    // Hero Carousel
+
+    if (document.getElementsByClassName('hero__carousel')[0]) {
+
+        var heroCarouselNav = document.getElementsByClassName('hero__carousel_nav')[0];
+
+        // Count the number of hero in the page
+        var hero = document.getElementsByClassName('hero');
+        var heroCount = hero.length;
+
+        // Add # span as many hero on the page
+        var span = document.createElement("span");
+
+        [].forEach.call(hero, function(div) {
+            heroCarouselNav.appendChild(span);
+            console.log("bla");
+        });
+
+
+        function heroCarouselInViewport() {
+
+            // If heroCarousel is over some heroes, then make it visible
+            if ((hero[0].getBoundingClientRect().top <= heroCarouselNav.getBoundingClientRect().top) && (hero[heroCount - 1].getBoundingClientRect().bottom >= heroCarouselNav.getBoundingClientRect().bottom)) {
+                heroCarouselNav.classList.add('visible');
+            } else {
+                heroCarouselNav.classList.remove('visible');
+            }
+        }
+
+        // which hero is in viewport?
+        function heroInViewport() {
+            [].forEach.call(hero, function(div) {
+                var rect = div.getBoundingClientRect();
+                if (rect.bottom < 0) {
+                    div.classList.add('above-the-fold');
+                    div.classList.remove('below-the-fold');
+                    div.classList.remove('in-viewport');
+                } else if (rect.top > window.innerHeight) {
+                    div.classList.add('below-the-fold');
+                    div.classList.remove('above-the-fold');
+                    div.classList.remove('in-viewport');
+                } else {
+                    div.classList.add('in-viewport');
+                    div.classList.remove('above-the-fold');
+                    div.classList.remove('below-the-fold');
+                }
+            });
+        };
+
+
+        window.addEventListener('resize', heroInViewport);
+        window.addEventListener('scroll', heroInViewport);
+        heroInViewport();
+    }
 
 
     // Hero: animations

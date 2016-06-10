@@ -1,46 +1,38 @@
 .site-navigation {
-    &__overlay {
-        position: fixed;
-        width: 100%;
-        height: 0px;
-        top: 0;
-        left: 0;
-        z-index: 200;
-        visibility: hidden;
-        color: $black;
-        background-color: $white;
-        &.fade,
-        &.open.fade {
-            .site-navigation__container {
-                transition: transform 0.5s 0s $bezier, opacity 0.5s 0s $bezier;
-                transform: scale(0.9);
-                opacity: 0;
-            }
-        }
-        &.visible {
-            visibility: visible;
-            height: 100%;
-        }
-        &.open {
-            .site-navigation__container {
-                opacity: 1;
-                transition: opacity 0.2s 0s ease;
-            }
-            .site-navigation__link-container {
-                opacity: 1;
-                transform: translateY(0%);
-            }
+    position: fixed;
+    width: 100%;
+    height: 0px;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    visibility: hidden;
+    color: $black;
+    background-color: $white;
+    &.fade,
+    &.open.fade {
+        .container {
+            transition: transform 0.5s 0s $bezier, opacity 0.5s 0s $bezier;
+            transform: scale(0.9);
+            opacity: 0;
         }
     }
-    &__scroll {
-        position: relative;
-        width: 100%;
+    &.visible {
+        visibility: visible;
         height: 100%;
-        overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;
-        background-color: $white;
     }
-    &__container {
+    &.open {
+        .container {
+            opacity: 1;
+            transition: opacity 0.2s 0s ease;
+        }
+        .link-container {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+    .container {
         position: relative;
         width: 100%;
         min-height: 100%;
@@ -56,7 +48,7 @@
         opacity: 0;
         transition: opacity 0.2s 0s ease;
     }
-    &__link-container {
+    .link-container {
         opacity: 0;
         transform: translateY(-50%);
         // transition: all 0s linear 0s;
@@ -92,7 +84,7 @@
             color: $primary;
         }
     }
-    &__pages {
+    .pages {
         @include component-padding;
         font-family: $sans;
         line-height: $title-sans;
@@ -123,7 +115,7 @@
             letter-spacing: $spacing-sans;
         }
     }
-    &__components {
+    .components {
         @include component-padding;
         font-family: $sans;
         font-size: $scale03;
@@ -149,7 +141,7 @@
         @media only screen and ($xxl) {
             font-size: $scale06;
         }
-        .site-navigation__link-container {
+        .link-container {
             margin-bottom: 0.5em;
         }
     }
