@@ -39,7 +39,7 @@
     <input type="checkbox" id="site-masthead__checkbox">
     <nav class="site-masthead fade" role="navigation">
         <div class="site-masthead__logo-container">
-<i class="icon icon__razorfish">&#xe801;</i>
+            <i class="icon icon__razorfish">&#xe801;</i>
             <span class="site-masthead__country-dropdown">Global</span>
         </div>
         <label for="site-masthead__checkbox" class="site-masthead__hamburger">
@@ -182,9 +182,8 @@
         </div>
     </nav>
     <div class="body-wrapper fade">
-        <a class="hero hero--story theme__text-white_accent" id="contact-form__hero">
+        <section class="hero hero--story theme__text-white_accent" id="contact-form__hero">
             <div class="module-content">
-          
                 <h2 class="headline">How can we help you?</h2>
                 <p class="subhead">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
                 <ul class="contact-form__link--group">
@@ -194,8 +193,8 @@
                     <li class=""><a class="contact-form__link link--underline" id="contact-form__link-4">Publishing</a></li>
                 </ul>
             </div>
-            <figure class="image image__parallax">
-                <svg xmlns="http://www.w3.org/2000/svg">
+            <div class="module-background">
+                <svg class="image image__parallax" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <filter id="image-grading--green">
                             <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray"></feColorMatrix>
@@ -209,9 +208,31 @@
                     </defs>
                     <image filter="url('#image-grading--green')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/hero-contact-form.jpg"></image>
                 </svg>
-            </figure>
+            </div>
         </section>
         <section class="contact-form__overlay">
+            <div class="module-background">
+                <svg class="contact-form__background-image" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="image-blur">
+                            <feGaussianBlur stdDeviation="20" />
+                        </filter>
+                        <filter id="image-grading--green--form">
+                            <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray"></feColorMatrix>
+                            <feComponentTransfer color-interpolation-filters="sRGB">
+                                <feFuncR type="table" tableValues="0.1411764705882353 0.25882352941176473"></feFuncR>
+                                <feFuncG type="table" tableValues="0.1607843137254902 0.34509803921568627"></feFuncG>
+                                <feFuncB type="table" tableValues="0.14901960784313725 0.3607843137254902"></feFuncB>
+                                <feFuncA type="table" tableValues="1 1"></feFuncA>
+                            </feComponentTransfer>
+                        </filter>
+                    </defs>
+                    <image filter="url('#image-grading--green--form')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/hero-contact-form.jpg"></image>
+                    <g class="image-blurred" filter="url('#image-blur')">
+                        <image filter="url('#image-grading--green--form')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/hero-contact-form.jpg"></image>
+                    </g>
+                </svg>
+            </div>
             <div class="contact-form__scroll">
                 <div class="contact-form__form-group">
                     <div class="contact-form__back-container">
@@ -312,16 +333,8 @@
                             <p class="form__error form__error--icon">Error message from the server after the submit button is clicked</p>
                         </div>
                         <div class="contact-form__button-group">
-                            <button class="button button--white form__submit-button" type="button">
+                            <button class="button__submit-form" type="button">
                                 <span>Submit</span>
-                                <div class="preloader">
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewbox="0 0 75 75">
-                                        <circle cx="37.5" cy="37.5" r="33.5" stroke-width="2" />
-                                    </svg>
-                                </div>
-                                <svg id="tick" viewBox="-231 158 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <polyline id="Path-118" stroke="#000000" stroke-width="3" fill="none" transform="translate(-217.000000, 171.931116) rotate(-315.000000) translate(217.000000, -171.931116) " points="-223 181.931116 -211 181.931116 -211 161.931116"></polyline>
-                                </svg>
                             </button>
                         </div>
                     </form>
@@ -332,28 +345,6 @@
                     <p class="contact-form__subhead">We'll contact you shortly!</p>
                 </div>
             </div>
-            <figure class="contact-form__background-image">
-                <svg xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <filter id="image-blur">
-                            <feGaussianBlur stdDeviation="20" />
-                        </filter>
-                        <filter id="image-grading--green--form">
-                            <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray"></feColorMatrix>
-                            <feComponentTransfer color-interpolation-filters="sRGB">
-                                <feFuncR type="table" tableValues="0.1411764705882353 0.25882352941176473"></feFuncR>
-                                <feFuncG type="table" tableValues="0.1607843137254902 0.34509803921568627"></feFuncG>
-                                <feFuncB type="table" tableValues="0.14901960784313725 0.3607843137254902"></feFuncB>
-                                <feFuncA type="table" tableValues="1 1"></feFuncA>
-                            </feComponentTransfer>
-                        </filter>
-                    </defs>
-                    <image filter="url('#image-grading--green--form')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/hero-contact-form.jpg"></image>
-                    <g class="image-blurred" filter="url('#image-blur')">
-                        <image filter="url('#image-grading--green--form')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/hero-contact-form.jpg"></image>
-                    </g>
-                </svg>
-            </figure>
         </section>
     </div>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>

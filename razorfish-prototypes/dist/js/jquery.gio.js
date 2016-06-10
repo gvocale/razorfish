@@ -152,11 +152,29 @@ window.onload = (function() {
                 buttonSubmitForm.addEventListener("animationend", anim2);
                 buttonSubmitForm.addEventListener("animationend", anim3);
                 buttonSubmitForm.addEventListener("animationend", anim4);
-                
+
+                setTimeout(function() {
+                    contactFormOverlay.classList.remove("form");
+                    contactFormOverlay.classList.add("confirmation");
+                }, 8000);
+
+                setTimeout(function() {
+                    contactFormOverlay.classList.remove("confirmation");
+                }, 12000);
+
+                setTimeout(function() {
+                    contactFormDisplayOff();
+                    buttonSubmitForm.classList.remove("anim-1", "anim-2", "anim-3", "anim-4");
+                    
+                buttonSubmitForm.removeEventListener("animationend", anim2);
+                buttonSubmitForm.removeEventListener("animationend", anim3);
+                buttonSubmitForm.removeEventListener("animationend", anim4);
+                }, 12500);
+
 
             } else {
                 buttonSubmitForm.classList.remove("anim-1", "anim-2", "anim-3", "anim-4");
-                
+
                 buttonSubmitForm.removeEventListener("animationend", anim2);
                 buttonSubmitForm.removeEventListener("animationend", anim3);
                 buttonSubmitForm.removeEventListener("animationend", anim4);
@@ -216,29 +234,6 @@ window.onload = (function() {
             }, 1000);
         }
 
-
-        // On click of the Form Submit button
-        contactFormSubmitButton.onclick = function() {
-            if (!this.classList.contains("clicked")) { // check if it has already clicked, to avoid initiating the same animation twice or more
-                contactFormSubmitButton.classList.add("clicked");
-
-                formSubmitButtonAnimation();
-
-                setTimeout(function() {
-                    contactFormOverlay.classList.remove("form");
-                    contactFormOverlay.classList.add("confirmation");
-                }, 8000);
-
-                setTimeout(function() {
-                    contactFormOverlay.classList.remove("confirmation");
-                }, 12000);
-
-                setTimeout(function() {
-                    contactFormDisplayOff();
-                }, 12500);
-
-            }
-        };
     }
 
 
