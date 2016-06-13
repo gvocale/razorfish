@@ -15,7 +15,7 @@
         for (i = 0; i < feedItemsLen; i++) {
             if (isScrolledIntoView(feedItems[i]) && !feedItems[i].classList.contains('reveal')) {
                 feedItems[i].querySelector('.feed__item').addEventListener(transitionEndEvent, function(e) {
-                    this.querySelector('.feed__item__content').classList.add('reveal');
+                    this.querySelector('.mask').classList.add('reveal');
                     this.querySelector('img').classList.add('reveal');
                 });
                 feedItems[i].classList.add('reveal');

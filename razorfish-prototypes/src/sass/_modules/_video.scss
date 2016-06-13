@@ -1,4 +1,4 @@
-.video {
+.video-module {
     position: relative;
     width: 100%;
     &_16-9 {
@@ -15,6 +15,16 @@
             padding-bottom: calc(100% / 16 * 9);
             position: relative;
         }
+    }
+    &_full-screen {
+        @include grid-padding;
+        @include padding-bottom;
+        @include component-margin;
+        width: calc(100% - 2rem);
+    }
+    &_inline {
+        @include padding-top(0.5);
+        @include padding-bottom(0.5);
     }
     .poster {
         width: 100%;
@@ -33,13 +43,6 @@
         position: absolute;
         top: 0;
         left: 0;
-    }
-    &__embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
     }
     .caption {
         font-family: $sans;
@@ -107,16 +110,6 @@
             background-color: rgba($white, 0.4);
             transition: background-color 0s 0s $bezier;
         }
-    }
-    &_full-screen {
-        @include grid-padding;
-        @include padding-bottom;
-        @include component-margin;
-        width: calc(100% - 2rem);
-    }
-    &_inline {
-        @include padding-top(0.5);
-        @include padding-bottom(0.5);
     }
     iframe {
         position: absolute;

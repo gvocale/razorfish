@@ -720,15 +720,23 @@ window.onload = (function() {
             item.style.animationDelay = i * 0.05 + 0.2 + "s";
         }
 
-        // If .feed__item is below the viewport add class .away and remove class .fly-in
+
+        // Toggle classes if in viewport or not
         function feedItemInViewport() {
             [].forEach.call(feedItem, function(div) {
                 var rect = div.getBoundingClientRect();
-                div.classList.add('away');
-                if ((rect.top >= (window.innerHeight / 8 * -1)) && (rect.top <= window.innerHeight)) {
-                    div.classList.add('fly-in');
+                if (rect.bottom < 0) {
+                    div.classList.add('above-the-fold');
+                    div.classList.remove('below-the-fold');
+                    div.classList.remove('in-viewport');
                 } else if (rect.top > window.innerHeight) {
-                    div.classList.remove("fly-in");
+                    div.classList.add('below-the-fold');
+                    div.classList.remove('above-the-fold');
+                    div.classList.remove('in-viewport');
+                } else {
+                    div.classList.add('in-viewport');
+                    div.classList.remove('above-the-fold');
+                    div.classList.remove('below-the-fold');
                 }
             });
         };
