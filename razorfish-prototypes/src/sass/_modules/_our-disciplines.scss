@@ -10,7 +10,7 @@
         flex-wrap: wrap;
         @include component-padding;
     }
-    &__item {
+    .item {
         background-color: $white;
         width: 100%;
         height: auto;
@@ -69,82 +69,55 @@
         @media (hover) {
             &:hover {
                 background-color: darken($white, 8%);
-                transition: background-color 0.1s 0s ease-out;
+                transition: background-color 0.3s 0s $bezier;
             }
         }
     }
-    &__arrow {
-        display: block;
-        position: absolute;
-        height: 100%;
-        fill: $primary;
-        animation-name: arrow_out;
-        animation-duration: 0.2s;
-        animation-timing-function: $bezier;
-        animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-        @keyframes arrow_out {
-            0% {
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-            100% {
-                top: 50%;
-                left: 50%;
-                transform: translate(200%, -50%);
-            }
-        }
-        &--container {
-            display: none;
-            position: absolute;
-            margin-top: 1em;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 0.75em;
-            width: 4.5em;
-            font-size: $scale03;
-            @media only screen and ($xl) {
-                font-size: $scale04;
-            }
-            @media only screen and ($xxl) {
-                font-size: $scale05;
-            }
-            @media (hover) {
+    a.item {
+        text-decoration: none;
+        color: currentColor;
+        .module-content > *:last-child {
+            position: relative;
+            &:after {
+                content: "\E800";
+                font-size: $scale04 / 1.75;
+                @media only screen and ($md) {
+                    font-size: $scale05 / 1.75;
+                }
+                @media only screen and ($xxl) {
+                    font-size: $scale06 / 1.75;
+                }
+                color: $primary;
+                font-family: $icons;
                 display: block;
-                overflow: hidden;
-                // border: 1px solid red;
-            }
-        }
-    }
-    @media (hover) {
-        &__item:hover {
-            .our-disciplines__arrow {
-                animation-name: arrow_in;
+                position: absolute;
+                animation-name: arrowOut;
                 animation-duration: 0.2s;
                 animation-timing-function: $bezier;
                 animation-iteration-count: 1;
                 animation-direction: normal;
                 animation-fill-mode: forwards;
                 animation-play-state: running;
-                @keyframes arrow_in {
-                    0% {
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-300%, -50%);
-                    }
-                    100% {
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                    }
+                margin-top: 2em;
+                width: 100%;
+            }
+        }
+        @media (hover) {
+            &:hover,
+            &:focus {
+                .module-content > *:last-child:after {
+                    animation-name: arrowIn;
+                    animation-duration: 0.2s;
+                    animation-timing-function: $bezier;
+                    animation-iteration-count: 1;
+                    animation-direction: normal;
+                    animation-fill-mode: forwards;
+                    animation-play-state: running;
                 }
             }
         }
     }
-    &__text-container {
+    .module-content {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -152,12 +125,11 @@
         justify-content: center;
         align-items: center;
     }
-    &__headline {
+    .headline {
         @include ligatures;
         font-family: $serif;
         line-height: 1.1;
         letter-spacing: $spacing-serif;
-        margin-bottom: 0.5em;
         font-weight: 700;
         font-size: $scale05;
         max-width: 10em;
@@ -176,11 +148,26 @@
         :last-child {
             margin-bottom: 0;
         }
-        &.divider {
+        &:not(:last-child):after {
+            content: "";
+            display: block;
+            position: relative;
+            width: 0.8em;
+            margin-top: 0.5em;
             margin-bottom: 0.5em;
+            height: 4px;
+            background-color: $primary;
+            left: 50%;
+            transform: translateX(-50%);
+            @media screen and ($lg) {
+                height: 5px;
+            }
+            @media screen and ($xxl) {
+                height: 6px;
+            }
         }
     }
-    &__subhead {
+    .subhead {
         font-family: $sans;
         line-height: 1.4;
         letter-spacing: $spacing-sans;

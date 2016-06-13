@@ -416,7 +416,6 @@ p {
     }
     &--primary,
     &--secondary,
-    &--arrow--left,
     &--arrow--right,
     &--muted,
     &--underline {
@@ -445,7 +444,6 @@ p {
         }
     }
     &--arrow {
-        &--left,
         &--right {
             position: relative;
             font-weight: 700;
@@ -454,94 +452,18 @@ p {
                 color: $primary;
             }
         }
-        &--left {
-            padding-left: 0.5em;
-            // Carrot
-            &:before {
-                content: "";
-                width: 0;
-                height: 0;
-                border-style: solid;
-                width: 0;
-                height: 0;
-                border-top: 4px solid transparent;
-                border-bottom: 4px solid transparent;
-                border-right: 4px solid currentColor;
-                border-left: 0 solid transparent;
-                position: absolute;
-                display: block;
-                top: 55%;
-                transform: translateY(-50%);
-                right: calc(100% + 11px);
-                transition: right 0.1s 0s ease-in-out;
-            }
-            // Stick
-            &:after {
-                content: "";
-                width: 11px;
-                height: 2px;
-                display: block;
-                background-color: currentColor;
-                position: absolute;
-                top: 55%;
-                transform: translateY(-50%);
-                right: 100%;
-                transition: width 0.1s 0s ease-in-out;
-            }
-            @media (hover) {
-                &:hover {
-                    &:before {
-                        right: calc(100% + 16px);
-                    }
-                    &:after {
-                        width: 16px;
-                    }
-                }
-            }
-        }
         &--right {
-            padding-right: 0.5em;
-            // Stick
-            &:before {
-                content: "";
-                width: 11px;
-                height: 2px;
-                display: block;
-                background-color: currentColor;
-                position: absolute;
-                top: 55%;
-                transform: translateY(-50%);
-                left: 100%;
-                transition: width 0.1s 0s ease-in-out;
-            }
-            // Carrot
             &:after {
-                content: "";
-                width: 0;
-                height: 0;
-                border-style: solid;
-                width: 0;
-                height: 0;
-                border-top: 4px solid transparent;
-                border-bottom: 4px solid transparent;
-                border-left: 4px solid currentColor;
-                border-right: 0 solid transparent;
-                position: absolute;
-                display: block;
-                top: 55%;
-                transform: translateY(-50%);
-                left: calc(100% + 11px);
-                transition: left 0.1s 0s ease-in-out;
+                content: "\E800";
+                font-size: 0.4em;
+                margin-left: 0.8em;
+                color: currentColor;
+                font-family: $icons;
+                vertical-align: middle;
+                transition: margin-left 0.2s 0s $bezier;
             }
-            @media (hover) {
-                &:hover {
-                    &:before {
-                        width: 16px;
-                    }
-                    &:after {
-                        left: calc(100% + 16px);
-                    }
-                }
+            &:hover:after {
+                margin-left: 1.4em;
             }
         }
     }
