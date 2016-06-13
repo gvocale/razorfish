@@ -715,10 +715,10 @@ window.onload = (function() {
         var feedItem = document.getElementsByClassName('feed__item');
 
         // Feed: counts number of .feed__item and assign a progressive delay for each
-        for (var i = 0; i < feedItem.length; ++i) {
-            var item = feedItem[i];
-            item.style.animationDelay = i * 0.05 + 0.2 + "s";
-        }
+        // for (var i = 0; i < feedItem.length; ++i) {
+        //     var item = feedItem[i];
+        //     item.style.animationDelay = i * 0.05 + 0.2 + "s";
+        // }
 
 
         // Toggle classes if in viewport or not
@@ -727,16 +727,16 @@ window.onload = (function() {
                 var rect = div.getBoundingClientRect();
                 if (rect.bottom < 0) {
                     div.classList.add('above-the-fold');
-                    div.classList.remove('below-the-fold');
+                    div.classList.remove('below-viewport');
                     div.classList.remove('in-viewport');
                 } else if (rect.top > window.innerHeight) {
-                    div.classList.add('below-the-fold');
+                    div.classList.add('below-viewport');
                     div.classList.remove('above-the-fold');
                     div.classList.remove('in-viewport');
                 } else {
                     div.classList.add('in-viewport');
                     div.classList.remove('above-the-fold');
-                    div.classList.remove('below-the-fold');
+                    div.classList.remove('below-viewport');
                 }
             });
         };
@@ -755,22 +755,22 @@ window.onload = (function() {
         // .module-content toggle visibility classes
         var moduleContent = document.getElementsByClassName('module-content');
 
-        // If .module-content is not in the viewport add class .below-the-fold or .above-the-fold
+        // If .module-content is not in the viewport add class .below-viewport or .above-the-fold
         function moduleContentInViewport() {
             [].forEach.call(moduleContent, function(div) {
                 var rect = div.getBoundingClientRect();
                 if (rect.bottom < 0) {
                     div.classList.add('above-the-fold');
-                    div.classList.remove('below-the-fold');
+                    div.classList.remove('below-viewport');
                     div.classList.remove('in-viewport');
                 } else if (rect.top > window.innerHeight) {
-                    div.classList.add('below-the-fold');
+                    div.classList.add('below-viewport');
                     div.classList.remove('above-the-fold');
                     div.classList.remove('in-viewport');
                 } else {
                     div.classList.add('in-viewport');
                     div.classList.remove('above-the-fold');
-                    div.classList.remove('below-the-fold');
+                    div.classList.remove('below-viewport');
                 }
             });
         };
@@ -818,16 +818,16 @@ window.onload = (function() {
                 var rect = div.getBoundingClientRect();
                 if (rect.bottom < 0) {
                     div.classList.add('above-the-fold');
-                    div.classList.remove('below-the-fold');
+                    div.classList.remove('below-viewport');
                     div.classList.remove('in-viewport');
                 } else if (rect.top > window.innerHeight) {
-                    div.classList.add('below-the-fold');
+                    div.classList.add('below-viewport');
                     div.classList.remove('above-the-fold');
                     div.classList.remove('in-viewport');
                 } else {
                     div.classList.add('in-viewport');
                     div.classList.remove('above-the-fold');
-                    div.classList.remove('below-the-fold');
+                    div.classList.remove('below-viewport');
                 }
             });
         };
