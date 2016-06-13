@@ -4,7 +4,7 @@
     @include padding-bottom;
     transition: all 1s 0s $bezier;
     width: 100%;
-    &__item {
+    .item {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
         margin-top: 0.5rem;
@@ -30,8 +30,8 @@
         }
         @media (hover) {
             &:hover {
-                .office-list__image {
-                    transform: translate3d(0, 0, 0) scale(1.05);
+                .module-background {
+                    transform: translate3d(0, 0, 0) scale(1.075);
                     transition: transform 0.5s 0s ease-out;
                     &:before {
                         opacity: 0.2;
@@ -41,7 +41,61 @@
             }
         }
     }
-    &__image {
+    a.item {
+        .module-content > *:last-child:after {
+            content: "\E800";
+            font-size: $scale04 / 1.75;
+            @media only screen and ($md) {
+                font-size: $scale05 / 1.75;
+            }
+            @media only screen and ($xxl) {
+                font-size: $scale06 / 1.75;
+            }
+            color: currentColor;
+            font-family: $icons;
+            display: block;
+            position: absolute;
+            animation-name: arrowOut;
+            animation-duration: 0.2s;
+            animation-timing-function: $bezier;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+            animation-play-state: running;
+            margin-top: 2em;
+            width: 100%;
+        }
+        @media (hover) {
+            &:hover,
+            &:focus {
+                outline: none;
+                .image_container {
+                    transform: translate3d(0, 0, 0) scale(1.05);
+                    &:after {
+                        opacity: 0.2;
+                    }
+                }
+                &.split {
+                    .image_container {
+                        transform: translate3d(0, 0, 0) scale(1.075);
+                    }
+                }
+            }
+            &:hover,
+            &:focus {
+                .module-content > *:last-child:after {
+                    animation-name: arrowIn;
+                    animation-duration: 0.2s;
+                    animation-timing-function: $bezier;
+                    animation-iteration-count: 1;
+                    animation-direction: normal;
+                    animation-fill-mode: forwards;
+                    animation-play-state: running;
+                }
+            }
+        }
+    }
+    .module-background {
         width: 100%;
         height: 100%;
         position: absolute;
@@ -50,8 +104,7 @@
         background-size: cover;
         background-position: 100% 100%, center;
         background-repeat: no-repeat;
-        z-index: 0;
-        transition: transform 0.5s 0s ease-out;
+        transition: all 0.5s 0s $bezier;
         transform: translate(0, 0) scale(1);
         &:before {
             content: "";
@@ -63,11 +116,10 @@
             height: 100%;
             background-color: $black;
             opacity: 0;
-            mix-blend-mode: darken;
-            transition: opacity 0.5s 0s ease-out;
+            transition: all 0.5s 0s $bezier;
         }
     }
-    &__description {
+    .module-content {
         @include padding-top(0.25);
         @include padding-bottom(0.25);
         @include padding-left(0.25);
@@ -82,10 +134,9 @@
         left: 0;
         height: 100%;
         color: $white;
-        z-index: 1;
         transition: all 1s 0.2s $bezier;
     }
-    &__country-eyebrow {
+    .country {
         font-family: $sans;
         line-height: 1.3;
         letter-spacing: $spacing-sans-mega;
@@ -104,7 +155,7 @@
             margin-bottom: 0;
         }
     }
-    &__office-name {
+    .office-name {
         @include ligatures;
         font-family: $serif;
         line-height: 1.2;
@@ -133,13 +184,15 @@
             margin-right: 0.5em;
         }
     }
-    &__body {
+    .body {
         font-family: $sans;
         line-height: 1.3;
         letter-spacing: $spacing-sans-mega;
         font-weight: 400;
         text-transform: uppercase;
+        position: relative;
         font-size: $scale02;
+        text-align: center;
         @media screen and ($lg) {
             font-size: $scale03;
         }
@@ -147,7 +200,7 @@
             font-size: $scale04;
         }
     }
-    &__cta {
+    .cta {
         &:after {
             content: "";
             display: inline-block;
@@ -160,88 +213,18 @@
             top: 0.125em;
         }
     }
-    &__arrow {
-        display: block;
-        position: absolute;
-        height: 100%;
-        fill: currentColor;
-        animation-name: arrow_out;
-        animation-duration: 0.2s;
-        animation-timing-function: $bezier;
-        animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-        @keyframes arrow_out {
-            0% {
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-            100% {
-                top: 50%;
-                left: 50%;
-                transform: translate(200%, -50%);
-            }
-        }
-        &--container {
-            display: none;
-            position: absolute;
-            margin-top: 1.5em;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 1em;
-            width: 6em;
-            font-size: $scale02;
-            @media screen and ($lg) {
-                font-size: $scale03;
-            }
-            @media screen and ($xxl) {
-                font-size: $scale04;
-            }
-            @media (hover) {
-                display: block;
-                overflow: hidden;
-                // border: 1px solid red;
-            }
-        }
-    }
-    @media (hover) {
-        &__item:hover {
-            .office-list__arrow {
-                animation-name: arrow_in;
-                animation-duration: 0.2s;
-                animation-timing-function: $bezier;
-                animation-iteration-count: 1;
-                animation-direction: normal;
-                animation-fill-mode: forwards;
-                animation-play-state: running;
-                @keyframes arrow_in {
-                    0% {
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-300%, -50%);
-                    }
-                    100% {
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                    }
-                }
-            }
-        }
-    }
-    &__area-container {
+    .area_container {
         position: relative;
         @include component-margin;
         width: calc(100% - 2rem);
+        overflow: hidden;
         &:after {
             content: "";
             display: block;
             clear: both;
         }
     }
-    &__area {
+    .area {
         position: absolute;
         top: 0;
         left: 0;
@@ -252,43 +235,43 @@
         float: left;
     }
     &.north-america {
-        .office-list__area {
+        .area {
             &:nth-child(1) {
                 position: relative;
-                z-index: 1;
                 opacity: 1;
                 transition: all 1s 0s $bezier;
-                .office-list__item {
+                z-index: 1;
+                .item {
                     transform: translateX(0%);
                 }
             }
             &:nth-child(2) {
                 opacity: 0;
-                .office-list__item {
+                .item {
                     transform: translateX(calc(220% + 2rem));
-                    .office-list__description {
+                    .module-content {
                         transform: translateX(100px);
                     }
                 }
             }
             &:nth-child(3) {
                 opacity: 0;
-                .office-list__item {
+                .item {
                     transform: translateX(calc(220% + 2rem));
                 }
-                .office-list__description {
+                .module-content {
                     transform: translateX(100px);
                 }
             }
         }
     }
     &.europe {
-        .office-list__area {
+        .area {
             &:nth-child(1) {
                 opacity: 0;
-                .office-list__item {
+                .item {
                     transform: translateX(calc(-220% - 2rem));
-                    .office-list__description {
+                    .module-content {
                         transform: translateX(-100px);
                     }
                 }
@@ -298,15 +281,15 @@
                 z-index: 1;
                 transition: all 1s 0s $bezier;
                 opacity: 1;
-                .office-list__item {
+                .item {
                     transform: translateX(0%);
                 }
             }
             &:nth-child(3) {
                 opacity: 0;
-                .office-list__item {
+                .item {
                     transform: translateX(calc(220% + 2rem));
-                    .office-list__description {
+                    .module-content {
                         transform: translateX(100px);
                     }
                 }
@@ -314,21 +297,21 @@
         }
     }
     &.asia-pacific {
-        .office-list__area {
+        .area {
             &:nth-child(1) {
                 opacity: 0;
-                .office-list__item {
+                .item {
                     transform: translateX(calc(-220% - 2rem));
-                    .office-list__description {
+                    .module-content {
                         transform: translateX(-100px);
                     }
                 }
             }
             &:nth-child(2) {
                 opacity: 0;
-                .office-list__item {
+                .item {
                     transform: translateX(calc(-220% - 2rem));
-                    .office-list__description {
+                    .module-content {
                         transform: translateX(-100px);
                     }
                 }
@@ -338,50 +321,10 @@
                 opacity: 1;
                 position: relative;
                 z-index: 1;
-                .office-list__item {
+                .item {
                     transform: translateX(0%);
                 }
             }
         }
     }
-    // &.transition-to-north-america {
-    //     .office-list__item {
-    //         transition: all 1.2s 0s $bezier;
-    //     }
-    //     .office-list__area {
-    //         &:nth-child(1) {
-    //             .office-list__description {
-    //                 transition: all 1s 0.2s $bezier;
-    //             }
-    //         }
-    //         &:nth-child(2) {
-    //             transition: all 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
-    //             opacity: 1;
-    //         }
-    //         &:nth-child(3) {
-    //             transition: all 0.75s 0s $bezier;
-    //             opacity: 0;
-    //         }
-    //     }
-    // }
-    // &.transition-to-asia-pacific {
-    //     .office-list__item {
-    //         transition: all 1.2s 0s $bezier;
-    //     }
-    //     .office-list__area {
-    //         &:nth-child(1) {
-    //             transition: all 0.75s 0s $bezier;
-    //             opacity: 0;
-    //         }
-    //         &:nth-child(2) {
-    //             transition: all 1s 0s cubic-bezier(0.58, 0.27, 0.18, 0.99);
-    //             opacity: 1;
-    //         }
-    //         &:nth-child(3) {
-    //             .office-list__description {
-    //                 transition: all 1s 0.2s $bezier;
-    //             }
-    //         }
-    //     }
-    // }
 }

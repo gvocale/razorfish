@@ -586,7 +586,7 @@ window.onload = (function() {
 
     // Office-list Tab shifting between North America / Europe / Asia PAcific
 
-    if (document.getElementsByClassName('office-list__area')[0]) {
+    if (document.getElementsByClassName('area')[0]) {
 
         // Function to remove class .transition after moving between two far bucket is over
         function removeTransition() {

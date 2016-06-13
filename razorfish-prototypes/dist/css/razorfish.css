@@ -7681,7 +7681,7 @@ a.hero {
   @media screen and (min-width: 992px) {
     .office-list {
       padding-bottom: 10vw; } }
-  .office-list__item {
+  .office-list .item {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     margin-top: 0.5rem;
@@ -7693,27 +7693,82 @@ a.hero {
     overflow: hidden;
     float: left;
     transition: all 1s 0s cubic-bezier(0.32, 0.01, 0, 1); }
-    .office-list__item:last-child {
+    .office-list .item:last-child {
       margin-bottom: 0; }
     @media screen and (min-width: 768px) {
-      .office-list__item {
+      .office-list .item {
         width: calc(50% - 1rem); } }
-    .office-list__item:after {
+    .office-list .item:after {
       content: "";
       display: block;
       position: relative;
       padding-bottom: calc(100% / 16 * 9); }
     @media (hover) {
-      .office-list__item:hover .office-list__image {
-        -webkit-transform: translate3d(0, 0, 0) scale(1.05);
-        transform: translate3d(0, 0, 0) scale(1.05);
+      .office-list .item:hover .module-background {
+        -webkit-transform: translate3d(0, 0, 0) scale(1.075);
+        transform: translate3d(0, 0, 0) scale(1.075);
         transition: -webkit-transform 0.5s 0s ease-out;
         transition: transform 0.5s 0s ease-out;
         transition: transform 0.5s 0s ease-out, -webkit-transform 0.5s 0s ease-out; }
-        .office-list__item:hover .office-list__image:before {
+        .office-list .item:hover .module-background:before {
           opacity: 0.2;
           transition: opacity 0.5s 0s ease-out; } }
-  .office-list__image {
+  .office-list a.item .module-content > *:last-child:after {
+    content: "\E800";
+    font-size: 0.57143rem;
+    color: currentColor;
+    font-family: "razorfish-icons";
+    display: block;
+    position: absolute;
+    -webkit-animation-name: arrowOut;
+    animation-name: arrowOut;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+    -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+    animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+    margin-top: 2em;
+    width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .office-list a.item .module-content > *:last-child:after {
+        font-size: 0.74726rem; } }
+    @media only screen and (min-width: 1600px) {
+      .office-list a.item .module-content > *:last-child:after {
+        font-size: 0.92309rem; } }
+  @media (hover) {
+    .office-list a.item:hover, .office-list a.item:focus {
+      outline: none; }
+      .office-list a.item:hover .image_container, .office-list a.item:focus .image_container {
+        -webkit-transform: translate3d(0, 0, 0) scale(1.05);
+        transform: translate3d(0, 0, 0) scale(1.05); }
+        .office-list a.item:hover .image_container:after, .office-list a.item:focus .image_container:after {
+          opacity: 0.2; }
+      .office-list a.item:hover.split .image_container, .office-list a.item:focus.split .image_container {
+        -webkit-transform: translate3d(0, 0, 0) scale(1.075);
+        transform: translate3d(0, 0, 0) scale(1.075); }
+    .office-list a.item:hover .module-content > *:last-child:after, .office-list a.item:focus .module-content > *:last-child:after {
+      -webkit-animation-name: arrowIn;
+      animation-name: arrowIn;
+      -webkit-animation-duration: 0.2s;
+      animation-duration: 0.2s;
+      -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+      animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1;
+      -webkit-animation-direction: normal;
+      animation-direction: normal;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-play-state: running;
+      animation-play-state: running; } }
+  .office-list .module-background {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -7722,13 +7777,10 @@ a.hero {
     background-size: cover;
     background-position: 100% 100%, center;
     background-repeat: no-repeat;
-    z-index: 0;
-    transition: -webkit-transform 0.5s 0s ease-out;
-    transition: transform 0.5s 0s ease-out;
-    transition: transform 0.5s 0s ease-out, -webkit-transform 0.5s 0s ease-out;
+    transition: all 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
     -webkit-transform: translate(0, 0) scale(1);
     transform: translate(0, 0) scale(1); }
-    .office-list__image:before {
+    .office-list .module-background:before {
       content: "";
       display: block;
       position: absolute;
@@ -7738,9 +7790,8 @@ a.hero {
       height: 100%;
       background-color: #373737;
       opacity: 0;
-      mix-blend-mode: darken;
-      transition: opacity 0.5s 0s ease-out; }
-  .office-list__description {
+      transition: all 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); }
+  .office-list .module-content {
     padding-top: 5vw;
     padding-bottom: 5vw;
     padding-left: 2.5vw;
@@ -7763,21 +7814,20 @@ a.hero {
     left: 0;
     height: 100%;
     color: #FFFFFF;
-    z-index: 1;
     transition: all 1s 0.2s cubic-bezier(0.32, 0.01, 0, 1); }
     @media screen and (min-width: 768px) {
-      .office-list__description {
+      .office-list .module-content {
         padding-top: 3.75vw; } }
     @media screen and (min-width: 992px) {
-      .office-list__description {
+      .office-list .module-content {
         padding-top: 2.5vw; } }
     @media screen and (min-width: 768px) {
-      .office-list__description {
+      .office-list .module-content {
         padding-bottom: 3.75vw; } }
     @media screen and (min-width: 992px) {
-      .office-list__description {
+      .office-list .module-content {
         padding-bottom: 2.5vw; } }
-  .office-list__country-eyebrow {
+  .office-list .country {
     font-family: "Gotham A", Helvetica, Arial, sans-serif;
     line-height: 1.3;
     letter-spacing: 0.05em;
@@ -7787,14 +7837,14 @@ a.hero {
     color: #d6f300;
     font-size: 0.6154rem; }
     @media screen and (min-width: 992px) {
-      .office-list__country-eyebrow {
+      .office-list .country {
         font-size: 0.8077rem; } }
     @media screen and (min-width: 1600px) {
-      .office-list__country-eyebrow {
+      .office-list .country {
         font-size: 1rem; } }
-    .office-list__country-eyebrow:last-child {
+    .office-list .country:last-child {
       margin-bottom: 0; }
-  .office-list__office-name {
+  .office-list .office-name {
     text-rendering: optimizeLegibility;
     -webkit-font-variant-ligatures: common-ligatures;
     font-variant-ligatures: common-ligatures;
@@ -7810,36 +7860,38 @@ a.hero {
     margin-bottom: 0.25em;
     font-size: 1.6154rem; }
     @media screen and (min-width: 768px) {
-      .office-list__office-name {
+      .office-list .office-name {
         font-size: 2.1154rem; } }
     @media screen and (min-width: 992px) {
-      .office-list__office-name {
+      .office-list .office-name {
         font-size: 2.6154rem; } }
     @media screen and (min-width: 1200px) {
-      .office-list__office-name {
+      .office-list .office-name {
         font-size: 2.6154rem; } }
     @media screen and (min-width: 1600px) {
-      .office-list__office-name {
+      .office-list .office-name {
         font-size: 4.2308rem; } }
-    .office-list__office-name:last-child {
+    .office-list .office-name:last-child {
       margin-bottom: 0; }
-    .office-list__office-name--highlight {
+    .office-list .office-name--highlight {
       color: #a9c000;
       margin-right: 0.5em; }
-  .office-list__body {
+  .office-list .body {
     font-family: "Gotham A", Helvetica, Arial, sans-serif;
     line-height: 1.3;
     letter-spacing: 0.05em;
     font-weight: 400;
     text-transform: uppercase;
-    font-size: 0.6154rem; }
+    position: relative;
+    font-size: 0.6154rem;
+    text-align: center; }
     @media screen and (min-width: 992px) {
-      .office-list__body {
+      .office-list .body {
         font-size: 0.8077rem; } }
     @media screen and (min-width: 1600px) {
-      .office-list__body {
+      .office-list .body {
         font-size: 1rem; } }
-  .office-list__cta:after {
+  .office-list .cta:after {
     content: "";
     display: inline-block;
     margin-left: 1em;
@@ -7849,117 +7901,17 @@ a.hero {
     background-color: currentColor;
     position: relative;
     top: 0.125em; }
-  .office-list__arrow {
-    display: block;
-    position: absolute;
-    height: 100%;
-    fill: currentColor;
-    -webkit-animation-name: arrow_out;
-    animation-name: arrow_out;
-    -webkit-animation-duration: 0.2s;
-    animation-duration: 0.2s;
-    -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-    animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-    -webkit-animation-direction: normal;
-    animation-direction: normal;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-play-state: running;
-    animation-play-state: running; }
-
-@-webkit-keyframes arrow_out {
-  0% {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
-  100% {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(200%, -50%);
-    transform: translate(200%, -50%); } }
-
-@keyframes arrow_out {
-  0% {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
-  100% {
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(200%, -50%);
-    transform: translate(200%, -50%); } }
-    .office-list__arrow--container {
-      display: none;
-      position: absolute;
-      margin-top: 1.5em;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
-      height: 1em;
-      width: 6em;
-      font-size: 0.6154rem; }
-      @media screen and (min-width: 992px) {
-        .office-list__arrow--container {
-          font-size: 0.8077rem; } }
-      @media screen and (min-width: 1600px) {
-        .office-list__arrow--container {
-          font-size: 1rem; } }
-      @media (hover) {
-        .office-list__arrow--container {
-          display: block;
-          overflow: hidden; } }
-  @media (hover) {
-    .office-list__item:hover .office-list__arrow {
-      -webkit-animation-name: arrow_in;
-      animation-name: arrow_in;
-      -webkit-animation-duration: 0.2s;
-      animation-duration: 0.2s;
-      -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-      animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-      -webkit-animation-iteration-count: 1;
-      animation-iteration-count: 1;
-      -webkit-animation-direction: normal;
-      animation-direction: normal;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-      -webkit-animation-play-state: running;
-      animation-play-state: running; }
-    @-webkit-keyframes arrow_in {
-      0% {
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-300%, -50%);
-        transform: translate(-300%, -50%); }
-      100% {
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%); } }
-    @keyframes arrow_in {
-      0% {
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-300%, -50%);
-        transform: translate(-300%, -50%); }
-      100% {
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%); } } }
-  .office-list__area-container {
+  .office-list .area_container {
     position: relative;
     margin-left: 1rem;
     margin-right: 1rem;
-    width: calc(100% - 2rem); }
-    .office-list__area-container:after {
+    width: calc(100% - 2rem);
+    overflow: hidden; }
+    .office-list .area_container:after {
       content: "";
       display: block;
       clear: both; }
-  .office-list__area {
+  .office-list .area {
     position: absolute;
     top: 0;
     left: 0;
@@ -7968,76 +7920,76 @@ a.hero {
     margin-top: -0.5rem;
     margin-left: -0.5rem;
     float: left; }
-  .office-list.north-america .office-list__area:nth-child(1) {
+  .office-list.north-america .area:nth-child(1) {
     position: relative;
-    z-index: 1;
     opacity: 1;
-    transition: all 1s 0s cubic-bezier(0.32, 0.01, 0, 1); }
-    .office-list.north-america .office-list__area:nth-child(1) .office-list__item {
+    transition: all 1s 0s cubic-bezier(0.32, 0.01, 0, 1);
+    z-index: 1; }
+    .office-list.north-america .area:nth-child(1) .item {
       -webkit-transform: translateX(0%);
       transform: translateX(0%); }
-  .office-list.north-america .office-list__area:nth-child(2) {
+  .office-list.north-america .area:nth-child(2) {
     opacity: 0; }
-    .office-list.north-america .office-list__area:nth-child(2) .office-list__item {
+    .office-list.north-america .area:nth-child(2) .item {
       -webkit-transform: translateX(calc(220% + 2rem));
       transform: translateX(calc(220% + 2rem)); }
-      .office-list.north-america .office-list__area:nth-child(2) .office-list__item .office-list__description {
+      .office-list.north-america .area:nth-child(2) .item .module-content {
         -webkit-transform: translateX(100px);
         transform: translateX(100px); }
-  .office-list.north-america .office-list__area:nth-child(3) {
+  .office-list.north-america .area:nth-child(3) {
     opacity: 0; }
-    .office-list.north-america .office-list__area:nth-child(3) .office-list__item {
+    .office-list.north-america .area:nth-child(3) .item {
       -webkit-transform: translateX(calc(220% + 2rem));
       transform: translateX(calc(220% + 2rem)); }
-    .office-list.north-america .office-list__area:nth-child(3) .office-list__description {
+    .office-list.north-america .area:nth-child(3) .module-content {
       -webkit-transform: translateX(100px);
       transform: translateX(100px); }
-  .office-list.europe .office-list__area:nth-child(1) {
+  .office-list.europe .area:nth-child(1) {
     opacity: 0; }
-    .office-list.europe .office-list__area:nth-child(1) .office-list__item {
+    .office-list.europe .area:nth-child(1) .item {
       -webkit-transform: translateX(calc(-220% - 2rem));
       transform: translateX(calc(-220% - 2rem)); }
-      .office-list.europe .office-list__area:nth-child(1) .office-list__item .office-list__description {
+      .office-list.europe .area:nth-child(1) .item .module-content {
         -webkit-transform: translateX(-100px);
         transform: translateX(-100px); }
-  .office-list.europe .office-list__area:nth-child(2) {
+  .office-list.europe .area:nth-child(2) {
     position: relative;
     z-index: 1;
     transition: all 1s 0s cubic-bezier(0.32, 0.01, 0, 1);
     opacity: 1; }
-    .office-list.europe .office-list__area:nth-child(2) .office-list__item {
+    .office-list.europe .area:nth-child(2) .item {
       -webkit-transform: translateX(0%);
       transform: translateX(0%); }
-  .office-list.europe .office-list__area:nth-child(3) {
+  .office-list.europe .area:nth-child(3) {
     opacity: 0; }
-    .office-list.europe .office-list__area:nth-child(3) .office-list__item {
+    .office-list.europe .area:nth-child(3) .item {
       -webkit-transform: translateX(calc(220% + 2rem));
       transform: translateX(calc(220% + 2rem)); }
-      .office-list.europe .office-list__area:nth-child(3) .office-list__item .office-list__description {
+      .office-list.europe .area:nth-child(3) .item .module-content {
         -webkit-transform: translateX(100px);
         transform: translateX(100px); }
-  .office-list.asia-pacific .office-list__area:nth-child(1) {
+  .office-list.asia-pacific .area:nth-child(1) {
     opacity: 0; }
-    .office-list.asia-pacific .office-list__area:nth-child(1) .office-list__item {
+    .office-list.asia-pacific .area:nth-child(1) .item {
       -webkit-transform: translateX(calc(-220% - 2rem));
       transform: translateX(calc(-220% - 2rem)); }
-      .office-list.asia-pacific .office-list__area:nth-child(1) .office-list__item .office-list__description {
+      .office-list.asia-pacific .area:nth-child(1) .item .module-content {
         -webkit-transform: translateX(-100px);
         transform: translateX(-100px); }
-  .office-list.asia-pacific .office-list__area:nth-child(2) {
+  .office-list.asia-pacific .area:nth-child(2) {
     opacity: 0; }
-    .office-list.asia-pacific .office-list__area:nth-child(2) .office-list__item {
+    .office-list.asia-pacific .area:nth-child(2) .item {
       -webkit-transform: translateX(calc(-220% - 2rem));
       transform: translateX(calc(-220% - 2rem)); }
-      .office-list.asia-pacific .office-list__area:nth-child(2) .office-list__item .office-list__description {
+      .office-list.asia-pacific .area:nth-child(2) .item .module-content {
         -webkit-transform: translateX(-100px);
         transform: translateX(-100px); }
-  .office-list.asia-pacific .office-list__area:nth-child(3) {
+  .office-list.asia-pacific .area:nth-child(3) {
     transition: all 1s 0s cubic-bezier(0.32, 0.01, 0, 1);
     opacity: 1;
     position: relative;
     z-index: 1; }
-    .office-list.asia-pacific .office-list__area:nth-child(3) .office-list__item {
+    .office-list.asia-pacific .area:nth-child(3) .item {
       -webkit-transform: translateX(0%);
       transform: translateX(0%); }
 
@@ -8175,6 +8127,18 @@ a.hero {
     animation-fill-mode: forwards;
     -webkit-animation-play-state: running;
     animation-play-state: running; }
+
+@-webkit-keyframes arrow_out {
+  0% {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  100% {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(200%, -50%);
+    transform: translate(200%, -50%); } }
 
 @keyframes arrow_out {
   0% {
