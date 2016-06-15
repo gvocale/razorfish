@@ -21,15 +21,6 @@
     @media screen and ($xl) {
         min-height: 40vw;
     }
-    @mixin related-promo__headline {
-        font-size: $scale06;
-        @media only screen and ($md) {
-            font-size: $scale08;
-        }
-        @media only screen and ($xxl) {
-            font-size: $scale10;
-        }
-    }
     .module-background {
         width: 100%;
         height: 100%;
@@ -49,7 +40,6 @@
             opacity: 0;
             transition: opacity 0.5s 0s ease-out;
             mix-blend-mode: multiply;
-            z-index: 1;
         }
     }
     .module-content {
@@ -60,7 +50,6 @@
         align-items: baseline;
         justify-content: center;
         text-align: left;
-        z-index: 2;
         position: relative;
         width: 100%;
         @media screen and ($lg) {
@@ -102,7 +91,6 @@
         }
     }
     .headline {
-        @include related-promo__headline;
         @include ligatures;
         font-family: $serif;
         line-height: $solid-serif + 0.1;
@@ -111,6 +99,13 @@
         margin-bottom: 0.3em;
         max-width: 10em;
         margin-bottom: 0.3em;
+        font-size: $scale06;
+        @media only screen and ($md) {
+            font-size: $scale08;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale10;
+        }
         @media only screen and ($xxl) {
             line-height: $solid-serif;
         }
@@ -137,7 +132,7 @@
 a.related-promo {
     text-decoration: none;
     .module-content > *:last-child:after {
-        content: "\E800";
+        content: "\E809";
         font-size: $scale04 / 1.5;
         @media only screen and ($md) {
             font-size: $scale05 / 1.5;

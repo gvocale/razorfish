@@ -16,14 +16,13 @@
         padding-top: 10em;
         padding-bottom: 10em;
     }
-    &__container {
+    .module-content {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         align-items: center;
         position: relative;
         @include component-padding;
-        z-index: 1;
     }
     &__icon {
         height: 1.5rem;
@@ -98,7 +97,7 @@
             margin-bottom: 0;
         }
     }
-    &__author-name {
+    .author {
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans-large;
@@ -112,7 +111,7 @@
             margin-bottom: 0;
         }
     }
-    &__author-title {
+    .role {
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans-large;
@@ -146,7 +145,7 @@
     .quote + .pull-quote__author-photo {
         margin-top: 2rem;
     }
-    &__image {
+    .image {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -155,7 +154,6 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 0;
         svg {
             width: 100%;
             height: 100%;

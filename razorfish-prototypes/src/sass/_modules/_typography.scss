@@ -101,262 +101,114 @@ p {
     -webkit-margin-end: 0;
 }
 
-.h1-serif {
-    @include ligatures;
-    font-family: $serif;
-    font-size: $scale07;
-    line-height: $title-serif;
-    letter-spacing: $spacing-serif;
-    font-weight: 700;
-    @media only screen and ($md) {
-        font-size: $scale08;
-    }
-    @media only screen and ($lg) {
-        font-size: $scale09;
-    }
-    @media only screen and ($xl) {
-        font-size: $scale10;
-    }
-    @media only screen and ($xxl) {
-        font-size: $scale11;
-    }
-}
+// .quote-large {
+//     @include ligatures;
+//     font-family: $serif;
+//     font-size: $scale05;
+//     font-style: italic;
+//     line-height: $prose-serif;
+//     letter-spacing: $spacing-serif-large;
+//     @media only screen and ($md) {
+//         font-size: $scale07;
+//     }
+//     @media only screen and ($xxl) {
+//         font-size: $scale09;
+//     }
+// }
 
-.h1-sans {
-    font-family: $sans;
-    font-size: $scale07;
-    line-height: $title-sans;
-    letter-spacing: $spacing-serif;
-    font-weight: 700;
-    @media only screen and ($md) {
-        font-size: $scale08;
-    }
-    @media only screen and ($lg) {
-        font-size: $scale09;
-    }
-    @media only screen and ($xl) {
-        font-size: $scale10;
-    }
-    @media only screen and ($xxl) {
-        font-size: $scale11;
-    }
-}
+// .subheadline {
+//     font-family: $sans;
+//     font-size: $scale05;
+//     letter-spacing: $spacing-sans-tight;
+//     line-height: $title-sans;
+//     @media only screen and ($md) {
+//         font-size: $scale06;
+//     }
+// }
 
-.h2-serif {
-    @include ligatures;
-    font-family: $serif;
-    font-size: $scale07;
-    line-height: $title-serif;
-    letter-spacing: $spacing-serif;
-    font-weight: 700;
-    @media only screen and ($md) {
-        font-size: $scale08;
-    }
-    @media only screen and ($lg) {
-        font-size: $scale09;
-    }
-    @media only screen and ($xxl) {
-        font-size: $scale10;
-        line-height: $title-serif - 0.1;
-    }
-}
+// .eyebrow {
+//     font-family: $sans;
+//     font-size: $scale04;
+//     line-height: $title-sans;
+//     letter-spacing: $spacing-sans-large;
+//     text-transform: uppercase;
+//     @media only screen and ($md) {
+//         font-size: $scale05;
+//     }
+//     @media only screen and ($xxl) {
+//         font-size: $scale06;
+//     }
+//     small {
+//         font-size: $scale03;
+//         @media only screen and ($md) {
+//             font-size: $scale04;
+//         }
+//         @media only screen and ($xxl) {
+//             font-size: $scale05;
+//         }
+//     }
+// }
 
-.h2-sans {
-    font-family: $sans;
-    font-size: $scale06;
-    line-height: $title-sans;
-    letter-spacing: $spacing-sans;
-    font-weight: 700;
-    @media only screen and ($md) {
-        font-size: $scale07;
-    }
-    @media only screen and ($lg) {
-        font-size: $scale08;
-    }
-    @media only screen and ($xxl) {
-        font-size: $scale09;
-    }
-}
+// .author {
+//     font-family: $sans;
+//     font-size: $scale03;
+//     font-style: normal;
+//     line-height: $title-sans;
+//     letter-spacing: $spacing-sans;
+//     text-transform: uppercase;
+//     strong {
+//         font-weight: 700;
+//         margin-right: 0.5em;
+//     }
+//     @media only screen and ($md) {
+//         font-size: $scale04;
+//     }
+//     @media only screen and ($xxl) {
+//         font-size: $scale05;
+//     }
+// }
 
-.h3-serif {
-    @include ligatures;
-    font-family: $serif;
-    font-size: $scale06;
-    line-height: $title-serif;
-    letter-spacing: $spacing-serif-tight;
-    font-weight: 700;
-    @media only screen and ($md) {
-        font-size: $scale07;
-    }
-    @media only screen and ($lg) {
-        font-size: $scale08;
-    }
-    @media only screen and ($xxl) {
-        font-size: $scale09;
-    }
-}
-
-.h3-sans {
-    font-family: $sans;
-    font-size: $scale05;
-    line-height: $title-sans;
-    letter-spacing: $spacing-sans;
-    font-weight: 700;
-    @media only screen and ($md) {
-        font-size: $scale06;
-    }
-    @media only screen and ($lg) {
-        font-size: $scale07;
-    }
-    @media only screen and ($xxl) {
-        font-size: $scale08;
-    }
-}
-
-.h4-serif {
-    @include ligatures;
-    font-family: $serif;
-    font-size: $scale05;
-    line-height: $title-serif;
-    letter-spacing: $spacing-serif-tight;
-    font-weight: 700;
-    @media only screen and ($md) {
-        font-size: $scale06;
-    }
-    @media only screen and ($lg) {
-        font-size: $scale07;
-    }
-    @media only screen and ($xxl) {
-        font-size: $scale08;
-    }
-}
-
-.h4-sans {
-    font-family: $sans;
-    font-size: $scale04;
-    line-height: $title-sans;
-    letter-spacing: $spacing-sans-tight;
-    font-weight: 700;
-    @media only screen and ($md) {
-        font-size: $scale05;
-    }
-    @media only screen and ($lg) {
-        font-size: $scale06;
-    }
-    @media only screen and ($xxl) {
-        font-size: $scale07;
-    }
-}
-
-.quote-large {
-    @include ligatures;
-    font-family: $serif;
-    font-size: $scale05;
-    font-style: italic;
-    line-height: $prose-serif;
-    letter-spacing: $spacing-serif-large;
-    @media only screen and ($md) {
-        font-size: $scale07;
-    }
-    @media only screen and ($xxl) {
-        font-size: $scale09;
-    }
-}
-
-.subheadline {
-    font-family: $sans;
-    font-size: $scale05;
-    letter-spacing: $spacing-sans-tight;
-    line-height: $title-sans;
-    @media only screen and ($md) {
-        font-size: $scale06;
-    }
-}
-
-.eyebrow {
-    font-family: $sans;
-    font-size: $scale04;
-    line-height: $title-sans;
-    letter-spacing: $spacing-sans-large;
-    text-transform: uppercase;
-    @media only screen and ($md) {
-        font-size: $scale05;
-    }
-    @media only screen and ($xxl) {
-        font-size: $scale06;
-    }
-    small {
-        font-size: $scale03;
-        @media only screen and ($md) {
-            font-size: $scale04;
-        }
-        @media only screen and ($xxl) {
-            font-size: $scale05;
-        }
-    }
-}
-
-.author {
-    font-family: $sans;
-    font-size: $scale03;
-    font-style: normal;
-    line-height: $title-sans;
-    letter-spacing: $spacing-sans;
-    text-transform: uppercase;
-    strong {
-        font-weight: 700;
-        margin-right: 0.5em;
-    }
-    @media only screen and ($md) {
-        font-size: $scale04;
-    }
-    @media only screen and ($xxl) {
-        font-size: $scale05;
-    }
-}
-
-.body {
-    font-family: $sans;
-    line-height: $prose-sans;
-    letter-spacing: $spacing-sans;
-    margin-bottom: 1em;
-    z-index: 10;
-    font-size: $scale04;
-    @media only screen and ($md) {
-        font-size: $scale05;
-    }
-    @media only screen and ($xxl) {
-        font-size: $scale06;
-    }
-    strong {
-        font-weight: 700;
-    }
-    small {
-        font-size: $scale03;
-        @media only screen and ($md) {
-            font-size: $scale04;
-        }
-        @media only screen and ($xxl) {
-            font-size: $scale05;
-        }
-    }
-    &-two-columns {
-        columns: 1;
-        @media screen and ($xl) {
-            columns: 2;
-            column-gap: 3em;
-        }
-    }
-    &-lead {
-        font-size: $scale05;
-        @media only screen and ($md) {
-            font-size: $scale06;
-        }
-        @media only screen and ($xxl) {
-            font-size: $scale07;
-        }
-    }
-}
+// .body {
+//     font-family: $sans;
+//     line-height: $prose-sans;
+//     letter-spacing: $spacing-sans;
+//     margin-bottom: 1em;
+//     font-size: $scale04;
+//     @media only screen and ($md) {
+//         font-size: $scale05;
+//     }
+//     @media only screen and ($xxl) {
+//         font-size: $scale06;
+//     }
+//     strong {
+//         font-weight: 700;
+//     }
+//     small {
+//         font-size: $scale03;
+//         @media only screen and ($md) {
+//             font-size: $scale04;
+//         }
+//         @media only screen and ($xxl) {
+//             font-size: $scale05;
+//         }
+//     }
+//     &-two-columns {
+//         columns: 1;
+//         @media screen and ($xl) {
+//             columns: 2;
+//             column-gap: 3em;
+//         }
+//     }
+//     &-lead {
+//         font-size: $scale05;
+//         @media only screen and ($md) {
+//             font-size: $scale06;
+//         }
+//         @media only screen and ($xxl) {
+//             font-size: $scale07;
+//         }
+//     }
+// }
 
 .ul {
     list-style-type: none;
@@ -454,7 +306,7 @@ p {
         }
         &--right {
             &:after {
-                content: "\E800";
+                content: "\E809";
                 font-size: 0.4em;
                 margin-left: 0.8em;
                 color: currentColor;
