@@ -393,14 +393,23 @@
             filter: brightness(110%);
         }
     }
-    &--approach {
-        color: $white;
-        .headline {
-            opacity: 0.5;
-        }
-        .divider {
-            background-color: lighten($primary, 10%);
-            opacity: 1;
+    &__approach {
+        &.hero {
+            color: $white;
+            .module-content.in-viewport .headline,
+            .headline {
+                opacity: 0.5;
+            }
+            .eyebrow:first-child:before,
+            .headline:first-child:first-letter {
+                box-shadow: 0px -4px 0 0em lighten($primary, 10%);
+                @media screen and ($lg) {
+                    box-shadow: 0px -5px 0 0em lighten($primary, 10%);
+                }
+                @media screen and ($xxl) {
+                    box-shadow: 0px -6px 0 0em lighten($primary, 10%);
+                }
+            }
         }
     }
     &__video {
@@ -505,8 +514,8 @@ a.hero {
         width: 100%;
     }
     @media (hover) {
-        &:hover:not(.no-hover),
-        &:focus:not(.no-hover) {
+        &:hover,
+        &:focus {
             outline: none;
             .module-background {
                 transform: translate3d(0, 0, 0) scale(1.05);
@@ -517,8 +526,8 @@ a.hero {
                 }
             }
         }
-        &:hover:not(.no-hover),
-        &:focus:not(.no-hover) {
+        &:hover,
+        &:focus {
             .module-content > *:last-child:not(.cta):after {
                 animation-name: arrowIn;
                 animation-duration: 0.2s;
