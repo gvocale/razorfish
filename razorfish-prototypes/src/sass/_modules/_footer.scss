@@ -30,11 +30,11 @@
         width: 1em;
         margin-bottom: 1em;
     }
-    .social-share__group {
+    .social-share {
         @include component-padding;
         margin-bottom: 1em;
     }
-    &__copyrights {
+    .copyrights {
         @include component-padding;
         font-family: $sans;
         font-size: $scale03;
@@ -46,7 +46,7 @@
         @media only screen and ($xxl) {
             font-size: $scale04;
         }
-        &--legal {
+        .legal {
             display: block;
             margin-bottom: 1em;
             @media screen and ($md) {
@@ -54,45 +54,45 @@
                 margin-bottom: 0em;
             }
         }
-        .link--underline {
+    }
+    .link--underline {
+        margin-left: 2.2em;
+        &:hover {
+            color: currentColor;
+        }
+        &:before {
+            background-color: currentColor;
+            opacity: 0.5;
+        }
+        &:first-of-type {
+            margin-left: 0;
+            &:after {
+                display: none;
+            }
+        }
+        &:last-of-type {
+            margin-right: 0;
+        }
+        @media only screen and ($md) {
             margin-left: 2.2em;
-            &:hover {
-                color: currentColor;
-            }
-            &:before {
-                background-color: currentColor;
-                opacity: 0.5;
-            }
             &:first-of-type {
-                margin-left: 0;
+                margin-left: 2.2em;
                 &:after {
-                    display: none;
+                    display: inline;
                 }
             }
             &:last-of-type {
-                margin-right: 0;
+                margin-right: 2.2em;
             }
-            @media only screen and ($md) {
-                margin-left: 2.2em;
-                &:first-of-type {
-                    margin-left: 2.2em;
-                    &:after {
-                        display: inline;
-                    }
-                }
-                &:last-of-type {
-                    margin-right: 2.2em;
-                }
-            }
-            &:after {
-                content: "·";
-                position: absolute;
-                display: inline-block;
-                margin-left: 1em;
-                margin-right: 1em;
-                left: -2.2em;
-                color: inherit;
-            }
+        }
+        &:after {
+            content: "·";
+            position: absolute;
+            display: inline-block;
+            margin-left: 1em;
+            margin-right: 1em;
+            left: -2.2em;
+            color: inherit;
         }
     }
 }
@@ -114,7 +114,6 @@
     .icon__razorfish {
         @include component-margin;
         font-size: $scale05;
-        margin-bottom: 2.5rem;
         @media only screen and ($md) {
             font-size: $scale06;
         }
@@ -187,10 +186,10 @@
             }
         }
     }
-    .social-share__group {
+    .social-share {
         @include component-padding;
         @media screen and ($lg) {
-            transform: translateY(35%);
+            transform: translateY(1.5rem);
         }
     }
     &--dark {

@@ -1,17 +1,20 @@
 .social-share {
     display: flex;
     flex-direction: row;
-    background-color: $white;
-    @include grid-padding;
-    @include padding-top;
-    @include padding-bottom;
-    &__icon {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    list-style: none;
+    // @include grid-padding;
+    // @include padding-top;
+    // @include padding-bottom;
+    .icon {
         display: block;
-        background-size: 30%, contain;
-        background-position: center;
-        background-repeat: no-repeat;
         width: 100%;
         position: relative;
+        text-decoration: none;
+        color: currentColor;
+        outline: none;
+        font-size: $scale05 ;
         &.animate {
             opacity: 0;
             transform: translateY(100%);
@@ -21,29 +24,27 @@
             transition-delay: 0;
         }
         &:before {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &:after {
             content: "";
             display: block;
             padding-bottom: 100%;
             position: relative;
         }
     }
-    &__icon-container {
+    .icon-container {
         margin: 1px;
         position: relative;
         cursor: pointer;
         cursor: hand;
         width: 4rem;
         overflow: hidden;
-        &:focus,
-        &:target,
-        &:active {
-            outline: none;
-        }
-        @media (hover) {
-            &:hover {
-                outline: none;
-            }
-        }
+        outline: none;
         &:active,
         &:target {
             background-color: rgba($black, 0.05);
@@ -54,27 +55,28 @@
         @media screen and ($xl) {
             width: 4rem;
         }
-        @media screen and ($xl) {
-            &:before {
-                content: "";
-                width: 100%;
-                height: 2px;
-                min-height: 2px;
-                max-height: 4px;
-                display: block;
-                background-color: $primary;
-                position: absolute;
-                bottom: 0;
-                animation-name: underline_out;
-                animation-duration: 0.2s;
-                animation-timing-function: ease;
-                animation-iteration-count: 1;
-                animation-direction: normal;
-                animation-fill-mode: forwards;
-                animation-play-state: running;
-            }
-            @media (hover) {
-                &:hover:before {
+        &:before {
+            content: "";
+            width: 100%;
+            height: 2px;
+            min-height: 2px;
+            max-height: 4px;
+            display: block;
+            background-color: $primary;
+            position: absolute;
+            bottom: 0;
+            animation-name: underline_out;
+            animation-duration: 0.2s;
+            animation-timing-function: ease;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+            animation-play-state: running;
+        }
+        @media (hover) {
+            &:hover {
+                outline: none;
+                &:before {
                     animation-name: underline_in;
                     animation-duration: 0.2s;
                     animation-timing-function: ease;
@@ -83,29 +85,7 @@
                     animation-fill-mode: forwards;
                     animation-play-state: running;
                 }
-            }
-            @keyframes underline_in {
-                0% {
-                    width: 0%;
-                    left: 0;
-                }
-                100% {
-                    width: 100%;
-                    left: 0;
-                }
-            }
-            @keyframes underline_out {
-                0% {
-                    width: 100%;
-                    right: 0;
-                }
-                100% {
-                    width: 0%;
-                    right: 0;
-                }
-            }
-            &:hover {
-                .social-share__icon {
+                .icon {
                     animation-name: bounce;
                     animation-duration: 0.5s;
                     animation-timing-function: $bezier;
@@ -117,46 +97,33 @@
                 }
             }
         }
-        @media screen and ($xxl) {
-            width: 4rem;
-        }
-    }
-    &__group {
-        display: inline-block;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        list-style: none;
-        &.gray {
-            .social-share__icon-container {
-                background-color: $gray;
+        @keyframes underline_in {
+            0% {
+                width: 0%;
+                left: 0;
+            }
+            100% {
+                width: 100%;
+                left: 0;
             }
         }
-        &--dark {
-            color: $white;
-            .social-share__icon {
-                opacity: 0.3;
+        @keyframes underline_out {
+            0% {
+                width: 100%;
+                right: 0;
             }
-            .social-share__icon-container {
-                &:active:before,
-                &:target:before {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    background-color: rgba($white, 0.1);
-                }
+            100% {
+                width: 0%;
+                right: 0;
             }
         }
     }
-    &--dark {
-        background-color: $black;
-    }
-    &__button {
-        &--label {}
+    @for $i from 1 through 20 {
+        .icon-container:nth-of-type(#{$i}) .social-share__icon.animate.visible {
+            transition-delay: calc(0.1s + (0.05s * #{$i}));
+            transform: translateY(0%);
+            opacity: 1;
+        }
     }
     &__container {
         width: calc(100% / 12 * 3);
@@ -164,14 +131,6 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-    }
-}
-
-@for $i from 1 through 20 {
-    .social-share__icon-container:nth-of-type(#{$i}) .social-share__icon.animate.visible {
-        transition-delay: calc(0.1s + (0.05s * #{$i}));
-        transform: translateY(0%);
-        opacity: 1;
     }
 }
 
