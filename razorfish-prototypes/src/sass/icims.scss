@@ -141,7 +141,6 @@ $md: "min-width: #{$medium-breakpoint}px";
 $lg: "min-width: #{$large-breakpoint}px";
 $xl: "min-width: #{$x-large-breakpoint}px";
 $xxl: "min-width: #{$xx-large-breakpoint}px";
-
 // Transparency 
 // Animation
 // $bezier: cubic-bezier(.58, .27, .18, .99);
@@ -282,14 +281,11 @@ $spacing-sans-mega: 0.05em;
 $white: #FFFFFF;
 $black: #373737;
 $primary: #a9c000;
-
-
 .rf {
     &__grid {
         width: 100%;
     }
     &__header {
-        @include grid-padding;
         display: flex;
         align-items: center;
         flex-direction: row;
@@ -305,6 +301,7 @@ $primary: #a9c000;
         }
         &_logo {
             width: 5em;
+            padding-left: 5px;
             vertical-align: sub;
             font-size: $scale05;
             @media only screen and ($md) {
@@ -313,9 +310,6 @@ $primary: #a9c000;
             @media only screen and ($xxl) {
                 font-size: $scale07;
             }
-        }
-        &_logo_container {
-            @include component-margin;
         }
         &_careers {
             font-family: $sans;
@@ -412,8 +406,8 @@ $primary: #a9c000;
         align-items: center;
         justify-content: center;
         @include grid-padding;
-        @include padding-top();
-        @include padding-bottom();
+        @include padding-top(0.5);
+        @include padding-bottom(0.5);
         font-size: $scale05;
         @media only screen and ($md) {
             font-size: $scale05;
@@ -748,13 +742,23 @@ $primary: #a9c000;
         }
     }
     &__image {
-        width: 100%;
-        img {
+        width: 100vw;
+        margin-left: -10vw;
+        img,
+        svg {
             display: block;
             width: 100%;
             height: auto;
-            max-height: 80vh;
+            max-height: 50vh;
             object-fit: cover;
         }
+        svg {
+            height: 50vh;
+        }
     }
+}
+
+body {
+    @include grid-padding;
+    @include component-margin;
 }

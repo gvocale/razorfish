@@ -1,0 +1,1584 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* These variables are used to calcuate top margin for field labels depending on the selected font */
+/***** BEGIN: BASE *****/
+/* .iCIMS_FloatHack allows the parent container of */
+/* floated elements to "contain" its children (big enough */
+/* to hold its contents) */
+.iCIMS_FloatHack {
+clear: both;
+}
+.iCIMS_NoDisplay, .NoDisplay {
+display: none !important;
+}
+.iCIMS_Hidden {
+visibility: hidden !important;
+}
+/* Hides 508 compliant labels */
+.iCIMS_508_Label {
+left: -9999px;
+position: absolute;
+top: -1px;
+}
+.iCIMS_MainWrapper form {
+margin: 0;
+}
+select {
+width: 100%;
+}
+.radio {
+margin-right: 10px;
+}
+.radio > input[type=radio] {
+position: relative;
+top: 2px;
+margin: 0;
+}
+.iCIMS_InfoData > input[type="text"],
+.iCIMS_InfoData > input[type="password"],
+.iCIMS_InfoData > input[type='number'],
+.iCIMS_InfoData > textarea,
+.iCIMS_Zip_Code_Input > input[type="text"] {
+padding: 5px;
+height: 30px;
+width: 100%;
+-webkit-appearance: none;
+box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+border: 1px solid #CCCCCC;
+border-radius: 3px;
+}
+.iCIMS_InfoData > textarea {
+height: auto;
+}
+.outputContainer.fieldData,
+.readOnlyTextArea.fieldData {
+margin-top: 6px;
+padding: 0 5px;
+}
+.iCIMS_InfoData.iCIMS_Zip_Code_Input input {
+width: 100px;
+}
+.iCIMS_InfoData.iCIMS_Radius_Input input {
+width: 75px;
+}
+.iCIMS_ZipRadiusBlock {
+display: none;
+}
+.iCIMS_SubmitButtonCell {
+text-align: center;
+}
+.iCIMS_PrimaryButton {
+border-radius: 6px;
+color: #222222;
+cursor: pointer;
+width: auto;
+min-width: 100px;
+font-family: Arial;
+font-weight: bold;
+font-size: 14px;
+-webkit-appearance: none;
+box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+background: #f0f0f0;
+margin: 6px;
+padding-top: 5px;
+padding-right: 5px;
+padding-bottom: 5px;
+padding-left: 5px;
+border-width: 1px;
+border-style: solid;
+border-color: #404040;
+box-shadow: 1px 1px 2px #999999;
+}
+.iCIMS_PrimaryButton[disabled=disabled] {
+background-color: #cccccc;
+border: 1px solid #aaa;
+color: #fff;
+cursor: default;
+}
+.iCIMS_SecondaryButton {
+border-radius: 6px;
+cursor: pointer;
+width: auto;
+min-width: 100px;
+font-family: Arial;
+font-size: 9px;
+-webkit-appearance: none;
+box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+background: #f0f0f0;
+margin-top: 5px;
+margin-bottom: 5px;
+margin-right: 10px;
+margin-left: 0px;
+padding-top: 5px;
+padding-right: 2px;
+padding-bottom: 5px;
+padding-left: 2px;
+color: #222222;
+border-width: 1px;
+border-style: solid;
+border-color: #eeeeee;
+box-shadow: 1px 1px 2px #999999;
+}
+.iCIMS_PrimaryButton.focused,
+.iCIMS_PrimaryButton:hover,
+.iCIMS_PrimaryButton:focus {
+border: 2px solid;
+margin: 5px;
+}
+.iCIMS_SecondaryButton.focused,
+.iCIMS_SecondaryButton:hover,
+.iCIMS_SecondaryButton:focus {
+border: 1px solid;
+}
+.iCIMS_PrimaryButton.focused,
+.iCIMS_SecondaryButton.focused,
+.iCIMS_PrimaryButton:hover,
+.iCIMS_PrimaryButton:focus,
+.iCIMS_SecondaryButton:hover,
+.iCIMS_SecondaryButton:focus {
+cursor: pointer;
+border-color: #92a107;
+}
+.iCIMS_LinkedIn {
+position:relative;
+top: 2px;
+}
+
+.iCIMS_Action_Button {
+display: block;
+text-align: center;
+text-decoration: none !important;
+border-radius: 6px;
+border: 1px solid #566500;
+box-shadow: 1px 1px 2px #999999;
+width: 294px;
+margin: 0 0 10px 0;
+padding: 8px 10px;
+outline: 0;
+box-sizing: border-box;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+color: #ffffff !important;
+font-size: 16px;
+font-weight: bold;
+background: #92a108;
+background: -webkit-linear-gradient(top, #92a108, #606F00);
+background: -moz-linear-gradient(top, #92a108, #606F00);
+background: -ms-linear-gradient(top, #92a108, #606F00);
+background: -o-linear-gradient(top, #92a108, #606F00);
+background: linear-gradient(top, #92a108, #606F00);
+}
+.iCIMS_Action_Button:hover {
+cursor: pointer;
+background: #92a108;
+background: -webkit-linear-gradient(top, #92a108, #7E8D00);
+background: -moz-linear-gradient(top, #92a108, #7E8D00);
+background: -ms-linear-gradient(top, #92a108, #7E8D00);
+background: -o-linear-gradient(top, #92a108, #7E8D00);
+background: linear-gradient(top, #92a108, #7E8D00);
+}
+.iCIMS_Action_Button:focus {
+outline: 2px dotted #92a107;
+}
+.iCIMS_Action_ButtonText {
+overflow: hidden;
+text-overflow: ellipsis;
+line-height: normal;
+white-space: nowrap;
+padding: 1px 0;
+}
+.iCIMS_Action_ButtonText_Append {
+font-size: 11px;
+font-weight: normal;
+}
+.iCIMS_Action_ButtonText_LinkedIn {
+position: relative;
+top: -3px;
+}
+.iCIMS_Logo {
+text-align: center;
+border-top: 1px solid #eeeeee;
+}
+.iCIMS_Logo:empty {
+display: none;
+}
+.iCIMS_Faq_Link {
+margin: 18px auto 20px;
+display: inline-block;
+}
+.iCIMS_Logo_Link,
+.iCIMS_Logo_Image {
+width: 98px;
+height: 65px;
+display: block;
+margin: 10px auto 6px;
+}
+.iCIMS_Logo_Image {
+padding: 0;
+background-image: url('https://cdn01.icims.com/a/images.icims.com/content/platform_100.2.160606.90253/images/nothemes/icims-logo.png');
+background-position: 50% 0;
+background-repeat: no-repeat;
+position: relative;
+overflow: hidden;
+z-index: -1;
+}
+.iCIMS_Logo_Image_Custom {
+display: block;
+width: auto;
+max-width: 120px;
+height: auto;
+margin: 10px auto 6px;
+}
+.iCIMS_Logo_Image_Custom > img {
+width: auto;
+max-width: 120px;
+height: auto;
+border: 0;
+}
+.iCIMS_Logo_Text {
+padding: 0 0 18px;
+margin: 0;
+font-size: 80%;
+}
+.iCIMS_NavIcon {
+border: none;
+vertical-align: middle;
+margin: 0 5px 0 0;
+}
+.iCIMS_Portal_Preloader {
+width: 100%;
+height: 100px;
+padding-top: 50px;
+text-align: center;
+background-image: url('https://cdn01.icims.com/a/images.icims.com/content/platform_100.2.160606.90253/images/nothemes/default/loading.gif');
+background-size:25px 25px;
+background-repeat:no-repeat;
+background-position:center;
+display: none;
+}
+.iCIMS_Portal_MobileBrandingHeaderImg {
+max-width: 100%;
+}
+.iCIMS_Portal_PopupOverLay {
+position: fixed;
+left: 0px;
+top: 0px;
+z-index: 5000;
+opacity: 0.4;
+-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+filter: alpha(opacity=40);
+height: 100%;
+width: 100%;
+visibility: visible;
+background-color: #000000;
+}
+.iCIMS_Portal_Popup {
+position: fixed;
+top: 50%;
+left: 50%;
+margin-top: -90px;
+margin-left: -160px;
+visibility: hidden;
+z-index: 5001;
+padding: 10px;
+background-color: white;
+border: 1px solid #ccc;
+border-radius: 3px;
+box-shadow: 0 6px 12px #808080;
+width: 300px;
+}
+.iCIMS_Mobile.iCIMS_Portal_Popup {
+width: 248px;
+margin-left: -135px;
+}
+.iCIMS_Portal_PopupOpen {
+visibility: visible;
+}
+.iCIMS_Portal_Popup .iCIMS_buttonContainer {
+text-align: center;
+}
+.iCIMS_Portal_Popup .iCIMS_PrimaryButton {
+margin-top: 0;
+margin-bottom: 0;
+max-width: 200px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.iCIMS_profilePicture {
+margin: 0px 0px 10px 0px;
+background: #ffffff;
+}
+.iCIMS_profilePicture .thumbnail-circle{
+text-align: center;
+text-transform: uppercase;
+float:right;
+font-size: 16px;
+}
+.thumbnail-sm{
+width: 32px;
+height: 32px;
+}
+.thumbnail-circle{
+border-radius: 50%;
+display: inline-block;
+overflow: hidden;
+border: 2px solid #000000;
+padding-top: 6px;
+color: #000000;
+background-color: #ffffff;
+background-position: 50% 50%;
+background-size: 100% auto;
+background-size: cover;
+background-repeat: no-repeat;
+-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box; /* Firefox, other Gecko */
+box-sizing: border-box;
+}
+.iCIMS_profilePicture img{
+display:none;
+}
+.iCIMS_userMenu {
+float: right;
+margin: 5px;
+font-size: 14px;
+line-height: 1.3em;
+font-weight: bold;
+}
+.iCIMS_Mobile .iCIMS_userMenu {
+height: auto;
+line-height: normal;
+}
+.iCIMS_userMenu div {
+display: inline;
+vertical-align: middle;
+}
+.iCIMS_Mobile .iCIMS_userMenu .iCIMS_userMenuName,
+.iCIMS_Mobile .iCIMS_userMenu .iCIMS_userMenuLink {
+display: block;
+}
+.iCIMS_Mobile .iCIMS_userMenu .iCIMS_userMenuLink {
+text-align: right;
+}
+/***** END: BASE *****/
+/***** BEGIN: LAYOUT *****/
+
+body {
+padding: 5px;
+font-family: Arial;
+
+
+
+background: #ffffff !important;
+
+
+}
+.iCIMS_MainWrapper {
+width: 100%;
+line-height: 1.3em;
+margin: 0px auto;
+font-size: 14px;
+color: #222222;
+}
+#iCIMS_Paginator {
+width: auto;
+}
+a:link {
+color: #92a107;
+text-decoration: underline;
+}
+a:visited {
+color: #92a107;
+text-decoration: underline;
+}
+a:hover,
+a:focus {
+color: #92a107;
+text-decoration: underline;
+}
+a:active {
+color: #92a107;
+text-decoration: underline;
+}
+.iCIMS_Anchor.iCIMS_SecondaryButton {
+display: inline-block;
+text-align: center;
+text-decoration: none;
+padding: 2px 5px;
+color: #222222;
+}
+.iCIMS_GenericContainer {
+margin: 0 0 10px 0;
+}
+
+.iCIMS_Header {
+text-align: left;
+font-size: 16px;
+font-weight: bold;
+line-height: 0.9em;
+
+
+background: transparent;
+
+
+
+color: #92a107;
+margin-top: 0px;
+margin-bottom: 10px;
+margin-right: 0px;
+margin-left: 0px;
+padding-top: 0px;
+padding-bottom: 0px;
+padding-right: 0px;
+padding-left: 0px;
+border-top-width: 0px;
+border-top-style: none;
+border-top-color: #000000;
+border-right-width: 0px;
+border-right-style: none;
+border-right-color: #000000;
+border-bottom-width: 0px;
+border-bottom-style: none;
+border-bottom-color: #000000;
+border-left-width: 0px;
+border-left-style: none;
+border-left-color: #000000;
+}
+.iCIMS_InfoMsg {
+margin: 0 0 10px 0;
+position: relative; /* Relative to support the "read more" functionality */
+overflow: auto;
+}
+.iCIMS_Table {
+display: table;
+}
+.iCIMS_TableRow {
+display: table-row;
+}
+.iCIMS_TableCell,
+.iCIMS_TableHeader {
+display: table-cell;
+vertical-align: top;
+}
+.iCIMS_TableHeader {
+font-weight: bold;
+}
+.iCIMS_InfoData {
+padding: 5px 0;
+vertical-align: top;
+}
+.iCIMS_InfoField {
+vertical-align: top;
+text-align: right;
+padding: 0 5px 0 0;
+}
+.iCIMS_InfoField label {
+margin-top: 11px;
+display: block;
+}
+h3.iCIMS_InfoField_Job {
+font-size: 14px;
+}
+.iCIMS_ResumeContentDiv label,
+.iCIMS_ResumeContentDiv textarea,
+.iCIMS_ResumeContentDiv input {
+float: left;
+clear: both;
+}
+
+.iCIMS_SubHeader { /* Used to give titles to sections of a page */
+font-weight: bold;
+font-size: 14px;
+clear: both;
+
+
+
+background: #92a107;
+
+
+color: #ffffff;
+margin-top: 0px;
+margin-bottom: 10px;
+margin-right: 0px;
+margin-left: 0px;
+padding-top: 3px;
+padding-bottom: 3px;
+padding-right: 3px;
+padding-left: 3px;
+border-top-width: 1px;
+border-top-style: solid;
+border-top-color: #eeeeee;
+border-right-width: 1px;
+border-right-style: solid;
+border-right-color: #eeeeee;
+border-bottom-width: 1px;
+border-bottom-style: solid;
+border-bottom-color: #eeeeee;
+border-left-width: 1px;
+border-left-style: solid;
+border-left-color: #eeeeee;
+}
+.iCIMS_ShadowContainer {
+width: 100%;
+margin-top: 10px;
+margin-right: 0;
+margin-bottom: 15px;
+margin-left: 0;
+padding:5px;
+-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box; /* Firefox, other Gecko */
+box-sizing: border-box;
+background-color: #eeeeee;
+border: 1px solid #eeeeee;
+border-radius: 6px;
+}
+.iCIMS_Message {
+word-wrap: break-word;
+margin: 0 auto 10px auto;
+border-style: solid;
+border-width: 1px;
+padding: 2px 5px 2px 22px;
+}
+
+.iCIMS_SystemMessage {
+
+
+
+background: url('https://cdn01.icims.com/a/images.icims.com/content/platform_100.2.160606.90253/images/iconthemes/default/16/information-white.png') no-repeat 2px 1px #dfdfdf !important;
+
+
+color: #222222;
+border-color: #000000;
+}
+
+.iCIMS_ErrorMessage {
+
+
+
+background: url('https://cdn01.icims.com/a/images.icims.com/content/platform_100.2.160606.90253/images/iconthemes/default/16/exclamation-red.png') no-repeat 2px 1px #ff0000 !important;
+
+
+color: #ffffff;
+border-color: #ff0000;
+}
+.iCIMS_ErrorMessageField {
+background: url('https://cdn01.icims.com/a/images.icims.com/content/platform_100.2.160606.90253/images/iconthemes/default/16/exclamation-red.png') no-repeat 2px 1px transparent;
+color: #ff0000;
+border-width: 0px;
+border-style: solid;
+border-color: #ff0000;
+}
+
+.iCIMS_SuccessMessage {
+
+
+
+background: url('https://cdn01.icims.com/a/images.icims.com/content/platform_100.2.160606.90253/images/iconthemes/default/16/tick-circle.png') no-repeat 2px 1px #008000 !important;
+
+
+color: #ffffff;
+border-color: #00ff00;
+}
+.iCIMS_MessageText {
+padding-right: 22px;
+}
+.iCIMS_Close {
+cursor: pointer;
+position: absolute;
+top: 2px;
+right: 6px;
+}
+#iCIMS_NoCookiesMessage .iCIMS_ErrorMsgTitle {
+margin-left: 25px;
+}
+.iCIMS_ErrorMsgTitle {
+font-size: 16px;
+}
+.iCIMS_ErrorRow .iCIMS_Message {
+font-size: 11px;
+border: 0;
+margin: 5px 0 -5px 0;
+}
+
+.iCIMS_ErrorRow .iCIMS_Message.iCIMS_ErrorMessage {
+
+
+
+background: url('https://cdn01.icims.com/a/images.icims.com/content/platform_100.2.160606.90253/images/iconthemes/default/16/exclamation-red.png') no-repeat 2px 1px #ff0000 !important;
+
+
+color: #ffffff;
+border-width: 0px;
+border-style: solid;
+border-color: #ff0000;
+}
+.iCIMS_Navigation {
+clear: both;
+margin-bottom: 20px;
+}
+.iCIMS_NavigationIconContainer {
+margin: 0 0 5px 0;
+}
+.iCIMS_PageFooter {
+margin-bottom: 10px;
+}
+/***** BEGIN: MODULES - STACKED FORMS *****/
+.iCIMS_StackedTable,
+.iCIMS_StackedTable .iCIMS_TableRow,
+.iCIMS_StackedTable .iCIMS_TableCell {
+display: block;
+}
+.iCIMS_StackedTable {
+margin: 0 0 10px 0;
+}
+.iCIMS_StackedTable .iCIMS_TableRow {
+margin: 0 0 10px 0;
+}
+.iCIMS_StackedTable .iCIMS_InfoField,
+.iCIMS_StackedTable .iCIMS_InfoData {
+text-align: left;
+padding: 0;
+}
+.iCIMS_StackedTable .iCIMS_InfoField label {
+margin: 0;
+line-height: inherit;
+}
+/***** END: MODULES - STACKED FORMS *****/
+/***** BEGIN: MODULES - FILE FIELDS *****/
+.iCIMS_dropboxButton {
+cursor: pointer;
+float: left;
+clear: both;
+}
+.iCIMS_FileFieldButton a {
+text-decoration: none;
+color: #222222;
+}
+.iCIMS_FileFieldButton {
+position: relative;
+margin: 0 0 10px;
+width: 155px;
+display: block;
+line-height: 1.8em;
+overflow: hidden !important;
+}
+.iCIMS_FileFieldButton input {
+position: absolute !important;
+display: block !important;
+cursor: pointer !important;
+border: none !important;
+opacity: 0.0 !important;
+top: 0 !important;
+right: 0 !important;
+bottom: 0 !important;
+font-size: 200px !important;
+color: transparent !important;
+width: auto !important;
+-moz-box-sizing: border-box !important;
+box-sizing: border-box !important;
+filter: alpha(opacity=0) !important;
+}
+.iCIMS_FileFieldButton input:focus {
+outline: none !important;
+border: none !important;
+position: absolute !important;
+}
+.iCIMS_FileFieldIcon {
+padding: 2px 0px 2px 5px;
+margin-right: 5px;
+float: left;
+}
+.iCIMS_FileFieldText {
+padding: 2px 5px 2px 0px;
+text-align: left;
+}
+.iCIMS_CurrentFileImage {
+vertical-align: top;
+padding-left: 5px;
+}
+.iCIMS_CurrentFileImage img {
+margin-top: 8px;
+}
+.iCIMS_ff .iCIMS_resumeUpload {
+padding-left: 5px;
+}
+/***** END: MODULES - FILE FIELDS *****/
+/***** END: LAYOUT *****/
+/***** BEGIN: SHOW MORE/ SHOW LESS *****/
+.iCIMS_Expandable_Text {
+margin-bottom: 15px;
+}
+#iCIMS_Expandable_Button {
+clear: both;
+}
+
+.iCIMS_Mobile .iCIMS_Expandable_Gradient {
+bottom: 20px;
+height: 35px;
+position: absolute;
+width: 100%;
+background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+.iCIMS_Mobile .iCIMS_Expandable_Container {
+padding: 0 0 5px 0;
+}
+.iCIMS_Mobile .iCIMS_Expandable_Gradient_Inactive {
+display: none;
+}
+.iCIMS_Mobile .iCIMS_Expandable_Nav_Wrapper {
+height: 20px;
+bottom: 0px;
+cursor: pointer;
+overflow: hidden;
+position: absolute;
+right: 0;
+}
+.iCIMS_Mobile .iCIMS_Expandable_Nav_Button {
+float: left;
+margin-left: 3px;
+margin-top: 4px;
+margin-right: 0px;
+font-size: 11px;
+}
+/***** END: SHOW MORE/ SHOW LESS *****/
+/***** BEGIN: LOADING OVERLAY *****/
+.iCIMS_loadingButtonOverlayImage {
+background-repeat: no-repeat;
+background-position: center center;
+background-image: url('https://cdn01.icims.com/a/images.icims.com/content/platform_100.2.160606.90253/images/nothemes/default/loading.gif');
+text-indent: -999em;
+overflow: hidden;
+}
+.iCIMS_loadingImageResume {
+background-repeat: no-repeat;
+background-image: url('https://cdn01.icims.com/a/images.icims.com/content/platform_100.2.160606.90253/images/nothemes/default/loading.gif');
+margin-top: 8px;
+}
+.iCIMS_loadingImageResumeText {
+padding-left: 22px;
+}
+/***** END: LOADING OVERLAY *****/
+/**************************************************/
+/* BEGIN IE7-SPECIFIC OVERRIDES */
+.iCIMS_ie7 a > img {
+border: 0;
+}
+.iCIMS_ie7 .iCIMS_TableRow {
+margin: 0 0 10px 0;
+}
+.iCIMS_ie7 .iCIMS_InfoField,
+.iCIMS_ie7 .iCIMS_InfoData {
+padding: 0;
+text-align: left;
+}
+.iCIMS_ie7 .iCIMS_InfoField label,
+.iCIMS_ie7 .iCIMS_InfoField > span.iCIMS_LabelText {
+margin: 0;
+line-height: 1.3em;
+}
+.iCIMS_ie7 .iCIMS_InfoData > input[type="text"],
+.iCIMS_ie7 .iCIMS_InfoData > input[type="password"] {
+height: 20px !important;
+padding: 0 0 0 5px;
+}
+.iCIMS_ie7 .iCIMS_InfoData > input[type="text"],
+.iCIMS_ie7 .iCIMS_InfoData > input[type="password"],
+.iCIMS_ie7 .iCIMS_InfoData > input[type='number'],
+.iCIMS_ie7 .iCIMS_InfoData > textarea {
+width: 99% !important;
+}
+.iCIMS_ie7 select {
+margin-top: 1px !important;
+height: auto;
+}
+.iCIMS_ie7 .iCIMS_ShadowContainer {
+width: auto;
+}
+.iCIMS_ie7 .iCIMS_Zip_Code_Input {
+width: 100px;
+}
+.iCIMS_ie7 .iCIMS_Button,
+.iCIMS_ie7 .iCIMS_PrimaryButton {
+min-width: auto;
+}
+.iCIMS_ie7 .iCIMS_SocialLoginContainer {
+padding-top: 0;
+}
+.iCIMS_ie7 .iCIMS_socialCellMiddle .iCIMS_Divider {
+width: 25%;
+height: 1px;
+}
+.iCIMS_ie7 #iCIMS_SortTextDiv {
+display: none;
+}
+.iCIMS_ie7 .iCIMS_TableRow > .iCIMS_JobsTableHeader {
+display: none;
+}
+.iCIMS_ie7 span.iCIMS_JobsTableHeader {
+margin-right: 5px;
+display: inline !important;
+font-weight: bold;
+}
+.iCIMS_ie7 .iCIMS_JobsTablePaging {
+width: 150px;
+}
+.iCIMS_ie7 .iCIMS_JobsTablePaging .iCIMS_TableCell {
+width: 50px;
+text-align: center;
+}
+.iCIMS_ie7 .iCIMS_ProfileFormTable {
+margin-left: auto !important;
+margin-right: auto !important;
+}
+.iCIMS_ie7 .iCIMS_ProfileFormTable .iCIMS_InfoField,
+.iCIMS_ie7 .iCIMS_ProfileFormTable .iCIMS_InfoData {
+width: 100% !important;
+}
+.iCIMS_ie7 .customFieldContainer .iCIMS_TableCell {
+display: block !important;
+margin-bottom: 5px;
+}
+.iCIMS_ie7 .salary.iCIMS_InfoData {
+width: 88px !important;
+padding-right: 10px !important;
+}
+.iCIMS_ie7 .salary > input[type="text"],
+.iCIMS_ie7 .iCIMS_DateField-Year input[type="text"] {
+width: 78px !important;
+}
+.iCIMS_ie7 .iCIMS_AgentCreateTable {
+margin: 0 !important;
+}
+.iCIMS_ie7 .customFieldContainer.iCIMS_Table {
+width: 100% !important;
+}
+.iCIMS_ie7 .customFieldContainer .iCIMS_TableCell {
+float: left;
+padding-right: 10px;
+}
+/* END IE7-SPECIFIC OVERRIDES */
+/**************************************************/
+/**************************************************/
+/* BEGIN IE SPECIFIC OVERRIDES */
+.iCIMS_ie .iCIMS_InfoField label,
+.iCIMS_ie .iCIMS_InfoField > span.iCIMS_LabelText {
+margin-top: 10px;
+}
+.iCIMS_ie .iCIMS_FileFieldIcon img {
+border: 0;
+}
+/* END IE SPECIFIC OVERRIDES */
+/**************************************************/
+/**************************************************/
+/* :not is only supported in IE9+ */
+.iCIMS_ie6 .iCIMS_Action_Button,
+.iCIMS_ie7 .iCIMS_Action_Button,
+.iCIMS_ie8 .iCIMS_Action_Button,
+.iCIMS_ie:not(.iCIMS_ie10) .iCIMS_Action_Button {
+border-radius: 0;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#92a108', endColorstr='#606F00',GradientType=0 );
+}
+.iCIMS_ie6 .iCIMS_Action_Button:hover,
+.iCIMS_ie7 .iCIMS_Action_Button:hover,
+.iCIMS_ie8 .iCIMS_Action_Button:hover,
+.iCIMS_ie:not(.iCIMS_ie10) .iCIMS_Action_Button:hover {
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#92a108', endColorstr='#7E8D00',GradientType=0 );
+}
+/**************************************************/
+/* Android's built in browser (AOSP) has a bug where when you style a select's border it turns into a text input field.
+So to workaround this we do not style the select at all for them. See https://code.google.com/p/android/issues/detail?id=48379 */
+/* :not is only supported in IE9+ */
+.iCIMS_ie select,
+:not(.iCIMS_android) select,
+.iCIMS_android:not(.iCIMS_safari) select {
+border: 1px solid #cccccc;
+border-radius: 3px 3px 3px 3px;
+padding: 5px;
+height: 30px;
+}
+.iCIMS_ie select[multiple="multiple"],
+:not(.iCIMS_android) select[multiple="multiple"],
+.iCIMS_android:not(.iCIMS_safari) select[multiple="multiple"] {
+height: auto;
+}
+/* Safari ignores heights. Workaround is to define a line-height instead. */
+.iCIMS_safari select {
+line-height: 24px;
+}
+/**************************************************/
+/* 508 Compliance - Use to highlight fields that are focused upon. */
+.iCIMS_InfoData > input[type="text"]:focus,
+.iCIMS_InfoData > input[type="password"]:focus,
+.iCIMS_InfoData > input[type="number"]:focus,
+.iCIMS_InfoData > textarea:focus,
+.iCIMS_Zip_Code_Input > input[type="text"]:focus {
+border-color: #92a107;
+}
+select:focus {
+border-color: #92a107;
+}
+.iCIMS_InfoData input[type="checkbox"]:focus,
+.iCIMS_TableCell .iCIMS_ErrorMessage input[type="checkbox"]:focus {
+outline: 1px solid #92a107;
+}
+/**************************************************/
+/***** EVERYTHING BELOW THIS LINE HAS NOT BEEN REVIEWED *****/
+.smallFont {
+font-size: 80%;
+color: #000;
+}
+.italicText {
+font-style: italic;
+}
+.sensitiveData, .sensitiveData input {
+color: #A0A0A0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* isMobile width (less than or equal to 320, refer to mobileDetect.js) ----------- */
+@media only screen and (max-width :320px) {
+/**
+mobileDetect.js sets a maxWidth of 320. This is used to replace the anchor with a
+clickable div if the width is 320 or less. We only want to show the hover effects
+if the div is clickable, therefore the effects should be locked to the same bounds.
+*/
+.iCIMS_JobListingRow:hover {
+border: 1px solid #aaa;
+cursor: pointer;
+}
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-width :767px) {
+/**
+Smartphone Media Query File
+- Smart phones will always use a 95% of view port width (regardless of orientation)
+- Smart phones will always use the stacked display type
+*/
+.iCIMS_JobListingRow {
+background-image: url('https://cdn01.icims.com/a/images.icims.com/content/platform_100.2.160606.90253/images/cssthemes/rounded/nav/bubble-expand-right.png') !important;
+}
+/* Start: Resizer */
+/* Resize videos and images to fit inside the .iCIMS_MediaWrapper container */
+.iCIMS_MediaWrapper {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 25px;
+height: 0;
+}
+.iCIMS_MediaWrapper iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+/* End: Resizer */
+.iCIMS_JobListingRow {
+background-repeat: no-repeat !important;
+background-position: center right !important;
+}
+.iCIMS_Mobile.iCIMS_MainWrapper {
+font-size: 14px;
+}
+/* Overrides iOS's zoom */
+.iCIMS_InfoData > input[type='text'],
+.iCIMS_InfoData > input[type='password'],
+.iCIMS_InfoData > input[type='number'],
+.iCIMS_InfoData > textarea,
+.iCIMS_InfoData > select {
+font-size: 16px;
+}
+.outputContainer.fieldData {
+line-height: 1.3em;
+padding: 0;
+}
+.iCIMS_TableRow.iCIMS_ErrorRow {
+margin: 0;
+}
+.iCIMS_ErrorRow .iCIMS_Message {
+margin: 0;
+}
+.iCIMS_CurrentFileImage {
+padding-top: 0px;
+}
+/***** BEGIN: LAYOUT *****/
+.iCIMS_Mobile .iCIMS_Header {
+font-size: 22px;
+}
+.iCIMS_Mobile .iCIMS_SubHeader {
+font-size: 16px;
+}
+.iCIMS_Table {
+margin: 0 0 10px 0;
+}
+.iCIMS_Table,
+.iCIMS_TableRow,
+.iCIMS_TableCell,
+.iCIMS_TableHeader {
+display: block; /* Converts a table, table row, table column and table column:before into a block element */
+}
+.iCIMS_TableRow {
+margin: 0 0 10px 0;
+}
+.iCIMS_TableRow.iCIMS_SubmitButtonRow {
+clear: both;
+margin-bottom: 0; /* I"m not sure if this is needed -BH (Check this later) */
+}
+.iCIMS_InfoField,
+.iCIMS_InfoData {
+padding: 0;
+text-align: left;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.iCIMS_InfoField label,
+.iCIMS_InfoField > span.iCIMS_LabelText {
+margin: 0;
+line-height: inherit;
+}
+/***** END: LAYOUT *****/
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width:767px) {
+/* Hide the iCIMS logo at the top of the page */
+.iCIMS_Mobile_Logo{
+display:none;
+}
+.iCIMS_Action_ButtonHidden {
+display: none;
+}
+.iCIMS_MobileOnly {
+display: none;
+}
+}
+
+@media print {
+a:link:after,
+a:visited:after {
+content: "" !important;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.iCIMS_JobHeaderTable {
+width: 100%;
+}
+.iCIMS_JobHeaderGroup {
+display: table-cell;
+width: 50%;
+}
+.iCIMS_JobHeaderField,
+.iCIMS_JobHeaderData {
+padding: 2px 5px;
+float: left;
+display: block;
+}
+.iCIMS_JobHeaderField {
+width: 40%;
+}
+.iCIMS_JobHeaderData {
+width: 50%;
+}
+.iCIMS_InfoField_Job {
+font-weight: bold;
+}
+div.iCIMS_JobHeaderTable dl, dt, dd {
+margin: 0px;
+}
+@media only screen and (max-width : 767px) {
+.iCIMS_JobHeaderTable.iCIMS_Table {
+margin: 0px;
+}
+.iCIMS_JobHeaderGroup {
+display: block;
+width: 100%;
+margin-bottom: 5px;
+}
+.iCIMS_JobHeaderGroup.iCIMS_RowEven {
+border-radius: 3px;
+padding: 3px 0;
+}
+.iCIMS_JobHeaderTable .iCIMS_TableRow {
+margin: 0;
+}
+}
+
+
+
+/* This file is the same as login_connect_css.jsp with exception of max-width value */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.iCIMS_LoginBox {
+margin: 0 auto;
+}
+.iCIMS_socialCellRight {
+vertical-align: top;
+}
+.iCIMS_LoginBox .iCIMS_socialCellLeft {
+width: 45%;
+}
+.iCIMS_socialCellRight .iCIMS_Table {
+width: 100%;
+}
+.iCIMS_PasswordReminder {
+text-align: center;
+}
+@media only screen and (max-width : 767px) {
+.iCIMS_LoginBox .iCIMS_socialCellLeft {
+width: 100%;
+padding-right: 0;
+}
+.iCIMS_socialCellLeft .iCIMS_TableRow {
+padding-bottom: 0px;
+}
+.iCIMS_socialCellLeft .iCIMS_InfoField_Login.iCIMS_TableCell {
+padding-top: 0;
+}
+.iCIMS_SocialLoginContainer {
+padding-top: 0px;
+}
+.iCIMS_socialCellMiddle {
+margin: 0 0 10px 0;
+}
+.iCIMS_socialCellMiddle .iCIMS_Divider {
+width: 50%;
+height: 1px;
+}
+.iCIMS_socialCellRight {
+padding-left: 0;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**** These rules are to override Social Distro's default styles so that the SD widget retains a similar look and feel within the portal ****/
+@font-face {
+font-family: 'Glyphicons Halflings';
+src: url('https://careers-razorfish.icims.com/hostedcontent/platform_100.2.160606.90253/fonts/glyphicons/glyphicons-halflings-regular.eot?') format('embedded-opentype'),
+url('https://careers-razorfish.icims.com/hostedcontent/platform_100.2.160606.90253/fonts/glyphicons/glyphicons-halflings-regular.woff') format('woff'),
+url('https://careers-razorfish.icims.com/hostedcontent/platform_100.2.160606.90253/fonts/glyphicons/glyphicons-halflings-regular.ttf') format('truetype'),
+url('https://careers-razorfish.icims.com/hostedcontent/platform_100.2.160606.90253/fonts/glyphicons/glyphicons-halflings-regular.svg#glyphiconsregular') format('svg');
+font-weight:normal;
+font-style:normal;
+}
+.icimsSDWidget_shareBtn {
+margin: 0 10px 0 0 !important;
+}
+.icimsSDWidget_shareBtn:last-child {
+margin-right: 0 !important;
+}
+.icimsSDWidget_socialIcon {
+height: 24px !important;
+width: 24px !important;
+}
+.icimsSDWidget_shareEmail {
+display: none;
+}
+
+.icimsSDWidget_li_refer {
+border-color: #eeeeee !important;
+}
+.icimsSDWidget_li_refer #sendBtn {
+background: #92a108;
+background: -webkit-linear-gradient(top, #92a108, #606F00);
+background: -moz-linear-gradient(top, #92a108, #606F00);
+background: -ms-linear-gradient(top, #92a108, #606F00);
+background: -o-linear-gradient(top, #92a108, #606F00);
+background: linear-gradient(top, #92a108, #606F00);
+color: #ffffff !important;
+border-color: #566500;
+}
+.icimsSDWidget_li_refer #sendBtn .glyphicon {
+display: none;
+}
+.icimsSDWidget_li_refer #cancelBtn {
+display: none;
+}
+.icimsSDWidget_referral_search_cntnr,
+.icimsSDWidget_referral_footer {
+background-color: #eeeeee !important;
+}
+.icimsSDWidget_referral_search_results {
+background-color: #ffffff !important;
+}
+.icimsSDWidget_referral_search_results {
+border-top-color: #eeeeee !important;
+}
+.icimsSDWidget_referral_search_results .personCntnr .person {
+border-color: #eeeeee !important;
+}
+.icimsSDWidget_referral_search_results .personCntnr .person.selected,
+.icimsSDWidget_referral_search_results .personCntnr .person.selected .imageCntnr {
+background-color: #ffffff !important;
+}
+.icimsSDWidget_referral_footer {
+border-top-color: #eeeeee !important;
+}
+@media only screen and (max-width : 767px) {
+.iCIMS_Mobile .icimsSDWidget_li_refer {
+border: 0 !important;
+}
+.iCIMS_Mobile .icimsSDWidget_li_refer #cancelBtn {
+display: inline-block;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.iCIMS_JobContent .iCIMS_Header {
+display: none;
+}
+.iCIMS_JobOptions.iCIMS_EmptyJobOptions {
+display: none;
+}
+.iCIMS_JobOptionsMobile,
+.iCIMS_jobSocialOptions {
+-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box; /* Firefox, other Gecko */
+box-sizing: border-box;
+margin-bottom: 15px;
+}
+.iCIMS_BroadcastJob_Label,
+.iCIMS_MessageJob_Label {
+margin-bottom: 5px;
+font-size: 1.2em;
+}
+.iCIMS_MessageJob,
+.iCIMS_BroadcastJob {
+margin-bottom: 15px;
+}
+.iCIMS_JobOptionsMobile .iCIMS_Action_Button .iCIMS_ShortLabel {
+display: none;
+}
+.iCIMS_JobOptionsMobile .iCIMS_Action_Button.iCIMS_JobShareButton {
+display: none;
+}
+.iCIMS_Divider {
+height: 1px;
+background-color: #eeeeee;
+margin: 15px 15px 15px 15px;
+width: auto;
+}
+.iCIMS_MessageJob .icimsSDWidget_shareLinkedin {
+display: none;
+}
+.iCIMS_Mobile .iCIMS_JobOptionsMobile {
+position: fixed;
+right: 0;
+bottom: 0;
+left: 0;
+margin: 0;
+padding: 7px 0;
+background-color: #eeeeee;
+border-top: 1px solid #eeeeee;
+text-align: center;
+width: 100%;
+}
+.iCIMS_Mobile .iCIMS_JobOptions .iCIMS_SubHeader {
+display: none;
+}
+.iCIMS_Mobile .iCIMS_JobOptionsMobile .iCIMS_Action_Button {
+display: inline-block;
+margin-bottom: 0;
+font-weight: normal;
+width: 28%;
+}
+.iCIMS_Mobile .iCIMS_JobOptionsMobile .iCIMS_Action_Button:last-child {
+float: left;
+margin-left: 10px;
+}
+.iCIMS_Mobile .iCIMS_JobOptionsMobile .iCIMS_Action_Button:first-child {
+float: right;
+margin-right: 10px;
+}
+.iCIMS_Mobile .iCIMS_JobOptionsMobile .iCIMS_Action_Button .iCIMS_LongLabel {
+display: none;
+}
+.iCIMS_Mobile .iCIMS_JobOptionsMobile .iCIMS_Action_Button .iCIMS_ShortLabel {
+display: inline;
+}
+.iCIMS_Mobile .iCIMS_jobSocialOptions {
+position: fixed;
+right: 10px;
+bottom: 10px;
+left: 10px;
+padding: 15px 15px 0 15px;
+border: 1px solid #eeeeee;
+margin: 0;
+border-radius: 6px;
+width: auto;
+background-color: #ffffff !important;
+box-shadow: 1px 1px 2px #eeeeee;
+text-align: left;
+z-index: 5002;
+}
+.iCIMS_Mobile .iCIMS_Divider {
+display: none;
+}
+.iCIMS_Mobile .iCIMS_MessageJob .icimsSDWidget_shareLinkedin {
+display: inline-block;
+}
+/**************************************************/
+/* BEGIN IE7 or IE8-SPECIFIC OVERRIDES */
+.iCIMS_ie7 .iCIMS_JobOptionsMobile,
+.iCIMS_ie8 .iCIMS_JobOptionsMobile,
+.iCIMS_ie7 .iCIMS_jobSocialOptions,
+.iCIMS_ie8 .iCIMS_jobSocialOptions,
+.iCIMS_ie7 .iCIMS_Divider,
+.iCIMS_ie8 .iCIMS_Divider {
+width: 294px;
+}
+.iCIMS_ie7 .iCIMS_Divider,
+.iCIMS_ie8 .iCIMS_Divider {
+margin-left: 0;
+}
+/* END IE7 or IE8-SPECIFIC OVERRIDES */
+/**************************************************/
+@media only screen and (max-width : 767px) {
+.iCIMS_JobOptions .iCIMS_Action_Button {
+margin-bottom: 15px;
+}
+.iCIMS_JobOptionsMobile,
+.iCIMS_jobSocialOptions {
+width: 294px;
+}
+.iCIMS_Divider {
+margin-left: 0;
+width: 294px;
+}
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width:767px) {
+.iCIMS_Desktop .iCIMS_JobContainer {
+position: relative;
+}
+.iCIMS_Desktop .iCIMS_JobContent {
+margin-right: 335px;
+}
+.iCIMS_Desktop .iCIMS_JobContent.iCIMS_EmptyJobOptions {
+margin-right: 0;
+}
+.iCIMS_Desktop .iCIMS_JobOptions {
+position: absolute;
+top: 0;
+right: 0;
+border: 1px solid #eeeeee;
+border-radius: 6px;
+width: 320px;
+}
+.iCIMS_Desktop .iCIMS_JobOptions .iCIMS_SubHeader {
+display: none;
+}
+.iCIMS_Desktop .iCIMS_JobOptions .iCIMS_Action_Button {
+width: auto;
+margin: 15px;
+}
+.iCIMS_Desktop .iCIMS_BroadcastJob_Label,
+.iCIMS_Desktop .iCIMS_MessageJob_Label,
+.iCIMS_Desktop .iCIMS_MessageJob,
+.iCIMS_Desktop .iCIMS_BroadcastJob {
+margin-right: 15px;
+margin-left: 15px;
+}
+}
+

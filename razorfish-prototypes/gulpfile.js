@@ -3,10 +3,16 @@ var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 
+var sassOptions = {
+    errLogToConsole: true,
+    outputStyle: 'expanded'
+};
+
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
     return gulp.src("src/sass/**/*.scss")
+        // .pipe(sass({outputStyle: 'compressed'})).on('error', sass.logError).pipe(autoprefixer({
         .pipe(sass()).on('error', sass.logError).pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false

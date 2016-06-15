@@ -1,8 +1,5 @@
 .people-list {
-    .divider {
-        background-color: lighten($primary, 10%) !important;
-    }
-    &__grid {
+    .grid {
         position: relative;
         display: flex;
         flex-direction: row;
@@ -13,7 +10,7 @@
         background-color: darken($white, 2%);
         width: 100vw;
     }
-    &__item {
+    .item {
         display: inline-block;
         margin: 0;
         position: relative;
@@ -33,7 +30,7 @@
             padding-top: 133%;
         }
     }
-    &__item-background {
+    .module-background {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -47,77 +44,61 @@
         background-blend-mode: multiply;
         transition: transform 4s 0.1s $bezier, background-color 0.3s 0s ease-out;
     }
-}
-
-.people-list--name-priority {
-    .people-list {
-        &__item-text-container {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: 90%;
-            height: auto;
-            min-height: 33%;
-            bottom: 0;
-            position: absolute;
-            color: $black;
-            z-index: 10;
-            opacity: 1;
-            margin-left: 5%;
-            margin-right: 5%;
-            margin-bottom: 5%;
+    .module-content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 90%;
+        height: auto;
+        min-height: 33%;
+        bottom: 0;
+        position: absolute;
+        color: $black;
+        opacity: 1;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 5%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        @media screen and ($md) {
+            min-height: 25%;
+        }
+        @media screen and ($xl) {
+            color: $white;
+            justify-content: flex-end;
+            align-items: baseline;
+            text-align: left;
+            width: 100%;
+            height: 50%;
+            opacity: 0;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding-left: 10%;
+            padding-right: 10%;
             padding-top: 5%;
-            padding-bottom: 5%;
-            padding-left: 5%;
-            padding-right: 5%;
-            @media screen and ($md) {
-                min-height: 25%;
-            }
+            padding-bottom: 10%;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: $white;
+            opacity: 0.9;
             @media screen and ($xl) {
-                color: $white;
-                justify-content: flex-end;
-                align-items: baseline;
-                text-align: left;
-                width: 100%;
-                height: 50%;
-                opacity: 0;
-                margin-left: 0;
-                margin-right: 0;
-                margin-bottom: 0;
-                margin-top: 0;
-                padding-left: 10%;
-                padding-right: 10%;
-                padding-top: 5%;
-                padding-bottom: 10%;
-            }
-            &:before {
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                left: 0;
-                top: 0;
-                background-color: $white;
-                opacity: 0.9;
-                z-index: -1;
-                @media screen and ($xl) {
-                    display: none;
-                }
-            }
-            .divider {
                 display: none;
-                transition: all 0.2s 0.3s $bezier;
-                @media screen and ($xl) {
-                    display: inline;
-                    transform: scaleX(0);
-                    transform-origin: left;
-                }
             }
         }
-        &__name {
+        .name {
             @include ligatures;
             font-family: $serif;
             font-size: $scale04;
@@ -131,246 +112,62 @@
             @media screen and ($xl) {
                 font-size: $scale07;
                 margin-bottom: 0.5em;
-                transform: translateY(50%);
+                transform: translateY(100px);
                 opacity: 0;
             }
             @media screen and ($xxl) {
                 font-size: $scale08;
             }
-        }
-        &__title {
-            font-family: $sans;
-            line-height: $title-sans;
-            letter-spacing: $spacing-sans;
-            font-size: $scale02;
-            margin-bottom: 0.25em;
-            @media screen and ($md) {
-                font-size: $scale03;
-            }
-            @media screen and ($xl) {
-                font-size: $scale04;
-                transform: translateY(50%);
-                opacity: 0;
-            }
-            @media screen and ($xxl) {
-                font-size: $scale05;
-            }
-        }
-        &__office {
-            font-family: $sans;
-            line-height: $title-sans;
-            letter-spacing: $spacing-sans;
-            font-size: $scale02;
-            @media screen and ($md) {
-                font-size: $scale03;
-            }
-            @media screen and ($xl) {
-                font-size: $scale04;
-                transform: translateY(50%);
-                opacity: 0;
-            }
-            @media screen and ($xxl) {
-                font-size: $scale05;
+            &:first-letter {
+                box-shadow: 0px -4px 0 0em lighten($primary, 10%);
+                @media screen and ($lg) {
+                    box-shadow: 0px -5px 0 0em lighten($primary, 10%);
+                }
+                @media screen and ($xxl) {
+                    box-shadow: 0px -6px 0 0em lighten($primary, 10%);
+                }
+                padding-top: 0.4em;
             }
         }
     }
-    @media (hover) {
-        .people-list__item:hover {
-            .people-list__item-text-container {
-                opacity: 1;
-            }
-            .people-list__item-background {
-                background-color: darken( $white, 30%);
-                transform: scale(1.1);
-                transition: transform 2s 0.1s $bezier, background-color 0s 0s ease-out;
-                // IE fallback
-                // &:before {
-                //     content: "";
-                //     display: block;
-                //     position: absolute;
-                //     height: 100%;
-                //     width: 100%;
-                //     background-color: rgba($black, 0.4);
-                // }
-            }
-            .people-list__name {
-                transform: translateY(0%);
-                transition: all 0.2s 0.1s $bezier;
-                opacity: 1;
-            }
-            .people-list__title {
-                transform: translateY(0%);
-                transition: all 0.15s 0.15s $bezier;
-                opacity: 1;
-            }
-            .people-list__office {
-                transform: translateY(0%);
-                transition: all 0.1s 0.2s $bezier;
-                opacity: 0.5;
-            }
-            .divider {
-                transform: scaleX(1);
-                transition: all 0.05s 0.5s $bezier;
-            }
-        }
-    }
-}
-
-.people-list--title-priority {
-    .divider {
-        display: none;
-    }
-    .people-list {
-        &__item-text-container {
-            align-items: center;
-            bottom: 0;
-            color: $black;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            height: auto;
-            justify-content: center;
-            margin-bottom: 5%;
-            margin-left: 5%;
-            margin-right: 5%;
-            min-height: 33%;
-            opacity: 1;
-            padding-bottom: 5%;
-            padding-left: 5%;
-            padding-right: 5%;
-            padding-top: 5%;
-            position: absolute;
-            text-align: center;
-            transform: translateY(0);
-            width: 90%;
-            z-index: 10;
-            @media screen and ($md) {
-                min-height: 25%;
-            }
-            &:before {
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                left: 0;
-                top: 0;
-                background-color: $white;
-                opacity: 0.9;
-                z-index: -1;
-            }
-        }
-        &__name {
-            color: $primary;
-            font-family: $sans;
-            font-size: $scale02;
-            font-weight: bold;
-            letter-spacing: $spacing-sans-large;
-            line-height: $title-sans;
-            margin-bottom: 0.25em;
-            text-transform: uppercase;
-            @media screen and ($md) {
-                font-size: $scale03;
-            }
-            @media screen and ($xl) {
-                font-size: $scale03;
-                margin-bottom: 0.5em;
-            }
-            @media screen and ($xxl) {
-                font-size: $scale04;
-            }
-        }
-        &__title {
-            @include ligatures;
-            font-family: $serif;
+    .role {
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans;
+        font-size: $scale02;
+        margin-bottom: 0.25em;
+        @media screen and ($md) {
             font-size: $scale03;
-            font-weight: 700;
-            letter-spacing: $spacing-serif;
-            line-height: $title-serif;
-            margin-bottom: 0.4em;
-            @media screen and ($md) {
-                font-size: $scale05;
-                margin-bottom: 0.4em;
-            }
-            @media screen and ($xl) {
-                font-size: $scale05;
-            }
-            @media screen and ($xxl) {
-                font-size: $scale06;
-            }
         }
-        &__office {
-            @include ligatures;
-            font-family: $serif;
-            font-size: $scale02;
-            font-style: italic;
-            letter-spacing: $spacing-sans;
-            line-height: $title-serif;
-            opacity: 0.5;
-            @media screen and ($md) {
-                font-size: $scale03;
-            }
-            @media screen and ($xl) {
-                font-size: $scale04;
-            }
+        @media screen and ($xl) {
+            font-size: $scale04;
+            transform: translateY(100px);
+            opacity: 0;
+        }
+        @media screen and ($xxl) {
+            font-size: $scale05;
         }
     }
-    @media (hover) {
-        .people-list__item:hover {
-            .people-list__item-background {
-                background-color: darken($white, 30%);
-                transform: scale(1.1);
-                transition: transform 2s 0.1s $bezier, background-color 0s 0s ease-out;
-                // IE fallback
-                // &:before {
-                //     content: "";
-                //     display: block;
-                //     position: absolute;
-                //     height: 100%;
-                //     width: 100%;
-                //     background-color: rgba($black, 0.4);
-                // }
-            }
+    .office {
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans;
+        font-size: $scale02;
+        @media screen and ($md) {
+            font-size: $scale03;
+        }
+        @media screen and ($xl) {
+            font-size: $scale04;
+            transform: translateY(100px);
+            opacity: 0;
+        }
+        @media screen and ($xxl) {
+            font-size: $scale05;
         }
     }
-}
-
-@each $i in (2 3 6 7 10) {
-    .people-list__item:nth-of-type(#{$i}) {
-        .people-list__item-background {
-            background-color: darken($white, 3%);
-            // IE fallback
-            // &:before {
-            //     content: "";
-            //     display: block;
-            //     position: absolute;
-            //     height: 100%;
-            //     width: 100%;
-            //     background-color: rgba($black, 0.05);
-            // }
-        }
-    }
-}
-
-@media screen and ($lg) {
-    @each $i in (1 3 4 5 7) {
-        .people-list__item:nth-of-type(#{$i}) {
-            .people-list__item-background {
-                background-color: $white;
-                // IE fallback
-                // &:before {
-                //     content: "";
-                //     display: block;
-                //     position: absolute;
-                //     height: 100%;
-                //     width: 100%;
-                //     background-color: rgba($black, 0);
-                // }
-            }
-        }
-    }
-    @each $i in (2 4 6 8 10) {
-        .people-list__item:nth-of-type(#{$i}) {
-            .people-list__item-background {
+    @each $i in (2 3 6 7 10) {
+        .item:nth-of-type(#{$i}) {
+            .module-background {
                 background-color: darken($white, 3%);
                 // IE fallback
                 // &:before {
@@ -384,38 +181,112 @@
             }
         }
     }
-}
-
-@media screen and ($xxl) {
-    @each $i in (1 3 6 8 9) {
-        .people-list__item:nth-of-type(#{$i}) {
-            .people-list__item-background {
-                background-color: $white;
-                // IE fallback
-                // &:before {
-                //     content: "";
-                //     display: block;
-                //     position: absolute;
-                //     height: 100%;
-                //     width: 100%;
-                //     background-color: rgba($black, 0);
-                // }
+    @media screen and ($lg) {
+        @each $i in (1 3 4 5 7) {
+            .item:nth-of-type(#{$i}) {
+                .module-background {
+                    background-color: $white;
+                    // IE fallback
+                    // &:before {
+                    //     content: "";
+                    //     display: block;
+                    //     position: absolute;
+                    //     height: 100%;
+                    //     width: 100%;
+                    //     background-color: rgba($black, 0);
+                    // }
+                }
+            }
+        }
+        @each $i in (2 4 6 8 10) {
+            .item:nth-of-type(#{$i}) {
+                .module-background {
+                    background-color: darken($white, 3%);
+                    // IE fallback
+                    // &:before {
+                    //     content: "";
+                    //     display: block;
+                    //     position: absolute;
+                    //     height: 100%;
+                    //     width: 100%;
+                    //     background-color: rgba($black, 0.05);
+                    // }
+                }
             }
         }
     }
-    @each $i in (2 4 5 7 10) {
-        .people-list__item:nth-of-type(#{$i}) {
-            .people-list__item-background {
-                background-color: darken($white, 3%);
-                // IE fallback
-                // &:before {
-                //     content: "";
-                //     display: block;
-                //     position: absolute;
-                //     height: 100%;
-                //     width: 100%;
-                //     background-color: rgba($black, 0.05);
-                // }
+    @media screen and ($xxl) {
+        @each $i in (1 3 6 8 9) {
+            .item:nth-of-type(#{$i}) {
+                .module-background {
+                    background-color: $white;
+                    // IE fallback
+                    // &:before {
+                    //     content: "";
+                    //     display: block;
+                    //     position: absolute;
+                    //     height: 100%;
+                    //     width: 100%;
+                    //     background-color: rgba($black, 0);
+                    // }
+                }
+            }
+        }
+        @each $i in (2 4 5 7 10) {
+            .item:nth-of-type(#{$i}) {
+                .module-background {
+                    background-color: darken($white, 3%);
+                    // IE fallback
+                    // &:before {
+                    //     content: "";
+                    //     display: block;
+                    //     position: absolute;
+                    //     height: 100%;
+                    //     width: 100%;
+                    //     background-color: rgba($black, 0.05);
+                    // }
+                }
+            }
+        }
+    }
+}
+
+.people-list {
+    .item {
+        @media (hover) {
+            &:hover {
+                .module-content {
+                    opacity: 1;
+                }
+                .module-background {
+                    background-color: darken( $white, 30%);
+                    transform: scale(1.1);
+                    transition: transform 2s 0.1s $bezier, background-color 0.2s 0s ease-out;
+                    // IE fallback
+                    // &:before {
+                    //     content: "";
+                    //     display: block;
+                    //     position: absolute;
+                    //     height: 100%;
+                    //     width: 100%;
+                    //     background-color: rgba($black, 0.2);
+                    // }
+                }
+                .name {
+                    transform: translateY(0%);
+                    transition: all 0.3s 0.1s $bezier;
+                    opacity: 1;
+                }
+                .role {
+                    transform: translateY(0%);
+                    transition: all 0.3s 0.15s $bezier;
+                    opacity: 1;
+                }
+                .office {
+                    transform: translateY(0%);
+                    transition: all 0.25s 0.2s $bezier;
+                    opacity: 0.5;
+                }
             }
         }
     }
