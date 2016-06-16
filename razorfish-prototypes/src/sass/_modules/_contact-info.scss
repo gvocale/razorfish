@@ -123,20 +123,49 @@
             margin-bottom: 0;
         }
     }
-    &__social-icons {
+    .social-links {
         display: flex;
         flex-direction: row;
-        width: 100%;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        list-style: none;
         margin-left: -0.8rem;
-        @media screen and ($md) {
-            width: calc(100% / 12 * 8);
+        color: $primary;
+    }
+    .icon {
+        display: inline-block;
+        width: 3rem;
+        cursor: pointer;
+        cursor: hand;
+        position: relative;
+        text-decoration: none;
+        color: currentColor;
+        outline: none;
+        font-size: $scale05;
+        @media (hover) {
+            &:hover {
+                animation-name: bounce;
+                animation-duration: 0.5s;
+                animation-timing-function: ease-in-out;
+                animation-delay: 0.05s;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: none;
+                animation-play-state: running;
+            }
         }
-        margin-bottom: 1rem;
-        @media screen and ($xxl) {
-            margin-bottom: 1.5rem;
+        &:before {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
-        &:last-child {
-            margin-bottom: 0;
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+            position: relative;
         }
     }
     &__stat {
@@ -200,32 +229,6 @@
                 animation-fill-mode: none;
                 animation-play-state: running;
             }
-        }
-    }
-    .social-share__group {
-        @media screen and ($md) {
-            max-width: 8rem;
-        }
-        @media screen and ($xl) {
-            max-width: 9rem;
-        }
-        @media screen and ($xxl) {
-            max-width: none;
-        }
-    }
-    .social-share__icon-container {
-        background-color: $white;
-        flex-grow: 0.25;
-        @media screen and ($md) {
-            width: 3rem;
-            flex-grow: 0.5;
-        }
-        @media screen and ($xxl) {
-            width: 3.5rem;
-            flex-grow: 0;
-        }
-        @media screen and ($xxl) {
-            width: 4rem;
         }
     }
     .divider {

@@ -4,8 +4,8 @@
     align-items: center;
     justify-content: center;
     @include grid-padding;
-    @include padding-top();
-    @include padding-bottom();
+    @include padding-top(0.5);
+    @include padding-bottom(0.75);
     font-size: $scale05;
     @media only screen and ($md) {
         font-size: $scale05;
@@ -17,6 +17,7 @@
         font-size: $scale07;
     }
     .icon__razorfish {
+            text-rendering: geometricPrecision;
         font-size: $scale05;
         @media only screen and ($md) {
             font-size: $scale06;

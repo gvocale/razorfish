@@ -257,7 +257,7 @@
         @media screen and ($lg) {
             color: lighten($black, 10%);
         }
-        &__name {
+        .name {
             @include ligatures;
             font-family: $serif;
             line-height: 1.05;
@@ -275,7 +275,7 @@
                 max-width: 12em;
             }
             @media only screen and ($xl) {
-                font-size: $scale10;
+                font-size: $scale09;
             }
             @media only screen and ($xxl) {
                 font-size: $scale11;
@@ -283,16 +283,19 @@
             &:first-child:first-letter {
                 box-shadow: 0px -4px 0 0em lighten($primary, 5%);
                 @media screen and ($lg) {
-                    box-shadow: 0px -5px 0 0em lighten($primary, 5%);
+                    box-shadow: 0px -5px 0 0em $primary-darker;
+                }
+                @media screen and ($lg) {
+                    box-shadow: 0px -5px 0 0em $primary-darker;
                 }
                 @media screen and ($xxl) {
-                    box-shadow: 0px -6px 0 0em lighten($primary, 5%);
+                    box-shadow: 0px -6px 0 0em $primary-darker;
                 }
                 padding-top: 0.3em;
             }
         }
-        &__title,
-        &__office {
+        .role,
+        .office {
             font-family: $sans;
             line-height: $title-sans;
             letter-spacing: $spacing-sans;
@@ -302,23 +305,23 @@
                 font-size: $scale04;
             }
             @media only screen and ($xxl) {
-                font-size: $scale06;
+                font-size: $scale05;
             }
         }
-        &__title {
+        .role {
             font-weight: 700;
             margin-right: 0.5em;
             &:last-child {
                 margin-right: 0;
             }
         }
-        &__office {
+        .office {
             font-width: 400;
         }
-        &__group {
-            margin-bottom: 1.5em;
-            @media screen and ($lg) {
-                margin-bottom: 2em;
+        .group {
+            margin-bottom: 1em;
+            @media screen and ($md) {
+                margin-bottom: 1.5em;
             }
             @media screen and ($xxl) {
                 margin-bottom: 2.5em;
@@ -335,24 +338,29 @@
                 }
             }
         }
-        &__icon {
+        .social-links {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            list-style: none;
+            margin-left: -0.8rem;
+            margin-top: -0.8rem;
+            color: $primary;
+            @media screen and ($lg) {
+                color: $primary-darker;
+            }
+        }
+        .icon {
             display: inline-block;
             width: 3rem;
-            background-size: 50%, contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
             cursor: pointer;
             cursor: hand;
-            @media screen and ($xxl) {
-                width: 4rem;
-            }
-            &:before {
-                content: "";
-                display: block;
-                padding-bottom: 100%;
-                position: relative;
-            }
+            position: relative;
+            text-decoration: none;
+            color: currentColor;
+            outline: none;
+            font-size: $scale05;
             @media (hover) {
                 &:hover {
                     animation-name: bounce;
@@ -364,6 +372,19 @@
                     animation-fill-mode: none;
                     animation-play-state: running;
                 }
+            }
+            &:before {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &:after {
+                content: "";
+                display: block;
+                padding-bottom: 100%;
+                position: relative;
             }
         }
         .link--primary {
@@ -388,7 +409,7 @@
                 }
             }
         }
-        .hero_profile__icon,
+        .icon,
         .divider {
             filter: brightness(110%);
         }

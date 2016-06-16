@@ -593,22 +593,21 @@
         &:last-child {
             margin-bottom: 0;
         }
-        &:after {
-            content: "\E809";
-            font-size: 0.4em;
-            margin-left: 0.8em;
-            color: currentColor;
-            font-family: $icons;
-            vertical-align: middle;
-            transition: margin-left 0.2s 0s $bezier;
-            &:hover {
+        .link--primary {
+            &:after {
+                content: "\E809";
+                font-size: 0.4em;
                 margin-left: 0.8em;
                 color: currentColor;
+                font-family: $icons;
+                vertical-align: middle;
+                transition: margin-left 0.2s 0s $bezier;
+
             }
-        }
-        &:hover:after {
-            margin-left: 1.2em;
-            color: $primary;
+            &:hover:after {
+                margin-left: 1.2em;
+                color: $primary;
+            }
         }
         &--description {
             font-family: $sans;

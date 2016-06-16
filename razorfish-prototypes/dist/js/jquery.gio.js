@@ -9,12 +9,12 @@ window.onload = (function() {
     if (document.getElementsByClassName('body-wrapper')[0]) {
 
         var bodyWrapper = document.getElementsByClassName('body-wrapper')[0];
-        var siteMasthead = document.getElementsByClassName('site-masthead')[0];
+        var masthead = document.getElementsByClassName('masthead')[0];
         var siteNavigationOverlay = document.getElementsByClassName('scroll')[0];
 
         setTimeout(function() {
             bodyWrapper.classList.remove('fade');
-            siteMasthead.classList.remove('fade');
+            masthead.classList.remove('fade');
         }, 10);
 
         // Intercept links away from page
@@ -27,7 +27,7 @@ window.onload = (function() {
 
                 if (true) {
                     bodyWrapper.classList.add('fade');
-                    siteMasthead.classList.add('fade');
+                    masthead.classList.add('fade');
                     siteNavigationOverlay.classList.add('fade');
                     //tell the browser not to respond to the link click
                     e.preventDefault();
@@ -50,8 +50,8 @@ window.onload = (function() {
 
 
 
-    var siteMasthead = document.getElementsByClassName('site-masthead')[0];
-    var siteMastheadCheckbox = document.getElementById('site-masthead__checkbox');
+    var masthead = document.getElementsByClassName('masthead')[0];
+    var mastheadCheckbox = document.getElementById('masthead__checkbox');
     var siteNavigationOverlay = document.getElementsByClassName('site-navigation')[0];
     var siteNavigationLinkContainers = document.getElementsByClassName('link-container');
 
@@ -76,7 +76,7 @@ window.onload = (function() {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    siteMastheadCheckbox.onclick = function() {
+    mastheadCheckbox.onclick = function() {
 
         // If navigation checkbox is checked
         if (this.checked) {
@@ -87,7 +87,7 @@ window.onload = (function() {
 
             // Navigation: on open give random delay to each link
             siteNavigationOverlay.classList.add('visible');
-            siteMasthead.classList.add('navigation-open'); // So that if the navigation has white text (ex: solution landing page), the razorfish logo and hamburger are still black
+            masthead.classList.add('navigation-open'); // So that if the navigation has white text (ex: solution landing page), the razorfish logo and hamburger are still black
             setTimeout(function() {
                 siteNavigationOverlay.classList.add('open');
             }, 10);
@@ -108,7 +108,7 @@ window.onload = (function() {
             // Remove class open and visible from all links into navigation
 
             siteNavigationOverlay.classList.remove('open');
-            siteMasthead.classList.remove('navigation-open');
+            masthead.classList.remove('navigation-open');
             setTimeout(function() {
                 siteNavigationOverlay.classList.remove('visible');
             }, 210);
@@ -677,14 +677,14 @@ window.onload = (function() {
 
     // Site Masthead color 
 
-    var siteMasthead = document.getElementsByClassName('site-masthead')[0];
+    var masthead = document.getElementsByClassName('masthead')[0];
 
     if ((document.getElementsByClassName('hero')[0]) && (!document.getElementsByClassName('simple-title')[0])) {
 
         var heroFirst = document.getElementsByClassName('hero')[0];
 
         if ((heroFirst.classList.contains("theme__text-white_accent")) || (heroFirst.classList.contains("theme__text-white"))) {
-            siteMasthead.classList.add("white");
+            masthead.classList.add("white");
         }
 
     }
@@ -693,18 +693,18 @@ window.onload = (function() {
 
 
 
-    function siteMastheadTransparencyCheck() {
-        var rect = siteMasthead.getBoundingClientRect();
+    function mastheadTransparencyCheck() {
+        var rect = masthead.getBoundingClientRect();
         if (document.body.scrollTop >= window.innerHeight) {
-            siteMasthead.classList.add('opaque');
+            masthead.classList.add('opaque');
         } else {
-            siteMasthead.classList.remove('opaque');
+            masthead.classList.remove('opaque');
         }
     };
 
-    window.addEventListener('resize', siteMastheadTransparencyCheck);
-    window.addEventListener('scroll', siteMastheadTransparencyCheck);
-    siteMastheadTransparencyCheck();
+    window.addEventListener('resize', mastheadTransparencyCheck);
+    window.addEventListener('scroll', mastheadTransparencyCheck);
+    mastheadTransparencyCheck();
 
 
 
@@ -1024,7 +1024,7 @@ window.onload = (function() {
 
 
         var footer = document.getElementsByClassName('footer')[0];
-        var siteMasthead = document.getElementsByClassName('site-masthead')[0];
+        var masthead = document.getElementsByClassName('masthead')[0];
 
         if (document.getElementsByClassName('body-wrapper')[0]) {
             var bodyWrapper = document.getElementsByClassName('body-wrapper')[0];
@@ -1043,10 +1043,10 @@ window.onload = (function() {
 
             if (footerTop <= (window.innerHeight / 3 * 2)) {
                 bodyWrapper.classList.add('shrink'); // Shrink body of page
-                siteMasthead.classList.add('important-hiding'); // Hide navigation
+                masthead.classList.add('important-hiding'); // Hide navigation
             } else {
                 bodyWrapper.classList.remove('shrink');
-                siteMasthead.classList.remove('important-hiding');
+                masthead.classList.remove('important-hiding');
             }
         }
         // Bind it on scroll, load and resize.

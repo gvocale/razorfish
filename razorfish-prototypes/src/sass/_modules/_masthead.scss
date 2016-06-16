@@ -1,7 +1,7 @@
-#site-masthead__checkbox {
+#masthead__checkbox {
     appearance: none;
     display: none;
-    &:checked ~ .site-masthead {
+    &:checked ~ .masthead {
         .hamburger-inner {
             transform: rotate(225deg);
             transition: transform 0.3s 0.14s $bezier;
@@ -19,8 +19,7 @@
     }
 }
 
-.site-masthead {
-    @include grid-padding;
+.masthead {
     width: 100%;
     display: flex;
     align-items: center;
@@ -31,11 +30,15 @@
     background-color: rgba($white, 0);
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     top: 0;
     transform-origin: top;
     transition: transform 0.5s 0s $bezier, opacity 0.5s 0s $bezier, background-color 0.2s 0.0s $bezier, color 0.2s 0s $bezier;
     opacity: 1;
     @media screen and ($md) {
+        padding-left: 1.2em;
+        padding-right: 1.2em;
         padding-top: 1em;
         padding-bottom: 1em;
     }
@@ -76,10 +79,10 @@
         display: block;
         background-color: rgba($white, 10%);
     }
-    &__logo-container {
-        @include component-margin;
-    }
     .icon__razorfish {
+        text-rendering: geometricPrecision;
+        margin-top: -0.3em;
+        padding-left: 1rem;
         font-size: $scale05;
         @media only screen and ($md) {
             font-size: $scale06;
@@ -184,3 +187,5 @@
         }
     }
 }
+
+
