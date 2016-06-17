@@ -10,9 +10,6 @@
         @include padding-top(0.5);
         @include padding-bottom(0.5);
     }
-    .divider {
-        margin-bottom: 0.4em;
-    }
     &__form {
         display: flex;
         flex-direction: row;
@@ -24,6 +21,12 @@
         @media screen and ($xl) {
             width: calc(100% / 12 * 6);
         }
+        .form-field {
+            width: 100%;
+            @media screen and ($md) {
+                width: calc(100% / 3);
+            }
+        }
     }
     .form__field {
         width: 100%;
@@ -31,7 +34,7 @@
             width: calc((100% / 3) - 2rem);
         }
     }
-    &__text-container {
+    .module-content {
         display: flex;
         flex-direction: column;
         @include component-padding;
@@ -44,7 +47,7 @@
             width: calc(100% / 12 * 6);
         }
     }
-    &__button-group {
+    .button-group {
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -91,32 +94,7 @@
             padding-bottom: 7.5%;
         }
     }
-    &__form {
-        // &__padded-grid {
-        //     width: calc(100% + 1em + 1em);
-        //     margin-left: -1em;
-        //     margin-right: -1em;
-        //     display: flex;
-        //     flex-wrap: wrap;
-        //     justify-content: flex-start;
-        //     margin-bottom: 3rem;
-        //     .form-field {
-        //         padding-left: 1em;
-        //         padding-right: 1em;
-        //     }
-        // }
-    }
-    // &__container {
-    //     @include component-padding;
-    //     width: 100%;
-    //     @media screen and ($lg) {
-    //         width: calc(100% / 12 * 8);
-    //     }
-    //     @media screen and ($xl) {
-    //         width: calc(100% / 12 * 6);
-    //     }
-    // }
-    &__headline {
+    .headline {
         @include ligatures;
         font-family: $serif;
         font-size: $scale06;
@@ -130,8 +108,25 @@
         @media only screen and ($xxl) {
             font-size: $scale08;
         }
+        &:first-child:before {
+            content: "";
+            display: block;
+            position: relative;
+            background-color: $primary;
+            width: 0.9em;
+            margin-bottom: 0.4em;
+            height: 4px;
+            @media screen and ($lg) {
+                height: 5px;
+                width: 0.7em;
+                margin-bottom: 0.35em;
+            }
+            @media screen and ($xxl) {
+                height: 6px;
+            }
+        }
     }
-    &__subheadline {
+    .subhead {
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans;
@@ -142,14 +137,6 @@
         }
         @media only screen and ($xxl) {
             font-size: $scale05;
-        }
-    }
-    &__form {
-        .form-field {
-            width: 100%;
-            @media screen and ($md) {
-                width: calc(100% / 3);
-            }
         }
     }
 }

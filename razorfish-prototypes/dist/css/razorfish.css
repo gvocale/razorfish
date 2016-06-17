@@ -1426,7 +1426,6 @@ a[href^="tel"] {
       height: 4px; }
       @media screen and (min-width: 992px) {
         .body-copy .eyebrow:first-child:before {
-          width: 3em;
           width: 2em;
           margin-bottom: 1em; } }
       @media screen and (min-width: 1600px) {
@@ -5716,15 +5715,17 @@ a.feed__item .module-content > *:last-child:after {
       content: "";
       display: block;
       position: relative;
-      width: 3em;
-      box-shadow: 0px -4px 0 0em currentColor;
-      padding-top: 1.2em; }
+      background-color: #a9c000;
+      width: 2.4em;
+      margin-bottom: 1.2em;
+      height: 4px; }
       @media screen and (min-width: 992px) {
         .hero .eyebrow:first-child:before {
-          box-shadow: 0px -5px 0 0em currentColor; } }
+          width: 2em;
+          margin-bottom: 1em; } }
       @media screen and (min-width: 1600px) {
         .hero .eyebrow:first-child:before {
-          box-shadow: 0px -6px 0 0em currentColor; } }
+          height: 6px; } }
   .hero .headline {
     text-rendering: optimizeLegibility;
     -webkit-font-variant-ligatures: common-ligatures;
@@ -5866,7 +5867,7 @@ a.feed__item .module-content > *:last-child:after {
     .hero_profile .office {
       font-family: "Gotham A", Helvetica, Arial, sans-serif;
       line-height: 1.4;
-      letter-spacing: 0em;
+      letter-spacing: 0.02em;
       text-transform: uppercase;
       font-size: 0.8077rem; }
       @media only screen and (min-width: 768px) {
@@ -6811,8 +6812,6 @@ a.hero {
   @media screen and (min-width: 1200px) and (min-width: 992px) {
     .newsletter-signup {
       padding-bottom: 5vw; } }
-  .newsletter-signup .divider {
-    margin-bottom: 0.4em; }
   .newsletter-signup__form {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6830,12 +6829,17 @@ a.hero {
     @media screen and (min-width: 1200px) {
       .newsletter-signup__form {
         width: calc(100% / 12 * 6); } }
+    .newsletter-signup__form .form-field {
+      width: 100%; }
+      @media screen and (min-width: 768px) {
+        .newsletter-signup__form .form-field {
+          width: calc(100% / 3); } }
   .newsletter-signup .form__field {
     width: 100%; }
     @media screen and (min-width: 768px) {
       .newsletter-signup .form__field {
         width: calc((100% / 3) - 2rem); } }
-  .newsletter-signup__text-container {
+  .newsletter-signup .module-content {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -6847,18 +6851,18 @@ a.hero {
     padding-bottom: 2vw;
     width: 100%; }
     @media screen and (min-width: 768px) {
-      .newsletter-signup__text-container {
+      .newsletter-signup .module-content {
         padding-bottom: 1.5vw; } }
     @media screen and (min-width: 992px) {
-      .newsletter-signup__text-container {
+      .newsletter-signup .module-content {
         padding-bottom: 1vw; } }
     @media screen and (min-width: 992px) {
-      .newsletter-signup__text-container {
+      .newsletter-signup .module-content {
         width: calc(100% / 12 * 8); } }
     @media screen and (min-width: 1200px) {
-      .newsletter-signup__text-container {
+      .newsletter-signup .module-content {
         width: calc(100% / 12 * 6); } }
-  .newsletter-signup__button-group {
+  .newsletter-signup .button-group {
     width: 100%;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6871,37 +6875,37 @@ a.hero {
     align-items: baseline;
     padding-top: 4vw; }
     @media screen and (min-width: 768px) {
-      .newsletter-signup__button-group {
+      .newsletter-signup .button-group {
         padding-top: 3vw; } }
     @media screen and (min-width: 992px) {
-      .newsletter-signup__button-group {
+      .newsletter-signup .button-group {
         padding-top: 2vw; } }
     @media screen and (min-width: 768px) {
-      .newsletter-signup__button-group {
+      .newsletter-signup .button-group {
         padding-top: 2vw; } }
   @media screen and (min-width: 768px) and (min-width: 768px) {
-    .newsletter-signup__button-group {
+    .newsletter-signup .button-group {
       padding-top: 1.5vw; } }
   @media screen and (min-width: 768px) and (min-width: 992px) {
-    .newsletter-signup__button-group {
+    .newsletter-signup .button-group {
       padding-top: 1vw; } }
     @media screen and (min-width: 992px) {
-      .newsletter-signup__button-group {
+      .newsletter-signup .button-group {
         padding-top: 1vw; } }
   @media screen and (min-width: 992px) and (min-width: 768px) {
-    .newsletter-signup__button-group {
+    .newsletter-signup .button-group {
       padding-top: 0.75vw; } }
   @media screen and (min-width: 992px) and (min-width: 992px) {
-    .newsletter-signup__button-group {
+    .newsletter-signup .button-group {
       padding-top: 0.5vw; } }
-    .newsletter-signup__button-group .button {
+    .newsletter-signup .button-group .button {
       -webkit-justify-content: center;
       -ms-flex-pack: center;
       justify-content: center;
       margin-left: 1rem;
       margin-right: 1rem; }
       @media screen and (min-width: 768px) {
-        .newsletter-signup__button-group .button {
+        .newsletter-signup .button-group .button {
           width: calc((100% / 3) - 2rem); } }
   .newsletter-signup--dark {
     background-color: #515151;
@@ -6927,7 +6931,7 @@ a.hero {
       .newsletter-signup--confirmation {
         padding-top: 7.5%;
         padding-bottom: 7.5%; } }
-  .newsletter-signup__headline {
+  .newsletter-signup .headline {
     text-rendering: optimizeLegibility;
     -webkit-font-variant-ligatures: common-ligatures;
     font-variant-ligatures: common-ligatures;
@@ -6942,28 +6946,39 @@ a.hero {
     font-weight: 700;
     margin-bottom: 0.25em; }
     @media only screen and (min-width: 768px) {
-      .newsletter-signup__headline {
+      .newsletter-signup .headline {
         font-size: 2.1154rem; } }
     @media only screen and (min-width: 1600px) {
-      .newsletter-signup__headline {
+      .newsletter-signup .headline {
         font-size: 2.6154rem; } }
-  .newsletter-signup__subheadline {
+    .newsletter-signup .headline:first-child:before {
+      content: "";
+      display: block;
+      position: relative;
+      background-color: #a9c000;
+      width: 0.9em;
+      margin-bottom: 0.4em;
+      height: 4px; }
+      @media screen and (min-width: 992px) {
+        .newsletter-signup .headline:first-child:before {
+          height: 5px;
+          width: 0.7em;
+          margin-bottom: 0.35em; } }
+      @media screen and (min-width: 1600px) {
+        .newsletter-signup .headline:first-child:before {
+          height: 6px; } }
+  .newsletter-signup .subhead {
     font-family: "Gotham A", Helvetica, Arial, sans-serif;
     line-height: 1.4;
     letter-spacing: 0em;
     max-width: 24em;
     font-size: 0.8077rem; }
     @media only screen and (min-width: 768px) {
-      .newsletter-signup__subheadline {
+      .newsletter-signup .subhead {
         font-size: 1rem; } }
     @media only screen and (min-width: 1600px) {
-      .newsletter-signup__subheadline {
+      .newsletter-signup .subhead {
         font-size: 1.3077rem; } }
-  .newsletter-signup__form .form-field {
-    width: 100%; }
-    @media screen and (min-width: 768px) {
-      .newsletter-signup__form .form-field {
-        width: calc(100% / 3); } }
 
 .office-contact-info {
   width: 100%;

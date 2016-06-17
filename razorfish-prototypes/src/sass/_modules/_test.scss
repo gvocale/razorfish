@@ -1,47 +1,74 @@
-.newsletter-signup {
-    @include padding-top(0.75);
-    @include padding-bottom(0.75);
-    @media screen and ($xl) {
-        @include padding-top(0.5);
-        @include padding-bottom(0.5);
+.hero-profile .headline {
+    line-height: 1.05;
+    font-size: $scale08;
+    @media only screen and ($md) {
+        font-size: $scale09;
+    }
+    @media only screen and ($lg) {
+        font-size: $scale08;
+    }
+    @media only screen and ($xl) {
+        font-size: $scale09;
+    }
+    @media only screen and ($xxl) {
+        font-size: $scale11;
     }
 }
 
-@mixin padding-top($multiplier: 1) {
-    padding-top: 20vw * $multiplier;
-    @media screen and ($md) {
-        padding-top: 15vw * $multiplier;
+.hero-profile-title,
+.hero-profile-office {
+    letter-spacing: 0.02em;
+    font-size: $scale03;
+    @media only screen and ($md) {
+        font-size: $scale04;
     }
-    @media screen and ($lg) {
-        padding-top: 10vw * $multiplier;
-    }
-}
-
-@mixin padding-bottom($multiplier: 1) {
-    padding-bottom: 20vw * $multiplier;
-    @media screen and ($md) {
-        padding-bottom: 15vw * $multiplier;
-    }
-    @media screen and ($lg) {
-        padding-bottom: 10vw * $multiplier;
+    @media only screen and ($xxl) {
+        font-size: $scale05;
     }
 }
 
-@mixin grid-padding {
-    padding-left: calc(10vw - 1rem);
-    padding-right: calc(10vw - 1rem);
-}
-
-
-$scale01: 0.5rem;
-$scale02: 0.6154rem;
 $scale03: 0.8077rem;
 $scale04: 1rem;
 $scale05: 1.3077rem;
-$scale06: 1.6154rem;
-$scale07: 2.1154rem;
 $scale08: 2.6154rem;
 $scale09: 3.4231rem;
-$scale10: 4.2308rem;
 $scale11: 5.5385rem;
-$scale12: 6.8462rem;
+$primary: #a9c000;
+$primary-darker: #97a911;
+
+.headline:first-child:before {
+    content: "";
+    display: block;
+    position: relative;
+    background-color: $primary;
+    width: 0.9em;
+    margin-bottom: 0.4em;
+    height: 4px;
+    @media screen and ($lg) {
+        height: 5px;
+        width: 0.7em;
+        margin-bottom: 0.35em;
+    }
+    @media screen and ($xxl) {
+        height: 6px;
+    }
+}
+
+.eyebrow:first-child:before, {
+    &:first-child:before {
+        content: "";
+        display: block;
+        position: relative;
+        background-color: $primary;
+        width: 2.4em;
+        margin-bottom: 1.2em;
+        height: 4px;
+        @media screen and ($lg) {
+            width: 2em;
+            margin-bottom: 1em;
+        }
+        @media screen and ($xxl) {
+            height: 6px;
+        }
+    }
+}
