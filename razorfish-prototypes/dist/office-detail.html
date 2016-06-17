@@ -173,7 +173,7 @@
             <div class="office-contact-info__item white">
                 <div class="divider office-contact-info__headline"></div>
                 <h2 class="office-contact-info__headline">Contact us</h2>
-                <div class="office-contact-info__multi-column">
+                <div class="office-two-column">
                     <div class="office-contact-info__group">
                         <h4 class="office-label">Phone</h4>
                         <p class="office-contact-info__body-title">(212) 798 6600</p>
@@ -209,9 +209,9 @@
             <div class="office-contact-info__item" id="map">
             </div>
         </section>
-        <section class="body-copy body-copy__image body-copy--white">
-            <figure class="body-copy__background image__parallax">
-                <svg xmlns="http://www.w3.org/2000/svg">
+        <section class="body-copy body-copy__image-background">
+            <div class="module-background">
+                <svg class="image image__parallax" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <filter id="image-grading--green">
                             <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray"></feColorMatrix>
@@ -225,10 +225,10 @@
                     </defs>
                     <image filter="url('#image-grading--green')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/office-contact-info-new-york.jpg"></image>
                 </svg>
-            </figure>
-            <div class="body-copy__container body-copy__container--large body-copy__container--centered">
+            </div>
+            <div class="module-content">
                 <h2 class="h2">Where it all began</h2>
-                <div class="body-copy__two-column">
+                <div class="two-column">
                     <p class="p">Hip hop. The roller coaster. The perfect bagel. New York produces great things. This is where Razorfish was born, back when Brooklyn was still edgy, Trump was still safe, and apartments were still cheap in Alphabet City. One of those apartments was our first office.</p>
                     <p class="p">Like our city, Razorfish NY has grown since then, bringing in talent from all over the globe to work on the world's biggest brands. Just don't be fooled by our office with a view. We're still edgy.</p>
                 </div>
@@ -406,11 +406,7 @@
             <div class="careers-promo__background">
             </div>
         </section>
-        <section class="contact-promo" style="">
-            <div class="module-content">
-                <p class="eyebrow">Locations</p>
-                <h2 class="description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link--underline">Get in touch.</a></h2>
-            </div>
+        <section class="contact-promo">
             <div class="module-background">
                 <svg class="image image__parallax" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -427,6 +423,10 @@
                     <image filter="url('#image-grading--green')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/contact-promo-background.jpg"></image>
                 </svg>
             </div>
+            <div class="module-content">
+                <p class="eyebrow">Locations</p>
+                <h2 class="description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link--underline">Get in touch.</a></h2>
+            </div>
         </section>
     </div>
     <footer class="footer">
@@ -434,15 +434,15 @@
         <div class="divider"></div>
         <ul class="social-share__group">
             <li class="social-share__icon-container">
-                <a href="" class="icon-linkedin--black social-share__icon">
+                <a href="" class="icon__linkedin social-share__icon">
                 </a>
             </li>
             <li class="social-share__icon-container">
-                <a href="" class="icon-twitter--black social-share__icon">
+                <a href="" class="icon__twitter social-share__icon">
                 </a>
             </li>
             <li class="social-share__icon-container">
-                <a href="" class="icon-facebook--black social-share__icon">
+                <a href="" class="icon__facebook social-share__icon">
                 </a>
             </li>
         </ul>
@@ -452,7 +452,7 @@
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.viewportchecker.min.js"></script>
+    
     <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
     <script src="js/show-hide-header.js"></script>
     <script src="js/jquery.gio.js"></script>

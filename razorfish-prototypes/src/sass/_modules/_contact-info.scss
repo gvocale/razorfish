@@ -5,6 +5,10 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    float: left;
+    z-index: 1;
+    @include padding-top;
+    @include padding-left;
     @media screen and ($lg) {
         width: calc(100% / 12 * 8);
     }
@@ -24,7 +28,7 @@
             height: 5px;
         }
     }
-    &__multi-column {
+    .two-column {
         width: 100%;
         @media screen and ($md) {
             column-count: 2;

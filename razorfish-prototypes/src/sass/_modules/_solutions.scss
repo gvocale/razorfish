@@ -72,15 +72,22 @@
             @media only screen and ($xxl) {
                 font-size: $scale12;
             }
-            &:first-child:first-letter {
-                box-shadow: 0px -4px 0 0em currentColor;
+            &:first-child:before {
+                content: "";
+                display: block;
+                position: relative;
+                background-color: currentColor;
+                width: 0.9em;
+                margin-bottom: 0.4em;
+                height: 4px;
                 @media screen and ($lg) {
-                    box-shadow: 0px -5px 0 0em currentColor;
+                    height: 5px;
+                    width: 0.7em;
+                    margin-bottom: 0.35em;
                 }
                 @media screen and ($xxl) {
-                    box-shadow: 0px -6px 0 0em currentColor;
+                    height: 6px;
                 }
-                padding-top: 0.3em;
             }
         }
         .h2 {
@@ -102,15 +109,22 @@
             @media only screen and ($xxl) {
                 font-size: $scale10;
             }
-            &:first-child:first-letter {
-                box-shadow: 0px -4px 0 0em lighten($primary, 10%);
+            &:first-child:before {
+                content: "";
+                display: block;
+                position: relative;
+                background-color: lighten($primary, 10%);
+                width: 0.9em;
+                margin-bottom: 0.4em;
+                height: 4px;
                 @media screen and ($lg) {
-                    box-shadow: 0px -5px 0 0em lighten($primary, 10%);
+                    height: 5px;
+                    width: 0.7em;
+                    margin-bottom: 0.35em;
                 }
                 @media screen and ($xxl) {
-                    box-shadow: 0px -6px 0 0em lighten($primary, 10%);
+                    height: 6px;
                 }
-                padding-top: 0.3em;
             }
         }
         a {
@@ -388,7 +402,6 @@
         }
     }
 }
-
 
 #solutions__menu {
     position: fixed;

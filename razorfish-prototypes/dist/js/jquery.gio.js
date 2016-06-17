@@ -708,6 +708,8 @@ window.onload = (function() {
 
 
 
+    // Feed old animation ro remove
+
     // Feed: animation on fade in
 
     if (document.getElementsByClassName('feed__item')) {

@@ -10,11 +10,9 @@
     @media screen and ($lg) {
         height: 40vh;
     }
-    .divider {
-        margin-bottom: 1rem;
-    }
     .module-content {
         @include grid-padding;
+        @include component-margin;
         width: 100%;
         height: 35vh;
         @media screen and ($md) {
@@ -31,16 +29,7 @@
         @include padding-top;
         @include padding-bottom(0.6);
     }
-    &__group {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: baseline;
-        @include component-padding;
-    }
-    &__title {
+    .headline {
         @include ligatures;
         font-family: $serif;
         font-weight: 700;
@@ -63,45 +52,22 @@
         &:before {
             content: "";
             display: block;
-            position: absolute;
-            top: -0.4em;
-            left: 0;
-            background-color: #a9c000;
-            border: none;
-            margin-left: 0;
-            margin-right: 0;
-            margin-top: 0;
-            margin-bottom: 0;
-            -webkit-transform-origin: left;
-            transform-origin: left;
-            width: 0.8em;
+            position: relative;
+            background-color: $primary;
+            width: 0.9em;
+            margin-bottom: 0.4em;
             height: 4px;
             @media screen and ($lg) {
                 height: 5px;
+                width: 0.7em;
+                margin-bottom: 0.35em;
             }
             @media screen and ($xxl) {
                 height: 6px;
             }
         }
     }
-    &__phone {
-        font-family: $sans;
-        font-weight: 400;
-        line-height: 1;
-        letter-spacing: $spacing-sans;
-        font-size: $scale04;
-        color: $primary;
-        @media screen and ($md) {
-            font-size: $scale04;
-        }
-        @media screen and ($lg) {
-            font-size: $scale05;
-        }
-        @media screen and ($xxl) {
-            font-size: $scale06;
-        }
-    }
-    &--home {
+    &_home {
         height: 45vh;
         @media screen and ($md) {
             height: 50vh;
@@ -161,23 +127,21 @@
         @media screen and ($xxl) {
             font-size: $scale09;
         }
-        &:first-child {
-            margin-top: calc(0.4em + 4px);
+        &:first-child:before {
+            content: "";
+            display: block;
+            position: relative;
+            background-color: $primary;
+            width: 0.9em;
+            margin-bottom: 0.4em;
+            height: 4px;
             @media screen and ($lg) {
-                margin-top: calc(0.4em + 5px);
+                height: 5px;
+                width: 0.7em;
+                margin-bottom: 0.35em;
             }
             @media screen and ($xxl) {
-                margin-top: calc(0.4em + 6px);
-            }
-            &:first-letter {
-                box-shadow: 0px -4px 0 0em $primary;
-                @media screen and ($lg) {
-                    box-shadow: 0px -5px 0 0em $primary;
-                }
-                @media screen and ($xxl) {
-                    box-shadow: 0px -6px 0 0em $primary;
-                }
-                padding-top: 0.4em;
+                height: 6px;
             }
         }
     }
@@ -326,14 +290,8 @@
     &_red {
         color: $white;
         background-color: $red;
-        .headline:first-child:first-letter {
-            box-shadow: 0px -4px 0 0em $black;
-            @media screen and ($lg) {
-                box-shadow: 0px -5px 0 0em $black;
-            }
-            @media screen and ($xxl) {
-                box-shadow: 0px -6px 0 0em $black;
-            }
+        &:first-child:before {
+            background-color: $black-divider;
         }
     }
 }

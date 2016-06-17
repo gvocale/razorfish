@@ -26,7 +26,7 @@
 <body id="animate-container">
     <input id="masthead__checkbox" type="checkbox">
     <nav class="masthead fade" role="navigation">
-              <i class="icon icon__razorfish"></i>
+        <i class="icon icon__razorfish"></i>
         <label class="masthead__hamburger" for="masthead__checkbox">
             <span class="hamburger-box">
                 <span class="hamburger-inner">
@@ -282,10 +282,9 @@
         </div>
     </nav>
     <div class="body-wrapper fade">
-        <section class="simple-title simple-title--home">
-            <div class="simple-title__group">
-                <div class="module-content">
-                    <h2 class="simple-title__title">
+        <section class="simple-title simple-title_home">
+            <div class="module-content">
+                <h2 class="headline">
                     In a digital world,
                     <br>
                     the future belongs to the
@@ -294,7 +293,6 @@
                     </a>
                     </br>
                     </h2>
-                </div>
             </div>
         </section>
         <a class="hero hero__approach" href="">
@@ -480,44 +478,26 @@
                 </a>
             </div>
         </section>
-        <section class="contact-promo " style=" ">
-            <div class="module-content ">
-                <p class="eyebrow ">
-                    Locations
-                </p>
-                <h2 class="description ">
-                24 Oﬃces.
-                <br>
-                5 Continents.
-                <br>
-                <a class="link--underline " href=" ">
-                    Get in touch.
-                </a>
-                </br>
-                </br>
-                </h2>
-            </div>
+                <section class="contact-promo">
             <div class="module-background">
                 <svg class="image image__parallax" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <filter id="image-grading--green">
-                            <fecolormatrix result="green" type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0">
-                            </fecolormatrix>
-                            <fecomponenttransfer color-interpolation-filters="sRGB">
-                                <fefuncr tablevalues="0.1411764705882353 0.25882352941176473" type="table">
-                                </fefuncr>
-                                <fefuncg tablevalues="0.1607843137254902 0.34509803921568627" type="table">
-                                </fefuncg>
-                                <fefuncb tablevalues="0.14901960784313725 0.3607843137254902" type="table">
-                                </fefuncb>
-                                <fefunca tablevalues="1 1" type="table">
-                                </fefunca>
-                            </fecomponenttransfer>
+                            <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray"></feColorMatrix>
+                            <feComponentTransfer color-interpolation-filters="sRGB">
+                                <feFuncR type="table" tableValues="0.1411764705882353 0.25882352941176473"></feFuncR>
+                                <feFuncG type="table" tableValues="0.1607843137254902 0.34509803921568627"></feFuncG>
+                                <feFuncB type="table" tableValues="0.14901960784313725 0.3607843137254902"></feFuncB>
+                                <feFuncA type="table" tableValues="1 1"></feFuncA>
+                            </feComponentTransfer>
                         </filter>
                     </defs>
-                    <image filter="url('#image-grading--green')" height="100%" preserveaspectratio="xMidYMid slice" width="100%" xlink:href="images/contact-promo-background.jpg">
-                    </image>
+                    <image filter="url('#image-grading--green')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/contact-promo-background.jpg"></image>
                 </svg>
+            </div>
+            <div class="module-content">
+                <p class="eyebrow">Locations</p>
+                <h2 class="description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link--underline">Get in touch.</a></h2>
             </div>
         </section>
     </div>

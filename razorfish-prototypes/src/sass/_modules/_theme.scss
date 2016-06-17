@@ -19,14 +19,8 @@
          }
          &.hero {
              .eyebrow:first-child:before,
-             .headline:first-child:first-letter {
-                 box-shadow: 0px -4px 0 0em $white;
-                 @media screen and ($lg) {
-                     box-shadow: 0px -5px 0 0em $white;
-                 }
-                 @media screen and ($xxl) {
-                     box-shadow: 0px -6px 0 0em $white;
-                 }
+             .headline:first-child:before {
+                 background-color: $white;
              }
          }
          &.related-promo {
@@ -55,14 +49,8 @@
          }
          &.hero {
              .eyebrow:first-child:before,
-             .headline:first-child:first-letter {
-                 box-shadow: 0px -4px 0 0em lighten($primary, 10%);
-                 @media screen and ($lg) {
-                     box-shadow: 0px -5px 0 0em lighten($primary, 10%);
-                 }
-                 @media screen and ($xxl) {
-                     box-shadow: 0px -6px 0 0em lighten($primary, 10%);
-                 }
+             .headline:first-child:before {
+                 background-color: lighten($primary, 10%);
              }
          }
          &.related-promo {
@@ -81,14 +69,8 @@
          }
          &.hero {
              .eyebrow:first-child:before,
-             .headline:first-child:first-letter {
-                 box-shadow: 0px -4px 0 0em $black-divider;
-                 @media screen and ($lg) {
-                     box-shadow: 0px -5px 0 0em $black-divider;
-                 }
-                 @media screen and ($xxl) {
-                     box-shadow: 0px -6px 0 0em $black-divider;
-                 }
+             .headline:first-child:before {
+                 background-color: $black-divider;
              }
          }
          &.related-promo {
@@ -107,14 +89,8 @@
          }
          &.hero {
              .eyebrow:first-child:before,
-             .headline:first-child:first-letter {
-                 box-shadow: 0px -4px 0 0em lighten($primary, 10%);
-                 @media screen and ($lg) {
-                     box-shadow: 0px -5px 0 0em lighten($primary, 10%);
-                 }
-                 @media screen and ($xxl) {
-                     box-shadow: 0px -6px 0 0em lighten($primary, 10%);
-                 }
+             .headline:first-child:before {
+                 background-color: lighten($primary, 10%);
              }
          }
          &.related-promo {
@@ -131,16 +107,10 @@
          &.hero,
          &.case-study {
              .eyebrow:first-child:before,
-             .headline:first-child:first-letter,
-             .h2:first-child:first-letter,
-             .h3:first-child:first-letter {
-                 box-shadow: 0px -4px 0 0em $primary-smart;
-                 @media screen and ($lg) {
-                     box-shadow: 0px -5px 0 0em $primary-smart;
-                 }
-                 @media screen and ($xxl) {
-                     box-shadow: 0px -6px 0 0em $primary-smart;
-                 }
+             .headline:first-child:before,
+             .h2:first-child:before,
+             .h3:first-child:before {
+                 background-color: $primary-smart;
              }
              .label {
                  color: $primary-smart;
@@ -166,7 +136,7 @@
                  }
              }
          }
-         .social-share--folded__icon {
+         .icon {
              @media (hover) {
                  &:hover {
                      background-color: darken($gray, 5%);
@@ -183,7 +153,7 @@
          .body-copy--dark {
              background-color: $gray-smart;
          }
-         .body-copy__container--dark {
+         .module-content--dark {
              background-color: $gray-smart;
          }
          .content-feed--results {
@@ -219,16 +189,10 @@
          &.hero,
          &.case-study {
              .eyebrow:first-child:before,
-             .headline:first-child:first-letter,
-             .h2:first-child:first-letter,
-             .h3:first-child:first-letter {
-                 box-shadow: 0px -4px 0 0em $primary-heforshe;
-                 @media screen and ($lg) {
-                     box-shadow: 0px -5px 0 0em $primary-heforshe;
-                 }
-                 @media screen and ($xxl) {
-                     box-shadow: 0px -6px 0 0em $primary-heforshe;
-                 }
+             .headline:first-child:before,
+             .h2:first-child:before,
+             .h3:first-child:before {
+                 background-color: $primary-heforshe;
              }
              .label {
                  color: $primary-heforshe;
@@ -254,7 +218,7 @@
                  }
              }
          }
-         .social-share--folded__icon {
+         .icon {
              @media (hover) {
                  &:hover {
                      background-color: darken($gray, 5%);
@@ -271,7 +235,7 @@
          .body-copy--dark {
              background-color: $gray-heforshe;
          }
-         .body-copy__container--dark {
+         .module-content--dark {
              background-color: $gray-heforshe;
          }
          .content-feed--results {
@@ -300,22 +264,14 @@
          }
      }
      &__color_a.hero {
-
-             color: $white;
-             .image {
-                 background-color: $color-theme-a;
-             }
-             .eyebrow:first-child:before,
-             .headline:first-child:first-letter {
-                 box-shadow: 0px -4px 0 0em $black-divider;
-                 @media screen and ($lg) {
-                     box-shadow: 0px -5px 0 0em $black-divider;
-                 }
-                 @media screen and ($xxl) {
-                     box-shadow: 0px -6px 0 0em $black-divider;
-                 }
-             }
-
+         color: $white;
+         .image {
+             background-color: $color-theme-a;
+         }
+         .eyebrow:first-child:before,
+         .headline:first-child:before {
+             background-color: $black-divider;
+         }
      }
      &__color_b.hero {
          color: $white;
@@ -323,14 +279,8 @@
              background-color: $color-theme-b;
          }
          .eyebrow:first-child:before,
-         .headline:first-child:first-letter {
-             box-shadow: 0px -4px 0 0em $black-divider;
-             @media screen and ($lg) {
-                 box-shadow: 0px -5px 0 0em $black-divider;
-             }
-             @media screen and ($xxl) {
-                 box-shadow: 0px -6px 0 0em $black-divider;
-             }
+         .headline:first-child:before {
+             background-color: $black-divider;
          }
      }
      &__color_c.hero {
@@ -339,14 +289,8 @@
              background-color: $color-theme-c;
          }
          .eyebrow:first-child:before,
-         .headline:first-child:first-letter {
-             box-shadow: 0px -4px 0 0em $black-divider;
-             @media screen and ($lg) {
-                 box-shadow: 0px -5px 0 0em $black-divider;
-             }
-             @media screen and ($xxl) {
-                 box-shadow: 0px -6px 0 0em $black-divider;
-             }
+         .headline:first-child:before {
+             background-color: $black-divider;
          }
      }
      &__color_d.hero {
@@ -355,14 +299,8 @@
              background-color: $color-theme-d;
          }
          .eyebrow:first-child:before,
-         .headline:first-child:first-letter {
-             box-shadow: 0px -4px 0 0em $primary;
-             @media screen and ($lg) {
-                 box-shadow: 0px -5px 0 0em $primary;
-             }
-             @media screen and ($xxl) {
-                 box-shadow: 0px -6px 0 0em $primary;
-             }
+         .headline:first-child:before {
+             background-color: $primary;
          }
      }
      &__color_e.hero {
@@ -371,14 +309,8 @@
              background-color: $color-theme-e;
          }
          .eyebrow:first-child:before,
-         .headline:first-child:first-letter {
-             box-shadow: 0px -4px 0 0em $black-divider;
-             @media screen and ($lg) {
-                 box-shadow: 0px -5px 0 0em $black-divider;
-             }
-             @media screen and ($xxl) {
-                 box-shadow: 0px -6px 0 0em $black-divider;
-             }
+         .headline:first-child:before {
+             background-color: $black-divider;
          }
      }
      &__color_f.hero {
@@ -387,14 +319,8 @@
              background-color: $color-theme-f;
          }
          .eyebrow:first-child:before,
-         .headline:first-child:first-letter {
-             box-shadow: 0px -4px 0 0em $black-divider;
-             @media screen and ($lg) {
-                 box-shadow: 0px -5px 0 0em $black-divider;
-             }
-             @media screen and ($xxl) {
-                 box-shadow: 0px -6px 0 0em $black-divider;
-             }
+         .headline:first-child:before {
+             background-color: $black-divider;
          }
      }
  }
