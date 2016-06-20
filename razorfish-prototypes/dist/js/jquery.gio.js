@@ -586,7 +586,7 @@ window.onload = (function() {
 
     // Office-list Tab shifting between North America / Europe / Asia PAcific
 
-    if (document.getElementsByClassName('area')[0]) {
+    if (document.getElementsByClassName('office-list')[0]) {
 
         // Function to remove class .transition after moving between two far bucket is over
         function removeTransition() {
@@ -594,9 +594,9 @@ window.onload = (function() {
         }
 
         var officeList = document.getElementsByClassName('office-list')[0];
-        var officeListTabNorthAmerica = document.getElementById('office-list__tab__north-america');
-        var officeListTabEurope = document.getElementById('office-list__tab__europe');
-        var officeListTabAsiaPacific = document.getElementById('office-list__tab__asia-pacific');
+        var officeListTabNorthAmerica = document.getElementById('tab__north-america');
+        var officeListTabEurope = document.getElementById('tab__europe');
+        var officeListTabAsiaPacific = document.getElementById('tab__asia-pacific');
 
         officeListTabNorthAmerica.onclick = function() {
             officeList.classList.add("north-america");

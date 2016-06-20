@@ -54,48 +54,9 @@
             width: calc(100% / 12 * 6);
         }
     }
-    a.module-content {
-        &:after {
-            content: "\E809";
-            font-size: 1em;
-            color: currentColor;
-            font-family: $icons;
-            display: block;
-            position: absolute;
-            animation-name: arrowOut;
-            animation-duration: 0.2s;
-            animation-timing-function: $bezier;
-            animation-iteration-count: 1;
-            animation-direction: normal;
-            animation-fill-mode: forwards;
-            animation-play-state: running;
-            margin-top: 2em;
-            width: 100%;
-        }
-        @media (hover) {
-            &:hover {
-                outline: none;
-                &:after {
-                    animation-name: arrowIn;
-                    animation-duration: 0.2s;
-                    animation-timing-function: $bezier;
-                    animation-iteration-count: 1;
-                    animation-direction: normal;
-                    animation-fill-mode: forwards;
-                    animation-play-state: running;
-                }
-            }
-            &:hover ~ .module-background {
-                transform: translate3d(0, 0, 0) scale(1.05);
-                transition: transform 0.5s 0s $bezier;
-                &:before {
-                    opacity: 0.2;
-                    transition: opacity 0.5s 0s $bezier;
-                }
-            }
-        }
-    }
+    
     .eyebrow {
+        -webkit-font-smoothing: antialiased;
         font-family: $sans;
         line-height: 1;
         letter-spacing: 0.02em;

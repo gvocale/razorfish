@@ -1,1 +1,0 @@
-function css_registerLink_onClick(){document.forms.css_loginForm.submit();return false}function OpenNewWindow(a,b){var c=window.open(a,"CredentialReminder",b)}$(function(){$(".socialLoginButton, .iCIMS_Action_Button").each(function(){var a=$(this);onclickAccessible(this)})});

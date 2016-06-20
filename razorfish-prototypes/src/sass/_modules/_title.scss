@@ -113,19 +113,16 @@
         font-weight: 700;
         line-height: $solid-serif;
         letter-spacing: $spacing-serif;
-        font-size: $scale07;
+        font-size: $scale06;
         margin-bottom: 0.25em;
-        &:last-child {
-            margin-bottom: 0;
-        }
         @media screen and ($md) {
-            font-size: $scale07;
-        }
-        @media screen and ($lg) {
             font-size: $scale08;
         }
         @media screen and ($xxl) {
             font-size: $scale09;
+        }
+        &:last-child {
+            margin-bottom: 0;
         }
         &:first-child:before {
             content: "";
@@ -157,13 +154,13 @@
             font-size: $scale06;
         }
     }
-    &__text-container {
+    .module-content {
         @include component-padding;
         &:last-child {
             margin-bottom: 0;
         }
     }
-    &__button-group {
+    .button-group {
         @include component-padding;
         display: flex;
         flex-direction: row;
@@ -190,7 +187,7 @@
             }
         }
     }
-    &__tab-group {
+    .group {
         @include component-padding;
         list-style: none;
         display: flex;
@@ -207,7 +204,7 @@
         @media screen and ($xxl) {
             width: calc(100% / 12 * 4);
         }
-        &:after {
+        &:before {
             content: "";
             position: absolute;
             width: calc(100% - 1rem - 1rem);
@@ -219,7 +216,7 @@
             @include component-margin;
         }
     }
-    &__tab {
+    .tab {
         font-family: $sans;
         font-size: $scale03;
         font-weight: 400;

@@ -132,13 +132,13 @@
         position: relative;
         width: 100%;
         @media screen and ($lg) {
+            width: calc(100% / 12 * 12);
+        }
+        @media screen and ($xl) {
             width: calc(100% / 12 * 10);
         }
         @media screen and ($xl) {
             width: calc(100% / 12 * 8);
-        }
-        @media screen and ($xl) {
-            width: calc(100% / 12 * 6);
         }
     }
     .eyebrow {
@@ -149,6 +149,7 @@
         font-size: $scale03;
         font-weight: 400;
         text-transform: uppercase;
+        -webkit-font-smoothing: antialiased;
         @media screen and ($md) {
             font-size: $scale04;
         }
@@ -176,18 +177,19 @@
         }
     }
     .headline {
+        -webkit-font-smoothing: antialiased;
         @include ligatures;
         font-family: $serif;
         line-height: 1.1;
         letter-spacing: $spacing-serif;
         font-weight: 700;
-        max-width: 10em;
+        max-width: 7em;
         font-size: $scale07;
         @media only screen and ($md) {
-            font-size: $scale09;
+            font-size: $scale10;
         }
         @media only screen and ($xxl) {
-            font-size: $scale11;
+            font-size: $scale12;
             line-height: 1;
         }
         &:not(:last-child) {
@@ -217,12 +219,12 @@
         letter-spacing: $spacing-sans;
         margin-bottom: 1em;
         max-width: 26em;
-        font-size: $scale04;
+        font-size: $scale03;
         @media only screen and ($md) {
-            font-size: $scale05;
+            font-size: $scale04;
         }
         @media only screen and ($xxl) {
-            font-size: $scale06;
+            font-size: $scale05;
         }
         &:last-child {
             margin-bottom: 0;

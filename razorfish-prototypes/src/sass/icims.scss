@@ -1,4 +1,4 @@
-// Reset
+// Reset 
 html,
 body,
 div,
@@ -186,12 +186,6 @@ $spacing-sans: 0em;
 $spacing-sans-large: 0.02em;
 $spacing-sans-mega: 0.05em;
 // Mixin
-@mixin ligatures {
-    text-rendering: optimizeLegibility;
-    font-variant-ligatures: common-ligatures;
-    font-feature-settings: "kern";
-    font-kerning: normal;
-}
 
 @mixin grid-padding {
     padding-left: calc(10vw - 1rem);
@@ -282,9 +276,6 @@ $white: #FFFFFF;
 $black: #373737;
 $primary: #a9c000;
 .rf {
-    &__grid {
-        width: 100%;
-    }
     &__header {
         display: flex;
         align-items: center;
@@ -325,79 +316,6 @@ $primary: #a9c000;
             @media screen and ($md) {
                 display: inline-block;
             }
-        }
-    }
-    &__title {
-        @include grid-padding;
-        @include padding-top(0.5);
-        @include padding-bottom(0.5);
-        align-items: baseline;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-        @media screen and ($md) {
-            flex-direction: row;
-            align-items: flex-end;
-            // min-height: 20vw;
-        }
-        &_module-content {
-            @include component-padding;
-            width: calc(100% / 12 * 4);
-        }
-    }
-    &__h1 {
-        @include ligatures;
-        font-family: $serif;
-        font-weight: 700;
-        line-height: $solid-serif;
-        letter-spacing: $spacing-serif;
-        font-size: $scale07;
-        margin-bottom: 0.5em;
-        &:last-child {
-            margin-bottom: 0;
-        }
-        @media screen and ($md) {
-            font-size: $scale07;
-        }
-        @media screen and ($lg) {
-            font-size: $scale09;
-        }
-        @media screen and ($xxl) {
-            font-size: $scale10;
-        }
-        &:first-child {
-            margin-top: calc(0.4em + 4px);
-            @media screen and ($lg) {
-                margin-top: calc(0.4em + 5px);
-            }
-            @media screen and ($xxl) {
-                margin-top: calc(0.4em + 6px);
-            }
-            &:first-letter {
-                box-shadow: 0px -4px 0 0em $primary;
-                @media screen and ($lg) {
-                    box-shadow: 0px -5px 0 0em $primary;
-                }
-                @media screen and ($xxl) {
-                    box-shadow: 0px -6px 0 0em $primary;
-                }
-                padding-top: 0.4em;
-            }
-        }
-    }
-    &__subhead {
-        font-family: $sans;
-        line-height: 1.5;
-        letter-spacing: $spacing-sans;
-        font-size: $scale03;
-        opacity: 0.5;
-        @media only screen and ($md) {
-            font-size: $scale04;
-        }
-        @media only screen and ($xxl) {
-            font-size: $scale05;
         }
     }
     &__footer {
@@ -739,21 +657,6 @@ $primary: #a9c000;
  <svg width='70px' height='70px' viewBox='0 0 70 70' version='1.1' xmlns='http://www.w3.org/2000/svg'> <g id='icon-linkedin' fill='#{$black}'> <path d='M7.32046738,23.936059 L19.5070945,23.936059 L19.5070945,63 L7.32046738,63 L7.32046738,23.936059 L7.32046738,23.936059 Z M19.9067287,13.0715364 C19.9067287,16.4256801 17.4215232,19.1424418 13.3320807,19.1424418 C9.48520552,19.1424418 7,16.4256801 7,13.0715364 C7,9.63598458 9.56563903,7 13.4929478,7 C17.4215232,7 19.8275618,9.63598458 19.9067287,13.0715364 L19.9067287,13.0715364 Z M26.799184,36.3976335 C26.799184,31.5251324 26.6395836,27.4515675 26.4799833,23.9358696 L37.0611068,23.9358696 L37.6241414,29.3681309 L37.8641753,29.3681309 C39.4671455,26.8110302 43.3957209,23.0561563 49.9703688,23.0561563 C57.98712,23.0561563 64,28.4095337 64,39.9120692 L64,62.9998107 L51.8133729,62.9998107 L51.8133729,41.3509117 C51.8133729,36.3174874 50.0495357,32.8838288 45.6396259,32.8838288 C42.2728184,32.8838288 40.2702139,35.1998603 39.3879786,37.4363767 C39.0662446,38.2346819 38.9858111,39.3535712 38.9858111,40.4724605 L38.9858111,62.9998107 L26.799184,62.9998107 L26.799184,36.3976335 L26.799184,36.3976335 Z'></path> </g> </svg>"); 
 
             }
-        }
-    }
-    &__image {
-        width: 100vw;
-        margin-left: -10vw;
-        img,
-        svg {
-            display: block;
-            width: 100%;
-            height: auto;
-            max-height: 50vh;
-            object-fit: cover;
-        }
-        svg {
-            height: 50vh;
         }
     }
 }

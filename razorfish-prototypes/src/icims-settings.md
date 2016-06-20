@@ -104,11 +104,11 @@ Border-Color: a9c000
 
 # Secondary Buttons
 
-Background-Color: ffffff
-Font-Color: 373737
+Background-Color: B3B3B3
+Font-Color: ffffff
 Border-Width: 2px
 Border-Style: solid
-Border-Color: 373737
+Border-Color: B3B3B3
 
 
 # Application Step Status Bar

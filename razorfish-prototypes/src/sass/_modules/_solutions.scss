@@ -240,6 +240,7 @@
             }
         }
         .headline {
+            -webkit-font-smoothing: antialiased;
             @include ligatures;
             font-family: $serif;
             font-size: $scale06;
@@ -282,7 +283,7 @@
             @include ligatures;
             font-family: $serif;
             font-style: italic;
-            line-height: 1.5;
+            line-height: $prose-sans;
             letter-spacing: $spacing-serif-large;
             font-weight: 700;
             max-width: 24em;

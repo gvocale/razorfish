@@ -17,7 +17,7 @@
         font-size: $scale07;
     }
     .icon__razorfish {
-            text-rendering: geometricPrecision;
+        text-rendering: geometricPrecision;
         font-size: $scale05;
         @media only screen and ($md) {
             font-size: $scale06;
@@ -25,14 +25,25 @@
         @media only screen and ($xxl) {
             font-size: $scale07;
         }
-        margin-bottom: 2em;
-    }
-    .divider {
-        width: 1em;
-        margin-bottom: 1em;
+        &:after {
+            content: "";
+            display: block;
+            position: relative;
+            background-color: $primary;
+            width: 1.2em;
+            margin-top: 1.2em;
+            margin-bottom: 1.2em;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 4px;
+            @media screen and ($xxl) {
+                height: 5px;
+            }
+        }
     }
     .social-share {
         @include component-padding;
+        margin-top: -0.6em;
         margin-bottom: 1em;
     }
     .copyrights {

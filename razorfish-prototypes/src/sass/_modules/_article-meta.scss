@@ -1,4 +1,4 @@
-.contact-info {
+.article-meta {
     position: relative;
     @include component-padding;
     @include padding-bottom(0.75);
@@ -38,7 +38,7 @@
             column-count: 1;
         }
     }
-    &__group {
+    .group {
         font-size: $scale04;
         @media screen and ($xxl) {
             font-size: $scale05;
@@ -54,19 +54,19 @@
         &--link {
             margin-top: 0.75em;
         }
-    }
-    &__group--data {
-        font-size: $scale05;
-        @media screen and ($xxl) {
-            font-size: $scale06;
-        }
-        -webkit-column-break-inside: avoid;
-        page-break-inside: avoid;
-        break-inside: avoid-column;
-        padding-bottom: 1.5em;
-        margin-bottom: 0;
-        &:last-child {
-            padding-bottom: 0;
+        &--data {
+            font-size: $scale05;
+            @media screen and ($xxl) {
+                font-size: $scale06;
+            }
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid-column;
+            padding-bottom: 1.5em;
+            margin-bottom: 0;
+            &:last-child {
+                padding-bottom: 0;
+            }
         }
     }
     .label {
@@ -90,7 +90,7 @@
             margin-bottom: 0;
         }
     }
-    &__author-name {
+    .meta-name {
         font-family: $sans;
         line-height: 1.2;
         font-weight: 700;
@@ -100,31 +100,32 @@
             font-size: $scale05;
         }
     }
-    &__body {
+    .p {
         font-family: $sans;
         line-height: 1.2;
         margin-bottom: 0.25em;
         font-size: $scale04;
+        -webkit-font-smoothing: antialiased;
         @media screen and ($xxl) {
             font-size: $scale05;
         }
         &:last-child {
             margin-bottom: 0;
         }
-    }
-    &__body--phone {
-        margin-top: 1em;
-    }
-    &__body--data {
-        font-family: $sans;
-        line-height: 1.2;
-        margin-bottom: 0.25em;
-        font-size: $scale05;
-        @media screen and ($xxl) {
-            font-size: $scale06;
+        &--phone {
+            margin-top: 1em;
         }
-        &:last-child {
-            margin-bottom: 0;
+        &--data {
+            font-family: $sans;
+            line-height: 1.2;
+            margin-bottom: 0.25em;
+            font-size: $scale05;
+            @media screen and ($xxl) {
+                font-size: $scale06;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
     .social-links {
@@ -145,6 +146,7 @@
         text-decoration: none;
         color: currentColor;
         outline: none;
+        -webkit-font-smoothing: antialiased;
         font-size: $scale05;
         @media (hover) {
             &:hover {
@@ -172,27 +174,7 @@
             position: relative;
         }
     }
-    &__stat {
-        @include stat-body;
-        &--group {
-            break-inside: avoid;
-            font-size: $scale04;
-            @media screen and ($md) {
-                font-size: $scale04;
-            }
-            @media screen and ($xl) {
-                font-size: $scale05;
-            }
-            @media screen and ($xxl) {
-                font-size: $scale06;
-            }
-            margin-bottom: 1em;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
-    &__logo {
+    .meta-logo {
         margin-bottom: 2em;
         @media screen and ($lg) {
             margin-bottom: 3em;
@@ -207,34 +189,6 @@
             object-fit: contain;
         }
     }
-    &__icon {
-        display: block;
-        width: 3rem;
-        background-size: 50%, contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: relative;
-        cursor: pointer;
-        cursor: hand;
-        &:before {
-            content: "";
-            display: block;
-            padding-bottom: 100%;
-            position: relative;
-        }
-        @media (hover) {
-            &:hover {
-                animation-name: bounce;
-                animation-duration: 0.5s;
-                animation-timing-function: ease-in-out;
-                animation-delay: 0.05s;
-                animation-iteration-count: 1;
-                animation-direction: normal;
-                animation-fill-mode: none;
-                animation-play-state: running;
-            }
-        }
-    }
     .divider {
         margin-bottom: 1rem;
         @media screen and ($xxl) {
@@ -244,13 +198,14 @@
             margin-bottom: 0;
         }
     }
-    .link {
-        font-weight: 500;
-    }
-}
-
-.contact-info.with-padding + .body-copy__flexible {
-    @media screen and ($lg) {
-        margin-right: calc(100% / 12 * 3);
+    &__example {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        @include grid-padding;
+        .article-meta {
+            float: none;
+            @include component-padding;
+        }
     }
 }

@@ -85,6 +85,7 @@
             }
         }
         .eyebrow {
+            -webkit-font-smoothing: antialiased;
             font-family: $sans;
             line-height: $title-sans;
             letter-spacing: $spacing-sans;
@@ -100,6 +101,7 @@
             }
         }
         .headline {
+            -webkit-font-smoothing: antialiased;
             @include ligatures;
             font-family: $serif;
             line-height: 1.2;
@@ -275,7 +277,7 @@
             background-color: $tertiaryLighter;
         }
     }
-    &--curated {
+    &__curated {
         background-color: $gray;
         .feed__grid {
             width: 90%;
@@ -335,7 +337,7 @@
             }
         }
     }
-    &--related {
+    &__related {
         .feed__grid {
             @media screen and ($md) {
                 height: calc(100vw / 4 * 2);

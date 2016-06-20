@@ -189,6 +189,7 @@
     }
     .eyebrow {
         text-transform: uppercase;
+        -webkit-font-smoothing: antialiased;
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans-large;
@@ -311,6 +312,7 @@
         margin-bottom: 2em;
         font-size: $scale06;
         max-width: 15em;
+        font-weight: 700;
         @media only screen and ($md) {
             font-size: $scale07;
         }
@@ -348,6 +350,7 @@
         letter-spacing: $spacing-sans;
         padding-bottom: 1em;
         font-size: $scale04;
+        -webkit-font-smoothing: antialiased;
         @media only screen and ($xxl) {
             font-size: $scale05;
         }
@@ -412,10 +415,7 @@
             }
         }
     }
-    &--zero-padding-top {
-        padding-top: 0;
-    }
-    &__hr {
+    .hr {
         width: 100%;
         background-color: rgba($black, 0.15);
         height: 3px;
@@ -441,7 +441,7 @@
     .quote {
         @include ligatures;
         font-family: $serif;
-        line-height: 1.5;
+        line-height: $prose-sans;
         font-style: italic;
         color: $blackLighter;
         letter-spacing: $spacing-serif-large;
@@ -521,6 +521,7 @@
     }
     .eyebrow {
         text-transform: uppercase;
+        -webkit-font-smoothing: antialiased;
         font-family: $sans;
         line-height: $title-sans;
         letter-spacing: $spacing-sans-large;
@@ -594,7 +595,7 @@
     }
 }
 
-.contact-info + .body-copy {
+.article-meta + .body-copy {
     @media screen and ($xl) {
         margin-left: 0;
     }
