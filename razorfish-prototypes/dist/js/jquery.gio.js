@@ -284,8 +284,8 @@ window.onload = (function() {
 
 
 
-    // Form: if in select.form__select an option is selected, add class .selected
-    $(".form__select").each(function() {
+    // Form: if in select.form-select an option is selected, add class .selected
+    $(".form-select").each(function() {
         $(this).change(function() {
             $(this).addClass("selected");
         });
@@ -312,9 +312,9 @@ window.onload = (function() {
 
 
 
-    // Check if .form__textarea is empty. If so add class not-empty, so that the placeholder label can move above text-area
+    // Check if .form-textarea is empty. If so add class not-empty, so that the placeholder label can move above text-area
 
-    $('.form__textarea').change(function() {
+    $('.form-textarea').change(function() {
         if ($.trim($(this).val()).length < 1) {
             $(this).removeClass("filled");
         } else {
@@ -322,7 +322,7 @@ window.onload = (function() {
         }
     });
 
-    if ($.trim($(".form__textarea").val())) {
+    if ($.trim($(".form-textarea").val())) {
         // textarea is not empty or doesn't contains only white-space
         $(this).addClass("not-empty");
     }
@@ -333,7 +333,7 @@ window.onload = (function() {
     (function($, window, document, undefined) {
         $('.form__file').each(function() {
             var $input = $(this),
-                $label = $(".form__attachment--attachment"),
+                $label = $(".form-attachment--attachment"),
                 labelVal = $label.html();
 
             $input.on('change', function(e) {
@@ -341,19 +341,19 @@ window.onload = (function() {
 
                 if (this.files && this.files.length > 1) {
                     fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
-                    $('.form__attachment').addClass("active");
+                    $('.form-attachment').addClass("active");
                 } else if (e.target.value) {
                     fileName = e.target.value.split('\\').pop();
-                    $('.form__attachment').removeClass("active");
+                    $('.form-attachment').removeClass("active");
                 }
 
 
                 if (fileName) {
                     $label.find('span').html(fileName);
-                    $('.form__attachment').addClass("active");
+                    $('.form-attachment').addClass("active");
                 } else {
                     $label.html(labelVal);
-                    $('.form__attachment').removeClass("active");
+                    $('.form-attachment').removeClass("active");
                 }
 
             });
@@ -483,7 +483,7 @@ window.onload = (function() {
             return that;
         }
     })(jQuery);
-    $('.form__textarea').autogrow({
+    $('.form-textarea').autogrow({
         onInitialize: true
     });
 
@@ -569,7 +569,7 @@ window.onload = (function() {
     }
 
 
-    // Approach page - Bottom module (contact0=)
+    // Approach page - Bottom module (contact)
 
     $(window).scroll(function() {
         if ($(".solutions__contact").is(".visible")) {
@@ -587,11 +587,6 @@ window.onload = (function() {
     // Office-list Tab shifting between North America / Europe / Asia PAcific
 
     if (document.getElementsByClassName('office-list')[0]) {
-
-        // Function to remove class .transition after moving between two far bucket is over
-        function removeTransition() {
-            officeList.classList.remove("transition-to-north-america", "transition-to-asia-pacific")
-        }
 
         var officeList = document.getElementsByClassName('office-list')[0];
         var officeListTabNorthAmerica = document.getElementById('tab__north-america');
@@ -1058,11 +1053,11 @@ window.onload = (function() {
 
     }
 
-    // Scroll to the top of the page, in case form__input has attribute autofocus. Otherwise it would scroll half page to the autofocusing input
+    // Scroll to the top of the page, in case form-input has attribute autofocus. Otherwise it would scroll half page to the autofocusing input
 
-    if (document.getElementsByClassName('form__input')[0]) {
+    if (document.getElementsByClassName('form-input')[0]) {
 
-        var formInputAutofocus = document.querySelectorAll('.form__field:first-of-type .form__input');
+        var formInputAutofocus = document.querySelectorAll('.form-field:first-of-type .form-input');
 
         for (var i = 0; i < formInputAutofocus.length; i++) {
             if (formInputAutofocus[i].hasAttribute("autofocus")) {

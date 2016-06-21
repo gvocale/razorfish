@@ -301,11 +301,22 @@
         text-transform: uppercase;
         cursor: hand;
         cursor: pointer;
+        position: relative;
         @media screen and ($xxl) {
             font-size: $scale05;
         }
         &:before {
-            bottom: -0.5em;
+            content: "\E80A";
+            font-family: $icons;
+            font-size: 0.5em;
+            position: absolute;
+            top: 50%;
+            left: -2em;
+            transform: translate(-50%, -50%);
+            transition: transform 0.2s $bezier;
+        }
+        &:hover:before {
+            transform: translate(-75%, -50%);
         }
         &--group {
             display: flex;

@@ -8,109 +8,22 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    &__field {
+    &-field {
         position: relative;
         @include component-margin;
-        @include margin-bottom(0.25);
+        @include margin-bottom(0.175);
         width: 100%;
         &:last-child {
             @include margin-bottom(0.5);
         }
-        @media (hover) {
-            &:hover {
-                .form__input[value=""] ~ .form__border,
-                .form__select ~ .form__border {
-                    opacity: 0.5;
-                }
-                .form__input[value=""] ~ .form__placeholder,
-                .form__select {
-                    opacity: 0.5;
-                    transition: opacity 0s 0s linear;
-                }
-                .form__attachment--attachment,
-                .form__attachment--browse {
-                    opacity: 0.5;
-                    transition: opacity 0s 0s linear;
-                }
-                .form__border {
-                    opacity: 0.5;
-                }
-                .form__textarea,
-                .form__textarea ~ .form__placeholder {
-                    opacity: 0.5;
-                }
-                .form__placeholder[for="form__textarea"] {
-                    opacity: 0.2;
-                }
-            }
-        }
         &.error {
-            @include margin-bottom(0.08);
-            .form__placeholder {
-                @include form-placeholder-up;
-            }
-            .form__input {
+            .form-input {
                 opacity: 1;
-            }
-            .form__border {
-                opacity: 1;
-                background-color: $red;
+                border-bottom: 2px solid $red;
             }
         }
     }
-    &__textarea {
-        -webkit-appearance: none;
-        -webkit-appearance: textfield;
-        -webkit-box-sizing: content-box;
-        background-color: transparent;
-        background-position: right, center;
-        background-repeat: no-repeat;
-        background-size: 0.8em 0.8em;
-        border: none;
-        box-sizing: border-box;
-        color: currentColor;
-        font-family: $sans;
-        font-size: $scale04;
-        letter-spacing: $spacing-sans;
-        line-height: 1.3;
-        margin-bottom: 0;
-        margin-left: 0;
-        margin-right: 0;
-        margin-top: 0.25em;
-        padding-bottom: 0.75em;
-        padding-left: 0;
-        padding-right: 1em;
-        padding-top: 0.75em;
-        position: relative;
-        width: 100%;
-        z-index: 1;
-        @media screen and ($xxl) {
-            font-size: $scale05;
-        }
-        &:focus {
-            outline: none;
-            opacity: 1;
-        }
-        &:focus ~ .form__border {
-            opacity: 1;
-        }
-        &:focus ~ .form__placeholder {
-            @include form-placeholder-up;
-            .form__attachment--placeholder--optional {
-                opacity: 0;
-            }
-        }
-        &.filled ~ .form__placeholder {
-            @include form-placeholder-up;
-            .form__attachment--placeholder--optional {
-                opacity: 0;
-            }
-        }
-        &.filled ~ .form__border {
-            opacity: 1;
-        }
-    }
-    &__input {
+    &-input {
         &[type="file"],
         &[type="checkbox"],
         &[type="radio"] {
@@ -124,10 +37,6 @@
         &[type="text"],
         &[type="tel"],
         &[type="email"] {
-            color: currentColor;
-            -webkit-appearance: textfield;
-            -webkit-box-sizing: content-box;
-            -webkit-appearance: none;
             font-family: $sans;
             font-size: $scale04;
             @media screen and ($xxl) {
@@ -136,16 +45,9 @@
             letter-spacing: $spacing-sans;
             line-height: 1.3;
             border: none;
-            padding-bottom: 0.75em;
-            padding-left: 0;
-            padding-right: 1em;
-            padding-top: 0.75em;
-            margin-top: 0.25em;
-            margin-left: 0;
-            margin-right: 0;
-            margin-bottom: 0;
+            margin-top: 1em;
+            padding-bottom: 0.5em;
             position: relative;
-            box-sizing: border-box;
             width: 100%;
             background-color: transparent;
             background-position: right,
@@ -153,28 +55,42 @@
             background-repeat: no-repeat;
             background-size: 0.8em 0.8em;
             z-index: 1;
+            opacity: 0.2;
+            color: currentColor;
+            border-bottom: 2px solid currentColor;
+            &:focus,
+            &:active {
+                opacity: 0.5;
+                outline: none;
+            }
+            @media (hover) {
+                &:hover {
+                    opacity: 0.5;
+                    outline: none;
+                }
+            }
             &:valid {
                 @include icon-tick-primary;
             }
-            &:invalid {
+            &:not([value=""]):invalid {
                 @include icon-info-red;
             }
-            &:focus {
-                outline: none;
-            }
-            &:not([value=""]) ~ .form__border {
+            &:not([value=""]) {
                 opacity: 1;
+                border-bottom: 2px solid rgba($white, 1);
             }
-            &:active ~ .form__border,
-            &:focus ~ .form__border {
+            &:not([value=""]) ~ .form-label {
+                margin-top: 0;
+                font-size: $scale03;
+                span {
+                    opacity: 0;
+                }
+            }
+            &.error,
+            &.error:not([value=""]):invalid {
                 opacity: 1;
-            }
-            &:active ~ .form__placeholder,
-            &:focus ~ .form__placeholder {
-                opacity: 0.5;
-            }
-            &[value=""] {
-                background-image: none;
+                color: $red;
+                border-bottom: 2px solid $red;
             }
         }
         &[type="checkbox"] {
@@ -217,7 +133,28 @@
             }
         }
     }
-    &__select {
+    &-label {
+        font-family: $sans;
+        font-size: $scale04;
+        @media screen and ($xxl) {
+            font-size: $scale05;
+        }
+        letter-spacing: $spacing-sans;
+        line-height: 1.3;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        left: 0;
+        padding-bottom: 0.75em;
+        opacity: 0.2;
+        position: absolute;
+        width: 100%;
+        transform-origin: left;
+        transition: all 0.1s 0s $bezier;
+        margin-top: 1em;
+    }
+    &-select {
         -webkit-appearance: textfield;
         background-color: transparent;
         background-position: right, center;
@@ -241,39 +178,61 @@
         position: relative;
         width: 100%;
         z-index: 1;
-        opacity: 0.2;
         @media screen and ($xxl) {
             font-size: $scale05;
         }
+        border-bottom: 2px solid $white;
+        border-radius: 0;
+        opacity: 0.2;
+        &:hover,
         &:focus {
-            outline: none;
             opacity: 0.5;
+            outline: none;
         }
-        &:focus ~ .form__border,
-        &.selected,
-        &.selected ~ .form__border {
+        &.selected {
             opacity: 1;
         }
     }
-    &__placeholder {
+    &-textarea {
+        -webkit-appearance: none;
+        -webkit-appearance: textfield;
+        -webkit-box-sizing: content-box;
+        background-color: transparent;
+        background-position: right, center;
+        background-repeat: no-repeat;
+        background-size: 0.8em 0.8em;
+        border: none;
+        box-sizing: border-box;
+        color: currentColor;
         font-family: $sans;
         font-size: $scale04;
+        letter-spacing: $spacing-sans;
+        line-height: 1.3;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0.25em;
+        padding-bottom: 0.75em;
+        padding-left: 0;
+        padding-right: 1em;
+        padding-top: 0.75em;
+        position: relative;
+        width: 100%;
+        z-index: 1;
         @media screen and ($xxl) {
             font-size: $scale05;
         }
-        letter-spacing: $spacing-sans;
-        line-height: 1.3;
-        bottom: 0;
-        display: flex;
-        flex-direction: row;
-        align-items: baseline;
-        left: 0;
-        padding-bottom: 0.75em;
+        border-bottom: 2px solid $white;
+        border-radius: 0;
         opacity: 0.2;
-        position: absolute;
-        width: 100%;
-        transform-origin: left;
-        transition: transform 0.1s 0s ease-in-out;
+        &:hover,
+        &:focus {
+            opacity: 0.5;
+            outline: none;
+        }
+        &.filled {
+            opacity: 1;
+        }
     }
     &__file {
         width: 0.1px;
@@ -286,18 +245,18 @@
         &:focus ~ .form__border {
             opacity: 1;
         }
-        &:active ~ .form__attachment,
-        &:focus ~ .form__attachment {
-            .form__attachment--attachment,
-            .form__attachment--browse {
+        &:active ~ .form-attachment,
+        &:focus ~ .form-attachment {
+            .form-attachment--attachment,
+            .form-attachment--browse {
                 opacity: 0.5;
             }
         }
-        &[value=""] ~ .form__attachment {
+        &[value=""] ~ .form-attachment {
             background-color: red;
         }
     }
-    &__attachment {
+    &-attachment {
         display: flex;
         flex-direction: row;
         align-items: baseline;
@@ -307,6 +266,13 @@
         cursor: hand;
         cursor: pointer;
         justify-content: space-between;
+        border-bottom: 2px solid currentColor;
+        color: currentColor;
+        opacity: 0.2;
+        &:hover,
+        &:focus {
+            opacity: 0.5;
+        }
         &--placeholder {
             font-family: $sans;
             font-size: $scale04;
@@ -315,7 +281,7 @@
             }
             letter-spacing: $spacing-sans;
             line-height: 1.3;
-            bottom: 0;
+            top: 0;
             display: flex;
             flex-direction: row;
             align-items: baseline;
@@ -336,7 +302,7 @@
             }
         }
         &.active {
-            .form__attachment--placeholder {
+            .form-attachment--placeholder {
                 @include form-placeholder-up;
             }
         }
@@ -377,7 +343,6 @@
             opacity: 0.2;
             &:after {
                 content: "";
-
                 transform: rotate(-90deg);
                 display: inline-block;
                 width: 0.6em;
@@ -391,11 +356,11 @@
             }
         }
         &.active {
-            .form__attachment--attachment,
-            .form__attachment--browse {
+            .form-attachment--attachment,
+            .form-attachment--browse {
                 opacity: 1;
             }
-            .form__attachment--placeholder {
+            .form-attachment--placeholder {
                 transform: translateY(-80%) scale(0.7);
                 transition: transform 0.1s 0.1s ease-in-out;
                 span {
@@ -429,19 +394,16 @@
         background-color: currentColor;
         opacity: 0.2;
     }
-    &__error {
+    &-error {
         font-family: $sans;
+        margin-top: 1em;
         font-size: $scale03;
         @media screen and ($xxl) {
-            font-size: $scale04;
+            font-size: $scale03;
         }
         letter-spacing: $spacing-sans;
         line-height: 1.3;
         color: $red;
-        margin-bottom: 1em;
-        &--container {
-            @include component-padding;
-        }
         &--icon {
             display: flex;
             flex-direction: row;
@@ -461,8 +423,11 @@
             }
         }
     }
-    &__checkbox {
-        &--box {
+    &-checkbox {
+        .item {
+
+        }
+        &_box {
             width: 1.5em;
             height: 1.5em;
             display: inline-block;
@@ -524,9 +489,9 @@
             }
         }
     }
-    &__radio,
-    &__checkbox {
-        &--label {
+    &-radio,
+    &-checkbox {
+        &_label {
             font-family: $sans;
             font-size: $scale03;
             @media screen and ($md) {
@@ -543,7 +508,7 @@
             align-items: baseline;
             flex-shrink: 0;
         }
-        &--group {
+        .item {
             position: relative;
             display: flex;
             flex-direction: row;
@@ -587,14 +552,6 @@
     &--comments {
         width: 100%;
         max-height: 5em;
-    }
-}
-
-.form__input:not([value=""]) ~ .form__placeholder {
-    transform: translateY(-80%) scale(0.7);
-    transition: transform 0.1s 0.1s ease-in-out;
-    span {
-        opacity: 0;
     }
 }
 

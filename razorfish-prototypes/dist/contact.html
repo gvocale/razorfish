@@ -227,88 +227,78 @@
                         <div class="divider"></div>
                     </div>
                     <form class="contact-form__form" id="contact-form__form-1" onsubmit="return false">
-                        <div class="form__field">
-                            <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                            <label class="form__placeholder" for="">First Name</label>
-                            <div class="form__border"></div>
-                        </div>
-                        <div class="form__field">
-                            <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                            <label class="form__placeholder" for="">Last Name</label>
-                            <div class="form__border"></div>
-                        </div>
-                        <div class="form__field">
-                            <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                            <label class="form__placeholder" for="">Title</label>
-                            <div class="form__border"></div>
-                        </div>
-                        <div class="form__field">
-                            <input class="form__input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                            <label class="form__placeholder" for="">Company</label>
-                            <div class="form__border"></div>
-                        </div>
-                        <div class="form__field error">
-                            <input class="form__input" pattern="[0-9-]{6,}" autocomplete="false" type="tel" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                            <label class="form__placeholder" for="">Phone Number</label>
-                            <div class="form__border"></div>
-                        </div>
+                        <div class="form-field">
+                            <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                            <label class="form-label" for="">First Name</label>
+                                                    </div>
+                        <div class="form-field">
+                            <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                            <label class="form-label" for="">Last Name</label>
+                                                    </div>
+                        <div class="form-field">
+                            <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                            <label class="form-label" for="">Title</label>
+                                                    </div>
+                        <div class="form-field">
+                            <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="form-label" for="">Company</label>
+                                                    </div>
+                        <div class="form-field error">
+                            <input class="form-input" pattern="[0-9-]{6,}" autocomplete="false" type="tel" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="form-label" for="">Phone Number</label>
+                                                    </div>
                         <div class="form__error--container">
                             <p class="form__error">Invalid Phone Number</p>
                         </div>
-                        <div class="form__field">
-                            <input class="form__input" autocomplete="false" type="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                            <label class="form__placeholder" for="">Email</label>
-                            <div class="form__border"></div>
-                        </div>
-                        <div class="form__field">
-                            <select class="form__select">
+                        <div class="form-field">
+                            <input class="form-input" autocomplete="false" type="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" onkeyup="this.setAttribute('value', this.value);" value="" required>
+                            <label class="form-label" for="">Email</label>
+                                                    </div>
+                        <div class="form-field">
+                            <select class="form-select">
                                 <option value="none" disabled selected>Country</option>>
                                 <option value="USA">USA</option>
                                 <option value="Canada">Canada</option>
                                 <option value="UK">UK</option>
                             </select>
-                            <div class="form__border"></div>
-                        </div>
-                        <div class="form__field">
-                            <select class="form__select">
+                                                    </div>
+                        <div class="form-field">
+                            <select class="form-select">
                                 <option value="none" disabled selected>State / Province</option>>
                                 <option value="Canada">NJ</option>
                                 <option value="USA">NY</option>
                                 <option value="UK">SF</option>
                             </select>
-                            <div class="form__border"></div>
-                        </div>
-                        <div class="form__field">
-                            <textarea name="form__textarea" class="form__textarea" contenteditable="true" rows="1"></textarea>
-                            <label class="form__placeholder" for="form__textarea">Comments<span class="form__attachment--placeholder--optional">(Optional)</span></label>
-                            <div class="form__border"></div>
-                        </div>
-                        <div class="form__field">
-                            <input type="file" name="form__file-1[]" id="form__file-1" class="form__input form__file" data-multiple-caption="{count} files selected" multiple="">
-                            <label class="form__attachment" for="form__file-1">
-                                <span class="form__attachment--placeholder">Attachment</span>
-                                <span class="form__attachment--attachment"><span>Attachment<span class="form__attachment--placeholder--optional">(Optional)</span></span>
+                                                    </div>
+                        <div class="form-field">
+                            <textarea name="form-textarea" class="form-textarea" contenteditable="true" rows="1"></textarea>
+                            <label class="form-label" for="form-textarea">Comments<span class="form-attachment--placeholder--optional">(Optional)</span></label>
+                                                    </div>
+                        <div class="form-field">
+                            <input type="file" name="form__file-1[]" id="form__file-1" class="form-input form__file" data-multiple-caption="{count} files selected" multiple="">
+                            <label class="form-attachment" for="form__file-1">
+                                <span class="form-attachment--placeholder">Attachment</span>
+                                <span class="form-attachment--attachment"><span>Attachment<span class="form-attachment--placeholder--optional">(Optional)</span></span>
                                 </span>
-                                <span class="form__attachment--browse">Browse</span>
+                                <span class="form-attachment--browse">Browse</span>
                             </label>
-                            <div class="form__border"></div>
-                        </div>
-                        <div class="form__field">
+                                                    </div>
+                        <div class="form-field">
                             <ul class="form__radio--group">
                                 <li class="form__radio--item">
-                                    <input id="radio-1" class="form__input" type="radio" name="form__radio">
+                                    <input id="radio-1" class="form-input" type="radio" name="form__radio">
                                     <label for="radio-1" class="form__radio--label"><span class="form__radio--box"></span>Aenean lacinia bibendum nulla sed consectetur</label>
                                 </li>
                                 <li class="form__radio--item">
-                                    <input id="radio-2" class="form__input" type="radio" name="form__radio">
+                                    <input id="radio-2" class="form-input" type="radio" name="form__radio">
                                     <label for="radio-2" class="form__radio--label"><span class="form__radio--box"></span>Magna Tristique Cursus</label>
                                 </li>
                             </ul>
                         </div>
-                        <div class="form__field">
+                        <div class="form-field">
                             <ul class="form__checkbox--group">
                                 <li class="form__checkbox--item">
-                                    <input type="checkbox" id="form__checkbox" class="form__input" checked>
+                                    <input type="checkbox" id="form__checkbox" class="form-input" checked>
                                     <label for="form__checkbox" class="form__checkbox--label"><span class="form__checkbox--box"></span>Yes, subscribe me to the Razorfish Newsletter</label>
                                 </li>
                             </ul>
