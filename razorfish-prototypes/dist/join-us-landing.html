@@ -22,7 +22,7 @@
 <body id="animate-container">
     <input type="checkbox" id="masthead__checkbox">
     <nav class="masthead fade" role="navigation">
-        <i class="icon icon__razorfish"></i>
+        <i class="icon icon-razorfish"></i>
         <label for="masthead__checkbox" class="masthead__hamburger">
             <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
@@ -122,7 +122,7 @@
                     <a class="link--underline" href="newsletter-signup.html">Newsletter Sign-up</a>
                 </li>
                 <li class="link-container">
-                    <a class="link--underline" href="office-article-meta.html">Office Contact Info</a>
+                    <a class="link--underline" href="office-contact-info.html">Office Contact Info</a>
                 </li>
                 <li class="link-container">
                     <a class="link--underline" href="office-list.html">Office List</a>
@@ -169,7 +169,7 @@
         <a class="hero hero__video theme__text-white_accent" href="">
             <iframe class="hero__video-embed" id="vimeo-video" src="https://player.vimeo.com/video/52649887?color=a9c000&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             <div class="module-background">
-                <div class="image image__parallax" style="background-image: url(images/hero-join-us.jpg)"></div>
+                <div class="image image__parallax" style="background-image: url(images/hero-join-us-darker.jpg)"></div>
             </div>
             <div class="module-content">
                 <h2 class="headline">Maecenas sed diam eget risus varius</h2>
@@ -184,15 +184,20 @@
                 <h3 class="headline">Current Listings</h3>
             </div>
             <div class="button-group">
-                <select class="select">
-                    <option value="none" disabled selected>JOB CATEGORY</option>
-                    <option value="">Insight & Strategy</option>
-                    <option value="">Creative & UX</option>
-                    <option value="">Data Science</option>
-                    <option value="">Media</option>
-                    <option value="">Lorem Ipsum</option>
-                </select>
-                <select class="select">
+                <div class="select">
+                    <i class="icon-dropdown"></i>
+                    <select class="select_group">
+                        <option value="none" disabled selected>JOB CATEGORY</option>
+                        <option value="">Insight & Strategy</option>
+                        <option value="">Creative & UX</option>
+                        <option value="">Data Science</option>
+                        <option value="">Media</option>
+                        <option value="">Lorem Ipsum</option>
+                    </select>
+                </div>
+                <div class="select">
+                    <i class="icon-dropdown"></i>
+                    <select class="select_group">
                     <option value="none" disabled selected>LOCATION</option>
                     <option value="">North America</option>
                     <option value="">&nbsp; Atlanta</option>
@@ -225,7 +230,8 @@
                     <option value="">&nbsp; Shanghai</option>
                     <option value="">&nbsp; Sydney</option>
                     <option value="">&nbsp; Wuhan</option>
-                </select>
+                    </select>
+                </div>
             </div>
         </section>
         <section class="filtered-job-listings">
@@ -313,18 +319,18 @@
         </section>
     </div>
     <footer class="footer">
-        <i class="icon icon__razorfish"></i>
+        <i class="icon icon-razorfish"></i>
         <ul class="social-share">
             <li class="icon-container">
-                <a href="" class="icon icon__linkedin">
+                <a href="" class="icon icon-linkedin">
                 </a>
             </li>
             <li class="icon-container">
-                <a href="" class="icon icon__twitter">
+                <a href="" class="icon icon-twitter">
                 </a>
             </li>
             <li class="icon-container">
-                <a href="" class="icon icon__facebook">
+                <a href="" class="icon icon-facebook">
                 </a>
             </li>
         </ul>
@@ -336,7 +342,6 @@
     </footer>
     <script src="js/min/razorfish.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    
     <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
     <script src="js/show-hide-header.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>

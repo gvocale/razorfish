@@ -290,6 +290,9 @@
                 width: 80%;
                 height: calc(80vw / 4 * 7);
             }
+            &:last-child {
+                @include margin-bottom;
+            }
         }
         .feed__item {
             .headline {
@@ -394,7 +397,7 @@
 
 a.feed__item {
     .module-content > *:last-child:after {
-        content: "\E809";
+        content: "\EA04";
         font-size: $scale04 / 1.5;
         @media only screen and ($md) {
             font-size: $scale05 / 1.5;

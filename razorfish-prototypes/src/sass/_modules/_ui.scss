@@ -59,20 +59,15 @@
     }
 }
 
+
+
 .button {
     text-transform: uppercase;
-}
-
-.button,
-.select {
     display: inline-block;
     -webkit-appearance: none;
-    background-clip: border-box;
     background-color: transparent;
-    background-origin: content-box;
     border-radius: 0;
     border: 0;
-    box-shadow: inset 0 0 0 2px rgba($black, 0.2);
     box-sizing: border-box;
     color: currentColor;
     cursor: hand;
@@ -83,34 +78,41 @@
     line-height: $solid-sans;
     outline: none;
     overflow: hidden;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
+    padding-top: 1.15em;
+    padding-bottom: 1.15em;
     padding-left: 3em;
     padding-right: 3em;
     position: relative;
     text-decoration: none;
     font-size: $scale03;
-    transition: all 0.2s ease-in 0s;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    option:first-child {
-        text-transform: uppercase;
-    }
-    @media screen and ($xxl) {
+    @media screen and ($xl) {
         font-size: $scale04;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        border: 2px solid currentColor;
+        box-sizing: border-box;
+        transition: all 0.2s $bezier;
     }
     @media (hover) {
         &:hover {
             outline: none;
-            box-shadow: inset 0 0 0 2px rgba($black, 1);
-            transition: all 0s ease-out 0s;
+            &:before {
+                opacity: 1;
+                transition: all 0s $bezier;
+            }
         }
     }
     &:focus {
         outline: none;
-        box-shadow: inset 0 0 0 2px rgba($black, 1);
-        transition: all 0s ease-out 0s;
+        box-shadow: inset 0 0 0 2px currentColor;
+        transition: all 0s;
     }
     &:active:after,
     &:target:after {
@@ -123,58 +125,197 @@
         background-color: currentColor;
         opacity: 0.05;
     }
-    option {
-        text-transform: none;
-    }
-    &--white {
-        color: $white;
-        box-shadow: inset 0 0 0 2px rgba($white, 0.2);
-        @media (hover) {
-            &:hover {
-                box-shadow: inset 0 0 0 2px rgba($white, 1);
-            }
-        }
-        &:focus {
-            box-shadow: inset 0 0 0 2px rgba($white, 1);
-        }
-    }
-    &--black {
-        color: $black;
-        box-shadow: inset 0 0 0 2px rgba($black, 0.2);
-        @media (hover) {
-            &:hover {
-                box-shadow: inset 0 0 0 2px rgba($black, 1);
-            }
-        }
-        &:focus {
-            box-shadow: inset 0 0 0 2px rgba($black, 1);
-        }
-    }
-    &--arrow {
-        &.white {
-            background-position-x: calc(100% + 2em);
-            background-position-y: center;
-            background-repeat: no-repeat;
-            background-size: 1em auto;
-            padding: 1.2em 3em 1.2em 1.2em;
-        }
-    }
 }
 
 .select {
-    background-position-x: calc(100% + 2em);
-    background-position-y: center;
-    background-repeat: no-repeat;
-    background-size: 1em auto;
-
-    padding-right: 3em;
-    padding-left: 1.5em;
-    option {
-        text-transform: capitalize;
-        &:checked {
-            text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    cursor: hand;
+    cursor: pointer;
+    color: currentColor;
+    flex-shrink: 0;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        border: 2px solid currentColor;
+        box-sizing: border-box;
+        transition: all 0.2s $bezier;
+    }
+    &:hover {
+        &:before {
+            opacity: 1;
+            transition: all 0s $bezier;
+        }
+    }
+    &_group {
+        cursor: hand;
+        cursor: pointer;
+        color: currentColor;
+        position: relative;
+        -webkit-appearance: none;
+        outline: none;
+        padding-top: 1.15em;
+        padding-bottom: 1.15em;
+        padding-left: 1.15em;
+        padding-right: 2.7em;
+        border: 0;
+        z-index: 1;
+        border-radius: 0;
+        background-color: transparent;
+        font-family: $sans;
+        font-weight: 700;
+        letter-spacing: $spacing-sans-large;
+        line-height: $solid-sans;
+        font-size: $scale03;
+        @media screen and ($xl) {
+            font-size: $scale04;
+        }
+    }
+    .icon-dropdown {
+        &:before {
+            position: absolute;
+            display: block;
+            font-size: 0.5em;
+            right: 0;
+            margin-right: 2.1em;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 }
 
+// .select_secondary {
+//     display: inline-block;
+//     position: relative;
+//     cursor: hand;
+//     cursor: pointer;
+//     color: $black;
+//     transition: 0.2s $bezier;
+//     box-shadow: inset 0 0 0 0 $primary, inset 0 0 0 2px rgba($black, 0.2);
+//     @media (hover) {
+//         &:hover {
+//             outline: none;
+//             box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($black, 0.2);
+//         }
+//     }
+//     &:focus {
+//         outline: none;
+//         box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($black, 0.2);
+//     }
+//     .group {
+//         cursor: hand;
+//         cursor: pointer;
+//         color: currentColor;
+//         position: relative;
+//         -webkit-appearance: none;
+//         outline: none;
+//         padding-top: 1.15em;
+//         padding-bottom: 1.15em;
+//         padding-left: 1.15em;
+//         padding-right: 2.7em;
+//         border: 0;
+//         border-radius: 0;
+//         background-color: transparent;
+//         font-family: $sans;
+//         font-weight: 700;
+//         letter-spacing: $spacing-sans-large;
+//         line-height: $solid-sans;
+//         font-size: $scale03;
+//         @media screen and ($xl) {
+//             font-size: $scale04;
+//         }
+//     }
+//     .icon {
+//         &:before {
+//             content: "\E80C";
+//             position: absolute;
+//             display: block;
+//             font-size: 0.5em;
+//             right: 0;
+//             margin-right: 2.1em;
+//             top: 50%;
+//             transform: translateY(-50%);
+//         }
+//     }
+//     &.white {
+//         color: $white;
+//         box-shadow: inset 0 0 0 0 $primary, inset 0 0 0 2px rgba($white, 0.2);
+//         @media (hover) {
+//             &:hover {
+//                 box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($white, 0.2);
+//             }
+//         }
+//         &:focus {
+//             box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($white, 0.2);
+//         }
+//     }
+// }
 
+// .button_secondary {
+//     text-transform: uppercase;
+//     display: inline-block;
+//     -webkit-appearance: none;
+//     background-color: transparent;
+//     border-radius: 0;
+//     border: 0;
+//     box-sizing: border-box;
+//     color: $black;
+//     cursor: hand;
+//     cursor: pointer;
+//     font-family: $sans;
+//     font-weight: 700;
+//     letter-spacing: $spacing-sans-large;
+//     line-height: $solid-sans;
+//     outline: none;
+//     overflow: hidden;
+//     padding-top: 1.15em;
+//     padding-bottom: 1.15em;
+//     padding-left: 3em;
+//     padding-right: 3em;
+//     position: relative;
+//     text-decoration: none;
+//     box-shadow: inset 0 0 0 0 $primary, inset 0 0 0 2px rgba($black, 0.2);
+//     transition: 0.2s $bezier;
+//     font-size: $scale03;
+//     @media screen and ($xl) {
+//         font-size: $scale04;
+//     }
+//     @media (hover) {
+//         &:hover {
+//             outline: none;
+//             box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($black, 0.2);
+//         }
+//     }
+//     &:focus {
+//         outline: none;
+//         box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($black, 0.2);
+//     }
+//     &:active:after,
+//     &:target:after {
+//         content: "";
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         background-color: $black;
+//         opacity: 0.1;
+//     }
+//     &.white {
+//         color: $white;
+//         box-shadow: inset 0 0 0 0 $primary, inset 0 0 0 2px rgba($white, 0.2);
+//         @media (hover) {
+//             &:hover {
+//                 box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($white, 0.2);
+//             }
+//         }
+//         &:focus {
+//             box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($white, 0.2);
+//         }
+//     }
+// }

@@ -569,7 +569,7 @@ window.onload = (function() {
     }
 
 
-    // Approach page - Bottom module (contact)
+    // Solutions page - Bottom module (contact)
 
     $(window).scroll(function() {
         if ($(".solutions__contact").is(".visible")) {
@@ -919,26 +919,18 @@ window.onload = (function() {
 
     // Make selected option in Select uppercase
 
-    // $(".select").each(function() {
-    //     $(this).change(function() {
-    //         $(this).find("option").text(function(i, text) {
-    //             return $(this).is(":selected") ? text.toUpperCase() : text.toLowerCase()
-    //         });
-    //     }).trigger("change");
-    // });
-
     //Function to capitalise first character for strings
 
     // On load change already selected option to uppercase
-    $('.select').each(function() {
-        $(this).children(':selected').text($(this).children(':selected').text().toUpperCase());
+    $('.select,.select_secondary').each(function() {
+        $(this).children('.group').children(':selected').text($(this).children('.group').children(':selected').text().toUpperCase());
     });
 
     // On select change selected option to uppercase, not selected to lowercase
-    $('.select').change(function() {
-        $(this).children(':selected').text($(this).children(':selected').text().toUpperCase());
+    $('.select,.select_secondary').change(function() {
+        $(this).children('.group').children(':selected').text($(this).children('.group').children(':selected').text().toUpperCase());
 
-        $(this).children(':not(:selected)').each(function() {
+        $(this).children('.group').children(':not(:selected)').each(function() {
             $(this).text($(this).text().toLowerCase());
 
         });

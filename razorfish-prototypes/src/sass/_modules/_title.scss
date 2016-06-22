@@ -175,7 +175,6 @@
         }
         .button,
         .select {
-            width: 100%;
             margin-bottom: 1em;
             @media screen and ($md) {
                 margin-right: 0.5em;
@@ -187,7 +186,7 @@
             }
         }
     }
-    .group {
+    .tabs {
         @include component-padding;
         list-style: none;
         display: flex;
@@ -287,8 +286,15 @@
     &_red {
         color: $white;
         background-color: $red;
-        &:first-child:before {
+        .headline:first-child:before {
             background-color: $black-divider;
+        }
+    }
+    &_black {
+        color: $white;
+        background-color: $black;
+        .headline:first-child:before {
+            background-color: $primary;
         }
     }
 }

@@ -1,26 +1,30 @@
-.icon {
+@mixin icon-base-styles {
+    display: inline-block;
     font-family: $icons;
-    &__razorfish:before {
-        content: "\E80B";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+
+$icons-all: ( razorfish: "\EA02", twitter: "\EA0B", linkedin: "\EA0D", facebook: "\EA05", weibo: "\EA0C", mail: "\EA07", share: "\EA09", dropdown: "\EA01", tick: "\EA0A", play: "\EA08", arrow-left: "\EA03", arrow-right: "\EA04", info: "\EA06", scroll: "\EA0E", );
+@each $name,
+$icon in $icons-all {
+    .icon-#{$name}:before {
+        @include icon-base-styles;
+        content: $icon;
     }
-    &__linkedin:before {
-        content: "\E806";
-    }
-    &__twitter:before {
-        content: "\E801";
-    }
-    &__facebook:before {
-        content: "\E808";
-    }
-    &__weibo:before {
-        content: "\E800";
-    }
-    &__mail:before {
-        content: "\E805";
-    }
-    &__share:before {
-        content: "\E803";
-    }
+}
+
+@mixin icon-play {
+    content: "\EA08";
+}
+
+@mixin icon-arrow-left {
+    content: "\EA03";
 }
 
 // Icon font / SVG Icon CSS goes here if we use it

@@ -33,11 +33,14 @@
 //     font-weight: 400;
 //     font-style: normal;
 // }
-// Fontello Icon Font
+
+/* Icons */
 @font-face {
     font-family: 'razorfish-icons';
-    src: url('../fonts/razorfish-icons/razorfish-icons.eot?49419655');
-    src: url('../fonts/razorfish-icons/razorfish-icons.eot?49419655#iefix') format('embedded-opentype'), url('../fonts/razorfish-icons/razorfish-icons.woff?49419655') format('woff'), url('../fonts/razorfish-icons/razorfish-icons.ttf?49419655') format('truetype'), url('../fonts/razorfish-icons/razorfish-icons.svg?49419655#razorfish-icons') format('svg');
+    src:url('../fonts/razorfish-icons.eot');
+    src:url('../fonts/razorfish-icons.eot') format('embedded-opentype'),
+        url('../fonts/razorfish-icons.ttf') format('truetype'),
+        url('../fonts/razorfish-icons.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -72,7 +75,7 @@ $sans: "Gotham A",
 Helvetica,
 Arial,
 sans-serif;
-$icons: "razorfish-icons";
+$icons: 'razorfish-icons';
 // Letter Spacing
 $spacing-serif-tight: 0;
 $spacing-serif: 0;
@@ -199,7 +202,7 @@ p {
         }
         &--right {
             &:after {
-                content: "\E809";
+                content: "\EA04";
                 font-size: 0.4em;
                 margin-left: 0.8em;
                 color: currentColor;

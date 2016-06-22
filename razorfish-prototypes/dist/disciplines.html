@@ -22,7 +22,7 @@
 <body id="animate-container">
     <input type="checkbox" id="masthead__checkbox">
     <nav class="masthead fade" role="navigation">
-        <i class="icon icon__razorfish"></i>
+        <i class="icon icon-razorfish"></i>
         <label for="masthead__checkbox" class="masthead__hamburger">
             <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
@@ -122,7 +122,7 @@
                     <a class="link--underline" href="newsletter-signup.html">Newsletter Sign-up</a>
                 </li>
                 <li class="link-container">
-                    <a class="link--underline" href="office-article-meta.html">Office Contact Info</a>
+                    <a class="link--underline" href="office-contact-info.html">Office Contact Info</a>
                 </li>
                 <li class="link-container">
                     <a class="link--underline" href="office-list.html">Office List</a>
@@ -263,16 +263,12 @@
                 <div class="divider heading"></div>
                 <h2 class="heading">Wanna work here?</h2>
                 <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incidid unt ut labore et dolore.</p>
-                <button class="button button--black">Jobs listings</button>
+                <button class="button">Jobs listings</button>
             </div>
         </section>
-        <section class="contact-promo" style="">
-            <div class="module-content">
-                <p class="eyebrow">Locations</p>
-                <h2 class="description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link--underline">Get in touch.</a></h2>
-            </div>
-            <figure class="image image__parallax">
-                <svg xmlns="http://www.w3.org/2000/svg">
+        <section class="contact-promo">
+            <div class="module-background">
+                <svg class="image image__parallax" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <filter id="image-grading--green">
                             <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" result="gray"></feColorMatrix>
@@ -286,22 +282,26 @@
                     </defs>
                     <image filter="url('#image-grading--green')" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="images/contact-promo-background.jpg"></image>
                 </svg>
-            </figure>
+            </div>
+            <div class="module-content">
+                <p class="eyebrow">Locations</p>
+                <h2 class="description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link--underline">Get in touch.</a></h2>
+            </div>
         </section>
     </div>
     <footer class="footer">
-        <i class="icon icon__razorfish"></i>
+        <i class="icon icon-razorfish"></i>
         <ul class="social-share">
             <li class="icon-container">
-                <a href="" class="icon icon__linkedin">
+                <a href="" class="icon icon-linkedin">
                 </a>
             </li>
             <li class="icon-container">
-                <a href="" class="icon icon__twitter">
+                <a href="" class="icon icon-twitter">
                 </a>
             </li>
             <li class="icon-container">
-                <a href="" class="icon icon__facebook">
+                <a href="" class="icon icon-facebook">
                 </a>
             </li>
         </ul>
