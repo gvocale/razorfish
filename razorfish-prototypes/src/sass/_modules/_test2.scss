@@ -14,3 +14,27 @@
         @include component-padding;
     }
 }
+
+.module.hero {
+    .module-content {
+        margin-left: calc(10vw);
+        // Padding-bottom is fine, the previous styling can be left in place
+        padding-left: 0;
+        width: calc(((80% - (2rem * (4 - 1))) / 4 * 4) + (2rem * (4 - 1)));
+        @media screen and ($lg) {
+            width: calc(((80% - (2rem * (6 - 1))) / 6 * 6) + (2rem * (6 - 1)));
+        }
+        @media screen and ($lg) {
+            width: calc(((80% - (2rem * (12 - 1))) / 12 * 10) + (2rem * (10 - 1)));
+        }
+        @media screen and ($xl) {
+            width: calc(((80% - (2rem * (12 - 1))) / 12 * 8) + (2rem * (8 - 1)));
+        }
+        @media screen and ($xxl) {
+            width: calc(((80% - (2rem * (12 - 1))) / 12 * 6) + (2rem * (6 - 1)));
+        }
+        .hero-content {
+            max-width: auto; // Remove the previosly set max-width to this div
+        }
+    }
+}
