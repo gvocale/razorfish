@@ -591,136 +591,115 @@ $scale08: 2.6154rem;
 $title-sans: 1.4;
 $spacing-sans: 0em;
 $spacing-serif: 0;
-
 $scale03: 0.8077rem;
 $scale04: 1rem;
 $solid-sans: 1;
 $spacing-serif-large: 0.015em;
-$spacing-serif-large: 0.015em;
-
-.button {
-    text-transform: uppercase;
-    display: inline-block;
-    -webkit-appearance: none;
-    background-color: transparent;
-    border-radius: 0;
-    border: 0;
-    box-sizing: border-box;
-    color: currentColor;
-    cursor: hand;
-    cursor: pointer;
-    font-family: $sans;
-    font-weight: 700;
-    letter-spacing: $spacing-sans-large;
-    line-height: $solid-sans;
-    outline: none;
-    overflow: hidden;
-    padding-top: 1.15em;
-    padding-bottom: 1.15em;
-    padding-left: 3em;
-    padding-right: 3em;
-    position: relative;
-    text-decoration: none;
-    font-size: $scale03;
+$scale02: 0.6154rem;
+$scale03: 0.8077rem;
+$scale04: 1rem;
+$scale05: 1.3077rem;
+$scale06: 1.6154rem;
+$scale07: 2.1154rem;
+$scale08: 2.6154rem;
+$spacing-serif: 0;
+$title-sans: 1.4;
+.person-name {
+    font-size: $scale04;
+    line-height: 1.1;
+    letter-spacing: $spacing-serif;
+    margin-bottom: 0.4em;
+    @media screen and ($md) {
+        font-size: $scale05;
+    }
+    
     @media screen and ($xl) {
-        font-size: $scale04;
-    }
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.2;
-        border: 2px solid currentColor;
-        box-sizing: border-box;
-        transition: all 0.2s $bezier;
-    }
-    @media (hover) {
-        &:hover {
-            outline: none;
-            &:before {
-                opacity: 1;
-                transition: all 0s $bezier;
+        font-size: $scale07;
+        margin-bottom: 0.5em;
+        &:first-child:before {
+            background-color: lighten($primary, 10%);
+            width: 0.9em;
+            height: 4px;
+            @media screen and ($lg) {
+                height: 5px;
+                width: 0.7em;
+                margin-bottom: 0.35em;
+            }
+            @media screen and ($xxl) {
+                height: 6px;
             }
         }
     }
-    &:focus {
-        outline: none;
-        box-shadow: inset 0 0 0 2px currentColor;
-        transition: all 0s;
-    }
-    &:active:after,
-    &:target:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: currentColor;
-        opacity: 0.05;
+    
+    @media screen and ($xxl) {
+        font-size: $scale08;
     }
 }
-
-.select {
-    display: inline-block;
-    position: relative;
-    cursor: hand;
-    cursor: pointer;
-    color: currentColor;
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.2;
-        border: 2px solid currentColor;
-        box-sizing: border-box;
-        transition: all 0.2s $bezier;
+.person-role {
+    line-height: $title-sans;
+    font-size: $scale02;
+    margin-bottom: 0.25em;
+    @media screen and ($md) {
+        font-size: $scale03;
+    }
+    
+    @media screen and ($xl) {
+        font-size: $scale04;
+    }
+    
+    @media screen and ($xxl) {
+        font-size: $scale05;
+    }
+}
+.person-office {
+    line-height: $title-sans;
+    font-size: $scale02;
+    @media screen and ($md) {
+        font-size: $scale03;
+    }
+    
+    @media screen and ($xl) {
+        font-size: $scale04;
+    }
+    
+    @media screen and ($xxl) {
+        font-size: $scale05;
+    }
+}
+$bezier: cubic-bezier(.32, .01, 0, 1);
+$black: #373737;
+.person {
+    .person-photo {
+        transition: all 0.5s 0s $bezier;
+        background-color: $white;
+        transition: all 0.5s 0s $bezier;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-blend-mode: multiply;
+            transition: all 0.5s 0s $bezier;
+            background-color: rgba($black, 0);
+        }
     }
     &:hover {
-        &:before {
-            opacity: 1;
-            transition: all 0s $bezier;
+        .person-photo {
+            transform: scale(1.1);
+            &:after {
+                background-color: rgba($black, 0.4);
+            }
         }
-    }
-    .group {
-        cursor: hand;
-        cursor: pointer;
-        color: currentColor;
-        position: relative;
-        -webkit-appearance: none;
-        outline: none;
-        padding-top: 1.15em;
-        padding-bottom: 1.15em;
-        padding-left: 1.15em;
-        padding-right: 2.7em;
-        border: 0;
-        border-radius: 0;
-        background-color: transparent;
-        font-family: $sans;
-        font-weight: 700;
-        letter-spacing: $spacing-sans-large;
-        line-height: $solid-sans;
-        font-size: $scale03;
-        @media screen and ($xl) {
-            font-size: $scale04;
+        .animated-1 {
+            transition: all 0.3s 0.1s $bezier;
         }
-    }
-    .icon {
-        &:before {
-            content: "\E80C";
-            position: absolute;
-            display: block;
-            font-size: 0.5em;
-            right: 0;
-            margin-right: 2.1em;
-            top: 50%;
-            transform: translateY(-50%);
+        .animated-2 {
+            transition: all 0.3s 0.15s $bezier;
+        }
+        .animated-3 {
+            transition: all 0.25s 0.2s $bezier;
+            opacity: 0.5;
         }
     }
 }

@@ -38,3 +38,71 @@
         }
     }
 }
+
+@mixin col($column) {
+    width: calc((100% / 12 * #{$column}) - ((#{$gutter} * 12) - (1 * (#{$column} - 1))));
+}
+
+$icons-all: ( razorfish: "\EA02", twitter: "\EA0B", linkedin: "\EA0D", facebook: "\EA05", weibo: "\EA0C", mail: "\EA07", share: "\EA09", dropdown: "\EA01", tick: "\EA0A", play: "\EA08", arrow-left: "\EA03", arrow-right: "\EA04", info: "\EA06", scroll: "\EA0E", );
+@each $name,
+$icon in $icons-all {
+    .icon-#{$name}:before {
+        @include icon-base-styles;
+        content: $icon;
+    }
+}
+
+@mixin col($content-col, $grid-col: 12) {
+    width: calc(((80% - (2rem * ($grid-col - 1))) / $grid-col * $content-col) + (2rem * ($content-col - 1)));
+}
+
+@mixin padding-top($multiplier: 1) {
+    padding-top: 20vw * $multiplier;
+    @media screen and ($md) {
+        padding-top: 15vw * $multiplier;
+    }
+    @media screen and ($lg) {
+        padding-top: 10vw * $multiplier;
+    }
+}
+
+@mixin padding-bottom($multiplier: 1) {
+    padding-bottom: 20vw * $multiplier;
+    @media screen and ($md) {
+        padding-bottom: 15vw * $multiplier;
+    }
+    @media screen and ($lg) {
+        padding-bottom: 10vw * $multiplier;
+    }
+}
+
+.page-tagline {
+    padding: 0; // Remove padding-left and right
+    .module-content {
+        @include padding-top(1);
+        @include padding-bottom(0.5);
+        margin-left: calc(10vw);
+        @include col(4, 4);
+        @media screen and ($md) {
+            @include col(6, 6);
+        }
+        @media screen and ($lg) {
+            @include col(12, 12);
+        }
+    }
+}
+
+@mixin col($content-col, $grid-col: 12) {
+    width: calc(((80% - (2rem * ($grid-col - 1))) / $grid-col * $content-col) + (2rem * ($content-col - 1)));
+}
+
+.people-list .people .person {
+    width: 50%;
+    @media screen and ($lg) {
+        width: 33%;
+    }
+    @media screen and ($xxl) {
+        width: 25%;
+    }
+}
+
