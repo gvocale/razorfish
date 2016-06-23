@@ -1,22 +1,3 @@
-.padded-grid {
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: calc(80% + 1rem + 1rem);
-    .col-6 {
-        width: 50%;
-    }
-}
-
-.padded-grid > div,
-.padded-grid > section,
-.padded-grid > ul {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
 $gridLine: hsla(100, 100%, 40%, 0.1);
 .overlay-grid {
     position: fixed;
@@ -25,112 +6,204 @@ $gridLine: hsla(100, 100%, 40%, 0.1);
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     user-select: none;
     cursor: not-allowed;
     pointer-events: none;
-    .padded-grid {
-        height: 100%;
-        flex-direction: row;
-        user-select: none;
-        cursor: not-allowed;
-        pointer-events: none;
-        flex-wrap: nowrap;
-        &:before {
-            content: "$sm";
-            position: fixed;
-            display: block;
-            background-color: $gridLine;
-            width: 4em;
-            height: 4em;
-            font-family: $sans;
-            font-size: $scale03;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            top: 0;
-            left: 0;
-            @media screen and ($md) {
-                content: "$md";
-            }
-            @media screen and ($lg) {
-                content: "$lg";
-            }
-            @media screen and ($xl) {
-                content: "$xl";
-            }
-            @media screen and ($xxl) {
-                content: "$xxl";
-            }
+    @include grid-padding;
+    &:after {
+        content: "$sm";
+        position: fixed;
+        display: block;
+        background-color: $gridLine;
+        width: 4em;
+        height: 4em;
+        font-family: $sans;
+        font-size: $scale03;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        @media screen and ($md) {
+            content: "$md";
+        }
+        @media screen and ($lg) {
+            content: "$lg";
+        }
+        @media screen and ($xl) {
+            content: "$xl";
+        }
+        @media screen and ($xxl) {
+            content: "$xxl";
         }
     }
     .col {
-        border-left: 1px solid $gridLine;
-        border-right: 1px solid $gridLine;
-        @media screen and ($md) {
-            border-left: 1px solid $gridLine;
-            border-right: 1px solid $gridLine;
-        }
-        @media screen and ($lg) {
-            border-left: 1px solid $gridLine;
-            border-right: 1px solid $gridLine;
-        }
-        @media screen and ($xl) {
-            border-left: 1px solid $gridLine;
-            border-right: 1px solid $gridLine;
-        }
-        @media screen and ($xxl) {
-            border-left: 1px solid $gridLine;
-            border-right: 1px solid $gridLine;
-        }
+        @include component-margin;
+        box-shadow: inset 1px 0 0 0 rgba($primary, 0.2), inset -1px 0 0 0 rgba($primary, 0.2), -1rem 0 0 0 rgba($primary, 0.1), 1rem 0 0 0 rgba($primary, 0.1);
         width: 100%;
-        background-color: hsla(0, 0%, 0%, 0.01);
-        margin-left: 1rem;
-        margin-right: 1rem;
-        width: calc(100% / 4);
+        background-color: rgba($black, 0.015);
         height: 100%;
-        display: block;
-        user-select: none;
-        cursor: not-allowed;
-        pointer-events: none;
-        &:nth-of-type(5),
-        &:nth-of-type(6),
-        &:nth-of-type(7),
-        &:nth-of-type(8),
-        &:nth-of-type(9),
-        &:nth-of-type(10),
-        &:nth-of-type(11),
-        &:nth-of-type(12) {
-            display: none;
-        }
-        @media screen and ($md) {
-            &:nth-of-type(1),
-            &:nth-of-type(2),
-            &:nth-of-type(3),
-            &:nth-of-type(4),
-            &:nth-of-type(5),
-            &:nth-of-type(6) {
-                width: calc(100% / 6);
+        display: none;
+        position: relative;
+        @for $i from 1 through 4 {
+            &:nth-of-type(#{$i}) {
                 display: block;
             }
         }
+        @media screen and ($md) {
+            @for $i from 5 through 6 {
+                &:nth-of-type(#{$i}) {
+                    display: block;
+                }
+            }
+        }
         @media screen and ($lg) {
-            &:nth-of-type(1),
-            &:nth-of-type(2),
-            &:nth-of-type(3),
-            &:nth-of-type(4),
-            &:nth-of-type(5),
-            &:nth-of-type(6),
-            &:nth-of-type(7),
-            &:nth-of-type(8),
-            &:nth-of-type(9),
-            &:nth-of-type(10),
-            &:nth-of-type(11),
-            &:nth-of-type(12) {
-                width: calc(100% / 12);
+            @for $i from 7 through 12 {
+                &:nth-of-type(#{$i}) {
+                    display: block;
+                }
+            }
+        }
+        &:first-child:before {
+            content: "1 of 4 column (Flexbox)";
+            position: absolute;
+            font-family: $sans;
+            font-weight: 700;
+            line-height: 1.2;
+            color: $primary;
+            top: 1rem;
+            left: 1rem;
+            @media screen and ($md) {
+                content: "1 of 6 column (Float)";
+                top: 2rem;
+                left: 2rem;
+            }
+            @media screen and ($lg) {
+                content: "1 of 12 column (Float)";
+            }
+        }
+    }
+    &.half {
+        height: 40%;
+    }
+}
+
+.overlay-grid-qa {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    user-select: none;
+    cursor: not-allowed;
+    pointer-events: none;
+    .col {
+        box-shadow: inset 1px 0 0 0 rgba($red, 0.2), inset -1px 0 0 0 rgba($red, 0.2), -1rem 0 0 0 rgba($red, 0.1), 1rem 0 0 0 rgba($red, 0.1);
+        // box-shadow: inset 1px 0 0 0 rgba($red, 0.2), inset -1px 0 0 0 rgba($red, 0.2), inset 1rem 0 0 0 rgba($red, 0.1), inset -1rem 0 0 0 rgba($red, 0.1);
+        background-color: rgba($red, 0.05);
+        height: 100%;
+        position: relative;
+        bottom: 0;
+        user-select: none;
+        cursor: not-allowed;
+        pointer-events: none;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        display: none;
+        float: left;
+        width: calc((80% - (2rem * 4) + 2rem) / 4);
+        &:first-child {
+            margin-left: calc(10vw);
+            box-shadow: inset 1px 0 0 0 rgba($red, 0.2), inset -1px 0 0 0 rgba($red, 0.2), -1rem 0 0 0 rgba($red, 0.1), 1rem 0 0 0 rgba($red, 0.1);
+        }
+        @for $i from 1 through 4 {
+            &:nth-of-type(#{$i}) {
                 display: block;
+            }
+        }
+        @media screen and ($md) {
+            width: calc((80% - (2rem * 6) + 2rem) / 6);
+            @for $i from 5 through 6 {
+                &:nth-of-type(#{$i}) {
+                    display: block;
+                }
+            }
+        }
+        @media screen and ($lg) {
+            width: calc((80% - (2rem * 12) + 2rem) / 12);
+            @for $i from 7 through 12 {
+                &:nth-of-type(#{$i}) {
+                    display: block;
+                }
+            }
+        }
+    }
+    &:nth-of-type(2) {
+        height: 30%;
+        top: 40%;
+        .col {
+            &:first-child:before {
+                content: "1 of 4 column (Float)";
+                position: absolute;
+                font-family: $sans;
+                font-weight: 700;
+                line-height: 1.2;
+                color: $red;
+                top: 1rem;
+                left: 1rem;
+                @media screen and ($md) {
+                    content: "1 of 6 column (Float)";
+                    top: 2rem;
+                    left: 2rem;
+                }
+                @media screen and ($lg) {
+                    content: "1 of 12 column (Float)";
+                }
+            }
+        }
+    }
+    &:nth-of-type(3) {
+        height: 30%;
+        top: 70%;
+        .col {
+            width: calc(((80% - (2rem * (4 - 1))) / 4 * 4) + (2rem * (4 - 1)));
+            @media screen and ($lg) {
+                width: calc(((80% - (2rem * (6 - 1))) / 6 * 6) + (2rem * (6 - 1)));
+            }
+            @media screen and ($lg) {
+                width: calc(((80% - (2rem * (12 - 1))) / 12 * 10) + (2rem * (10 - 1)));
+            }
+            @media screen and ($xl) {
+                width: calc(((80% - (2rem * (12 - 1))) / 12 * 8) + (2rem * (8 - 1)));
+            }
+            @media screen and ($xxl) {
+                width: calc(((80% - (2rem * (12 - 1))) / 12 * 6) + (2rem * (6 - 1)));
+            }
+            &:before {
+                content: "4 of 4 column (Float)";
+                position: absolute;
+                font-family: $sans;
+                font-weight: 700;
+                line-height: 1.2;
+                color: $red;
+                top: 1rem;
+                left: 1rem;
+                @media screen and ($md) {
+                    content: "6 of 6 column (Float)";
+                    top: 2rem;
+                    left: 2rem;
+                }
+                @media screen and ($lg) {
+                    content: "10 of 12 column (Float)";
+                }
+                @media screen and ($xl) {
+                    content: "8 of 12 column (Float)";
+                }
+                @media screen and ($xxl) {
+                    content: "6 of 12 column (Float)";
+                }
             }
         }
     }

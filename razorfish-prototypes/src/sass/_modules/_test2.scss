@@ -1,0 +1,16 @@
+.module.hero {
+    @include grid-padding;
+    width: 100%;
+    .module-content {
+        @include component-padding;
+    }
+}
+
+.module {
+    width: 100%;
+    @include grid-padding;
+    .module-content {
+        width: calc(100% / 12 * 8);
+        @include component-padding;
+    }
+}
