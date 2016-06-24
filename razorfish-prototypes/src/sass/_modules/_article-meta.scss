@@ -1,23 +1,10 @@
 .article-meta {
     position: relative;
-    @include component-padding;
-    @include padding-bottom(0.75);
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    float: left;
-    z-index: 1;
+    @include grid-padding;
     @include padding-top;
-    @include padding-left;
-    @media screen and ($lg) {
-        width: calc(100% / 12 * 8);
-    }
+    width: 100%;
     @media screen and ($xl) {
         position: absolute;
-        margin-left: 0;
-        margin-right: 0;
-        width: calc(100% / 12 * 3);
-        margin-bottom: 0;
     }
     .divider {
         width: 1.2em;
@@ -29,14 +16,23 @@
             height: 5px;
         }
     }
-    .two-column {
+    .module-content {
+        @include component-padding;
         width: 100%;
+        z-index: 1;
         @media screen and ($md) {
             column-count: 2;
             column-gap: 2rem;
         }
+        @media screen and ($lg) {
+            width: calc(100% / 12 * 8);
+            margin-left: auto;
+            margin-right: auto;
+        }
         @media screen and ($xl) {
+            width: calc(100% / 12 * 3);
             column-count: 1;
+            margin-left: 0;
         }
     }
     .group {

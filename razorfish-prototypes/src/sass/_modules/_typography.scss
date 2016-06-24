@@ -103,55 +103,7 @@ p {
     -webkit-margin-end: 0;
 }
 
-.ul {
-    list-style-type: none;
-    line-height: 1.4;
-    li {
-        padding-bottom: 1em;
-        position: relative;
-        display: table;
-        &:before {
-            content: "■";
-            color: $primary;
-            font-size: 0.6em;
-            transform: translateY(-0.2em);
-            display: table-cell;
-            width: 1.8em;
-        }
-        &:last-of-type {
-            margin-bottom: 0;
-        }
-    }
-    &.body-copy__body {
-        line-height: 1.4;
-    }
-}
 
-.ol {
-    list-style-type: none;
-    counter-reset: li;
-    line-height: 1.4;
-    li {
-        padding-bottom: 1em;
-        position: relative;
-        display: table;
-        &:before {
-            content: counter(li);
-            counter-increment: li;
-            color: $primary;
-            font-size: 0.8077em;
-            font-weight: 700;
-            width: 1.8em;
-            display: table-cell;
-        }
-        &:last-of-type {
-            margin-bottom: 0;
-        }
-    }
-    &.body-copy__body {
-        line-height: 1.4;
-    }
-}
 
 .link {
     &:focus,

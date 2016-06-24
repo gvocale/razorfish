@@ -358,6 +358,45 @@
             }
         }
     }
+    .ul,
+    .ol {
+        list-style-type: none;
+        line-height: 1.4;
+        li {
+            position: relative;
+            display: table;
+            margin-bottom: 1em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .ul {
+        li {
+            &:before {
+                content: "■";
+                color: $primary;
+                font-size: 0.6em;
+                transform: translateY(-0.2em);
+                display: table-cell;
+                width: 1.8em;
+            }
+        }
+    }
+    .ol {
+        counter-reset: li;
+        li {
+            &:before {
+                content: counter(li);
+                counter-increment: li;
+                color: $primary;
+                font-size: 0.8077em;
+                font-weight: 700;
+                width: 1.8em;
+                display: table-cell;
+            }
+        }
+    }
     &.dark {
         color: $white;
         background-color: $black;
