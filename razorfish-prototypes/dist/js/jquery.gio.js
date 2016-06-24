@@ -15,6 +15,14 @@ window.onload = (function() {
         setTimeout(function() {
             bodyWrapper.classList.remove('fade');
             masthead.classList.remove('fade');
+
+            // if on load the page is scrolled more then window height, start with the navigation hidden
+            if (document.body.scrollTop >= window.innerHeight) {
+                masthead.classList.add('hiding');
+            } else {
+                masthead.classList.remove('fade');
+            }
+
         }, 10);
 
         // Intercept links away from page
@@ -670,23 +678,20 @@ window.onload = (function() {
 
     // GradientMaps.applyGradientMap(target, gradientMap);
 
+
+
     // Site Masthead color 
 
     var masthead = document.getElementsByClassName('masthead')[0];
+    var bodyWrapper = document.getElementsByClassName('body-wrapper')[0];
 
-    if ((document.getElementsByClassName('hero')[0]) && (!document.getElementsByClassName('simple-title')[0])) {
-
-        var heroFirst = document.getElementsByClassName('hero')[0];
-
-        if ((heroFirst.classList.contains("theme__text-white_accent")) || (heroFirst.classList.contains("theme__text-white"))) {
-            masthead.classList.add("white");
-        }
-
+    if (bodyWrapper.firstElementChild.classList.contains("theme__text-white")) {
+        masthead.classList.add("white");
     }
 
+
+
     // Navigation opacity
-
-
 
     function mastheadTransparencyCheck() {
         var rect = masthead.getBoundingClientRect();

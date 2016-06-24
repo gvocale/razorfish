@@ -1,55 +1,90 @@
-.body-copy {
-    width: 100%;
-    // display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    position: relative;
+.body-copy-image {
     @include grid-padding;
     @include padding-top;
     @include padding-bottom;
-    &--dark {
-        color: $white;
-        background-color: $black;
+    color: $white;
+    overflow: hidden;
+    width: 100%;
+    min-height: 80vh;
+    position: relative;
+    .image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .module-background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     .module-content {
-        display: flex;
-        flex-direction: column;
-        @include component-padding;
-        @include margin-bottom;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+        position: relative;
+        margin-bottom: 0;
+        align-items: center;
         @media only screen and ($lg) {
+            width: calc(100% / 12 * 10);
+            margin-left: calc(100% / 12 * 1);
+            margin-right: calc(100% / 12 * 1);
+        }
+        @media only screen and ($xxl) {
             width: calc(100% / 12 * 8);
             margin-left: calc(100% / 12 * 2);
             margin-right: calc(100% / 12 * 2);
         }
-        @media only screen and ($xl) {
-            width: calc(100% / 12 * 6);
-            margin-left: calc(100% / 12 * 3);
-            margin-right: calc(100% / 12 * 3);
+        .h2 {
+            margin-bottom: 0.8em;
+            @media screen and ($lg) {
+                margin-bottom: 0.7em;
+            }
+            &:first-child:before {
+                display: none;
+            }
+            &:first-child:after {
+                content: "";
+                display: block;
+                position: relative;
+                background-color: $primary;
+                width: 1.8em;
+                margin-top: 0.8em;
+                height: 4px;
+                margin-left: auto;
+                margin-right: auto;
+                @media screen and ($lg) {
+                    height: 5px;
+                    width: 1.4em;
+                    margin-top: 0.7em;
+                }
+                @media screen and ($xxl) {
+                    height: 6px;
+                }
+            }
         }
-        &:last-child {
-            margin-bottom: 0;
+        .h2,
+        .subhead {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .h2:first-child:before {
+            display: none;
         }
     }
-    &__flexible {
-        width: 100%;
-        .divider {
-            margin-bottom: 1.25rem;
-        }
-        .p + .h3 {
-            margin-top: 3em;
-        }
-        @include padding-top(0.25);
-        @include padding-bottom(0.25);
-        &:first-child {
-            padding-top: 0;
-        }
-        &:last-child {
-            padding-bottom: 0;
-        }
-    }
+}
+
+.body-copy-flexible,
+.body-copy-image,
+.awards {
     .two-column {
         width: 100%;
         columns: 1;
@@ -68,7 +103,7 @@
         &:last-child {
             padding-bottom: 0;
         }
-        &__group {
+        .group {
             -webkit-column-break-inside: avoid;
             page-break-inside: avoid;
             break-inside: avoid-column;
@@ -93,98 +128,6 @@
                     font-size: $scale06;
                 }
             }
-        }
-        &--award {
-            @media screen and ($md) {
-                columns: 2;
-                column-gap: 2rem;
-            }
-            .p p--title {
-                font-weight: 700;
-            }
-        }
-    }
-    &__image-background {
-        @include grid-padding;
-        @include padding-top;
-        @include padding-bottom;
-        color: $white;
-        overflow: hidden;
-        width: 100%;
-        min-height: 80vh;
-        position: relative;
-        .image {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            svg {
-                width: 100%;
-                height: 100%;
-            }
-        }
-        .module-background {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .module-content {
-            margin-bottom: 0;
-            align-items: center;
-            @media only screen and ($lg) {
-                width: calc(100% / 12 * 10);
-                margin-left: calc(100% / 12 * 1);
-                margin-right: calc(100% / 12 * 1);
-            }
-            @media only screen and ($xxl) {
-                width: calc(100% / 12 * 8);
-                margin-left: calc(100% / 12 * 2);
-                margin-right: calc(100% / 12 * 2);
-            }
-            .h2,
-            .subhead {
-                text-align: center;
-            }
-            .h2:first-child:before {
-                display: none;
-            }
-        }
-        .module-content.module-content--centered {
-            .h2 {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                &:first-child:before {
-                    content: "";
-                    display: block;
-                    position: relative;
-                    background-color: $primary;
-                    width: 0.9em;
-                    margin-bottom: 0.4em;
-                    height: 4px;
-                    @media screen and ($lg) {
-                        height: 5px;
-                        width: 0.7em;
-                        margin-bottom: 0.35em;
-                    }
-                    @media screen and ($xxl) {
-                        height: 6px;
-                    }
-                }
-            }
-        }
-    }
-    &__headline-container.center {
-        text-align: center;
-        .divider {
-            margin-left: auto;
-            margin-right: auto;
         }
     }
     .eyebrow {
@@ -311,7 +254,7 @@
         letter-spacing: $spacing-serif-large;
         margin-bottom: 2em;
         font-size: $scale06;
-        max-width: 15em;
+        max-width: 30em;
         font-weight: 700;
         @media only screen and ($md) {
             font-size: $scale07;
@@ -348,7 +291,7 @@
         font-family: $sans;
         line-height: $prose-sans;
         letter-spacing: $spacing-sans;
-        padding-bottom: 1em;
+        margin-bottom: 1em;
         font-size: $scale04;
         -webkit-font-smoothing: antialiased;
         @media only screen and ($xxl) {
@@ -358,7 +301,7 @@
             font-weight: 700;
         }
         &:last-child {
-            padding-bottom: 0;
+            margin-bottom: 0;
         }
         &--title {
             font-family: $sans;
@@ -415,6 +358,49 @@
             }
         }
     }
+    &.dark {
+        color: $white;
+        background-color: $black;
+    }
+}
+
+.body-copy-flexible,
+.awards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    @include grid-padding;
+    @include padding-top;
+    @include padding-bottom;
+    .module-content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        @include component-padding;
+        @include margin-bottom;
+        width: 100%;
+        @media only screen and ($lg) {
+            width: calc(100% / 12 * 8);
+        }
+        @media only screen and ($xl) {
+            width: calc(100% / 12 * 6);
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .p + .h3 {
+        margin-top: 3em;
+    }
+    &__headline-container.center {
+        text-align: center;
+        .divider {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
     .hr {
         width: 100%;
         background-color: rgba($black, 0.15);
@@ -425,6 +411,17 @@
         &:last-child {
             margin-bottom: 0;
         }
+    }
+}
+
+.award {
+    @include grid-padding;
+    @media screen and ($md) {
+        columns: 2;
+        column-gap: 2rem;
+    }
+    .p p--title {
+        font-weight: 700;
     }
 }
 
@@ -505,98 +502,4 @@
 
 .pull-quote + .module-content {
     @include padding-top(1);
-}
-
-.foot-note {
-    margin-top: 4em;
-    &__group {
-        margin-bottom: 1.5em;
-        font-size: $scale05;
-        @media only screen and ($xxl) {
-            font-size: $scale06;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-    .eyebrow {
-        text-transform: uppercase;
-        -webkit-font-smoothing: antialiased;
-        font-family: $sans;
-        line-height: $title-sans;
-        letter-spacing: $spacing-sans-large;
-        margin-bottom: 0.75em;
-        color: $gray-label;
-        font-size: $scale03;
-        @media only screen and ($md) {
-            font-size: $scale03;
-        }
-        @media only screen and ($xxl) {
-            font-size: $scale04;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
-        &:first-child:before {
-            content: "";
-            display: block;
-            position: relative;
-            background-color: $primary;
-            width: 2.4em;
-            margin-bottom: 1.2em;
-            height: 4px;
-            @media screen and ($lg) {
-                width: 3em;
-                width: 2em;
-                margin-bottom: 1em;
-            }
-            @media screen and ($xxl) {
-                height: 6px;
-            }
-        }
-    }
-    &__link {
-        font-family: $sans;
-        line-height: $title-sans;
-        letter-spacing: $spacing-sans;
-        font-weight: 700;
-        font-size: $scale05;
-        margin-bottom: 0.2em;
-        @media only screen and ($xxl) {
-            font-size: $scale06;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
-        .link--primary {
-            &:after {
-                content: "\EA04";
-                font-size: 0.4em;
-                margin-left: 0.8em;
-                color: currentColor;
-                font-family: $icons;
-                vertical-align: middle;
-                transition: margin-left 0.2s 0s $bezier;
-            }
-            &:hover:after {
-                margin-left: 1.2em;
-                color: $primary;
-            }
-        }
-        &--description {
-            font-family: $sans;
-            line-height: $prose-sans;
-            letter-spacing: $spacing-sans;
-            font-size: $scale04;
-            @media only screen and ($xxl) {
-                font-size: $scale05;
-            }
-        }
-    }
-}
-
-.article-meta + .body-copy {
-    @media screen and ($xl) {
-        margin-left: 0;
-    }
 }

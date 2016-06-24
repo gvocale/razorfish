@@ -15,33 +15,25 @@
     }
 }
 
-.module.hero {
-    .module-content {
-        margin-left: calc(10vw);
-        // Padding-bottom is fine, the previous styling can be left in place
-        padding-left: 0;
-        width: calc(((80% - (2rem * (4 - 1))) / 4 * 4) + (2rem * (4 - 1)));
-        @media screen and ($lg) {
-            width: calc(((80% - (2rem * (6 - 1))) / 6 * 6) + (2rem * (6 - 1)));
-        }
-        @media screen and ($lg) {
-            width: calc(((80% - (2rem * (12 - 1))) / 12 * 10) + (2rem * (10 - 1)));
-        }
-        @media screen and ($xl) {
-            width: calc(((80% - (2rem * (12 - 1))) / 12 * 8) + (2rem * (8 - 1)));
-        }
-        @media screen and ($xxl) {
-            width: calc(((80% - (2rem * (12 - 1))) / 12 * 6) + (2rem * (6 - 1)));
-        }
-        .hero-content {
-            max-width: auto; // Remove the previosly set max-width to this div
-        }
-    }
-}
-
 @mixin col($column) {
     width: calc((100% / 12 * #{$column}) - ((#{$gutter} * 12) - (1 * (#{$column} - 1))));
 }
+
+.module.body-copy-flexible {
+    .module-content {
+        @include col(4,4);
+        @media screen and ($md) {
+            @include col(6,6);
+        }
+        @media screen and ($lg) {
+            @include col(8,12);
+        }
+        @media screen and ($xl) {
+            @include col(6,12);
+        }
+}
+
+
 
 $icons-all: ( razorfish: "\EA02", twitter: "\EA0B", linkedin: "\EA0D", facebook: "\EA05", weibo: "\EA0C", mail: "\EA07", share: "\EA09", dropdown: "\EA01", tick: "\EA0A", play: "\EA08", arrow-left: "\EA03", arrow-right: "\EA04", info: "\EA06", scroll: "\EA0E", );
 @each $name,

@@ -604,102 +604,162 @@ $scale07: 2.1154rem;
 $scale08: 2.6154rem;
 $spacing-serif: 0;
 $title-sans: 1.4;
-.person-name {
-    font-size: $scale04;
-    line-height: 1.1;
-    letter-spacing: $spacing-serif;
-    margin-bottom: 0.4em;
-    @media screen and ($md) {
-        font-size: $scale05;
-    }
-    
-    @media screen and ($xl) {
-        font-size: $scale07;
-        margin-bottom: 0.5em;
-        &:first-child:before {
-            background-color: lighten($primary, 10%);
-            width: 0.9em;
-            height: 4px;
-            @media screen and ($lg) {
-                height: 5px;
-                width: 0.7em;
-                margin-bottom: 0.35em;
+$scale03: 0.8077rem;
+$scale04: 1rem;
+$scale05: 1.3077rem;
+$scale06: 1.6154rem;
+$bezier: cubic-bezier(.32, .01, 0, 1);
+.hero-scroll-down-container {
+    .icon-arrow:before {
+        content: "\EA0E";
+        font-family: $icons;
+        font-size: $scale03;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transition: bottom 1s $bezier;
+        margin-bottom: 3em;
+        transform: translate(-50%, 0);
+        animation: 1s scrollIconBounce infinite;
+        @keyframes scrollIconBounce {
+            0% {
+                transform: translate(-50%, 0);
             }
-            @media screen and ($xxl) {
-                height: 6px;
+            20% {
+                transform: translate(-50%, 0);
+            }
+            40% {
+                transform: translate(-50%, -100%);
+            }
+            50% {
+                transform: translate(-50%, 0);
+            }
+            60% {
+                transform: translate(-50%, -40%);
+            }
+            80% {
+                transform: translate(-50%, 0);
+            }
+            100% {
+                transform: translate(-50%, 0);
             }
         }
     }
     
-    @media screen and ($xxl) {
-        font-size: $scale08;
+    &.hide {
+        .icon-arrow:before {
+            bottom: -10em;
+        }
     }
 }
-.person-role {
-    line-height: $title-sans;
-    font-size: $scale02;
-    margin-bottom: 0.25em;
-    @media screen and ($md) {
-        font-size: $scale03;
-    }
-    
-    @media screen and ($xl) {
-        font-size: $scale04;
-    }
-    
-    @media screen and ($xxl) {
-        font-size: $scale05;
-    }
-}
-.person-office {
-    line-height: $title-sans;
-    font-size: $scale02;
-    @media screen and ($md) {
-        font-size: $scale03;
-    }
-    
-    @media screen and ($xl) {
-        font-size: $scale04;
-    }
-    
-    @media screen and ($xxl) {
-        font-size: $scale05;
-    }
+
 }
 $bezier: cubic-bezier(.32, .01, 0, 1);
-$black: #373737;
-.person {
-    .person-photo {
-        transition: all 0.5s 0s $bezier;
-        background-color: $white;
-        transition: all 0.5s 0s $bezier;
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background-blend-mode: multiply;
-            transition: all 0.5s 0s $bezier;
-            background-color: rgba($black, 0);
-        }
+transform: scale(0.9) translateY(5vw);
+opacity: 0;
+transform-origin: top;
+.wrapper {
+    position: relative;
+    transform-origin: top;
+    transition: 0.5s all 0s $bezier;
+    opacity: 1;
+    background-color: $white;
+    &.fade {
+        transform: scale(0.9) translateY(5vw);
+        opacity: 0;
     }
-    &:hover {
-        .person-photo {
-            transform: scale(1.1);
-            &:after {
-                background-color: rgba($black, 0.4);
-            }
-        }
-        .animated-1 {
-            transition: all 0.3s 0.1s $bezier;
-        }
-        .animated-2 {
-            transition: all 0.3s 0.15s $bezier;
-        }
-        .animated-3 {
-            transition: all 0.25s 0.2s $bezier;
-            opacity: 0.5;
+    &.no-shadow:after {
+        display: none;
+    }
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 90%;
+        height: 100px;
+        bottom: 0;
+        margin-left: 5%;
+        box-shadow: 0 0 100px 0 darken($black, 20%);
+        z-index: -2;
+        opacity: 0;
+        transition: all 0.5s 0s $bezier;
+    }
+    &.pre-shrink {
+        transform-origin: center;
+    }
+    &.shrink {
+        opacity: 1;
+        transform: scale(0.9) translateY(5%);
+        transform-origin: center;
+        &:after {
+            opacity: 1;
         }
     }
 }
+@keyframes animateIn {
+    0% {
+        opacity: 0;
+        transform-origin: top;
+        transform: scale(0.9) translateY(5vw);
+    }
+    100% {
+        opacity: 1;
+        transform-origin: top;
+        transform: scale(1) translateY(0);
+    }
+}
+@keyframes animateOut {
+    0% {
+        opacity: 1;
+        transform-origin: top;
+        transform: scale(0.9) translateY(5vw);
+    }
+    100% {
+        opacity: 0;
+        transform-origin: top;
+        transform: scale(1) translateY(0);
+    }
+}
+@mixin margin-bottom($multiplier: 1) {
+    margin-bottom: 20vw * $multiplier;
+    @media screen and ($md) {
+        margin-bottom: 15vw * $multiplier;
+    }
+    @media screen and ($lg) {
+        margin-bottom: 10vw * $multiplier;
+    }
+}
+.feed {
+    .module-content {
+        @include margin-bottom(0.5);
+        .feed-list-container {
+            @include margin-bottom(0.5);
+        }
+        
+        .feed-load-more-container {
+            margin-top: 0; // Remove margin-top for this class
+        }
+    }
+}
+.simple-header {
+    .module-content {
+        align-items: baseline;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+        @media screen and ($md) {
+            flex-direction: row;
+            align-items: flex-end;
+        }
+    }
+}
+.full-width-image-caption {
+    font-size: $scale03;
+    @media only screen and ($md) {
+        font-size: $scale04;
+    }
+}
+
+$scale03: 0.8077rem;
+$scale04: 1rem;

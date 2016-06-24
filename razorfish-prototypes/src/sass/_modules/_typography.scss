@@ -35,12 +35,11 @@
 // }
 
 /* Icons */
+
 @font-face {
     font-family: 'razorfish-icons';
-    src:url('../fonts/razorfish-icons.eot');
-    src:url('../fonts/razorfish-icons.eot') format('embedded-opentype'),
-        url('../fonts/razorfish-icons.ttf') format('truetype'),
-        url('../fonts/razorfish-icons.woff') format('woff');
+    src: url('../fonts/razorfish-icons.eot');
+    src: url('../fonts/razorfish-icons.eot') format('embedded-opentype'), url('../fonts/razorfish-icons.ttf') format('truetype'), url('../fonts/razorfish-icons.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -195,12 +194,7 @@ p {
         &--right {
             position: relative;
             font-weight: 700;
-            transition: all 0.1s ease 0s;
-            &:hover {
-                color: $primary;
-            }
-        }
-        &--right {
+            transition: all 0.2s $bezier 0s;
             &:after {
                 content: "\EA04";
                 font-size: 0.4em;
@@ -210,7 +204,12 @@ p {
                 vertical-align: middle;
                 transition: margin-left 0.2s 0s $bezier;
             }
-            &:hover:after {
+            &:hover,
+            &:focus {
+                color: $primary;
+            }
+            &:hover:after,
+            &:focus:after {
                 margin-left: 1.4em;
             }
         }
