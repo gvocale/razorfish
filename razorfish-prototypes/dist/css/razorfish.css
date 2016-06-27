@@ -535,80 +535,26 @@ p {
   .link--arrow--right:hover:after, .link--arrow--right:focus:after {
     margin-left: 1.4em; }
 
-.link--underline {
-  transition: all 0.1s ease 0.1s; }
-  .link--underline:before {
-    content: "";
-    width: 100%;
-    height: 0.075em;
-    display: block;
-    background-color: #a9c000;
-    position: absolute;
-    bottom: 0;
-    -webkit-animation-name: underline_out;
-    animation-name: underline_out;
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-    -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-    animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-    -webkit-animation-direction: normal;
-    animation-direction: normal;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-play-state: running;
-    animation-play-state: running; }
-  .link--underline:hover:before, .link--underline:focus:before {
-    -webkit-animation-name: underline_in;
-    animation-name: underline_in;
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-    -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-    animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-    -webkit-animation-direction: normal;
-    animation-direction: normal;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-play-state: running;
-    animation-play-state: running; }
+.link--underline:before {
+  content: "";
+  background-color: #a9c000;
+  width: 0%;
+  left: auto;
+  right: 0;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  height: 0.06em;
+  transition: all 0.3s cubic-bezier(0.32, 0.01, 0, 1); }
 
-@-webkit-keyframes underline_in {
-  0% {
-    width: 0%;
-    left: 0; }
-  100% {
-    width: 100%;
-    left: 0; } }
+.link--underline:hover:before {
+  left: 0;
+  right: auto;
+  width: 100%; }
 
-@keyframes underline_in {
-  0% {
-    width: 0%;
-    left: 0; }
-  100% {
-    width: 100%;
-    left: 0; } }
-
-@-webkit-keyframes underline_out {
-  0% {
-    width: 100%;
-    right: 0; }
-  100% {
-    width: 0%;
-    right: 0; } }
-
-@keyframes underline_out {
-  0% {
-    width: 100%;
-    right: 0; }
-  100% {
-    width: 0%;
-    right: 0; } }
-  .link--underline:hover, .link--underline:focus {
-    transition: color 0.05s cubic-bezier(0.32, 0.01, 0, 1) 0.05s;
-    color: #a9c000; }
+.link--underline:hover, .link--underline:focus {
+  transition: color 0.05s cubic-bezier(0.32, 0.01, 0, 1) 0.05s;
+  color: #a9c000; }
 
 .link {
   text-decoration: none;
@@ -3771,6 +3717,7 @@ a[href^="tel"] {
 .discipline-list {
   width: 100%;
   background-color: #373737;
+  color: #FFFFFF;
   padding-left: calc(10vw - 1rem);
   padding-right: calc(10vw - 1rem);
   padding-bottom: 20vw; }
@@ -3781,6 +3728,7 @@ a[href^="tel"] {
     .discipline-list {
       padding-bottom: 10vw; } }
   .discipline-list__grid {
+    color: #373737;
     width: 100%;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -6863,7 +6811,6 @@ a.hero {
   .masthead.white {
     color: #FFFFFF; }
   .masthead.opaque {
-    background-color: white;
     color: #373737; }
   .masthead.navigation-open, .masthead.hiding.navigation-open, .masthead.important-hiding.navigation-open {
     color: #373737;
@@ -7408,58 +7355,23 @@ a.hero {
     position: relative; }
     .office-contact-info .link:before {
       content: "";
-      width: 100%;
+      background-color: currentColor;
+      width: 0%;
+      left: auto;
+      right: 0;
+      position: absolute;
+      display: block;
+      bottom: 0;
       height: 0.1em;
       max-height: 5px;
-      display: block;
-      background-color: currentColor;
-      position: absolute;
-      bottom: 0;
-      -webkit-animation-name: underline_out;
-      animation-name: underline_out;
-      -webkit-animation-duration: 0.2s;
-      animation-duration: 0.2s;
-      -webkit-animation-timing-function: ease;
-      animation-timing-function: ease;
-      -webkit-animation-iteration-count: 1;
-      animation-iteration-count: 1;
-      -webkit-animation-direction: normal;
-      animation-direction: normal;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-      -webkit-animation-play-state: running;
-      animation-play-state: running; }
+      transition: all 0.3s cubic-bezier(0.32, 0.01, 0, 1); }
     .office-contact-info .link:hover:before, .office-contact-info .link:focus:before {
-      -webkit-animation-name: underline_in;
-      animation-name: underline_in;
-      -webkit-animation-duration: 0.2s;
-      animation-duration: 0.2s;
-      -webkit-animation-timing-function: ease;
-      animation-timing-function: ease;
-      -webkit-animation-iteration-count: 1;
-      animation-iteration-count: 1;
-      -webkit-animation-direction: normal;
-      animation-direction: normal;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-      -webkit-animation-play-state: running;
-      animation-play-state: running; }
-
-@keyframes underline_in {
-  0% {
-    width: 0%;
-    left: 0; }
-  100% {
-    width: 100%;
-    left: 0; } }
-
-@keyframes underline_out {
-  0% {
-    width: 100%;
-    right: 0; }
-  100% {
-    width: 0%;
-    right: 0; } }
+      left: 0;
+      right: auto;
+      width: 100%; }
+    .office-contact-info .link:hover, .office-contact-info .link:focus {
+      transition: color 0.05s cubic-bezier(0.32, 0.01, 0, 1) 0.05s;
+      color: #a9c000; }
 
 .office-list {
   background-color: #ebe7e6;
@@ -8982,45 +8894,21 @@ a.related-promo {
         width: 4rem; } }
     .social-share .icon-container:before {
       content: "";
-      width: 100%;
-      height: 2px;
-      min-height: 2px;
-      max-height: 4px;
-      display: block;
       background-color: #a9c000;
+      width: 0%;
+      left: auto;
+      right: 0;
       position: absolute;
+      display: block;
       bottom: 0;
-      -webkit-animation-name: underline_out;
-      animation-name: underline_out;
-      -webkit-animation-duration: 0.2s;
-      animation-duration: 0.2s;
-      -webkit-animation-timing-function: ease;
-      animation-timing-function: ease;
-      -webkit-animation-iteration-count: 1;
-      animation-iteration-count: 1;
-      -webkit-animation-direction: normal;
-      animation-direction: normal;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-      -webkit-animation-play-state: running;
-      animation-play-state: running; }
+      height: 2px;
+      transition: all 0.3s cubic-bezier(0.32, 0.01, 0, 1); }
     .social-share .icon-container:hover, .social-share .icon-container:focus {
       outline: none; }
       .social-share .icon-container:hover:before, .social-share .icon-container:focus:before {
-        -webkit-animation-name: underline_in;
-        animation-name: underline_in;
-        -webkit-animation-duration: 0.2s;
-        animation-duration: 0.2s;
-        -webkit-animation-timing-function: ease;
-        animation-timing-function: ease;
-        -webkit-animation-iteration-count: 1;
-        animation-iteration-count: 1;
-        -webkit-animation-direction: normal;
-        animation-direction: normal;
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-        -webkit-animation-play-state: running;
-        animation-play-state: running; }
+        left: 0;
+        right: auto;
+        width: 100%; }
       .social-share .icon-container:hover .icon, .social-share .icon-container:focus .icon {
         -webkit-animation-name: bounce;
         animation-name: bounce;
@@ -9038,22 +8926,6 @@ a.related-promo {
         animation-fill-mode: none;
         -webkit-animation-play-state: running;
         animation-play-state: running; }
-
-@keyframes underline_in {
-  0% {
-    width: 0%;
-    left: 0; }
-  100% {
-    width: 100%;
-    left: 0; } }
-
-@keyframes underline_out {
-  0% {
-    width: 100%;
-    right: 0; }
-  100% {
-    width: 0%;
-    right: 0; } }
   .social-share__container {
     width: calc(100% / 12 * 3);
     padding-left: 1rem;

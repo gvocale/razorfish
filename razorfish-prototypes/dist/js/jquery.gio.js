@@ -680,24 +680,15 @@ window.onload = (function() {
 
 
 
-    // Site Masthead color 
 
-    var masthead = document.getElementsByClassName('masthead')[0];
-    var bodyWrapper = document.getElementsByClassName('body-wrapper')[0];
-
-    if (bodyWrapper.firstElementChild.classList.contains("theme__text-white")) {
-        masthead.classList.add("white");
-    }
-
-
-    // Check if div in viewport has color white 
+    // Change masthead color depending on color of elements below it. 
 
     if (document.getElementsByClassName('hero')[0]) {
 
         // Collect all big elements
         var masthead = document.getElementsByClassName('masthead')[0];
 
-        var elements = document.querySelectorAll('.hero,.title,.simple-title');
+        var elements = document.querySelectorAll('section,.related-promo,.hero');
 
         // If .module is behind navigation get color of text
         function moduleBehindNav() {

@@ -6,7 +6,13 @@
     position: relative;
     &:before {
         content: "";
-        width: 100%;
+        background-color: currentColor;
+        width: 0%;
+        left: auto;
+        right: 0;
+        position: absolute;
+        display: block;
+        bottom: 0;
         @if unit($multiplier)=="px" {
             height: $multiplier;
         }
@@ -14,47 +20,20 @@
             height: 0.1em * $multiplier;
         }
         max-height: 5px;
-        display: block;
-        background-color: currentColor;
-        position: absolute;
-        bottom: 0;
-        animation-name: underline_out;
-        animation-duration: 0.2s;
-        animation-timing-function: ease;
-        animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
+        transition: all 0.3s $bezier;
     }
-    &:hover:before,
-    &:focus:before {
-        animation-name: underline_in;
-        animation-duration: 0.2s;
-        animation-timing-function: ease;
-        animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-    }
-    @keyframes underline_in {
-        0% {
-            width: 0%;
+    &:hover,
+    &:focus {
+        &:before {
             left: 0;
-        }
-        100% {
+            right: auto;
             width: 100%;
-            left: 0;
         }
     }
-    @keyframes underline_out {
-        0% {
-            width: 100%;
-            right: 0;
-        }
-        100% {
-            width: 0%;
-            right: 0;
-        }
+    &:hover,
+    &:focus {
+        transition: color 0.05s $bezier 0.05s;
+        color: $primary;
     }
 }
 
