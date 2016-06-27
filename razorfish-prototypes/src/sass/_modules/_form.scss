@@ -562,6 +562,8 @@
         justify-content: center;
         align-items: center;
         display: flex;
+        flex-wrap: wrap;
+            flex-direction: column;
     }
 }
 
@@ -583,7 +585,7 @@
     font-size: $scale03;
     transition: all 0.2s ease-in;
     text-transform: uppercase;
-    height: 4rem;
+    height: 3.3rem;
     width: 10rem;
     border: 2px rgba($white, 0.2) solid;
     @media screen and ($xxl) {
@@ -634,7 +636,7 @@
         animation: 1s $bezier forwards anim_1;
         @keyframes anim_1 {
             to {
-                width: 4rem;
+                width: 3.3rem;
                 border-radius: 50%;
                 padding-top: 0;
                 padding-bottom: 0;
@@ -656,7 +658,7 @@
         border-top: 2px rgba($primary, 1) solid;
         $bezier-spinner: cubic-bezier(.71, .38, .31, .65);
         animation: 1s 3 $bezier-spinner anim_2;
-        width: 4rem;
+        width: 3.3rem;
         border-radius: 50%;
         padding-top: 0;
         padding-bottom: 0;
@@ -706,19 +708,19 @@
                 }
                 40% {
                     border-bottom: 4px $white solid;
-                    width: 0.6em;
+                    width: 0.5em;
                 }
                 60% {
                     border-bottom: 4px $white solid;
-                    width: 0.6em;
+                    width: 0.5em;
                     border-right: 4px $white solid;
                     height: 0em;
                 }
                 100% {
                     border-bottom: 4px $white solid;
-                    width: 0.6em;
+                    width: 0.5em;
                     border-right: 4px $white solid;
-                    height: 1.2em;
+                    height: 1em;
                 }
             }
         }

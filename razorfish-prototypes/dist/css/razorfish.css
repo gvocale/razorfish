@@ -5634,7 +5634,13 @@ a.feed__item {
     align-items: center;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
 
 .button__submit-form {
   box-sizing: border-box;
@@ -5654,7 +5660,7 @@ a.feed__item {
   font-size: 0.8077rem;
   transition: all 0.2s ease-in;
   text-transform: uppercase;
-  height: 4rem;
+  height: 3.3rem;
   width: 10rem;
   border: 2px rgba(255, 255, 255, 0.2) solid; }
   @media screen and (min-width: 1600px) {
@@ -5700,7 +5706,7 @@ a.feed__item {
 
 @-webkit-keyframes anim_1 {
   to {
-    width: 4rem;
+    width: 3.3rem;
     border-radius: 50%;
     padding-top: 0;
     padding-bottom: 0;
@@ -5709,7 +5715,7 @@ a.feed__item {
 
 @keyframes anim_1 {
   to {
-    width: 4rem;
+    width: 3.3rem;
     border-radius: 50%;
     padding-top: 0;
     padding-bottom: 0;
@@ -5734,7 +5740,7 @@ a.feed__item {
     border-top: 2px #a9c000 solid;
     -webkit-animation: 1s 3 cubic-bezier(0.71, 0.38, 0.31, 0.65) anim_2;
     animation: 1s 3 cubic-bezier(0.71, 0.38, 0.31, 0.65) anim_2;
-    width: 4rem;
+    width: 3.3rem;
     border-radius: 50%;
     padding-top: 0;
     padding-bottom: 0;
@@ -5806,17 +5812,17 @@ a.feed__item {
     width: 0em; }
   40% {
     border-bottom: 4px #FFFFFF solid;
-    width: 0.6em; }
+    width: 0.5em; }
   60% {
     border-bottom: 4px #FFFFFF solid;
-    width: 0.6em;
+    width: 0.5em;
     border-right: 4px #FFFFFF solid;
     height: 0em; }
   100% {
     border-bottom: 4px #FFFFFF solid;
-    width: 0.6em;
+    width: 0.5em;
     border-right: 4px #FFFFFF solid;
-    height: 1.2em; } }
+    height: 1em; } }
 
 @keyframes anim_4 {
   0% {
@@ -5824,17 +5830,17 @@ a.feed__item {
     width: 0em; }
   40% {
     border-bottom: 4px #FFFFFF solid;
-    width: 0.6em; }
+    width: 0.5em; }
   60% {
     border-bottom: 4px #FFFFFF solid;
-    width: 0.6em;
+    width: 0.5em;
     border-right: 4px #FFFFFF solid;
     height: 0em; }
   100% {
     border-bottom: 4px #FFFFFF solid;
-    width: 0.6em;
+    width: 0.5em;
     border-right: 4px #FFFFFF solid;
-    height: 1.2em; } }
+    height: 1em; } }
 
 .hero__carousel {
   position: relative; }
@@ -8968,6 +8974,10 @@ a.related-promo {
     -webkit-justify-content: flex-end;
     -ms-flex-pack: end;
     justify-content: flex-end; }
+  .social-share__example {
+    width: 100%;
+    min-height: 100vh;
+    position: relative; }
 
 .social-share-folded_footer, .social-share-folded_header {
   position: absolute;
