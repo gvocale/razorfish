@@ -770,9 +770,7 @@ transform-origin: top;
         }
     }
 }
-@mixin col($column) {
-    width: calc((100% / 12 * #{$column}) - ((#{$gutter} * 12) - (1 * (#{$column} - 1))));
-}
+
 .module.body-copy-flexible {
     padding-left: 0; // by using the above mixin you won't need 1rem padding on the container
     padding-right: 0; // by using the above mixin you won't need 1rem padding on the container

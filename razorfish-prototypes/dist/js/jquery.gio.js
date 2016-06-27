@@ -690,6 +690,42 @@ window.onload = (function() {
     }
 
 
+    // Check if div in viewport has color white 
+
+    if (document.getElementsByClassName('hero')[0]) {
+
+        // Collect all big elements
+        var masthead = document.getElementsByClassName('masthead')[0];
+
+        var elements = document.querySelectorAll('.hero,.title,.simple-title');
+
+        // If .module is behind navigation get color of text
+        function moduleBehindNav() {
+            var mastheadRect = masthead.getBoundingClientRect();
+            [].forEach.call(elements, function(div) {
+                var elementRect = div.getBoundingClientRect();
+                if ((elementRect.top <= mastheadRect.top) && (elementRect.bottom >= mastheadRect.bottom)) {
+                    var getTheColor = window.getComputedStyle(div, null).getPropertyValue("color");
+                    console.log(getTheColor);
+                    if (getTheColor == "rgb(255, 255, 255)") {
+                        masthead.style.color = "rgb(255, 255, 255)";
+                        console.log("bingo");
+                    } else {
+                        masthead.style.color = "rgb(74, 66, 66)";
+                    }
+
+                }
+            });
+        };
+
+        // Bind it on scroll, load and resize.
+        window.addEventListener('resize', moduleBehindNav);
+        window.addEventListener('scroll', moduleBehindNav);
+        moduleBehindNav();
+
+    }
+
+
 
     // Navigation opacity
 

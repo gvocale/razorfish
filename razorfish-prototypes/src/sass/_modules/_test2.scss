@@ -15,26 +15,6 @@
     }
 }
 
-@mixin col($column) {
-    width: calc((100% / 12 * #{$column}) - ((#{$gutter} * 12) - (1 * (#{$column} - 1))));
-}
-
-.module.body-copy-flexible {
-    .module-content {
-        @include col(4,4);
-        @media screen and ($md) {
-            @include col(6,6);
-        }
-        @media screen and ($lg) {
-            @include col(8,12);
-        }
-        @media screen and ($xl) {
-            @include col(6,12);
-        }
-}
-
-
-
 $icons-all: ( razorfish: "\EA02", twitter: "\EA0B", linkedin: "\EA0D", facebook: "\EA05", weibo: "\EA0C", mail: "\EA07", share: "\EA09", dropdown: "\EA01", tick: "\EA0A", play: "\EA08", arrow-left: "\EA03", arrow-right: "\EA04", info: "\EA06", scroll: "\EA0E", );
 @each $name,
 $icon in $icons-all {
@@ -42,10 +22,6 @@ $icon in $icons-all {
         @include icon-base-styles;
         content: $icon;
     }
-}
-
-@mixin col($content-col, $grid-col: 12) {
-    width: calc(((80% - (2rem * ($grid-col - 1))) / $grid-col * $content-col) + (2rem * ($content-col - 1)));
 }
 
 @mixin padding-top($multiplier: 1) {
@@ -68,33 +44,65 @@ $icon in $icons-all {
     }
 }
 
-.page-tagline {
-    padding: 0; // Remove padding-left and right
+@mixin col($content-col, $grid-col: 12) {
+    width: calc(((80% - (2rem * ($grid-col - 1))) / $grid-col * $content-col) + (2rem * ($content-col - 1)));
+}
+
+.body-copy-flexible {
+    padding: 0; // remove previous padding
+    margin: 0; // remove previous margin
+    @include padding-top;
+    @include padding-bottom;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     .module-content {
-        @include padding-top(1);
-        @include padding-bottom(0.5);
-        margin-left: calc(10vw);
+        padding: 0; // remove previous padding
+        margin: 0; // remove previous margin
         @include col(4, 4);
         @media screen and ($md) {
             @include col(6, 6);
         }
         @media screen and ($lg) {
-            @include col(12, 12);
+            @include col(8, 12);
+        }
+        @media screen and ($xl) {
+            @include col(6, 12);
+        }
+    }
+    .body-copy-flexible .module-content:nth-of-type(2) {
+        // Remove this "nth-of-type(2)" styling and left / right margin / padding
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.article-sidebar {
+    position: relative;
+    padding: 0; // remove previous padding
+    margin: 0; // remove previous margin
+    margin-left: 10vw;
+    @include padding-top;
+    @include col(4, 4);
+    @media screen and ($md) {
+        @include col(6, 6);
+    }
+    @media screen and ($lg) {
+        @include col(8, 12);
+    }
+    @media screen and ($xl) {
+        @include col(3, 12);
+        position: absolute;
+    }
+    .module-content {
+        width: 100%;
+        z-index: 1;
+        @media screen and ($md) {
+            column-count: 2;
+            column-gap: 2rem;
+        }
+        @media screen and ($xl) {
+            column-count: 1;
         }
     }
 }
-
-@mixin col($content-col, $grid-col: 12) {
-    width: calc(((80% - (2rem * ($grid-col - 1))) / $grid-col * $content-col) + (2rem * ($content-col - 1)));
-}
-
-.people-list .people .person {
-    width: 50%;
-    @media screen and ($lg) {
-        width: 33%;
-    }
-    @media screen and ($xxl) {
-        width: 25%;
-    }
-}
-

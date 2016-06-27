@@ -30,8 +30,6 @@
         width: 100%;
         height: auto;
         position: relative;
-        cursor: pointer;
-        cursor: hand;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -48,8 +46,8 @@
             padding-bottom: 50%;
             position: relative;
         }
-        &.text-top:before,
-        &.text-bottom:before {
+        &.text-top:not(.split):before,
+        &.text-bottom:not(.split):before {
             padding-bottom: 100%;
         }
         @media screen and ($md) {
@@ -146,10 +144,13 @@
             height: 100%;
         }
         .image {
+            position: absolute;
             width: 100%;
             height: auto;
             &_container {
                 transition: all 0.5s 0s $bezier;
+                position: relative;
+                height: 100%;
                 &:after {
                     content: "";
                     display: block;
@@ -168,40 +169,41 @@
         &:active {
             filter: brightness(95%);
         }
-        &.split {
-            background-position: 50% center;
-            .module-content {
-                margin-left: 50%;
-                padding-left: 7.5%;
-                padding-right: 7.5%;
-                width: 50%;
-                background-color: $white;
-                height: 100%;
-                display: flex;
-                text-align: left;
-                flex-direction: column;
-                flex-wrap: nowrap;
-                align-items: baseline;
-                justify-content: center;
+    }
+    .text-top.split,
+    .text-bottom.split {
+        background-position: 50% center;
+        .module-content {
+            margin-left: 50%;
+            padding-left: 7.5%;
+            padding-right: 7.5%;
+            width: 50%;
+            background-color: $white;
+            height: 100%;
+            display: flex;
+            text-align: left;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: baseline;
+            justify-content: center;
+        }
+        .headline {
+            max-width: 8em;
+            font-size: $scale04;
+            @media screen and ($lg) {
+                font-size: $scale05;
             }
-            .headline {
-                max-width: 8em;
-                font-size: $scale04;
-                @media screen and ($lg) {
-                    font-size: $scale05;
-                }
-                @media screen and ($xl) {
-                    font-size: $scale06;
-                }
-                @media screen and ($xxl) {
-                    font-size: $scale07;
-                }
+            @media screen and ($xl) {
+                font-size: $scale06;
             }
-            .module-background {
-                width: 50%;
-                position: absolute;
-                top: 0;
+            @media screen and ($xxl) {
+                font-size: $scale07;
             }
+        }
+        .module-background {
+            width: 50%;
+            position: absolute;
+            top: 0;
         }
     }
     .text-top {
@@ -209,11 +211,20 @@
             height: 50%;
             align-self: flex-start;
         }
+        &.split {
+            .image {
+                bottom: 0;
+                top: auto;
+            }
+        }
     }
-    .text-bottom {
+    .text-bottom:not(.split) {
         .module-content {
             height: 50%;
             align-self: flex-end;
+            bottom: 0;
+        }
+        .image {
             bottom: 0;
         }
     }
@@ -396,6 +407,8 @@
 }
 
 a.feed__item {
+    cursor: pointer;
+    cursor: hand;
     .module-content > *:last-child:after {
         content: "\EA04";
         font-size: $scale04 / 1.5;

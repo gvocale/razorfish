@@ -272,6 +272,18 @@
         @media screen and ($lg) {
             color: lighten($black, 10%);
         }
+        .image {
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background-blend-mode: multiply;
+                transition: all 0.5s 0s $bezier;
+                background-color: rgba($black, 0.05);
+            }
+        }
         .name {
             @include ligatures;
             font-family: $serif;
