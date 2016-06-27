@@ -1,5 +1,5 @@
 @mixin col($content-col, $grid-col: 12) {
-  width: calc(((80% - (2rem * (#{$grid-col} - 1))) / #{$grid-col} * #{$content-col}) + (2rem * (#{$content-col} - 1)));
+    width: calc(((80% - (2rem * (#{$grid-col} - 1))) / #{$grid-col} * #{$content-col}) + (2rem * (#{$content-col} - 1)));
 }
 
 @mixin link--underline--animated($multiplier: 1) {
@@ -26,16 +26,15 @@
         animation-fill-mode: forwards;
         animation-play-state: running;
     }
-    @media (hover) {
-        &:hover:before {
-            animation-name: underline_in;
-            animation-duration: 0.2s;
-            animation-timing-function: ease;
-            animation-iteration-count: 1;
-            animation-direction: normal;
-            animation-fill-mode: forwards;
-            animation-play-state: running;
-        }
+    &:hover:before,
+    &:focus:before {
+        animation-name: underline_in;
+        animation-duration: 0.2s;
+        animation-timing-function: ease;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
     }
     @keyframes underline_in {
         0% {
@@ -142,7 +141,6 @@
     margin-left: 1rem;
     margin-right: 1rem;
 }
-
 
 @mixin ligatures {
     text-rendering: optimizeLegibility;

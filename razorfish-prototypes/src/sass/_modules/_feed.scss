@@ -419,33 +419,31 @@ a.feed__item {
         margin-top: 2em;
         width: 100%;
     }
-    @media (hover) {
-        &:hover,
-        &:focus {
-            outline: none;
-            .image_container {
-                transform: translate3d(0, 0, 0) scale(1.05);
-                &:after {
-                    opacity: 0.2;
-                }
-            }
-            &.split {
-                .image_container {
-                    transform: translate3d(0, 0, 0) scale(1.075);
-                }
+    &:hover,
+    &:focus {
+        outline: none;
+        .image_container {
+            transform: translate3d(0, 0, 0) scale(1.05);
+            &:after {
+                opacity: 0.2;
             }
         }
-        &:hover,
-        &:focus {
-            .module-content > *:last-child:after {
-                animation-name: arrowIn;
-                animation-duration: 0.2s;
-                animation-timing-function: $bezier;
-                animation-iteration-count: 1;
-                animation-direction: normal;
-                animation-fill-mode: forwards;
-                animation-play-state: running;
+        &.split {
+            .image_container {
+                transform: translate3d(0, 0, 0) scale(1.075);
             }
+        }
+    }
+    &:hover,
+    &:focus {
+        .module-content > *:last-child:after {
+            animation-name: arrowIn;
+            animation-duration: 0.2s;
+            animation-timing-function: $bezier;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+            animation-play-state: running;
         }
     }
 }

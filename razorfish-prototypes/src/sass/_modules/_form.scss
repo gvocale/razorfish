@@ -59,15 +59,10 @@
             color: currentColor;
             border-bottom: 2px solid currentColor;
             &:focus,
-            &:active {
+            &:active,
+            &:hover {
                 opacity: 0.5;
                 outline: none;
-            }
-            @media (hover) {
-                &:hover {
-                    opacity: 0.5;
-                    outline: none;
-                }
             }
             &:valid {
                 @include icon-tick-primary;
@@ -104,10 +99,9 @@
                 &:active ~ .form__checkbox--label {
                     background-color: rgba($white, 0.15);
                 }
-                @media (hover) {
-                    &:hover ~ .form__checkbox--label {
-                        opacity: 0.5;
-                    }
+                &:hover ~ .form__checkbox--label,
+                &:focus ~ .form__checkbox--label {
+                    opacity: 0.5;
                 }
             }
             &:checked ~ .form__checkbox--label .form__checkbox--box:after {
@@ -424,9 +418,7 @@
         }
     }
     &-checkbox {
-        .item {
-
-        }
+        .item {}
         &_box {
             width: 1.5em;
             height: 1.5em;
@@ -529,13 +521,12 @@
                     opacity: 1;
                 }
             }
-            @media (hover) {
-                &:hover {
-                    .form__radio--label {
-                        opacity: 0.5;
-                    }
+            &:hover,
+            &:focus {
+                .form__radio--label {
+                    opacity: 0.5;
                 }
-                &:hover.selected {
+                &.selected {
                     .form__radio--label {
                         opacity: 1;
                     }
@@ -599,15 +590,13 @@
         font-size: $scale04;
     }
     &:not([class*="anim"]) {
-        @media (hover) {
-            &:hover,
-            &:focus {
-                cursor: hand;
-                cursor: pointer;
-                outline: none;
-                border: 2px rgba($white, 1) solid;
-                transition: all 0s ease-out;
-            }
+        &:hover,
+        &:focus {
+            cursor: hand;
+            cursor: pointer;
+            outline: none;
+            border: 2px rgba($white, 1) solid;
+            transition: all 0s ease-out;
         }
         &:active:after,
         &:target:after {

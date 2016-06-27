@@ -381,17 +381,16 @@
             color: currentColor;
             outline: none;
             font-size: $scale05;
-            @media (hover) {
-                &:hover {
-                    animation-name: bounce;
-                    animation-duration: 0.5s;
-                    animation-timing-function: ease-in-out;
-                    animation-delay: 0.05s;
-                    animation-iteration-count: 1;
-                    animation-direction: normal;
-                    animation-fill-mode: none;
-                    animation-play-state: running;
-                }
+            &:hover,
+            &:focus {
+                animation-name: bounce;
+                animation-duration: 0.5s;
+                animation-timing-function: ease-in-out;
+                animation-delay: 0.05s;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: none;
+                animation-play-state: running;
             }
             &:before {
                 display: block;
@@ -499,34 +498,32 @@ a.hero {
         margin-top: 2em;
         width: 100%;
     }
-    @media (hover) {
-        &:hover,
-        &:focus {
-            outline: none;
-            .module-background {
-                transform: translate3d(0, 0, 0) scale(1.05);
-                transition: transform 0.5s 0s $bezier;
-                &:after {
-                    opacity: 0.2;
-                    transition: opacity 0.5s 0s $bezier;
-                }
+    &:hover,
+    &:focus {
+        outline: none;
+        .module-background {
+            transform: translate3d(0, 0, 0) scale(1.05);
+            transition: transform 0.5s 0s $bezier;
+            &:after {
+                opacity: 0.2;
+                transition: opacity 0.5s 0s $bezier;
             }
         }
-        &:hover,
-        &:focus {
-            .module-content > *:last-child:not(.cta):after {
-                animation-name: arrowIn;
-                animation-duration: 0.2s;
-                animation-timing-function: $bezier;
-                animation-iteration-count: 1;
-                animation-direction: normal;
-                animation-fill-mode: forwards;
-                animation-play-state: running;
-            }
-            .cta_video {
-                transition: color 0.2s 0s $bezier;
-                color: $primary;
-            }
+    }
+    &:hover,
+    &:focus {
+        .module-content > *:last-child:not(.cta):after {
+            animation-name: arrowIn;
+            animation-duration: 0.2s;
+            animation-timing-function: $bezier;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+            animation-play-state: running;
+        }
+        .cta_video {
+            transition: color 0.2s 0s $bezier;
+            color: $primary;
         }
     }
 }

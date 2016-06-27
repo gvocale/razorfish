@@ -173,19 +173,16 @@
                 transition: transform 0.3s 0.14s $bezier;
             }
         }
-        @media (hover) {
-            &:hover {
-                .hamburger-inner::before {
-                    transition: transform 0.1s 0s $bezier;
-                    transform: translateY(-12px);
-                }
-                .hamburger-inner::after {
-                    transition: transform 0.1s 0s $bezier;
-                    transform: translateY(12px);
-                }
+        &:hover,
+        &:focus {
+            .hamburger-inner::before {
+                transition: transform 0.1s 0s $bezier;
+                transform: translateY(-12px);
+            }
+            .hamburger-inner::after {
+                transition: transform 0.1s 0s $bezier;
+                transform: translateY(12px);
             }
         }
     }
 }
-
-

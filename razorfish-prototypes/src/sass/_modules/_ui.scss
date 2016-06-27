@@ -45,12 +45,11 @@
             border-left: calc(6rem / 6 * 2 * 0.8660259) solid $white;
         }
     }
-    @media (hover) {
-        &:hover {
-            background-color: rgba($white, 0.1);
-            transition: background-color 0s 0s $bezier, transform 0.1s 0s $bezier;
-            transform: translate(-50%, -50%) scale(0.95);
-        }
+    &:hover,
+    &:focus {
+        background-color: rgba($white, 0.1);
+        transition: background-color 0s 0s $bezier, transform 0.1s 0s $bezier;
+        transform: translate(-50%, -50%) scale(0.95);
     }
     &:active,
     &:target {
@@ -58,8 +57,6 @@
         transition: background-color 0s 0s $bezier;
     }
 }
-
-
 
 .button {
     text-transform: uppercase;
@@ -100,13 +97,12 @@
         box-sizing: border-box;
         transition: all 0.2s $bezier;
     }
-    @media (hover) {
-        &:hover {
-            outline: none;
-            &:before {
-                opacity: 1;
-                transition: all 0s $bezier;
-            }
+    &:hover,
+    &:focus {
+        outline: none;
+        &:before {
+            opacity: 1;
+            transition: all 0s $bezier;
         }
     }
     &:focus {
@@ -146,7 +142,8 @@
         box-sizing: border-box;
         transition: all 0.2s $bezier;
     }
-    &:hover {
+    &:hover,
+    &:focus {
         &:before {
             opacity: 1;
             transition: all 0s $bezier;
@@ -188,134 +185,3 @@
         }
     }
 }
-
-// .select_secondary {
-//     display: inline-block;
-//     position: relative;
-//     cursor: hand;
-//     cursor: pointer;
-//     color: $black;
-//     transition: 0.2s $bezier;
-//     box-shadow: inset 0 0 0 0 $primary, inset 0 0 0 2px rgba($black, 0.2);
-//     @media (hover) {
-//         &:hover {
-//             outline: none;
-//             box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($black, 0.2);
-//         }
-//     }
-//     &:focus {
-//         outline: none;
-//         box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($black, 0.2);
-//     }
-//     .group {
-//         cursor: hand;
-//         cursor: pointer;
-//         color: currentColor;
-//         position: relative;
-//         -webkit-appearance: none;
-//         outline: none;
-//         padding-top: 1.15em;
-//         padding-bottom: 1.15em;
-//         padding-left: 1.15em;
-//         padding-right: 2.7em;
-//         border: 0;
-//         border-radius: 0;
-//         background-color: transparent;
-//         font-family: $sans;
-//         font-weight: 700;
-//         letter-spacing: $spacing-sans-large;
-//         line-height: $solid-sans;
-//         font-size: $scale03;
-//         @media screen and ($xl) {
-//             font-size: $scale04;
-//         }
-//     }
-//     .icon {
-//         &:before {
-//             content: "\E80C";
-//             position: absolute;
-//             display: block;
-//             font-size: 0.5em;
-//             right: 0;
-//             margin-right: 2.1em;
-//             top: 50%;
-//             transform: translateY(-50%);
-//         }
-//     }
-//     &.white {
-//         color: $white;
-//         box-shadow: inset 0 0 0 0 $primary, inset 0 0 0 2px rgba($white, 0.2);
-//         @media (hover) {
-//             &:hover {
-//                 box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($white, 0.2);
-//             }
-//         }
-//         &:focus {
-//             box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($white, 0.2);
-//         }
-//     }
-// }
-
-// .button_secondary {
-//     text-transform: uppercase;
-//     display: inline-block;
-//     -webkit-appearance: none;
-//     background-color: transparent;
-//     border-radius: 0;
-//     border: 0;
-//     box-sizing: border-box;
-//     color: $black;
-//     cursor: hand;
-//     cursor: pointer;
-//     font-family: $sans;
-//     font-weight: 700;
-//     letter-spacing: $spacing-sans-large;
-//     line-height: $solid-sans;
-//     outline: none;
-//     overflow: hidden;
-//     padding-top: 1.15em;
-//     padding-bottom: 1.15em;
-//     padding-left: 3em;
-//     padding-right: 3em;
-//     position: relative;
-//     text-decoration: none;
-//     box-shadow: inset 0 0 0 0 $primary, inset 0 0 0 2px rgba($black, 0.2);
-//     transition: 0.2s $bezier;
-//     font-size: $scale03;
-//     @media screen and ($xl) {
-//         font-size: $scale04;
-//     }
-//     @media (hover) {
-//         &:hover {
-//             outline: none;
-//             box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($black, 0.2);
-//         }
-//     }
-//     &:focus {
-//         outline: none;
-//         box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($black, 0.2);
-//     }
-//     &:active:after,
-//     &:target:after {
-//         content: "";
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         background-color: $black;
-//         opacity: 0.1;
-//     }
-//     &.white {
-//         color: $white;
-//         box-shadow: inset 0 0 0 0 $primary, inset 0 0 0 2px rgba($white, 0.2);
-//         @media (hover) {
-//             &:hover {
-//                 box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($white, 0.2);
-//             }
-//         }
-//         &:focus {
-//             box-shadow: inset 0 -3.5em 0 0 $primary, inset 0 0 0 2px rgba($white, 0.2);
-//         }
-//     }
-// }

@@ -221,29 +221,28 @@
 
 .people-list {
     .item {
-        @media (hover) {
-            &:hover {
-                .module-background {
-                    transform: scale(1.1);
-                    &:after {
-                        background-color: rgba($black, 0.4);
-                    }
+        &:hover,
+        &:focus {
+            .module-background {
+                transform: scale(1.1);
+                &:after {
+                    background-color: rgba($black, 0.4);
                 }
-                .person-name {
-                    transform: translateY(0%);
-                    transition: all 0.3s 0.1s $bezier;
-                    opacity: 1;
-                }
-                .person-role {
-                    transform: translateY(0%);
-                    transition: all 0.3s 0.15s $bezier;
-                    opacity: 1;
-                }
-                .person-office {
-                    transform: translateY(0%);
-                    transition: all 0.25s 0.2s $bezier;
-                    opacity: 0.5;
-                }
+            }
+            .person-name {
+                transform: translateY(0%);
+                transition: all 0.3s 0.1s $bezier;
+                opacity: 1;
+            }
+            .person-role {
+                transform: translateY(0%);
+                transition: all 0.3s 0.15s $bezier;
+                opacity: 1;
+            }
+            .person-office {
+                transform: translateY(0%);
+                transition: all 0.25s 0.2s $bezier;
+                opacity: 0.5;
             }
         }
     }

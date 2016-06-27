@@ -89,15 +89,8 @@
                     transition: all 0.2s 0s $bezier;
                 }
             }
-            @media (hover) {
-                &:hover {
-                    .caption__icon--component {
-                        border: 2px solid rgba($primary, 1);
-                        transition: all 0s 0s $bezier;
-                    }
-                }
-            }
-            &:focus {
+            &:focus,
+            &:hover {
                 .caption__icon--component {
                     border: 2px solid rgba($primary, 1);
                     transition: all 0s 0s $bezier;
@@ -216,14 +209,13 @@
             right: 0px;
             transition: all 0.1s 0s ease-in-out;
         }
-        @media (hover) {
-            &:hover {
-                &:before {
-                    right: 20px;
-                }
-                &:after {
-                    width: 20px;
-                }
+        &:hover,
+        &:focus {
+            &:before {
+                right: 20px;
+            }
+            &:after {
+                width: 20px;
             }
         }
     }
@@ -261,14 +253,13 @@
             left: 11px;
             transition: all 0.1s 0s ease-in-out;
         }
-        @media (hover) {
-            &:hover {
-                &:before {
-                    width: 20px;
-                }
-                &:after {
-                    left: 20px;
-                }
+        &:hover,
+        &:focus {
+            &:before {
+                width: 20px;
+            }
+            &:after {
+                left: 20px;
             }
         }
     }

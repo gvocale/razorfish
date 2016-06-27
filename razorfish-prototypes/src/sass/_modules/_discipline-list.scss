@@ -96,20 +96,18 @@
                 width: 100%;
             }
         }
-        @media (hover) {
-            &:hover,
-            &:focus {
-                background-color: darken($white, 8%);
-                transition: background-color 0.3s 0s $bezier;
-                .module-content > *:last-child:after {
-                    animation-name: arrowIn;
-                    animation-duration: 0.2s;
-                    animation-timing-function: $bezier;
-                    animation-iteration-count: 1;
-                    animation-direction: normal;
-                    animation-fill-mode: forwards;
-                    animation-play-state: running;
-                }
+        &:hover,
+        &:focus {
+            background-color: darken($white, 8%);
+            transition: background-color 0.3s 0s $bezier;
+            .module-content > *:last-child:after {
+                animation-name: arrowIn;
+                animation-duration: 0.2s;
+                animation-timing-function: $bezier;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+                animation-play-state: running;
             }
         }
     }

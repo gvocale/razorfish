@@ -734,6 +734,7 @@ transform-origin: top;
 .module.body-copy-flexible {
     padding-left: 0; // by using the above mixin you won't need 1rem padding on the container
     padding-right: 0; // by using the above mixin you won't need 1rem padding on the container
+    justify-content: center;
     .article-sidebar {
         position: relative;
         @media screen and ($xl) {
@@ -754,6 +755,7 @@ transform-origin: top;
         }
     }
     .module-content {
+        margin: 0; // remove previous margins
         @include col(4, 4);
         @media screen and ($md) {
             @include col(6, 6);

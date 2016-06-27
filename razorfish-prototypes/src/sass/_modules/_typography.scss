@@ -103,8 +103,6 @@ p {
     -webkit-margin-end: 0;
 }
 
-
-
 .link {
     &:focus,
     &:target,
@@ -184,16 +182,15 @@ p {
             animation-fill-mode: forwards;
             animation-play-state: running;
         }
-        @media (hover) {
-            &:hover:before {
-                animation-name: underline_in;
-                animation-duration: 0.3s;
-                animation-timing-function: $bezier;
-                animation-iteration-count: 1;
-                animation-direction: normal;
-                animation-fill-mode: forwards;
-                animation-play-state: running;
-            }
+        &:hover:before,
+        &:focus:before {
+            animation-name: underline_in;
+            animation-duration: 0.3s;
+            animation-timing-function: $bezier;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+            animation-play-state: running;
         }
         @keyframes underline_in {
             0% {
@@ -215,11 +212,10 @@ p {
                 right: 0;
             }
         }
-        @media (hover) {
-            &:hover {
-                transition: color 0.05s $bezier 0.05s;
-                color: $primary;
-            }
+        &:hover,
+        &:focus {
+            transition: color 0.05s $bezier 0.05s;
+            color: $primary;
         }
     }
 }

@@ -56,10 +56,9 @@
 .contact-form {
     &__link {
         font-family: $sans;
-        @media (hover) {
-            &:hover {
-                color: $primary;
-            }
+        &:hover,
+        &:focus {
+            color: $primary;
         }
         line-height: 1;
         font-weight: 400;

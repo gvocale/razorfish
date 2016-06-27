@@ -28,15 +28,14 @@
             position: relative;
             padding-bottom: calc(100% / 16 * 9);
         }
-        @media (hover) {
-            &:hover {
-                .module-background {
-                    transform: translate3d(0, 0, 0) scale(1.075);
+        &:hover,
+        &:focus {
+            .module-background {
+                transform: translate3d(0, 0, 0) scale(1.075);
+                transition: all 0.5s 0s $bezier;
+                &:before {
+                    opacity: 0.2;
                     transition: all 0.5s 0s $bezier;
-                    &:before {
-                        opacity: 0.2;
-                        transition: all 0.5s 0s $bezier;
-                    }
                 }
             }
         }
@@ -65,33 +64,31 @@
             margin-top: 2em;
             width: 100%;
         }
-        @media (hover) {
-            &:hover,
-            &:focus {
-                outline: none;
-                .image_container {
-                    transform: translate3d(0, 0, 0) scale(1.05);
-                    &:after {
-                        opacity: 0.2;
-                    }
-                }
-                &.split {
-                    .image_container {
-                        transform: translate3d(0, 0, 0) scale(1.075);
-                    }
+        &:hover,
+        &:focus {
+            outline: none;
+            .image_container {
+                transform: translate3d(0, 0, 0) scale(1.05);
+                &:after {
+                    opacity: 0.2;
                 }
             }
-            &:hover,
-            &:focus {
-                .module-content > *:last-child:after {
-                    animation-name: arrowIn;
-                    animation-duration: 0.2s;
-                    animation-timing-function: $bezier;
-                    animation-iteration-count: 1;
-                    animation-direction: normal;
-                    animation-fill-mode: forwards;
-                    animation-play-state: running;
+            &.split {
+                .image_container {
+                    transform: translate3d(0, 0, 0) scale(1.075);
                 }
+            }
+        }
+        &:hover,
+        &:focus {
+            .module-content > *:last-child:after {
+                animation-name: arrowIn;
+                animation-duration: 0.2s;
+                animation-timing-function: $bezier;
+                animation-iteration-count: 1;
+                animation-direction: normal;
+                animation-fill-mode: forwards;
+                animation-play-state: running;
             }
         }
     }
@@ -164,7 +161,7 @@
         font-weight: 700;
         max-width: 14em;
         margin-bottom: 0.25em;
-            text-align: center;
+        text-align: center;
         font-size: $scale06;
         @media screen and ($md) {
             font-size: $scale07;

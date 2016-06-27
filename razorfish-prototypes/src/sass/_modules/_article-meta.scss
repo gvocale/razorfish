@@ -145,17 +145,16 @@
         outline: none;
         -webkit-font-smoothing: antialiased;
         font-size: $scale05;
-        @media (hover) {
-            &:hover {
-                animation-name: bounce;
-                animation-duration: 0.5s;
-                animation-timing-function: ease-in-out;
-                animation-delay: 0.05s;
-                animation-iteration-count: 1;
-                animation-direction: normal;
-                animation-fill-mode: none;
-                animation-play-state: running;
-            }
+        &:hover,
+        &:focus {
+            animation-name: bounce;
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 0.05s;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: none;
+            animation-play-state: running;
         }
         &:before {
             display: block;

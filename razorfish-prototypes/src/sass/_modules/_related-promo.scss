@@ -156,26 +156,24 @@ a.related-promo {
         margin-top: 2em;
         width: 100%;
     }
-    @media (hover) {
-        &:hover,
-        &:focus {
-            outline: none;
-            .module-content > *:last-child:after {
-                animation-name: arrowIn;
-                animation-duration: 0.2s;
-                animation-timing-function: $bezier;
-                animation-iteration-count: 1;
-                animation-direction: normal;
-                animation-fill-mode: forwards;
-                animation-play-state: running;
-            }
-            .module-background {
-                transform: translate3d(0, 0, 0) scale(1.05);
-                transition: transform 0.5s 0s $bezier;
-                &:before {
-                    opacity: 0.2;
-                    transition: opacity 0.5s 0s $bezier;
-                }
+    &:hover,
+    &:focus {
+        outline: none;
+        .module-content > *:last-child:after {
+            animation-name: arrowIn;
+            animation-duration: 0.2s;
+            animation-timing-function: $bezier;
+            animation-iteration-count: 1;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+            animation-play-state: running;
+        }
+        .module-background {
+            transform: translate3d(0, 0, 0) scale(1.05);
+            transition: transform 0.5s 0s $bezier;
+            &:before {
+                opacity: 0.2;
+                transition: opacity 0.5s 0s $bezier;
             }
         }
     }

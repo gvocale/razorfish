@@ -53,12 +53,11 @@
                 padding-bottom: 100%;
                 position: relative;
             }
-            @media (hover) {
-                &:hover {
-                    .social-feed--instagram__feed__image {
-                        transform: translate3d(0, 0, 0) scale(1.05);
-                        transition: transform 0.5s 0s $bezier;
-                    }
+            &:hover,
+            &:focus {
+                .social-feed--instagram__feed__image {
+                    transform: translate3d(0, 0, 0) scale(1.05);
+                    transition: transform 0.5s 0s $bezier;
                 }
             }
         }

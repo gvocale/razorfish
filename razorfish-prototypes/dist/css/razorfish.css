@@ -1473,24 +1473,23 @@ a[href^="tel"] {
     outline: none;
     -webkit-font-smoothing: antialiased;
     font-size: 1.3077rem; }
-    @media (hover) {
-      .article-meta .icon:hover {
-        -webkit-animation-name: bounce;
-        animation-name: bounce;
-        -webkit-animation-duration: 0.5s;
-        animation-duration: 0.5s;
-        -webkit-animation-timing-function: ease-in-out;
-        animation-timing-function: ease-in-out;
-        -webkit-animation-delay: 0.05s;
-        animation-delay: 0.05s;
-        -webkit-animation-iteration-count: 1;
-        animation-iteration-count: 1;
-        -webkit-animation-direction: normal;
-        animation-direction: normal;
-        -webkit-animation-fill-mode: none;
-        animation-fill-mode: none;
-        -webkit-animation-play-state: running;
-        animation-play-state: running; } }
+    .article-meta .icon:hover, .article-meta .icon:focus {
+      -webkit-animation-name: bounce;
+      animation-name: bounce;
+      -webkit-animation-duration: 0.5s;
+      animation-duration: 0.5s;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      -webkit-animation-delay: 0.05s;
+      animation-delay: 0.05s;
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1;
+      -webkit-animation-direction: normal;
+      animation-direction: normal;
+      -webkit-animation-fill-mode: none;
+      animation-fill-mode: none;
+      -webkit-animation-play-state: running;
+      animation-play-state: running; }
     .article-meta .icon:before {
       display: block;
       position: absolute;
@@ -2933,9 +2932,8 @@ a[href^="tel"] {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.8077rem; }
-  @media (hover) {
-    .contact-form__link:hover {
-      color: #a9c000; } }
+  .contact-form__link:hover, .contact-form__link:focus {
+    color: #a9c000; }
   @media screen and (min-width: 1600px) {
     .contact-form__link {
       font-size: 1rem; } }
@@ -3923,25 +3921,24 @@ a[href^="tel"] {
         @media only screen and (min-width: 1600px) {
           .discipline-list a.item .module-content > *:last-child:after {
             font-size: 0.92309rem; } }
-    @media (hover) {
-      .discipline-list a.item:hover, .discipline-list a.item:focus {
-        background-color: #ebebeb;
-        transition: background-color 0.3s 0s cubic-bezier(0.32, 0.01, 0, 1); }
-        .discipline-list a.item:hover .module-content > *:last-child:after, .discipline-list a.item:focus .module-content > *:last-child:after {
-          -webkit-animation-name: arrowIn;
-          animation-name: arrowIn;
-          -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-          -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-          animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-          -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-          -webkit-animation-direction: normal;
-          animation-direction: normal;
-          -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-          -webkit-animation-play-state: running;
-          animation-play-state: running; } }
+    .discipline-list a.item:hover, .discipline-list a.item:focus {
+      background-color: #ebebeb;
+      transition: background-color 0.3s 0s cubic-bezier(0.32, 0.01, 0, 1); }
+      .discipline-list a.item:hover .module-content > *:last-child:after, .discipline-list a.item:focus .module-content > *:last-child:after {
+        -webkit-animation-name: arrowIn;
+        animation-name: arrowIn;
+        -webkit-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+        -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+        animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        -webkit-animation-direction: normal;
+        animation-direction: normal;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-play-state: running;
+        animation-play-state: running; }
   .discipline-list .module-content {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -4115,25 +4112,26 @@ a[href^="tel"] {
     .disciplines-tile-icon + .discipline-name {
       margin-top: 4rem; } }
 
-@media (hover) {
-  .disciplines-tile:nth-of-type(odd):hover .disciplines-tile-icon,
-  .disciplines-tile:nth-of-type(even):hover .disciplines-tile-icon {
-    -webkit-animation-name: bounce;
-    animation-name: bounce;
-    -webkit-animation-duration: 0.5s;
-    animation-duration: 0.5s;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    -webkit-animation-delay: 0.05s;
-    animation-delay: 0.05s;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-    -webkit-animation-direction: normal;
-    animation-direction: normal;
-    -webkit-animation-fill-mode: none;
-    animation-fill-mode: none;
-    -webkit-animation-play-state: running;
-    animation-play-state: running; } }
+.disciplines-tile:nth-of-type(odd):hover .disciplines-tile-icon,
+.disciplines-tile:nth-of-type(odd):focus .disciplines-tile-icon,
+.disciplines-tile:nth-of-type(even):hover .disciplines-tile-icon,
+.disciplines-tile:nth-of-type(even):focus .disciplines-tile-icon {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0.05s;
+  animation-delay: 0.05s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
+  -webkit-animation-play-state: running;
+  animation-play-state: running; }
 
 @media screen and (min-width: 768px) {
   .disciplines-tile:nth-of-type(odd) {
@@ -4619,32 +4617,32 @@ a.feed__item .module-content > *:last-child:after {
     a.feed__item .module-content > *:last-child:after {
       font-size: 1.07693rem; } }
 
-@media (hover) {
-  a.feed__item:hover, a.feed__item:focus {
-    outline: none; }
-    a.feed__item:hover .image_container, a.feed__item:focus .image_container {
-      -webkit-transform: translate3d(0, 0, 0) scale(1.05);
-      transform: translate3d(0, 0, 0) scale(1.05); }
-      a.feed__item:hover .image_container:after, a.feed__item:focus .image_container:after {
-        opacity: 0.2; }
-    a.feed__item:hover.split .image_container, a.feed__item:focus.split .image_container {
-      -webkit-transform: translate3d(0, 0, 0) scale(1.075);
-      transform: translate3d(0, 0, 0) scale(1.075); }
-  a.feed__item:hover .module-content > *:last-child:after, a.feed__item:focus .module-content > *:last-child:after {
-    -webkit-animation-name: arrowIn;
-    animation-name: arrowIn;
-    -webkit-animation-duration: 0.2s;
-    animation-duration: 0.2s;
-    -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-    animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1;
-    -webkit-animation-direction: normal;
-    animation-direction: normal;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-    -webkit-animation-play-state: running;
-    animation-play-state: running; } }
+a.feed__item:hover, a.feed__item:focus {
+  outline: none; }
+  a.feed__item:hover .image_container, a.feed__item:focus .image_container {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.05);
+    transform: translate3d(0, 0, 0) scale(1.05); }
+    a.feed__item:hover .image_container:after, a.feed__item:focus .image_container:after {
+      opacity: 0.2; }
+  a.feed__item:hover.split .image_container, a.feed__item:focus.split .image_container {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.075);
+    transform: translate3d(0, 0, 0) scale(1.075); }
+
+a.feed__item:hover .module-content > *:last-child:after, a.feed__item:focus .module-content > *:last-child:after {
+  -webkit-animation-name: arrowIn;
+  animation-name: arrowIn;
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+  -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+  animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+  animation-play-state: running; }
 
 .filtered-job-listings {
   padding-left: calc(10vw - 1rem);
@@ -4754,12 +4752,8 @@ a.feed__item .module-content > *:last-child:after {
           cursor: hand; }
           .filtered-job-listings .row:first-child:before {
             border-top: 0; }
-          .filtered-job-listings .row:first-child:focus:before {
-            background-color: transparent; } }
-  @media screen and (min-width: 992px) and (hover) {
-    .filtered-job-listings .row:first-child:hover:before {
-      background-color: transparent; } }
-      @media screen and (min-width: 992px) {
+          .filtered-job-listings .row:first-child:hover:before, .filtered-job-listings .row:first-child:focus:before {
+            background-color: transparent; }
           .filtered-job-listings .row:first-child:active:before, .filtered-job-listings .row:first-child:target:before {
             background-color: transparent; } }
     .filtered-job-listings .row *:nth-child(1) {
@@ -5179,13 +5173,9 @@ a.feed__item .module-content > *:last-child:after {
     @media screen and (min-width: 1600px) {
       .form-input[type="text"], .form-input[type="tel"], .form-input[type="email"] {
         font-size: 1.3077rem; } }
-    .form-input[type="text"]:focus, .form-input[type="text"]:active, .form-input[type="tel"]:focus, .form-input[type="tel"]:active, .form-input[type="email"]:focus, .form-input[type="email"]:active {
+    .form-input[type="text"]:focus, .form-input[type="text"]:active, .form-input[type="text"]:hover, .form-input[type="tel"]:focus, .form-input[type="tel"]:active, .form-input[type="tel"]:hover, .form-input[type="email"]:focus, .form-input[type="email"]:active, .form-input[type="email"]:hover {
       opacity: 0.5;
       outline: none; }
-    @media (hover) {
-      .form-input[type="text"]:hover, .form-input[type="tel"]:hover, .form-input[type="email"]:hover {
-        opacity: 0.5;
-        outline: none; } }
     .form-input[type="text"]:valid, .form-input[type="tel"]:valid, .form-input[type="email"]:valid {
       background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?><svg width='60px' height='60px' version='1.1' xmlns='http://www.w3.org/2000/svg'><path d='M30,60 C13.43,60 0,46.5715524 0,30.001 C0,13.4304477 13.43,0 30,0 C46.57,0 60,13.4304477 60,30.001 C60,46.5715524 46.57,60 30,60 L30,60 Z M30,6 C16.746,6 6,16.7443581 6,30.0008 C6,43.2552418 16.746,53.9996 30,53.9996 C43.254,53.9996 54,43.2552418 54,30.0008 C54,16.7443581 43.254,6 30,6 L30,6 Z M41.7333333,21 L46,25.1818182 L31.0666667,39.8181818 L26.8,35.6363636 L41.7333333,21 L41.7333333,21 Z M14,31.4545455 L18.2666667,27.2727273 L31.0666667,39.8181818 L26.8,44 L14,31.4545455 L14,31.4545455 Z' id='icon-tick' fill='#a9c000'></path> </svg> "); }
     .form-input[type="text"]:not([value=""]):invalid, .form-input[type="tel"]:not([value=""]):invalid, .form-input[type="email"]:not([value=""]):invalid {
@@ -5209,9 +5199,9 @@ a.feed__item .module-content > *:last-child:after {
   .form-input[type="checkbox"]:not(:checked):target ~ .form__checkbox--label,
   .form-input[type="checkbox"]:not(:checked):active ~ .form__checkbox--label {
     background-color: rgba(255, 255, 255, 0.15); }
-  @media (hover) {
-    .form-input[type="checkbox"]:not(:checked):hover ~ .form__checkbox--label {
-      opacity: 0.5; } }
+  .form-input[type="checkbox"]:not(:checked):hover ~ .form__checkbox--label,
+  .form-input[type="checkbox"]:not(:checked):focus ~ .form__checkbox--label {
+    opacity: 0.5; }
   .form-input[type="checkbox"]:checked ~ .form__checkbox--label .form__checkbox--box:after {
     opacity: 1; }
   .form-input[type="radio"]:focus ~ .form__radio--label,
@@ -5624,11 +5614,10 @@ a.feed__item .module-content > *:last-child:after {
       margin-bottom: 0; }
     .form-radio--item.selected .form__radio--label, .form-checkbox--item.selected .form__radio--label {
       opacity: 1; }
-    @media (hover) {
-      .form-radio--item:hover .form__radio--label, .form-checkbox--item:hover .form__radio--label {
-        opacity: 0.5; }
-      .form-radio--item:hover.selected .form__radio--label, .form-checkbox--item:hover.selected .form__radio--label {
-        opacity: 1; } }
+    .form-radio--item:hover .form__radio--label, .form-radio--item:focus .form__radio--label, .form-checkbox--item:hover .form__radio--label, .form-checkbox--item:focus .form__radio--label {
+      opacity: 0.5; }
+    .form-radio--item:hover.selected .form__radio--label, .form-radio--item:focus.selected .form__radio--label, .form-checkbox--item:hover.selected .form__radio--label, .form-checkbox--item:focus.selected .form__radio--label {
+      opacity: 1; }
   .form--black {
     color: #373737; }
   .form--white {
@@ -5701,13 +5690,12 @@ a.feed__item .module-content > *:last-child:after {
   @media screen and (min-width: 1600px) {
     .button__submit-form {
       font-size: 1rem; } }
-  @media (hover) {
-    .button__submit-form:not([class*="anim"]):hover, .button__submit-form:not([class*="anim"]):focus {
-      cursor: hand;
-      cursor: pointer;
-      outline: none;
-      border: 2px white solid;
-      transition: all 0s ease-out; } }
+  .button__submit-form:not([class*="anim"]):hover, .button__submit-form:not([class*="anim"]):focus {
+    cursor: hand;
+    cursor: pointer;
+    outline: none;
+    border: 2px white solid;
+    transition: all 0s ease-out; }
   .button__submit-form:not([class*="anim"]):active:after, .button__submit-form:not([class*="anim"]):target:after {
     content: "";
     position: absolute;
@@ -6301,24 +6289,23 @@ a.feed__item .module-content > *:last-child:after {
       color: currentColor;
       outline: none;
       font-size: 1.3077rem; }
-      @media (hover) {
-        .hero_profile .icon:hover {
-          -webkit-animation-name: bounce;
-          animation-name: bounce;
-          -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-          -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-          -webkit-animation-delay: 0.05s;
-          animation-delay: 0.05s;
-          -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-          -webkit-animation-direction: normal;
-          animation-direction: normal;
-          -webkit-animation-fill-mode: none;
-          animation-fill-mode: none;
-          -webkit-animation-play-state: running;
-          animation-play-state: running; } }
+      .hero_profile .icon:hover, .hero_profile .icon:focus {
+        -webkit-animation-name: bounce;
+        animation-name: bounce;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-delay: 0.05s;
+        animation-delay: 0.05s;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        -webkit-animation-direction: normal;
+        animation-direction: normal;
+        -webkit-animation-fill-mode: none;
+        animation-fill-mode: none;
+        -webkit-animation-play-state: running;
+        animation-play-state: running; }
       .hero_profile .icon:before {
         display: block;
         position: absolute;
@@ -6437,36 +6424,35 @@ a.hero {
     @media only screen and (min-width: 1600px) {
       a.hero .module-content > *:last-child:not(.cta):after {
         font-size: 1.07693rem; } }
-  @media (hover) {
-    a.hero:hover, a.hero:focus {
-      outline: none; }
-      a.hero:hover .module-background, a.hero:focus .module-background {
-        -webkit-transform: translate3d(0, 0, 0) scale(1.05);
-        transform: translate3d(0, 0, 0) scale(1.05);
-        transition: -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
-        transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
-        transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1), -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); }
-        a.hero:hover .module-background:after, a.hero:focus .module-background:after {
-          opacity: 0.2;
-          transition: opacity 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); }
-    a.hero:hover .module-content > *:last-child:not(.cta):after, a.hero:focus .module-content > *:last-child:not(.cta):after {
-      -webkit-animation-name: arrowIn;
-      animation-name: arrowIn;
-      -webkit-animation-duration: 0.2s;
-      animation-duration: 0.2s;
-      -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-      animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-      -webkit-animation-iteration-count: 1;
-      animation-iteration-count: 1;
-      -webkit-animation-direction: normal;
-      animation-direction: normal;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-      -webkit-animation-play-state: running;
-      animation-play-state: running; }
-    a.hero:hover .cta_video, a.hero:focus .cta_video {
-      transition: color 0.2s 0s cubic-bezier(0.32, 0.01, 0, 1);
-      color: #a9c000; } }
+  a.hero:hover, a.hero:focus {
+    outline: none; }
+    a.hero:hover .module-background, a.hero:focus .module-background {
+      -webkit-transform: translate3d(0, 0, 0) scale(1.05);
+      transform: translate3d(0, 0, 0) scale(1.05);
+      transition: -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
+      transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
+      transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1), -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); }
+      a.hero:hover .module-background:after, a.hero:focus .module-background:after {
+        opacity: 0.2;
+        transition: opacity 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); }
+  a.hero:hover .module-content > *:last-child:not(.cta):after, a.hero:focus .module-content > *:last-child:not(.cta):after {
+    -webkit-animation-name: arrowIn;
+    animation-name: arrowIn;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+    -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+    animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-play-state: running;
+    animation-play-state: running; }
+  a.hero:hover .cta_video, a.hero:focus .cta_video {
+    transition: color 0.2s 0s cubic-bezier(0.32, 0.01, 0, 1);
+    color: #a9c000; }
 
 .hero .module-content {
   transition-property: all; }
@@ -6584,11 +6570,7 @@ a.hero {
         -webkit-transform: translateX(-50%) translateY(0%) rotate(0deg);
         transform: translateX(-50%) translateY(0%) rotate(0deg);
         transition: all 0.2s 0s cubic-bezier(0.32, 0.01, 0, 1); }
-    @media (hover) {
-      .image__full-width .caption__icon:hover .caption__icon--component {
-        border: 2px solid #a9c000;
-        transition: all 0s 0s cubic-bezier(0.32, 0.01, 0, 1); } }
-    .image__full-width .caption__icon:focus .caption__icon--component {
+    .image__full-width .caption__icon:focus .caption__icon--component, .image__full-width .caption__icon:hover .caption__icon--component {
       border: 2px solid #a9c000;
       transition: all 0s 0s cubic-bezier(0.32, 0.01, 0, 1); }
     .image__full-width .caption__icon:active .caption__icon--component, .image__full-width .caption__icon:target .caption__icon--component {
@@ -6718,11 +6700,10 @@ a.hero {
       transform: translateY(-50%);
       right: 0px;
       transition: all 0.1s 0s ease-in-out; }
-    @media (hover) {
-      .image-carousel .owl-prev:hover:before {
-        right: 20px; }
-      .image-carousel .owl-prev:hover:after {
-        width: 20px; } }
+    .image-carousel .owl-prev:hover:before, .image-carousel .owl-prev:focus:before {
+      right: 20px; }
+    .image-carousel .owl-prev:hover:after, .image-carousel .owl-prev:focus:after {
+      width: 20px; }
   .image-carousel .owl-next {
     position: relative;
     float: right;
@@ -6757,11 +6738,10 @@ a.hero {
       transform: translateY(-50%);
       left: 11px;
       transition: all 0.1s 0s ease-in-out; }
-    @media (hover) {
-      .image-carousel .owl-next:hover:before {
-        width: 20px; }
-      .image-carousel .owl-next:hover:after {
-        left: 20px; } }
+    .image-carousel .owl-next:hover:before, .image-carousel .owl-next:focus:before {
+      width: 20px; }
+    .image-carousel .owl-next:hover:after, .image-carousel .owl-next:focus:after {
+      left: 20px; }
   .image-carousel .owl-nav {
     width: 8em;
     position: absolute;
@@ -7001,19 +6981,18 @@ a.hero {
         transition: -webkit-transform 0.3s 0.14s cubic-bezier(0.32, 0.01, 0, 1);
         transition: transform 0.3s 0.14s cubic-bezier(0.32, 0.01, 0, 1);
         transition: transform 0.3s 0.14s cubic-bezier(0.32, 0.01, 0, 1), -webkit-transform 0.3s 0.14s cubic-bezier(0.32, 0.01, 0, 1); }
-    @media (hover) {
-      .masthead__hamburger:hover .hamburger-inner::before {
-        transition: -webkit-transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1);
-        transition: transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1);
-        transition: transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1), -webkit-transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1);
-        -webkit-transform: translateY(-12px);
-        transform: translateY(-12px); }
-      .masthead__hamburger:hover .hamburger-inner::after {
-        transition: -webkit-transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1);
-        transition: transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1);
-        transition: transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1), -webkit-transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1);
-        -webkit-transform: translateY(12px);
-        transform: translateY(12px); } }
+    .masthead__hamburger:hover .hamburger-inner::before, .masthead__hamburger:focus .hamburger-inner::before {
+      transition: -webkit-transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1);
+      transition: transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1);
+      transition: transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1), -webkit-transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1);
+      -webkit-transform: translateY(-12px);
+      transform: translateY(-12px); }
+    .masthead__hamburger:hover .hamburger-inner::after, .masthead__hamburger:focus .hamburger-inner::after {
+      transition: -webkit-transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1);
+      transition: transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1);
+      transition: transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1), -webkit-transform 0.1s 0s cubic-bezier(0.32, 0.01, 0, 1);
+      -webkit-transform: translateY(12px);
+      transform: translateY(12px); }
 
 .most-recent {
   background-color: #ebe7e6; }
@@ -7435,22 +7414,21 @@ a.hero {
       animation-fill-mode: forwards;
       -webkit-animation-play-state: running;
       animation-play-state: running; }
-    @media (hover) {
-      .office-contact-info .link:hover:before {
-        -webkit-animation-name: underline_in;
-        animation-name: underline_in;
-        -webkit-animation-duration: 0.2s;
-        animation-duration: 0.2s;
-        -webkit-animation-timing-function: ease;
-        animation-timing-function: ease;
-        -webkit-animation-iteration-count: 1;
-        animation-iteration-count: 1;
-        -webkit-animation-direction: normal;
-        animation-direction: normal;
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-        -webkit-animation-play-state: running;
-        animation-play-state: running; } }
+    .office-contact-info .link:hover:before, .office-contact-info .link:focus:before {
+      -webkit-animation-name: underline_in;
+      animation-name: underline_in;
+      -webkit-animation-duration: 0.2s;
+      animation-duration: 0.2s;
+      -webkit-animation-timing-function: ease;
+      animation-timing-function: ease;
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1;
+      -webkit-animation-direction: normal;
+      animation-direction: normal;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-play-state: running;
+      animation-play-state: running; }
 
 @keyframes underline_in {
   0% {
@@ -7503,14 +7481,13 @@ a.hero {
       display: block;
       position: relative;
       padding-bottom: calc(100% / 16 * 9); }
-    @media (hover) {
-      .office-list .office:hover .module-background {
-        -webkit-transform: translate3d(0, 0, 0) scale(1.075);
-        transform: translate3d(0, 0, 0) scale(1.075);
+    .office-list .office:hover .module-background, .office-list .office:focus .module-background {
+      -webkit-transform: translate3d(0, 0, 0) scale(1.075);
+      transform: translate3d(0, 0, 0) scale(1.075);
+      transition: all 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); }
+      .office-list .office:hover .module-background:before, .office-list .office:focus .module-background:before {
+        opacity: 0.2;
         transition: all 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); }
-        .office-list .office:hover .module-background:before {
-          opacity: 0.2;
-          transition: all 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); } }
   .office-list a.office .module-content > *:last-child:after {
     content: "\EA04";
     font-size: 0.57143rem;
@@ -7540,32 +7517,31 @@ a.hero {
     @media only screen and (min-width: 1600px) {
       .office-list a.office .module-content > *:last-child:after {
         font-size: 0.92309rem; } }
-  @media (hover) {
-    .office-list a.office:hover, .office-list a.office:focus {
-      outline: none; }
-      .office-list a.office:hover .image_container, .office-list a.office:focus .image_container {
-        -webkit-transform: translate3d(0, 0, 0) scale(1.05);
-        transform: translate3d(0, 0, 0) scale(1.05); }
-        .office-list a.office:hover .image_container:after, .office-list a.office:focus .image_container:after {
-          opacity: 0.2; }
-      .office-list a.office:hover.split .image_container, .office-list a.office:focus.split .image_container {
-        -webkit-transform: translate3d(0, 0, 0) scale(1.075);
-        transform: translate3d(0, 0, 0) scale(1.075); }
-    .office-list a.office:hover .module-content > *:last-child:after, .office-list a.office:focus .module-content > *:last-child:after {
-      -webkit-animation-name: arrowIn;
-      animation-name: arrowIn;
-      -webkit-animation-duration: 0.2s;
-      animation-duration: 0.2s;
-      -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-      animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-      -webkit-animation-iteration-count: 1;
-      animation-iteration-count: 1;
-      -webkit-animation-direction: normal;
-      animation-direction: normal;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-      -webkit-animation-play-state: running;
-      animation-play-state: running; } }
+  .office-list a.office:hover, .office-list a.office:focus {
+    outline: none; }
+    .office-list a.office:hover .image_container, .office-list a.office:focus .image_container {
+      -webkit-transform: translate3d(0, 0, 0) scale(1.05);
+      transform: translate3d(0, 0, 0) scale(1.05); }
+      .office-list a.office:hover .image_container:after, .office-list a.office:focus .image_container:after {
+        opacity: 0.2; }
+    .office-list a.office:hover.split .image_container, .office-list a.office:focus.split .image_container {
+      -webkit-transform: translate3d(0, 0, 0) scale(1.075);
+      transform: translate3d(0, 0, 0) scale(1.075); }
+  .office-list a.office:hover .module-content > *:last-child:after, .office-list a.office:focus .module-content > *:last-child:after {
+    -webkit-animation-name: arrowIn;
+    animation-name: arrowIn;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+    -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+    animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-play-state: running;
+    animation-play-state: running; }
   .office-list .module-background {
     width: 100%;
     height: 100%;
@@ -8053,27 +8029,29 @@ a.hero {
   .people-list .item:nth-of-type(10) .module-background:after {
     background-color: rgba(55, 55, 55, 0.05); } }
 
-@media (hover) {
-  .people-list .item:hover .module-background {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1); }
-    .people-list .item:hover .module-background:after {
-      background-color: rgba(55, 55, 55, 0.4); }
-  .people-list .item:hover .person-name {
-    -webkit-transform: translateY(0%);
-    transform: translateY(0%);
-    transition: all 0.3s 0.1s cubic-bezier(0.32, 0.01, 0, 1);
-    opacity: 1; }
-  .people-list .item:hover .person-role {
-    -webkit-transform: translateY(0%);
-    transform: translateY(0%);
-    transition: all 0.3s 0.15s cubic-bezier(0.32, 0.01, 0, 1);
-    opacity: 1; }
-  .people-list .item:hover .person-office {
-    -webkit-transform: translateY(0%);
-    transform: translateY(0%);
-    transition: all 0.25s 0.2s cubic-bezier(0.32, 0.01, 0, 1);
-    opacity: 0.5; } }
+.people-list .item:hover .module-background, .people-list .item:focus .module-background {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1); }
+  .people-list .item:hover .module-background:after, .people-list .item:focus .module-background:after {
+    background-color: rgba(55, 55, 55, 0.4); }
+
+.people-list .item:hover .person-name, .people-list .item:focus .person-name {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  transition: all 0.3s 0.1s cubic-bezier(0.32, 0.01, 0, 1);
+  opacity: 1; }
+
+.people-list .item:hover .person-role, .people-list .item:focus .person-role {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  transition: all 0.3s 0.15s cubic-bezier(0.32, 0.01, 0, 1);
+  opacity: 1; }
+
+.people-list .item:hover .person-office, .people-list .item:focus .person-office {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  transition: all 0.25s 0.2s cubic-bezier(0.32, 0.01, 0, 1);
+  opacity: 0.5; }
 
 .pull-quote {
   width: 100%;
@@ -8462,33 +8440,32 @@ a.related-promo {
     @media only screen and (min-width: 1600px) {
       a.related-promo .module-content > *:last-child:after {
         font-size: 1.07693rem; } }
-  @media (hover) {
-    a.related-promo:hover, a.related-promo:focus {
-      outline: none; }
-      a.related-promo:hover .module-content > *:last-child:after, a.related-promo:focus .module-content > *:last-child:after {
-        -webkit-animation-name: arrowIn;
-        animation-name: arrowIn;
-        -webkit-animation-duration: 0.2s;
-        animation-duration: 0.2s;
-        -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-        animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-        -webkit-animation-iteration-count: 1;
-        animation-iteration-count: 1;
-        -webkit-animation-direction: normal;
-        animation-direction: normal;
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-        -webkit-animation-play-state: running;
-        animation-play-state: running; }
-      a.related-promo:hover .module-background, a.related-promo:focus .module-background {
-        -webkit-transform: translate3d(0, 0, 0) scale(1.05);
-        transform: translate3d(0, 0, 0) scale(1.05);
-        transition: -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
-        transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
-        transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1), -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); }
-        a.related-promo:hover .module-background:before, a.related-promo:focus .module-background:before {
-          opacity: 0.2;
-          transition: opacity 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); } }
+  a.related-promo:hover, a.related-promo:focus {
+    outline: none; }
+    a.related-promo:hover .module-content > *:last-child:after, a.related-promo:focus .module-content > *:last-child:after {
+      -webkit-animation-name: arrowIn;
+      animation-name: arrowIn;
+      -webkit-animation-duration: 0.2s;
+      animation-duration: 0.2s;
+      -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+      animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+      -webkit-animation-iteration-count: 1;
+      animation-iteration-count: 1;
+      -webkit-animation-direction: normal;
+      animation-direction: normal;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-play-state: running;
+      animation-play-state: running; }
+    a.related-promo:hover .module-background, a.related-promo:focus .module-background {
+      -webkit-transform: translate3d(0, 0, 0) scale(1.05);
+      transform: translate3d(0, 0, 0) scale(1.05);
+      transition: -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
+      transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
+      transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1), -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); }
+      a.related-promo:hover .module-background:before, a.related-promo:focus .module-background:before {
+        opacity: 0.2;
+        transition: opacity 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); }
 
 .site-navigation {
   position: fixed;
@@ -8743,13 +8720,12 @@ a.related-promo {
         display: block;
         padding-bottom: 100%;
         position: relative; }
-      @media (hover) {
-        .social-feed--instagram__feed__item:hover .social-feed--instagram__feed__image {
-          -webkit-transform: translate3d(0, 0, 0) scale(1.05);
-          transform: translate3d(0, 0, 0) scale(1.05);
-          transition: -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
-          transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
-          transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1), -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); } }
+      .social-feed--instagram__feed__item:hover .social-feed--instagram__feed__image, .social-feed--instagram__feed__item:focus .social-feed--instagram__feed__image {
+        -webkit-transform: translate3d(0, 0, 0) scale(1.05);
+        transform: translate3d(0, 0, 0) scale(1.05);
+        transition: -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
+        transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1);
+        transition: transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1), -webkit-transform 0.5s 0s cubic-bezier(0.32, 0.01, 0, 1); }
     .social-feed--instagram__feed__image-container {
       overflow: hidden;
       display: block;
@@ -9013,41 +8989,40 @@ a.related-promo {
       animation-fill-mode: forwards;
       -webkit-animation-play-state: running;
       animation-play-state: running; }
-    @media (hover) {
-      .social-share .icon-container:hover {
-        outline: none; }
-        .social-share .icon-container:hover:before {
-          -webkit-animation-name: underline_in;
-          animation-name: underline_in;
-          -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-          -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-          -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-          -webkit-animation-direction: normal;
-          animation-direction: normal;
-          -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-          -webkit-animation-play-state: running;
-          animation-play-state: running; }
-        .social-share .icon-container:hover .icon {
-          -webkit-animation-name: bounce;
-          animation-name: bounce;
-          -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-          -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-          animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-          -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-          -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-          -webkit-animation-direction: normal;
-          animation-direction: normal;
-          -webkit-animation-fill-mode: none;
-          animation-fill-mode: none;
-          -webkit-animation-play-state: running;
-          animation-play-state: running; } }
+    .social-share .icon-container:hover, .social-share .icon-container:focus {
+      outline: none; }
+      .social-share .icon-container:hover:before, .social-share .icon-container:focus:before {
+        -webkit-animation-name: underline_in;
+        animation-name: underline_in;
+        -webkit-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        -webkit-animation-direction: normal;
+        animation-direction: normal;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-play-state: running;
+        animation-play-state: running; }
+      .social-share .icon-container:hover .icon, .social-share .icon-container:focus .icon {
+        -webkit-animation-name: bounce;
+        animation-name: bounce;
+        -webkit-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+        -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+        animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        -webkit-animation-direction: normal;
+        animation-direction: normal;
+        -webkit-animation-fill-mode: none;
+        animation-fill-mode: none;
+        -webkit-animation-play-state: running;
+        animation-play-state: running; }
 
 @keyframes underline_in {
   0% {
@@ -9123,9 +9098,8 @@ a.related-promo {
     outline: none;
     margin-bottom: 1px;
     margin-top: 1px; }
-    @media (hover) {
-      .social-share-folded_footer .icon:hover, .social-share-folded_header .icon:hover {
-        background-color: #a9c000; } }
+    .social-share-folded_footer .icon:hover, .social-share-folded_footer .icon:focus, .social-share-folded_header .icon:hover, .social-share-folded_header .icon:focus {
+      background-color: #a9c000; }
     .social-share-folded_footer .icon:active, .social-share-folded_footer .icon:target, .social-share-folded_header .icon:active, .social-share-folded_header .icon:target {
       background-color: #93a700; }
     .social-share-folded_footer .icon:before, .social-share-folded_header .icon:before {
