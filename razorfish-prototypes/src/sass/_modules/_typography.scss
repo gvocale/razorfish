@@ -175,9 +175,12 @@ p {
             display: block;
             bottom: 0;
             height: 0.06em;
+            min-height: 2px;
+            max-height: 5px;
             transition: all 0.3s $bezier;
         }
-        &:hover {
+        &:hover,
+        &:focus {
             &:before {
                 left: 0;
                 right: auto;

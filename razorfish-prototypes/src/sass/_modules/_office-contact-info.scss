@@ -4,7 +4,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     background-color: $white;
-    &__headline {
+    .headline {
         -webkit-font-smoothing: antialiased;
         @include ligatures;
         font-family: $serif;
@@ -19,8 +19,25 @@
         @media only screen and ($xxl) {
             font-size: $scale09;
         }
+        &:first-child:before {
+            content: "";
+            display: block;
+            position: relative;
+            background-color: $primary;
+            width: 0.9em;
+            margin-bottom: 0.4em;
+            height: 4px;
+            @media screen and ($lg) {
+                height: 5px;
+                width: 0.7em;
+                margin-bottom: 0.35em;
+            }
+            @media screen and ($xxl) {
+                height: 6px;
+            }
+        }
     }
-    &__label {
+    .label {
         font-family: $sans;
         font-size: $scale03;
         font-weight: 400;
@@ -44,7 +61,7 @@
             margin-bottom: 0;
         }
     }
-    &__body {
+    .p {
         font-family: $sans;
         line-height: $prose-sans;
         letter-spacing: $spacing-sans;
@@ -61,7 +78,7 @@
             margin-bottom: 0;
         }
     }
-    &__body-title {
+    .p-title {
         font-family: $sans;
         line-height: 1.3;
         letter-spacing: $spacing-sans;
@@ -78,7 +95,7 @@
             margin-bottom: 0;
         }
     }
-    &__item {
+    .item {
         width: 100vw;
         height: auto;
         min-height: 50vw;
@@ -122,7 +139,7 @@
             }
         }
     }
-    &__multi-column {
+    .multi-column {
         @media screen and ($md) {
             columns: 2;
             column-gap: 2rem;
@@ -131,13 +148,10 @@
             break-inside: avoid;
         }
     }
-    &__column {
+    .column {
         width: 100%;
-        @media only screen and ($md) {
-            width: 50%;
-        }
     }
-    &__group {
+    .group {
         padding-bottom: 1.5em;
         -webkit-column-break-inside: avoid;
         page-break-inside: avoid;

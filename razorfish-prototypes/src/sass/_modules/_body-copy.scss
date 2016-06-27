@@ -7,6 +7,9 @@
     width: 100%;
     min-height: 80vh;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     .image {
         background-size: cover;
         background-position: center;
@@ -46,6 +49,9 @@
             margin-bottom: 0.8em;
             @media screen and ($lg) {
                 margin-bottom: 0.7em;
+            }
+            &:last-child {
+                margin-bottom: 0;
             }
             &:first-child:before {
                 display: none;
@@ -91,7 +97,7 @@
         margin-left: auto;
         margin-right: auto;
         column-fill: balance;
-        @include padding-top(0.25);
+        // @include padding-top(0.25);
         @include padding-bottom(0.25);
         @media screen and ($md) {
             columns: 2;

@@ -199,9 +199,18 @@
         flex-direction: row;
         flex-wrap: wrap;
         @include grid-padding;
+        @include padding-bottom;
         .article-meta {
-            float: none;
+            position: relative;
+            width: 100%;
+            @media screen and ($xl) {
+                width: calc(100% / 12 * 3);
+            }
             @include component-padding;
+            .module-content {
+                width: 100%;
+                padding: 0;
+            }
         }
     }
 }
