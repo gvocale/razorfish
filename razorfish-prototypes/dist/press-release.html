@@ -285,28 +285,32 @@
                     <p class="p">Razorfish is part of Publicis Groupe. For more information, visit <a href="" class="link">Razorfish.com</a>, like us on <a href="" class="link">Facebook</a> or follow us on <a href="" class="link">Twitter</a>, <a href="" class="link">Weibo</a> and <a href="" class="link">Instagram</a>.</p>
                 </div>
             </section>
-            <section class="newsletter-signup newsletter-signup--light">
-                <div class="module-content">
-                    <h3 class="headline">Stay current. Get our newsletter.</h3>
+        <section class="newsletter-signup newsletter-signup--light">
+            <div class="module-content">
+                <h3 class="headline">Stay current. Get our newsletter.</h3>
+            </div>
+            <form class="newsletter-signup__form" action="">
+                <div class="form-field">
+                    <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="">
+                    <label class="form-label">First name</label>
                 </div>
-                <form class="newsletter-signup__form" action="">
-                    <div class="form-field">
-                        <input class="form-input" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
-                        <label class="form-label">Your email<span class="form__required">*</span></label>
-                    </div>
-                    <div class="form-field">
-                        <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                        <label class="form-label">First name</label>
-                    </div>
-                    <div class="form-field">
-                        <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                        <label class="form-label">Last name</label>
-                    </div>
-                    <div class="button-group">
-                        <button class="button">Subscribe</button><span class="form__required--note">* Required</span>
-                    </div>
-                </form>
-            </section>
+                <div class="form-field">
+                    <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="">
+                    <label class="form-label">Last name</label>
+                </div>
+                <div class="form-field">
+                    <input class="form-input" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
+                    <label class="form-label">Your email<span class="form__required">*</span></label>
+                </div>
+                <div class="form-field">
+                    <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="">
+                    <label class="form-label">Company</label>
+                </div>
+                <div class="button-group">
+                    <button class="button">Subscribe</button><span class="form__required--note">* Required</span>
+                </div>
+            </form>
+        </section>
             <section class="title">
                 <div class="module-content">
                     <h3 class="headline">Related Content</h3>
@@ -365,7 +369,7 @@
                 </div>
                 <div class="module-content">
                     <p class="eyebrow">Locations</p>
-                    <h2 class="description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link--underline">Get in touch.</a></h2>
+                    <h2 class="headline">24 Oﬃces.<br>5 Continents.<br><a href="" class="link--underline">Get in touch.</a></h2>
                 </div>
             </section>
             </div>

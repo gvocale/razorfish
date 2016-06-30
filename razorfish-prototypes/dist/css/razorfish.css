@@ -3679,7 +3679,7 @@ a[href^="tel"] {
     @media only screen and (min-width: 1600px) {
       .contact-promo .eyebrow {
         font-size: 1.3077rem; } }
-  .contact-promo .description {
+  .contact-promo .headline {
     text-rendering: optimizeLegibility;
     -webkit-font-variant-ligatures: common-ligatures;
     font-variant-ligatures: common-ligatures;
@@ -3695,13 +3695,13 @@ a[href^="tel"] {
     margin-bottom: 0.2em;
     max-width: 12em; }
     @media only screen and (min-width: 768px) {
-      .contact-promo .description {
+      .contact-promo .headline {
         font-size: 3.4231rem; } }
     @media only screen and (min-width: 992px) {
-      .contact-promo .description {
+      .contact-promo .headline {
         font-size: 4.2308rem; } }
     @media only screen and (min-width: 1600px) {
-      .contact-promo .description {
+      .contact-promo .headline {
         font-size: 5.5385rem; } }
   .contact-promo .image {
     background-size: cover;
@@ -5146,13 +5146,13 @@ a.feed__item {
     .form-input[type="text"]:focus, .form-input[type="text"]:active, .form-input[type="text"]:hover, .form-input[type="tel"]:focus, .form-input[type="tel"]:active, .form-input[type="tel"]:hover, .form-input[type="email"]:focus, .form-input[type="email"]:active, .form-input[type="email"]:hover {
       opacity: 0.5;
       outline: none; }
-    .form-input[type="text"]:valid, .form-input[type="tel"]:valid, .form-input[type="email"]:valid {
+    .form-input[type="text"]:not([value=""]):valid, .form-input[type="tel"]:not([value=""]):valid, .form-input[type="email"]:not([value=""]):valid {
       background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?><svg width='60px' height='60px' version='1.1' xmlns='http://www.w3.org/2000/svg'><path d='M30,60 C13.43,60 0,46.5715524 0,30.001 C0,13.4304477 13.43,0 30,0 C46.57,0 60,13.4304477 60,30.001 C60,46.5715524 46.57,60 30,60 L30,60 Z M30,6 C16.746,6 6,16.7443581 6,30.0008 C6,43.2552418 16.746,53.9996 30,53.9996 C43.254,53.9996 54,43.2552418 54,30.0008 C54,16.7443581 43.254,6 30,6 L30,6 Z M41.7333333,21 L46,25.1818182 L31.0666667,39.8181818 L26.8,35.6363636 L41.7333333,21 L41.7333333,21 Z M14,31.4545455 L18.2666667,27.2727273 L31.0666667,39.8181818 L26.8,44 L14,31.4545455 L14,31.4545455 Z' id='icon-tick' fill='#a9c000'></path> </svg> "); }
     .form-input[type="text"]:not([value=""]):invalid, .form-input[type="tel"]:not([value=""]):invalid, .form-input[type="email"]:not([value=""]):invalid {
       background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?><svg width='60px' height='60px' version='1.1' xmlns='http://www.w3.org/2000/svg'><path d='M30,60 C13.43,60 0,46.5715524 0,30.001 C0,13.4304477 13.43,0 30,0 C46.57,0 60,13.4304477 60,30.001 C60,46.5715524 46.57,60 30,60 Z M30,6 C16.746,6 6,16.7443581 6,30.0008 C6,43.2552418 16.746,53.9996 30,53.9996 C43.254,53.9996 54,43.2552418 54,30.0008 C54,16.7443581 43.254,6 30,6 Z M27,43.4826494 L33.8400002,43.4826494 L33.8400002,24 L27,24 L27,43.4826494 Z M27,22.0421681 L33.8400002,22.0421681 L33.8400002,17 L27,17 L27,22.0421681 Z' id='icon-info' fill='#ff595b'></path> </svg> "); }
     .form-input[type="text"]:not([value=""]), .form-input[type="tel"]:not([value=""]), .form-input[type="email"]:not([value=""]) {
       opacity: 1;
-      border-bottom: 2px solid white; }
+      border-bottom: 2px solid currentColor; }
     .form-input[type="text"]:not([value=""]) ~ .form-label, .form-input[type="tel"]:not([value=""]) ~ .form-label, .form-input[type="email"]:not([value=""]) ~ .form-label {
       margin-top: 0;
       font-size: 0.8077rem; }
@@ -7068,16 +7068,11 @@ a.hero {
     @media screen and (min-width: 1200px) {
       .newsletter-signup__form {
         width: calc(100% / 12 * 6); } }
-    .newsletter-signup__form .form-field {
-      width: 100%; }
-      @media screen and (min-width: 768px) {
-        .newsletter-signup__form .form-field {
-          width: calc(100% / 3); } }
   .newsletter-signup .form-field {
     width: 100%; }
     @media screen and (min-width: 768px) {
       .newsletter-signup .form-field {
-        width: calc((100% / 3) - 2rem); } }
+        width: calc(50% - 2rem); } }
   .newsletter-signup .module-content {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -10200,7 +10195,6 @@ a.related-promo {
 .button {
   text-transform: uppercase;
   display: inline-block;
-  -webkit-appearance: none;
   background-color: transparent;
   border-radius: 0;
   border: 0;

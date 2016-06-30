@@ -108,58 +108,43 @@ $icon in $icons-all {
 }
 
 $bezier: cubic-bezier(.32, .01, 0, 1);
-$primary: #a9c000;
-
-.page-tagline .link {
-    &:before {
-        content: "";
-        width: 100%;
-        height: 0.05em;
-        display: block;
-        background-color: $primary;
-        position: absolute;
-        bottom: 0;
-        animation-name: underline_out;
-        animation-duration: 0.3s;
-        animation-timing-function: $bezier;
-        animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-    }
-    &:hover:before,
-    &:focus:before {
-        animation-name: underline_in;
-        animation-duration: 0.3s;
-        animation-timing-function: $bezier;
-        animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-    }
-    @keyframes underline_in {
-        0% {
-            width: 0%;
-            left: 0;
-        }
-        100% {
-            width: 100%;
-            left: 0;
+$scale04: 1rem;
+$scale05: 1.3077rem;
+$scale08: 2.6154rem;
+$scale09: 3.4231rem;
+$scale10: 4.2308rem;
+$scale11: 5.5385rem;
+.contact-promo {
+    .eyebrow {
+        line-height: 1;
+        letter-spacing: 0.02em;
+        margin-bottom: 0.25em;
+        font-size: $scale04;
+        text-transform: uppercase;
+        @media only screen and ($xxl) {
+            font-size: $scale05;
         }
     }
-    @keyframes underline_out {
-        0% {
-            width: 100%;
-            right: 0;
-        }
-        100% {
-            width: 0%;
-            right: 0;
-        }
+    .headline {
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        font-weight: 700;
+        margin-bottom: 0.2em;
+        max-width: 12em;
     }
-    &:hover,
-    &:focus {
-        transition: color 0.05s $bezier 0.05s;
-        color: $primary;
+    .subhead {
+        font-style: italic;
+        line-height: 1;
+        letter-spacing: 0.02em;
+        font-size: $scale08;
+        @media only screen and ($md) {
+            font-size: $scale09;
+        }
+        @media only screen and ($lg) {
+            font-size: $scale10;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale11;
+        }
     }
 }

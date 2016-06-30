@@ -102,7 +102,7 @@
                 </li>
                 <li class="link-container">
                     <a class="link--underline" href="feed.html">Feed</a>
-                </li>                
+                </li>
                 <li class="link-container">
                     <a class="link--underline" href="filtered-job-listings.html">Filtered Job Listings</a>
                 </li>
@@ -117,7 +117,7 @@
                 </li>
                 <li class="link-container">
                     <a class="link--underline" href="hero.html">Hero</a>
-                </li>                
+                </li>
                 <li class="link-container">
                     <a class="link--underline" href="image.html">Image</a>
                 </li>
@@ -434,22 +434,25 @@
         </article>
         <section class="newsletter-signup newsletter-signup--light">
             <div class="module-content">
-
                 <h3 class="headline">Stay current. Get our newsletter.</h3>
             </div>
             <form class="newsletter-signup__form" action="">
                 <div class="form-field">
+                    <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="">
+                    <label class="form-label">First name</label>
+                </div>
+                <div class="form-field">
+                    <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="">
+                    <label class="form-label">Last name</label>
+                </div>
+                <div class="form-field">
                     <input class="form-input" autocomplete="false" type="email" onkeyup="this.setAttribute('value', this.value);" value="" required autofocus>
                     <label class="form-label">Your email<span class="form__required">*</span></label>
-                                    </div>
+                </div>
                 <div class="form-field">
-                    <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                    <label class="form-label">First name</label>
-                                    </div>
-                <div class="form-field">
-                    <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="" required>
-                    <label class="form-label">Last name</label>
-                                    </div>
+                    <input class="form-input" pattern="[A-Za-z]{3,}" autocomplete="false" type="text" onkeyup="this.setAttribute('value', this.value);" value="">
+                    <label class="form-label">Company</label>
+                </div>
                 <div class="button-group">
                     <button class="button">Subscribe</button><span class="form__required--note">* Required</span>
                 </div>
@@ -460,40 +463,40 @@
                 <h3 class="headline">Related Content</h3>
             </div>
         </section>
-    <section class="feed feed__related">
-        <ul class="feed__grid">
-            <a href="" class="feed__item text-top color-combination-3">
-                <div class="module-background">
-                    <div class="image_container">
-                        <img class="image" src="images/feed-thought-leadership.jpg" alt="">
+        <section class="feed feed__related">
+            <ul class="feed__grid">
+                <a href="" class="feed__item text-top color-combination-3">
+                    <div class="module-background">
+                        <div class="image_container">
+                            <img class="image" src="images/feed-thought-leadership.jpg" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="module-content">
-                    <p class="eyebrow">Thought Leadership</p>
-                    <h3 class="headline">In the Safe City of the Future, No One is at the Wheel.</h3>
-                </div>
-            </a>
-            <a href="" class="feed__item solid color-combination-4">
-                <div class="module-background">
-                </div>
-                <div class="module-content">
-                    <p class="eyebrow">Partecipatory Marketing</p>
-                    <h3 class="headline">Donec id elit non mi porta gravida at eget metus.</h3>
-                </div>
-            </a>
-            <a href="" class="feed__item split text-top color-combination-1">
-                <div class="module-background">
-                    <div class="image_container">
-                        <img class="image" src="images/feed-mercedes-instagram.jpg" alt="">
+                    <div class="module-content">
+                        <p class="eyebrow">Thought Leadership</p>
+                        <h3 class="headline">In the Safe City of the Future, No One is at the Wheel.</h3>
                     </div>
-                </div>
-                <div class="module-content">
-                    <p class="eyebrow">News</p>
-                    <h3 class="headline">We Turned Instagram into a Mercedes Dealership</h3>
-                </div>
-            </a>
-        </ul>
-    </section>
+                </a>
+                <a href="" class="feed__item solid color-combination-4">
+                    <div class="module-background">
+                    </div>
+                    <div class="module-content">
+                        <p class="eyebrow">Partecipatory Marketing</p>
+                        <h3 class="headline">Donec id elit non mi porta gravida at eget metus.</h3>
+                    </div>
+                </a>
+                <a href="" class="feed__item split text-top color-combination-1">
+                    <div class="module-background">
+                        <div class="image_container">
+                            <img class="image" src="images/feed-mercedes-instagram.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="module-content">
+                        <p class="eyebrow">News</p>
+                        <h3 class="headline">We Turned Instagram into a Mercedes Dealership</h3>
+                    </div>
+                </a>
+            </ul>
+        </section>
         <section class="contact-promo">
             <div class="module-background">
                 <svg class="image image__parallax" xmlns="http://www.w3.org/2000/svg">
@@ -513,7 +516,7 @@
             </div>
             <div class="module-content">
                 <p class="eyebrow">Locations</p>
-                <h2 class="description">24 Oﬃces.<br>5 Continents.<br><a href="" class="link--underline">Get in touch.</a></h2>
+                <h2 class="headline">24 Oﬃces.<br>5 Continents.<br><a href="" class="link--underline">Get in touch.</a></h2>
             </div>
         </section>
     </div>
