@@ -683,12 +683,12 @@ window.onload = (function() {
 
     // Change masthead color depending on color of elements below it. 
 
-    if (document.getElementsByClassName('hero')[0]) {
+    if (document.getElementsByClassName('masthead')[0]) {
 
         // Collect all big elements
         var masthead = document.getElementsByClassName('masthead')[0];
 
-        var elements = document.querySelectorAll('section,.related-promo,.hero');
+        var elements = document.querySelectorAll('section,.related-promo,.hero,.pull-quote,.site-navigation');
 
         // If .module is behind navigation get color of text
         function moduleBehindNav() {
@@ -718,20 +718,20 @@ window.onload = (function() {
 
 
 
-    // Navigation opacity
+    // // Navigation opacity
 
-    function mastheadTransparencyCheck() {
-        var rect = masthead.getBoundingClientRect();
-        if (document.body.scrollTop >= window.innerHeight) {
-            masthead.classList.add('opaque');
-        } else {
-            masthead.classList.remove('opaque');
-        }
-    };
+    // function mastheadTransparencyCheck() {
+    //     var rect = masthead.getBoundingClientRect();
+    //     if (document.body.scrollTop >= window.innerHeight) {
+    //         masthead.classList.add('opaque');
+    //     } else {
+    //         masthead.classList.remove('opaque');
+    //     }
+    // };
 
-    window.addEventListener('resize', mastheadTransparencyCheck);
-    window.addEventListener('scroll', mastheadTransparencyCheck);
-    mastheadTransparencyCheck();
+    // window.addEventListener('resize', mastheadTransparencyCheck);
+    // window.addEventListener('scroll', mastheadTransparencyCheck);
+    // mastheadTransparencyCheck();
 
 
 

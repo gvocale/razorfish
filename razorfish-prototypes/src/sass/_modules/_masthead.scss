@@ -20,69 +20,36 @@
 }
 
 .masthead {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
     position: fixed;
     z-index: 1000;
-    background-color: rgba($white, 0);
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
     top: 0;
-    transform-origin: top;
-    transition: transform 0.5s 0s $bezier, opacity 0.5s 0s $bezier, background-color 0.2s 0.0s $bezier, color 0.2s 0s $bezier;
-    opacity: 1;
-    @media screen and ($md) {
-        padding-left: 1.2em;
-        padding-right: 1.2em;
-        padding-top: 1em;
-        padding-bottom: 1em;
-    }
+    height: 0;
+    width: 100%;
     &.fade,
     &.navigation-open.fade {
         transform: scale(0.9) translateY(5vw);
         opacity: 0;
     }
-    &.white {
-        color: $white;
+    .logo,
+    .hamburger {
+        transition: transform 0.3s 0.1s $bezier, color 0.1s 0s $bezier;
     }
-    &.opaque {
-        // background-color: rgba($white, 1);
-        color: $black;
-    }
-    &.navigation-open,
-    &.hiding.navigation-open,
-    &.important-hiding.navigation-open {
-        color: $black;
-        transform: translateY(0%);
-        transition: transform 0.5s 0s $bezier, opacity 0.5s 0s $bezier, background-color 0.2s 0.0s $bezier, color 0.2s 0s $bezier;
-    }
-    &.hiding {
-        transform: translateY(-100%);
-        transition: transform 0.3s 0.1s $bezier, opacity 0.3s 0.1s $bezier, background-color 0.2s 0.1s $bezier, color 0.2s 0s $bezier;
-    }
+    &.hiding,
     &.important-hiding {
-        transform: translateY(-100%);
-        transition: transform 0.3s 0.1s $bezier, opacity 0.3s 0.1s $bezier, background-color 0.2s 0.1s $bezier, color 0.2s 0s $bezier;
+        .logo,
+        .hamburger {
+            transform: translateY(-5rem);
+        }
     }
-    &_before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: block;
-        background-color: rgba($white, 10%);
+    .logo {
+        position: fixed;
+        top: 3rem;
+        left: 3rem;
+        color: currentColor;
     }
     .icon-razorfish {
         text-rendering: geometricPrecision;
         margin-top: -0.3em;
-        padding-left: 1rem;
         font-size: $scale05;
         @media only screen and ($md) {
             font-size: $scale06;
@@ -91,45 +58,14 @@
             font-size: $scale06 * 1.1;
         }
     }
-    &__country-dropdown {
-        font-family: $sans;
-        font-size: $scale04;
-        color: $primary;
-        font-weight: 200;
-        margin-left: 1em;
-        display: none;
-        margin-rigth: auto;
-        cursor: pointer;
-        cursor: hand;
-        vertical-align: sub;
-        @media screen and ($md) {
-            display: inline-block;
-        }
-        &:after {
-            content: ">";
-            transform: rotate(90deg) scale(0.6, 1.2);
-            margin-left: 0.3em;
-            position: absolute;
-        }
-    }
-    &__hamburger {
-        padding-top: 1em;
-        padding-bottom: 1em;
-        @include component-padding;
+    .hamburger {
+        position: fixed;
+        right: 2rem;
+        top: 2rem;
+        padding: 1rem;
         height: 54px;
-        display: inline-block;
         cursor: pointer;
         cursor: hand;
-        transition-property: opacity, filter;
-        transition-duration: 0.15s;
-        transition-timing-function: linear;
-        font: inherit;
-        color: inherit;
-        text-transform: none;
-        background-color: transparent;
-        border: 0;
-        margin: 0;
-        overflow: visible;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -144,8 +80,6 @@
             height: 4px;
             display: block;
             position: relative;
-            // top: 50%;
-            // transform: translateY(50%);
             transition: all 0.1s 0s ease-in;
         }
         .hamburger-inner,

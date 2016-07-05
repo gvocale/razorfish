@@ -407,6 +407,32 @@
         color: $white;
         background-color: $black;
     }
+    .link {
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        cursor: hand;
+        color: inherit;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-all;
+        word-break: break-word;
+        hyphens: auto;
+        -webkit-appearance: none;
+        color: $primary;
+        &:hover {
+            text-decoration: underline;
+        }
+        &:active,
+        &:target {
+            background-color: rgba($black, 0.03);
+            transition: background-color 0s 0s;
+        }
+        strong {
+            font-weight: 700;
+        }
+    }
 }
 
 .body-copy-flexible,
