@@ -38,14 +38,35 @@
     &.important-hiding {
         .logo,
         .hamburger {
-            transform: translateY(-5rem);
+            transform: translateY(calc(-100% - 1.5rem));
+            @media screen and ($md) {
+                transform: translateY(calc(-100% - 2rem));
+            }
+            @media screen and ($xl) {
+                transform: translateY(calc(-100% - 3rem));
+            }
+            @media screen and ($xxl) {
+                transform: translateY(calc(-100% - 4rem));
+            }
         }
     }
     .logo {
         position: fixed;
-        top: 3rem;
-        left: 3rem;
         color: currentColor;
+        top: 1.5rem;
+        left: 1.5rem;
+        @media screen and ($md) {
+            top: 2rem;
+            left: 2rem;
+        }
+        @media screen and ($xl) {
+            top: 3rem;
+            left: 3rem;
+        }
+        @media screen and ($xxl) {
+            top: 4rem;
+            left: 4rem;
+        }
     }
     .icon-razorfish {
         text-rendering: geometricPrecision;
@@ -60,8 +81,6 @@
     }
     .hamburger {
         position: fixed;
-        right: 2rem;
-        top: 2rem;
         padding: 1rem;
         height: 54px;
         cursor: pointer;
@@ -70,6 +89,20 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        top: 0.5rem;
+        right: 0.5rem;
+        @media screen and ($md) {
+            top: 1rem;
+            right: 1rem;
+        }
+        @media screen and ($xl) {
+            top: 2rem;
+            right: 2rem;
+        }
+        @media screen and ($xl) {
+            top: 3rem;
+            right: 3rem;
+        }
         &:focus {
             outline: none;
         }

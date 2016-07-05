@@ -65,7 +65,6 @@ window.onload = (function() {
 
     // Navigation: add .active class to link of current page
 
-
     var siteNavigatioContainer = document.getElementsByClassName('container')[0],
         anchor = siteNavigatioContainer.getElementsByClassName('link--underline'),
         current = window.location.pathname.split('/')[1];
@@ -95,7 +94,9 @@ window.onload = (function() {
 
             // Navigation: on open give random delay to each link
             siteNavigationOverlay.classList.add('visible');
-            masthead.classList.add('navigation-open'); // So that if the navigation has white text (ex: solution landing page), the razorfish logo and hamburger are still black
+
+            masthead.style.color = "rgb(74, 66, 66)"; // Make masthead black since navigation has black text
+            // masthead.classList.add('navigation-open'); // So that if the navigation has white text (ex: solution landing page), the razorfish logo and hamburger are still black
             setTimeout(function() {
                 siteNavigationOverlay.classList.add('open');
             }, 10);
@@ -116,9 +117,11 @@ window.onload = (function() {
             // Remove class open and visible from all links into navigation
 
             siteNavigationOverlay.classList.remove('open');
-            masthead.classList.remove('navigation-open');
+
+            // masthead.classList.remove('navigation-open');
             setTimeout(function() {
                 siteNavigationOverlay.classList.remove('visible');
+                moduleBehindNav(); // to check which font color is the module behind the navigation
             }, 210);
         }
 
@@ -683,24 +686,25 @@ window.onload = (function() {
 
     // Change masthead color depending on color of elements below it. 
 
-    if (document.getElementsByClassName('masthead')[0]) {
+    if (masthead = document.getElementsByClassName('masthead')[0]) {
 
         // Collect all big elements
         var masthead = document.getElementsByClassName('masthead')[0];
+        var mastheadLogo = document.querySelector('.masthead .logo');
 
         var elements = document.querySelectorAll('section,.related-promo,.hero,.pull-quote,.site-navigation');
 
         // If .module is behind navigation get color of text
         function moduleBehindNav() {
-            var mastheadRect = masthead.getBoundingClientRect();
+            var mastheadRect = mastheadLogo.getBoundingClientRect();
             [].forEach.call(elements, function(div) {
                 var elementRect = div.getBoundingClientRect();
                 if ((elementRect.top <= mastheadRect.top) && (elementRect.bottom >= mastheadRect.bottom)) {
                     var getTheColor = window.getComputedStyle(div, null).getPropertyValue("color");
-                    console.log(getTheColor);
+                    // console.log(getTheColor);
                     if (getTheColor == "rgb(255, 255, 255)") {
                         masthead.style.color = "rgb(255, 255, 255)";
-                        console.log("bingo");
+                        // console.log("bingo");
                     } else {
                         masthead.style.color = "rgb(74, 66, 66)";
                     }
@@ -972,71 +976,83 @@ window.onload = (function() {
     // Solutions page
 
     if (document.getElementsByClassName('solutions')[0]) {
-        var pillar1 = document.getElementById('solutions__pillar1');
-        var pillar2 = document.getElementById('solutions__pillar2');
-        var pillar3 = document.getElementById('solutions__pillar3');
-        var pillar4 = document.getElementById('solutions__pillar4');
-        var pillar5 = document.getElementById('solutions__pillar5');
+        var pillar1 = document.getElementById('pillar1');
+        var pillar2 = document.getElementById('pillar2');
+        var pillar3 = document.getElementById('pillar3');
+        var pillar4 = document.getElementById('pillar4');
+        var pillar5 = document.getElementById('pillar5');
+        var pillar6 = document.getElementById('pillar6');
+        var practices = document.getElementById('practices');
         var solutionsMenu = document.getElementById('solutions__menu');
-        var practices = document.getElementById('solutions__practices');
         var solutionsFooter = document.getElementById('solutions__footer');
+        var solutionMenuLink1 = document.querySelector("#solutions__menu .menu-link:nth-child(1)");
+        var solutionMenuLink2 = document.querySelector("#solutions__menu .menu-link:nth-child(2)");
+        var solutionMenuLink3 = document.querySelector("#solutions__menu .menu-link:nth-child(3)");
+        var solutionMenuLink4 = document.querySelector("#solutions__menu .menu-link:nth-child(4)");
+        var solutionMenuLink5 = document.querySelector("#solutions__menu .menu-link:nth-child(5)");
+        var solutionMenuLink6 = document.querySelector("#solutions__menu .menu-link:nth-child(6)");
+        var solutionMenuLink7 = document.querySelector("#solutions__menu .menu-link:nth-child(7)");
 
-        $(window).bind("load resize scroll", function(e) { // refresh on load and resize
 
-            // Show  solutions__menu when pillar1 comes in viewport
+        function solutionMenuLinks() {
 
-            var distanceToTop = pillar1.getBoundingClientRect().top;
-            if (distanceToTop <= (window.innerHeight / 2)) {
-                solutionsMenu.classList.remove('hide');
+            if (document.querySelector("#pillar1 .module-content").classList.contains("in-viewport")) {
+                solutionMenuLink1.classList.add("active");
+                solutionMenuLink1.classList.add("tooltip");
+                setTimeout(function() {
+                    solutionMenuLink1.classList.remove("tooltip");
+                }, 8000);
             } else {
-                solutionsMenu.classList.add('hide');
+                solutionMenuLink1.classList.remove("active");
+                solutionMenuLink1.classList.remove("tooltip");
             }
 
-
-            // Check which pillar is in viewport and activate navigation link
-
-            var pillar1inViewport = pillar1.getBoundingClientRect().top;
-            if (pillar1inViewport <= (window.innerHeight / 2) && (pillar1inViewport > (window.innerHeight * -1 / 2))) {
-                document.querySelector('[data-menuanchor="pillar1"]').classList.add("active");
+            if (document.querySelector("#pillar2 .module-content").classList.contains("in-viewport")) {
+                solutionMenuLink2.classList.add("active");
             } else {
-                document.querySelector('[data-menuanchor="pillar1"]').classList.remove("active");
+                solutionMenuLink2.classList.remove("active");
             }
 
-            var pillar2inViewport = pillar2.getBoundingClientRect().top;
-            if (pillar2inViewport <= (window.innerHeight / 2) && (pillar2inViewport > (window.innerHeight * -1 / 2))) {
-                document.querySelector('[data-menuanchor="pillar2"]').classList.add("active");
+            if (document.querySelector("#pillar3 .module-content").classList.contains("in-viewport")) {
+                solutionMenuLink3.classList.add("active");
             } else {
-                document.querySelector('[data-menuanchor="pillar2"]').classList.remove("active");
+                solutionMenuLink3.classList.remove("active");
             }
 
-            var pillar3inViewport = pillar3.getBoundingClientRect().top;
-            if (pillar3inViewport <= (window.innerHeight / 2) && (pillar3inViewport > (window.innerHeight * -1 / 2))) {
-                document.querySelector('[data-menuanchor="pillar3"]').classList.add("active");
+            if (document.querySelector("#pillar4 .module-content").classList.contains("in-viewport")) {
+                solutionMenuLink4.classList.add("active");
             } else {
-                document.querySelector('[data-menuanchor="pillar3"]').classList.remove("active");
+                solutionMenuLink4.classList.remove("active");
             }
 
-            var pillar4inViewport = pillar4.getBoundingClientRect().top;
-            if (pillar4inViewport <= (window.innerHeight / 2) && (pillar4inViewport > (window.innerHeight * -1 / 2))) {
-                document.querySelector('[data-menuanchor="pillar4"]').classList.add("active");
+            if (document.querySelector("#pillar5 .module-content").classList.contains("in-viewport")) {
+                solutionMenuLink5.classList.add("active");
             } else {
-                document.querySelector('[data-menuanchor="pillar4"]').classList.remove("active");
+                solutionMenuLink5.classList.remove("active");
             }
 
-            var pillar5inViewport = pillar5.getBoundingClientRect().top;
-            if (pillar5inViewport <= (window.innerHeight / 2) && (pillar5inViewport > (window.innerHeight * -1 / 2))) {
-                document.querySelector('[data-menuanchor="pillar5"]').classList.add("active");
+            if (document.querySelector("#pillar6 .module-content").classList.contains("in-viewport")) {
+                solutionMenuLink6.classList.add("active");
             } else {
-                document.querySelector('[data-menuanchor="pillar5"]').classList.remove("active");
+                solutionMenuLink6.classList.remove("active");
             }
 
-            var practicesInViewport = practices.getBoundingClientRect().top;
-            if (practicesInViewport <= (window.innerHeight / 2) && (practicesInViewport > (window.innerHeight * -1 / 2))) {
-                document.querySelector('[data-menuanchor="practices"]').classList.add("active");
+            if (document.querySelector("#practices .module-content").classList.contains("in-viewport")) {
+                solutionMenuLink7.classList.add("active");
             } else {
-                document.querySelector('[data-menuanchor="practices"]').classList.remove("active");
+                solutionMenuLink7.classList.remove("active");
             }
-        });
+
+            if (document.querySelector("#pillar1 .module-content").classList.contains("below-viewport")) {
+                solutionsMenu.classList.add("hide");
+            } else {
+                solutionsMenu.classList.remove("hide");
+            }
+        }
+        window.addEventListener('resize', solutionMenuLinks);
+        window.addEventListener('scroll', solutionMenuLinks);
+        solutionMenuLinks();
+
     };
 
     //  Footer: Shrink body of page when the footer is rearched and hide navigation
