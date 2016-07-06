@@ -1,52 +1,63 @@
 .article-meta {
     position: relative;
+    background-color: $gray-article-meta;
+    width: 100%;
     @include grid-padding;
     @include padding-top;
-    width: 100%;
+    @include padding-bottom;
+    @media screen and ($md) {
+        @include padding-top(0.5);
+        @include padding-bottom(0.5);
+    }
     @media screen and ($xl) {
+        @include padding-top();
+        @include padding-bottom();
+        background-color: transparent;
         position: absolute;
     }
-    .divider {
-        width: 1.2em;
-        height: 3px;
-        @media screen and ($lg) {
-            height: 4px;
-        }
-        @media screen and ($xxl) {
-            height: 5px;
-        }
-    }
     .module-content {
+        width: calc(100% / 4 * 3);
         @include component-padding;
-        width: 100%;
-        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         @media screen and ($md) {
-            column-count: 2;
-            column-gap: 2rem;
+            width: calc(100% / 6 * 4);
         }
-        @media screen and ($lg) {
+        @media screen and ($md) {
             width: calc(100% / 12 * 8);
             margin-left: auto;
             margin-right: auto;
         }
         @media screen and ($xl) {
-            width: calc(100% / 12 * 3);
-            column-count: 1;
-            margin-left: 0;
+            flex-direction: column;
+            flex-wrap: nowrap;
         }
     }
     .group {
+        width: 100%;
+        margin-bottom: 1.5em;
         font-size: $scale04;
+        @media screen and ($md) {
+            @include component-padding;
+            width: calc(50% + 1rem);
+            &:first-of-type {
+                margin-left: -1rem;
+            }
+        }
+        @media screen and ($xl) {
+            width: calc(100% / 12 * 3);
+        }
         @media screen and ($xxl) {
             font-size: $scale05;
         }
-        -webkit-column-break-inside: avoid;
-        page-break-inside: avoid;
-        break-inside: avoid-column;
-        padding-bottom: 1.5em;
-        margin-bottom: 0;
-        &:last-child {
-            padding-bottom: 0;
+        .label {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &:last-child,
+        &:last-of-type {
+            margin-bottom: 0;
         }
         &--link {
             margin-top: 0.75em;
@@ -67,6 +78,7 @@
         }
     }
     .label {
+        width: 100%;
         font-family: $sans;
         font-size: $scale03;
         font-weight: 400;
@@ -75,7 +87,6 @@
         letter-spacing: 0.025em;
         text-transform: uppercase;
         margin-bottom: 0.5em;
-        max-width: 20em;
         color: $gray-label;
         @media screen and ($lg) {
             font-size: $scale02;
@@ -125,6 +136,41 @@
             }
         }
     }
+    .cta {
+        margin-top: 1em;
+        width: 100%;
+        font-family: $sans;
+        line-height: 1.1;
+        font-size: $scale04;
+        -webkit-font-smoothing: antialiased;
+        @media screen and ($xl) {
+            width: calc(100% / 12 * 3);
+            margin-top: 0;
+            &:before {
+                content: "";
+                display: block;
+                position: relative;
+                background-color: $gray;
+                width: 1.8em;
+                margin-top: 1.6em;
+                margin-bottom: 1.6em;
+                height: 4px;
+                margin-right: auto;
+                @media screen and ($lg) {
+                    height: 5px;
+                    width: 1.4em;
+                    margin-top: 1.4em;
+                    margin-bottom: 1.4em;
+                }
+                @media screen and ($xxl) {
+                    height: 6px;
+                }
+            }
+        }
+        @media screen and ($xxl) {
+            font-size: $scale05;
+        }
+    }
     .social-links {
         display: flex;
         flex-direction: row;
@@ -132,6 +178,7 @@
         align-items: flex-start;
         list-style: none;
         margin-left: -0.8rem;
+        margin-bottom: -0.8rem;
         color: $primary;
     }
     .icon {
@@ -195,22 +242,26 @@
         }
     }
     &__example {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        @include grid-padding;
-        @include padding-bottom;
+        position: relative;
         .article-meta {
-            position: relative;
-            width: 100%;
-            @media screen and ($xl) {
-                width: calc(100% / 12 * 3);
-            }
-            @include component-padding;
-            .module-content {
-                width: 100%;
-                padding: 0;
-            }
+            @include margin-bottom;
         }
+        //     display: flex;
+        //     flex-direction: row;
+        //     flex-wrap: wrap;
+        //     @include grid-padding;
+        //     @include padding-bottom;
+        //     .article-meta {
+        //         position: relative;
+        //         width: 100%;
+        //         @media screen and ($xl) {
+        //             width: calc(100% / 12 * 3);
+        //         }
+        //         @include component-padding;
+        //         .module-content {
+        //             width: 100%;
+        //             padding: 0;
+        //         }
+        //     }
     }
 }
