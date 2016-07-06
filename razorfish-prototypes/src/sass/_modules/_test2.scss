@@ -148,3 +148,23 @@ $scale11: 5.5385rem;
         }
     }
 }
+
+.simple-header {
+    display: flex;
+    @media screen and ($md) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .headline {
+        margin-bottom: 1em;
+        flex-direction: column;
+        align-items: flex-start;
+        @media screen and ($md) {
+            margin-bottom: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

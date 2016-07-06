@@ -99,143 +99,110 @@
 }
 
 .social-share-folded {
-    &_header {
-        position: absolute;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        z-index: 1;
-        // z-index: 5;
-        margin-right: 10vw;
-        @media screen and ($lg) {
-            width: calc(100% / 12 * 2);
-            // width: 100%;
-        }
-        @media screen and ($xxl) {
-            width: calc(100% / 12 * 3);
-        }
-        .icon-container {
-            list-style: none;
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 3rem;
-            @media screen and ($xl) {
-                width: 4rem;
-            }
-        }
-        .icon {
-            width: 100%;
-            cursor: pointer;
-            cursor: hand;
-            display: block;
-            position: relative;
-            background-size: 30%, contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            overflow: hidden;
-            background-color: $gray;
-            text-decoration: none;
-            color: currentColor;
-            outline: none;
-            &:hover,
-            &:focus {
-                background-color: $primary;
-            }
-            &:active,
-            &:target {
-                background-color: darken($primary, 5%);
-            }
-            &:before {
-                display: block;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-size: 1.1em;
-            }
-            &:after {
-                content: "";
-                display: block;
-                padding-bottom: 100%;
-                position: relative;
-            }
-            margin-bottom: 1px;
-            margin-top: 1px;
-        }
-        .module-content {
-            position: relative;
-            width: 3rem;
-            @media screen and ($xl) {
-                width: 4rem;
-            }
-            &:before {
-                content: "";
-                display: block;
-                padding-bottom: 100%;
-                position: relative;
-            }
-        }
-        .checkbox {
-            appearance: none;
-            display: none;
-        }
-        .icon-container {
-            transition-delay: 0s;
-        }
-        @for $i from 1 through 5 {
-            .icon-container:nth-of-type(#{$i}) {
-                transition-duration: 0.1s * (6 - $i);
-                transition-delay: 0.1s * ($i - 1);
-            }
-        }
-        @for $i from 1 through 5 {
-            .checkbox:checked ~ .icon-container:nth-of-type(#{$i}) {
-                transform: translateY(100% * (6 - $i));
-                transition-delay: 0s;
-                transition-duration: 0.1s * (6 - $i);
-            }
-        }
-        @for $i from 1 through 5 {
-            #social-share-folded_footer_checkbox:checked ~ .icon-container:nth-of-type(#{$i}) {
-                transform: translateY(-100% * (6 - $i));
-                transition-delay: 0s;
-                transition-duration: 0.1s * (6 - $i);
-            }
-        }
+    top: 0;
+    @include margin-top;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 1;
+    margin-right: 10vw;
+    @media screen and ($md) {
+        @include margin-top(0.5);
     }
-    &_header {
-        top: 0;
+    @media screen and ($lg) {
+        width: calc(100% / 12 * 2);
+    }
+    @media screen and ($xl) {
         @include margin-top;
-        @media screen and ($md) {
-            @include margin-top(0.5);
-        }
+        display: flex;
+        top: 0;
+        justify-content: flex-start;
+    }
+    @media screen and ($xxl) {
+        width: calc(100% / 12 * 3);
+    }
+    .icon-container {
+        list-style: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 3rem;
         @media screen and ($xl) {
-            display: flex;
-            top: 0;
-            justify-content: flex-start;
+            width: 4rem;
         }
     }
-    // &_footer {
-    //     position: fixed;
-    //     right: 0;
-    //     bottom: 0;
-    //     @include margin-bottom(0.5);
-    //     @include margin-right;
-    //     @media screen and ($lg) {
-    //         position: absolute;
-    //         @include margin-bottom;
-    //         justify-content: flex-end;
-    //         top: auto;
-    //         .icon-container {
-    //             top: auto;
-    //             bottom: 0;
-    //         }
-    //     }
-    // }
-    &__icon-label {
+    .icon {
+        width: 100%;
+        cursor: pointer;
+        cursor: hand;
+        display: block;
         position: relative;
-        list-style: none;
+        background-size: 30%, contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        background-color: $gray;
+        text-decoration: none;
+        color: currentColor;
+        outline: none;
+        &:hover,
+        &:focus {
+            background-color: $primary;
+        }
+        &:active,
+        &:target {
+            background-color: darken($primary, 5%);
+        }
+        &:before {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.1em;
+        }
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+            position: relative;
+        }
+        margin-bottom: 1px;
+        margin-top: 1px;
+    }
+    .module-content {
+        position: relative;
+        width: 3rem;
+        @media screen and ($xl) {
+            width: 4rem;
+        }
+        &:before {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+            position: relative;
+        }
+    }
+    .checkbox {
+        appearance: none;
+        display: none;
+    }
+    .icon-container {
+        transition-delay: 0s;
+    }
+    @for $i from 1 through 5 {
+        .icon-container:nth-of-type(#{$i}) {
+            transition-duration: 0.1s * (6 - $i);
+            transition-delay: 0.1s * ($i - 1);
+        }
+    }
+    @for $i from 1 through 5 {
+        .checkbox:checked ~ .icon-container:nth-of-type(#{$i}) {
+            transform: translateY(100% * (6 - $i));
+            transition-delay: 0s;
+            transition-duration: 0.1s * (6 - $i);
+        }
     }
 }

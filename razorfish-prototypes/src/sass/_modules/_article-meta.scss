@@ -10,12 +10,14 @@
         @include padding-bottom(0.5);
     }
     @media screen and ($xl) {
-        @include padding-top();
-        @include padding-bottom();
-        background-color: transparent;
+        @include padding-top;
+        @include padding-bottom;
         position: absolute;
+        background-color: transparent;
     }
     .module-content {
+        position: relative;
+        z-index: 1;
         width: calc(100% / 4 * 3);
         @include component-padding;
         display: flex;
@@ -24,10 +26,28 @@
         @media screen and ($md) {
             width: calc(100% / 6 * 4);
         }
-        @media screen and ($md) {
+        @media screen and ($lg) {
             width: calc(100% / 12 * 8);
             margin-left: auto;
             margin-right: auto;
+        }
+        @media screen and ($xl) {
+            width: calc(100% / 12 * 3);
+            margin-left: 0;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+    }
+    .multi-column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        width: calc(100% + 2rem);
+        @media screen and ($md) {
+            flex-direction: row;
+            flex-wrap: wrap;
         }
         @media screen and ($xl) {
             flex-direction: column;
@@ -36,17 +56,14 @@
     }
     .group {
         width: 100%;
+        @include component-padding;
         margin-bottom: 1.5em;
         font-size: $scale04;
         @media screen and ($md) {
-            @include component-padding;
-            width: calc(50% + 1rem);
-            &:first-of-type {
-                margin-left: -1rem;
-            }
+            width: 50%;
         }
         @media screen and ($xl) {
-            width: calc(100% / 12 * 3);
+            width: 100%;
         }
         @media screen and ($xxl) {
             font-size: $scale05;
@@ -120,7 +137,7 @@
         &:last-child {
             margin-bottom: 0;
         }
-        &--phone {
+        &.phone {
             margin-top: 1em;
         }
         &--data {
@@ -137,38 +154,39 @@
         }
     }
     .cta {
-        margin-top: 1em;
+        margin-top: 2em;
         width: 100%;
         font-family: $sans;
         line-height: 1.1;
         font-size: $scale04;
         -webkit-font-smoothing: antialiased;
+        display: inline-block;
         @media screen and ($xl) {
-            width: calc(100% / 12 * 3);
-            margin-top: 0;
+            margin-top: calc(1.6em + 1.6em + 5px);
             &:before {
                 content: "";
                 display: block;
-                position: relative;
+                position: absolute;
                 background-color: $gray;
-                width: 1.8em;
-                margin-top: 1.6em;
-                margin-bottom: 1.6em;
-                height: 4px;
+                width: 1.4em;
+                margin-top: calc(-1.6em - 5px);
+                top: 0;
+                height: 5px;
                 margin-right: auto;
-                @media screen and ($lg) {
-                    height: 5px;
-                    width: 1.4em;
-                    margin-top: 1.4em;
-                    margin-bottom: 1.4em;
-                }
                 @media screen and ($xxl) {
                     height: 6px;
+                    margin-top: calc(-1.6em - 6px);
                 }
             }
         }
         @media screen and ($xxl) {
             font-size: $scale05;
+            margin-top: calc(1.6em + 1.6em + 6px);
+        }
+        &:focus,
+        &:active,
+        &:target {
+            background-color: transparent;
         }
     }
     .social-links {
@@ -218,6 +236,7 @@
         }
     }
     .meta-logo {
+        width: 100%;
         margin-bottom: 2em;
         @media screen and ($lg) {
             margin-bottom: 3em;
@@ -243,25 +262,12 @@
     }
     &__example {
         position: relative;
+        .body-copy-flexible {
+            opacity: 0.2;
+            filter: grayscale(100%);
+        }
         .article-meta {
             @include margin-bottom;
         }
-        //     display: flex;
-        //     flex-direction: row;
-        //     flex-wrap: wrap;
-        //     @include grid-padding;
-        //     @include padding-bottom;
-        //     .article-meta {
-        //         position: relative;
-        //         width: 100%;
-        //         @media screen and ($xl) {
-        //             width: calc(100% / 12 * 3);
-        //         }
-        //         @include component-padding;
-        //         .module-content {
-        //             width: 100%;
-        //             padding: 0;
-        //         }
-        //     }
     }
 }

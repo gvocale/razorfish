@@ -743,11 +743,11 @@ window.onload = (function() {
 
     // Feed: animation on fade in
 
-    if (document.getElementsByClassName('feed__item')) {
+    if (document.getElementsByClassName('item')) {
 
-        var feedItem = document.getElementsByClassName('feed__item');
+        var feedItem = document.getElementsByClassName('item');
 
-        // Feed: counts number of .feed__item and assign a progressive delay for each
+        // Feed: counts number of .item and assign a progressive delay for each
         // for (var i = 0; i < feedItem.length; ++i) {
         //     var item = feedItem[i];
         //     item.style.animationDelay = i * 0.05 + 0.2 + "s";

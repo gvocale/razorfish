@@ -118,7 +118,8 @@
                  color: $primary-smart;
              }
          }
-         .link {
+         .link,
+         .body-copy-flexible .link {
              text-decoration: underline;
              color: currentColor;
          }
@@ -131,8 +132,7 @@
                  opacity: 0.5;
              }
          }
-         .social-share-folded_header,
-         .social-share-folded_footer {
+         .social-share-folded {
              .icon,
              {
                  &:hover,
@@ -156,13 +156,13 @@
                  fill: $primary-smart;
              }
              @each $n in (1 3 5) {
-                 .content-feed__item:nth-child(#{$n}) {
+                 .content-item:nth-child(#{$n}) {
                      background-color: $black-smart;
                      color: $off-white-smart;
                  }
              }
              @each $n in (2 4 6) {
-                 .content-feed__item:nth-child(#{$n}) {
+                 .content-item:nth-child(#{$n}) {
                      background-color: $off-white-smart;
                      color: $black-smart;
                  }
@@ -199,7 +199,8 @@
                  color: $primary-heforshe;
              }
          }
-         .link {
+         .link,
+         .body-copy-flexible .link {
              color: currentColor;
              text-decoration: underline;
          }
@@ -212,8 +213,7 @@
                  opacity: 0.5;
              }
          }
-         .social-share-folded_header,
-         .social-share-folded_footer {
+         .social-share-folded {
              .icon,
              {
                  &:hover,
@@ -237,13 +237,13 @@
                  fill: $primary-heforshe;
              }
              @each $n in (1 3 5) {
-                 .content-feed__item:nth-child(#{$n}) {
+                 .content-item:nth-child(#{$n}) {
                      background-color: $black-heforshe;
                      color: $off-white-heforshe;
                  }
              }
              @each $n in (2 4 6) {
-                 .content-feed__item:nth-child(#{$n}) {
+                 .content-item:nth-child(#{$n}) {
                      background-color: $off-white-heforshe;
                      color: $black-heforshe;
                  }
