@@ -876,26 +876,26 @@ window.onload = (function() {
 
     if (document.getElementsByClassName('hero')[0]) {
 
+        // Hero if scrolled more then 1/6 of viewport it hides the bouncy arrow
 
-        // Hero:first-of-type: if scrolled more then 1/6 of viewport it hides the bouncy arrow
+        var hero = document.getElementsByClassName('hero');
 
-
-        var heroFirstOfType = document.getElementsByClassName('hero')[0];
-        document.addEventListener(
-            'scroll',
-            function(event) {
-                var heroTop = heroFirstOfType.getBoundingClientRect().top;
-                if ((heroTop >= (window.innerHeight / 6 * -1)) && (heroTop <= window.innerHeight)) {
+        function heroArrowHide() {
+            [].forEach.call(hero, function(div) {
+                var rect = div.getBoundingClientRect();
+                if ((rect.top >= (window.innerHeight / 6 * -1)) && (rect.top <= window.innerHeight)) {
                     // console.log("half in viewport");
-                    heroFirstOfType.classList.remove('hide-arrow');
+                    div.classList.remove('hide-arrow');
                 } else {
                     // console.log("half not in viewport");
-                    heroFirstOfType.classList.add('hide-arrow');
+                    div.classList.add('hide-arrow');
                 }
-            },
-            true // Capture event
-        );
+            });
+        };
 
+        window.addEventListener('resize', heroArrowHide);
+        window.addEventListener('scroll', heroArrowHide);
+        heroArrowHide();
 
     }
 

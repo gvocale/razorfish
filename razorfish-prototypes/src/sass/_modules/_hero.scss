@@ -51,59 +51,41 @@
     position: relative;
     @include grid-padding;
     @include padding-top;
-    @include padding-bottom(1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-end;
-    &:first-of-type:not(:last-child) {
-        &:after {
-            content: "\EA0E";
-            font-family: $icons;
-            font-size: $scale03;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transition: bottom 1s $bezier;
-            margin-bottom: 5rem;
-            transform: translate(-50%, 0);
-            animation: 1s scrollIconBounce infinite;
-            opacity: 0.5;
-            @media screen and ($xl) {
-                margin-bottom: 2rem;
-            }
-            @keyframes scrollIconBounce {
-                0% {
-                    transform: translate(-50%, 0);
-                }
-                20% {
-                    transform: translate(-50%, 0);
-                }
-                40% {
-                    transform: translate(-50%, -100%);
-                }
-                50% {
-                    transform: translate(-50%, 0);
-                }
-                60% {
-                    transform: translate(-50%, -40%);
-                }
-                80% {
-                    transform: translate(-50%, 0);
-                }
-                100% {
-                    transform: translate(-50%, 0);
-                }
-            }
+    @include padding-bottom(2);
+    @media screen and ($xl) {
+        @include padding-bottom(1);
+    }
+    &:after {
+        content: "\EA0E";
+        font-family: $icons;
+        font-size: $scale03;
+        position: absolute;
+        bottom: 0;
+        padding-bottom: 2em;
+        transition: bottom 0.5s $bezier;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: 1s scrollIconBounce infinite;
+        opacity: 0.5;
+    }
+    &:first-child:after {
+        margin-bottom: 4.4rem;
+        @media screen and ($md) {
+            margin-bottom: 2rem;
+        }
+        @media screen and ($xl) {
+            margin-bottom: 0;
         }
     }
-    &.hide-arrow {
-        &:first-of-type:not(:last-child) {
-            &:after {
-                bottom: -10em;
-            }
-        }
+    &.hide-arrow:after {
+        bottom: -2em;
+        padding-bottom: 0;
+        animation: 1s scrollIconBounce forwards;
     }
     .module-background {
         width: 100%;

@@ -1,33 +1,6 @@
 .solutions {
     .hero__solution {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
-        justify-content: flex-end;
         color: $white;
-        &:after {
-            content: "\EA0E";
-            font-family: $icons;
-            font-size: $scale03;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transition: bottom 1s $bezier;
-            margin-bottom: 2rem;
-            transform: translate(-50%, 0);
-            animation: 1s scrollIconBounce infinite;
-            opacity: 0.5;
-            @media screen and ($xl) {
-                margin-bottom: 2rem;
-            }
-        }
-        &#solution__intro {
-
-        }
         .h1 {
             @include ligatures;
             font-family: $serif;
@@ -104,6 +77,25 @@
         }
         a {
             color: lighten($primary, 10%);
+        }
+        &:hover {
+            .module-background {
+                transform: none;
+                transition: none;
+            }
+        }
+        &:not(:first-child) {
+            &:after {
+                @media screen and ($xl) {
+                    display: none;
+                }
+            }
+        }
+        &:first-child {
+            @include padding-bottom(2);
+            @media screen and ($md) {
+                @include padding-bottom(1);
+            }
         }
     }
     .module-background {
@@ -361,8 +353,7 @@
             }
         }
         &.active {
-            // min-height: 4em;
-            min-height: 1em;
+            min-height: 4em;
             @media screen and ($xl) {
                 padding-top: 1em;
                 padding-bottom: 1em;
