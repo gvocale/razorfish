@@ -9,15 +9,18 @@
     @include margin-top(-0.25);
     .module-content {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
+        flex-direction: column;
         @include component-padding;
         width: 100%;
-        @media only screen and ($lg) {
+        @media screen and ($md) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        @media screen and ($lg) {
             width: calc(100% / 12 * 8);
         }
-        @media only screen and ($xl) {
+        @media screen and ($xl) {
             width: calc(100% / 12 * 6);
         }
         &:last-child {
@@ -51,9 +54,11 @@
         }
     }
     .social-share {
+        margin-top: -1rem;
         margin-left: -1rem;
         @media screen and ($md) {
             margin-left: 0;
+            margin-top: 0;
         }
         .icon-container {
             &:before {
