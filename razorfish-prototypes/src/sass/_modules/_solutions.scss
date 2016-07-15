@@ -4,7 +4,7 @@
         .h1 {
             @include ligatures;
             font-family: $serif;
-            font-size: $scale08;
+            font-size: $scale09;
             line-height: 0.8;
             letter-spacing: $spacing-serif-tight;
             font-weight: 700;
@@ -41,7 +41,7 @@
         .h2 {
             @include ligatures;
             font-family: $serif;
-            font-size: $scale06;
+            font-size: $scale07;
             line-height: 1.1;
             letter-spacing: $spacing-serif;
             font-weight: 400;
@@ -49,10 +49,7 @@
             max-width: 14em;
             opacity: 1;
             @media only screen and ($md) {
-                font-size: $scale08;
-            }
-            @media only screen and ($lg) {
-                font-size: $scale08;
+                font-size: $scale09;
             }
             @media only screen and ($xxl) {
                 font-size: $scale10;
@@ -127,8 +124,8 @@
         @include ligatures;
         font-family: $serif;
         font-style: italic;
-        font-size: $scale04;
-        line-height: $title-serif;
+        font-size: $scale05;
+        line-height: 1.4;
         letter-spacing: $spacing-serif-large;
         color: lighten($primary, 10%);
         font-weight: 700;
@@ -140,9 +137,6 @@
         transition-property: all;
         transition-timing-function: $bezier;
         @media only screen and ($md) {
-            font-size: $scale05;
-        }
-        @media only screen and ($xxl) {
             font-size: $scale06;
         }
     }
@@ -285,17 +279,12 @@
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: center;
-    right: 1.5rem;
-    display: none;
-    @media screen and ($md) {
+    right: 0.5rem;
+    @media screen and ($xl) {
+        right: 1rem;
+    }
+    @media screen and ($xxl) {
         right: 2rem;
-    }
-    @media screen and ($xl) {
-        display: block;
-        right: 3rem;
-    }
-    @media screen and ($xl) {
-        right: 4rem;
     }
     &.hide {
         .menu-link {
@@ -328,42 +317,31 @@
         cursor: hand;
         overflow: hidden;
         box-shadow: inset -3px 0 0 0 rgba($white, 0.2);
-        // margin-bottom: 3px;
         margin-bottom: 2px;
-        // min-height: 2em;
-        min-height: 1em;
         padding-right: 1rem;
+        min-height: 1rem;
         @media screen and ($xl) {
-            min-height: 2.4em;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
         &:last-child {
             margin-bottom: 0;
         }
         .label {
-            display: none;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
             text-align: right;
             max-width: 10em;
             transform: translateY(200%);
             transition: all 0.3s 0s $bezier;
             opacity: 0;
-            @media screen and ($lg) {
-                display: inline-block;
-                visibility: hidden;
-            }
         }
         &.active {
-            min-height: 4em;
+            min-height: 2rem;
             @media screen and ($xl) {
-                padding-top: 1em;
-                padding-bottom: 1em;
-                &.tooltip {
-                    .label {
-                        visibility: visible;
-                        transform: translateY(0%);
-                        opacity: 1;
-                        transition-delay: 0.5s;
-                    }
+                min-height: 4rem;
+                .label {
+                    transform: translateY(0%);
+                    opacity: 1;
                 }
             }
             box-shadow: inset -3px 0 0 0 rgba($white, 1);
@@ -375,7 +353,6 @@
             &:hover {
                 box-shadow: inset -3px 0 0 0 rgba($white, 1);
                 .label {
-                    visibility: visible;
                     transform: translateY(0%);
                     opacity: 1;
                 }
@@ -383,6 +360,12 @@
         }
         &[data-menuanchor="practices"] {
             color: $primary;
+            &.active {
+                box-shadow: inset -3px 0 0 0 rgba($white, 1);
+                @media screen and ($xl) {
+                    box-shadow: inset -3px 0 0 0 rgba($primary, 1);
+                }
+            }
         }
     }
 }
@@ -394,7 +377,7 @@
             opacity: 0;
             transform: translateY(100px);
         }
-        &.above-the-fold > * {
+        &.above-viewport > * {
             opacity: 1;
             transform: translateY(0);
             transition-delay: 0s;

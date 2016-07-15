@@ -759,16 +759,16 @@ window.onload = (function() {
             [].forEach.call(feedItem, function(div) {
                 var rect = div.getBoundingClientRect();
                 if (rect.bottom < 0) {
-                    div.classList.add('above-the-fold');
+                    div.classList.add('above-viewport');
                     div.classList.remove('below-viewport');
                     div.classList.remove('in-viewport');
                 } else if (rect.top > window.innerHeight) {
                     div.classList.add('below-viewport');
-                    div.classList.remove('above-the-fold');
+                    div.classList.remove('above-viewport');
                     div.classList.remove('in-viewport');
                 } else {
                     div.classList.add('in-viewport');
-                    div.classList.remove('above-the-fold');
+                    div.classList.remove('above-viewport');
                     div.classList.remove('below-viewport');
                 }
             });
@@ -788,21 +788,21 @@ window.onload = (function() {
         // .module-content toggle visibility classes
         var moduleContent = document.getElementsByClassName('module-content');
 
-        // If .module-content is not in the viewport add class .below-viewport or .above-the-fold
+        // If .module-content is not in the viewport add class .below-viewport or .above-viewport
         function moduleContentInViewport() {
             [].forEach.call(moduleContent, function(div) {
                 var rect = div.getBoundingClientRect();
                 if (rect.bottom < 0) {
-                    div.classList.add('above-the-fold');
+                    div.classList.add('above-viewport');
                     div.classList.remove('below-viewport');
                     div.classList.remove('in-viewport');
                 } else if (rect.top > window.innerHeight) {
                     div.classList.add('below-viewport');
-                    div.classList.remove('above-the-fold');
+                    div.classList.remove('above-viewport');
                     div.classList.remove('in-viewport');
                 } else {
                     div.classList.add('in-viewport');
-                    div.classList.remove('above-the-fold');
+                    div.classList.remove('above-viewport');
                     div.classList.remove('below-viewport');
                 }
             });
@@ -850,16 +850,16 @@ window.onload = (function() {
             [].forEach.call(hero, function(div) {
                 var rect = div.getBoundingClientRect();
                 if (rect.bottom < 0) {
-                    div.classList.add('above-the-fold');
+                    div.classList.add('above-viewport');
                     div.classList.remove('below-viewport');
                     div.classList.remove('in-viewport');
                 } else if (rect.top > window.innerHeight) {
                     div.classList.add('below-viewport');
-                    div.classList.remove('above-the-fold');
+                    div.classList.remove('above-viewport');
                     div.classList.remove('in-viewport');
                 } else {
                     div.classList.add('in-viewport');
-                    div.classList.remove('above-the-fold');
+                    div.classList.remove('above-viewport');
                     div.classList.remove('below-viewport');
                 }
             });

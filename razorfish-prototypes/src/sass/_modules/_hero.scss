@@ -20,26 +20,23 @@
         font-size: $scale03;
         position: absolute;
         bottom: 0;
-        padding-bottom: 2em;
-        transition: bottom 0.5s $bezier;
+        transition: all 0.5s $bezier;
         left: 50%;
         transform: translateX(-50%);
-        animation: 1s scrollIconBounce infinite;
+        animation: 1s scrollIconBounce 1s infinite;
         opacity: 0.5;
-    }
-    &:first-child:after {
-        margin-bottom: 4.4rem;
+        margin-bottom: 6rem;
         @media screen and ($md) {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
         @media screen and ($xl) {
-            margin-bottom: 0;
+            margin-bottom: 1.5rem;
         }
     }
     &.hide-arrow:after {
         bottom: -2em;
-        padding-bottom: 0;
-        animation: 1s scrollIconBounce forwards;
+        margin-bottom: 0;
+        animation-play-state: paused;
     }
     .module-background {
         width: 100%;
@@ -487,7 +484,7 @@ a.hero {
             opacity: 0;
             transform: translateY(100px);
         }
-        &.above-the-fold > * {
+        &.above-viewport > * {
             opacity: 1;
             transform: translateY(0);
             transition-delay: 0s;
