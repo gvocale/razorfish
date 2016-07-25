@@ -173,3 +173,142 @@
         }
     }
 }
+
+.employee-quote {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .module-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .icon {
+        font-size: $scale04;
+        margin-bottom: 2em;
+        @media only screen and ($xl) {
+            font-size: $scale05;
+        }
+    }
+    .quote {
+        @include ligatures;
+        font-family: $serif;
+        font-style: italic;
+        line-height: 1.3;
+        letter-spacing: $spacing-serif-large;
+        margin-bottom: 2em;
+        max-width: 12em;
+        font-size: $scale05;
+        text-align: center;
+        align-items: center;
+        @media only screen and ($md) {
+            font-size: $scale06;
+        }
+        @media only screen and ($lg) {
+            font-size: $scale06;
+        }
+        @media only screen and ($xl) {
+            font-size: $scale07;
+        }
+        @media only screen and ($xxl) {
+            font-size: $scale08;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .author-name {
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans;
+        font-weight: 700;
+        font-size: $scale04;
+        margin-bottom: 0.25em;
+        @media only screen and ($xxl) {
+            font-size: $scale05;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .author-title {
+        font-family: $sans;
+        line-height: $title-sans;
+        letter-spacing: $spacing-sans;
+        font-weight: 400;
+        font-size: $scale03;
+        opacity: 0.5;
+        @media only screen and ($xxl) {
+            font-size: $scale04;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .author-photo {
+        width: 4rem;
+        height: 4rem;
+        background-color: $white;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 1rem;
+        @media screen and ($xl) {
+            width: 5rem;
+            height: 5rem;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .item {
+        width: 100%;
+        height: auto;
+        min-height: 80vw;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 20%;
+        padding-bottom: 20%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        overflow: hidden;
+        @media only screen and ($md) {
+            width: 50%;
+            min-height: 50vw;
+            padding-top: 10%;
+            padding-bottom: 10%;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        @media only screen and ($xl) {
+            padding-left: 5%;
+            padding-right: 5%;
+            min-height: 40vw;
+        }
+        @media only screen and ($xxl) {
+            padding-left: 12.5%;
+            padding-right: 12.5%;
+        }
+        &:nth-child(1) {
+            background-color: $color-theme-a;
+            color: $white;
+            .icon {
+                color: $black;
+            }
+        }
+        &:nth-child(2) {
+            background-color: $black;
+            color: $white;
+            .icon {
+                color: $primary;
+            }
+        }
+    }
+}
