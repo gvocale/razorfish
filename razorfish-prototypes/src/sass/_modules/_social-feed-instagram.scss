@@ -1,4 +1,4 @@
-.social-feed--instagram {
+.instagram {
     width: 100%;
     @include grid-padding;
     background-color: $gray;
@@ -6,7 +6,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     @include padding-bottom(1);
-    &__feed {
+    .instagram-feed {
         width: 100%;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
@@ -21,7 +21,7 @@
         @media screen and ($lg) {
             height: calc((80vw / 4 * 5) + 2rem);
         }
-        &__cluster {
+        .cluster {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -29,11 +29,11 @@
             @media screen and ($lg) {
                 width: 50%;
             }
-            .social-feed--instagram__item {
+            .item {
                 width: 50%;
             }
         }
-        &__item {
+        .item {
             box-sizing: border-box;
             padding-left: 0.5rem;
             padding-right: 0.5rem;
@@ -61,7 +61,7 @@
                 }
             }
         }
-        &__image-container {
+        .image-container {
             overflow: hidden;
             display: block;
             top: 0;
@@ -81,7 +81,7 @@
             margin-top: 0.5rem;
             margin-bottom: 0.5rem;
         }
-        &__image {
+        .image {
             position: absolute;
             display: block;
             top: 0;
