@@ -124,16 +124,12 @@ table {
   border-spacing: 0; }
 
 .rf__header {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
@@ -172,16 +168,12 @@ table {
         display: inline-block; } }
 
 .rf__footer {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
   padding-left: calc(10vw - 1rem);
@@ -293,19 +285,12 @@ table {
       position: absolute;
       opacity: 0.5;
       bottom: 0;
-      -webkit-animation-name: underline_out;
       animation-name: underline_out;
-      -webkit-animation-duration: 0.3s;
       animation-duration: 0.3s;
-      -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
       animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-      -webkit-animation-iteration-count: 1;
       animation-iteration-count: 1;
-      -webkit-animation-direction: normal;
       animation-direction: normal;
-      -webkit-animation-fill-mode: forwards;
       animation-fill-mode: forwards;
-      -webkit-animation-play-state: running;
       animation-play-state: running; }
     .rf__footer_link:first-of-type {
       margin-left: 0; }
@@ -326,28 +311,13 @@ table {
       .rf__footer_link:hover {
         transition: color 0.05s cubic-bezier(0.32, 0.01, 0, 1) 0.05s; }
         .rf__footer_link:hover:before {
-          -webkit-animation-name: underline_in;
           animation-name: underline_in;
-          -webkit-animation-duration: 0.3s;
           animation-duration: 0.3s;
-          -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
           animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-          -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
-          -webkit-animation-direction: normal;
           animation-direction: normal;
-          -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-          -webkit-animation-play-state: running;
           animation-play-state: running; } }
-
-@-webkit-keyframes underline_in {
-  0% {
-    width: 0%;
-    left: 0; }
-  100% {
-    width: 100%;
-    left: 0; } }
 
 @keyframes underline_in {
   0% {
@@ -356,14 +326,6 @@ table {
   100% {
     width: 100%;
     left: 0; } }
-
-@-webkit-keyframes underline_out {
-  0% {
-    width: 100%;
-    right: 0; }
-  100% {
-    width: 0%;
-    right: 0; } }
 
 @keyframes underline_out {
   0% {
@@ -374,16 +336,12 @@ table {
     right: 0; } }
   .rf__footer_share {
     display: inline-block;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
     list-style: none;
@@ -421,45 +379,24 @@ table {
           background-color: #a9c000;
           position: absolute;
           bottom: 0;
-          -webkit-animation-name: underline_out;
           animation-name: underline_out;
-          -webkit-animation-duration: 0.2s;
           animation-duration: 0.2s;
-          -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
-          -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
-          -webkit-animation-direction: normal;
           animation-direction: normal;
-          -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-          -webkit-animation-play-state: running;
           animation-play-state: running; } }
 
 @media screen and (min-width: 1200px) and (hover) {
   .rf__footer_share_icon:hover:before {
-    -webkit-animation-name: underline_in;
     animation-name: underline_in;
-    -webkit-animation-duration: 0.2s;
     animation-duration: 0.2s;
-    -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
-    -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
-    -webkit-animation-direction: normal;
     animation-direction: normal;
-    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-    -webkit-animation-play-state: running;
     animation-play-state: running; } }
       @media screen and (min-width: 1200px) {
-        @-webkit-keyframes underline_in {
-          0% {
-            width: 0%;
-            left: 0; }
-          100% {
-            width: 100%;
-            left: 0; } }
         @keyframes underline_in {
           0% {
             width: 0%;
@@ -467,13 +404,6 @@ table {
           100% {
             width: 100%;
             left: 0; } }
-        @-webkit-keyframes underline_out {
-          0% {
-            width: 100%;
-            right: 0; }
-          100% {
-            width: 0%;
-            right: 0; } }
         @keyframes underline_out {
           0% {
             width: 100%;
@@ -484,65 +414,28 @@ table {
         .rf__footer_share_icon:hover .rf__footer_share_linkedin,
         .rf__footer_share_icon:hover .rf__footer_share_facebook,
         .rf__footer_share_icon:hover .rf__footer_share_twitter {
-          -webkit-animation-name: bounce;
           animation-name: bounce;
-          -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
-          -webkit-animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
           animation-timing-function: cubic-bezier(0.32, 0.01, 0, 1);
-          -webkit-animation-delay: 0s;
           animation-delay: 0s;
-          -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
-          -webkit-animation-direction: normal;
           animation-direction: normal;
-          -webkit-animation-fill-mode: none;
           animation-fill-mode: none;
-          -webkit-animation-play-state: running;
           animation-play-state: running; }
-        @-webkit-keyframes bounce {
-          0% {
-            -webkit-transform: translateY(0);
-            transform: translateY(0); }
-          20% {
-            -webkit-transform: translateY(0);
-            transform: translateY(0); }
-          40% {
-            -webkit-transform: translateY(-15%);
-            transform: translateY(-15%); }
-          50% {
-            -webkit-transform: translateY(0);
-            transform: translateY(0); }
-          60% {
-            -webkit-transform: translateY(-5%);
-            transform: translateY(-5%); }
-          80% {
-            -webkit-transform: translateY(0);
-            transform: translateY(0); }
-          100% {
-            -webkit-transform: translateY(0);
-            transform: translateY(0); } }
         @keyframes bounce {
           0% {
-            -webkit-transform: translateY(0);
             transform: translateY(0); }
           20% {
-            -webkit-transform: translateY(0);
             transform: translateY(0); }
           40% {
-            -webkit-transform: translateY(-15%);
             transform: translateY(-15%); }
           50% {
-            -webkit-transform: translateY(0);
             transform: translateY(0); }
           60% {
-            -webkit-transform: translateY(-5%);
             transform: translateY(-5%); }
           80% {
-            -webkit-transform: translateY(0);
             transform: translateY(0); }
           100% {
-            -webkit-transform: translateY(0);
             transform: translateY(0); } } }
       @media screen and (min-width: 1600px) {
         .rf__footer_share_icon {
@@ -556,12 +449,9 @@ table {
       position: relative; }
       .rf__footer_share_facebook.animate, .rf__footer_share_twitter.animate, .rf__footer_share_linkedin.animate {
         opacity: 0;
-        -webkit-transform: translateY(100%);
         transform: translateY(100%);
         transition-duration: 0.2s;
-        transition-property: opacity, -webkit-transform;
         transition-property: transform, opacity;
-        transition-property: transform, opacity, -webkit-transform;
         transition-timing-function: ease-in-out;
         transition-delay: 0; }
       .rf__footer_share_facebook:before, .rf__footer_share_twitter:before, .rf__footer_share_linkedin:before {
